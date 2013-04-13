@@ -18,3 +18,6 @@ def new_module_for_reading_spreadsheet():
     '''
     import xlrd
     return xlrd
+
+def check_module_dependencies_linux():
+    new_module_for_reading_spreadsheet()
