@@ -12,3 +12,9 @@ for i in NazwyModulow:
             exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
         else:
             exec 'import %(modul)s' % dict(modul = i)
+
+def new_module_for_reading_spreadsheet():
+    '''
+    '''
+    import xlrd
+    return xlrd
