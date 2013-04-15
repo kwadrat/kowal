@@ -36,11 +36,17 @@ class DataReader:
         '''
         return self.sheet.cell_value(my_row - 1, my_col)
 
+    def vx_letter_num(self, my_col):
+        '''
+        DataReader:
+        '''
+        return self.vx_zero.vx_lt(my_col)
+
     def vx_peek(self, my_col, my_row):
         '''
         DataReader:
         '''
-        header_col = fv_kw.vx_zero.vx_lt(my_col)
+        header_col = self.vx_zero.vx_lt(my_col)
         return self.vx_num_peek(header_col, my_row)
 
     def vx_date(self, my_col, my_row):
