@@ -24,7 +24,7 @@ def check_module_dependencies_linux():
     new_module_for_reading_spreadsheet()
 
 class DataReader:
-    def check_for_constant_string(self, my_row, my_col, expected):
+    def check_for_constant_string(self, my_col, my_row, expected):
         '''
         DataReader:
         '''
@@ -38,10 +38,10 @@ class DataReader:
         '''
         nrows = self.sheet.nrows
         header_col = fv_kw.vx_zero.vx_lt('A')
-        self.check_for_constant_string(nrows - 1, header_col, u'Suma')
-        self.check_for_constant_string(nrows - 2, header_col, u'Data')
-        self.check_for_constant_string(nrows - 3, header_col, u'Maksimum')
-        self.check_for_constant_string(5, header_col, u'Data')
+        self.check_for_constant_string(header_col, nrows - 1, u'Suma')
+        self.check_for_constant_string(header_col, nrows - 2, u'Data')
+        self.check_for_constant_string(header_col, nrows - 3, u'Maksimum')
+        self.check_for_constant_string(header_col, 5, u'Data')
         data_rows = xrange(6, nrows - 3)
         print data_rows
 
