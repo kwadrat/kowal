@@ -31,6 +31,7 @@ def analyze_this_file(single_file):
     numer_of_sheets = book.nsheets
     if numer_of_sheets == 1:
         sheet = book.sheet_by_name(u'Report')
+        analyze_this_sheet(sheet)
     else:
         raise RuntimeError('numer_of_sheets = %d' % numer_of_sheets)
 
