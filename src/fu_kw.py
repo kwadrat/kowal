@@ -39,6 +39,17 @@ class DataReader:
         if tmp_text != expected:
             raise RuntimeError('tmp_text = %s' % repr(tmp_text))
 
+    def detect_data_rows(self):
+        '''
+        DataReader:
+        '''
+        nrows = self.sheet.nrows
+        self.check_for_constant_string('A', 6, u'Data')
+        self.check_for_constant_string('A', nrows - 2, u'Maksimum')
+        self.check_for_constant_string('A', nrows - 1, u'Data')
+        self.check_for_constant_string('A', nrows, u'Suma')
+        return xrange(7, nrows - 2)
+
     def analyze_this_sheet(self):
         '''
         DataReader:
