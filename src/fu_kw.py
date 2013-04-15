@@ -45,7 +45,7 @@ class DataReader:
         data_rows = xrange(6, nrows - 3)
         print data_rows
 
-    def analyze_this_file(self, single_file):
+    def analyze_this_file(self, xlrd, single_file):
         '''
         DataReader:
         '''
@@ -62,4 +62,4 @@ def analyze_excel_files(filenames):
     xlrd = new_module_for_reading_spreadsheet()
     for single_file in filenames:
         obk = DataReader()
-        obk.analyze_this_file(single_file)
+        obk.analyze_this_file(xlrd, single_file)
