@@ -27,8 +27,8 @@ def vx_lt(napis):
 
 def vx_rev_lt(liczba):
     if liczba > 26:
-        a, b = divmod(liczba - 1, 26)
-        wynik = vx_rev_lt(a) + vx_litera(b + 1)
+        major, b = divmod(liczba - 1, 26)
+        wynik = vx_rev_lt(major) + vx_litera(b + 1)
     else:
         wynik = vx_litera(liczba)
     return wynik
@@ -74,8 +74,8 @@ class ColCalc:
         ColCalc:
         '''
         if liczba > 25 + self.my_offset:
-            a, b = divmod(liczba - self.my_offset, 26)
-            wynik = vx_rev_lt(a) + self.vx_litera(b + self.my_offset)
+            major, b = divmod(liczba - self.my_offset, 26)
+            wynik = vx_rev_lt(major) + self.vx_litera(b + self.my_offset)
         else:
             wynik = self.vx_litera(liczba)
         return wynik
