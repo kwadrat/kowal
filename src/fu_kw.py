@@ -24,6 +24,12 @@ def check_module_dependencies_linux():
     new_module_for_reading_spreadsheet()
 
 class DataReader:
+    def vx_num_peek(self, my_col, my_row):
+        '''
+        DataReader:
+        '''
+        return self.sheet.cell_value(my_row - 1, my_col)
+
     def vx_peek(self, my_col, my_row):
         '''
         DataReader:
