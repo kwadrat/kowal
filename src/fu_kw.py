@@ -27,7 +27,7 @@ def analyze_this_file(single_file):
     book = xlrd.open_workbook(single_file)
     numer_of_sheets = book.nsheets
     if numer_of_sheets == 1:
-        pass
+        sheet = book.sheet_by_name(u'Report')
     else:
         raise RuntimeError('numer_of_sheets = %d' % numer_of_sheets)
 
