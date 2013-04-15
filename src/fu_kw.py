@@ -46,6 +46,8 @@ class DataReader:
         self.check_for_constant_string('B', 2, u'Raport energii godzinowej dla ')
         under_name = self.vx_peek('E', 2)
         tmp_format = 'under_name'; print 'Eval:', tmp_format, eval(tmp_format)
+        period_start = self.vx_peek('E', 3)
+        tmp_format = 'period_start'; print 'Eval:', tmp_format, eval(tmp_format)
         self.check_for_constant_string('M', 2, u'kWh')
         self.check_for_constant_string('B', 3, u'Za okres')
         self.check_for_constant_string('D', 3, u'od')
