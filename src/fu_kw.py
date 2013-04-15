@@ -22,6 +22,9 @@ def new_module_for_reading_spreadsheet():
 def check_module_dependencies_linux():
     new_module_for_reading_spreadsheet()
 
+def analyze_this_sheet(sheet):
+    pass
+
 def analyze_this_file(single_file):
     xlrd = new_module_for_reading_spreadsheet()
     book = xlrd.open_workbook(single_file)
