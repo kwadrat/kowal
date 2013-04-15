@@ -34,7 +34,7 @@ def analyze_this_sheet(sheet):
     check_for_constant_string(sheet, nrows - 1, header_col, u'Suma')
     check_for_constant_string(sheet, nrows - 2, header_col, u'Data')
     check_for_constant_string(sheet, nrows - 3, header_col, u'Maksimum')
-    check_for_constant_string(sheet, 5, 0, u'Data')
+    check_for_constant_string(sheet, 5, header_col, u'Data')
     data_rows = xrange(6, nrows - 3)
     print data_rows
 
