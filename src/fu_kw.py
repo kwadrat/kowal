@@ -28,7 +28,10 @@ def check_for_constant_string(sheet, my_row, my_col, expected):
         raise RuntimeError('tmp_text = %s' % repr(tmp_text))
 
 def analyze_this_sheet(sheet):
-    pass
+    nrows = sheet.nrows
+    check_for_constant_string(sheet, nrows - 1, 0, u'Suma')
+    check_for_constant_string(sheet, nrows - 2, 0, u'Data')
+    check_for_constant_string(sheet, nrows - 3, 0, u'Maksimum')
 
 def analyze_this_file(single_file):
     xlrd = new_module_for_reading_spreadsheet()
