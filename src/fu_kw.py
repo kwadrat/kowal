@@ -62,6 +62,7 @@ class DataReader:
         '''
         DataReader:
         '''
+        self.detect_sheet_header()
         data_rows = self.detect_data_rows()
         print data_rows
 
