@@ -49,7 +49,18 @@ def analyze_this_file(single_file):
         raise RuntimeError('numer_of_sheets = %d' % numer_of_sheets)
 
 class DataReader:
-    pass
+    def analyze_this_file(self, single_file):
+        '''
+        DataReader:
+        '''
+        xlrd = new_module_for_reading_spreadsheet()
+        book = xlrd.open_workbook(single_file)
+        numer_of_sheets = book.nsheets
+        if numer_of_sheets == 1:
+            self.sheet = book.sheet_by_name(u'Report')
+            analyze_this_sheet(self.sheet)
+        else:
+            raise RuntimeError('numer_of_sheets = %d' % numer_of_sheets)
 
 def analyze_excel_files(filenames):
     for single_file in filenames:
