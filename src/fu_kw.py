@@ -46,7 +46,7 @@ class DataReader:
         '''
         DataReader:
         '''
-        header_col = self.vx_zero.vx_lt(my_col)
+        header_col = self.vx_letter_num(my_col)
         return self.vx_num_peek(header_col, my_row)
 
     def vx_date(self, my_col, my_row):
