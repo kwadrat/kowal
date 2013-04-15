@@ -3,9 +3,6 @@
 
 import unittest
 
-def vx_porz(litera):
-    return ord(litera.upper()) - ord('A') + 1
-
 class ColCalc:
     def __init__(self, my_offset):
         '''
@@ -57,13 +54,6 @@ vx_zero = ColCalc(0)
 vx_one = ColCalc(1)
 
 class TestKolumnLiterowych(unittest.TestCase):
-    def test_kolumn_literowych(self):
-        '''
-        TestKolumnLiterowych:
-        '''
-        self.assertEqual(vx_porz('A'), 1)
-        self.assertEqual(vx_porz('Z'), 26)
-
     def test_with_offset_zero(self):
         '''
         TestKolumnLiterowych:
