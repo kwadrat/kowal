@@ -44,10 +44,10 @@ class DataReader:
         DataReader:
         '''
         nrows = self.sheet.nrows
-        self.check_for_constant_string('A', nrows, u'Suma')
-        self.check_for_constant_string('A', nrows - 1, u'Data')
-        self.check_for_constant_string('A', nrows - 2, u'Maksimum')
         self.check_for_constant_string('A', 6, u'Data')
+        self.check_for_constant_string('A', nrows - 2, u'Maksimum')
+        self.check_for_constant_string('A', nrows - 1, u'Data')
+        self.check_for_constant_string('A', nrows, u'Suma')
         data_rows = xrange(7, nrows - 2)
         print data_rows
 
