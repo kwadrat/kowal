@@ -28,7 +28,8 @@ class DataReader:
         '''
         DataReader:
         '''
-        return self.sheet.cell(my_row - 1, my_col).value
+        header_col = fv_kw.vx_zero.vx_lt(my_col)
+        return self.sheet.cell(my_row - 1, header_col).value
 
     def check_for_constant_string(self, my_col, my_row, expected):
         '''
@@ -43,11 +44,10 @@ class DataReader:
         DataReader:
         '''
         nrows = self.sheet.nrows
-        header_col = fv_kw.vx_zero.vx_lt('A')
-        self.check_for_constant_string(header_col, nrows, u'Suma')
-        self.check_for_constant_string(header_col, nrows - 1, u'Data')
-        self.check_for_constant_string(header_col, nrows - 2, u'Maksimum')
-        self.check_for_constant_string(header_col, 6, u'Data')
+        self.check_for_constant_string('A', nrows, u'Suma')
+        self.check_for_constant_string('A', nrows - 1, u'Data')
+        self.check_for_constant_string('A', nrows - 2, u'Maksimum')
+        self.check_for_constant_string('A', 6, u'Data')
         data_rows = xrange(7, nrows - 2)
         print data_rows
 
