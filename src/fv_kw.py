@@ -24,3 +24,11 @@ def vx_lt(napis):
     else:
         raise RuntimeError('Nieobslugiwany napis kolumny: %s' % repr(napis))
     return wynik
+
+def vx_rev_lt(liczba):
+    if liczba > 26:
+        a, b = divmod(liczba - 1, 26)
+        wynik = vx_rev_lt(a) + vx_litera(b + 1)
+    else:
+        wynik = vx_litera(liczba)
+    return wynik
