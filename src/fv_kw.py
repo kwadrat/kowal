@@ -80,6 +80,8 @@ class ColCalc:
             wynik = vx_litera(liczba)
         return wynik
 
+vx_one = ColCalc(1)
+
 class TestKolumnLiterowych(unittest.TestCase):
     def test_kolumn_literowych(self):
         '''
