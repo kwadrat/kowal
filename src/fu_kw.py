@@ -28,7 +28,7 @@ class DataReader:
         '''
         DataReader:
         '''
-        tmp_text = self.sheet.cell(my_row, my_col).value
+        tmp_text = self.sheet.cell(my_row - 1, my_col).value
         if tmp_text != expected:
             raise RuntimeError('tmp_text = %s' % repr(tmp_text))
 
@@ -38,11 +38,11 @@ class DataReader:
         '''
         nrows = self.sheet.nrows
         header_col = fv_kw.vx_zero.vx_lt('A')
-        self.check_for_constant_string(header_col, nrows - 1, u'Suma')
-        self.check_for_constant_string(header_col, nrows - 2, u'Data')
-        self.check_for_constant_string(header_col, nrows - 3, u'Maksimum')
-        self.check_for_constant_string(header_col, 5, u'Data')
-        data_rows = xrange(6, nrows - 3)
+        self.check_for_constant_string(header_col, nrows, u'Suma')
+        self.check_for_constant_string(header_col, nrows - 1, u'Data')
+        self.check_for_constant_string(header_col, nrows - 2, u'Maksimum')
+        self.check_for_constant_string(header_col, 6, u'Data')
+        data_rows = xrange(7, nrows - 2)
         print data_rows
 
     def analyze_this_file(self, xlrd, single_file):
