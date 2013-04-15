@@ -28,16 +28,6 @@ def check_for_constant_string(sheet, my_row, my_col, expected):
     if tmp_text != expected:
         raise RuntimeError('tmp_text = %s' % repr(tmp_text))
 
-def analyze_this_sheet(sheet):
-    nrows = sheet.nrows
-    header_col = fv_kw.vx_zero.vx_lt('A')
-    check_for_constant_string(sheet, nrows - 1, header_col, u'Suma')
-    check_for_constant_string(sheet, nrows - 2, header_col, u'Data')
-    check_for_constant_string(sheet, nrows - 3, header_col, u'Maksimum')
-    check_for_constant_string(sheet, 5, header_col, u'Data')
-    data_rows = xrange(6, nrows - 3)
-    print data_rows
-
 class DataReader:
     def analyze_this_sheet(self):
         '''
