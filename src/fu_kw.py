@@ -48,6 +48,9 @@ def analyze_this_file(single_file):
     else:
         raise RuntimeError('numer_of_sheets = %d' % numer_of_sheets)
 
+class DataReader:
+    pass
+
 def analyze_excel_files(filenames):
     for single_file in filenames:
         analyze_this_file(single_file)
