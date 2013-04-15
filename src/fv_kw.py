@@ -75,9 +75,9 @@ class ColCalc:
         '''
         if liczba > 26:
             a, b = divmod(liczba - 1, 26)
-            wynik = vx_rev_lt(a) + vx_litera(b + 1)
+            wynik = vx_rev_lt(a) + self.vx_litera(b + 1)
         else:
-            wynik = vx_litera(liczba)
+            wynik = self.vx_litera(liczba)
         return wynik
 
 vx_zero = ColCalc(0)
