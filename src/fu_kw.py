@@ -29,7 +29,7 @@ class DataReader:
         DataReader:
         '''
         header_col = fv_kw.vx_zero.vx_lt(my_col)
-        return self.sheet.cell(my_row - 1, header_col).value
+        return self.sheet.cell_value(my_row - 1, header_col)
 
     def check_for_constant_string(self, my_col, my_row, expected):
         '''
