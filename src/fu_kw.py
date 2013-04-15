@@ -54,12 +54,7 @@ class DataReader:
         '''
         DataReader:
         '''
-        nrows = self.sheet.nrows
-        self.check_for_constant_string('A', 6, u'Data')
-        self.check_for_constant_string('A', nrows - 2, u'Maksimum')
-        self.check_for_constant_string('A', nrows - 1, u'Data')
-        self.check_for_constant_string('A', nrows, u'Suma')
-        data_rows = xrange(7, nrows - 2)
+        data_rows = self.detect_data_rows()
         print data_rows
 
     def analyze_this_file(self, xlrd, single_file):
