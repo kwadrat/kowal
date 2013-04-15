@@ -22,6 +22,11 @@ def new_module_for_reading_spreadsheet():
 def check_module_dependencies_linux():
     new_module_for_reading_spreadsheet()
 
+def check_for_constant_string(sheet, my_row, my_col, expected):
+    tmp_text = sheet.cell(my_row, my_col).value
+    if tmp_text != expected:
+        raise RuntimeError('tmp_text = %s' % repr(tmp_text))
+
 def analyze_this_sheet(sheet):
     pass
 
