@@ -61,7 +61,7 @@ class DataReader:
         numer_of_sheets = book.nsheets
         if numer_of_sheets == 1:
             self.sheet = book.sheet_by_name(u'Report')
-            analyze_this_sheet(self.sheet)
+            self.analyze_this_sheet()
         else:
             raise RuntimeError('numer_of_sheets = %d' % numer_of_sheets)
 
