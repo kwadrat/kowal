@@ -23,6 +23,10 @@ def new_module_for_reading_spreadsheet():
 def check_module_dependencies_linux():
     new_module_for_reading_spreadsheet()
 
+def verify_for_equal(tmp_text, expected):
+    if tmp_text != expected:
+        raise RuntimeError('tmp_text = %s' % repr(tmp_text))
+
 class DataReader:
     def __init__(self):
         '''
