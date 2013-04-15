@@ -39,6 +39,12 @@ class DataReader:
         if tmp_text != expected:
             raise RuntimeError('tmp_text = %s' % repr(tmp_text))
 
+    def detect_sheet_header(self):
+        '''
+        DataReader:
+        '''
+        self.check_for_constant_string('B', 2, u'Raport energii godzinowej dla ')
+
     def detect_data_rows(self):
         '''
         DataReader:
