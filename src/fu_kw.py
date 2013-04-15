@@ -26,4 +26,5 @@ def analyze_this_file(single_file):
     pass
 
 def analyze_excel_files(filenames):
-    pass
+    for single_file in filenames:
+        analyze_this_file(single_file)
