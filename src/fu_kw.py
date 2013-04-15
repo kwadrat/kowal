@@ -38,16 +38,6 @@ def analyze_this_sheet(sheet):
     data_rows = xrange(6, nrows - 3)
     print data_rows
 
-def analyze_this_file(single_file):
-    xlrd = new_module_for_reading_spreadsheet()
-    book = xlrd.open_workbook(single_file)
-    numer_of_sheets = book.nsheets
-    if numer_of_sheets == 1:
-        sheet = book.sheet_by_name(u'Report')
-        analyze_this_sheet(sheet)
-    else:
-        raise RuntimeError('numer_of_sheets = %d' % numer_of_sheets)
-
 class DataReader:
     def analyze_this_file(self, single_file):
         '''
