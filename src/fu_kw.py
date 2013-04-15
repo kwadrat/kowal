@@ -23,7 +23,13 @@ def check_module_dependencies_linux():
     new_module_for_reading_spreadsheet()
 
 def analyze_this_file(single_file):
-    pass
+    xlrd = new_module_for_reading_spreadsheet()
+    book = xlrd.open_workbook(single_file)
+    numer_of_sheets = book.nsheets
+    if numer_of_sheets == 1:
+        pass
+    else:
+        raise RuntimeError('numer_of_sheets = %d' % numer_of_sheets)
 
 def analyze_excel_files(filenames):
     for single_file in filenames:
