@@ -39,6 +39,19 @@ def analyze_this_sheet(sheet):
     print data_rows
 
 class DataReader:
+    def analyze_this_sheet(self):
+        '''
+        DataReader:
+        '''
+        nrows = self.sheet.nrows
+        header_col = fv_kw.vx_zero.vx_lt('A')
+        check_for_constant_string(self.sheet, nrows - 1, header_col, u'Suma')
+        check_for_constant_string(self.sheet, nrows - 2, header_col, u'Data')
+        check_for_constant_string(self.sheet, nrows - 3, header_col, u'Maksimum')
+        check_for_constant_string(self.sheet, 5, header_col, u'Data')
+        data_rows = xrange(6, nrows - 3)
+        print data_rows
+
     def analyze_this_file(self, single_file):
         '''
         DataReader:
