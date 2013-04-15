@@ -25,14 +25,6 @@ def vx_lt(napis):
         raise RuntimeError('Nieobslugiwany napis kolumny: %s' % repr(napis))
     return wynik
 
-def vx_rev_lt(liczba):
-    if liczba > 26:
-        major, minor = divmod(liczba - 1, 26)
-        wynik = vx_rev_lt(major) + vx_litera(minor + 1)
-    else:
-        wynik = vx_litera(liczba)
-    return wynik
-
 class ColCalc:
     def __init__(self, my_offset):
         '''
@@ -96,10 +88,6 @@ class TestKolumnLiterowych(unittest.TestCase):
         self.assertEqual(vx_lt('AB'), 28)
         self.assertEqual(vx_lt('BA'), 53)
         self.assertRaises(RuntimeError, vx_lt, 'AAA')
-        self.assertEqual(vx_rev_lt(1), 'A')
-        self.assertEqual(vx_rev_lt(26), 'Z')
-        self.assertEqual(vx_rev_lt(27), 'AA')
-        self.assertEqual(vx_rev_lt(702), 'ZZ')
         self.assertRaises(RuntimeError, vx_litera, 0)
         self.assertRaises(RuntimeError, vx_litera, 27)
 
