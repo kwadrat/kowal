@@ -101,3 +101,22 @@ class TestKolumnLiterowych(unittest.TestCase):
         self.assertEqual(vx_rev_lt(702), 'ZZ')
         self.assertRaises(RuntimeError, vx_litera, 0)
         self.assertRaises(RuntimeError, vx_litera, 27)
+
+    def test_with_offset_one(self):
+        '''
+        TestKolumnLiterowych:
+        '''
+        self.assertEqual(vx_one.vx_porz('A'), 1)
+        self.assertEqual(vx_one.vx_porz('Z'), 26)
+        self.assertEqual(vx_one.vx_lt('A'), 1)
+        self.assertEqual(vx_one.vx_lt('Z'), 26)
+        self.assertEqual(vx_one.vx_lt('AA'), 27)
+        self.assertEqual(vx_one.vx_lt('AB'), 28)
+        self.assertEqual(vx_one.vx_lt('BA'), 53)
+        self.assertRaises(RuntimeError, vx_one.vx_lt, 'AAA')
+        self.assertEqual(vx_one.vx_rev_lt(1), 'A')
+        self.assertEqual(vx_one.vx_rev_lt(26), 'Z')
+        self.assertEqual(vx_one.vx_rev_lt(27), 'AA')
+        self.assertEqual(vx_one.vx_rev_lt(702), 'ZZ')
+        self.assertRaises(RuntimeError, vx_one.vx_litera, 0)
+        self.assertRaises(RuntimeError, vx_one.vx_litera, 27)
