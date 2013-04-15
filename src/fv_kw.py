@@ -44,14 +44,14 @@ class ColCalc:
         '''
         ColCalc:
         '''
-        return ord(litera.upper()) - ord('A') + 1
+        return ord(litera.upper()) - ord('A') + self.my_offset
 
     def vx_litera(self, liczba):
         '''
         ColCalc:
         '''
-        if 1 <= liczba <= 26:
-            return chr(ord('A') + liczba - 1)
+        if self.my_offset <= liczba <= 25 + self.my_offset:
+            return chr(ord('A') + liczba - self.my_offset)
         else:
             raise RuntimeError('Poza zakresem?: %s' % repr(liczba))
 
@@ -64,7 +64,7 @@ class ColCalc:
         if ile == 1:
             wynik = self.vx_porz(napis)
         elif ile == 2:
-            wynik = self.vx_porz(napis[0]) * 26 + self.vx_porz(napis[1])
+            wynik = (self.vx_porz(napis[0]) + 1 - self.my_offset) * 26 + self.vx_porz(napis[1])
         else:
             raise RuntimeError('Nieobslugiwany napis kolumny: %s' % repr(napis))
         return wynik
@@ -73,9 +73,9 @@ class ColCalc:
         '''
         ColCalc:
         '''
-        if liczba > 26:
-            a, b = divmod(liczba - 1, 26)
-            wynik = vx_rev_lt(a) + self.vx_litera(b + 1)
+        if liczba > 25 + self.my_offset:
+            a, b = divmod(liczba - self.my_offset, 26)
+            wynik = vx_rev_lt(a) + self.vx_litera(b + self.my_offset)
         else:
             wynik = self.vx_litera(liczba)
         return wynik
