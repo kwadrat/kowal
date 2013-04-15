@@ -75,7 +75,7 @@ class ColCalc:
         '''
         if liczba > 25 + self.my_offset:
             major, minor = divmod(liczba - self.my_offset, 26)
-            wynik = vx_rev_lt(major) + self.vx_litera(minor + self.my_offset)
+            wynik = self.vx_rev_lt(major - 1 + self.my_offset) + self.vx_litera(minor + self.my_offset)
         else:
             wynik = self.vx_litera(liczba)
         return wynik
