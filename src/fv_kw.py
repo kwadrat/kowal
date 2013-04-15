@@ -62,9 +62,9 @@ class ColCalc:
         '''
         ile = len(napis)
         if ile == 1:
-            wynik = vx_porz(napis)
+            wynik = self.vx_porz(napis)
         elif ile == 2:
-            wynik = vx_porz(napis[0]) * 26 + vx_porz(napis[1])
+            wynik = self.vx_porz(napis[0]) * 26 + self.vx_porz(napis[1])
         else:
             raise RuntimeError('Nieobslugiwany napis kolumny: %s' % repr(napis))
         return wynik
