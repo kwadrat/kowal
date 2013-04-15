@@ -65,8 +65,7 @@ class DataReader:
         DataReader:
         '''
         tmp_text = self.vx_peek(my_col, my_row)
-        if tmp_text != expected:
-            raise RuntimeError('tmp_text = %s' % repr(tmp_text))
+        verify_for_equal(tmp_text, expected)
 
     def detect_sheet_header(self):
         '''
