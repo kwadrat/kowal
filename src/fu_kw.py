@@ -78,6 +78,7 @@ class DataReader:
         '''
         DataReader:
         '''
+        self.xlrd = xlrd
         self.book = xlrd.open_workbook(single_file)
         numer_of_sheets = self.book.nsheets
         if numer_of_sheets == 1:
