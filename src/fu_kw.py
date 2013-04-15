@@ -59,6 +59,7 @@ class DataReader:
             raise RuntimeError('numer_of_sheets = %d' % numer_of_sheets)
 
 def analyze_excel_files(filenames):
+    xlrd = new_module_for_reading_spreadsheet()
     for single_file in filenames:
         obk = DataReader()
         obk.analyze_this_file(single_file)
