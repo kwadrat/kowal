@@ -35,6 +35,7 @@ class DataReader:
         DataReader:
         '''
         self.vx_zero = fv_kw.vx_zero
+        self.day_zero = (0, 0, 0)
 
     def vx_num_peek(self, my_col, my_row):
         '''
