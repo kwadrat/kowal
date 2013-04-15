@@ -32,6 +32,9 @@ def analyze_this_sheet(sheet):
     check_for_constant_string(sheet, nrows - 1, 0, u'Suma')
     check_for_constant_string(sheet, nrows - 2, 0, u'Data')
     check_for_constant_string(sheet, nrows - 3, 0, u'Maksimum')
+    check_for_constant_string(sheet, 5, 0, u'Data')
+    data_rows = xrange(6, nrows - 3)
+    print data_rows
 
 def analyze_this_file(single_file):
     xlrd = new_module_for_reading_spreadsheet()
