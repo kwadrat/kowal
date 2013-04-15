@@ -22,5 +22,8 @@ def new_module_for_reading_spreadsheet():
 def check_module_dependencies_linux():
     new_module_for_reading_spreadsheet()
 
+def analyze_this_file(single_file):
+    pass
+
 def analyze_excel_files(filenames):
     pass
