@@ -6,12 +6,6 @@ import unittest
 def vx_porz(litera):
     return ord(litera.upper()) - ord('A') + 1
 
-def vx_litera(liczba):
-    if 1 <= liczba <= 26:
-        return chr(ord('A') + liczba - 1)
-    else:
-        raise RuntimeError('Poza zakresem?: %s' % repr(liczba))
-
 class ColCalc:
     def __init__(self, my_offset):
         '''
@@ -69,8 +63,6 @@ class TestKolumnLiterowych(unittest.TestCase):
         '''
         self.assertEqual(vx_porz('A'), 1)
         self.assertEqual(vx_porz('Z'), 26)
-        self.assertRaises(RuntimeError, vx_litera, 0)
-        self.assertRaises(RuntimeError, vx_litera, 27)
 
     def test_with_offset_zero(self):
         '''
