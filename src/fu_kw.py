@@ -64,4 +64,5 @@ class DataReader:
 
 def analyze_excel_files(filenames):
     for single_file in filenames:
-        analyze_this_file(single_file)
+        obk = DataReader()
+        obk.analyze_this_file(single_file)
