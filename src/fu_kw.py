@@ -49,6 +49,7 @@ class DataReader:
         self.check_for_constant_string('M', 2, u'kWh')
         self.check_for_constant_string('B', 3, u'Za okres')
         self.check_for_constant_string('D', 3, u'od')
+        self.check_for_constant_string('G', 3, u'do ')
 
     def detect_data_rows(self):
         '''
