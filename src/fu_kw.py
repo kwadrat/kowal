@@ -29,6 +29,14 @@ def check_for_constant_string(sheet, my_row, my_col, expected):
         raise RuntimeError('tmp_text = %s' % repr(tmp_text))
 
 class DataReader:
+    def check_for_constant_string(self, my_row, my_col, expected):
+        '''
+        DataReader:
+        '''
+        tmp_text = self.sheet.cell(my_row, my_col).value
+        if tmp_text != expected:
+            raise RuntimeError('tmp_text = %s' % repr(tmp_text))
+
     def analyze_this_sheet(self):
         '''
         DataReader:
