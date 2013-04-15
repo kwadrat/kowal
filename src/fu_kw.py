@@ -24,6 +24,12 @@ def check_module_dependencies_linux():
     new_module_for_reading_spreadsheet()
 
 class DataReader:
+    def __init__(self):
+        '''
+        DataReader:
+        '''
+        self.vx_zero = fv_kw.vx_zero
+
     def vx_num_peek(self, my_col, my_row):
         '''
         DataReader:
