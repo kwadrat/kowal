@@ -31,6 +31,13 @@ class DataReader:
         header_col = fv_kw.vx_zero.vx_lt(my_col)
         return self.sheet.cell_value(my_row - 1, header_col)
 
+    def vx_date(self, my_col, my_row):
+        '''
+        DataReader:
+        '''
+        value = self.vx_peek(my_col, my_row)
+        return self.xlrd.xldate_as_tuple(value, self.book.datemode)
+
     def check_for_constant_string(self, my_col, my_row, expected):
         '''
         DataReader:
