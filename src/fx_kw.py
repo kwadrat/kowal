@@ -15,6 +15,9 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+def describe_column():
+    pass
+
 class HourServer:
     def __init__(self, column_index):
         '''
@@ -33,3 +36,5 @@ class TestHourPatterns(unittest.TestCase):
         '''
         TestHourPatterns:
         '''
+        describe_column()
+
