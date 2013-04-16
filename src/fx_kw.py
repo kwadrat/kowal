@@ -27,3 +27,9 @@ def prepare_time_headers():
     for column_index in xrange(24):
         all_time_columns.append(HourServer(column_index))
     return all_time_columns
+
+class TestHourPatterns(unittest.TestCase):
+    def test_hour_patterns(self):
+        '''
+        TestHourPatterns:
+        '''
