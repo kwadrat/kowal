@@ -39,3 +39,4 @@ class TestHourPatterns(unittest.TestCase):
         '''
         self.assertEqual(describe_column(0), '01:00')
         self.assertEqual(describe_column(1), '02:00')
+        self.assertEqual(describe_column(22), '23:00')
