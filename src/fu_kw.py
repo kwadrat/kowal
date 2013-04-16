@@ -99,7 +99,7 @@ class DataReader:
             expected = one_column.header_for_hour_column
             verify_for_equal(tmp_text, expected)
 
-    def detect_sheet_header(self):
+    def detect_sheet_header(self, data_headers):
         '''
         DataReader:
         '''
@@ -115,7 +115,6 @@ class DataReader:
         self.check_for_constant_string('D', 3, u'od')
         self.check_for_constant_string('G', 3, u'do ')
         self.check_for_constant_string('B', 5, u'Godziny')
-        data_headers = self.prepare_time_columns()
         self.verify_hours_headers(data_headers)
 
     def detect_data_rows(self):
@@ -133,7 +132,8 @@ class DataReader:
         '''
         DataReader:
         '''
-        self.detect_sheet_header()
+        data_headers = self.prepare_time_columns()
+        self.detect_sheet_header(data_headers)
         data_rows = self.detect_data_rows()
         print data_rows
 
