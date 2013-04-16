@@ -90,7 +90,7 @@ class DataReader:
         all_time_columns = fx_kw.prepare_time_headers(start_col)
         return all_time_columns
 
-    def verify_hours_headers(self):
+    def verify_hours_headers(self, data_headers):
         '''
         DataReader:
         '''
@@ -116,7 +116,7 @@ class DataReader:
         self.check_for_constant_string('G', 3, u'do ')
         self.check_for_constant_string('B', 5, u'Godziny')
         data_headers = self.all_time_columns = self.prepare_time_columns()
-        self.verify_hours_headers()
+        self.verify_hours_headers(data_headers)
 
     def detect_data_rows(self):
         '''
