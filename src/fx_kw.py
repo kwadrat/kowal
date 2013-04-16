@@ -14,7 +14,11 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 class HourServer:
-    pass
+    def __init__(self, column_index):
+        '''
+        HourServer:
+        '''
+        self.column_index = column_index
 
 def prepare_time_headers():
     pass
