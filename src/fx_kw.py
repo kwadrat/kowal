@@ -23,7 +23,7 @@ def describe_column(column_index):
     return '%02d:00' % hour_number
 
 class HourServer:
-    def __init__(self, column_index):
+    def __init__(self, start_col, column_index):
         '''
         HourServer:
         '''
@@ -32,7 +32,7 @@ class HourServer:
 def prepare_time_headers(start_col):
     all_time_columns = []
     for column_index in xrange(24):
-        all_time_columns.append(HourServer(column_index))
+        all_time_columns.append(HourServer(start_col, column_index))
     return all_time_columns
 
 class TestHourPatterns(unittest.TestCase):
