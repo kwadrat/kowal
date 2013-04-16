@@ -29,6 +29,7 @@ class HourServer:
         '''
         self.column_index = column_index
         self.col_in_sheet = start_col + self.column_index
+        self.header_for_hour_column = describe_column(column_index)
 
 def prepare_time_headers(start_col):
     all_time_columns = []
