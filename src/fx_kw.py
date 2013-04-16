@@ -13,5 +13,8 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+class HourServer:
+    pass
+
 def prepare_time_headers():
     pass
