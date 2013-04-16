@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+import unittest
+
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 '''.splitlines()]
 
