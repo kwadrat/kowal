@@ -82,6 +82,14 @@ class DataReader:
         tmp_text = self.vx_peek(my_col, my_row)
         verify_for_equal(tmp_text, expected)
 
+    def prepare_time_columns(self):
+        '''
+        DataReader:
+        '''
+        start_col = self.vx_letter_num('B')
+        all_time_columns = fx_kw.prepare_time_headers(start_col)
+        return all_time_columns
+
     def verify_hours_headers(self):
         '''
         DataReader:
