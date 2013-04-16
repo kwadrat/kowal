@@ -94,7 +94,7 @@ class DataReader:
         '''
         DataReader:
         '''
-        for one_column in self.all_time_columns:
+        for one_column in data_headers:
             tmp_text = self.vx_num_time(one_column.col_in_sheet, 6)
             expected = one_column.header_for_hour_column
             verify_for_equal(tmp_text, expected)
