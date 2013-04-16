@@ -15,6 +15,8 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+midnight_hour_wrap = {24: 0}
+
 def describe_column(column_index):
     hour_number = column_index + 1
     return '%02d:00' % hour_number
