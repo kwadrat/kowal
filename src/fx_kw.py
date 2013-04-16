@@ -16,7 +16,7 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 def describe_column():
-    pass
+    return '01:00'
 
 class HourServer:
     def __init__(self, column_index):
@@ -36,5 +36,5 @@ class TestHourPatterns(unittest.TestCase):
         '''
         TestHourPatterns:
         '''
-        describe_column()
+        self.assertEqual(describe_column(), '01:00')
 
