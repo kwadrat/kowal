@@ -21,4 +21,7 @@ class HourServer:
         self.column_index = column_index
 
 def prepare_time_headers():
-    pass
+    all_time_columns = []
+    for column_index in xrange(24):
+        all_time_columns.append(HourServer(column_index))
+    return all_time_columns
