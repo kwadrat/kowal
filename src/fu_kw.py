@@ -87,7 +87,7 @@ class DataReader:
         DataReader:
         '''
         start_col = self.vx_letter_num('B')
-        self.all_time_columns = fx_kw.prepare_time_headers()
+        self.all_time_columns = fx_kw.prepare_time_headers(start_col)
         tmp_text = self.vx_num_time(start_col, 6)
         expected = '01:00'
         verify_for_equal(tmp_text, expected)
