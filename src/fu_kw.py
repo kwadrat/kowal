@@ -87,11 +87,12 @@ class DataReader:
         DataReader:
         '''
         start_col = self.vx_letter_num('B')
-        self.all_time_columns = fx_kw.prepare_time_headers(start_col)
-        for one_column in self.all_time_columns:
+        all_time_columns = fx_kw.prepare_time_headers(start_col)
+        for one_column in all_time_columns:
             tmp_text = self.vx_num_time(one_column.col_in_sheet, 6)
             expected = one_column.header_for_hour_column
             verify_for_equal(tmp_text, expected)
+        return all_time_columns
 
     def detect_sheet_header(self):
         '''
@@ -109,7 +110,7 @@ class DataReader:
         self.check_for_constant_string('D', 3, u'od')
         self.check_for_constant_string('G', 3, u'do ')
         self.check_for_constant_string('B', 5, u'Godziny')
-        self.verify_hours_headers()
+        self.all_time_columns = self.verify_hours_headers()
 
     def detect_data_rows(self):
         '''
