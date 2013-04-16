@@ -87,8 +87,8 @@ class DataReader:
         DataReader:
         '''
         start_col = self.vx_letter_num('B')
-        all_time_columns = fx_kw.prepare_time_headers(start_col)
-        return all_time_columns
+        data_headers = fx_kw.prepare_time_headers(start_col)
+        return data_headers
 
     def verify_hours_headers(self, data_headers):
         '''
