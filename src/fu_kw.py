@@ -86,6 +86,7 @@ class DataReader:
         '''
         DataReader:
         '''
+        self.all_time_columns = fx_kw.prepare_time_headers()
         start_col = self.vx_letter_num('B')
         tmp_text = self.vx_num_time(start_col, 6)
         expected = '01:00'
