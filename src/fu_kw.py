@@ -86,7 +86,6 @@ class DataReader:
         '''
         DataReader:
         '''
-        template_hours = range(1, 24) + [0]
         start_col = self.vx_letter_num('B')
         tmp_text = self.vx_num_time(start_col, 6)
         expected = '01:00'
