@@ -88,9 +88,10 @@ class DataReader:
         '''
         start_col = self.vx_letter_num('B')
         self.all_time_columns = fx_kw.prepare_time_headers(start_col)
-        tmp_text = self.vx_num_time(start_col, 6)
-        expected = '01:00'
-        verify_for_equal(tmp_text, expected)
+        for one_column in self.all_time_columns:
+            tmp_text = self.vx_num_time(one_column.col_in_sheet, 6)
+            expected = one_column.header_for_hour_column
+            verify_for_equal(tmp_text, expected)
 
     def detect_sheet_header(self):
         '''
