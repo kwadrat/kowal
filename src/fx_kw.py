@@ -12,3 +12,6 @@ for i in NazwyModulow:
             exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
         else:
             exec 'import %(modul)s' % dict(modul = i)
+
+def prepare_time_headers():
+    pass
