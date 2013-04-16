@@ -19,6 +19,7 @@ midnight_hour_wrap = {24: 0}
 
 def describe_column(column_index):
     hour_number = column_index + 1
+    hour_number = midnight_hour_wrap.get(hour_number, hour_number)
     return '%02d:00' % hour_number
 
 class HourServer:
@@ -42,3 +43,4 @@ class TestHourPatterns(unittest.TestCase):
         self.assertEqual(describe_column(0), '01:00')
         self.assertEqual(describe_column(1), '02:00')
         self.assertEqual(describe_column(22), '23:00')
+        self.assertEqual(describe_column(23), '00:00')
