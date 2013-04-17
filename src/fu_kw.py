@@ -144,6 +144,11 @@ class DataReader:
         self.check_for_constant_string('A', nrows, u'Suma')
         return xrange(7, nrows - 2)
 
+    def enter_data(self, dfb, key_object, data_headers, data_rows):
+        '''
+        DataReader:
+        '''
+
     def analyze_this_sheet(self, dfb):
         '''
         DataReader:
