@@ -137,7 +137,7 @@ class DataReader:
         data_rows = self.detect_data_rows()
         print data_rows
 
-    def analyze_this_file(self, xlrd, single_file):
+    def analyze_this_file(self, dfb, xlrd, single_file):
         '''
         DataReader:
         '''
@@ -154,4 +154,4 @@ def analyze_excel_files(dfb, filenames):
     xlrd = new_module_for_reading_spreadsheet()
     for single_file in filenames:
         obk = DataReader()
-        obk.analyze_this_file(xlrd, single_file)
+        obk.analyze_this_file(dfb, xlrd, single_file)
