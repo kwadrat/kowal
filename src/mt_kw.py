@@ -210,4 +210,5 @@ def generate_one_file(dfb, table_name, output_file):
     wbk.save(output_file)
 
 def generate_excel_files(dfb):
-    pass
+    generate_one_file(dfb, 'uu_energy', 'e.xls')
+    generate_one_file(dfb, 'uu_power', 'p.xls')
