@@ -258,10 +258,7 @@ def generate_one_file(dfb, table_name, output_file):
         all_dates = unique_sorted(selected_data, 'm_date')
         all_hours = unique_a_sorted(selected_data, 'm_time')
         generate_dates_vertically(sheet, all_dates)
-        for nr, one_hour in enumerate(all_hours):
-            row = 0
-            col = nr + 1
-            sheet.write(row, col, one_hour)
+        generate_hours_horizontally(sheet, all_hours)
         for my_data in selected_data:
             my_time = my_data['m_time'][:5]
             row = all_dates.index(my_data['m_date']) + 1
