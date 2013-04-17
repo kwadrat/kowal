@@ -172,7 +172,8 @@ class DataReader:
         '''
         my_hour = single_column.canonical_hour
         if not entry_already_inserted(dfb, key_object, row_date, my_hour):
-            pass
+            value = self.vx_num_peek(single_column.col_in_sheet, single_row)
+            insert_energy_entry(dfb, key_object, row_date, my_hour, value)
 
     def enter_data(self, dfb, key_object, data_headers, data_rows):
         '''
