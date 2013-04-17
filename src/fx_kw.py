@@ -17,6 +17,9 @@ for i in NazwyModulow:
 
 midnight_hour_wrap = {24: 0}
 
+def change_to_full_hour(hour_number):
+    return '%02d:00' % hour_number
+
 def describe_column(column_index):
     hour_number = column_index + 1
     hour_number = midnight_hour_wrap.get(hour_number, hour_number)
