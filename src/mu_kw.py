@@ -23,3 +23,18 @@ def check_module_dependencies_linux():
 def verify_for_equal(tmp_text, expected):
     if tmp_text != expected:
         raise RuntimeError('tmp_text = %s' % repr(tmp_text))
+
+def locate_object_key(dfb, under_name):
+    key_object = dfb.query_dct("select k_object from uu_object where account='%(under_name)s';" % dict(
+        under_name=under_name,
+        ))
+    if not key_object:
+        key_object = dfb.query_dct("insert into uu_object (account) values ('%(under_name)s') returning k_object;" % dict(
+            under_name=under_name,
+            ))
+    ret_size = len(key_object)
+    if ret_size == 1:
+        key_object = key_object[0]['k_object'];
+    else:
+        raise RuntimeError('ret_size = %d' % ret_size)
+    return key_object

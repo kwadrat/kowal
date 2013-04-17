@@ -18,21 +18,6 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-def locate_object_key(dfb, under_name):
-    key_object = dfb.query_dct("select k_object from uu_object where account='%(under_name)s';" % dict(
-        under_name=under_name,
-        ))
-    if not key_object:
-        key_object = dfb.query_dct("insert into uu_object (account) values ('%(under_name)s') returning k_object;" % dict(
-            under_name=under_name,
-            ))
-    ret_size = len(key_object)
-    if ret_size == 1:
-        key_object = key_object[0]['k_object'];
-    else:
-        raise RuntimeError('ret_size = %d' % ret_size)
-    return key_object
-
 def entry_already_inserted(dfb, key_object, row_date, my_hour):
     return dfb.query_dct("select * from uu_energy where f_object=%(f_object)d and m_date='%(m_date)s' and m_time='%(m_time)s';" % dict(
         f_object=key_object,
@@ -178,7 +163,7 @@ class DataReader:
         '''
         data_headers = self.prepare_time_columns()
         under_name = self.detect_sheet_header(data_headers)
-        key_object = locate_object_key(dfb, under_name)
+        key_object = mu_kw.locate_object_key(dfb, under_name)
         data_rows = self.detect_data_rows()
         self.enter_data(dfb, key_object, data_headers, data_rows)
         print data_rows
