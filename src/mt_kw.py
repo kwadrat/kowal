@@ -212,6 +212,7 @@ def load_from_db(dfb, table_name):
 
 def generate_one_file(dfb, table_name, output_file):
     import xlwt
+    dane_bazy = load_from_db(dfb, table_name)
     wbk = xlwt.Workbook()
     wbk.save(output_file)
 
