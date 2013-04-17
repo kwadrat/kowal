@@ -206,7 +206,7 @@ def analyze_excel_files(dfb, filenames):
         obk.analyze_this_file(dfb, xlrd, single_file)
 
 def load_from_db(dfb, table_name):
-    return dfb.query_dct("select uu_object.account,m_date,m_time,m_value from %(table_name)s,uu_object where %(table_name)s.f_object=uu_object.k_object limit 10;" % dict(
+    return dfb.query_dct("select uu_object.account,m_date,m_time,m_value from %(table_name)s,uu_object where %(table_name)s.f_object=uu_object.k_object;" % dict(
         table_name=table_name,
         ))
 
