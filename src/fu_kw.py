@@ -150,7 +150,7 @@ class DataReader:
         else:
             raise RuntimeError('numer_of_sheets = %d' % numer_of_sheets)
 
-def analyze_excel_files(filenames):
+def analyze_excel_files(dfb, filenames):
     xlrd = new_module_for_reading_spreadsheet()
     for single_file in filenames:
         obk = DataReader()
