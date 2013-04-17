@@ -52,6 +52,14 @@ def entry_already_inserted(dfb, key_object, row_date, my_hour):
         m_time=my_hour,
         ))
 
+def insert_energy_entry(dfb, key_object, row_date, my_hour, value):
+    dfb.query_silent("insert into uu_energy (f_object, m_date, m_time, m_value) values (%(f_object)d, '%(m_date)s', '%(m_time)s', %(m_value)f);" % dict(
+        f_object=key_object,
+        m_date=row_date,
+        m_time=my_hour,
+        m_value=value,
+        ))
+
 class DataReader:
     def __init__(self):
         '''
