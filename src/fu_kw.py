@@ -45,6 +45,13 @@ def locate_object_key(dfb, under_name):
         raise RuntimeError('ret_size = %d' % ret_size)
     return key_object
 
+def entry_already_inserted(dfb, key_object, row_date, my_hour):
+    return dfb.query_dct("select * from uu_energy where f_object=%(f_object)d and m_date='%(m_date)s' and m_time='%(m_time)s';" % dict(
+        f_object=key_object,
+        m_date=row_date,
+        m_time=my_hour,
+        ))
+
 class DataReader:
     def __init__(self):
         '''
