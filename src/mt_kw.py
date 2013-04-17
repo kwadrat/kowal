@@ -220,6 +220,7 @@ def generate_one_file(dfb, table_name, output_file):
     dane_bazy = load_from_db(dfb, table_name)
     object_names = unique_sorted(dane_bazy, 'account')
     all_dates = unique_sorted(dane_bazy, 'm_date')
+    all_hours = unique_sorted(dane_bazy, 'm_time')
     wbk = xlwt.Workbook()
     wbk.save(output_file)
 
