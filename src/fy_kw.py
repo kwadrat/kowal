@@ -8,3 +8,5 @@ lxa_2_inst = """\
 t_f_index"""
 lxa_3_inst = """\
 CREATE INDEX a ON t(f);"""
+lxa_4_inst = """\
+CREATE INDEX %(name)s ON %(table)s(%(field)s);"""
