@@ -19,9 +19,6 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-def check_module_dependencies_linux():
-    mu_kw.new_module_for_reading_spreadsheet()
-
 def verify_for_equal(tmp_text, expected):
     if tmp_text != expected:
         raise RuntimeError('tmp_text = %s' % repr(tmp_text))
