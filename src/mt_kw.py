@@ -127,7 +127,7 @@ class DataReader:
         data_headers = fx_kw.prepare_time_headers(start_col)
         return data_headers
 
-    def detect_sheet_header(self, data_headers):
+    def detect_sheet_header(self):
         '''
         DataReader:
         '''
@@ -175,7 +175,7 @@ class DataReader:
         DataReader:
         '''
         data_headers = self.prepare_time_columns()
-        under_name = self.detect_sheet_header(data_headers)
+        under_name = self.detect_sheet_header()
         key_object = locate_object_key(dfb, under_name)
         data_rows = self.detect_data_rows()
         self.enter_data(dfb, key_object, data_rows)
