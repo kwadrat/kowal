@@ -128,7 +128,7 @@ class DataReader:
         self.check_for_constant_string('A', nrows, u'Suma')
         return xrange(7, nrows - 2)
 
-    def analyze_this_sheet(self):
+    def analyze_this_sheet(self, dfb):
         '''
         DataReader:
         '''
@@ -146,7 +146,7 @@ class DataReader:
         numer_of_sheets = self.book.nsheets
         if numer_of_sheets == 1:
             self.sheet = self.book.sheet_by_name(u'Report')
-            self.analyze_this_sheet()
+            self.analyze_this_sheet(dfb)
         else:
             raise RuntimeError('numer_of_sheets = %d' % numer_of_sheets)
 
