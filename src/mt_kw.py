@@ -103,7 +103,10 @@ class DataReader:
         if size == 6:
             last = value[5]
             if last == 0:
-                return value[:3], value[3:5]
+                my_point = datetime.datetime(*value) - datetime.timedelta(seconds=15*60)
+                my_date = my_point.strftime('%Y.%m.%d')
+                my_time = my_point.strftime('%H:%M')
+                return my_date, my_time
             else:
                 raise RuntimeError('last = %s' % repr(last))
         else:
