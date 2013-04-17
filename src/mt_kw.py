@@ -246,8 +246,7 @@ def generate_hours_horizontally(sheet, all_hours):
         col = nr + 1
         sheet.write(row, col, one_hour)
 
-def generate_one_file(dfb, table_name, output_file):
-    import xlwt
+def generate_one_file(xlwt, dfb, table_name, output_file):
     dane_bazy = load_from_db(dfb, table_name)
     object_names = unique_sorted(dane_bazy, 'account')
     wbk = xlwt.Workbook()
@@ -267,5 +266,6 @@ def generate_one_file(dfb, table_name, output_file):
     wbk.save(output_file)
 
 def generate_excel_files(dfb):
-    generate_one_file(dfb, 'uu_energy', 'e.xls')
-    generate_one_file(dfb, 'uu_power', 'p.xls')
+    import xlwt
+    generate_one_file(xlwt, dfb, 'uu_energy', 'e.xls')
+    generate_one_file(xlwt, dfb, 'uu_power', 'p.xls')
