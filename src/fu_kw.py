@@ -139,6 +139,7 @@ class DataReader:
         '''
         data_headers = self.prepare_time_columns()
         under_name = self.detect_sheet_header(data_headers)
+        key_object = locate_object_key(dfb, under_name)
         data_rows = self.detect_data_rows()
         print data_rows
 
