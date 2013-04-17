@@ -203,3 +203,6 @@ def analyze_excel_files(dfb, filenames):
     for single_file in filenames:
         obk = DataReader()
         obk.analyze_this_file(dfb, xlrd, single_file)
+
+def generate_excel_files(dfb):
+    pass
