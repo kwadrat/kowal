@@ -204,5 +204,10 @@ def analyze_excel_files(dfb, filenames):
         obk = DataReader()
         obk.analyze_this_file(dfb, xlrd, single_file)
 
+def generate_one_file(dfb, table_name, output_file):
+    import xlwt
+    wbk = xlwt.Workbook()
+    wbk.save(output_file)
+
 def generate_excel_files(dfb):
     pass
