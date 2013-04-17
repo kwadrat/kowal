@@ -164,7 +164,7 @@ class DataReader:
         '''
         row_date, my_hour = duo_date
         if not entry_already_inserted(dfb, key_object, row_date, my_hour):
-            value = self.vx_num_peek(single_column.col_in_sheet, single_row)
+            value = self.vx_peek('C', single_row)
             insert_energy_entry(dfb, key_object, row_date, my_hour, value)
 
     def enter_data(self, dfb, key_object, data_rows):
