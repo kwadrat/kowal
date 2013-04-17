@@ -158,11 +158,11 @@ class DataReader:
         self.check_for_constant_string('B', nrows, u'Time Max')
         return xrange(13, nrows - 2)
 
-    def fetch_field(self, dfb, key_object, single_row, row_date):
+    def fetch_field(self, dfb, key_object, single_row, duo_date):
         '''
         DataReader:
         '''
-        my_hour = single_column.canonical_hour
+        row_date, my_hour = duo_date
         if not entry_already_inserted(dfb, key_object, row_date, my_hour):
             value = self.vx_num_peek(single_column.col_in_sheet, single_row)
             insert_energy_entry(dfb, key_object, row_date, my_hour, value)
