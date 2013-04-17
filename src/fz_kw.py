@@ -41,3 +41,4 @@ class TestVariousPatterns(unittest.TestCase):
         '''
         self.assertEqual(concatenate_index_name('t', 'f'), fy_kw.lxa_2_inst)
         self.assertEqual(index_create('a', 't', 'f'), fy_kw.lxa_3_inst)
+        self.assertEqual(index_drop('a'), fy_kw.lxa_5_inst)
