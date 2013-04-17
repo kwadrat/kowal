@@ -18,14 +18,6 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-def insert_energy_entry(dfb, key_object, row_date, my_hour, value):
-    dfb.query_silent("insert into uu_energy (f_object, m_date, m_time, m_value) values (%(f_object)d, '%(m_date)s', '%(m_time)s', %(m_value)f);" % dict(
-        f_object=key_object,
-        m_date=row_date,
-        m_time=my_hour,
-        m_value=value,
-        ))
-
 class DataReader:
     def __init__(self):
         '''
@@ -139,7 +131,7 @@ class DataReader:
         my_hour = single_column.canonical_hour
         if not mu_kw.entry_already_inserted(dfb, 'uu_energy', key_object, row_date, my_hour):
             value = self.vx_num_peek(single_column.col_in_sheet, single_row)
-            insert_energy_entry(dfb, key_object, row_date, my_hour, value)
+            mu_kw.insert_energy_entry(dfb, 'uu_energy', key_object, row_date, my_hour, value)
 
     def enter_data(self, dfb, key_object, data_headers, data_rows):
         '''

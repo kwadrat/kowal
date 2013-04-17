@@ -46,3 +46,12 @@ def entry_already_inserted(dfb, n_table, key_object, row_date, my_hour):
         m_date=row_date,
         m_time=my_hour,
         ))
+
+def insert_energy_entry(dfb, n_table, key_object, row_date, my_hour, value):
+    dfb.query_silent("insert into %(n_table)s (f_object, m_date, m_time, m_value) values (%(f_object)d, '%(m_date)s', '%(m_time)s', %(m_value)f);" % dict(
+        n_table=n_table,
+        f_object=key_object,
+        m_date=row_date,
+        m_time=my_hour,
+        m_value=value,
+        ))
