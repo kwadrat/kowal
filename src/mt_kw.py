@@ -220,6 +220,20 @@ def unique_a_sorted(dane_bazy, field):
     object_names.sort()
     return object_names
 
+dict_names = {
+'GIMNAZJUM_NR_7_RYBNIK_SZTOLNIOWA': 'G-7',
+'SZKOLA_PODST_NR_11_RYBNIK_HIBNERA': 'SP-11',
+'SZKOLA_PODSTAWOWA_NR_13_CHWALOWICE': 'SP-13',
+'SZKOLA_PODSTAWOWA_NR_20_RYBNIK_ZIOLOWA': 'SP-20',
+'SZKOLA_PODSTAWOWA_NR_28_RYBNIK_SZEWCZYKA': 'SP-28',
+'SZKOLA_PODST_NR_3_RYBNIK_WOLNA': 'SP-3',
+'SZKOLA_PODSTAWOWA_NR_37_RYBNIK': 'SP-37',
+'ZESPOL_SZKOL_EKON_USLUG_RYBNIK': 'ZSE-U',
+'ZESPOL_SZKOL_TECHNICZNYCH_RYBNIK_KOSCIUSZKI': 'ZST',
+'ZESPOL_SZKOLNO_PRZEDSZK_WIELOPOLE': 'ZSz-P W.',
+'SZKOLA_MUZYCZNA_RYBNIK': 'PSM',
+}
+
 def generate_one_file(dfb, table_name, output_file):
     import xlwt
     dane_bazy = load_from_db(dfb, table_name)
