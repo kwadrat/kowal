@@ -34,6 +34,16 @@ def index_drop(name):
         name=name,
         )
 
+def process_indices(table, field_names, create_flag):
+    if field_names:
+        for single_field in field_names:
+            compound_name = concatenate_index_name(table, single_field)
+            if create_flag:
+                result = index_create(compound_name, table, single_field)
+            else:
+                result = index_drop(compound_name)
+            print result
+
 class TestVariousPatterns(unittest.TestCase):
     def test_various_patterns(self):
         '''
