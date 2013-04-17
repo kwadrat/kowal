@@ -46,14 +46,14 @@ def locate_object_key(dfb, under_name):
     return key_object
 
 def entry_already_inserted(dfb, key_object, row_date, my_hour):
-    return dfb.query_dct("select * from uu_energy where f_object=%(f_object)d and m_date='%(m_date)s' and m_time='%(m_time)s';" % dict(
+    return dfb.query_dct("select * from uu_power where f_object=%(f_object)d and m_date='%(m_date)s' and m_time='%(m_time)s';" % dict(
         f_object=key_object,
         m_date=row_date,
         m_time=my_hour,
         ))
 
 def insert_energy_entry(dfb, key_object, row_date, my_hour, value):
-    dfb.query_silent("insert into uu_energy (f_object, m_date, m_time, m_value) values (%(f_object)d, '%(m_date)s', '%(m_time)s', %(m_value)f);" % dict(
+    dfb.query_silent("insert into uu_power (f_object, m_date, m_time, m_value) values (%(f_object)d, '%(m_date)s', '%(m_time)s', %(m_value)f);" % dict(
         f_object=key_object,
         m_date=row_date,
         m_time=my_hour,
