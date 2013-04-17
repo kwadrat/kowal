@@ -251,10 +251,7 @@ def generate_one_file(dfb, table_name, output_file):
         selected_data = filter(lambda x: x['account'] == name, dane_bazy)
         all_dates = unique_sorted(selected_data, 'm_date')
         all_hours = unique_a_sorted(selected_data, 'm_time')
-        for nr, one_date in enumerate(all_dates):
-            row = nr + 1
-            col = 0
-            sheet.write(row, col, one_date)
+        generate_dates_vertically(sheet, all_dates)
         for nr, one_hour in enumerate(all_hours):
             row = 0
             col = nr + 1
