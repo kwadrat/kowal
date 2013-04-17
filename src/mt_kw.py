@@ -215,6 +215,11 @@ def unique_sorted(dane_bazy, field):
     object_names.sort()
     return object_names
 
+def unique_a_sorted(dane_bazy, field):
+    object_names = list(set(map(lambda x: x[field][:5], dane_bazy)))
+    object_names.sort()
+    return object_names
+
 def generate_one_file(dfb, table_name, output_file):
     import xlwt
     dane_bazy = load_from_db(dfb, table_name)
