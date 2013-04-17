@@ -14,7 +14,5 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 def new_module_for_reading_spreadsheet():
-    '''
-    '''
     import xlrd
     return xlrd
