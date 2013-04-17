@@ -22,6 +22,13 @@ def concatenate_index_name(table, field):
         field=field,
         )
 
+def index_create(name, table, field):
+    return fy_kw.lxa_4_inst % dict(
+        name=name,
+        table=table,
+        field=field,
+        )
+
 class TestVariousPatterns(unittest.TestCase):
     def test_various_patterns(self):
         '''
