@@ -240,6 +240,12 @@ def generate_dates_vertically(sheet, all_dates):
         col = 0
         sheet.write(row, col, one_date)
 
+def generate_hours_horizontally(sheet, all_hours):
+    for nr, one_hour in enumerate(all_hours):
+        row = 0
+        col = nr + 1
+        sheet.write(row, col, one_hour)
+
 def generate_one_file(dfb, table_name, output_file):
     import xlwt
     dane_bazy = load_from_db(dfb, table_name)
