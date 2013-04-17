@@ -10,3 +10,5 @@ lxa_3_inst = """\
 CREATE INDEX a ON t(f);"""
 lxa_4_inst = """\
 CREATE INDEX %(name)s ON %(table)s(%(field)s);"""
+lxa_5_inst = """\
+DROP INDEX a;"""
