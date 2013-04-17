@@ -139,6 +139,9 @@ class DataReader:
         self.check_for_constant_string('B', 7, u'End Time ')
         self.check_for_constant_string('B', 8, u'Report Time')
         self.check_for_constant_string('C', 12, u'kW')
+        under_name = self.vx_peek('C', 10)
+        tmp_format = 'under_name'; print 'Eval:', tmp_format, eval(tmp_format)
+        return under_name
 
     def detect_data_rows(self):
         '''
