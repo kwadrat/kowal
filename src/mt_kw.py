@@ -218,8 +218,7 @@ def unique_sorted(dane_bazy, field):
 def generate_one_file(dfb, table_name, output_file):
     import xlwt
     dane_bazy = load_from_db(dfb, table_name)
-    object_names = list(set(map(lambda x: x['account'], dane_bazy)))
-    object_names.sort()
+    object_names = unique_sorted(dane_bazy, 'account')
     wbk = xlwt.Workbook()
     wbk.save(output_file)
 
