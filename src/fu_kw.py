@@ -30,6 +30,10 @@ def verify_for_equal(tmp_text, expected):
     if tmp_text != expected:
         raise RuntimeError('tmp_text = %s' % repr(tmp_text))
 
+def locate_object_key(dfb, under_name):
+    key_object = None
+    return key_object
+
 class DataReader:
     def __init__(self):
         '''
