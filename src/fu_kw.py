@@ -157,6 +157,7 @@ class DataReader:
         under_name = self.detect_sheet_header(data_headers)
         key_object = locate_object_key(dfb, under_name)
         data_rows = self.detect_data_rows()
+        self.enter_data(dfb, key_object, data_headers, data_rows)
         print data_rows
 
     def analyze_this_file(self, dfb, xlrd, single_file):
