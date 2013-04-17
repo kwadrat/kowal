@@ -219,6 +219,7 @@ def generate_one_file(dfb, table_name, output_file):
     import xlwt
     dane_bazy = load_from_db(dfb, table_name)
     object_names = unique_sorted(dane_bazy, 'account')
+    all_dates = unique_sorted(dane_bazy, 'm_date')
     wbk = xlwt.Workbook()
     wbk.save(output_file)
 
