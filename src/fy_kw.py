@@ -6,3 +6,5 @@ lxa_1_inst = """\
 """
 lxa_2_inst = """\
 t_f_index"""
+lxa_3_inst = """\
+CREATE INDEX a ON t(f);"""
