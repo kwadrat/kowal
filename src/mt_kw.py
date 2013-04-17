@@ -161,7 +161,7 @@ class DataReader:
             value = self.vx_num_peek(single_column.col_in_sheet, single_row)
             insert_energy_entry(dfb, key_object, row_date, my_hour, value)
 
-    def enter_data(self, dfb, key_object, data_headers, data_rows):
+    def enter_data(self, dfb, key_object, data_rows):
         '''
         DataReader:
         '''
@@ -178,7 +178,7 @@ class DataReader:
         under_name = self.detect_sheet_header(data_headers)
         key_object = locate_object_key(dfb, under_name)
         data_rows = self.detect_data_rows()
-        self.enter_data(dfb, key_object, data_headers, data_rows)
+        self.enter_data(dfb, key_object, data_rows)
         print data_rows
 
     def analyze_this_file(self, dfb, xlrd, single_file):
