@@ -19,10 +19,6 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-def verify_for_equal(tmp_text, expected):
-    if tmp_text != expected:
-        raise RuntimeError('tmp_text = %s' % repr(tmp_text))
-
 def locate_object_key(dfb, under_name):
     key_object = dfb.query_dct("select k_object from uu_object where account='%(under_name)s';" % dict(
         under_name=under_name,
@@ -113,7 +109,7 @@ class DataReader:
         time_tuple = self.xlrd.xldate_as_tuple(value, self.book.datemode)
         day_part = time_tuple[:3]
         time_part = time_tuple[3:]
-        verify_for_equal(day_part, self.day_zero)
+        mu_kw.verify_for_equal(day_part, self.day_zero)
         return datetime.time(*time_part).strftime('%H:%M')
 
     def check_for_constant_string(self, my_col, my_row, expected):
@@ -121,7 +117,7 @@ class DataReader:
         DataReader:
         '''
         tmp_text = self.vx_peek(my_col, my_row)
-        verify_for_equal(tmp_text, expected)
+        mu_kw.verify_for_equal(tmp_text, expected)
 
     def detect_sheet_header(self):
         '''
