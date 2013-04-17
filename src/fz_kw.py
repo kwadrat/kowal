@@ -27,3 +27,4 @@ class TestVariousPatterns(unittest.TestCase):
         '''
         TestVariousPatterns:
         '''
+        self.assertEqual(concatenate_index_name('t', 'f'), fy_kw.lxa_2_inst)
