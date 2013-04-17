@@ -158,6 +158,14 @@ class DataReader:
         self.check_for_constant_string('A', nrows, u'Suma')
         return xrange(7, nrows - 2)
 
+    def fetch_field(self, dfb, key_object, single_row, row_date, single_column):
+        '''
+        DataReader:
+        '''
+        my_hour = single_column.canonical_hour
+        if not entry_already_inserted(dfb, key_object, row_date, my_hour):
+            pass
+
     def enter_data(self, dfb, key_object, data_headers, data_rows):
         '''
         DataReader:
