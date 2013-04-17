@@ -234,6 +234,12 @@ dict_names = {
 'SZKOLA_MUZYCZNA_RYBNIK': 'PSM',
 }
 
+def generate_dates_vertically(sheet, all_dates):
+    for nr, one_date in enumerate(all_dates):
+        row = nr + 1
+        col = 0
+        sheet.write(row, col, one_date)
+
 def generate_one_file(dfb, table_name, output_file):
     import xlwt
     dane_bazy = load_from_db(dfb, table_name)
