@@ -29,6 +29,11 @@ def index_create(name, table, field):
         field=field,
         )
 
+def index_drop(name):
+    return fy_kw.lxa_6_inst % dict(
+        name=name,
+        )
+
 class TestVariousPatterns(unittest.TestCase):
     def test_various_patterns(self):
         '''
