@@ -172,8 +172,8 @@ class DataReader:
         DataReader:
         '''
         for single_row in data_rows:
-            row_date = self.vx_th_date('B', single_row)
-            self.fetch_field(dfb, key_object, single_row, row_date)
+            duo_date = self.vx_th_date('B', single_row)
+            self.fetch_field(dfb, key_object, single_row, duo_date)
 
     def analyze_this_sheet(self, dfb):
         '''
