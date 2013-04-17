@@ -19,14 +19,8 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-def new_module_for_reading_spreadsheet():
-    '''
-    '''
-    import xlrd
-    return xlrd
-
 def check_module_dependencies_linux():
-    new_module_for_reading_spreadsheet()
+    mu_kw.new_module_for_reading_spreadsheet()
 
 def verify_for_equal(tmp_text, expected):
     if tmp_text != expected:
@@ -201,7 +195,7 @@ class DataReader:
             raise RuntimeError('numer_of_sheets = %d' % numer_of_sheets)
 
 def analyze_excel_files(dfb, filenames):
-    xlrd = new_module_for_reading_spreadsheet()
+    xlrd = mu_kw.new_module_for_reading_spreadsheet()
     for single_file in filenames:
         obk = DataReader()
         obk.analyze_this_file(dfb, xlrd, single_file)
