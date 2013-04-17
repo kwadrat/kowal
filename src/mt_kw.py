@@ -140,18 +140,14 @@ class DataReader:
         '''
         DataReader:
         '''
-        self.check_for_constant_string('B', 2, u'Raport energii godzinowej dla ')
-        under_name = self.vx_peek('E', 2)
-        tmp_format = 'under_name'; print 'Eval:', tmp_format, eval(tmp_format)
-        period_start = self.vx_date('E', 3)
-        tmp_format = 'period_start'; print 'Eval:', tmp_format, eval(tmp_format)
-        period_end = self.vx_date('H', 3)
-        tmp_format = 'period_end'; print 'Eval:', tmp_format, eval(tmp_format)
-        self.check_for_constant_string('M', 2, u'kWh')
-        self.check_for_constant_string('B', 3, u'Za okres')
-        self.check_for_constant_string('D', 3, u'od')
-        self.check_for_constant_string('G', 3, u'do ')
-        self.check_for_constant_string('B', 5, u'Godziny')
+        self.check_for_constant_string('B', 2, u'TAURON Dystrybucja S.A. Oddział Gliwice - Raport 15-minutowy')
+        self.check_for_constant_string('B', 3, u'Name')
+        self.check_for_constant_string('B', 4, u'Account')
+        self.check_for_constant_string('B', 5, u'Address')
+        self.check_for_constant_string('B', 6, u'Start Time')
+        self.check_for_constant_string('B', 7, u'End Time ')
+        self.check_for_constant_string('B', 8, u'Report Time')
+        self.check_for_constant_string('C', 12, u'kW')
         self.verify_hours_headers(data_headers)
         return under_name
 
