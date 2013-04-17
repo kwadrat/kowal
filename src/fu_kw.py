@@ -170,6 +170,10 @@ class DataReader:
         '''
         DataReader:
         '''
+        for single_row in data_rows:
+            row_date = self.vx_t_date('A', single_row)
+            for single_column in data_headers:
+                self.fetch_field(dfb, key_object, single_row, row_date, single_column)
 
     def analyze_this_sheet(self, dfb):
         '''
