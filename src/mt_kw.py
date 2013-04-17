@@ -212,7 +212,7 @@ def load_from_db(dfb, table_name):
 def generate_one_file(dfb, table_name, output_file):
     import xlwt
     dane_bazy = load_from_db(dfb, table_name)
-    object_names = list(set(map(lambda x: x:[account], dane_bazy)))
+    object_names = list(set(map(lambda x: x['account'], dane_bazy)))
     object_names.sort()
     wbk = xlwt.Workbook()
     wbk.save(output_file)
