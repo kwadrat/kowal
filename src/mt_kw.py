@@ -147,7 +147,7 @@ class DataReader:
         self.check_for_constant_string('B', nrows, u'Time Max')
         return xrange(13, nrows - 2)
 
-    def fetch_field(self, dfb, key_object, single_row, row_date, single_column):
+    def fetch_field(self, dfb, key_object, single_row, row_date):
         '''
         DataReader:
         '''
@@ -162,7 +162,7 @@ class DataReader:
         '''
         for single_row in data_rows:
             row_date = self.vx_t_date('B', single_row)
-            self.fetch_field(dfb, key_object, single_row, row_date, single_column)
+            self.fetch_field(dfb, key_object, single_row, row_date)
 
     def analyze_this_sheet(self, dfb):
         '''
