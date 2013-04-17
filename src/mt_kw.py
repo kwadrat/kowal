@@ -238,9 +238,26 @@ def generate_one_file(dfb, table_name, output_file):
     import xlwt
     dane_bazy = load_from_db(dfb, table_name)
     object_names = unique_sorted(dane_bazy, 'account')
-    all_dates = unique_sorted(dane_bazy, 'm_date')
-    all_hours = unique_sorted(dane_bazy, 'm_time')
     wbk = xlwt.Workbook()
+    for nr, name in enumerate(object_names):
+        tmp_format = 'name'; print 'Eval:', tmp_format, eval(tmp_format)
+        sheet = wbk.add_sheet(dict_names[name])
+        selected_data = filter(lambda x: x['account'] == name, dane_bazy)
+        all_dates = unique_sorted(selected_data, 'm_date')
+        all_hours = unique_a_sorted(selected_data, 'm_time')
+        for nr, one_date in enumerate(all_dates):
+            row = nr + 1
+            col = 0
+            sheet.write(row, col, one_date)
+        for nr, one_hour in enumerate(all_hours):
+            row = 0
+            col = nr + 1
+            sheet.write(row, col, one_hour)
+        for my_data in selected_data:
+            my_time = my_data['m_time'][:5]
+            row = all_dates.index(my_data['m_date']) + 1
+            col = all_hours.index(my_time) + 1
+            sheet.write(row, col, my_data['m_value'])
     wbk.save(output_file)
 
 def generate_excel_files(dfb):
