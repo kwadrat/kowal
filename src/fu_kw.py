@@ -116,6 +116,7 @@ class DataReader:
         self.check_for_constant_string('G', 3, u'do ')
         self.check_for_constant_string('B', 5, u'Godziny')
         self.verify_hours_headers(data_headers)
+        return under_name
 
     def detect_data_rows(self):
         '''
