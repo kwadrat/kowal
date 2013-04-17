@@ -145,11 +145,12 @@ class DataReader:
         DataReader:
         '''
         nrows = self.sheet.nrows
-        self.check_for_constant_string('A', 6, u'Data')
-        self.check_for_constant_string('A', nrows - 2, u'Maksimum')
-        self.check_for_constant_string('A', nrows - 1, u'Data')
-        self.check_for_constant_string('A', nrows, u'Suma')
-        return xrange(7, nrows - 2)
+        self.check_for_constant_string('B', 10, u'Data')
+        self.check_for_constant_string('B', 12, u'rrrr-mm-dd hh:mm')
+        self.check_for_constant_string('B', nrows - 2, u'Energy')
+        self.check_for_constant_string('B', nrows - 1, u'Max')
+        self.check_for_constant_string('B', nrows, u'Time Max')
+        return xrange(13, nrows - 2)
 
     def fetch_field(self, dfb, key_object, single_row, row_date, single_column):
         '''
