@@ -205,8 +205,7 @@ def analyze_excel_files(dfb, filenames):
         obk.analyze_this_file(dfb, xlrd, single_file)
 
 def load_from_db(dfb, table_name):
-    dane_bazy = dfb
-    key_object = dfb.query_dct("select * from %(table_name)s limit 5;" % dict(
+    return dfb.query_dct("select * from %(table_name)s limit 5;" % dict(
         table_name=table_name,
         ))
 
