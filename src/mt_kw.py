@@ -101,6 +101,21 @@ class DataReader:
         value = self.vx_date(my_col, my_row)
         return '%04d-%02d-%02d' % value[:3]
 
+    def vx_th_date(self, my_col, my_row):
+        '''
+        DataReader:
+        '''
+        value = self.vx_date(my_col, my_row)
+        size = len(value)
+        if size == 6:
+            last = value[5]
+            if last == 0:
+                return value[:3], value[3:5]
+            else:
+                raise RuntimeError('last = %s' % repr(last))
+        else:
+            raise RuntimeError('size = %d' % size)
+
     def vx_num_time(self, my_col, my_row):
         '''
         DataReader:
