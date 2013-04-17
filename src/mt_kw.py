@@ -127,15 +127,6 @@ class DataReader:
         data_headers = fx_kw.prepare_time_headers(start_col)
         return data_headers
 
-    def verify_hours_headers(self, data_headers):
-        '''
-        DataReader:
-        '''
-        for one_column in data_headers:
-            tmp_text = self.vx_num_time(one_column.col_in_sheet, 6)
-            expected = one_column.header_for_hour_column
-            verify_for_equal(tmp_text, expected)
-
     def detect_sheet_header(self, data_headers):
         '''
         DataReader:
