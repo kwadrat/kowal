@@ -139,7 +139,6 @@ class DataReader:
         self.check_for_constant_string('B', 7, u'End Time ')
         self.check_for_constant_string('B', 8, u'Report Time')
         self.check_for_constant_string('C', 12, u'kW')
-        return under_name
 
     def detect_data_rows(self):
         '''
