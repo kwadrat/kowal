@@ -58,4 +58,7 @@ def insert_energy_entry(dfb, n_table, key_object, row_date, my_hour, value):
         ))
 
 class CommonReader:
-    pass
+    def __init__(self):
+        '''
+        CommonReader:
+        '''
