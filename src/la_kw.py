@@ -79,5 +79,6 @@ def generate_excel_files(dfb):
 def analyze_excel_files(dfb, worker_class, filenames):
     xlrd = mu_kw.new_module_for_reading_spreadsheet()
     for single_file in filenames:
+        print single_file
         obk = worker_class()
         obk.analyze_this_file(dfb, xlrd, single_file)
