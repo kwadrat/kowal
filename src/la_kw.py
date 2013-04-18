@@ -31,6 +31,11 @@ dict_names = {
     'SZKOLA_MUZYCZNA_RYBNIK': 'PSM',
     }
 
+def unique_a_sorted(dane_bazy, field):
+    object_names = list(set(map(lambda x: x[field][:5], dane_bazy)))
+    object_names.sort()
+    return object_names
+
 def generate_dates_vertically(sheet, all_dates):
     for nr, one_date in enumerate(all_dates):
         row = nr + 1
@@ -52,7 +57,7 @@ def generate_one_file(xlwt, dfb, table_name, output_file):
         sheet = wbk.add_sheet(dict_names[name])
         selected_data = filter(lambda x: x['account'] == name, dane_bazy)
         all_dates = mt_kw.unique_sorted(selected_data, 'm_date')
-        all_hours = mt_kw.unique_a_sorted(selected_data, 'm_time')
+        all_hours = unique_a_sorted(selected_data, 'm_time')
         generate_dates_vertically(sheet, all_dates)
         generate_hours_horizontally(sheet, all_hours)
         for my_data in selected_data:
