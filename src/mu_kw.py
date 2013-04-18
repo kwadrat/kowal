@@ -5,6 +5,7 @@ import datetime
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import fv_kw
+import lc_kw
 import fz_kw
 import le_kw
 '''.splitlines()]
@@ -40,7 +41,7 @@ def locate_object_key(dfb, under_name):
         key_object = le_kw.dq_add_new_object_key(under_name)
     ret_size = len(key_object)
     if ret_size == 1:
-        key_object = key_object[0]['k_object'];
+        key_object = key_object[0][lc_kw.fq_k_object_qv];
     else:
         raise RuntimeError('ret_size = %d' % ret_size)
     return key_object
