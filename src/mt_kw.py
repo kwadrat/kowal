@@ -121,11 +121,6 @@ def analyze_excel_files(dfb, filenames):
         obk = DataReader()
         obk.analyze_this_file(dfb, xlrd, single_file)
 
-def load_from_db(dfb, table_name):
-    return dfb.query_dct("select uu_object.account,m_date,m_time,m_value from %(table_name)s,uu_object where %(table_name)s.f_object=uu_object.k_object;" % dict(
-        table_name=table_name,
-        ))
-
 def unique_sorted(dane_bazy, field):
     object_names = list(set(map(lambda x: x[field], dane_bazy)))
     object_names.sort()
@@ -163,7 +158,7 @@ def generate_hours_horizontally(sheet, all_hours):
         sheet.write(row, col, one_hour)
 
 def generate_one_file(xlwt, dfb, table_name, output_file):
-    dane_bazy = load_from_db(dfb, table_name)
+    dane_bazy = le_kw.dq_load_from_db(dfb, table_name)
     object_names = unique_sorted(dane_bazy, 'account')
     wbk = xlwt.Workbook()
     for nr, name in enumerate(object_names):

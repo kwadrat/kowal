@@ -25,3 +25,8 @@ def dq_entry_already_inserted(dfb, n_table, key_object, row_date, my_hour):
 def dq_insert_energy_entry(dfb, n_table, key_object, row_date, my_hour, value):
     db_statement = fz_kw.ptn_insert_energy_entry(n_table, key_object, row_date, my_hour, value)
     dfb.query_silent(db_statement)
+
+def dq_load_from_db(dfb, table_name):
+    return dfb.query_dct("select uu_object.account,m_date,m_time,m_value from %(table_name)s,uu_object where %(table_name)s.f_object=uu_object.k_object;" % dict(
+        table_name=table_name,
+        ))
