@@ -56,8 +56,11 @@ def ptn_object_key(under_name):
 def ptn_entry_already_inserted(n_table, key_object, row_date, my_hour):
     return fy_kw.lxa_10_inst % dict(
         n_table=n_table,
+        e_object=lc_kw.fq_f_object_qv,
         f_object=key_object,
+        e_date=lc_kw.fq_m_date_qv,
         m_date=row_date,
+        e_time=lc_kw.fq_m_time_qv,
         m_time=my_hour,
         )
 
