@@ -46,13 +46,6 @@ class DataReader(CommonReader):
         else:
             raise RuntimeError('size = %d' % size)
 
-    def check_for_constant_string(self, my_col, my_row, expected):
-        '''
-        DataReader:
-        '''
-        tmp_text = self.vx_peek(my_col, my_row)
-        mu_kw.verify_for_equal(tmp_text, expected)
-
     def detect_sheet_header(self):
         '''
         DataReader:

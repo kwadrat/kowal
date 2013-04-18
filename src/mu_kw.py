@@ -103,3 +103,10 @@ class CommonReader:
         time_part = time_tuple[3:]
         verify_for_equal(day_part, self.day_zero)
         return datetime.time(*time_part).strftime('%H:%M')
+
+    def check_for_constant_string(self, my_col, my_row, expected):
+        '''
+        CommonReader:
+        '''
+        tmp_text = self.vx_peek(my_col, my_row)
+        verify_for_equal(tmp_text, expected)

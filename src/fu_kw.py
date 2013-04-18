@@ -34,13 +34,6 @@ class DataReader(CommonReader):
         value = self.vx_date(my_col, my_row)
         return '%04d-%02d-%02d' % value[:3]
 
-    def check_for_constant_string(self, my_col, my_row, expected):
-        '''
-        DataReader:
-        '''
-        tmp_text = self.vx_peek(my_col, my_row)
-        mu_kw.verify_for_equal(tmp_text, expected)
-
     def prepare_time_columns(self):
         '''
         DataReader:
