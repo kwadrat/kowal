@@ -2,6 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import le_kw
 import mu_kw
 import mt_kw
 '''.splitlines()]
