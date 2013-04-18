@@ -80,6 +80,7 @@ def ptn_insert_energy_entry(n_table, key_object, row_date, my_hour, value):
 def ptn_load_from_db(table_name):
     return fy_kw.lxa_14_inst % dict(
         table_name=table_name,
+        uu_object=lc_kw.fq_uu_object_qv,
         )
 
 class TestVariousPatterns(unittest.TestCase):
