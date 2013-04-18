@@ -29,4 +29,4 @@ insert into %(n_table)s (%(e_object)s, %(e_date)s, %(e_time)s, %(e_value)s) valu
 lxa_13_inst = """\
 select uu_object.account,m_date,m_time,m_value from t,uu_object where t.f_object=uu_object.k_object;"""
 lxa_14_inst = """\
-select %(uu_object)s.%(account)s,%(e_date)s,%(e_time)s,m_value from %(table_name)s,%(uu_object)s where %(table_name)s.f_object=%(uu_object)s.k_object;"""
+select %(uu_object)s.%(account)s,%(e_date)s,%(e_time)s,%(e_value)s from %(table_name)s,%(uu_object)s where %(table_name)s.f_object=%(uu_object)s.k_object;"""

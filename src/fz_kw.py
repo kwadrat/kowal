@@ -84,6 +84,7 @@ def ptn_load_from_db(table_name):
         account=lc_kw.fq_account_qv,
         e_date=lc_kw.fq_m_date_qv,
         e_time=lc_kw.fq_m_time_qv,
+        e_value=lc_kw.fq_m_value_qv,
         )
 
 class TestVariousPatterns(unittest.TestCase):
