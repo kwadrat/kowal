@@ -62,3 +62,5 @@ class CommonReader:
         '''
         CommonReader:
         '''
+        self.vx_zero = fv_kw.vx_zero
+        self.day_zero = (0, 0, 0)
