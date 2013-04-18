@@ -76,3 +76,9 @@ def generate_excel_files(dfb):
     xlwt = mu_kw.new_module_for_writing_spreadsheet()
     generate_one_file(xlwt, dfb, lc_kw.fq_uu_energy_qv, 'e.xls')
     generate_one_file(xlwt, dfb, lc_kw.fq_uu_power_qv, 'p.xls')
+
+def analyze_excel_files(dfb, worker_class, filenames):
+    xlrd = mu_kw.new_module_for_reading_spreadsheet()
+    for single_file in filenames:
+        obk = worker_class()
+        obk.analyze_this_file(dfb, xlrd, single_file)

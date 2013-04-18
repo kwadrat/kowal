@@ -115,9 +115,3 @@ class PowerReader(CommonReader):
             self.analyze_this_sheet(dfb)
         else:
             raise RuntimeError('numer_of_sheets = %d' % numer_of_sheets)
-
-def analyze_excel_files(dfb, filenames):
-    xlrd = mu_kw.new_module_for_reading_spreadsheet()
-    for single_file in filenames:
-        obk = PowerReader()
-        obk.analyze_this_file(dfb, xlrd, single_file)
