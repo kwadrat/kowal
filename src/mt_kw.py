@@ -80,7 +80,7 @@ class DataReader(CommonReader):
         DataReader:
         '''
         row_date, my_hour = duo_date
-        if not le_kw.entry_already_inserted(dfb, 'uu_power', key_object, row_date, my_hour):
+        if not le_kw.dq_entry_already_inserted(dfb, 'uu_power', key_object, row_date, my_hour):
             value = self.vx_peek('C', single_row)
             mu_kw.insert_energy_entry(dfb, 'uu_power', key_object, row_date, my_hour, value)
 
