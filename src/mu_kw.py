@@ -26,6 +26,7 @@ def new_module_for_writing_spreadsheet():
 
 def check_module_dependencies_linux():
     new_module_for_reading_spreadsheet()
+    new_module_for_writing_spreadsheet()
 
 def verify_for_equal(tmp_text, expected):
     if tmp_text != expected:
