@@ -29,3 +29,7 @@ def dq_insert_energy_entry(dfb, n_table, key_object, row_date, my_hour, value):
 def dq_load_from_db(dfb, table_name):
     db_statement = fz_kw.ptn_load_from_db(table_name)
     return dfb.query_dct(db_statement)
+
+def dq_add_new_object_key(dfb, under_name):
+    db_statement = fz_kw.ptn_add_new_object_key(under_name)
+    return dfb.query_dct(db_statement)
