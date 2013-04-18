@@ -1,3 +1,10 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+fq_k_object_qv = 'k_object'
+fq_m_date_qv = 'm_date'
+fq_m_time_qv = 'm_time'
+fq_m_value_qv = 'm_value'
+fq_uu_energy_qv = 'uu_energy'
+fq_uu_object_qv = 'uu_object'
+fq_uu_power_qv = 'uu_power'
