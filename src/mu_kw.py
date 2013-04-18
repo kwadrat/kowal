@@ -92,3 +92,14 @@ class CommonReader:
         '''
         value = self.vx_peek(my_col, my_row)
         return self.xlrd.xldate_as_tuple(value, self.book.datemode)
+
+    def vx_num_time(self, my_col, my_row):
+        '''
+        CommonReader:
+        '''
+        value = self.vx_num_peek(my_col, my_row)
+        time_tuple = self.xlrd.xldate_as_tuple(value, self.book.datemode)
+        day_part = time_tuple[:3]
+        time_part = time_tuple[3:]
+        verify_for_equal(day_part, self.day_zero)
+        return datetime.time(*time_part).strftime('%H:%M')

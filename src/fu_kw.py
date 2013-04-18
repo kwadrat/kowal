@@ -34,17 +34,6 @@ class DataReader(CommonReader):
         value = self.vx_date(my_col, my_row)
         return '%04d-%02d-%02d' % value[:3]
 
-    def vx_num_time(self, my_col, my_row):
-        '''
-        DataReader:
-        '''
-        value = self.vx_num_peek(my_col, my_row)
-        time_tuple = self.xlrd.xldate_as_tuple(value, self.book.datemode)
-        day_part = time_tuple[:3]
-        time_part = time_tuple[3:]
-        mu_kw.verify_for_equal(day_part, self.day_zero)
-        return datetime.time(*time_part).strftime('%H:%M')
-
     def check_for_constant_string(self, my_col, my_row, expected):
         '''
         DataReader:
