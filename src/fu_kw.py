@@ -22,23 +22,23 @@ for i in NazwyModulow:
 
 CommonReader = mu_kw.CommonReader
 
-class DataReader(CommonReader):
+class EnergyReader(CommonReader):
     def __init__(self):
         '''
-        DataReader:
+        EnergyReader:
         '''
         CommonReader.__init__(self)
 
     def vx_t_date(self, my_col, my_row):
         '''
-        DataReader:
+        EnergyReader:
         '''
         value = self.vx_date(my_col, my_row)
         return '%04d-%02d-%02d' % value[:3]
 
     def prepare_time_columns(self):
         '''
-        DataReader:
+        EnergyReader:
         '''
         start_col = self.vx_letter_num('B')
         data_headers = fx_kw.prepare_time_headers(start_col)
@@ -46,7 +46,7 @@ class DataReader(CommonReader):
 
     def verify_hours_headers(self, data_headers):
         '''
-        DataReader:
+        EnergyReader:
         '''
         for one_column in data_headers:
             tmp_text = self.vx_num_time(one_column.col_in_sheet, 6)
@@ -55,7 +55,7 @@ class DataReader(CommonReader):
 
     def detect_sheet_header(self, data_headers):
         '''
-        DataReader:
+        EnergyReader:
         '''
         self.check_for_constant_string('B', 2, u'Raport energii godzinowej dla ')
         under_name = self.vx_peek('E', 2)
@@ -74,7 +74,7 @@ class DataReader(CommonReader):
 
     def detect_data_rows(self):
         '''
-        DataReader:
+        EnergyReader:
         '''
         nrows = self.sheet.nrows
         self.check_for_constant_string('A', 6, u'Data')
@@ -85,7 +85,7 @@ class DataReader(CommonReader):
 
     def fetch_field(self, dfb, key_object, single_row, row_date, single_column):
         '''
-        DataReader:
+        EnergyReader:
         '''
         my_hour = single_column.canonical_hour
         if not le_kw.dq_entry_already_inserted(dfb, lc_kw.fq_uu_energy_qv, key_object, row_date, my_hour):
@@ -94,7 +94,7 @@ class DataReader(CommonReader):
 
     def enter_data(self, dfb, key_object, data_headers, data_rows):
         '''
-        DataReader:
+        EnergyReader:
         '''
         for single_row in data_rows:
             row_date = self.vx_t_date('A', single_row)
@@ -103,7 +103,7 @@ class DataReader(CommonReader):
 
     def analyze_this_sheet(self, dfb):
         '''
-        DataReader:
+        EnergyReader:
         '''
         data_headers = self.prepare_time_columns()
         under_name = self.detect_sheet_header(data_headers)
@@ -114,7 +114,7 @@ class DataReader(CommonReader):
 
     def analyze_this_file(self, dfb, xlrd, single_file):
         '''
-        DataReader:
+        EnergyReader:
         '''
         self.xlrd = xlrd
         self.book = self.xlrd.open_workbook(single_file)
@@ -128,5 +128,5 @@ class DataReader(CommonReader):
 def analyze_excel_files(dfb, filenames):
     xlrd = mu_kw.new_module_for_reading_spreadsheet()
     for single_file in filenames:
-        obk = DataReader()
+        obk = EnergyReader()
         obk.analyze_this_file(dfb, xlrd, single_file)
