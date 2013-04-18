@@ -6,7 +6,6 @@ import datetime
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import fv_kw
 import lc_kw
-import fz_kw
 import le_kw
 '''.splitlines()]
 
