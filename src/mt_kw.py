@@ -145,9 +145,3 @@ dict_names = {
     'ZESPOL_SZKOLNO_PRZEDSZK_WIELOPOLE': 'ZSz-P W.',
     'SZKOLA_MUZYCZNA_RYBNIK': 'PSM',
     }
-
-def generate_dates_vertically(sheet, all_dates):
-    for nr, one_date in enumerate(all_dates):
-        row = nr + 1
-        col = 0
-        sheet.write(row, col, one_date)
