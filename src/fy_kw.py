@@ -20,3 +20,5 @@ lxa_8_inst = """\
 select %(k_object)s from %(uu_object)s where %(account)s='%(under_name)s';"""
 lxa_9_inst = """\
 select * from t where f_object=123 and m_date='2013-01-31' and m_time='23:34';"""
+lxa_10_inst = """\
+select * from %(n_table)s where f_object=%(f_object)d and m_date='%(m_date)s' and m_time='%(m_time)s';"""
