@@ -44,6 +44,11 @@ def process_indices(table, field_names, create_flag):
                 result = index_drop(compound_name)
             print result
 
+def ptn_object_key(under_name):
+    return fy_kw.lxa_8_inst % dict(
+        under_name=under_name,
+        )
+
 class TestVariousPatterns(unittest.TestCase):
     def test_various_patterns(self):
         '''
@@ -52,3 +57,4 @@ class TestVariousPatterns(unittest.TestCase):
         self.assertEqual(concatenate_index_name('t', 'f'), fy_kw.lxa_2_inst)
         self.assertEqual(index_create('a', 't', 'f'), fy_kw.lxa_3_inst)
         self.assertEqual(index_drop('a'), fy_kw.lxa_5_inst)
+        self.assertEqual(ptn_object_key('abc'), fy_kw.lxa_7_inst)
