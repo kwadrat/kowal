@@ -27,32 +27,6 @@ class DataReader(CommonReader):
         '''
         CommonReader.__init__(self)
 
-    def vx_num_peek(self, my_col, my_row):
-        '''
-        DataReader:
-        '''
-        return self.sheet.cell_value(my_row - 1, my_col)
-
-    def vx_letter_num(self, my_col):
-        '''
-        DataReader:
-        '''
-        return self.vx_zero.vx_lt(my_col)
-
-    def vx_peek(self, my_col, my_row):
-        '''
-        DataReader:
-        '''
-        header_col = self.vx_letter_num(my_col)
-        return self.vx_num_peek(header_col, my_row)
-
-    def vx_date(self, my_col, my_row):
-        '''
-        DataReader:
-        '''
-        value = self.vx_peek(my_col, my_row)
-        return self.xlrd.xldate_as_tuple(value, self.book.datemode)
-
     def vx_t_date(self, my_col, my_row):
         '''
         DataReader:

@@ -64,3 +64,29 @@ class CommonReader:
         '''
         self.vx_zero = fv_kw.vx_zero
         self.day_zero = (0, 0, 0)
+
+    def vx_num_peek(self, my_col, my_row):
+        '''
+        CommonReader:
+        '''
+        return self.sheet.cell_value(my_row - 1, my_col)
+
+    def vx_letter_num(self, my_col):
+        '''
+        CommonReader:
+        '''
+        return self.vx_zero.vx_lt(my_col)
+
+    def vx_peek(self, my_col, my_row):
+        '''
+        CommonReader:
+        '''
+        header_col = self.vx_letter_num(my_col)
+        return self.vx_num_peek(header_col, my_row)
+
+    def vx_date(self, my_col, my_row):
+        '''
+        CommonReader:
+        '''
+        value = self.vx_peek(my_col, my_row)
+        return self.xlrd.xldate_as_tuple(value, self.book.datemode)
