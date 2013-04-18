@@ -23,16 +23,16 @@ for i in NazwyModulow:
 
 CommonReader = mu_kw.CommonReader
 
-class DataReader(CommonReader):
+class PowerReader(CommonReader):
     def __init__(self):
         '''
-        DataReader:
+        PowerReader:
         '''
         CommonReader.__init__(self)
 
     def vx_th_date(self, my_col, my_row):
         '''
-        DataReader:
+        PowerReader:
         '''
         value = self.vx_date(my_col, my_row)
         size = len(value)
@@ -50,7 +50,7 @@ class DataReader(CommonReader):
 
     def detect_sheet_header(self):
         '''
-        DataReader:
+        PowerReader:
         '''
         self.check_for_constant_string('B', 2, u'TAURON Dystrybucja S.A. Oddział Gliwice - Raport 15-minutowy')
         self.check_for_constant_string('B', 3, u'Name')
@@ -66,7 +66,7 @@ class DataReader(CommonReader):
 
     def detect_data_rows(self):
         '''
-        DataReader:
+        PowerReader:
         '''
         nrows = self.sheet.nrows
         self.check_for_constant_string('B', 10, u'Data')
@@ -78,7 +78,7 @@ class DataReader(CommonReader):
 
     def fetch_field(self, dfb, key_object, single_row, duo_date):
         '''
-        DataReader:
+        PowerReader:
         '''
         row_date, my_hour = duo_date
         if not le_kw.dq_entry_already_inserted(dfb, lc_kw.fq_uu_power_qv, key_object, row_date, my_hour):
@@ -87,7 +87,7 @@ class DataReader(CommonReader):
 
     def enter_data(self, dfb, key_object, data_rows):
         '''
-        DataReader:
+        PowerReader:
         '''
         for single_row in data_rows:
             duo_date = self.vx_th_date('B', single_row)
@@ -95,7 +95,7 @@ class DataReader(CommonReader):
 
     def analyze_this_sheet(self, dfb):
         '''
-        DataReader:
+        PowerReader:
         '''
         under_name = self.detect_sheet_header()
         key_object = mu_kw.locate_object_key(dfb, under_name)
@@ -105,7 +105,7 @@ class DataReader(CommonReader):
 
     def analyze_this_file(self, dfb, xlrd, single_file):
         '''
-        DataReader:
+        PowerReader:
         '''
         self.xlrd = xlrd
         self.book = self.xlrd.open_workbook(single_file)
@@ -119,5 +119,5 @@ class DataReader(CommonReader):
 def analyze_excel_files(dfb, filenames):
     xlrd = mu_kw.new_module_for_reading_spreadsheet()
     for single_file in filenames:
-        obk = DataReader()
+        obk = PowerReader()
         obk.analyze_this_file(dfb, xlrd, single_file)
