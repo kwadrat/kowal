@@ -35,8 +35,7 @@ def verify_for_equal(tmp_text, expected):
         raise RuntimeError('tmp_text = %s' % repr(tmp_text))
 
 def locate_object_key(dfb, under_name):
-    db_statement = fz_kw.ptn_object_key(under_name)
-    key_object = dfb.query_dct(db_statement)
+    key_object = le_kw.dq_object_key(dfb, under_name)
     if not key_object:
         key_object = dfb.query_dct("insert into uu_object (account) values ('%(under_name)s') returning k_object;" % dict(
             under_name=under_name,
