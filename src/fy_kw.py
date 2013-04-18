@@ -26,3 +26,5 @@ lxa_11_inst = """\
 insert into t (f_object, m_date, m_time, m_value) values (123, '2013-01-31', '23:34', 0.000000);"""
 lxa_12_inst = """\
 insert into %(n_table)s (%(e_object)s, %(e_date)s, %(e_time)s, %(e_value)s) values (%(f_object)d, '%(m_date)s', '%(m_time)s', %(m_value)f);"""
+lxa_13_inst = """\
+select uu_object.account,m_date,m_time,m_value from t,uu_object where t.f_object=uu_object.k_object;"""
