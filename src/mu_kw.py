@@ -37,9 +37,7 @@ def verify_for_equal(tmp_text, expected):
 def locate_object_key(dfb, under_name):
     key_object = le_kw.dq_object_key(dfb, under_name)
     if not key_object:
-        key_object = dfb.query_dct("insert into uu_object (account) values ('%(under_name)s') returning k_object;" % dict(
-            under_name=under_name,
-            ))
+        key_object = le_kw.dq_add_new_object_key(under_name)
     ret_size = len(key_object)
     if ret_size == 1:
         key_object = key_object[0]['k_object'];
