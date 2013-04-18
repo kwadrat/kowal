@@ -181,6 +181,6 @@ def generate_one_file(xlwt, dfb, table_name, output_file):
     wbk.save(output_file)
 
 def generate_excel_files(dfb):
-    import xlwt
+    xlwt = mu_kw.new_module_for_writing_spreadsheet()
     generate_one_file(xlwt, dfb, 'uu_energy', 'e.xls')
     generate_one_file(xlwt, dfb, 'uu_power', 'p.xls')
