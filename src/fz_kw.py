@@ -67,9 +67,13 @@ def ptn_entry_already_inserted(n_table, key_object, row_date, my_hour):
 def ptn_insert_energy_entry(n_table, key_object, row_date, my_hour, value):
     return fy_kw.lxa_12_inst % dict(
         n_table=n_table,
+        e_object=lc_kw.fq_f_object_qv,
         f_object=key_object,
+        e_date=lc_kw.fq_m_date_qv,
         m_date=row_date,
+        e_time=lc_kw.fq_m_time_qv,
         m_time=my_hour,
+        e_value=lc_kw.fq_m_value_qv,
         m_value=value,
         )
 

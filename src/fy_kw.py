@@ -25,4 +25,4 @@ select * from %(n_table)s where %(e_object)s=%(f_object)d and %(e_date)s='%(m_da
 lxa_11_inst = """\
 insert into t (f_object, m_date, m_time, m_value) values (123, '2013-01-31', '23:34', 0.000000);"""
 lxa_12_inst = """\
-insert into %(n_table)s (f_object, m_date, m_time, m_value) values (%(f_object)d, '%(m_date)s', '%(m_time)s', %(m_value)f);"""
+insert into %(n_table)s (%(e_object)s, %(e_date)s, %(e_time)s, %(e_value)s) values (%(f_object)d, '%(m_date)s', '%(m_time)s', %(m_value)f);"""
