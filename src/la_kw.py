@@ -31,6 +31,11 @@ dict_names = {
     'SZKOLA_MUZYCZNA_RYBNIK': 'PSM',
     }
 
+def unique_sorted(dane_bazy, field):
+    object_names = list(set(map(lambda x: x[field], dane_bazy)))
+    object_names.sort()
+    return object_names
+
 def unique_a_sorted(dane_bazy, field):
     object_names = list(set(map(lambda x: x[field][:5], dane_bazy)))
     object_names.sort()
@@ -50,13 +55,13 @@ def generate_hours_horizontally(sheet, all_hours):
 
 def generate_one_file(xlwt, dfb, table_name, output_file):
     dane_bazy = le_kw.dq_load_from_db(dfb, table_name)
-    object_names = mt_kw.unique_sorted(dane_bazy, 'account')
+    object_names = unique_sorted(dane_bazy, 'account')
     wbk = xlwt.Workbook()
     for nr, name in enumerate(object_names):
         tmp_format = 'name'; print 'Eval:', tmp_format, eval(tmp_format)
         sheet = wbk.add_sheet(dict_names[name])
         selected_data = filter(lambda x: x['account'] == name, dane_bazy)
-        all_dates = mt_kw.unique_sorted(selected_data, 'm_date')
+        all_dates = unique_sorted(selected_data, 'm_date')
         all_hours = unique_a_sorted(selected_data, 'm_time')
         generate_dates_vertically(sheet, all_dates)
         generate_hours_horizontally(sheet, all_hours)

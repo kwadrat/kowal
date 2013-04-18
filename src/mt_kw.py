@@ -121,8 +121,3 @@ def analyze_excel_files(dfb, filenames):
     for single_file in filenames:
         obk = DataReader()
         obk.analyze_this_file(dfb, xlrd, single_file)
-
-def unique_sorted(dane_bazy, field):
-    object_names = list(set(map(lambda x: x[field], dane_bazy)))
-    object_names.sort()
-    return object_names
