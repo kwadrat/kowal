@@ -81,6 +81,7 @@ def ptn_load_from_db(table_name):
     return fy_kw.lxa_14_inst % dict(
         table_name=table_name,
         uu_object=lc_kw.fq_uu_object_qv,
+        account=lc_kw.fq_account_qv,
         )
 
 class TestVariousPatterns(unittest.TestCase):
