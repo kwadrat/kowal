@@ -49,6 +49,7 @@ def ptn_object_key(under_name):
     return fy_kw.lxa_8_inst % dict(
         under_name=under_name,
         k_object=lc_kw.fq_k_object_qv,
+        uu_object=lc_kw.fq_uu_object_qv,
         )
 
 class TestVariousPatterns(unittest.TestCase):
