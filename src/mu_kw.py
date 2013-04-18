@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+import datetime
+
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import fv_kw
 '''.splitlines()]
