@@ -17,7 +17,26 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+def generate_one_file(xlwt, dfb, table_name, output_file):
+    dane_bazy = le_kw.dq_load_from_db(dfb, table_name)
+    object_names = mt_kw.unique_sorted(dane_bazy, 'account')
+    wbk = xlwt.Workbook()
+    for nr, name in enumerate(object_names):
+        tmp_format = 'name'; print 'Eval:', tmp_format, eval(tmp_format)
+        sheet = wbk.add_sheet(mt_kw.dict_names[name])
+        selected_data = filter(lambda x: x['account'] == name, dane_bazy)
+        all_dates = mt_kw.unique_sorted(selected_data, 'm_date')
+        all_hours = mt_kw.unique_a_sorted(selected_data, 'm_time')
+        mt_kw.generate_dates_vertically(sheet, all_dates)
+        mt_kw.generate_hours_horizontally(sheet, all_hours)
+        for my_data in selected_data:
+            my_time = my_data['m_time'][:5]
+            row = all_dates.index(my_data['m_date']) + 1
+            col = all_hours.index(my_time) + 1
+            sheet.write(row, col, my_data['m_value'])
+    wbk.save(output_file)
+
 def generate_excel_files(dfb):
     xlwt = mu_kw.new_module_for_writing_spreadsheet()
-    mt_kw.generate_one_file(xlwt, dfb, lc_kw.fq_uu_energy_qv, 'e.xls')
-    mt_kw.generate_one_file(xlwt, dfb, lc_kw.fq_uu_power_qv, 'p.xls')
+    generate_one_file(xlwt, dfb, lc_kw.fq_uu_energy_qv, 'e.xls')
+    generate_one_file(xlwt, dfb, lc_kw.fq_uu_power_qv, 'p.xls')
