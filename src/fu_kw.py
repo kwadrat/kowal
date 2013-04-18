@@ -18,7 +18,9 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-class DataReader:
+CommonReader = mu_kw.CommonReader
+
+class DataReader(CommonReader):
     def __init__(self):
         '''
         DataReader:
