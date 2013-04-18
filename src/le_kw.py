@@ -19,10 +19,5 @@ def dq_object_key(dfb, under_name):
     return dfb.query_dct(db_statement)
 
 def dq_entry_already_inserted(dfb, n_table, key_object, row_date, my_hour):
-    db_statement = "select * from %(n_table)s where f_object=%(f_object)d and m_date='%(m_date)s' and m_time='%(m_time)s';" % dict(
-        n_table=n_table,
-        f_object=key_object,
-        m_date=row_date,
-        m_time=my_hour,
-        )
+    db_statement = fz_kw.ptn_entry_already_inserted(n_table, key_object, row_date, my_hour)
     return dfb.query_dct(db_statement)
