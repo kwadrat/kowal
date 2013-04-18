@@ -17,6 +17,20 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+dict_names = {
+    'GIMNAZJUM_NR_7_RYBNIK_SZTOLNIOWA': 'G-7',
+    'SZKOLA_PODST_NR_11_RYBNIK_HIBNERA': 'SP-11',
+    'SZKOLA_PODSTAWOWA_NR_13_CHWALOWICE': 'SP-13',
+    'SZKOLA_PODSTAWOWA_NR_20_RYBNIK_ZIOLOWA': 'SP-20',
+    'SZKOLA_PODSTAWOWA_NR_28_RYBNIK_SZEWCZYKA': 'SP-28',
+    'SZKOLA_PODST_NR_3_RYBNIK_WOLNA': 'SP-3',
+    'SZKOLA_PODSTAWOWA_NR_37_RYBNIK': 'SP-37',
+    'ZESPOL_SZKOL_EKON_USLUG_RYBNIK': 'ZSE-U',
+    'ZESPOL_SZKOL_TECHNICZNYCH_RYBNIK_KOSCIUSZKI': 'ZST',
+    'ZESPOL_SZKOLNO_PRZEDSZK_WIELOPOLE': 'ZSz-P W.',
+    'SZKOLA_MUZYCZNA_RYBNIK': 'PSM',
+    }
+
 def generate_dates_vertically(sheet, all_dates):
     for nr, one_date in enumerate(all_dates):
         row = nr + 1
@@ -35,7 +49,7 @@ def generate_one_file(xlwt, dfb, table_name, output_file):
     wbk = xlwt.Workbook()
     for nr, name in enumerate(object_names):
         tmp_format = 'name'; print 'Eval:', tmp_format, eval(tmp_format)
-        sheet = wbk.add_sheet(mt_kw.dict_names[name])
+        sheet = wbk.add_sheet(dict_names[name])
         selected_data = filter(lambda x: x['account'] == name, dane_bazy)
         all_dates = mt_kw.unique_sorted(selected_data, 'm_date')
         all_hours = mt_kw.unique_a_sorted(selected_data, 'm_time')
