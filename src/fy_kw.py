@@ -14,3 +14,5 @@ lxa_5_inst = """\
 DROP INDEX a;"""
 lxa_6_inst = """\
 DROP INDEX %(name)s;"""
+lxa_7_inst = """\
+select k_object from uu_object where account='abc';"""
