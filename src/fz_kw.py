@@ -92,6 +92,7 @@ def ptn_load_from_db(table_name):
 def ptn_add_new_object_key(under_name):
     return fy_kw.lxa_16_inst % dict(
         under_name=under_name,
+        uu_object=lc_kw.fq_uu_object_qv,
         )
 
 class TestVariousPatterns(unittest.TestCase):
