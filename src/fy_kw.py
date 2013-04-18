@@ -17,4 +17,4 @@ DROP INDEX %(name)s;"""
 lxa_7_inst = """\
 select k_object from uu_object where account='abc';"""
 lxa_8_inst = """\
-select k_object from uu_object where account='%(under_name)s';"""
+select %(k_object)s from uu_object where account='%(under_name)s';"""
