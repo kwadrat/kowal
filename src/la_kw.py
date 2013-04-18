@@ -17,6 +17,12 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+def generate_hours_horizontally(sheet, all_hours):
+    for nr, one_hour in enumerate(all_hours):
+        row = 0
+        col = nr + 1
+        sheet.write(row, col, one_hour)
+
 def generate_one_file(xlwt, dfb, table_name, output_file):
     dane_bazy = le_kw.dq_load_from_db(dfb, table_name)
     object_names = mt_kw.unique_sorted(dane_bazy, 'account')
@@ -28,7 +34,7 @@ def generate_one_file(xlwt, dfb, table_name, output_file):
         all_dates = mt_kw.unique_sorted(selected_data, 'm_date')
         all_hours = mt_kw.unique_a_sorted(selected_data, 'm_time')
         mt_kw.generate_dates_vertically(sheet, all_dates)
-        mt_kw.generate_hours_horizontally(sheet, all_hours)
+        generate_hours_horizontally(sheet, all_hours)
         for my_data in selected_data:
             my_time = my_data['m_time'][:5]
             row = all_dates.index(my_data['m_date']) + 1

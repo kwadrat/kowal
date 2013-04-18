@@ -151,9 +151,3 @@ def generate_dates_vertically(sheet, all_dates):
         row = nr + 1
         col = 0
         sheet.write(row, col, one_date)
-
-def generate_hours_horizontally(sheet, all_hours):
-    for nr, one_hour in enumerate(all_hours):
-        row = 0
-        col = nr + 1
-        sheet.write(row, col, one_hour)
