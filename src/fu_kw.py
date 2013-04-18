@@ -89,7 +89,7 @@ class DataReader(CommonReader):
         my_hour = single_column.canonical_hour
         if not le_kw.dq_entry_already_inserted(dfb, 'uu_energy', key_object, row_date, my_hour):
             value = self.vx_num_peek(single_column.col_in_sheet, single_row)
-            mu_kw.insert_energy_entry(dfb, 'uu_energy', key_object, row_date, my_hour, value)
+            mu_kw.dq_insert_energy_entry(dfb, 'uu_energy', key_object, row_date, my_hour, value)
 
     def enter_data(self, dfb, key_object, data_headers, data_rows):
         '''
