@@ -32,3 +32,5 @@ lxa_14_inst = """\
 select %(uu_object)s.%(account)s,%(e_date)s,%(e_time)s,%(e_value)s from %(table_name)s,%(uu_object)s where %(table_name)s.%(e_object)s=%(uu_object)s.%(k_object)s;"""
 lxa_15_inst = """\
 insert into uu_object (account) values ('n') returning k_object;"""
+lxa_16_inst = """\
+insert into uu_object (account) values ('%(under_name)s') returning k_object;"""
