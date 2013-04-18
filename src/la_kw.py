@@ -20,4 +20,4 @@ for i in NazwyModulow:
 def generate_excel_files(dfb):
     xlwt = mu_kw.new_module_for_writing_spreadsheet()
     mt_kw.generate_one_file(xlwt, dfb, 'uu_energy', 'e.xls')
-    mt_kw.generate_one_file(xlwt, dfb, 'uu_power', 'p.xls')
+    mt_kw.generate_one_file(xlwt, dfb, lc_kw.fq_uu_power_qv, 'p.xls')
