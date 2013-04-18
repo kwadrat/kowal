@@ -13,3 +13,8 @@ for i in NazwyModulow:
             exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
         else:
             exec 'import %(modul)s' % dict(modul = i)
+
+def dq_object_key(dfb, under_name):
+    db_statement = fz_kw.ptn_object_key(under_name)
+    result = dfb.query_dct(db_statement)
+    return result
