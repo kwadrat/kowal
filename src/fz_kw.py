@@ -64,6 +64,15 @@ def ptn_entry_already_inserted(n_table, key_object, row_date, my_hour):
         m_time=my_hour,
         )
 
+def ptn_insert_energy_entry(n_table, key_object, row_date, my_hour, value):
+    return fy_kw.lxa_12_inst % dict(
+        n_table=n_table,
+        f_object=key_object,
+        m_date=row_date,
+        m_time=my_hour,
+        m_value=value,
+        )
+
 class TestVariousPatterns(unittest.TestCase):
     def test_various_patterns(self):
         '''
@@ -74,3 +83,4 @@ class TestVariousPatterns(unittest.TestCase):
         self.assertEqual(index_drop('a'), fy_kw.lxa_5_inst)
         self.assertEqual(ptn_object_key('abc'), fy_kw.lxa_7_inst)
         self.assertEqual(ptn_entry_already_inserted('t', 123, '2013-01-31', '23:34'), fy_kw.lxa_9_inst)
+        self.assertEqual(ptn_insert_energy_entry('t', 123, '2013-01-31', '23:34', 0), fy_kw.lxa_11_inst)
