@@ -53,6 +53,14 @@ def ptn_object_key(under_name):
         account=lc_kw.fq_account_qv,
         )
 
+def ptn_entry_already_inserted(n_table, key_object, row_date, my_hour):
+    return fy_kw.lxa_10_inst % dict(
+        n_table=n_table,
+        f_object=key_object,
+        m_date=row_date,
+        m_time=my_hour,
+        )
+
 class TestVariousPatterns(unittest.TestCase):
     def test_various_patterns(self):
         '''
@@ -62,3 +70,4 @@ class TestVariousPatterns(unittest.TestCase):
         self.assertEqual(index_create('a', 't', 'f'), fy_kw.lxa_3_inst)
         self.assertEqual(index_drop('a'), fy_kw.lxa_5_inst)
         self.assertEqual(ptn_object_key('abc'), fy_kw.lxa_7_inst)
+        self.assertEqual(ptn_entry_already_inserted('t', 123, '2013-01-31', '23:34'), fy_kw.lxa_9_inst)
