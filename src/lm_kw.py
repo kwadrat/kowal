@@ -21,7 +21,7 @@ def have_dec_type(value):
     return isinstance(value, decimal.Decimal)
 
 def calculate_rounding(places):
-    return a2d(10) ** (- places)
+    return value_ten_const ** (- places)
 
 class TestPointNumbers(unittest.TestCase):
     def test_point_numbers(self):
