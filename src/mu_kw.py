@@ -45,31 +45,6 @@ def locate_object_key(dfb, under_name):
         raise RuntimeError('ret_size = %d' % ret_size)
     return key_object
 
-class GatheredRows:
-    def __init__(self):
-        '''
-        GatheredRows:
-        '''
-        self.internal_rows = {}
-
-    def locate_this_row(self, key_object, row_date):
-        '''
-        GatheredRows:
-        '''
-        local_key = (key_object, row_date)
-        result = self.internal_rows.get(local_key)
-        return result
-
-    def prepare_local_copy_of_row(self):
-        '''
-        GatheredRows:
-        '''
-        if (key_object, row_date) not in self.internal_rows:
-            existing_rows = le_kw.dq_entry_already_inserted(dfb, self.table_of_samples, key_object, row_date)
-            no_of_rows = len(existing_rows)
-            if no_of_rows == 0:
-                pass
-
 class CommonReader:
     def __init__(self, cnt_per_day, table_of_samples):
         '''
