@@ -25,7 +25,7 @@ class PowerReader(CommonReader):
         '''
         PowerReader:
         '''
-        CommonReader.__init__(self)
+        CommonReader.__init__(self, 96)
 
     def vx_th_date(self, my_col, my_row):
         '''

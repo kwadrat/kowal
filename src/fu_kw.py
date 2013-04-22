@@ -24,7 +24,7 @@ class EnergyReader(CommonReader):
         '''
         EnergyReader:
         '''
-        CommonReader.__init__(self)
+        CommonReader.__init__(self, 24)
 
     def vx_t_date(self, my_col, my_row):
         '''

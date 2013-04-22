@@ -46,10 +46,11 @@ def locate_object_key(dfb, under_name):
     return key_object
 
 class CommonReader:
-    def __init__(self):
+    def __init__(self, cnt_per_day):
         '''
         CommonReader:
         '''
+        self.cnt_per_day = cnt_per_day
         self.vx_zero = fv_kw.vx_zero
         self.day_zero = (0, 0, 0)
 
