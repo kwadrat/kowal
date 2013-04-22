@@ -46,7 +46,7 @@ def locate_object_key(dfb, under_name):
     return key_object
 
 class CommonReader:
-    def __init__(self, cnt_per_day):
+    def __init__(self, cnt_per_day, table_of_samples):
         '''
         CommonReader:
         '''
