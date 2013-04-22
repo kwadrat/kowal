@@ -82,6 +82,14 @@ class CommonReader:
         self.gathered_rows = GatheredRows()
         self.internal_rows = {}
 
+    def locate_this_row(self, key_object, row_date):
+        '''
+        CommonReader:
+        '''
+        local_key = (key_object, row_date)
+        result = self.internal_rows.get(local_key)
+        return result
+
     def vx_num_peek(self, my_col, my_row):
         '''
         CommonReader:
