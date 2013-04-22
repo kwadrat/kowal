@@ -93,6 +93,10 @@ class CommonReader:
             no_of_rows = len(existing_rows)
             if no_of_rows == 0:
                 self.prepare_new_empty_row(key_object, row_date)
+            elif no_of_rows == 1:
+                self.fetch_data_from_database(key_object, row_date, existing_rows[0])
+            else:
+                raise RuntimeError('no_of_rows = %s' % repr(no_of_rows))
 
     def vx_num_peek(self, my_col, my_row):
         '''
