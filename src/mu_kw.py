@@ -81,7 +81,7 @@ class CommonReader:
             existing_rows = le_kw.dq_entry_already_inserted(dfb, self.table_of_samples, key_object, row_date)
             no_of_rows = len(existing_rows)
             if no_of_rows == 0:
-                pass
+                self.prepare_new_empty_row(key_object, row_date)
 
     def vx_num_peek(self, my_col, my_row):
         '''
