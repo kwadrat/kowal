@@ -118,7 +118,7 @@ class TestVariousPatterns(unittest.TestCase):
         self.assertEqual(index_create('a', 't', 'f'), fy_kw.lxa_3_inst)
         self.assertEqual(index_drop('a'), fy_kw.lxa_5_inst)
         self.assertEqual(ptn_object_key('abc'), fy_kw.lxa_7_inst)
-        self.assertEqual(ptn_entry_already_inserted('t', 123, '2013-01-31'), fy_kw.lxa_9_inst)
+        self.assertEqual(ptn_entry_already_inserted(lc_kw.fq_uu_power_qv, 123, '2013-01-31'), fy_kw.lxa_9_inst)
         self.assertEqual(ptn_insert_energy_entry('t', 123, '2013-01-31', '23:34', 0), fy_kw.lxa_11_inst)
         self.assertEqual(ptn_load_from_db('t'), fy_kw.lxa_13_inst)
         self.assertEqual(ptn_add_new_object_key('n'), fy_kw.lxa_15_inst)
