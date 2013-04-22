@@ -99,6 +99,17 @@ def ptn_add_new_object_key(under_name):
         k_object=lc_kw.fq_k_object_qv,
         )
 
+def ptn_insert_vector_of_samples(n_table, key_object, row_date, all_samples):
+    return fy_kw.lxa_18_inst % dict(
+        n_table=n_table,
+        e_object=lc_kw.fq_f_object_qv,
+        f_object=key_object,
+        e_date=lc_kw.fq_m_date_qv,
+        m_date=row_date,
+        e_samples=lc_kw.fq_m_samples_qv,
+        m_samples=ln_kw.convert_all(all_samples),
+        )
+
 class TestVariousPatterns(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual
     def test_various_patterns(self):
@@ -113,3 +124,4 @@ class TestVariousPatterns(unittest.TestCase):
         self.assertEqual(ptn_insert_energy_entry('t', 123, '2013-01-31', '23:34', 0), fy_kw.lxa_11_inst)
         self.assertEqual(ptn_load_from_db('t'), fy_kw.lxa_13_inst)
         self.assertEqual(ptn_add_new_object_key('n'), fy_kw.lxa_15_inst)
+        self.assertEqual(ptn_insert_vector_of_samples(lc_kw.fq_uu_power_qv, 123, '2013-01-31', [None] * 3), fy_kw.lxa_17_inst)
