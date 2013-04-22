@@ -19,9 +19,9 @@ SELECT k_object FROM uu_object WHERE account='abc';"""
 lxa_8_inst = """\
 SELECT %(k_object)s FROM %(uu_object)s WHERE %(account)s='%(under_name)s';"""
 lxa_9_inst = """\
-SELECT * FROM uu_power WHERE f_object=123 AND m_date='2013-01-31';"""
+SELECT k_power, f_object, m_date, m_samples FROM uu_power WHERE f_object=123 AND m_date='2013-01-31';"""
 lxa_10_inst = """\
-SELECT * FROM %(n_table)s WHERE %(e_object)s=%(f_object)d AND %(e_date)s='%(m_date)s';"""
+SELECT %(e_fields)s FROM %(n_table)s WHERE %(e_object)s=%(f_object)d AND %(e_date)s='%(m_date)s';"""
 lxa_11_inst = """\
 INSERT INTO t (f_object, m_date, m_time, m_value) VALUES (123, '2013-01-31', '23:34', 0.000000);"""
 lxa_12_inst = """\
