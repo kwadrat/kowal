@@ -14,11 +14,15 @@ def d2a(a):
 
 value_ten_const = a2d(10)
 
-def for_storing(value):
-    return 'NULL'
-
 def have_dec_type(value):
     return isinstance(value, decimal.Decimal)
+
+def for_storing(value):
+    if have_dec_type(value):
+        result = d2a(value)
+    else:
+        result = 'NULL'
+    return result
 
 def calculate_rounding(places):
     return value_ten_const ** (- places)
@@ -37,6 +41,7 @@ class TestPointNumbers(unittest.TestCase):
         self.assertEqual(a2d(15), decimal.Decimal('15'))
         self.assertEqual(d2a(decimal.Decimal('1.5')), '1.500000')
         self.assertEqual(for_storing(None), 'NULL')
+        self.assertEqual(for_storing(a2d('1.25')), '1.250000')
         self.assertEqual(have_dec_type(a2d('0')), 1)
         self.assertEqual(have_dec_type(0), 0)
         self.assertEqual(calculate_rounding(3), decimal.Decimal('0.001'))
