@@ -70,8 +70,8 @@ class CommonReader:
         '''
         local_key = (key_object, row_date)
         sample_key = None
-        sample_data = [None] * self.cnt_per_day
-        self.internal_rows[local_key] = [sample_key, sample_data]
+        list_of_samples = [None] * self.cnt_per_day
+        self.internal_rows[local_key] = [sample_key, list_of_samples]
 
     def prepare_local_copy_of_row(self, dfb, key_object, row_date):
         '''
