@@ -23,6 +23,11 @@ def have_dec_type(value):
 def calculate_rounding(places):
     return value_ten_const ** (- places)
 
+def readjust_number(places, value):
+    napis = '%.*f' % (places, value)
+    rounding = calculate_rounding(places)
+    return a2d(napis).quantize(rounding)
+
 class TestPointNumbers(unittest.TestCase):
     def test_point_numbers(self):
         '''
@@ -35,3 +40,4 @@ class TestPointNumbers(unittest.TestCase):
         self.assertEqual(have_dec_type(a2d('0')), 1)
         self.assertEqual(have_dec_type(0), 0)
         self.assertEqual(calculate_rounding(3), decimal.Decimal('0.001'))
+        self.assertEqual(readjust_number(3, 1.5555), decimal.Decimal('1.556'))
