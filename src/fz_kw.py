@@ -55,15 +55,13 @@ def ptn_object_key(under_name):
         account=lc_kw.fq_account_qv,
         )
 
-def ptn_entry_already_inserted(n_table, key_object, row_date, my_hour):
+def ptn_entry_already_inserted(n_table, key_object, row_date):
     return fy_kw.lxa_10_inst % dict(
         n_table=n_table,
         e_object=lc_kw.fq_f_object_qv,
         f_object=key_object,
         e_date=lc_kw.fq_m_date_qv,
         m_date=row_date,
-        e_time=lc_kw.fq_m_time_qv,
-        m_time=my_hour,
         )
 
 def ptn_insert_energy_entry(n_table, key_object, row_date, my_hour, value):
@@ -120,7 +118,7 @@ class TestVariousPatterns(unittest.TestCase):
         self.assertEqual(index_create('a', 't', 'f'), fy_kw.lxa_3_inst)
         self.assertEqual(index_drop('a'), fy_kw.lxa_5_inst)
         self.assertEqual(ptn_object_key('abc'), fy_kw.lxa_7_inst)
-        self.assertEqual(ptn_entry_already_inserted('t', 123, '2013-01-31', '23:34'), fy_kw.lxa_9_inst)
+        self.assertEqual(ptn_entry_already_inserted('t', 123, '2013-01-31'), fy_kw.lxa_9_inst)
         self.assertEqual(ptn_insert_energy_entry('t', 123, '2013-01-31', '23:34', 0), fy_kw.lxa_11_inst)
         self.assertEqual(ptn_load_from_db('t'), fy_kw.lxa_13_inst)
         self.assertEqual(ptn_add_new_object_key('n'), fy_kw.lxa_15_inst)
