@@ -36,3 +36,5 @@ lxa_16_inst = """\
 INSERT INTO %(uu_object)s (%(account)s) VALUES ('%(under_name)s') RETURNING %(k_object)s;"""
 lxa_17_inst = """\
 INSERT INTO uu_power (f_object, m_date, m_samples) VALUES (123, '2013-01-31', '{NULL,NULL,NULL}');"""
+lxa_18_inst = """\
+INSERT INTO %(n_table)s (%(e_object)s, %(e_date)s, %(e_samples)s) VALUES (%(f_object)d, '%(m_date)s', %(m_samples)s);"""
