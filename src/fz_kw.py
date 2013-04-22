@@ -59,7 +59,7 @@ def ptn_object_key(under_name):
 def ptn_entry_already_inserted(n_table, key_object, row_date):
     return fy_kw.lxa_10_inst % dict(
         n_table=n_table,
-        e_fields=hj_kw.ls_przec(lc_kw.fq_k_power_qv, lc_kw.fq_f_object_qv, lc_kw.fq_m_date_qv, lc_kw.fq_m_samples_qv),
+        e_fields=hj_kw.ls_przec(lc_kw.fq_k_sample_qv, lc_kw.fq_f_object_qv, lc_kw.fq_m_date_qv, lc_kw.fq_m_samples_qv),
         e_object=lc_kw.fq_f_object_qv,
         f_object=key_object,
         e_date=lc_kw.fq_m_date_qv,
