@@ -19,7 +19,7 @@ def dq_object_key(dfb, under_name):
     return dfb.query_dct(db_statement)
 
 def dq_entry_already_inserted(dfb, n_table, key_object, row_date, my_hour):
-    db_statement = fz_kw.ptn_entry_already_inserted(n_table, key_object, row_date, my_hour)
+    db_statement = fz_kw.ptn_entry_already_inserted(n_table, key_object, row_date)
     return dfb.query_dct(db_statement)
 
 def dq_insert_energy_entry(dfb, n_table, key_object, row_date, my_hour, value):
