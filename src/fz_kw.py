@@ -99,6 +99,7 @@ def ptn_add_new_object_key(under_name):
         )
 
 class TestVariousPatterns(unittest.TestCase):
+    vassertEqual = dv_kw.vassertEqual
     def test_various_patterns(self):
         '''
         TestVariousPatterns:
