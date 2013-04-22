@@ -18,6 +18,9 @@ def for_storing(value):
 def have_dec_type(value):
     return isinstance(value, decimal.Decimal)
 
+def calculate_rounding(places):
+    return a2d(10) ** (- places)
+
 class TestPointNumbers(unittest.TestCase):
     def test_point_numbers(self):
         '''
@@ -29,3 +32,4 @@ class TestPointNumbers(unittest.TestCase):
         self.assertEqual(for_storing(None), 'NULL')
         self.assertEqual(have_dec_type(a2d('0')), 1)
         self.assertEqual(have_dec_type(0), 0)
+        self.assertEqual(calculate_rounding(3), decimal.Decimal('0.001'))
