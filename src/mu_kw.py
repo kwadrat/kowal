@@ -64,6 +64,15 @@ class CommonReader:
         result = self.internal_rows.get(local_key)
         return result
 
+    def prepare_new_empty_row(self, key_object, row_date):
+        '''
+        CommonReader:
+        '''
+        local_key = (key_object, row_date)
+        sample_key = None
+        sample_data = [None] * self.cnt_per_day
+        self.internal_rows[local_key] = [sample_key, sample_data]
+
     def prepare_local_copy_of_row(self, dfb, key_object, row_date):
         '''
         CommonReader:
