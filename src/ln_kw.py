@@ -17,8 +17,12 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+def convert_all(my_values):
+    return hj_kw.Poprzecinkuj(map(lm_kw.for_storing, my_values))
+
 class TestConvertingVector(unittest.TestCase):
     def test_converting_vector(self):
         '''
         TestConvertingVector:
         '''
+        self.assertEqual(convert_all([None] * 4), 'NULL,NULL,NULL,NULL')
