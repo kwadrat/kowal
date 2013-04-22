@@ -147,7 +147,7 @@ class CommonReader:
         '''
         CommonReader:
         '''
-        self.gathered_rows.prepare_local_copy_of_row(dfb, key_object, row_date, self.table_of_samples)
+        self.prepare_local_copy_of_row(dfb, key_object, row_date)
 
     def analyze_this_file(self, dfb, xlrd, single_file):
         '''
