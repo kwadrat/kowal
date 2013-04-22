@@ -77,9 +77,9 @@ class PowerReader(CommonReader):
         PowerReader:
         '''
         row_date, my_hour = duo_date
-        if not le_kw.dq_entry_already_inserted(dfb, lc_kw.fq_uu_power_qv, key_object, row_date):
+        if not le_kw.dq_entry_already_inserted(dfb, self.table_of_samples, key_object, row_date):
             value = self.vx_peek('C', single_row)
-            le_kw.dq_insert_energy_entry(dfb, lc_kw.fq_uu_power_qv, key_object, row_date, my_hour, value)
+            le_kw.dq_insert_energy_entry(dfb, self.table_of_samples, key_object, row_date, my_hour, value)
 
     def enter_data(self, dfb, key_object, data_rows):
         '''

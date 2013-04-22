@@ -82,10 +82,10 @@ class EnergyReader(CommonReader):
         EnergyReader:
         '''
         my_hour = single_column.canonical_hour
-        if not le_kw.dq_entry_already_inserted(dfb, lc_kw.fq_uu_energy_qv, key_object, row_date):
+        if not le_kw.dq_entry_already_inserted(dfb, self.table_of_samples, key_object, row_date):
             value = self.vx_num_peek(single_column.col_in_sheet, single_row)
             if value:
-                le_kw.dq_insert_energy_entry(dfb, lc_kw.fq_uu_energy_qv, key_object, row_date, my_hour, value)
+                le_kw.dq_insert_energy_entry(dfb, self.table_of_samples, key_object, row_date, my_hour, value)
 
     def enter_data(self, dfb, key_object, data_headers, data_rows):
         '''
