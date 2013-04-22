@@ -89,6 +89,16 @@ class CommonReader:
         result = self.internal_rows.get(local_key)
         return result
 
+    def prepare_local_copy_of_row(self, dfb, key_object, row_date):
+        '''
+        CommonReader:
+        '''
+        if not self.locate_this_row(key_object, row_date):
+            existing_rows = le_kw.dq_entry_already_inserted(dfb, self.table_of_samples, key_object, row_date)
+            no_of_rows = len(existing_rows)
+            if no_of_rows == 0:
+                pass
+
     def vx_num_peek(self, my_col, my_row):
         '''
         CommonReader:
