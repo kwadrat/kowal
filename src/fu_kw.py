@@ -105,16 +105,3 @@ class EnergyReader(CommonReader):
         key_object = mu_kw.locate_object_key(dfb, under_name)
         data_rows = self.detect_data_rows()
         self.enter_data(dfb, key_object, data_headers, data_rows)
-
-    def analyze_this_file(self, dfb, xlrd, single_file):
-        '''
-        EnergyReader:
-        '''
-        self.xlrd = xlrd
-        self.book = self.xlrd.open_workbook(single_file)
-        numer_of_sheets = self.book.nsheets
-        if numer_of_sheets == 1:
-            self.sheet = self.book.sheet_by_name(u'Report')
-            self.analyze_this_sheet(dfb)
-        else:
-            raise RuntimeError('numer_of_sheets = %d' % numer_of_sheets)

@@ -97,3 +97,16 @@ class CommonReader:
         '''
         tmp_text = self.vx_peek(my_col, my_row)
         verify_for_equal(tmp_text, expected)
+
+    def analyze_this_file(self, dfb, xlrd, single_file):
+        '''
+        CommonReader:
+        '''
+        self.xlrd = xlrd
+        self.book = self.xlrd.open_workbook(single_file)
+        numer_of_sheets = self.book.nsheets
+        if numer_of_sheets == 1:
+            self.sheet = self.book.sheet_by_name(u'Report')
+            self.analyze_this_sheet(dfb)
+        else:
+            raise RuntimeError('numer_of_sheets = %d' % numer_of_sheets)
