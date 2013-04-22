@@ -73,6 +73,17 @@ class CommonReader:
         list_of_samples = [None] * self.cnt_per_day
         self.internal_rows[local_key] = [sample_key, list_of_samples]
 
+    def fetch_data_from_database(self, key_object, row_date, sample_data):
+        '''
+        CommonReader:
+        '''
+        local_key = (key_object, row_date)
+        sample_key = None
+        tmp_key, tmp_object, tmp_date, tmp_samples = sample_data
+        verify_for_equal(tmp_object, key_object)
+        verify_for_equal(tmp_date, row_date)
+        self.internal_rows[local_key] = [sample_key, sample_data]
+
     def prepare_local_copy_of_row(self, dfb, key_object, row_date):
         '''
         CommonReader:
