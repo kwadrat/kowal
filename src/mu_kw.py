@@ -79,7 +79,6 @@ class CommonReader:
         self.table_of_samples = table_of_samples
         self.vx_zero = fv_kw.vx_zero
         self.day_zero = (0, 0, 0)
-        self.gathered_rows = GatheredRows()
         self.internal_rows = {}
 
     def locate_this_row(self, key_object, row_date):
