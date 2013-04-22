@@ -26,3 +26,4 @@ class TestConvertingVector(unittest.TestCase):
         TestConvertingVector:
         '''
         self.assertEqual(convert_all([None] * 4), "'{NULL,NULL,NULL,NULL}'")
+        self.assertEqual(convert_all([2.25, lm_kw.a2d('2.75')]), "'{2.25,2.750000}'")
