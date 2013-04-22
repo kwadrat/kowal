@@ -33,3 +33,7 @@ def dq_load_from_db(dfb, table_name):
 def dq_add_new_object_key(dfb, under_name):
     db_statement = fz_kw.ptn_add_new_object_key(under_name)
     return dfb.query_dct(db_statement)
+
+def dq_insert_vector_of_samples(dfb, n_table, key_object, row_date, all_samples):
+    db_statement = fz_kw.ptn_insert_vector_of_samples(n_table, key_object, row_date, all_samples)
+    dfb.query_silent(db_statement)
