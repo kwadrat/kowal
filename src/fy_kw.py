@@ -39,7 +39,8 @@ INSERT INTO uu_power (f_object, m_date, m_samples) VALUES (123, '2013-01-31', '{
 lxa_18_inst = """\
 INSERT INTO %(n_table)s (%(e_object)s, %(e_date)s, %(e_samples)s) VALUES (%(f_object)d, '%(m_date)s', %(m_samples)s);"""
 lxa_19_inst = """\
-git checkout -b akw_2013.01.31_23.59.00;git checkout master
+git checkout -b akw_2013.01.31_23.59.00; git checkout master
+cd ../dkw; git checkout -b akw_2013.01.31_23.59.00; git checkout master; cd ../bkw
 vi conf_kw.py
 cp *.py ../akw/;touch ../akw/pw_kw.py;git checkout conf_kw.py;touch ../akw/pw_kw.py
 """
