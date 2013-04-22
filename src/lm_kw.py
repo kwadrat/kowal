@@ -24,6 +24,7 @@ class TestPointNumbers(unittest.TestCase):
         TestPointNumbers:
         '''
         self.assertEqual(a2d('1.5'), decimal.Decimal('1.5'))
+        self.assertEqual(a2d(15), decimal.Decimal('15'))
         self.assertEqual(d2a(decimal.Decimal('1.5')), '1.500000')
         self.assertEqual(for_storing(None), 'NULL')
         self.assertEqual(have_dec_type(a2d('0')), 1)
