@@ -54,6 +54,7 @@ class CommonReader:
         self.table_of_samples = table_of_samples
         self.vx_zero = fv_kw.vx_zero
         self.day_zero = (0, 0, 0)
+        self.gathered_rows = {}
 
     def vx_num_peek(self, my_col, my_row):
         '''
