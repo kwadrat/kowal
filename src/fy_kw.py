@@ -43,3 +43,6 @@ git checkout -b akw_2013.01.31_23.59.00;git checkout master
 vi conf_kw.py
 cp *.py ../akw/;touch ../akw/pw_kw.py;git checkout conf_kw.py;touch ../akw/pw_kw.py
 """
+lxa_20_inst = """\
+cd ..;tar cjf bkw_2013.01.31_23.59.00.tar.bz2 bkw dkw;mv bkw_2013.01.31_23.59.00.tar.bz2 bkw; cd bkw
+"""
