@@ -20,6 +20,8 @@ def have_dec_type(value):
 def for_storing(value):
     if have_dec_type(value):
         result = d2a(value)
+    elif isinstance(value, float):
+        result = str(value)
     else:
         result = 'NULL'
     return result
@@ -42,6 +44,7 @@ class TestPointNumbers(unittest.TestCase):
         self.assertEqual(d2a(decimal.Decimal('1.5')), '1.500000')
         self.assertEqual(for_storing(None), 'NULL')
         self.assertEqual(for_storing(a2d('1.25')), '1.250000')
+        self.assertEqual(for_storing(1.75), '1.75')
         self.assertEqual(have_dec_type(a2d('0')), 1)
         self.assertEqual(have_dec_type(0), 0)
         self.assertEqual(calculate_rounding(3), decimal.Decimal('0.001'))
