@@ -12,6 +12,8 @@ def d2a(a):
     '''Decimal -> ASCII(kropka)'''
     return '%f' % a
 
+value_ten_const = a2d(10)
+
 def for_storing(value):
     return 'NULL'
 
