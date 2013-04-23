@@ -83,6 +83,7 @@ class EnergyReader(CommonReader):
         '''
         my_hour = single_column.canonical_hour
         self.prepare_local_copy_of_row(dfb, key_object, row_date)
+        value = self.vx_num_peek(single_column.col_in_sheet, single_row)
         if not le_kw.dq_entry_already_inserted(dfb, self.table_of_samples, key_object, row_date):
             value = self.vx_num_peek(single_column.col_in_sheet, single_row)
             if value:
