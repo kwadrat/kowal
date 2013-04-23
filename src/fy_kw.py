@@ -42,7 +42,7 @@ lxa_19_inst = """\
 git checkout -b akw_2013.01.31_23.59.00; git checkout master
 cd ../dkw; git checkout -b akw_2013.01.31_23.59.00; git checkout master; cd ../bkw
 vi conf_kw.py
-cp ../dkw/src/*.py ../ckw/src/; cp *.py ../akw/; git checkout conf_kw.py; touch ../akw/pw_kw.py
+rm ../ckw/src/*.py; cp ../dkw/src/*.py ../ckw/src/; cp *.py ../akw/; git checkout conf_kw.py; touch ../akw/pw_kw.py
 """
 lxa_20_inst = """\
 cd ..;tar cjf bkw_2013.01.31_23.59.00.tar.bz2 bkw dkw;mv bkw_2013.01.31_23.59.00.tar.bz2 bkw; cd bkw
