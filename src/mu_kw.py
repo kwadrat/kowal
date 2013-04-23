@@ -31,10 +31,6 @@ def check_module_dependencies_linux():
     new_module_for_reading_spreadsheet()
     new_module_for_writing_spreadsheet()
 
-def verify_for_equal(tmp_value, expected):
-    if tmp_value != expected:
-        raise RuntimeError('tmp_value = %s' % repr(tmp_value))
-
 def locate_object_key(dfb, under_name):
     key_object = le_kw.dq_object_key(dfb, under_name)
     if not key_object:
