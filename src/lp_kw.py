@@ -17,7 +17,7 @@ def process_hour_headers(time_tuple):
     day_part = time_tuple[:3]
     time_part = time_tuple[3:]
     verify_for_equal(day_part, day_zero)
-    return datetime.time(*time_part).strftime('%H:%M')
+    return part_of_day_hs(*time_part)
 
 class TestDateQuarters(unittest.TestCase):
     def test_date_quarters(self):
