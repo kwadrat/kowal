@@ -4,6 +4,8 @@
 import datetime
 import unittest
 
+day_zero = (0, 0, 0)
+
 def verify_for_equal(tmp_value, expected):
     if tmp_value != expected:
         raise RuntimeError('tmp_value = %s' % repr(tmp_value))
