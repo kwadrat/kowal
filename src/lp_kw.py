@@ -19,6 +19,12 @@ def process_hour_headers(time_tuple):
     verify_for_equal(day_part, day_zero)
     return part_of_day_hs(*time_part)
 
+def process_quarter_headers(value):
+    my_point = datetime.datetime(*value) - datetime.timedelta(seconds=15*60)
+    my_date = my_point.strftime('%Y.%m.%d')
+    my_time = my_point.strftime('%H:%M')
+    return my_date, my_time
+
 class TestDateQuarters(unittest.TestCase):
     def test_date_quarters(self):
         '''
