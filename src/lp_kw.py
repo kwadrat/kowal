@@ -31,4 +31,4 @@ class TestDateQuarters(unittest.TestCase):
         TestDateQuarters:
         '''
         self.assertEqual(part_of_day_hs(2, 45, 00), '02:45')
-
+        self.assertEqual(process_quarter_headers([2013, 1, 31, 23, 59, 00]), ('2013.01.31', '23:44'))
