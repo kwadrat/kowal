@@ -13,6 +13,12 @@ def verify_for_equal(tmp_value, expected):
 def part_of_day_hs(par_h, par_m, par_s):
     return datetime.time(par_h, par_m, par_s).strftime('%H:%M')
 
+def process_hour_headers(time_tuple):
+    day_part = time_tuple[:3]
+    time_part = time_tuple[3:]
+    verify_for_equal(day_part, day_zero)
+    return datetime.time(*time_part).strftime('%H:%M')
+
 class TestDateQuarters(unittest.TestCase):
     def test_date_quarters(self):
         '''
