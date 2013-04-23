@@ -49,7 +49,7 @@ class EnergyReader(CommonReader):
         for one_column in data_headers:
             tmp_text = self.vx_num_time(one_column.col_in_sheet, 6)
             expected = one_column.header_for_hour_column
-            mu_kw.verify_for_equal(tmp_text, expected)
+            lp_kw.verify_for_equal(tmp_text, expected)
 
     def detect_sheet_header(self, data_headers):
         '''

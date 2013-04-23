@@ -81,8 +81,8 @@ class CommonReader:
         local_key = (key_object, row_date)
         sample_key = None
         tmp_key, tmp_object, tmp_date, tmp_samples = sample_data
-        verify_for_equal(tmp_object, key_object)
-        verify_for_equal(tmp_date, row_date)
+        lp_kw.verify_for_equal(tmp_object, key_object)
+        lp_kw.verify_for_equal(tmp_date, row_date)
         self.internal_rows[local_key] = [sample_key, sample_data]
 
     def prepare_local_copy_of_row(self, dfb, key_object, row_date):
@@ -133,7 +133,7 @@ class CommonReader:
         time_tuple = self.xlrd.xldate_as_tuple(value, self.book.datemode)
         day_part = time_tuple[:3]
         time_part = time_tuple[3:]
-        verify_for_equal(day_part, self.day_zero)
+        lp_kw.verify_for_equal(day_part, self.day_zero)
         return datetime.time(*time_part).strftime('%H:%M')
 
     def check_for_constant_string(self, my_col, my_row, expected):
@@ -141,7 +141,7 @@ class CommonReader:
         CommonReader:
         '''
         tmp_text = self.vx_peek(my_col, my_row)
-        verify_for_equal(tmp_text, expected)
+        lp_kw.verify_for_equal(tmp_text, expected)
 
     def analyze_this_file(self, dfb, xlrd, single_file):
         '''
