@@ -16,11 +16,6 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-def describe_column(column_index):
-    hour_number = column_index + 1
-    hour_number = lp_kw.midnight_hour_wrap.get(hour_number, hour_number)
-    return lp_kw.change_to_full_hour(hour_number)
-
 class HourServer:
     def __init__(self, start_col, column_index):
         '''
@@ -29,7 +24,7 @@ class HourServer:
         self.column_index = column_index
         self.canonical_hour = lp_kw.change_to_full_hour(self.column_index)
         self.col_in_sheet = start_col + self.column_index
-        self.header_for_hour_column = describe_column(column_index)
+        self.header_for_hour_column = lp_kw.describe_column(column_index)
 
     def __repr__(self):
         '''
@@ -44,11 +39,4 @@ def prepare_time_headers(start_col):
     return all_time_columns
 
 class TestHourPatterns(unittest.TestCase):
-    def test_hour_patterns(self):
-        '''
-        TestHourPatterns:
-        '''
-        self.assertEqual(describe_column(0), '01:00')
-        self.assertEqual(describe_column(1), '02:00')
-        self.assertEqual(describe_column(22), '23:00')
-        self.assertEqual(describe_column(23), '00:00')
+    pass

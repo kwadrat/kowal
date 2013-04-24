@@ -29,6 +29,11 @@ def process_quarter_headers(value):
     my_time = my_point.strftime('%H:%M')
     return my_date, my_time
 
+def describe_column(column_index):
+    hour_number = column_index + 1
+    hour_number = midnight_hour_wrap.get(hour_number, hour_number)
+    return change_to_full_hour(hour_number)
+
 class TestDateQuarters(unittest.TestCase):
     def test_date_quarters(self):
         '''
@@ -37,3 +42,12 @@ class TestDateQuarters(unittest.TestCase):
         self.assertEqual(part_of_day_hs(2, 45, 00), '02:45')
         self.assertEqual(process_quarter_headers([2013, 1, 31, 23, 59, 00]), ('2013.01.31', '23:44'))
         self.assertEqual(change_to_full_hour(7), '07:00')
+
+    def test_hour_patterns(self):
+        '''
+        TestDateQuarters:
+        '''
+        self.assertEqual(describe_column(0), '01:00')
+        self.assertEqual(describe_column(1), '02:00')
+        self.assertEqual(describe_column(22), '23:00')
+        self.assertEqual(describe_column(23), '00:00')
