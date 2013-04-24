@@ -16,11 +16,9 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-midnight_hour_wrap = {24: 0}
-
 def describe_column(column_index):
     hour_number = column_index + 1
-    hour_number = midnight_hour_wrap.get(hour_number, hour_number)
+    hour_number = lp_kw.midnight_hour_wrap.get(hour_number, hour_number)
     return lp_kw.change_to_full_hour(hour_number)
 
 class HourServer:

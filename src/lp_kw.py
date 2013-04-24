@@ -5,6 +5,7 @@ import datetime
 import unittest
 
 day_zero = (0, 0, 0)
+midnight_hour_wrap = {24: 0}
 
 def verify_for_equal(tmp_value, expected):
     if tmp_value != expected:
