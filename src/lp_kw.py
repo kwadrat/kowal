@@ -34,6 +34,22 @@ def describe_column(column_index):
     hour_number = midnight_hour_wrap.get(hour_number, hour_number)
     return change_to_full_hour(hour_number)
 
+class HourServer:
+    def __init__(self, start_col, column_index):
+        '''
+        HourServer:
+        '''
+        self.column_index = column_index
+        self.canonical_hour = change_to_full_hour(self.column_index)
+        self.col_in_sheet = start_col + self.column_index
+        self.header_for_hour_column = describe_column(column_index)
+
+    def __repr__(self):
+        '''
+        HourServer:
+        '''
+        return 'HS(%s)' % self.header_for_hour_column
+
 class TestDateQuarters(unittest.TestCase):
     def test_date_quarters(self):
         '''
