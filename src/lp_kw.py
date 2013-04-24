@@ -10,6 +10,9 @@ def verify_for_equal(tmp_value, expected):
     if tmp_value != expected:
         raise RuntimeError('tmp_value = %s' % repr(tmp_value))
 
+def change_to_full_hour(hour_number):
+    return '%02d:00' % hour_number
+
 def part_of_day_hs(par_h, par_m, par_s):
     return datetime.time(par_h, par_m, par_s).strftime('%H:%M')
 
