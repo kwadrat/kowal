@@ -16,11 +16,5 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-def prepare_time_headers(start_col):
-    all_time_columns = []
-    for column_index in xrange(24):
-        all_time_columns.append(lp_kw.HourServer(start_col, column_index))
-    return all_time_columns
-
 class TestHourPatterns(unittest.TestCase):
     pass
