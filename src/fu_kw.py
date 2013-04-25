@@ -94,7 +94,7 @@ class EnergyReader(CommonReader):
             for single_column in data_headers:
                 self.fetch_field(dfb, key_object, single_row, row_date, single_column)
 
-    def analyze_this_sheet(self, dfb):
+    def analyze_data_in_grid(self, dfb):
         '''
         EnergyReader:
         '''
