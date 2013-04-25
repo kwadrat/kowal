@@ -64,9 +64,9 @@ class CommonReader:
         CommonReader:
         '''
         local_key = (key_object, row_date)
-        sample_key = None
-        list_of_samples = [None] * self.cnt_per_day
-        self.internal_rows[local_key] = [sample_key, list_of_samples]
+        my_sample_row = lq_kw.SampleRow()
+        my_sample_row.new_and_empty(self.cnt_per_day)
+        self.internal_rows[local_key] = my_sample_row
 
     def store_value_in_row(self, key_object, row_date, sample_index, value):
         '''
