@@ -59,10 +59,10 @@ class QuarterServer:
         '''
         QuarterServer:
         '''
-        self.quarter_translator = {
-            '00:00': 0,
-            '23:45': 95,
-            }
+        self.quarter_translator = {}
+        for i in xrange(96):
+            hh_mm = determine_quarter(i)
+            self.quarter_translator[hh_mm] = i
 
     def quarter_to_number(self, hh_mm):
         '''
@@ -89,6 +89,7 @@ class TestDateQuarters(unittest.TestCase):
         self.assertEqual(determine_quarter(1), '00:15')
         self.assertEqual(determine_quarter(95), '23:45')
         self.assertEqual(obk.quarter_to_number('00:00'), 0)
+        self.assertEqual(obk.quarter_to_number('00:15'), 1)
         self.assertEqual(obk.quarter_to_number('23:45'), 95)
 
     def test_hour_patterns(self):
