@@ -2,6 +2,11 @@
 # -*- coding: UTF-8 -*-
 
 class SampleRow:
+    def __init__(self):
+        '''
+        SampleRow:
+        '''
+
     def new_and_empty(self, cnt_per_day):
         '''
         SampleRow:
