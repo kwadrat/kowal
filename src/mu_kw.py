@@ -71,7 +71,8 @@ class CommonReader:
         '''
         CommonReader:
         '''
-        self.internal_rows[sample_index] = value
+        local_key = (key_object, row_date)
+        self.internal_rows[local_key][1][sample_index] = value
 
     def fetch_data_from_database(self, key_object, row_date, sample_data):
         '''
