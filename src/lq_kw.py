@@ -8,3 +8,9 @@ class SampleRow:
         '''
         self.sample_key = None
         self.list_of_samples = [None] * cnt_per_day
+
+    def update_for_index(self, sample_index, value):
+        '''
+        SampleRow:
+        '''
+        self.list_of_samples[sample_index] = value
