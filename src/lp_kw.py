@@ -54,6 +54,12 @@ class HourServer:
         '''
         return 'HS(%s)' % self.header_for_hour_column
 
+class QuarterServer:
+    def __init__(self):
+        '''
+        QuarterServer:
+        '''
+
 def prepare_time_headers(start_col):
     all_time_columns = []
     for column_index in xrange(24):
@@ -65,6 +71,7 @@ class TestDateQuarters(unittest.TestCase):
         '''
         TestDateQuarters:
         '''
+        obk = QuarterServer()
         self.assertEqual(part_of_day_hs(2, 45, 00), '02:45')
         self.assertEqual(process_quarter_headers([2013, 1, 31, 23, 59, 00]), ('2013.01.31', '23:44'))
         self.assertEqual(change_to_full_hour(7), '07:00')
