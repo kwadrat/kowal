@@ -84,7 +84,9 @@ class CommonReader:
         tmp_key, tmp_object, tmp_date, tmp_samples = sample_data
         lp_kw.verify_for_equal(tmp_object, key_object)
         lp_kw.verify_for_equal(tmp_date, row_date)
-        self.internal_rows[local_key] = [sample_key, sample_data]
+        my_sample_row = lq_kw.SampleRow()
+        my_sample_row.fill_from_data(sample_key, sample_data)
+        self.internal_rows[local_key] = my_sample_row
 
     def prepare_local_copy_of_row(self, dfb, key_object, row_date):
         '''
