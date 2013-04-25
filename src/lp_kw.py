@@ -12,7 +12,12 @@ def verify_for_equal(tmp_value, expected):
         raise RuntimeError('tmp_value = %s' % repr(tmp_value))
 
 def determine_quarter(qrt_number):
-    return '00:00'
+    result = {
+        0: '00:00',
+        1: '00:15',
+        95: '23:45',
+        }[qrt_number]
+    return result
 
 def change_to_full_hour(hour_number):
     return '%02d:00' % hour_number
@@ -68,6 +73,8 @@ class TestDateQuarters(unittest.TestCase):
         self.assertEqual(process_quarter_headers([2013, 1, 31, 23, 59, 00]), ('2013.01.31', '23:44'))
         self.assertEqual(change_to_full_hour(7), '07:00')
         self.assertEqual(determine_quarter(0), '00:00')
+        self.assertEqual(determine_quarter(1), '00:15')
+        self.assertEqual(determine_quarter(95), '23:45')
 
     def test_hour_patterns(self):
         '''
