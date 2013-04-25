@@ -67,11 +67,11 @@ class CommonReader:
         list_of_samples = [None] * self.cnt_per_day
         self.internal_rows[local_key] = [sample_key, list_of_samples]
 
-    def store_value_in_row(self, key_object, row_date, sample_number, value):
+    def store_value_in_row(self, key_object, row_date, sample_index, value):
         '''
         CommonReader:
         '''
-        self.internal_rows[sample_number] = value
+        self.internal_rows[sample_index] = value
 
     def fetch_data_from_database(self, key_object, row_date, sample_data):
         '''
