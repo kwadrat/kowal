@@ -21,3 +21,10 @@ class SampleRow:
         SampleRow:
         '''
         self.list_of_samples[sample_index] = value
+
+    def fill_from_data(self, sample_key, sample_data):
+        '''
+        SampleRow:
+        '''
+        self.sample_key = sample_key
+        self.list_of_samples = sample_data
