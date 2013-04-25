@@ -60,6 +60,12 @@ class QuarterServer:
         QuarterServer:
         '''
 
+    def quarter_to_number(self, hh_mm):
+        '''
+        QuarterServer:
+        '''
+        return 0
+
 def prepare_time_headers(start_col):
     all_time_columns = []
     for column_index in xrange(24):
@@ -78,6 +84,7 @@ class TestDateQuarters(unittest.TestCase):
         self.assertEqual(determine_quarter(0), '00:00')
         self.assertEqual(determine_quarter(1), '00:15')
         self.assertEqual(determine_quarter(95), '23:45')
+        self.assertEqual(obk.quarter_to_number('00:00'), 0)
 
     def test_hour_patterns(self):
         '''
