@@ -12,11 +12,7 @@ def verify_for_equal(tmp_value, expected):
         raise RuntimeError('tmp_value = %s' % repr(tmp_value))
 
 def determine_quarter(qrt_number):
-    result = {
-        0: '00:00',
-        1: '00:15',
-        95: '23:45',
-        }[qrt_number]
+    result = (datetime.datetime(2013, 1, 31, 0, 0, 0) + datetime.timedelta(seconds=15*60 * qrt_number)).strftime('%H:%M')
     return result
 
 def change_to_full_hour(hour_number):
