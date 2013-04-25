@@ -6,6 +6,8 @@ class SampleRow:
         '''
         SampleRow:
         '''
+        self.sample_key = None
+        self.list_of_samples = None
 
     def new_and_empty(self, cnt_per_day):
         '''
