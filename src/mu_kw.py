@@ -6,6 +6,7 @@ import fv_kw
 import lc_kw
 import le_kw
 import lp_kw
+import lq_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
