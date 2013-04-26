@@ -32,7 +32,7 @@ def process_hour_headers(time_tuple):
 
 def process_quarter_headers(value):
     my_point = datetime.datetime(*value) - datetime.timedelta(seconds=15*60)
-    my_date = my_point.strftime('%Y.%m.%d')
+    my_date = my_point.strftime('%Y-%m-%d')
     my_time = my_point.strftime('%H:%M')
     return my_date, my_time
 
@@ -87,7 +87,7 @@ class TestDateQuarters(unittest.TestCase):
         obk = QuarterServer()
         self.assertEqual(part_of_day_hs(2, 45, 00), '02:45')
         self.assertEqual(rj_na_date(datetime.datetime(2013, 1, 31, 0, 0, 0)), '2013-01-31')
-        self.assertEqual(process_quarter_headers([2013, 1, 31, 23, 59, 00]), ('2013.01.31', '23:44'))
+        self.assertEqual(process_quarter_headers([2013, 1, 31, 23, 59, 00]), ('2013-01-31', '23:44'))
         self.assertEqual(change_to_full_hour(7), '07:00')
         self.assertEqual(determine_quarter(0), '00:00')
         self.assertEqual(determine_quarter(1), '00:15')
