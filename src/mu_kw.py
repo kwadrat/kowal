@@ -155,3 +155,16 @@ class CommonReader:
             self.analyze_data_in_grid(dfb)
         else:
             raise RuntimeError('numer_of_sheets = %d' % numer_of_sheets)
+
+    def store_rows_in_db(self, dfb):
+        '''
+        CommonReader:
+        '''
+        for local_key, my_sample_row in self.internal_rows.iteritems():
+            (key_object, row_date) = local_key
+            sample_key = my_sample_row.get_row_key()
+            all_samples = my_sample_row.get_row_of_samples()
+            if sample_key:
+                le_kw.dq_update_vector_of_samples(dfb, self.table_of_samples, sample_key, key_object, row_date, all_samples)
+            else:
+                le_kw.dq_insert_vector_of_samples(dfb, self.table_of_samples, key_object, row_date, all_samples)
