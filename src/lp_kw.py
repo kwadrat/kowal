@@ -32,7 +32,7 @@ def process_hour_headers(time_tuple):
 
 def process_quarter_headers(value):
     my_point = datetime.datetime(*value) - datetime.timedelta(seconds=15*60)
-    my_date = my_point.strftime('%Y-%m-%d')
+    my_date = rj_na_date(my_point)
     my_time = my_point.strftime('%H:%M')
     return my_date, my_time
 
