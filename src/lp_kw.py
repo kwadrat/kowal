@@ -21,6 +21,9 @@ def change_to_full_hour(hour_number):
 def rj_na_date(dttm):
     return dttm.strftime('%Y-%m-%d')
 
+def rj_na_godzine(dttm):
+    return dttm.strftime('%H:%M')
+
 def part_of_day_hs(par_h, par_m, par_s):
     return datetime.time(par_h, par_m, par_s).strftime('%H:%M')
 
@@ -85,6 +88,7 @@ class TestDateQuarters(unittest.TestCase):
         TestDateQuarters:
         '''
         obk = QuarterServer()
+        self.assertEqual(rj_na_godzine(datetime.time(2, 45, 00)), '02:45')
         self.assertEqual(part_of_day_hs(2, 45, 00), '02:45')
         self.assertEqual(rj_na_date(datetime.datetime(2013, 1, 31, 0, 0, 0)), '2013-01-31')
         self.assertEqual(process_quarter_headers([2013, 1, 31, 23, 59, 00]), ('2013-01-31', '23:44'))
