@@ -34,3 +34,9 @@ class SampleRow:
         SampleRow:
         '''
         return self.list_of_samples
+
+    def get_row_key(self):
+        '''
+        SampleRow:
+        '''
+        return self.sample_key
