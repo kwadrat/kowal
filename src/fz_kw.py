@@ -138,3 +138,4 @@ class TestVariousPatterns(unittest.TestCase):
         self.assertEqual(ptn_load_from_db('t'), fy_kw.lxa_13_inst)
         self.assertEqual(ptn_add_new_object_key('n'), fy_kw.lxa_15_inst)
         self.assertEqual(ptn_insert_vector_of_samples(lc_kw.fq_uu_power_qv, 123, '2013-01-31', [None] * 3), fy_kw.lxa_17_inst)
+        self.assertEqual(ptn_update_vector_of_samples(lc_kw.fq_uu_power_qv, 7, 123, '2013-01-31', [None] * 3), fy_kw.lxa_21_inst)
