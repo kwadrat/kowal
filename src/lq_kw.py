@@ -28,3 +28,9 @@ class SampleRow:
         '''
         self.sample_key = sample_key
         self.list_of_samples = sample_data
+
+    def get_row_of_samples(self):
+        '''
+        SampleRow:
+        '''
+        return self.list_of_samples
