@@ -11,6 +11,9 @@ def verify_for_equal(tmp_value, expected):
     if tmp_value != expected:
         raise RuntimeError('tmp_value = %s' % repr(tmp_value))
 
+def rj_na_godzine(dttm):
+    return dttm.strftime('%H:%M')
+
 def determine_quarter(qrt_number):
     result = (datetime.datetime(2013, 1, 31, 0, 0, 0) + datetime.timedelta(seconds=15*60 * qrt_number)).strftime('%H:%M')
     return result
@@ -20,9 +23,6 @@ def change_to_full_hour(hour_number):
 
 def rj_na_date(dttm):
     return dttm.strftime('%Y-%m-%d')
-
-def rj_na_godzine(dttm):
-    return dttm.strftime('%H:%M')
 
 def part_of_day_hs(par_h, par_m, par_s):
     return rj_na_godzine(datetime.time(par_h, par_m, par_s))
