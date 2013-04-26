@@ -15,7 +15,7 @@ def rj_na_godzine(dttm):
     return dttm.strftime('%H:%M')
 
 def determine_quarter(qrt_number):
-    result = (datetime.datetime(2013, 1, 31, 0, 0, 0) + datetime.timedelta(seconds=15*60 * qrt_number)).strftime('%H:%M')
+    result = rj_na_godzine(datetime.datetime(2013, 1, 31, 0, 0, 0) + datetime.timedelta(seconds=15*60 * qrt_number))
     return result
 
 def change_to_full_hour(hour_number):
