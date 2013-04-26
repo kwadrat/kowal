@@ -47,3 +47,5 @@ rm ../ckw/src/*.py; cp ../dkw/src/*.py ../ckw/src/; rm ../akw/*.py; cp *.py ../a
 lxa_20_inst = """\
 cd ..;tar cjf bkw_2013.01.31_23.59.00.tar.bz2 bkw dkw;mv bkw_2013.01.31_23.59.00.tar.bz2 bkw; cd bkw
 """
+lxa_21_inst = """\
+UPDATE uu_power SET m_samples='{NULL,NULL,NULL}' WHERE k_sample=7 AND f_object=123 AND m_date='2013-01-31';"""
