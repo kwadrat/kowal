@@ -25,7 +25,7 @@ def rj_na_godzine(dttm):
     return dttm.strftime('%H:%M')
 
 def part_of_day_hs(par_h, par_m, par_s):
-    return datetime.time(par_h, par_m, par_s).strftime('%H:%M')
+    return rj_na_godzine(datetime.time(par_h, par_m, par_s))
 
 def process_hour_headers(time_tuple):
     day_part = time_tuple[:3]
