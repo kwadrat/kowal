@@ -95,3 +95,4 @@ class PowerReader(CommonReader):
         key_object = mu_kw.locate_object_key(dfb, under_name)
         data_rows = self.detect_data_rows()
         self.enter_data(dfb, key_object, data_rows)
+        self.store_rows_in_db(dfb)
