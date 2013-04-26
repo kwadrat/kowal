@@ -110,6 +110,19 @@ def ptn_insert_vector_of_samples(n_table, key_object, row_date, all_samples):
         m_samples=ln_kw.convert_all(all_samples),
         )
 
+def ptn_update_vector_of_samples(n_table, sample_key, key_object, row_date, all_samples):
+    return fy_kw.lxa_22_inst % dict(
+        n_table=n_table,
+        e_object=lc_kw.fq_f_object_qv,
+        f_object=key_object,
+        e_date=lc_kw.fq_m_date_qv,
+        m_date=row_date,
+        e_samples=lc_kw.fq_m_samples_qv,
+        m_samples=ln_kw.convert_all(all_samples),
+        e_key_sample=lc_kw.fq_k_sample_qv,
+        k_sample=sample_key,
+        )
+
 class TestVariousPatterns(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual
     def test_various_patterns(self):
