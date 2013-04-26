@@ -80,8 +80,7 @@ class CommonReader:
         CommonReader:
         '''
         local_key = (key_object, row_date)
-        sample_key = None
-        tmp_key, tmp_object, tmp_date, tmp_samples = sample_data
+        sample_key, tmp_object, tmp_date, tmp_samples = sample_data
         lp_kw.verify_for_equal(tmp_object, key_object)
         lp_kw.verify_for_equal(tmp_date, row_date)
         my_sample_row = lq_kw.SampleRow()
