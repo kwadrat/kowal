@@ -19,7 +19,7 @@ def change_to_full_hour(hour_number):
     return '%02d:00' % hour_number
 
 def rj_na_date(dttm):
-    return '2013-01-31'
+    return dttm.strftime('%Y-%m-%d')
 
 def part_of_day_hs(par_h, par_m, par_s):
     return datetime.time(par_h, par_m, par_s).strftime('%H:%M')
