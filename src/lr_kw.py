@@ -64,3 +64,10 @@ class TestUUQueries(unittest.TestCase):
         obk = GeneratorUU()
         obk.set_place(1)
         self.assertEqual(obk.final_shape(), fy_kw.lxa_24_inst)
+
+    def test_uu_1_queries(self):
+        '''
+        TestUUQueries:
+        '''
+        obk = GeneratorUU()
+        self.assertEqual(obk.final_shape(), fy_kw.lxa_25_inst)
