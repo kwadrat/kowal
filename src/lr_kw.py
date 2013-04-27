@@ -41,6 +41,7 @@ class GeneratorUU:
         part_my_limits = ' AND '.join(all_my_limits)
         return fy_kw.lxa_23_inst % dict(
             part_place=part_place,
+            part_my_limits=part_my_limits,
             )
 
     def set_place(self, my_place):
