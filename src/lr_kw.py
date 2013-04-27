@@ -20,7 +20,7 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 class GeneratorUU:
-    def __init__(self):
+    def __init__(self, my_table_name):
         '''
         GeneratorUU:
         '''
@@ -89,7 +89,7 @@ class TestUUQueries(unittest.TestCase):
         '''
         TestUUQueries:
         '''
-        obk = GeneratorUU()
+        obk = GeneratorUU(lc_kw.fq_uu_energy_qv)
         obk.set_place(1)
         obk.set_start_date('2013-03-11')
         obk.set_end_date('2013-03-25')
@@ -99,7 +99,7 @@ class TestUUQueries(unittest.TestCase):
         '''
         TestUUQueries:
         '''
-        obk = GeneratorUU()
+        obk = GeneratorUU(lc_kw.fq_uu_energy_qv)
         obk.set_start_date('2013-03-11')
         obk.set_end_date('2013-03-25')
         self.assertEqual(obk.final_shape(), fy_kw.lxa_25_inst)
@@ -108,7 +108,7 @@ class TestUUQueries(unittest.TestCase):
         '''
         TestUUQueries:
         '''
-        obk = GeneratorUU()
+        obk = GeneratorUU(lc_kw.fq_uu_energy_qv)
         obk.set_place(1)
         obk.set_end_date('2013-03-25')
         self.assertEqual(obk.final_shape(), fy_kw.lxa_26_inst)
@@ -117,7 +117,7 @@ class TestUUQueries(unittest.TestCase):
         '''
         TestUUQueries:
         '''
-        obk = GeneratorUU()
+        obk = GeneratorUU(lc_kw.fq_uu_energy_qv)
         obk.set_place(1)
         obk.set_start_date('2013-03-11')
         self.assertEqual(obk.final_shape(), fy_kw.lxa_27_inst)
@@ -126,7 +126,7 @@ class TestUUQueries(unittest.TestCase):
         '''
         TestUUQueries:
         '''
-        obk = GeneratorUU()
+        obk = GeneratorUU(lc_kw.fq_uu_energy_qv)
         obk.set_place(1)
         obk.set_week_day(0)
         self.assertEqual(obk.final_shape(), fy_kw.lxa_28_inst)
