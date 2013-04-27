@@ -39,6 +39,7 @@ class GeneratorUU:
         '''
         GeneratorUU:
         '''
+        self.my_place = my_place
 
 def generate_gnuplot_drawing(dfb):
     pytanie = "SELECT m_samples from uu_energy where f_object=1 and m_date >= '2013-03-11' and m_date < '2013-03-25' order by m_date;"
