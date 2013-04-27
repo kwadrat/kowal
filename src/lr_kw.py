@@ -28,6 +28,7 @@ class GeneratorUU:
         self.my_start_date = None
         self.my_end_date = None
         self.my_week_day = None
+        self.my_table_name = my_table_name
 
     def final_shape(self):
         '''
