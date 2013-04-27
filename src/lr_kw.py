@@ -73,6 +73,16 @@ class GeneratorUU:
         '''
         self.my_week_day = my_week_day
 
+def generate_specific_drawing(dfb, pytanie):
+    result = dfb.query_dct(pytanie, flg_nowy=1)
+    tmp_frags = []
+    for row_nr, row_data in enumerate(result):
+        for col_nr, value in enumerate(row_data[0]):
+            if value is not None:
+                tmp_frags.append('%d %d %f\n' % (col_nr, row_nr, value))
+        tmp_frags.append('\n')
+    return ''.join(tmp_frags)
+
 def generate_gnuplot_drawing(dfb):
     pytanie = "SELECT m_samples from uu_energy where f_object=1 and m_date >= '2013-03-11' and m_date < '2013-03-25' order by m_date;"
     result = dfb.query_dct(pytanie, flg_nowy=1)
