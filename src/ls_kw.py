@@ -15,3 +15,8 @@ for i in NazwyModulow:
             exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
         else:
             exec 'import %(modul)s' % dict(modul = i)
+
+def prepare_new_image(mode, size, color):
+    im = Image.new(mode, size, color)
+    draw = ImageDraw.Draw(im)
+    return im, draw
