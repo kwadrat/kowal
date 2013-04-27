@@ -43,6 +43,12 @@ class GeneratorUU:
         '''
         self.my_place = my_place
 
+    def set_start_date(self, my_start_date):
+        '''
+        GeneratorUU:
+        '''
+        self.my_start_date = my_start_date
+
 def generate_gnuplot_drawing(dfb):
     pytanie = "SELECT m_samples from uu_energy where f_object=1 and m_date >= '2013-03-11' and m_date < '2013-03-25' order by m_date;"
     result = dfb.query_dct(pytanie, flg_nowy=1)
