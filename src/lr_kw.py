@@ -35,7 +35,8 @@ class GeneratorUU:
             all_my_limits.append('f_object=%d' % self.my_place)
         if self.my_start_date is not None:
             all_my_limits.append("m_date >= '2013-03-11'")
-        all_my_limits.append("m_date < '2013-03-25'")
+        if self.my_end_date is not None:
+            all_my_limits.append("m_date < '2013-03-25'")
         part_my_limits = ' AND '.join(all_my_limits)
         return fy_kw.lxa_23_inst % dict(
             part_my_limits=part_my_limits,
@@ -80,6 +81,7 @@ class TestUUQueries(unittest.TestCase):
         obk = GeneratorUU()
         obk.set_place(1)
         obk.set_start_date('2013-03-11')
+        obk.set_end_date('2013-03-25')
         self.assertEqual(obk.final_shape(), fy_kw.lxa_24_inst)
 
     def test_uu_1_queries(self):
@@ -88,6 +90,7 @@ class TestUUQueries(unittest.TestCase):
         '''
         obk = GeneratorUU()
         obk.set_start_date('2013-03-11')
+        obk.set_end_date('2013-03-25')
         self.assertEqual(obk.final_shape(), fy_kw.lxa_25_inst)
 
     def test_uu_2_queries(self):
