@@ -23,6 +23,7 @@ class GeneratorUU:
         '''
         GeneratorUU:
         '''
+        self.my_place = None
 
     def final_shape(self):
         '''
