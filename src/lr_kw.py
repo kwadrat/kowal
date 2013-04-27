@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+import unittest
+
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import sf_iw_kw
 '''.splitlines()]
@@ -25,3 +27,9 @@ def generate_gnuplot_drawing(dfb):
         tmp_frags.append('\n')
     together = ''.join(tmp_frags)
     sf_iw_kw.zapisz_jawnie('gen0', together)
+
+class TestUUQueries(unittest.TestCase):
+    def test_uu_queries(self):
+        '''
+        TestUUQueries:
+        '''
