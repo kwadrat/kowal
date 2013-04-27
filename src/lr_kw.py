@@ -69,6 +69,7 @@ class TestUUQueries(unittest.TestCase):
         '''
         obk = GeneratorUU()
         obk.set_place(1)
+        obk.set_start_date('2013-03-11')
         self.assertEqual(obk.final_shape(), fy_kw.lxa_24_inst)
 
     def test_uu_1_queries(self):
@@ -76,4 +77,5 @@ class TestUUQueries(unittest.TestCase):
         TestUUQueries:
         '''
         obk = GeneratorUU()
+        obk.set_start_date('2013-03-11')
         self.assertEqual(obk.final_shape(), fy_kw.lxa_25_inst)
