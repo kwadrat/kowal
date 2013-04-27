@@ -17,6 +17,12 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+class GeneratorUU:
+    def __init__(self):
+        '''
+        GeneratorUU:
+        '''
+
 def generate_gnuplot_drawing(dfb):
     pytanie = "SELECT m_samples from uu_energy where f_object=1 and m_date >= '2013-03-11' and m_date < '2013-03-25' order by m_date;"
     result = dfb.query_dct(pytanie, flg_nowy=1)
@@ -34,3 +40,4 @@ class TestUUQueries(unittest.TestCase):
         '''
         TestUUQueries:
         '''
+        obk = GeneratorUU()
