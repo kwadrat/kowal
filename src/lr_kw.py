@@ -43,6 +43,7 @@ def generate_gnuplot_drawing(dfb):
     sf_iw_kw.zapisz_jawnie('gen0', together)
 
 class TestUUQueries(unittest.TestCase):
+    vassertEqual = dv_kw.vassertEqual
     def test_uu_queries(self):
         '''
         TestUUQueries:
