@@ -79,7 +79,7 @@ def generate_specific_drawing(dfb, pytanie, multiplier):
     for row_nr, row_data in enumerate(result):
         for col_nr, value in enumerate(row_data[0]):
             if value is not None:
-                tmp_frags.append('%d %d %f\n' % (col_nr, row_nr, value))
+                tmp_frags.append('%d %d %f\n' % (col_nr * multiplier, row_nr, value))
         tmp_frags.append('\n')
     return ''.join(tmp_frags)
 
