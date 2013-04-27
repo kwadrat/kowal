@@ -30,6 +30,7 @@ class GeneratorUU:
         '''
         GeneratorUU:
         '''
+        all_my_limits = []
         if self.my_place is None:
             part_place = ''
         else:
