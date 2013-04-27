@@ -62,6 +62,12 @@ class GeneratorUU:
         '''
         self.my_end_date = my_end_date
 
+    def set_week_day(self, my_week_day):
+        '''
+        GeneratorUU:
+        '''
+        self.my_week_day = my_week_day
+
 def generate_gnuplot_drawing(dfb):
     pytanie = "SELECT m_samples from uu_energy where f_object=1 and m_date >= '2013-03-11' and m_date < '2013-03-25' order by m_date;"
     result = dfb.query_dct(pytanie, flg_nowy=1)
