@@ -32,7 +32,7 @@ class GeneratorUU:
         if self.my_place is None:
             part_place = ''
         else:
-            part_place = 'f_object=%d' % self.my_place
+            part_place = 'f_object=%d AND ' % self.my_place
         return fy_kw.lxa_23_inst % dict(
             part_place=part_place,
             )
