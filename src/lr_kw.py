@@ -74,7 +74,7 @@ def generate_gnuplot_drawing(dfb):
 
 class TestUUQueries(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual
-    def test_uu_queries(self):
+    def test_uu_0_queries(self):
         '''
         TestUUQueries:
         '''
