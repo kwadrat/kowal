@@ -85,6 +85,10 @@ def generate_specific_drawing(dfb, pytanie):
 
 def generate_gnuplot_drawing(dfb):
     for my_domain in (lc_kw.fq_uu_energy_qv, lc_kw.fq_uu_power_qv):
+        multiplier = {
+            lc_kw.fq_uu_energy_qv: 4,
+            lc_kw.fq_uu_power_qv: 1,
+            }
         for my_object in xrange(1, 20 + 1):
             for week_day in range(7):
                 obk = GeneratorUU(my_domain)
