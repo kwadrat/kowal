@@ -26,6 +26,7 @@ class GeneratorUU:
         self.my_place = None
         self.my_start_date = None
         self.my_end_date = None
+        self.my_week_day = None
 
     def final_shape(self):
         '''
