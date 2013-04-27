@@ -84,16 +84,15 @@ def generate_specific_drawing(dfb, pytanie):
     return ''.join(tmp_frags)
 
 def generate_gnuplot_drawing(dfb):
-    pytanie = "SELECT m_samples from uu_energy where f_object=1 and m_date >= '2013-03-11' and m_date < '2013-03-25' order by m_date;"
-    result = dfb.query_dct(pytanie, flg_nowy=1)
-    tmp_frags = []
-    for row_nr, row_data in enumerate(result):
-        for col_nr, value in enumerate(row_data[0]):
-            if value is not None:
-                tmp_frags.append('%d %d %f\n' % (col_nr, row_nr, value))
-        tmp_frags.append('\n')
-    together = ''.join(tmp_frags)
-    sf_iw_kw.zapisz_jawnie('gen0', together)
+    for my_domain in (lc_kw.fq_uu_energy_qv, lc_kw.fq_uu_power_qv):
+        for my_object in xrange(1, 20 + 1):
+            for week_day in range(7):
+                obk = GeneratorUU(lc_kw.fq_uu_power_qv)
+                obk.set_place(my_object)
+                obk.set_week_day(week_day)
+                pytanie = obk.final_shape()
+                together = generate_specific_drawing(dfb, pytanie)
+                sf_iw_kw.zapisz_jawnie('%s_%d_%d.gen' % (my_domain, my_object, week_day), together)
 
 class TestUUQueries(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual
