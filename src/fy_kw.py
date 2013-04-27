@@ -55,3 +55,5 @@ lxa_23_inst = """\
 SELECT m_samples FROM uu_energy WHERE %(part_place)sm_date >= '2013-03-11' AND m_date < '2013-03-25' ORDER BY m_date;"""
 lxa_24_inst = """\
 SELECT m_samples FROM uu_energy WHERE f_object=1 AND m_date >= '2013-03-11' AND m_date < '2013-03-25' ORDER BY m_date;"""
+lxa_25_inst = """\
+SELECT m_samples FROM uu_energy WHERE m_date >= '2013-03-11' AND m_date < '2013-03-25' ORDER BY m_date;"""
