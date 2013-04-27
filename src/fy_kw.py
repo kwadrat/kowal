@@ -51,3 +51,5 @@ lxa_21_inst = """\
 UPDATE uu_power SET m_samples='{NULL,NULL,NULL}' WHERE k_sample=7 AND f_object=123 AND m_date='2013-01-31';"""
 lxa_22_inst = """\
 UPDATE %(n_table)s SET %(e_samples)s=%(m_samples)s WHERE %(e_key_sample)s=%(k_sample)d AND %(e_object)s=%(f_object)d AND %(e_date)s='%(m_date)s';"""
+lxa_23_inst = """\
+SELECT m_samples FROM uu_energy WHERE f_object=1 AND m_date >= '2013-03-11' AND m_date < '2013-03-25' ORDER BY m_date;"""
