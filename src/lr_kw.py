@@ -87,7 +87,7 @@ def generate_gnuplot_drawing(dfb):
     for my_domain in (lc_kw.fq_uu_energy_qv, lc_kw.fq_uu_power_qv):
         for my_object in xrange(1, 20 + 1):
             for week_day in range(7):
-                obk = GeneratorUU(lc_kw.fq_uu_power_qv)
+                obk = GeneratorUU(my_domain)
                 obk.set_place(my_object)
                 obk.set_week_day(week_day)
                 pytanie = obk.final_shape()
