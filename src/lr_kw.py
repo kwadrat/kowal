@@ -73,7 +73,7 @@ class GeneratorUU:
         '''
         self.my_week_day = my_week_day
 
-def generate_specific_drawing(dfb, pytanie):
+def generate_specific_drawing(dfb, pytanie, multiplier):
     result = dfb.query_dct(pytanie, flg_nowy=1)
     tmp_frags = []
     for row_nr, row_data in enumerate(result):
@@ -95,7 +95,7 @@ def generate_gnuplot_drawing(dfb):
                 obk.set_place(my_object)
                 obk.set_week_day(week_day)
                 pytanie = obk.final_shape()
-                together = generate_specific_drawing(dfb, pytanie)
+                together = generate_specific_drawing(dfb, pytanie, multiplier)
                 sf_iw_kw.zapisz_jawnie('%s_%d_%d.gen' % (my_domain[3], my_object, week_day), together)
 
 class TestUUQueries(unittest.TestCase):
