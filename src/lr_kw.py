@@ -20,7 +20,8 @@ def generate_gnuplot_drawing(dfb):
     tmp_frags = []
     for row_nr, row_data in enumerate(result):
         for col_nr, value in enumerate(row_data[0]):
-            tmp_frags.append('%d %d %f\n' % (col_nr, row_nr, value))
+            if value is not None:
+                tmp_frags.append('%d %d %f\n' % (col_nr, row_nr, value))
         tmp_frags.append('\n')
     together = ''.join(tmp_frags)
     sf_iw_kw.zapisz_jawnie('gen0', together)
