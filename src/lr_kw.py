@@ -38,6 +38,7 @@ class GeneratorUU:
             all_my_limits.append('f_object=%d' % self.my_place)
         all_my_limits.append("m_date >= '2013-03-11'")
         all_my_limits.append("m_date < '2013-03-25'")
+        part_my_limits = ' AND '.join(all_my_limits)
         return fy_kw.lxa_23_inst % dict(
             part_place=part_place,
             )
