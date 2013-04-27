@@ -20,3 +20,8 @@ def prepare_new_image(mode, size, color):
     im = Image.new(mode, size, color)
     draw = ImageDraw.Draw(im)
     return im, draw
+
+def copy_existing_image(im):
+        im2 = im.copy()
+        draw2 = ImageDraw.Draw(im2)
+        return im2, draw2
