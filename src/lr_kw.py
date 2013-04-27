@@ -92,7 +92,7 @@ def generate_gnuplot_drawing(dfb):
                 obk.set_week_day(week_day)
                 pytanie = obk.final_shape()
                 together = generate_specific_drawing(dfb, pytanie)
-                sf_iw_kw.zapisz_jawnie('%s_%d_%d.gen' % (my_domain, my_object, week_day), together)
+                sf_iw_kw.zapisz_jawnie('%s_%d_%d.gen' % (my_domain[3], my_object, week_day), together)
 
 class TestUUQueries(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual
