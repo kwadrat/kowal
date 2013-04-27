@@ -53,6 +53,12 @@ class GeneratorUU:
         '''
         self.my_start_date = my_start_date
 
+    def set_end_date(self, my_end_date):
+        '''
+        GeneratorUU:
+        '''
+        self.my_end_date = my_end_date
+
 def generate_gnuplot_drawing(dfb):
     pytanie = "SELECT m_samples from uu_energy where f_object=1 and m_date >= '2013-03-11' and m_date < '2013-03-25' order by m_date;"
     result = dfb.query_dct(pytanie, flg_nowy=1)
@@ -90,4 +96,5 @@ class TestUUQueries(unittest.TestCase):
         '''
         obk = GeneratorUU()
         obk.set_place(1)
+        obk.set_end_date('2013-03-25')
         self.assertEqual(obk.final_shape(), fy_kw.lxa_26_inst)
