@@ -63,3 +63,5 @@ lxa_27_inst = """\
 SELECT m_samples FROM uu_energy WHERE f_object=1 AND m_date >= '2013-03-11' ORDER BY m_date;"""
 lxa_28_inst = """\
 SELECT m_samples FROM uu_energy WHERE f_object=1 AND EXTRACT(dow FROM m_date)=0 ORDER BY m_date;"""
+lxa_29_inst = """\
+SELECT m_samples FROM uu_power WHERE f_object=1 AND EXTRACT(dow FROM m_date)=0 ORDER BY m_date;"""
