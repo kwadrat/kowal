@@ -39,6 +39,8 @@ class GeneratorUU:
             all_my_limits.append("m_date >= '2013-03-11'")
         if self.my_end_date is not None:
             all_my_limits.append("m_date < '2013-03-25'")
+        if self.my_week_day is not None:
+            all_my_limits.append("EXTRACT(dow FROM m_date)=%d" % self.my_week_day)
         part_my_limits = ' AND '.join(all_my_limits)
         return fy_kw.lxa_23_inst % dict(
             part_my_limits=part_my_limits,
@@ -118,3 +120,12 @@ class TestUUQueries(unittest.TestCase):
         obk.set_place(1)
         obk.set_start_date('2013-03-11')
         self.assertEqual(obk.final_shape(), fy_kw.lxa_27_inst)
+
+    def test_uu_4_queries(self):
+        '''
+        TestUUQueries:
+        '''
+        obk = GeneratorUU()
+        obk.set_place(1)
+        obk.set_week_day(0)
+        self.assertEqual(obk.final_shape(), fy_kw.lxa_28_inst)
