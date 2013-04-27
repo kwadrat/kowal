@@ -25,6 +25,7 @@ class GeneratorUU:
         '''
         self.my_place = None
         self.my_start_date = None
+        self.my_end_date = None
 
     def final_shape(self):
         '''
@@ -101,3 +102,12 @@ class TestUUQueries(unittest.TestCase):
         obk.set_place(1)
         obk.set_end_date('2013-03-25')
         self.assertEqual(obk.final_shape(), fy_kw.lxa_26_inst)
+
+    def test_uu_3_queries(self):
+        '''
+        TestUUQueries:
+        '''
+        obk = GeneratorUU()
+        obk.set_place(1)
+        obk.set_start_date('2013-03-11')
+        self.assertEqual(obk.final_shape(), fy_kw.lxa_27_inst)
