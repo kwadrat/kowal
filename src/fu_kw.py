@@ -79,7 +79,7 @@ class EnergyReader(CommonReader):
         hour_number = single_column.column_index
         self.store_value_in_row(key_object, row_date, hour_number, value)
 
-    def enter_energy_data(self, dfb, key_object, hour_server, data_rows):
+    def enter_energy_data(self, dfb, key_object, data_rows):
         '''
         EnergyReader:
         '''
@@ -96,5 +96,5 @@ class EnergyReader(CommonReader):
         under_name = self.detect_energy_sheet_header()
         key_object = mu_kw.locate_object_key(dfb, under_name)
         data_rows = self.detect_data_rows()
-        self.enter_energy_data(dfb, key_object, hour_server, data_rows)
+        self.enter_energy_data(dfb, key_object, data_rows)
         self.store_rows_in_db(dfb)
