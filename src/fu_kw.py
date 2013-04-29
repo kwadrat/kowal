@@ -72,7 +72,6 @@ class EnergyReader(CommonReader):
         '''
         EnergyReader:
         '''
-        my_hour = single_column.canonical_hour
         self.prepare_local_copy_of_row(dfb, key_object, row_date)
         value = self.vx_num_peek(single_column.col_in_sheet, single_row)
         hour_number = single_column.column_index
