@@ -46,7 +46,7 @@ class EnergyReader(CommonReader):
         '''
         EnergyReader:
         '''
-        for one_column in data_headers:
+        for one_column in hour_server.all_time_columns:
             tmp_text = self.vx_num_time(one_column.col_in_sheet, 6)
             expected = one_column.header_for_hour_column
             lp_kw.verify_for_equal(tmp_text, expected)
