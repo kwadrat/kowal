@@ -18,12 +18,6 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-def generate_hours_horizontally(sheet, all_hours):
-    for nr, one_hour in enumerate(all_hours):
-        row = 0
-        col = nr + 1
-        sheet.write(row, col, one_hour)
-
 def generate_one_file(xlwt, dfb, worker_class, table_name, output_file):
     dane_bazy = le_kw.dq_load_from_db(dfb, table_name)
     object_names = mu_kw.unique_sorted(dane_bazy, lc_kw.fq_account_qv)
