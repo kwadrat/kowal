@@ -59,6 +59,12 @@ def generate_dates_vertically(sheet, all_dates):
         col = 0
         sheet.write(row, col, one_date)
 
+def generate_hours_horizontally(sheet, all_hours):
+    for nr, one_hour in enumerate(all_hours):
+        row = 0
+        col = nr + 1
+        sheet.write(row, col, one_hour)
+
 def locate_object_key(dfb, under_name):
     key_object = le_kw.dq_object_key(dfb, under_name)
     if not key_object:
