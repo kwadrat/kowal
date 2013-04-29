@@ -71,6 +71,9 @@ class HourServer:
         '''
         HourServer:
         '''
+        self.all_time_columns = []
+        for column_index in xrange(24):
+            self.all_time_columns.append(HourMiniServer(start_col, column_index))
 
 class QuarterServer:
     def __init__(self):
