@@ -9,6 +9,10 @@ import mt_kw
 import fu_kw
 '''.splitlines()]
 
+def new_module_for_reading_spreadsheet():
+    import xlrd
+    return xlrd
+
 def new_module_for_writing_spreadsheet():
     import xlwt
     return xlwt
