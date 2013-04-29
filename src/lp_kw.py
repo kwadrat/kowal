@@ -44,10 +44,10 @@ def describe_column(column_index):
     hour_number = midnight_hour_wrap.get(hour_number, hour_number)
     return change_to_full_hour(hour_number)
 
-class HourServer:
+class HourMiniServer:
     def __init__(self, start_col, column_index):
         '''
-        HourServer:
+        HourMiniServer:
         '''
         self.column_index = column_index
         self.canonical_hour = change_to_full_hour(self.column_index)
@@ -56,7 +56,7 @@ class HourServer:
 
     def __repr__(self):
         '''
-        HourServer:
+        HourMiniServer:
         '''
         return 'HS(%s)' % self.header_for_hour_column
 
@@ -79,7 +79,7 @@ class QuarterServer:
 def prepare_time_headers(start_col):
     all_time_columns = []
     for column_index in xrange(24):
-        all_time_columns.append(HourServer(start_col, column_index))
+        all_time_columns.append(HourMiniServer(start_col, column_index))
     return all_time_columns
 
 class TestDateQuarters(unittest.TestCase):
