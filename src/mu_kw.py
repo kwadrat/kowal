@@ -41,10 +41,6 @@ dict_names = {
     'ZESPOL_SZKOL_RYBNIK_SWIERKLANSKA': 'ZSB',
     }
 
-def new_module_for_reading_spreadsheet():
-    import xlrd
-    return xlrd
-
 def generate_dates_vertically(sheet, all_dates):
     for nr, one_date in enumerate(all_dates):
         row = nr + 1
