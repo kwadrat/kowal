@@ -41,15 +41,6 @@ class EnergyReader(CommonReader):
         hour_server = lp_kw.HourServer(start_col)
         return hour_server
 
-    def verify_hours_headers(self, hour_server):
-        '''
-        EnergyReader:
-        '''
-        for one_column in hour_server.all_time_columns:
-            tmp_text = self.vx_num_time(one_column.col_in_sheet, 6)
-            expected = one_column.header_for_hour_column
-            lp_kw.verify_for_equal(tmp_text, expected)
-
     def detect_energy_sheet_header(self, hour_server):
         '''
         EnergyReader:
