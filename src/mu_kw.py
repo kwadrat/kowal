@@ -69,11 +69,6 @@ def unique_sorted(dane_bazy, field):
     object_names.sort()
     return object_names
 
-def unique_a_sorted(dane_bazy, field):
-    object_names = list(set(map(lambda x: x[field][:5], dane_bazy)))
-    object_names.sort()
-    return object_names
-
 class CommonReader:
     def __init__(self, cnt_per_day, table_of_samples):
         '''
