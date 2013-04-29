@@ -94,7 +94,7 @@ class EnergyReader(CommonReader):
         '''
         for single_row in data_rows:
             row_date = self.vx_t_date('A', single_row)
-            for single_column in data_headers:
+            for single_column in hour_server.all_time_columns:
                 self.fetch_field(dfb, key_object, single_row, row_date, single_column)
 
     def analyze_data_in_grid(self, dfb):
