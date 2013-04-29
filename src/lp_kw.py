@@ -66,6 +66,9 @@ def prepare_time_headers(start_col):
         all_time_columns.append(HourMiniServer(start_col, column_index))
     return all_time_columns
 
+class HourServer:
+    pass
+
 class QuarterServer:
     def __init__(self):
         '''
