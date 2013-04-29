@@ -45,10 +45,6 @@ def new_module_for_reading_spreadsheet():
     import xlrd
     return xlrd
 
-def new_module_for_writing_spreadsheet():
-    import xlwt
-    return xlwt
-
 def generate_dates_vertically(sheet, all_dates):
     for nr, one_date in enumerate(all_dates):
         row = nr + 1
