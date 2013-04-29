@@ -25,3 +25,17 @@ def copy_existing_image(im):
         im2 = im.copy()
         draw2 = ImageDraw.Draw(im2)
         return im2, draw2
+
+def to_jest_poprawny_plik_obrazu(fd):
+    '''
+    fd - otwarty deskryptor do zapisanego pliku,
+    może też być to nazwa pliku na dysku
+    Wartość zwrotna:
+    - 0 - to nie obraz lub wystąpił inny problem
+    - uchwyt do obrazu - w przypadku sukcesu
+    '''
+    try:
+        im = Image.open(fd)
+    except IOError:
+        im = 0
+    return im
