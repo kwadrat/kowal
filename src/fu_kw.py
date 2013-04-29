@@ -40,7 +40,7 @@ class EnergyReader(CommonReader):
         start_col = self.vx_letter_num('B')
         data_headers = lp_kw.prepare_time_headers(start_col)
         hour_server = lp_kw.HourServer(start_col)
-        return data_headers
+        return hour_server, data_headers
 
     def verify_hours_headers(self, data_headers):
         '''
@@ -101,7 +101,7 @@ class EnergyReader(CommonReader):
         '''
         EnergyReader:
         '''
-        data_headers = self.prepare_time_columns()
+        hour_server, data_headers = self.prepare_time_columns()
         under_name = self.detect_energy_sheet_header(data_headers)
         key_object = mu_kw.locate_object_key(dfb, under_name)
         data_rows = self.detect_data_rows()
