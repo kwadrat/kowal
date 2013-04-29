@@ -60,12 +60,6 @@ class HourMiniServer:
         '''
         return 'HS(%s)' % self.header_for_hour_column
 
-def prepare_time_headers(start_col):
-    all_time_columns = []
-    for column_index in xrange(24):
-        all_time_columns.append(HourMiniServer(start_col, column_index))
-    return all_time_columns
-
 class HourServer:
     def __init__(self, start_col):
         '''
