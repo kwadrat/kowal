@@ -65,13 +65,13 @@ def generate_hours_horizontally(sheet, all_hours):
 
 def generate_one_file(xlwt, dfb, worker_class, table_name, output_file):
     dane_bazy = le_kw.dq_load_from_db(dfb, table_name)
-    object_names = unique_sorted(dane_bazy, lc_kw.fq_account_qv)
+    object_names = mu_kw.unique_sorted(dane_bazy, lc_kw.fq_account_qv)
     wbk = xlwt.Workbook()
     for nr, name in enumerate(object_names):
         tmp_format = 'name'; print 'Eval:', tmp_format, eval(tmp_format)
         sheet = wbk.add_sheet(dict_names[name])
         selected_data = filter(lambda x: x[lc_kw.fq_account_qv] == name, dane_bazy)
-        all_dates = unique_sorted(selected_data, lc_kw.fq_m_date_qv)
+        all_dates = mu_kw.unique_sorted(selected_data, lc_kw.fq_m_date_qv)
         all_hours = unique_a_sorted(selected_data, lc_kw.fq_m_time_qv)
         generate_dates_vertically(sheet, all_dates)
         generate_hours_horizontally(sheet, all_hours)
