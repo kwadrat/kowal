@@ -39,3 +39,15 @@ def to_jest_poprawny_plik_obrazu(fd):
     except IOError:
         im = 0
     return im
+
+def wykonaj_mniejsza_wersje(source_file, target_path, width):
+    status = 1
+    src_im = to_jest_poprawny_plik_obrazu(source_file)
+    if src_im:
+        src_width, src_height = src_im.size
+        height = int(width * src_height / src_width)
+        src_im.thumbnail((width, height))
+        src_im.save(target_path)
+    else:
+        status = 0
+    return status
