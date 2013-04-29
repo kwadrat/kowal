@@ -25,7 +25,7 @@ class PowerReader(CommonReader):
         PowerReader:
         '''
         CommonReader.__init__(self, 96, lc_kw.fq_uu_power_qv)
-        self.quarter_server = lp_kw.QuarterServer()
+        self.period_server = lp_kw.QuarterServer()
 
     def vx_th_date(self, my_col, my_row):
         '''
@@ -76,7 +76,7 @@ class PowerReader(CommonReader):
         row_date, my_hour = duo_date
         self.prepare_local_copy_of_row(dfb, key_object, row_date)
         value = self.vx_peek('C', single_row)
-        quarter_number = self.quarter_server.quarter_to_number(my_hour)
+        quarter_number = self.period_server.quarter_to_number(my_hour)
         self.store_value_in_row(key_object, row_date, quarter_number, value)
 
     def enter_power_data(self, dfb, key_object, data_rows):
