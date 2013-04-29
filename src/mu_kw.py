@@ -41,6 +41,11 @@ def locate_object_key(dfb, under_name):
         raise RuntimeError('ret_size = %d' % ret_size)
     return key_object
 
+def unique_sorted(dane_bazy, field):
+    object_names = list(set(map(lambda x: x[field], dane_bazy)))
+    object_names.sort()
+    return object_names
+
 class CommonReader:
     def __init__(self, cnt_per_day, table_of_samples):
         '''
