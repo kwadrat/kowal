@@ -67,7 +67,7 @@ def generate_one_file(xlwt, dfb, worker_class, table_name, output_file):
         sheet = wbk.add_sheet(dict_names[name])
         selected_data = filter(lambda x: x[lc_kw.fq_account_qv] == name, dane_bazy)
         all_dates = mu_kw.unique_sorted(selected_data, lc_kw.fq_m_date_qv)
-        all_hours = unique_a_sorted(selected_data, lc_kw.fq_m_time_qv)
+        all_hours = mu_kw.unique_a_sorted(selected_data, lc_kw.fq_m_time_qv)
         generate_dates_vertically(sheet, all_dates)
         generate_hours_horizontally(sheet, all_hours)
         for my_data in selected_data:
