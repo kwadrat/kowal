@@ -214,21 +214,24 @@ class CommonReader:
             else:
                 le_kw.dq_insert_vector_of_samples(dfb, self.table_of_samples, key_object, row_date, all_samples)
 
-def generate_one_file(xlwt, dfb, worker_class, table_name, output_file):
-    dane_bazy = le_kw.dq_load_from_db(dfb, table_name)
-    object_names = unique_sorted(dane_bazy, lc_kw.fq_account_qv)
-    wbk = xlwt.Workbook()
-    for nr, name in enumerate(object_names):
-        tmp_format = 'name'; print 'Eval:', tmp_format, eval(tmp_format)
-        sheet = wbk.add_sheet(dict_names[name])
-        selected_data = filter(lambda x: x[lc_kw.fq_account_qv] == name, dane_bazy)
-        all_dates = unique_sorted(selected_data, lc_kw.fq_m_date_qv)
-        all_hours = unique_a_sorted(selected_data, lc_kw.fq_m_time_qv)
-        generate_dates_vertically(sheet, all_dates)
-        generate_hours_horizontally(sheet, all_hours)
-        for my_data in selected_data:
-            my_time = my_data[lc_kw.fq_m_time_qv][:5]
-            row = all_dates.index(my_data[lc_kw.fq_m_date_qv]) + 1
-            col = all_hours.index(my_time) + 1
-            sheet.write(row, col, my_data[lc_kw.fq_m_value_qv])
-    wbk.save(output_file)
+    def generate_one_file(self, xlwt, dfb, output_file):
+        '''
+        CommonReader:
+        '''
+        dane_bazy = le_kw.dq_load_from_db(dfb, self.table_of_samples)
+        object_names = unique_sorted(dane_bazy, lc_kw.fq_account_qv)
+        wbk = xlwt.Workbook()
+        for nr, name in enumerate(object_names):
+            tmp_format = 'name'; print 'Eval:', tmp_format, eval(tmp_format)
+            sheet = wbk.add_sheet(dict_names[name])
+            selected_data = filter(lambda x: x[lc_kw.fq_account_qv] == name, dane_bazy)
+            all_dates = unique_sorted(selected_data, lc_kw.fq_m_date_qv)
+            all_hours = unique_a_sorted(selected_data, lc_kw.fq_m_time_qv)
+            generate_dates_vertically(sheet, all_dates)
+            generate_hours_horizontally(sheet, all_hours)
+            for my_data in selected_data:
+                my_time = my_data[lc_kw.fq_m_time_qv][:5]
+                row = all_dates.index(my_data[lc_kw.fq_m_date_qv]) + 1
+                col = all_hours.index(my_time) + 1
+                sheet.write(row, col, my_data[lc_kw.fq_m_value_qv])
+        wbk.save(output_file)

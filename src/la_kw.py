@@ -20,8 +20,8 @@ for i in NazwyModulow:
 
 def generate_excel_files(dfb):
     xlwt = mu_kw.new_module_for_writing_spreadsheet()
-    mu_kw.generate_one_file(xlwt, dfb, fu_kw.EnergyReader, lc_kw.fq_uu_energy_qv, 'e.xls')
-    mu_kw.generate_one_file(xlwt, dfb, mt_kw.PowerReader, lc_kw.fq_uu_power_qv, 'p.xls')
+    fu_kw.EnergyReader().generate_one_file(xlwt, dfb, 'e.xls')
+    mt_kw.PowerReader().generate_one_file(xlwt, dfb, 'p.xls')
 
 def analyze_excel_files(dfb, worker_class, filenames):
     xlrd = mu_kw.new_module_for_reading_spreadsheet()
