@@ -63,7 +63,7 @@ def generate_hours_horizontally(sheet, all_hours):
         col = nr + 1
         sheet.write(row, col, one_hour)
 
-def generate_one_file(xlwt, dfb, table_name, output_file):
+def generate_one_file(xlwt, dfb, worker_class, table_name, output_file):
     dane_bazy = le_kw.dq_load_from_db(dfb, table_name)
     object_names = unique_sorted(dane_bazy, lc_kw.fq_account_qv)
     wbk = xlwt.Workbook()
@@ -84,8 +84,8 @@ def generate_one_file(xlwt, dfb, table_name, output_file):
 
 def generate_excel_files(dfb):
     xlwt = mu_kw.new_module_for_writing_spreadsheet()
-    generate_one_file(xlwt, dfb, lc_kw.fq_uu_energy_qv, 'e.xls')
-    generate_one_file(xlwt, dfb, lc_kw.fq_uu_power_qv, 'p.xls')
+    generate_one_file(xlwt, dfb, fu_kw.EnergyReader, lc_kw.fq_uu_energy_qv, 'e.xls')
+    generate_one_file(xlwt, dfb, mt_kw.PowerReader, lc_kw.fq_uu_power_qv, 'p.xls')
 
 def analyze_excel_files(dfb, worker_class, filenames):
     xlrd = mu_kw.new_module_for_reading_spreadsheet()
