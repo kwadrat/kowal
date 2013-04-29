@@ -56,7 +56,7 @@ class EnergyReader(CommonReader):
         self.check_for_constant_string('D', 3, u'od')
         self.check_for_constant_string('G', 3, u'do ')
         self.check_for_constant_string('B', 5, u'Godziny')
-        hour_server.verify_hours_headers(self)
+        self.period_server.verify_hours_headers(self)
         return under_name
 
     def detect_data_rows(self):
