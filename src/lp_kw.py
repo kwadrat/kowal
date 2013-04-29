@@ -67,7 +67,10 @@ def prepare_time_headers(start_col):
     return all_time_columns
 
 class HourServer:
-    pass
+    def __init__(self, start_col):
+        '''
+        HourServer:
+        '''
 
 class QuarterServer:
     def __init__(self):

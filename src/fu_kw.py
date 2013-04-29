@@ -39,7 +39,7 @@ class EnergyReader(CommonReader):
         '''
         start_col = self.vx_letter_num('B')
         data_headers = lp_kw.prepare_time_headers(start_col)
-        hour_server = lp_kw.HourServer()
+        hour_server = lp_kw.HourServer(start_col)
         return data_headers
 
     def verify_hours_headers(self, data_headers):
