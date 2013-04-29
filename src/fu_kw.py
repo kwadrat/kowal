@@ -38,7 +38,6 @@ class EnergyReader(CommonReader):
         EnergyReader:
         '''
         start_col = self.vx_letter_num('B')
-        data_headers = lp_kw.prepare_time_headers(start_col)
         hour_server = lp_kw.HourServer(start_col)
         return hour_server
 
