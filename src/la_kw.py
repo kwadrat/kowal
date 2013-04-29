@@ -18,7 +18,7 @@ def new_module_for_writing_spreadsheet():
     return xlwt
 
 def check_module_dependencies_linux():
-    mu_kw.new_module_for_reading_spreadsheet()
+    new_module_for_reading_spreadsheet()
     new_module_for_writing_spreadsheet()
 
 for i in NazwyModulow:
@@ -36,7 +36,7 @@ def generate_excel_files(dfb):
     mt_kw.PowerReader().generate_one_file(xlwt, dfb, 'p.xls')
 
 def analyze_excel_files(dfb, worker_class, filenames):
-    xlrd = mu_kw.new_module_for_reading_spreadsheet()
+    xlrd = new_module_for_reading_spreadsheet()
     for single_file in filenames:
         print single_file
         obk = worker_class()
