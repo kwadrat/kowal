@@ -49,10 +49,6 @@ def new_module_for_writing_spreadsheet():
     import xlwt
     return xlwt
 
-def check_module_dependencies_linux():
-    new_module_for_reading_spreadsheet()
-    new_module_for_writing_spreadsheet()
-
 def generate_dates_vertically(sheet, all_dates):
     for nr, one_date in enumerate(all_dates):
         row = nr + 1
