@@ -213,8 +213,13 @@ class CommonReader:
             generate_dates_vertically(sheet, all_dates)
             generate_hours_horizontally(sheet, all_hours)
             for my_data in selected_data:
-                my_time = my_data[lc_kw.fq_m_time_qv][:5]
-                row = all_dates.index(my_data[lc_kw.fq_m_date_qv]) + 1
-                col = all_hours.index(my_time) + 1
-                sheet.write(row, col, my_data[lc_kw.fq_m_value_qv])
+                for sample_index, my_sample in enumerate(my_data[lc_kw.fq_m_samples_qv]):
+                    row = all_dates.index(my_data[lc_kw.fq_m_date_qv]) + 1
+                    col = sample_index + 1
+                    try:
+                        sheet.write(row, col, my_sample)
+                    except ValueError:
+                        tmp_format = 'row, col, my_sample'; print 'Eval:', tmp_format, eval(tmp_format)
+                        import pdb;pdb.set_trace()
+                        raise
         wbk.save(output_file)
