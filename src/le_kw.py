@@ -24,7 +24,7 @@ def dq_entry_already_inserted(dfb, n_table, key_object, row_date):
 
 def dq_load_from_db(dfb, table_name):
     db_statement = fz_kw.ptn_load_from_db(table_name)
-    return dfb.query_dct(db_statement)
+    return dfb.query_dct(db_statement, flg_nowy=1)
 
 def dq_add_new_object_key(dfb, under_name):
     db_statement = fz_kw.ptn_add_new_object_key(under_name)
