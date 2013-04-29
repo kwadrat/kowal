@@ -53,6 +53,12 @@ def check_module_dependencies_linux():
     new_module_for_reading_spreadsheet()
     new_module_for_writing_spreadsheet()
 
+def generate_dates_vertically(sheet, all_dates):
+    for nr, one_date in enumerate(all_dates):
+        row = nr + 1
+        col = 0
+        sheet.write(row, col, one_date)
+
 def locate_object_key(dfb, under_name):
     key_object = le_kw.dq_object_key(dfb, under_name)
     if not key_object:
