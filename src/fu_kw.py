@@ -50,7 +50,7 @@ class EnergyReader(CommonReader):
             expected = one_column.header_for_hour_column
             lp_kw.verify_for_equal(tmp_text, expected)
 
-    def detect_sheet_header(self, data_headers):
+    def detect_energy_sheet_header(self, data_headers):
         '''
         EnergyReader:
         '''
@@ -101,7 +101,7 @@ class EnergyReader(CommonReader):
         EnergyReader:
         '''
         data_headers = self.prepare_time_columns()
-        under_name = self.detect_sheet_header(data_headers)
+        under_name = self.detect_energy_sheet_header(data_headers)
         key_object = mu_kw.locate_object_key(dfb, under_name)
         data_rows = self.detect_data_rows()
         self.enter_data(dfb, key_object, data_headers, data_rows)
