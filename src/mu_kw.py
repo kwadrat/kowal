@@ -214,7 +214,7 @@ class CommonReader:
             sheet = wbk.add_sheet(dict_names[name])
             selected_data = filter(lambda x: x[lc_kw.fq_account_qv] == name, dane_bazy)
             all_dates = unique_sorted(selected_data, lc_kw.fq_m_date_qv)
-            all_hours = unique_a_sorted(selected_data, lc_kw.fq_m_time_qv)
+            all_hours = self.period_server.hours_for_header()
             generate_dates_vertically(sheet, all_dates)
             generate_hours_horizontally(sheet, all_hours)
             for my_data in selected_data:
