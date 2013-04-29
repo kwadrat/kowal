@@ -42,7 +42,7 @@ class EnergyReader(CommonReader):
         hour_server = lp_kw.HourServer(start_col)
         return hour_server, data_headers
 
-    def verify_hours_headers(self, hour_server, data_headers):
+    def verify_hours_headers(self, hour_server):
         '''
         EnergyReader:
         '''
@@ -64,7 +64,7 @@ class EnergyReader(CommonReader):
         self.check_for_constant_string('D', 3, u'od')
         self.check_for_constant_string('G', 3, u'do ')
         self.check_for_constant_string('B', 5, u'Godziny')
-        self.verify_hours_headers(hour_server, data_headers)
+        self.verify_hours_headers(hour_server)
         return under_name
 
     def detect_data_rows(self):
