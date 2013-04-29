@@ -78,6 +78,12 @@ class HourServer:
             expected = one_column.header_for_hour_column
             verify_for_equal(tmp_text, expected)
 
+    def hours_for_header(self):
+        '''
+        HourServer:
+        '''
+        return map(lambda elem: elem.canonical_hour, self.all_time_columns)
+
 class QuarterServer:
     def __init__(self):
         '''
