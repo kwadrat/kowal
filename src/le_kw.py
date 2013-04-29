@@ -22,10 +22,6 @@ def dq_entry_already_inserted(dfb, n_table, key_object, row_date):
     db_statement = fz_kw.ptn_entry_already_inserted(n_table, key_object, row_date)
     return dfb.query_dct(db_statement, flg_nowy=1)
 
-def dq_insert_energy_entry(dfb, n_table, key_object, row_date, my_hour, value):
-    db_statement = fz_kw.ptn_insert_energy_entry(n_table, key_object, row_date, my_hour, value)
-    dfb.query_silent(db_statement)
-
 def dq_load_from_db(dfb, table_name):
     db_statement = fz_kw.ptn_load_from_db(table_name)
     return dfb.query_dct(db_statement)
