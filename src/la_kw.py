@@ -35,7 +35,7 @@ def generate_one_file(xlwt, dfb, worker_class, table_name, output_file):
         all_dates = mu_kw.unique_sorted(selected_data, lc_kw.fq_m_date_qv)
         all_hours = mu_kw.unique_a_sorted(selected_data, lc_kw.fq_m_time_qv)
         mu_kw.generate_dates_vertically(sheet, all_dates)
-        generate_hours_horizontally(sheet, all_hours)
+        mu_kw.generate_hours_horizontally(sheet, all_hours)
         for my_data in selected_data:
             my_time = my_data[lc_kw.fq_m_time_qv][:5]
             row = all_dates.index(my_data[lc_kw.fq_m_date_qv]) + 1
