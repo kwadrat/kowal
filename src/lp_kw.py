@@ -69,6 +69,15 @@ class HourServer:
         for column_index in xrange(24):
             self.all_time_columns.append(HourMiniServer(start_col, column_index))
 
+    def verify_hours_headers(self, energy_reader):
+        '''
+        HourServer:
+        '''
+        for one_column in self.all_time_columns:
+            tmp_text = energy_reader.vx_num_time(one_column.col_in_sheet, 6)
+            expected = one_column.header_for_hour_column
+            verify_for_equal(tmp_text, expected)
+
 class QuarterServer:
     def __init__(self):
         '''
