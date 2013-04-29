@@ -35,14 +35,6 @@ class EnergyReader(CommonReader):
         value = self.vx_date(my_col, my_row)
         return '%04d-%02d-%02d' % value[:3]
 
-    def prepare_time_columns(self):
-        '''
-        EnergyReader:
-        '''
-        start_col = self.vx_letter_num('B')
-        hour_server = lp_kw.HourServer(start_col)
-        return hour_server
-
     def detect_energy_sheet_header(self):
         '''
         EnergyReader:
