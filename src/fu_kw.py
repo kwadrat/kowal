@@ -43,7 +43,7 @@ class EnergyReader(CommonReader):
         hour_server = lp_kw.HourServer(start_col)
         return hour_server
 
-    def detect_energy_sheet_header(self, hour_server):
+    def detect_energy_sheet_header(self):
         '''
         EnergyReader:
         '''
@@ -93,7 +93,7 @@ class EnergyReader(CommonReader):
         EnergyReader:
         '''
         hour_server = self.prepare_time_columns()
-        under_name = self.detect_energy_sheet_header(hour_server)
+        under_name = self.detect_energy_sheet_header()
         key_object = mu_kw.locate_object_key(dfb, under_name)
         data_rows = self.detect_data_rows()
         self.enter_energy_data(dfb, key_object, hour_server, data_rows)
