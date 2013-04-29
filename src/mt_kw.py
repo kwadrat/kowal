@@ -69,7 +69,7 @@ class PowerReader(CommonReader):
         self.check_for_constant_string('B', nrows, u'Time Max')
         return xrange(13, nrows - 2)
 
-    def fetch_field(self, dfb, key_object, single_row, duo_date):
+    def fetch_power_field(self, dfb, key_object, single_row, duo_date):
         '''
         PowerReader:
         '''
@@ -85,7 +85,7 @@ class PowerReader(CommonReader):
         '''
         for single_row in data_rows:
             duo_date = self.vx_th_date('B', single_row)
-            self.fetch_field(dfb, key_object, single_row, duo_date)
+            self.fetch_power_field(dfb, key_object, single_row, duo_date)
 
     def analyze_data_in_grid(self, dfb):
         '''
