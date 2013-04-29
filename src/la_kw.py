@@ -41,11 +41,6 @@ dict_names = {
     'ZESPOL_SZKOL_RYBNIK_SWIERKLANSKA': 'ZSB',
     }
 
-def unique_sorted(dane_bazy, field):
-    object_names = list(set(map(lambda x: x[field], dane_bazy)))
-    object_names.sort()
-    return object_names
-
 def unique_a_sorted(dane_bazy, field):
     object_names = list(set(map(lambda x: x[field][:5], dane_bazy)))
     object_names.sort()
