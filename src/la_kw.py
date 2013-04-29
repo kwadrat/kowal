@@ -59,7 +59,7 @@ def generate_one_file(xlwt, dfb, worker_class, table_name, output_file):
     wbk = xlwt.Workbook()
     for nr, name in enumerate(object_names):
         tmp_format = 'name'; print 'Eval:', tmp_format, eval(tmp_format)
-        sheet = wbk.add_sheet(dict_names[name])
+        sheet = wbk.add_sheet(mu_kw.dict_names[name])
         selected_data = filter(lambda x: x[lc_kw.fq_account_qv] == name, dane_bazy)
         all_dates = mu_kw.unique_sorted(selected_data, lc_kw.fq_m_date_qv)
         all_hours = mu_kw.unique_a_sorted(selected_data, lc_kw.fq_m_time_qv)
