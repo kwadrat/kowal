@@ -22,10 +22,6 @@ lxa_9_inst = """\
 SELECT k_sample, f_object, m_date, m_samples FROM uu_power WHERE f_object=123 AND m_date='2013-01-31';"""
 lxa_10_inst = """\
 SELECT %(e_fields)s FROM %(n_table)s WHERE %(e_object)s=%(f_object)d AND %(e_date)s='%(m_date)s';"""
-lxa_11_inst = """\
-INSERT INTO t (f_object, m_date, m_time, m_value) VALUES (123, '2013-01-31', '23:34', 0.000000);"""
-lxa_12_inst = """\
-INSERT INTO %(n_table)s (%(e_object)s, %(e_date)s, %(e_time)s, %(e_value)s) VALUES (%(f_object)d, '%(m_date)s', '%(m_time)s', %(m_value)f);"""
 lxa_13_inst = """\
 SELECT uu_object.account,m_date,m_time,m_value FROM t,uu_object WHERE t.f_object=uu_object.k_object;"""
 lxa_14_inst = """\
