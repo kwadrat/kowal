@@ -72,7 +72,6 @@ def ptn_load_from_db(table_name):
         uu_object=lc_kw.fq_uu_object_qv,
         account=lc_kw.fq_account_qv,
         e_date=lc_kw.fq_m_date_qv,
-        e_time=lc_kw.fq_m_time_qv,
         e_value=lc_kw.fq_m_value_qv,
         e_object=lc_kw.fq_f_object_qv,
         k_object=lc_kw.fq_k_object_qv,
