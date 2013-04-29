@@ -100,6 +100,14 @@ class QuarterServer:
         '''
         return self.quarter_translator[hh_mm]
 
+    def hours_for_header(self):
+        '''
+        QuarterServer:
+        '''
+        list_of_hours = self.quarter_translator.keys()
+        list_of_hours.sort()
+        return list_of_hours
+
 class TestDateQuarters(unittest.TestCase):
     def test_date_quarters(self):
         '''
