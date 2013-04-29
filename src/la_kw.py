@@ -9,6 +9,10 @@ import mt_kw
 import fu_kw
 '''.splitlines()]
 
+def check_module_dependencies_linux():
+    mu_kw.new_module_for_reading_spreadsheet()
+    mu_kw.new_module_for_writing_spreadsheet()
+
 for i in NazwyModulow:
     if i == __name__.split('.')[-1]:
         raise RuntimeError('Modul laduje sam siebie?: %s' % repr(i))
