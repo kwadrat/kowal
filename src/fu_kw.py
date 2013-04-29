@@ -68,7 +68,7 @@ class EnergyReader(CommonReader):
         self.check_for_constant_string('A', nrows, u'Suma')
         return xrange(7, nrows - 2)
 
-    def fetch_field(self, dfb, key_object, single_row, row_date, single_column):
+    def fetch_energy_field(self, dfb, key_object, single_row, row_date, single_column):
         '''
         EnergyReader:
         '''
@@ -85,7 +85,7 @@ class EnergyReader(CommonReader):
         for single_row in data_rows:
             row_date = self.vx_t_date('A', single_row)
             for single_column in hour_server.all_time_columns:
-                self.fetch_field(dfb, key_object, single_row, row_date, single_column)
+                self.fetch_energy_field(dfb, key_object, single_row, row_date, single_column)
 
     def analyze_data_in_grid(self, dfb):
         '''
