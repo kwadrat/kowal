@@ -15,7 +15,7 @@ def new_module_for_writing_spreadsheet():
 
 def check_module_dependencies_linux():
     mu_kw.new_module_for_reading_spreadsheet()
-    mu_kw.new_module_for_writing_spreadsheet()
+    new_module_for_writing_spreadsheet()
 
 for i in NazwyModulow:
     if i == __name__.split('.')[-1]:
@@ -27,7 +27,7 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 def generate_excel_files(dfb):
-    xlwt = mu_kw.new_module_for_writing_spreadsheet()
+    xlwt = new_module_for_writing_spreadsheet()
     fu_kw.EnergyReader().generate_one_file(xlwt, dfb, 'e.xls')
     mt_kw.PowerReader().generate_one_file(xlwt, dfb, 'p.xls')
 
