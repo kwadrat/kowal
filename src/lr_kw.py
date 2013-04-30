@@ -74,7 +74,7 @@ class GeneratorUU:
         self.my_week_day = my_week_day
 
 def generate_specific_drawing(dfb, pytanie, multiplier):
-    result = dfb.query_dct(pytanie, flg_nowy=1)
+    result = dfb.query_old_dct(pytanie, flg_nowy=1)
     tmp_frags = []
     for row_nr, row_data in enumerate(result):
         for col_nr, value in enumerate(row_data[0]):
