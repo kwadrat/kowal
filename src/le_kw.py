@@ -32,7 +32,7 @@ def dq_add_new_object_key(dfb, under_name):
 
 def dq_insert_vector_of_samples(dfb, n_table, key_object, row_date, all_samples):
     db_statement = fz_kw.ptn_insert_vector_of_samples(n_table, key_object, row_date, all_samples)
-    dfb.query_old_silent(db_statement)
+    dfb.query_silent(db_statement)
 
 def dq_update_vector_of_samples(dfb, n_table, sample_key, key_object, row_date, all_samples):
     db_statement = fz_kw.ptn_update_vector_of_samples(n_table, sample_key, key_object, row_date, all_samples)
