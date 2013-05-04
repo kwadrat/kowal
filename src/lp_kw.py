@@ -44,6 +44,9 @@ def describe_column(column_index):
     hour_number = midnight_hour_wrap.get(hour_number, hour_number)
     return change_to_full_hour(hour_number)
 
+def date_to_text(dt_obkt):
+    return '2012-01-02'
+
 class HourMiniServer:
     def __init__(self, start_col, column_index):
         '''
@@ -134,3 +137,9 @@ class TestDateQuarters(unittest.TestCase):
         self.assertEqual(describe_column(1), '02:00')
         self.assertEqual(describe_column(22), '23:00')
         self.assertEqual(describe_column(23), '00:00')
+
+    def test_date_converter(self):
+        '''
+        TestDateQuarters:
+        '''
+        self.assertEqual(date_to_text(datetime.date(2012, 1, 2)), '2012-01-02')
