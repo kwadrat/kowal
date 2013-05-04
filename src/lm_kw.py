@@ -17,9 +17,11 @@ value_ten_const = a2d(10)
 def have_dec_type(value):
     return isinstance(value, decimal.Decimal)
 
-def dec2flt(a):
+def dec2flt(value):
     '''Decimal -> float'''
-    return float(d2a(a))
+    if have_dec_type(value):
+        value = float(d2a(value))
+    return value
 
 def for_storing(value):
     if have_dec_type(value):
@@ -47,6 +49,7 @@ class TestPointNumbers(unittest.TestCase):
         self.assertEqual(a2d(15), decimal.Decimal('15'))
         self.assertEqual(d2a(decimal.Decimal('1.5')), '1.500000')
         self.assertEqual(dec2flt(decimal.Decimal('1.5')), 1.5)
+        self.assertEqual(dec2flt(1.5), 1.5)
         self.assertEqual(for_storing(None), 'NULL')
         self.assertEqual(for_storing(a2d('1.25')), '1.250000')
         self.assertEqual(for_storing(1.75), '1.75')
