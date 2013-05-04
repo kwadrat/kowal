@@ -12,14 +12,14 @@ def d2a(a):
     '''Decimal -> ASCII(kropka)'''
     return '%f' % a
 
-def dec2flt(a):
-    '''Decimal -> float'''
-    return float(d2a(a))
-
 value_ten_const = a2d(10)
 
 def have_dec_type(value):
     return isinstance(value, decimal.Decimal)
+
+def dec2flt(a):
+    '''Decimal -> float'''
+    return float(d2a(a))
 
 def for_storing(value):
     if have_dec_type(value):
