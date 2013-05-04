@@ -142,4 +142,5 @@ class TestDateQuarters(unittest.TestCase):
         '''
         TestDateQuarters:
         '''
-        self.assertEqual(date_to_text(datetime.date(2012, 1, 2)), '2012-01-02')
+        self.assertEqual(rj_na_date(datetime.date(2012, 1, 2)), '2012-01-02')
+        self.assertEqual(rj_na_date(datetime.date(2013, 3, 1)), '2013-03-01')
