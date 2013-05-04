@@ -44,6 +44,9 @@ def describe_column(column_index):
     hour_number = midnight_hour_wrap.get(hour_number, hour_number)
     return change_to_full_hour(hour_number)
 
+def has_date_from_dt(prm_date):
+    return 1
+
 class HourMiniServer:
     def __init__(self, start_col, column_index):
         '''
@@ -141,3 +144,4 @@ class TestDateQuarters(unittest.TestCase):
         '''
         self.assertEqual(rj_na_date(datetime.date(2012, 1, 2)), '2012-01-02')
         self.assertEqual(rj_na_date(datetime.date(2013, 3, 1)), '2013-03-01')
+        self.assertEqual(has_date_from_dt(datetime.date(2013, 3, 1)), 1)
