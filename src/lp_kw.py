@@ -47,6 +47,11 @@ def describe_column(column_index):
 def has_date_from_dt(prm_date):
     return isinstance(prm_date, datetime.date)
 
+def convert_date_format_to_text(slownik, pole):
+    data = slownik[pole]
+    if has_date_from_dt(data):
+        slownik[slownik._index[pole]] = rj_na_date(data)
+
 class HourMiniServer:
     def __init__(self, start_col, column_index):
         '''
