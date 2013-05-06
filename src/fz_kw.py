@@ -109,6 +109,16 @@ def ptn_update_vector_of_samples(n_table, sample_key, key_object, row_date, all_
         k_sample=sample_key,
         )
 
+def ptn_load_one_vector_from_db(table_name, key_object, row_date):
+    return fy_kw.lxa_31_inst % dict(
+        table_name=table_name,
+        e_date=lc_kw.fq_m_date_qv,
+        e_samples=lc_kw.fq_m_samples_qv,
+        e_object=lc_kw.fq_f_object_qv,
+        f_object=key_object,
+        m_date=row_date,
+        )
+
 class TestVariousPatterns(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual
     def test_various_patterns(self):
@@ -124,3 +134,4 @@ class TestVariousPatterns(unittest.TestCase):
         self.assertEqual(ptn_add_new_object_key('n'), fy_kw.lxa_15_inst)
         self.assertEqual(ptn_insert_vector_of_samples(lc_kw.fq_uu_power_qv, 123, '2013-01-31', [None] * 3), fy_kw.lxa_17_inst)
         self.assertEqual(ptn_update_vector_of_samples(lc_kw.fq_uu_power_qv, 7, 123, '2013-01-31', [None] * 3), fy_kw.lxa_21_inst)
+        self.assertEqual(ptn_load_one_vector_from_db(lc_kw.fq_uu_power_qv, 18, '2013-01-31'), fy_kw.lxa_30_inst)
