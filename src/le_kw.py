@@ -41,3 +41,7 @@ def dq_update_vector_of_samples(dfb, n_table, sample_key, key_object, row_date, 
 def dq_load_one_vector_from_db(dfb, table_name, key_object, row_date):
     db_statement = fz_kw.ptn_load_one_vector_from_db(table_name, key_object, row_date)
     return dfb.query_dct(db_statement)
+
+def dq_liczniki_poboru_w_roku(dfb):
+    db_statement = fz_kw.ptn_liczniki_poboru_w_roku()
+    return dfb.query_dct(db_statement)
