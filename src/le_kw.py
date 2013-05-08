@@ -45,3 +45,7 @@ def dq_load_one_vector_from_db(dfb, table_name, key_object, row_date):
 def dq_liczniki_poboru_w_roku(dfb):
     db_statement = fz_kw.ptn_liczniki_poboru_w_roku()
     return dfb.query_dct(db_statement)
+
+def dq_jeden_licznik_poboru_w_roku(dfb):
+    db_statement = fz_kw.ptn_jeden_licznik_poboru_w_roku()
+    return dfb.query_dct(db_statement)
