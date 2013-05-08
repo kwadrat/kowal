@@ -119,6 +119,9 @@ def ptn_load_one_vector_from_db(table_name, key_object, row_date):
         m_date=row_date,
         )
 
+def ptn_liczniki_poboru_w_roku():
+    return fy_kw.lxa_32_inst
+
 class TestVariousPatterns(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual
     def test_various_patterns(self):
@@ -135,3 +138,4 @@ class TestVariousPatterns(unittest.TestCase):
         self.assertEqual(ptn_insert_vector_of_samples(lc_kw.fq_uu_power_qv, 123, '2013-01-31', [None] * 3), fy_kw.lxa_17_inst)
         self.assertEqual(ptn_update_vector_of_samples(lc_kw.fq_uu_power_qv, 7, 123, '2013-01-31', [None] * 3), fy_kw.lxa_21_inst)
         self.assertEqual(ptn_load_one_vector_from_db(lc_kw.fq_uu_power_qv, 18, '2013-01-31'), fy_kw.lxa_30_inst)
+        self.assertEqual(ptn_liczniki_poboru_w_roku(), fy_kw.lxa_33_inst)
