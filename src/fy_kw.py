@@ -74,6 +74,6 @@ SELECT m_samples FROM %(table_name)s WHERE k_sample=%(nr_probki)d;"""
 lxa_35_inst = """\
 SELECT m_samples FROM uu_power WHERE k_sample=1860;"""
 lxa_36_inst = """\
-SELECT k_sample FROM uu_energy WHERE f_object=19 AND m_date='2013-01-31';"""
+SELECT k_sample FROM uu_energy WHERE f_object=19 AND m_date='2013-02-01';"""
 lxa_37_inst = """\
 SELECT m_samples FROM uu_energy WHERE k_sample=1861;"""
