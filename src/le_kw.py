@@ -46,6 +46,6 @@ def dq_liczniki_poboru_w_roku(dfb, table_name):
     db_statement = fz_kw.ptn_liczniki_poboru_w_roku(table_name)
     return dfb.query_dct(db_statement)
 
-def dq_jeden_licznik_poboru_w_roku(dfb):
+def dq_jeden_licznik_poboru_w_roku(dfb, table_name):
     db_statement = fz_kw.ptn_jeden_licznik_poboru_w_roku()
     return dfb.query_dct(db_statement)
