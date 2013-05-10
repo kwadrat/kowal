@@ -124,7 +124,7 @@ def ptn_liczniki_poboru_w_roku(table_name):
         table_name=table_name,
         )
 
-def ptn_jeden_licznik_poboru_w_roku():
+def ptn_jeden_licznik_poboru_w_roku(table_name):
     return fy_kw.lxa_34_inst
 
 class TestVariousPatterns(unittest.TestCase):
@@ -145,4 +145,4 @@ class TestVariousPatterns(unittest.TestCase):
         self.assertEqual(ptn_load_one_vector_from_db(lc_kw.fq_uu_power_qv, 18, '2013-01-31'), fy_kw.lxa_30_inst)
         self.assertEqual(ptn_liczniki_poboru_w_roku(lc_kw.fq_uu_power_qv), fy_kw.lxa_33_inst)
         self.assertEqual(ptn_liczniki_poboru_w_roku(lc_kw.fq_uu_energy_qv), fy_kw.lxa_36_inst)
-        self.assertEqual(ptn_jeden_licznik_poboru_w_roku(), fy_kw.lxa_35_inst)
+        self.assertEqual(ptn_jeden_licznik_poboru_w_roku(lc_kw.fq_uu_power_qv), fy_kw.lxa_35_inst)
