@@ -120,7 +120,9 @@ def ptn_load_one_vector_from_db(table_name, key_object, row_date):
         )
 
 def ptn_liczniki_poboru_w_roku(table_name):
-    return fy_kw.lxa_32_inst
+    return fy_kw.lxa_32_inst % dict(
+        table_name=table_name,
+        )
 
 def ptn_jeden_licznik_poboru_w_roku():
     return fy_kw.lxa_34_inst
