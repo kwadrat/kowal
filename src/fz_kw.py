@@ -128,6 +128,7 @@ def ptn_liczniki_poboru_w_roku(table_name, id_obiekt):
 def ptn_jeden_licznik_poboru_w_roku(table_name, id_obiekt):
     return fy_kw.lxa_34_inst % dict(
         table_name=table_name,
+        id_obiekt=id_obiekt,
         )
 
 class TestVariousPatterns(unittest.TestCase):
