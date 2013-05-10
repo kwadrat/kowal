@@ -150,4 +150,4 @@ class TestVariousPatterns(unittest.TestCase):
         self.assertEqual(ptn_liczniki_poboru_w_roku(lc_kw.fq_uu_power_qv, 18), fy_kw.lxa_33_inst)
         self.assertEqual(ptn_liczniki_poboru_w_roku(lc_kw.fq_uu_energy_qv, 19), fy_kw.lxa_36_inst)
         self.assertEqual(ptn_jeden_licznik_poboru_w_roku(lc_kw.fq_uu_power_qv, 1860), fy_kw.lxa_35_inst)
-        self.assertEqual(ptn_jeden_licznik_poboru_w_roku(lc_kw.fq_uu_energy_qv, 1860), fy_kw.lxa_37_inst)
+        self.assertEqual(ptn_jeden_licznik_poboru_w_roku(lc_kw.fq_uu_energy_qv, 1861), fy_kw.lxa_37_inst)
