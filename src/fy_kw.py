@@ -70,7 +70,7 @@ SELECT k_sample FROM %(table_name)s WHERE f_object=18 AND m_date='2013-01-31';""
 lxa_33_inst = """\
 SELECT k_sample FROM uu_power WHERE f_object=18 AND m_date='2013-01-31';"""
 lxa_34_inst = """\
-SELECT m_samples FROM uu_power WHERE k_sample=1860;"""
+SELECT m_samples FROM %(table_name)s WHERE k_sample=1860;"""
 lxa_35_inst = """\
 SELECT m_samples FROM uu_power WHERE k_sample=1860;"""
 lxa_36_inst = """\
