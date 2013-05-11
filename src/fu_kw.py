@@ -51,7 +51,7 @@ class EnergyReader(CommonReader):
         self.period_server.verify_hours_headers(self)
         return under_name
 
-    def detect_data_rows(self):
+    def detect_energy_data_rows(self):
         '''
         EnergyReader:
         '''
@@ -86,6 +86,6 @@ class EnergyReader(CommonReader):
         '''
         under_name = self.detect_energy_sheet_header()
         key_object = mu_kw.locate_object_key(dfb, under_name)
-        data_rows = self.detect_data_rows()
+        data_rows = self.detect_energy_data_rows()
         self.enter_energy_data(dfb, key_object, data_rows)
         self.store_rows_in_db(dfb)
