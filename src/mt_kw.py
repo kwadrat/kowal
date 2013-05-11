@@ -57,7 +57,7 @@ class PowerReader(CommonReader):
         under_name = self.vx_peek('C', 10)
         return under_name
 
-    def detect_data_rows(self):
+    def detect_power_data_rows(self):
         '''
         PowerReader:
         '''
@@ -93,6 +93,6 @@ class PowerReader(CommonReader):
         '''
         under_name = self.detect_power_sheet_header()
         key_object = mu_kw.locate_object_key(dfb, under_name)
-        data_rows = self.detect_data_rows()
+        data_rows = self.detect_power_data_rows()
         self.enter_power_data(dfb, key_object, data_rows)
         self.store_rows_in_db(dfb)
