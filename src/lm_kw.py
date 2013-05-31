@@ -12,6 +12,7 @@ def d2a(a):
     '''Decimal -> ASCII(kropka)'''
     return '%f' % a
 
+wartosc_zero_globalna = a2d('0')
 value_ten_const = a2d(10)
 
 def have_dec_type(value):
