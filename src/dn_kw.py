@@ -228,8 +228,8 @@ def NapisDnia(numer):
 
 def ZakresRoku(rok):
     '''Pierwszy dzień aktualnego i następnego roku dla podanego roku'''
-    pocz = NumerDnia(rok, 1, 1)
-    kon = NumerDnia(rok + 1, 1, 1)
+    pocz = dzien_nowego_roku(rok)
+    kon = dzien_nowego_roku(rok + 1)
     return pocz, kon
 
 def ZakresMiesiaca(rok, miesiac):
