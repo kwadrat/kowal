@@ -90,7 +90,7 @@ def NumerDnia(rok, miesiac, dzien):
         raise TypeError('Problem z: "%s"' % repr((rok, miesiac, dzien)))
     return numer
 
-def NumerPoczRoku(rok):
+def dzien_nowego_roku(rok):
     '''Zwraca numer pierwszego dnia podanego roku
     '''
     return NumerDnia(rok, 1, 1)
@@ -428,6 +428,8 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(wyznacz_sekunde_logu(data_testowa_c), du_kw.rjb_godzina_przkl)
         self.assertEqual(wyznacz_minute_logu(data_testowa_c), du_kw.rjb_minuta_przkl)
         self.assertEqual(NumerDnia(1970, 1, 1), 0)
+        self.assertEqual(dzien_nowego_roku(1970), 0)
+        self.assertEqual(dzien_nowego_roku(1971), 365)
         self.assertEqual(napis_na_numer_dnia((1970, 1, 1)), 0)
         self.assertEqual(napis_na_numer_dnia('1970-01-01'), 0)
         self.assertEqual(napis_na_numer_dnia('2011-03-27'), 15060)
