@@ -241,14 +241,14 @@ def ZakresMiesiaca(rok, miesiac):
     Wartość zwracana:
     krotka: (pocz, kon) - numer dnia zaczynającego aktualny oraz następny miesiąc
     '''
-    pocz = NumerDnia(rok, miesiac, 1)
+    pocz = dzien_nowego_miesiaca(rok, miesiac)
     # Przejdź na początek następnego miesiąca
     if miesiac < 12:
         miesiac += 1
     else:
         miesiac = 1
         rok += 1
-    kon = NumerDnia(rok, miesiac, 1)
+    kon = dzien_nowego_miesiaca(rok, miesiac)
     return pocz, kon
 
 def rok_przestepny(rok):
