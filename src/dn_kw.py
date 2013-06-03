@@ -449,6 +449,7 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(napis_na_numer_dnia('2011-11-01'), 15277 + 2)
         self.assertEqual(napis_na_numer_dnia(du_kw.rjb_dzien_przkl), 15321)
         self.assertEqual(NapisDnia(0), '1970-01-01')
+        self.assertEqual(ZakresRoku(1972), (730, 1096))
         self.assertEqual(DataDnia(0), (1970, 1, 1))
         self.assertEqual(DataDnia(15278), (2011, 10, 31))
         self.assertEqual(RokDnia(15278), 2011)
