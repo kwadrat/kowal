@@ -95,7 +95,7 @@ def NumerPoczRoku(rok):
     '''
     return NumerDnia(rok, 1, 1)
 
-def NumerDniaNapis(data):
+def napis_na_numer_dnia(data):
     '''Zwraca numer dnia począwszy od 1 stycznia 1970
     Parametr:
     data - napis w formacie '2008-10-16'
@@ -399,7 +399,7 @@ def RokMscDnia(x):
     return szczegolowa_krotka(x)[:2]
 
 def rok_mies_z_napisu(x):
-    return RokMscDnia(NumerDniaNapis(x))
+    return RokMscDnia(napis_na_numer_dnia(x))
 
 def one_common_date_of_energy_as_month_and_year(data_pocz, data_kon):
     spcf_pocz = rok_mies_z_napisu(data_pocz)
@@ -428,15 +428,15 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(wyznacz_sekunde_logu(data_testowa_c), du_kw.rjb_godzina_przkl)
         self.assertEqual(wyznacz_minute_logu(data_testowa_c), du_kw.rjb_minuta_przkl)
         self.assertEqual(NumerDnia(1970, 1, 1), 0)
-        self.assertEqual(NumerDniaNapis((1970, 1, 1)), 0)
-        self.assertEqual(NumerDniaNapis('1970-01-01'), 0)
-        self.assertEqual(NumerDniaNapis('2011-03-27'), 15060)
-        self.assertEqual(NumerDniaNapis('2011-03-28'), 15060 + 1) # DST
-        self.assertEqual(NumerDniaNapis('2011-03-29'), 15060 + 2)
-        self.assertEqual(NumerDniaNapis('2011-10-30'), 15277)
-        self.assertEqual(NumerDniaNapis('2011-10-31'), 15277 + 1) # DST
-        self.assertEqual(NumerDniaNapis('2011-11-01'), 15277 + 2)
-        self.assertEqual(NumerDniaNapis(du_kw.rjb_dzien_przkl), 15321)
+        self.assertEqual(napis_na_numer_dnia((1970, 1, 1)), 0)
+        self.assertEqual(napis_na_numer_dnia('1970-01-01'), 0)
+        self.assertEqual(napis_na_numer_dnia('2011-03-27'), 15060)
+        self.assertEqual(napis_na_numer_dnia('2011-03-28'), 15060 + 1) # DST
+        self.assertEqual(napis_na_numer_dnia('2011-03-29'), 15060 + 2)
+        self.assertEqual(napis_na_numer_dnia('2011-10-30'), 15277)
+        self.assertEqual(napis_na_numer_dnia('2011-10-31'), 15277 + 1) # DST
+        self.assertEqual(napis_na_numer_dnia('2011-11-01'), 15277 + 2)
+        self.assertEqual(napis_na_numer_dnia(du_kw.rjb_dzien_przkl), 15321)
         self.assertEqual(NapisDnia(0), '1970-01-01')
         self.assertEqual(DataDnia(0), (1970, 1, 1))
         self.assertEqual(DataDnia(15278), (2011, 10, 31))
