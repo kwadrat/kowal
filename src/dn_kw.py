@@ -319,7 +319,7 @@ def daty_lat(dzien_pocz, dzien_kon):
         wynik.append(dzien)
     return wynik
 
-def daty_roku(rok, rok_bez_rozszerzenia):
+def daty_roku(rok, rok_z_rozszerzeniem):
     '''
     Parametry:
     rok - numer roku
@@ -328,14 +328,14 @@ def daty_roku(rok, rok_bez_rozszerzenia):
     na końcu jest data, która już nie wchodzi w zakres przetwarzanych danych
     '''
     wynik = []
-    if not rok_bez_rozszerzenia:
+    if rok_z_rozszerzeniem:
         # Rozpoczynamy okres ciągły na początku grudnia poprzedniego roku
         for mies in range(12 - rq_kw.DodatkoweMiesiacePrzed, 12):
             wynik.append(NumerDnia(rok - 1, mies + 1, 1))
     for mies in range(12):
         wynik.append(NumerDnia(rok, mies + 1, 1))
     wynik.append(NumerDnia(rok + 1, 1, 1))
-    if not rok_bez_rozszerzenia:
+    if rok_z_rozszerzeniem:
         # Kończymy okres ciągły na początku lutego następnego roku
         for mies in range(1, 1 + rq_kw.DodatkoweMiesiacePo):
             wynik.append(NumerDnia(rok + 1, mies + 1, 1))
@@ -467,6 +467,6 @@ class TestDaysDates(unittest.TestCase):
         self.assertTrue(checkdate('2012-2-1'))
         self.assertEqual(data_z_napisu(du_kw.rjb_dzien_przkl), (2011, 12, 13))
         self.assertEqual(nazwa_rzymskiego(4), 'IV')
-        self.assertEqual(len(daty_roku(2008, rok_bez_rozszerzenia=1)), rq_kw.RokZwykly + 1)
-        self.assertEqual(len(daty_roku(2008, rok_bez_rozszerzenia=0)), rq_kw.RokDluzszy + 1)
+        self.assertEqual(len(daty_roku(2008, rok_z_rozszerzeniem=0)), rq_kw.RokZwykly + 1)
+        self.assertEqual(len(daty_roku(2008, rok_z_rozszerzeniem=1)), rq_kw.RokDluzszy + 1)
         self.assertEqual(rok_mies_z_napisu('2010-01-01'), (2010, 1))
