@@ -3,6 +3,8 @@
 
 import unittest
 
+formularz_1c_kon_tabeli = '</table>\n'
+
 def qh_ttl(tmp_title):
     if tmp_title is None:
         wynik = ''
@@ -82,4 +84,4 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(op_tbl(cellspacing=1, cellpadding=2), '<table cellspacing="1" cellpadding="2">\n')
         self.assertEqual(op_tbl(cellspacing=1, cellpadding=1, class_='abc'), '<table cellspacing="1" cellpadding="1" class="abc">\n')
         self.assertEqual(op_tbl(cellspacing=1, cellpadding=2, class_='def'), '<table cellspacing="1" cellpadding="2" class="def">\n')
-        self.assertEqual(op_tbl(cellspacing=1, cellpadding=2, class_='ghi'), '<table cellspacing="1" cellpadding="2" class="ghi">\n')
+        self.assertEqual(formularz_1c_kon_tabeli, '</table>\n')
