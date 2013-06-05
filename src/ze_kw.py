@@ -42,6 +42,13 @@ def op_td(class_ = None, colspan=None, rowspan=None, title=None):
       wstawka_tytulu=wstawka_tytulu,
       )
 
+def op_tr(id=None, nzw_wrsz=None, ukryty=0):
+    wstawka_id = wyznacz_wstawke('id', id)
+    wstawka_nzw = wyznacz_wstawke('name', nzw_wrsz)
+    return '<tr%(wstawka_id)s%(wstawka_nzw)s>\n' % dict(
+      wstawka_id = wstawka_id,
+      wstawka_nzw = wstawka_nzw)
+
 class TestTytuluHtml(unittest.TestCase):
     def test_tytulu_html(self):
         '''
@@ -56,3 +63,5 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(op_td(class_ = 'klasa_css', colspan=2, rowspan=3, title='abc'), '<td class="klasa_css" colspan="2" rowspan="3" title="abc">')
         self.assertEqual(wyznacz_wstawke('e1', None), '')
         self.assertEqual(wyznacz_wstawke('e2', 'napis'), ' e2="napis"')
+        self.assertEqual(op_tr(id = 'abc'), '<tr id="abc">\n')
+        self.assertEqual(op_tr(id='abc', nzw_wrsz='def'), '<tr id="abc" name="def">\n')
