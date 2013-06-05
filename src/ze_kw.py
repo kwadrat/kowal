@@ -1,8 +1,6 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
-'''Atrybut 'title' w HTML'''
-
 import unittest
 
 def qh_ttl(tmp_title):
