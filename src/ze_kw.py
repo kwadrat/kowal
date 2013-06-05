@@ -49,6 +49,18 @@ def op_tr(id=None, nzw_wrsz=None, ukryty=0):
       wstawka_id = wstawka_id,
       wstawka_nzw = wstawka_nzw)
 
+def op_tbl(cellspacing=None, cellpadding=None, class_=None, border=None):
+    wstawka_spc = wstawka_liczba('cellspacing', cellspacing)
+    wstawka_pdd = wstawka_liczba('cellpadding', cellpadding)
+    wstawka_bdr = wstawka_liczba('border', border)
+    wstawka_cls = wyznacz_wstawke('class', class_)
+    return '<table%(wstawka_spc)s%(wstawka_pdd)s%(wstawka_cls)s%(wstawka_bdr)s>\n' % dict(
+      wstawka_spc=wstawka_spc,
+      wstawka_pdd=wstawka_pdd,
+      wstawka_cls=wstawka_cls,
+      wstawka_bdr=wstawka_bdr,
+      )
+
 class TestTytuluHtml(unittest.TestCase):
     def test_tytulu_html(self):
         '''
@@ -65,3 +77,9 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(wyznacz_wstawke('e2', 'napis'), ' e2="napis"')
         self.assertEqual(op_tr(id = 'abc'), '<tr id="abc">\n')
         self.assertEqual(op_tr(id='abc', nzw_wrsz='def'), '<tr id="abc" name="def">\n')
+        self.assertEqual(op_tbl(), '<table>\n')
+        self.assertEqual(op_tbl(cellspacing=1, cellpadding=0), '<table cellspacing="1" cellpadding="0">\n')
+        self.assertEqual(op_tbl(cellspacing=1, cellpadding=2), '<table cellspacing="1" cellpadding="2">\n')
+        self.assertEqual(op_tbl(cellspacing=1, cellpadding=1, class_='abc'), '<table cellspacing="1" cellpadding="1" class="abc">\n')
+        self.assertEqual(op_tbl(cellspacing=1, cellpadding=2, class_='def'), '<table cellspacing="1" cellpadding="2" class="def">\n')
+        self.assertEqual(op_tbl(cellspacing=1, cellpadding=2, class_='ghi'), '<table cellspacing="1" cellpadding="2" class="ghi">\n')
