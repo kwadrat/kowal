@@ -77,3 +77,5 @@ lxa_36_inst = """\
 SELECT k_sample FROM uu_energy WHERE f_object=19 AND m_date='2013-02-01';"""
 lxa_37_inst = """\
 SELECT m_samples FROM uu_energy WHERE k_sample=1861;"""
+lxa_38_inst = """\
+SELECT m_date, m_samples FROM uu_energy WHERE f_object=7 ORDER BY m_date;"""
