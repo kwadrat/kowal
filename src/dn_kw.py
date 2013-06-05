@@ -157,6 +157,9 @@ def NapisDaty(rok, miesiac, dzien):
     '''
     return '%04d-%02d-%02d' % (rok, miesiac, dzien)
 
+def napis_z_rok_mies(rok, miesiac):
+    return '%04d-%02d' % (rok, miesiac)
+
 def NapisDzisiaj():
     '''
     Wyznacza dzień w postaci napisu: RRRR-MM-DD
@@ -482,3 +485,4 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(len(daty_roku(2008, rok_z_rozszerzeniem=0)), rq_kw.RokZwykly + 1)
         self.assertEqual(len(daty_roku(2008, rok_z_rozszerzeniem=1)), rq_kw.RokDluzszy + 1)
         self.assertEqual(rok_mies_z_napisu('2010-01-01'), (2010, 1))
+        self.assertEqual(napis_z_rok_mies(2011, 9), '2011-09')
