@@ -5,6 +5,7 @@ import unittest
 
 formularz_1c_kon_tabeli = '</table>\n'
 formularz_67c_kon_wiersza = '</tr>\n'
+formularz_1c_kon_komorki = '</td>\n'
 
 def qh_ttl(tmp_title):
     if tmp_title is None:
@@ -87,3 +88,4 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(op_tbl(cellspacing=1, cellpadding=2, class_='def'), '<table cellspacing="1" cellpadding="2" class="def">\n')
         self.assertEqual(formularz_1c_kon_tabeli, '</table>\n')
         self.assertEqual(formularz_67c_kon_wiersza, '</tr>\n')
+        self.assertEqual(formularz_1c_kon_komorki, '</td>\n')
