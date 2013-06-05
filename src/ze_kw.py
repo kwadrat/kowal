@@ -65,6 +65,13 @@ def op_tbl(cellspacing=None, cellpadding=None, class_=None, border=None):
       wstawka_bdr=wstawka_bdr,
       )
 
+def op_ptd(srodek, *lista, **slownik):
+    return ''.join([
+      op_td(*lista, **slownik),
+      srodek,
+      formularz_1c_kon_komorki,
+      ])
+
 class TestTytuluHtml(unittest.TestCase):
     def test_tytulu_html(self):
         '''
@@ -89,3 +96,6 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(formularz_1c_kon_tabeli, '</table>\n')
         self.assertEqual(formularz_67c_kon_wiersza, '</tr>\n')
         self.assertEqual(formularz_1c_kon_komorki, '</td>\n')
+        self.assertEqual(op_ptd('abc'), '<td>abc</td>\n')
+        self.assertEqual(op_ptd('de', class_='klasa', colspan=7), '<td class="klasa" colspan="7">de</td>\n')
+        self.assertEqual(op_ptd('fghi', colspan=2), '<td colspan="2">fghi</td>\n')
