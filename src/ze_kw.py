@@ -17,6 +17,13 @@ def wstawka_liczba(nazwa, liczba):
         napis = ' %s="%d"' % (nazwa, liczba)
     return napis
 
+def wyznacz_wstawke(nazwa, wartosc):
+    if wartosc is None:
+        napis = ''
+    else:
+        napis = ' %s="%s"' % (nazwa, wartosc)
+    return napis
+
 def op_td(class_ = None, colspan=None, rowspan=None, title=None):
     if class_:
         kawalek_klasy = ' class="%(class_)s"' % dict(class_ = class_)
@@ -47,3 +54,5 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(op_td(class_ = 'klasa_css'), '<td class="klasa_css">')
         self.assertEqual(op_td(class_ = 'klasa_css', colspan=2, rowspan=3), '<td class="klasa_css" colspan="2" rowspan="3">')
         self.assertEqual(op_td(class_ = 'klasa_css', colspan=2, rowspan=3, title='abc'), '<td class="klasa_css" colspan="2" rowspan="3" title="abc">')
+        self.assertEqual(wyznacz_wstawke('e1', None), '')
+        self.assertEqual(wyznacz_wstawke('e2', 'napis'), ' e2="napis"')
