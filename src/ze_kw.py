@@ -7,6 +7,7 @@ formularz_1c_kon_tabeli = '</table>\n'
 formularz_67c_kon_wiersza = '</tr>\n'
 formularz_1c_kon_komorki = '</td>\n'
 formularz_1c_zlm_wrsz = '<br />\n'
+hard_space = '&nbsp;'
 
 def qh_ttl(tmp_title):
     if tmp_title is None:
@@ -100,3 +101,4 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(op_ptd('abc'), '<td>abc</td>\n')
         self.assertEqual(op_ptd('de', class_='klasa', colspan=7), '<td class="klasa" colspan="7">de</td>\n')
         self.assertEqual(op_ptd('fghi', colspan=2), '<td colspan="2">fghi</td>\n')
+        self.assertEqual(hard_space, '&nbsp;')
