@@ -132,6 +132,15 @@ def ptn_jeden_licznik_poboru_w_roku(table_name, nr_probki):
         nr_probki=nr_probki,
         )
 
+def ptn_dane_jednego_obiektu(table_name, key_object):
+    return fy_kw.lxa_39_inst % dict(
+        table_name=table_name,
+        e_date=lc_kw.fq_m_date_qv,
+        e_samples=lc_kw.fq_m_samples_qv,
+        e_object=lc_kw.fq_f_object_qv,
+        f_object=key_object,
+        )
+
 class TestVariousPatterns(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual
     def test_various_patterns(self):
@@ -152,3 +161,4 @@ class TestVariousPatterns(unittest.TestCase):
         self.assertEqual(ptn_liczniki_poboru_w_roku(lc_kw.fq_uu_energy_qv, 19, '2013-02-01'), fy_kw.lxa_36_inst)
         self.assertEqual(ptn_jeden_licznik_poboru_w_roku(lc_kw.fq_uu_power_qv, 1860), fy_kw.lxa_35_inst)
         self.assertEqual(ptn_jeden_licznik_poboru_w_roku(lc_kw.fq_uu_energy_qv, 1861), fy_kw.lxa_37_inst)
+        self.assertEqual(ptn_dane_jednego_obiektu(lc_kw.fq_uu_energy_qv, 7), fy_kw.lxa_38_inst)
