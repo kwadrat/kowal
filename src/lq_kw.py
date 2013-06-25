@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+import unittest
 
 class SampleRow:
     def __init__(self):
@@ -41,3 +42,9 @@ class SampleRow:
         SampleRow:
         '''
         return self.sample_key
+
+class TestRowChanges(unittest.TestCase):
+    def test_row_changes(self):
+        '''
+        TestRowChanges:
+        '''
