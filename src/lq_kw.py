@@ -19,7 +19,10 @@ for i in NazwyModulow:
 def allowed_replacement(old_value, new_value):
     if old_value is None or old_value == new_value:
         result = 1
-    elif lm_kw.have_dec_type(old_value) and old_value == lm_kw.readjust_number(4, new_value):
+    elif (
+            lm_kw.have_dec_type(old_value) and
+            new_value is not None and
+            old_value == lm_kw.readjust_number(4, new_value)):
         result = 1
     else:
         result = 0
@@ -75,3 +78,4 @@ class TestRowChanges(unittest.TestCase):
         self.assertEqual(allowed_replacement(7, 7), 1)
         self.assertEqual(allowed_replacement(lm_kw.a2d('5.4200'), 5.42), 1)
         self.assertEqual(allowed_replacement(lm_kw.a2d('5.4568'), 5.456799999952317), 1)
+        self.assertEqual(allowed_replacement(lm_kw.a2d('5.4200'), None), 0)
