@@ -3,8 +3,12 @@
 
 import unittest
 
-def check_for_conflict(old_value, new_value):
-    return 0
+def allowed_replacement(old_value, new_value):
+    if old_value is None:
+        result = 1
+    else:
+        result = 0
+    return result
 
 class SampleRow:
     def __init__(self):
@@ -51,4 +55,5 @@ class TestRowChanges(unittest.TestCase):
         '''
         TestRowChanges:
         '''
-        self.assertEqual(check_for_conflict(None, None), 0)
+        self.assertEqual(allowed_replacement(None, None), 1)
+        self.assertEqual(allowed_replacement(7, None), 0)
