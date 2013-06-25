@@ -3,6 +3,9 @@
 
 import unittest
 
+def check_for_conflict():
+    pass
+
 class SampleRow:
     def __init__(self):
         '''
@@ -48,3 +51,4 @@ class TestRowChanges(unittest.TestCase):
         '''
         TestRowChanges:
         '''
+        check_for_conflict()
