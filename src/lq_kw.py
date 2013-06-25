@@ -47,7 +47,11 @@ class SampleRow:
         '''
         SampleRow:
         '''
-        self.list_of_samples[sample_index] = value
+        old_value = self.list_of_samples[sample_index]
+        if allowed_replacement(old_value, value):
+            self.list_of_samples[sample_index] = value
+        else:
+            raise RuntimeError('old_value: %s value: %s' % (repr(old_value), repr(value)))
 
     def fill_from_data(self, sample_key, sample_data):
         '''
