@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+
 class SampleRow:
     def __init__(self):
         '''
