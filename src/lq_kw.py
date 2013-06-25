@@ -17,7 +17,7 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 def allowed_replacement(old_value, new_value):
-    if old_value is None or old_value == new_value:
+    if old_value is None or old_value == new_value or lm_kw.dec2flt(old_value) == new_value:
         result = 1
     else:
         result = 0
@@ -71,3 +71,4 @@ class TestRowChanges(unittest.TestCase):
         self.assertEqual(allowed_replacement(None, None), 1)
         self.assertEqual(allowed_replacement(7, None), 0)
         self.assertEqual(allowed_replacement(7, 7), 1)
+        self.assertEqual(allowed_replacement(lm_kw.a2d('5.4200'), 5.42), 1)
