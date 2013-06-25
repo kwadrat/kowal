@@ -3,6 +3,19 @@
 
 import unittest
 
+NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import lm_kw
+'''.splitlines()]
+
+for i in NazwyModulow:
+    if i == __name__.split('.')[-1]:
+        raise RuntimeError('Modul laduje sam siebie?: %s' % repr(i))
+    else:
+        if i in globals():
+            exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
+        else:
+            exec 'import %(modul)s' % dict(modul = i)
+
 def allowed_replacement(old_value, new_value):
     if old_value is None or old_value == new_value:
         result = 1
