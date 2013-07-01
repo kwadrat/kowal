@@ -85,3 +85,5 @@ lxa_40_inst = """\
 tabelkowiec"""
 lxa_41_inst = """\
 SELECT k_sample FROM uu_energy WHERE f_object=19;"""
+lxa_42_inst = """\
+SELECT k_sample FROM %(table_name)s WHERE f_object=%(id_obiekt)d;"""
