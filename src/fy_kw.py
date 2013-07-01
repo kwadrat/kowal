@@ -83,3 +83,5 @@ lxa_39_inst = """\
 SELECT %(e_date)s, %(e_samples)s FROM %(table_name)s WHERE %(e_object)s=%(f_object)d ORDER BY %(e_date)s;"""
 lxa_40_inst = """\
 tabelkowiec"""
+lxa_41_inst = """\
+SELECT k_sample FROM uu_energy WHERE f_object=19;"""
