@@ -130,3 +130,6 @@ Dla_Dwoch_Raportow = (Dn_RapPierwszy, Dn_RapDrugi, )
 
 # Ograniczanie wyświetlania odcinków bazowych, nakładek albo zbitek
 TymczasowoOgrWysw = 1
+
+# Pokaż odcinki bazowe
+TymczasowoPkzBaz = 1
