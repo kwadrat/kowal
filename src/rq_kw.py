@@ -127,3 +127,6 @@ DG_Obiekty = (DG_BrakGrupowania, DG_BrakGrupowania)
 niekonkretny_obiekt = (None, )
 
 Dla_Dwoch_Raportow = (Dn_RapPierwszy, Dn_RapDrugi, )
+
+# Ograniczanie wyświetlania odcinków bazowych, nakładek albo zbitek
+TymczasowoOgrWysw = 1
