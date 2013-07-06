@@ -63,6 +63,14 @@ class DayCellsStats:
             return '%d/%d' % (self.empty_cells, self.zero_cells)
         return ze_kw.hard_space
 
+    def cell_title(self):
+        '''
+        DayCellsStats:
+        '''
+        if self.cell_problems():
+            return 'brakujących pomiarów: %d, zerowych wartości: %d' % (self.empty_cells, self.zero_cells)
+        return None
+
 
 class TestDeficits(unittest.TestCase):
     def test_constants_for_deficits(self):
@@ -82,11 +90,13 @@ class TestDeficits(unittest.TestCase):
         self.assertEqual(obk.cell_background(), CLL_Background_OK)
         self.assertEqual(obk.cell_problems(), 0)
         self.assertEqual(obk.cell_message(), ze_kw.hard_space)
+        self.assertEqual(obk.cell_title(), None)
         obk.analyze_the_cell(None)
         self.assertEqual(obk.empty_cells, 1)
         self.assertEqual(obk.cell_background(), CLL_Background_Problems)
         self.assertEqual(obk.cell_message(), '1/0')
         self.assertEqual(obk.cell_problems(), 1)
+        self.assertEqual(obk.cell_title(), 'brakujących pomiarów: 1, zerowych wartości: 0')
 
     def test_2_deficits(self):
         '''
