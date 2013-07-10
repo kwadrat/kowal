@@ -30,6 +30,9 @@ def poziomo_dla_dni(min_domain, akt, max_domain, min_pixels, max_pixels):
         (max_domain - min_domain)
         )
 
+def zaokraglij_mi(all_points, small_part):
+    return all_points - (all_points % small_part)
+
 class TestRozmiaruObrazu(unittest.TestCase):
     def test_rozmiaru_obrazu(self):
         '''
@@ -45,3 +48,10 @@ class TestRozmiaruObrazu(unittest.TestCase):
         self.assertEqual(poziomo_dla_dni(0, 0, 4, 1, 3), 1)
         self.assertEqual(poziomo_dla_dni(0, 31 + 365 + 31 + 29, 31 + 365 + 31 + 29, 0, sk_pelny_obraz), sk_pelny_obraz)
 
+    def test_szkieletowego_zaokraglenia(self):
+        '''
+        TestRozmiaruObrazu:
+        '''
+        self.assertEqual(zaokraglij_mi(96, 96), 96)
+        self.assertEqual(zaokraglij_mi(96 + 95, 96), 96)
+        self.assertEqual(zaokraglij_mi(96 + 96, 96), 192)
