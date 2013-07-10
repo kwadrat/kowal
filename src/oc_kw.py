@@ -34,6 +34,7 @@ rjb_sciezka_a_kw = rjb_sciezka_kw + rjb_sam_slsh
 GenPicDir = 'gen_kowal/'
 poczatek_gen = rjb_sciezka_a_kw + GenPicDir
 SciezkaPlikow = rjb_ph_uztk + GenPicDir
+EYK_lporz_fktr = 'lp_faktury'
 
 def pelna_generowana_nazwa(nazwa):
     return poczatek_gen + nazwa
