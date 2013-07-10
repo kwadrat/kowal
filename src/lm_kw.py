@@ -41,6 +41,17 @@ def readjust_number(places, value):
     rounding = calculate_rounding(places)
     return a2d(napis).quantize(rounding)
 
+def rzeczywista_na_napis(liczba):
+    '''Przerabia liczbę złotych (być może ułamkową, z groszami)
+    na kwotę do pokazania użytkownikowi - bez części ułamkowej,
+    jeśli ona jest zerowa.
+    '''
+    napis = '%.2f' % liczba
+    if napis[-3:] == '.00': # Mamy pełną kwotę, bez ułamka
+        return napis[:-3] # Zwróć tylko całkowitą wartość
+    else:
+        return napis # Zwróć pełną kwotę, łącznie z groszami
+
 class TestPointNumbers(unittest.TestCase):
     def test_point_numbers(self):
         '''
@@ -58,3 +69,5 @@ class TestPointNumbers(unittest.TestCase):
         self.assertEqual(have_dec_type(0), 0)
         self.assertEqual(calculate_rounding(3), decimal.Decimal('0.001'))
         self.assertEqual(readjust_number(3, 1.5555), decimal.Decimal('1.556'))
+        self.assertEqual(rzeczywista_na_napis(589.56 * 100), '58956')
+        self.assertEqual(rzeczywista_na_napis(589.56), '589.56')
