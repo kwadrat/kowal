@@ -21,6 +21,7 @@ PoczObrazka = 'plik_'
 RozszerzenieObrazka = '.png'
 url_ameryka_http = 'http://'
 adres_maszyny = 'media.ciri.pl'
+url_kotw_a_ica = url_ameryka_http + adres_maszyny
 konto_uzytkownika = 'kwadrat'
 rjb_tld_kw_a_apl = rjb_sama_tylda + konto_uzytkownika
 GenPicDir = 'gen_kowal/'
@@ -36,6 +37,7 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(RozszerzenieObrazka, '.png')
         self.assertEqual(url_ameryka_http, 'http://')
         self.assertEqual(adres_maszyny, 'media.ciri.pl')
+        self.assertEqual(url_kotw_a_ica, 'http://media.ciri.pl')
         self.assertEqual(konto_uzytkownika, 'kwadrat')
         self.assertEqual(rjb_tld_kw_a_apl, '~kwadrat')
         self.assertEqual(GenPicDir, 'gen_kowal/')
