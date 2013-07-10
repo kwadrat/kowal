@@ -30,6 +30,9 @@ rjb_sciezka_a_kw = rjb_sciezka_kw + rjb_sam_slsh
 GenPicDir = 'gen_kowal/'
 poczatek_gen = rjb_sciezka_a_kw + GenPicDir
 
+def pelna_generowana_nazwa(nazwa):
+    return poczatek_gen + nazwa
+
 class TestConstantStrings(unittest.TestCase):
     def test_constant_strings(self):
         '''
@@ -49,3 +52,5 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(rjb_sciezka_a_kw, 'http://media.ciri.pl/~kwadrat/')
         self.assertEqual(GenPicDir, 'gen_kowal/')
         self.assertEqual(poczatek_gen, 'http://media.ciri.pl/~kwadrat/gen_kowal/')
+        self.assertEqual(pelna_generowana_nazwa('tmp.png'), 'http://media.ciri.pl/~kwadrat/gen_kowal/tmp.png')
+        self.assertEqual(pelna_generowana_nazwa('inny.jpg'), 'http://media.ciri.pl/~kwadrat/gen_kowal/inny.jpg')
