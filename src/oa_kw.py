@@ -14,3 +14,9 @@ for i in NazwyModulow:
             exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
         else:
             exec 'import %(modul)s' % dict(modul = i)
+
+class TestRozmiaruObrazu(unittest.TestCase):
+    def test_rozmiaru_obrazu(self):
+        '''
+        TestRozmiaruObrazu:
+        '''
