@@ -16,6 +16,7 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 rjb_sam_slsh = '/'
+rjb_pocz_hm_dir = '/home/'
 rjb_sama_tylda = '~'
 PoczObrazka = 'plik_'
 RozszerzenieObrazka = '.png'
@@ -39,6 +40,7 @@ class TestConstantStrings(unittest.TestCase):
         TestConstantStrings:
         '''
         self.assertEqual(rjb_sam_slsh, '/')
+        self.assertEqual(rjb_pocz_hm_dir, '/home/')
         self.assertEqual(rjb_sama_tylda, '~')
         self.assertEqual(PoczObrazka, 'plik_')
         self.assertEqual(RozszerzenieObrazka, '.png')
