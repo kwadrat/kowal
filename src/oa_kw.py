@@ -15,8 +15,13 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+# Każdy dzień będzie jako 2 punkty - wtedy 365 dni w roku
+# zmieści się w poziomie na ekranie 1024x768
+sk_pelny_obraz = 1250
+
 class TestRozmiaruObrazu(unittest.TestCase):
     def test_rozmiaru_obrazu(self):
         '''
         TestRozmiaruObrazu:
         '''
+        self.assertEqual(sk_pelny_obraz, 1250)
