@@ -16,6 +16,7 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 rjb_sam_slsh = '/'
+rjb_sama_tylda = '~'
 PoczObrazka = 'plik_'
 RozszerzenieObrazka = '.png'
 url_ameryka_http = 'http://'
@@ -29,6 +30,7 @@ class TestConstantStrings(unittest.TestCase):
         TestConstantStrings:
         '''
         self.assertEqual(rjb_sam_slsh, '/')
+        self.assertEqual(rjb_sama_tylda, '~')
         self.assertEqual(PoczObrazka, 'plik_')
         self.assertEqual(RozszerzenieObrazka, '.png')
         self.assertEqual(url_ameryka_http, 'http://')
