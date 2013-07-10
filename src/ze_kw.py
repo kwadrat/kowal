@@ -87,6 +87,9 @@ def op_ptd(srodek, *lista, **slownik):
       formularz_1c_kon_komorki,
       ])
 
+def op_32_sbf():
+    return op_tbl(class_=fy_kw.lxa_40_inst, border=1)
+
 class TestTytuluHtml(unittest.TestCase):
     def test_tytulu_html(self):
         '''
@@ -115,3 +118,4 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(op_ptd('de', class_='klasa', colspan=7), '<td class="klasa" colspan="7">de</td>\n')
         self.assertEqual(op_ptd('fghi', colspan=2), '<td colspan="2">fghi</td>\n')
         self.assertEqual(hard_space, '&nbsp;')
+        self.assertEqual(op_32_sbf(), '<table class="tabelkowiec" border="1">\n')
