@@ -16,6 +16,7 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 PoczObrazka = 'plik_'
+RozszerzenieObrazka = '.png'
 
 class TestConstantStrings(unittest.TestCase):
     def test_constant_strings(self):
@@ -23,3 +24,4 @@ class TestConstantStrings(unittest.TestCase):
         TestConstantStrings:
         '''
         self.assertEqual(PoczObrazka, 'plik_')
+        self.assertEqual(RozszerzenieObrazka, '.png')
