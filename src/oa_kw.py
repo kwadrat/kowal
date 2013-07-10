@@ -64,6 +64,9 @@ KOLOR_CZERWONE_TLO = (192, 0, 0)
 # zmieści się w poziomie na ekranie 1024x768
 sk_pelny_obraz = 1250
 
+# Długość kresek zaznaczających poszczególne miesiące lub lata
+DlugoscKresekMiesiecy = 3
+
 def poziomo_dla_dni(min_domain, akt, max_domain, min_pixels, max_pixels):
     return int(
         min_pixels
