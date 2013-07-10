@@ -67,6 +67,9 @@ sk_pelny_obraz = 1250
 # Długość kresek zaznaczających poszczególne miesiące lub lata
 DlugoscKresekMiesiecy = 3
 
+# Wysokość linii z napisem
+wysokosc_napisu = 10 # draw.textsize('0')[1]
+
 def poziomo_dla_dni(min_domain, akt, max_domain, min_pixels, max_pixels):
     return int(
         min_pixels
