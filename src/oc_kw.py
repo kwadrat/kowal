@@ -28,6 +28,7 @@ rjb_tld_kw_a_apl = rjb_sama_tylda + konto_uzytkownika
 rjb_sciezka_kw = url_kotw_b_ica + rjb_tld_kw_a_apl
 rjb_sciezka_a_kw = rjb_sciezka_kw + rjb_sam_slsh
 GenPicDir = 'gen_kowal/'
+poczatek_gen = rjb_sciezka_a_kw + GenPicDir
 
 class TestConstantStrings(unittest.TestCase):
     def test_constant_strings(self):
@@ -47,3 +48,4 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(rjb_sciezka_kw, 'http://media.ciri.pl/~kwadrat')
         self.assertEqual(rjb_sciezka_a_kw, 'http://media.ciri.pl/~kwadrat/')
         self.assertEqual(GenPicDir, 'gen_kowal/')
+        self.assertEqual(poczatek_gen, 'http://media.ciri.pl/~kwadrat/gen_kowal/')
