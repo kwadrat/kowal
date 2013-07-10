@@ -17,6 +17,7 @@ for i in NazwyModulow:
 
 PoczObrazka = 'plik_'
 RozszerzenieObrazka = '.png'
+url_ameryka_http = 'http://'
 
 class TestConstantStrings(unittest.TestCase):
     def test_constant_strings(self):
@@ -25,3 +26,4 @@ class TestConstantStrings(unittest.TestCase):
         '''
         self.assertEqual(PoczObrazka, 'plik_')
         self.assertEqual(RozszerzenieObrazka, '.png')
+        self.assertEqual(url_ameryka_http, 'http://')
