@@ -14,3 +14,9 @@ for i in NazwyModulow:
             exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
         else:
             exec 'import %(modul)s' % dict(modul = i)
+
+class TestConstantStrings(unittest.TestCase):
+    def test_constant_strings(self):
+        '''
+        TestConstantStrings:
+        '''
