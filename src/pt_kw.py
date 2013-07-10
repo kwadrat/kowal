@@ -52,7 +52,7 @@ class KlasaObrazu:
         self.moja_nazwa = mf_kw.plik_grafiki(self.tgk, self.literka_typu, self.dwk.lp_miejsca, ())
         self.html_name = self.html_my_name(self.literka_typu, self.dwk.lp_miejsca)
 
-    def chce_miejsca_na_skale(self, ile_pikseli):
+    def chce_po_lewej_miejsca_na_skale(self, ile_pikseli):
         '''
         KlasaObrazu:
         '''
