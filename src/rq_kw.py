@@ -133,3 +133,5 @@ TymczasowoOgrWysw = 1
 
 # Pokaż odcinki bazowe
 TymczasowoPkzBaz = 1
+
+Docelowo_psyco_nie_pygresql = 0
