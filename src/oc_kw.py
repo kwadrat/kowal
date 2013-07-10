@@ -29,6 +29,7 @@ konto_uzytkownika = 'kwadrat'
 rjb_tld_kw_a_apl = rjb_sama_tylda + konto_uzytkownika
 rjb_sciezka_kw = url_kotw_b_ica + rjb_tld_kw_a_apl
 rjb_kt_dom_uzt = rjb_pocz_hm_dir + konto_uzytkownika
+rjb_ph_uztk = rjb_kt_dom_uzt + rjb_do_pbl_ht + rjb_sam_slsh
 rjb_sciezka_a_kw = rjb_sciezka_kw + rjb_sam_slsh
 GenPicDir = 'gen_kowal/'
 poczatek_gen = rjb_sciezka_a_kw + GenPicDir
@@ -54,6 +55,7 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(konto_uzytkownika, 'kwadrat')
         self.assertEqual(rjb_tld_kw_a_apl, '~kwadrat')
         self.assertEqual(rjb_kt_dom_uzt, '/home/kwadrat')
+        self.assertEqual(rjb_ph_uztk, '/home/kwadrat/public_html/')
         self.assertEqual(rjb_sciezka_kw, 'http://media.ciri.pl/~kwadrat')
         self.assertEqual(rjb_sciezka_a_kw, 'http://media.ciri.pl/~kwadrat/')
         self.assertEqual(GenPicDir, 'gen_kowal/')
