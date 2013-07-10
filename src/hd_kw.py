@@ -37,6 +37,16 @@ def kropka_przecinek(a):
 def odwrotny_zwykly(napis):
     return napis.replace('\\', '/')
 
+def dolacz_pole(wynik, kolumna):
+    if lm_kw.have_dec_type(kolumna):
+        value_as_text = lm_kw.d2a(kolumna)
+        value_as_text = kropka_przecinek(value_as_text)
+    else:
+        value_as_text = str(kolumna)
+        if type(kolumna) is float:
+            value_as_text = kropka_przecinek(value_as_text)
+    wynik.append(ze_kw.op_ptd(value_as_text))
+
 class TestNapisow(unittest.TestCase):
     def test_operacji_na_napisach(self):
         '''
