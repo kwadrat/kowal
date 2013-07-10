@@ -16,3 +16,4 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 MHG_LAMP = '&amp;' # Łączący ampersand, zakodowany
+MHG_SAMP = '&' # Łączący ampersand, jako pojedynczy znak
