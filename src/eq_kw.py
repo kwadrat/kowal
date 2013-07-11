@@ -67,3 +67,9 @@ class PoboroweSlupki(MojeSlupki):
                     jeden_slupek = sj_kw.JedenSlupek(SlWspX, DolSlupka, GoraSlupka, Etykieta, Wartosc, jeden_odc_bzw)
                     self.DodajSlupek(jeden_slupek)
             self.RysujListeSlupkow()
+
+class TestPoborowychSlupkow(unittest.TestCase):
+    def test_poborowych_slupkow(self):
+        '''
+        TestPoborowychSlupkow:
+        '''
