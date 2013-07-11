@@ -16,6 +16,14 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 class WykresDlaFakturPomiarow:
+    def start_odc_baz(self):
+        '''
+        WykresDlaFakturPomiarow:
+        '''
+        # Lista odcinków bazowych - lista elementów do wykreślenia w postaci
+        # słupków: [pocz, kon, kwota, {lp miejsca: [lista lp faktur]}]
+        self.odcinki_bazowe = lb_kw.ListaOdcBazowych()
+
     def __init__(self, tgk, aqr):
         '''
         WykresDlaFakturPomiarow:
@@ -25,14 +33,6 @@ class WykresDlaFakturPomiarow:
         # Ma wartość 0 dla wykresu zbiorczego,
         # większą dla wykresu indywidualnego
         self.lp_miejsca = self.tgk.gen_num_miejsc.przydziel_kolejny_numer(self)
-
-    def start_odc_baz(self):
-        '''
-        WykresDlaFakturPomiarow:
-        '''
-        # Lista odcinków bazowych - lista elementów do wykreślenia w postaci
-        # słupków: [pocz, kon, kwota, {lp miejsca: [lista lp faktur]}]
-        self.odcinki_bazowe = lb_kw.ListaOdcBazowych()
 
     def wykres_zbiorczy(self):
         '''
