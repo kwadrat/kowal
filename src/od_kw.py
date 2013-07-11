@@ -25,3 +25,10 @@ class CommonTGK:
         '''
         CommonTGK:
         '''
+
+class PseudoTGK(CommonTGK):
+    def __init__(self):
+        '''
+        PseudoTGK:
+        '''
+        CommonTGK.__init__(self)
