@@ -2,6 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import ho_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -12,3 +13,13 @@ for i in NazwyModulow:
             exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
         else:
             exec 'import %(modul)s' % dict(modul = i)
+
+WykresDlaFakturPomiarow = ho_kw.WykresDlaFakturPomiarow
+
+class WykresOkresowyDlaFakturPomiarow(WykresDlaFakturPomiarow):
+    def __init__(self, tgk, aqr, tfi_okres):
+        '''
+        WykresOkresowyDlaFakturPomiarow:
+        '''
+        self.tfi_okres = tfi_okres
+        WykresDlaFakturPomiarow.__init__(self, tgk, aqr)

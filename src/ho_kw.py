@@ -57,11 +57,3 @@ class WykresBezokresowyDlaFakturPomiarow(WykresDlaFakturPomiarow):
         WykresBezokresowyDlaFakturPomiarow:
         '''
         WykresDlaFakturPomiarow.__init__(self, tgk, aqr)
-
-class WykresOkresowyDlaFakturPomiarow(WykresDlaFakturPomiarow):
-    def __init__(self, tgk, aqr, tfi_okres):
-        '''
-        WykresOkresowyDlaFakturPomiarow:
-        '''
-        self.tfi_okres = tfi_okres
-        WykresDlaFakturPomiarow.__init__(self, tgk, aqr)
