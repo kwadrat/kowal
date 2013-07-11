@@ -17,7 +17,7 @@ for i in NazwyModulow:
 WykresBezokresowyDlaFakturPomiarow = ho_kw.WykresBezokresowyDlaFakturPomiarow
 
 class WykresPomiarow(WykresBezokresowyDlaFakturPomiarow):
-    def __init__(self, tgk, aqr, unikalny_licznik):
+    def __init__(self, tgk, aqr):
         '''
         WykresPomiarow:
         '''
