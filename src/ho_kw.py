@@ -33,6 +33,7 @@ class WykresDlaFakturPomiarow:
         # Ma wartość 0 dla wykresu zbiorczego,
         # większą dla wykresu indywidualnego
         self.lp_miejsca = self.tgk.gen_num_miejsc.przydziel_kolejny_numer(self)
+        self.start_odc_baz()
 
     def wykres_zbiorczy(self):
         '''
