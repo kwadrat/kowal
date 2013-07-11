@@ -84,6 +84,9 @@ def poziomo_dla_dni(min_domain, akt, max_domain, min_pixels, max_pixels):
 def zaokraglij_mi(all_points, small_part):
     return all_points - (all_points % small_part)
 
+def rj_text(draw, place, message):
+    draw.text(place, message, fill=Kolor_Napisow)
+
 class TestRozmiaruObrazu(unittest.TestCase):
     def test_rozmiaru_obrazu(self):
         '''
