@@ -15,3 +15,10 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 WykresDlaFakturPomiarow = ho_kw.WykresDlaFakturPomiarow
+
+class WykresBezokresowyDlaFakturPomiarow(WykresDlaFakturPomiarow):
+    def __init__(self, tgk, aqr):
+        '''
+        WykresBezokresowyDlaFakturPomiarow:
+        '''
+        WykresDlaFakturPomiarow.__init__(self, tgk, aqr)

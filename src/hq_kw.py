@@ -2,7 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
-import ho_kw
+import og_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -14,7 +14,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-WykresBezokresowyDlaFakturPomiarow = ho_kw.WykresBezokresowyDlaFakturPomiarow
+WykresBezokresowyDlaFakturPomiarow = og_kw.WykresBezokresowyDlaFakturPomiarow
 
 class WykresPomiarow(WykresBezokresowyDlaFakturPomiarow):
     def __init__(self, tgk, aqr):

@@ -50,10 +50,3 @@ class WykresDlaFakturPomiarow:
         else:
             moje_tlo = oa_kw.KOLOR_EXCEL_TLO_SZARE
         return moje_tlo
-
-class WykresBezokresowyDlaFakturPomiarow(WykresDlaFakturPomiarow):
-    def __init__(self, tgk, aqr):
-        '''
-        WykresBezokresowyDlaFakturPomiarow:
-        '''
-        WykresDlaFakturPomiarow.__init__(self, tgk, aqr)
