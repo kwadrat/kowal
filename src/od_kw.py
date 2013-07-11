@@ -19,3 +19,9 @@ class PseudoDWK:
         PseudoDWK:
         '''
         self.lp_miejsca = lp_wykresu
+
+class CommonTGK:
+    def __init__(self):
+        '''
+        CommonTGK:
+        '''
