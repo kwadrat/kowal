@@ -205,8 +205,7 @@ class KlasaObrazu:
         for x, y, NapisMiesiaca in self.my_texts:
             napis_szer = draw.textsize(NapisMiesiaca)[0]
             x = x - napis_szer // 2
-            draw.text((x, y),
-              NapisMiesiaca, fill = oa_kw.Kolor_Napisow)
+            oa_kw.rj_text(draw, (x, y), NapisMiesiaca)
 
 class TestGenerowaniaObrazu(unittest.TestCase):
     pass

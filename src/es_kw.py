@@ -152,7 +152,7 @@ class MojeSlupki(KlasaObrazu):
         MojeSlupki:
         '''
         for x, y, napis in self.lista_napisow_punkt:
-            draw.text((x, y), napis, fill = oa_kw.Kolor_Napisow)
+            oa_kw.rj_text(draw, (x, y), napis)
 
     def kolorowanie_faktur_wodociagow(self, slownik_qm, draw, px, py, kx, ky):
         '''
@@ -214,7 +214,7 @@ class MojeSlupki(KlasaObrazu):
                     self.dodaj_paczke(on_mouse, pozycja, jeden_odc_bzw)
             slownik_qm = jeden_odc_bzw.slownik_qm
             self.kolorowanie_faktur_wodociagow(slownik_qm, draw, px, py, kx, ky)
-            draw.text((px, py), napis, fill = oa_kw.Kolor_Napisow)
+            oa_kw.rj_text(draw, (px, py), napis)
 
     def brak_mi_dat_szkieletu(self):
         '''
