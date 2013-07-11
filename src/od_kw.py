@@ -27,6 +27,12 @@ class CommonTGK:
         CommonTGK:
         '''
 
+    def wyznacz_unikalny_moment_dla_grafiki(self):
+        '''
+        CommonTGK:
+        '''
+        self.znacznik_unik = dn_kw.zn_unik()
+
 class PseudoTGK(CommonTGK):
     def __init__(self):
         '''
