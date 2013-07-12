@@ -5,4 +5,4 @@
 Settings
 '''
 
-DocelowoOsobneDane = 0
+DocelowoOsobneDane = 1
