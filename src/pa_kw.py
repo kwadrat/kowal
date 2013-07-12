@@ -163,8 +163,16 @@ class MojPasek(KlasaObrazu):
         '''
         MojPasek:
         '''
-        for wersja in self.dwk.odmiany_grafiki:
-            self.dla_jednej_zaznaczonej_faktury(im, wersja, on_mouse)
+        if oo_kw.DocelowoOsobneDane:
+            ##############################################################################
+            for wersja in self.dnw.odmiany_grafiki:
+                self.dla_jednej_zaznaczonej_faktury(im, wersja, on_mouse)
+            ##############################################################################
+        else:
+            ##############################################################################
+            for wersja in self.dwk.odmiany_grafiki:
+                self.dla_jednej_zaznaczonej_faktury(im, wersja, on_mouse)
+            ##############################################################################
 
     def wykreslanie_paska(self, on_mouse):
         '''
