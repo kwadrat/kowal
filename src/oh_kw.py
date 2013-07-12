@@ -56,6 +56,7 @@ class TestProstychDanych(unittest.TestCase):
         self.assertEqual(obk.kolor_tla(), oa_kw.KOLOR_TLO_SELEDYN)
         self.assertFalse(obk.odmiany_grafiki)
         self.assertTrue(obk.odcinki_bazowe)
+        self.assertEqual(obk.odcinki_bazowe.len_odcinkow_bazowych(), 0)
 
     def test_prostych_2_danych(self):
         '''
