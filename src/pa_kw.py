@@ -61,11 +61,22 @@ class MojPasek(KlasaObrazu):
         pocz_kres_okr = self.pocz_paska
         kon_kres_okr = pocz_kres_okr + DlugoscKresekFaktur
         if self.aqr.mam_dat_na_dluzszy_rok():
-            for akt in self.dwk.odcinki_bazowe.lista_pocz():
-                if akt != None:
-                    tmp_x = self.aqr.poziomo_tego_dnia(akt, self.szerokosc_skali, self.szerokosc_obrazu)
-                    self.draw_line.append(((tmp_x, pocz_kres_okr, tmp_x, kon_kres_okr),
-                      oa_kw.Kolor_Kresek))
+            if oo_kw.DocelowoOsobneDane:
+                ##############################################################################
+                for akt in self.dnw.odcinki_bazowe.lista_pocz():
+                    if akt != None:
+                        tmp_x = self.aqr.poziomo_tego_dnia(akt, self.szerokosc_skali, self.szerokosc_obrazu)
+                        self.draw_line.append(((tmp_x, pocz_kres_okr, tmp_x, kon_kres_okr),
+                          oa_kw.Kolor_Kresek))
+                ##############################################################################
+            else:
+                ##############################################################################
+                for akt in self.dwk.odcinki_bazowe.lista_pocz():
+                    if akt != None:
+                        tmp_x = self.aqr.poziomo_tego_dnia(akt, self.szerokosc_skali, self.szerokosc_obrazu)
+                        self.draw_line.append(((tmp_x, pocz_kres_okr, tmp_x, kon_kres_okr),
+                          oa_kw.Kolor_Kresek))
+                ##############################################################################
 
     def __init__(self, lista, tgk, aqr, dwk, dnw):
         '''
