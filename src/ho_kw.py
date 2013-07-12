@@ -42,6 +42,7 @@ class WykresDlaFakturPomiarow:
         else:
             ##############################################################################
             self.lp_miejsca = self.tgk.gen_num_miejsc.przydziel_kolejny_numer(self)
+            self.dnw = oh_kw.SimpleDWN(self.lp_miejsca)
             ##############################################################################
         self.start_odc_baz()
 
