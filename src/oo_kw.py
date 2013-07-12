@@ -4,3 +4,5 @@
 '''
 Settings
 '''
+
+DocelowoOsobneDane = 0
