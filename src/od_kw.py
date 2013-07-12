@@ -14,10 +14,10 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-class PseudoDWK:
+class SimpleDWN:
     def __init__(self, lp_wykresu):
         '''
-        PseudoDWK:
+        SimpleDWN:
         '''
         self.lp_miejsca = lp_wykresu
 
