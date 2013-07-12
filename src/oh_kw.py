@@ -26,7 +26,7 @@ class SimpleDWN:
         '''
         SimpleDWN:
         '''
-        return 1
+        return not self.lp_miejsca
 
 class TestProstychDanych(unittest.TestCase):
     def test_prostych_danych(self):
@@ -35,3 +35,10 @@ class TestProstychDanych(unittest.TestCase):
         '''
         obk = SimpleDWN(0)
         self.assertTrue(obk.mam_wykres_zbiorczy())
+
+    def test_prostych_2_danych(self):
+        '''
+        TestProstychDanych:
+        '''
+        obk = SimpleDWN(1)
+        self.assertFalse(obk.mam_wykres_zbiorczy())
