@@ -22,6 +22,8 @@ class SimpleDWN:
         SimpleDWN:
         '''
         self.lp_miejsca = lp_miejsca
+        # Lista wersji danego obrazka - z zaznaczoną jedną (lub więcej) fakturą
+        self.odmiany_grafiki = []
 
     def mam_wykres_zbiorczy(self):
         '''
@@ -48,6 +50,7 @@ class TestProstychDanych(unittest.TestCase):
         obk = SimpleDWN(0)
         self.assertTrue(obk.mam_wykres_zbiorczy())
         self.assertEqual(obk.kolor_tla(), oa_kw.KOLOR_TLO_SELEDYN)
+        self.assertFalse(obk.odmiany_grafiki)
 
     def test_prostych_2_danych(self):
         '''
