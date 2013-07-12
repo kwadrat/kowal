@@ -35,7 +35,7 @@ class WykresDlaFakturPomiarow:
         self.lp_miejsca = self.tgk.gen_num_miejsc.przydziel_kolejny_numer(self)
         self.start_odc_baz()
 
-    def wykres_zbiorczy(self):
+    def mam_wykres_zbiorczy(self):
         '''
         WykresDlaFakturPomiarow:
         '''
@@ -46,7 +46,7 @@ class WykresDlaFakturPomiarow:
         WykresDlaFakturPomiarow:
         Wykres zbiorczy ma mieć inne tło
         '''
-        if self.wykres_zbiorczy():
+        if self.mam_wykres_zbiorczy():
             moje_tlo = oa_kw.KOLOR_TLO_SELEDYN
         else:
             moje_tlo = oa_kw.KOLOR_EXCEL_TLO_SZARE
