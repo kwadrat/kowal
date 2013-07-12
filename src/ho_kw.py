@@ -46,11 +46,18 @@ class WykresDlaFakturPomiarow:
             ##############################################################################
         self.start_odc_baz()
 
-    def mam_wykres_zbiorczy(self):
-        '''
-        WykresDlaFakturPomiarow:
-        '''
-        return not self.lp_miejsca
+    if oo_kw.DocelowoOsobneDane:
+        ##############################################################################
+        pass
+        ##############################################################################
+    else:
+        ##############################################################################
+        def mam_wykres_zbiorczy(self):
+            '''
+            WykresDlaFakturPomiarow:
+            '''
+            return not self.lp_miejsca
+        ##############################################################################
 
     def kolor_tla(self):
         '''
