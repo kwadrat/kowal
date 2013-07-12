@@ -228,7 +228,7 @@ class MojeSlupki(KlasaObrazu):
         '''
         if self.brak_mi_dat_szkieletu():
             return '' # nic nie robimy
-        moje_tlo = self.dwk.kolor_tla()
+        moje_tlo = self.dnw.kolor_tla()
         im, draw = self.im_draw(moje_tlo)
         self.rysowanie_prost_umw(draw)
         self.rysowanie_prostokatow(draw)
