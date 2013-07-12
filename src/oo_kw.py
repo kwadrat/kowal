@@ -4,5 +4,3 @@
 '''
 Settings
 '''
-
-DocelowoOsobneDane = 1
