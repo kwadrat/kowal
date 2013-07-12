@@ -36,7 +36,8 @@ class WykresDlaFakturPomiarow:
         # większą dla wykresu indywidualnego
         if oo_kw.DocelowoOsobneDane:
             ##############################################################################
-            self.lp_miejsca = self.tgk.gen_num_miejsc.przydziel_kolejny_numer(self)
+            lp_miejsca = self.tgk.gen_num_miejsc.przydziel_kolejny_numer(self)
+            self.dnw = oh_kw.SimpleDWN(lp_miejsca)
             ##############################################################################
         else:
             ##############################################################################
