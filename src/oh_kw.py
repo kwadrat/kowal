@@ -29,6 +29,17 @@ class SimpleDWN:
         '''
         return not self.lp_miejsca
 
+    def kolor_tla(self):
+        '''
+        SimpleDWN:
+        Wykres zbiorczy ma mieć inne tło
+        '''
+        if self.mam_wykres_zbiorczy():
+            moje_tlo = oa_kw.KOLOR_TLO_SELEDYN
+        else:
+            moje_tlo = oa_kw.KOLOR_EXCEL_TLO_SZARE
+        return moje_tlo
+
 class TestProstychDanych(unittest.TestCase):
     def test_prostych_danych(self):
         '''
@@ -36,6 +47,7 @@ class TestProstychDanych(unittest.TestCase):
         '''
         obk = SimpleDWN(0)
         self.assertTrue(obk.mam_wykres_zbiorczy())
+        self.assertEqual(obk.kolor_tla(), oa_kw.KOLOR_TLO_SELEDYN)
 
     def test_prostych_2_danych(self):
         '''
@@ -43,3 +55,4 @@ class TestProstychDanych(unittest.TestCase):
         '''
         obk = SimpleDWN(1)
         self.assertFalse(obk.mam_wykres_zbiorczy())
+        self.assertEqual(obk.kolor_tla(), oa_kw.KOLOR_EXCEL_TLO_SZARE)
