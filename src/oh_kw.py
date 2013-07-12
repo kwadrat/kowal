@@ -47,6 +47,12 @@ class SimpleDWN:
             moje_tlo = oa_kw.KOLOR_EXCEL_TLO_SZARE
         return moje_tlo
 
+    def ustaw_zbitke(self, punkt_pocz, punkt_kon):
+        '''
+        SimpleDWN:
+        '''
+        self.zbitki_qm = wb_kw.KlasaZbitki(punkt_pocz, punkt_kon)
+
 class TestProstychDanych(unittest.TestCase):
     def test_prostych_danych(self):
         '''
@@ -58,6 +64,7 @@ class TestProstychDanych(unittest.TestCase):
         self.assertFalse(obk.odmiany_grafiki)
         self.assertTrue(obk.odcinki_bazowe)
         self.assertEqual(obk.odcinki_bazowe.len_odcinkow_bazowych(), 0)
+        obk.ustaw_zbitke(15309, 15765)
 
     def test_prostych_2_danych(self):
         '''
