@@ -18,7 +18,7 @@ for i in NazwyModulow:
 MojeSlupki = es_kw.MojeSlupki
 
 class FakturoweRoczneSlupki(MojeSlupki):
-    def __init__(self, tgk, aqr, dwk):
+    def __init__(self, tgk, aqr, dwk, dnw):
         '''
         FakturoweRoczneSlupki:
         '''
