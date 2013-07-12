@@ -2,7 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
-import dn_kw
+import oj_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -14,17 +14,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-class CommonTGK:
-    def __init__(self):
-        '''
-        CommonTGK:
-        '''
-
-    def wyznacz_unikalny_moment_dla_grafiki(self):
-        '''
-        CommonTGK:
-        '''
-        self.znacznik_unik = dn_kw.zn_unik()
+CommonTGK = oj_kw.CommonTGK
 
 class PseudoTGK(CommonTGK):
     def __init__(self):

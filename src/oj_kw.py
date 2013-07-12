@@ -13,3 +13,15 @@ for i in NazwyModulow:
             exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
         else:
             exec 'import %(modul)s' % dict(modul = i)
+
+class CommonTGK:
+    def __init__(self):
+        '''
+        CommonTGK:
+        '''
+
+    def wyznacz_unikalny_moment_dla_grafiki(self):
+        '''
+        CommonTGK:
+        '''
+        self.znacznik_unik = dn_kw.zn_unik()
