@@ -339,7 +339,7 @@ class MojeSlupki(KlasaObrazu):
         '''
         MojeSlupki:
         '''
-        KlasaObrazu.__init__(self, tgk, aqr, dwk, lk_kw.LITERA_SLUPEK)
+        KlasaObrazu.__init__(self, tgk, aqr, dwk, dnw, lk_kw.LITERA_SLUPEK)
         self.pusta_lista_wszystkiego()
         self.MarginesSlupka = 20
         self.wysokosc_obrazu = 150
