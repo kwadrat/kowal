@@ -134,4 +134,7 @@ TymczasowoOgrWysw = 1
 # Pokaż odcinki bazowe
 TymczasowoPkzBaz = 1
 
+# Pokaż zbitki
+TymczasowoPkzZbt = 1
+
 Docelowo_psyco_nie_pygresql = 0
