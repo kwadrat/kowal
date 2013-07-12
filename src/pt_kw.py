@@ -47,6 +47,7 @@ class KlasaObrazu:
         self.tgk = tgk
         self.aqr = aqr
         self.dwk = dwk
+        self.dnw = dnw
         self.literka_typu = literka_typu
         self.szerokosc_skali = 0
         self.moja_nazwa = mf_kw.plik_grafiki(self.tgk, self.literka_typu, self.dwk.lp_miejsca, ())
