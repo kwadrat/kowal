@@ -16,11 +16,11 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 class SimpleDWN:
-    def __init__(self, lp_wykresu):
+    def __init__(self, lp_miejsca):
         '''
         SimpleDWN:
         '''
-        self.lp_miejsca = lp_wykresu
+        self.lp_miejsca = lp_miejsca
 
 class TestProstychDanych(unittest.TestCase):
     def test_prostych_danych(self):
