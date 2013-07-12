@@ -335,7 +335,7 @@ class MojeSlupki(KlasaObrazu):
         '''
         self.szerokosc_obrazu = oa_kw.sk_pelny_obraz
 
-    def __init__(self, tgk, aqr, dwk):
+    def __init__(self, tgk, aqr, dwk, dnw):
         '''
         MojeSlupki:
         '''
