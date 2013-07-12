@@ -27,3 +27,4 @@ class TestProstychDanych(unittest.TestCase):
         '''
         TestProstychDanych:
         '''
+        obk = SimpleDWN(0)
