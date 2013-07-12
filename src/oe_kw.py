@@ -21,5 +21,4 @@ class WykresOkresowyDlaFakturPomiarow(WykresDlaFakturPomiarow):
         '''
         WykresOkresowyDlaFakturPomiarow:
         '''
-        self.tfi_okres = tfi_okres
         WykresDlaFakturPomiarow.__init__(self, tgk, aqr)
