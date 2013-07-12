@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+import unittest
+
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 '''.splitlines()]
 
@@ -19,3 +21,9 @@ class SimpleDWN:
         SimpleDWN:
         '''
         self.lp_miejsca = lp_wykresu
+
+class TestProstychDanych(unittest.TestCase):
+    def test_prostych_danych(self):
+        '''
+        TestProstychDanych:
+        '''
