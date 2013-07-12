@@ -25,7 +25,7 @@ MojeSlupki = es_kw.MojeSlupki
 
 class PoboroweSlupki(MojeSlupki):
     ile_pikseli = 30
-    def __init__(self, tgk, aqr, dwk):
+    def __init__(self, tgk, aqr, dwk, dnw):
         '''
         PoboroweSlupki:
         '''
