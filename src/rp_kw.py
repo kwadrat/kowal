@@ -19,7 +19,7 @@ for i in NazwyModulow:
 KlasaObrazu = pt_kw.KlasaObrazu
 
 class WykresRaportu(KlasaObrazu):
-    def __init__(self, tgk, aqr, dwk, linii):
+    def __init__(self, tgk, aqr, dwk, dnw, linii):
         KlasaObrazu.__init__(self, tgk, aqr, dwk, lk_kw.LITERA_WYKRES)
         self.szerokosc_obrazu = oa_kw.sk_pelny_obraz
         self.szerokosc_wykresu = self.szerokosc_obrazu - 10
