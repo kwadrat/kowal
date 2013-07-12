@@ -66,7 +66,7 @@ class MojPasek(KlasaObrazu):
                     self.draw_line.append(((tmp_x, pocz_kres_okr, tmp_x, kon_kres_okr),
                       oa_kw.Kolor_Kresek))
 
-    def __init__(self, lista, tgk, aqr, dwk):
+    def __init__(self, lista, tgk, aqr, dwk, dnw):
         '''
         MojPasek:
         - linia z napisem "Okresy rozliczeniowe"
