@@ -2,7 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
-import og_kw
+import ho_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -14,14 +14,14 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-WykresBezokresowyDlaFakturPomiarow = og_kw.WykresBezokresowyDlaFakturPomiarow
+WykresDlaFakturPomiarow = ho_kw.WykresDlaFakturPomiarow
 
-class WykresPomiarow(WykresBezokresowyDlaFakturPomiarow):
+class WykresPomiarow(WykresDlaFakturPomiarow):
     def __init__(self, tgk, aqr):
         '''
         WykresPomiarow:
         '''
-        WykresBezokresowyDlaFakturPomiarow.__init__(self, tgk, aqr)
+        WykresDlaFakturPomiarow.__init__(self, tgk, aqr)
 
     def ustaw_diagnostyke(self, tekstowa_diagnostyka=0):
         '''
