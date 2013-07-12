@@ -22,9 +22,16 @@ class WykresDlaFakturPomiarow:
         '''
         WykresDlaFakturPomiarow:
         '''
-        # Lista odcinków bazowych - lista elementów do wykreślenia w postaci
-        # słupków: [pocz, kon, kwota, {lp miejsca: [lista lp faktur]}]
-        self.odcinki_bazowe = lb_kw.ListaOdcBazowych()
+        if oo_kw.DocelowoOsobneDane:
+            ##############################################################################
+            pass
+            ##############################################################################
+        else:
+            ##############################################################################
+            # Lista odcinków bazowych - lista elementów do wykreślenia w postaci
+            # słupków: [pocz, kon, kwota, {lp miejsca: [lista lp faktur]}]
+            self.odcinki_bazowe = lb_kw.ListaOdcBazowych()
+            ##############################################################################
 
     def __init__(self, tgk, aqr):
         '''
