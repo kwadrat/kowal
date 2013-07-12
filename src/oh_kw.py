@@ -25,6 +25,9 @@ class SimpleDWN:
         self.lp_miejsca = lp_miejsca
         # Lista wersji danego obrazka - z zaznaczoną jedną (lub więcej) fakturą
         self.odmiany_grafiki = []
+        # Lista odcinków bazowych - lista elementów do wykreślenia w postaci
+        # słupków: [pocz, kon, kwota, {lp miejsca: [lista lp faktur]}]
+        self.odcinki_bazowe = lb_kw.ListaOdcBazowych()
 
     def mam_wykres_zbiorczy(self):
         '''
@@ -52,6 +55,7 @@ class TestProstychDanych(unittest.TestCase):
         self.assertTrue(obk.mam_wykres_zbiorczy())
         self.assertEqual(obk.kolor_tla(), oa_kw.KOLOR_TLO_SELEDYN)
         self.assertFalse(obk.odmiany_grafiki)
+        self.assertTrue(obk.odcinki_bazowe)
 
     def test_prostych_2_danych(self):
         '''
