@@ -77,7 +77,7 @@ class MojPasek(KlasaObrazu):
         Parametry:
         lista - lista dni dla wszystkich faktur
         '''
-        KlasaObrazu.__init__(self, tgk, aqr, dwk, dnw, lk_kw.LITERA_PASEK)
+        KlasaObrazu.__init__(self, tgk, aqr, dnw, lk_kw.LITERA_PASEK)
         self.szerokosc_obrazu = oa_kw.sk_pelny_obraz
         pocz_okr_rozlicz = 0 # Początek dla "Okresy rozliczeniowe"
         kon_okr_rozlicz = pocz_okr_rozlicz + oa_kw.wysokosc_napisu

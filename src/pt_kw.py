@@ -34,7 +34,7 @@ class KlasaObrazu:
     '''
     Klasa bazowa dla poszczególnych graficznych przedstawień w postaci PNG
     '''
-    def __init__(self, tgk, aqr, dwk, dnw, literka_typu):
+    def __init__(self, tgk, aqr, dnw, literka_typu):
         '''
         KlasaObrazu:
         '''
@@ -46,7 +46,6 @@ class KlasaObrazu:
         self.my_texts = []
         self.tgk = tgk
         self.aqr = aqr
-        self.dwk = dwk
         self.dnw = dnw
         self.literka_typu = literka_typu
         self.szerokosc_skali = 0

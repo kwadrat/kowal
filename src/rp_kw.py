@@ -20,7 +20,7 @@ KlasaObrazu = pt_kw.KlasaObrazu
 
 class WykresRaportu(KlasaObrazu):
     def __init__(self, tgk, aqr, dwk, dnw, linii):
-        KlasaObrazu.__init__(self, tgk, aqr, dwk, dnw, lk_kw.LITERA_WYKRES)
+        KlasaObrazu.__init__(self, tgk, aqr, dnw, lk_kw.LITERA_WYKRES)
         self.szerokosc_obrazu = oa_kw.sk_pelny_obraz
         self.szerokosc_wykresu = self.szerokosc_obrazu - 10
         self.wysokosc_obrazu = 200
