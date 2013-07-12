@@ -17,7 +17,7 @@ for i in NazwyModulow:
 MojeSlupki = es_kw.MojeSlupki
 
 class PomiaroweSlupki(MojeSlupki):
-    def __init__(self, tgk, aqr, dwk):
+    def __init__(self, tgk, aqr, dwk, dnw):
         '''
         PomiaroweSlupki:
         '''
