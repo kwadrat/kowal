@@ -2,9 +2,6 @@
 # -*- coding: UTF-8 -*-
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
-import oo_kw
-import lb_kw
-import oa_kw
 import oh_kw
 '''.splitlines()]
 
@@ -18,21 +15,6 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 class WykresDlaFakturPomiarow:
-    def start_odc_baz(self):
-        '''
-        WykresDlaFakturPomiarow:
-        '''
-        if oo_kw.DocelowoOsobneDane:
-            ##############################################################################
-            pass
-            ##############################################################################
-        else:
-            ##############################################################################
-            # Lista odcinków bazowych - lista elementów do wykreślenia w postaci
-            # słupków: [pocz, kon, kwota, {lp miejsca: [lista lp faktur]}]
-            self.odcinki_bazowe = lb_kw.ListaOdcBazowych()
-            ##############################################################################
-
     def __init__(self, tgk, aqr):
         '''
         WykresDlaFakturPomiarow:
@@ -41,38 +23,5 @@ class WykresDlaFakturPomiarow:
         self.aqr = aqr
         # Ma wartość 0 dla wykresu zbiorczego,
         # większą dla wykresu indywidualnego
-        if oo_kw.DocelowoOsobneDane:
-            ##############################################################################
-            lp_miejsca = self.tgk.gen_num_miejsc.przydziel_kolejny_numer(self)
-            self.dnw = oh_kw.SimpleDWN(lp_miejsca)
-            ##############################################################################
-        else:
-            ##############################################################################
-            self.lp_miejsca = self.tgk.gen_num_miejsc.przydziel_kolejny_numer(self)
-            self.dnw = oh_kw.SimpleDWN(self.lp_miejsca)
-            ##############################################################################
-        self.start_odc_baz()
-
-    if oo_kw.DocelowoOsobneDane:
-        ##############################################################################
-        pass
-        ##############################################################################
-    else:
-        ##############################################################################
-        def mam_wykres_zbiorczy(self):
-            '''
-            WykresDlaFakturPomiarow:
-            '''
-            return not self.lp_miejsca
-        ##############################################################################
-
-    def kolor_tla(self):
-        '''
-        WykresDlaFakturPomiarow:
-        Wykres zbiorczy ma mieć inne tło
-        '''
-        if self.mam_wykres_zbiorczy():
-            moje_tlo = oa_kw.KOLOR_TLO_SELEDYN
-        else:
-            moje_tlo = oa_kw.KOLOR_EXCEL_TLO_SZARE
-        return moje_tlo
+        lp_miejsca = self.tgk.gen_num_miejsc.przydziel_kolejny_numer(self)
+        self.dnw = oh_kw.SimpleDWN(lp_miejsca)

@@ -4,7 +4,6 @@
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
-import oo_kw
 import lw_kw
 import sj_kw
 import oa_kw
@@ -59,14 +58,7 @@ class PoboroweSlupki(MojeSlupki):
 
         pracuj = self.sprawdz_nietypowe_sytuacje(self.IleSlupkow, MinY, MaxY)
         if pracuj:
-            if oo_kw.DocelowoOsobneDane:
-                ##############################################################################
-                moje_paczki_faktur = self.dnw.odcinki_bazowe.p_odc_baz()
-                ##############################################################################
-            else:
-                ##############################################################################
-                moje_paczki_faktur = self.dwk.odcinki_bazowe.p_odc_baz()
-                ##############################################################################
+            moje_paczki_faktur = self.dnw.odcinki_bazowe.p_odc_baz()
             for jeden_odc_bzw in moje_paczki_faktur:
                 pocz, kon = jeden_odc_bzw.get_pk()
                 SlWspX = self.aqr.miejsce_umieszczenia_slupka(pocz, kon, self.szerokosc_skali, self.koniec_wykresu)

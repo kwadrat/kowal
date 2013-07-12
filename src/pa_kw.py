@@ -2,7 +2,6 @@
 # -*- coding: UTF-8 -*-
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
-import oo_kw
 import lk_kw
 import dn_kw
 import oa_kw
@@ -61,22 +60,11 @@ class MojPasek(KlasaObrazu):
         pocz_kres_okr = self.pocz_paska
         kon_kres_okr = pocz_kres_okr + DlugoscKresekFaktur
         if self.aqr.mam_dat_na_dluzszy_rok():
-            if oo_kw.DocelowoOsobneDane:
-                ##############################################################################
-                for akt in self.dnw.odcinki_bazowe.lista_pocz():
-                    if akt != None:
-                        tmp_x = self.aqr.poziomo_tego_dnia(akt, self.szerokosc_skali, self.szerokosc_obrazu)
-                        self.draw_line.append(((tmp_x, pocz_kres_okr, tmp_x, kon_kres_okr),
-                          oa_kw.Kolor_Kresek))
-                ##############################################################################
-            else:
-                ##############################################################################
-                for akt in self.dwk.odcinki_bazowe.lista_pocz():
-                    if akt != None:
-                        tmp_x = self.aqr.poziomo_tego_dnia(akt, self.szerokosc_skali, self.szerokosc_obrazu)
-                        self.draw_line.append(((tmp_x, pocz_kres_okr, tmp_x, kon_kres_okr),
-                          oa_kw.Kolor_Kresek))
-                ##############################################################################
+            for akt in self.dnw.odcinki_bazowe.lista_pocz():
+                if akt != None:
+                    tmp_x = self.aqr.poziomo_tego_dnia(akt, self.szerokosc_skali, self.szerokosc_obrazu)
+                    self.draw_line.append(((tmp_x, pocz_kres_okr, tmp_x, kon_kres_okr),
+                      oa_kw.Kolor_Kresek))
 
     def __init__(self, lista, tgk, aqr, dwk, dnw):
         '''
@@ -135,27 +123,13 @@ class MojPasek(KlasaObrazu):
         MojPasek:
         '''
         mam_jedna_wersje = (len(wersja) == 1)
-        if oo_kw.DocelowoOsobneDane:
-            ##############################################################################
-            momenty = self.dnw.zbitki_qm.keys()
-            ##############################################################################
-        else:
-            ##############################################################################
-            momenty = self.dwk.zbitki_qm.keys()
-            ##############################################################################
+        momenty = self.dnw.zbitki_qm.keys()
         momenty.sort()
         # czas_t0 - początek całej skali czasowej
         czas_t0 = czas_akt = momenty[0]
         czas_tn = momenty[-1]
         for czas_nast in momenty[1:]:
-            if oo_kw.DocelowoOsobneDane:
-                ##############################################################################
-                faktury = self.dnw.zbitki_qm[czas_akt]
-                ##############################################################################
-            else:
-                ##############################################################################
-                faktury = self.dwk.zbitki_qm[czas_akt]
-                ##############################################################################
+            faktury = self.dnw.zbitki_qm[czas_akt]
             ile_faktur = len(faktury)
             for nr_kol in range(ile_faktur):
                 lp_faktury = faktury[nr_kol]
@@ -188,16 +162,8 @@ class MojPasek(KlasaObrazu):
         '''
         MojPasek:
         '''
-        if oo_kw.DocelowoOsobneDane:
-            ##############################################################################
-            for wersja in self.dnw.odmiany_grafiki:
-                self.dla_jednej_zaznaczonej_faktury(im, wersja, on_mouse)
-            ##############################################################################
-        else:
-            ##############################################################################
-            for wersja in self.dwk.odmiany_grafiki:
-                self.dla_jednej_zaznaczonej_faktury(im, wersja, on_mouse)
-            ##############################################################################
+        for wersja in self.dnw.odmiany_grafiki:
+            self.dla_jednej_zaznaczonej_faktury(im, wersja, on_mouse)
 
     def wykreslanie_paska(self, on_mouse):
         '''

@@ -2,7 +2,6 @@
 # -*- coding: UTF-8 -*-
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
-import oo_kw
 import lk_kw
 import lm_kw
 import rq_kw
@@ -347,14 +346,7 @@ class MojeSlupki(KlasaObrazu):
         self.szerokosc_slupka = SzerSlupka
         if self.brak_mi_dat_szkieletu():
             return # nic nie robimy # qaz - REFACTOR!!!
-        if oo_kw.DocelowoOsobneDane:
-            ##############################################################################
-            self.IleSlupkow = self.dnw.odcinki_bazowe.len_odcinkow_bazowych() # Tyle rysowanych słupków
-            ##############################################################################
-        else:
-            ##############################################################################
-            self.IleSlupkow = self.dwk.odcinki_bazowe.len_odcinkow_bazowych() # Tyle rysowanych słupków
-            ##############################################################################
+        self.IleSlupkow = self.dnw.odcinki_bazowe.len_odcinkow_bazowych() # Tyle rysowanych słupków
         self.ustaw_skalowanie_obrazu()
 
     def wyznacz_gore_dol_slupka(self, MinY, MaxY, Wartosc):
@@ -374,14 +366,7 @@ class MojeSlupki(KlasaObrazu):
 
         pracuj = self.sprawdz_nietypowe_sytuacje(self.IleSlupkow, MinY, MaxY)
         if pracuj:
-            if oo_kw.DocelowoOsobneDane:
-                ##############################################################################
-                moje_paczki_faktur = self.dnw.odcinki_bazowe.p_odc_baz()
-                ##############################################################################
-            else:
-                ##############################################################################
-                moje_paczki_faktur = self.dwk.odcinki_bazowe.p_odc_baz()
-                ##############################################################################
+            moje_paczki_faktur = self.dnw.odcinki_bazowe.p_odc_baz()
             for jeden_odc_bzw in moje_paczki_faktur:
                 pocz, kon = jeden_odc_bzw.get_pk()
                 SlWspX = self.aqr.miejsce_umieszczenia_slupka(pocz, kon, self.szerokosc_skali, self.szerokosc_obrazu)
@@ -402,14 +387,7 @@ class MojeSlupki(KlasaObrazu):
 
         pracuj = self.sprawdz_nietypowe_sytuacje(self.IleSlupkow, MinY, MaxY)
         if pracuj:
-            if oo_kw.DocelowoOsobneDane:
-                ##############################################################################
-                moje_paczki_faktur = self.dnw.odcinki_bazowe.p_odc_baz()
-                ##############################################################################
-            else:
-                ##############################################################################
-                moje_paczki_faktur = self.dwk.odcinki_bazowe.p_odc_baz()
-                ##############################################################################
+            moje_paczki_faktur = self.dnw.odcinki_bazowe.p_odc_baz()
             for jeden_odc_bzw in moje_paczki_faktur:
                 pocz, kon = jeden_odc_bzw.get_pk()
                 SlWspX1 = self.aqr.miejsce_umieszczenia_slupka(pocz, pocz, self.szerokosc_skali, self.szerokosc_obrazu)
