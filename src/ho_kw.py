@@ -2,6 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import oo_kw
 import lb_kw
 import oa_kw
 '''.splitlines()]
@@ -32,7 +33,14 @@ class WykresDlaFakturPomiarow:
         self.aqr = aqr
         # Ma wartość 0 dla wykresu zbiorczego,
         # większą dla wykresu indywidualnego
-        self.lp_miejsca = self.tgk.gen_num_miejsc.przydziel_kolejny_numer(self)
+        if oo_kw.DocelowoOsobneDane:
+            ##############################################################################
+            self.lp_miejsca = self.tgk.gen_num_miejsc.przydziel_kolejny_numer(self)
+            ##############################################################################
+        else:
+            ##############################################################################
+            self.lp_miejsca = self.tgk.gen_num_miejsc.przydziel_kolejny_numer(self)
+            ##############################################################################
         self.start_odc_baz()
 
     def mam_wykres_zbiorczy(self):
