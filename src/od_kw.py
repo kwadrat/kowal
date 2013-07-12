@@ -14,13 +14,6 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-class SimpleDWN:
-    def __init__(self, lp_wykresu):
-        '''
-        SimpleDWN:
-        '''
-        self.lp_miejsca = lp_wykresu
-
 class CommonTGK:
     def __init__(self):
         '''

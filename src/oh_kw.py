@@ -12,3 +12,10 @@ for i in NazwyModulow:
             exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
         else:
             exec 'import %(modul)s' % dict(modul = i)
+
+class SimpleDWN:
+    def __init__(self, lp_wykresu):
+        '''
+        SimpleDWN:
+        '''
+        self.lp_miejsca = lp_wykresu
