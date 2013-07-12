@@ -135,13 +135,27 @@ class MojPasek(KlasaObrazu):
         MojPasek:
         '''
         mam_jedna_wersje = (len(wersja) == 1)
-        momenty = self.dwk.zbitki_qm.keys()
+        if oo_kw.DocelowoOsobneDane:
+            ##############################################################################
+            momenty = self.dnw.zbitki_qm.keys()
+            ##############################################################################
+        else:
+            ##############################################################################
+            momenty = self.dwk.zbitki_qm.keys()
+            ##############################################################################
         momenty.sort()
         # czas_t0 - początek całej skali czasowej
         czas_t0 = czas_akt = momenty[0]
         czas_tn = momenty[-1]
         for czas_nast in momenty[1:]:
-            faktury = self.dwk.zbitki_qm[czas_akt]
+            if oo_kw.DocelowoOsobneDane:
+                ##############################################################################
+                faktury = self.dnw.zbitki_qm[czas_akt]
+                ##############################################################################
+            else:
+                ##############################################################################
+                faktury = self.dwk.zbitki_qm[czas_akt]
+                ##############################################################################
             ile_faktur = len(faktury)
             for nr_kol in range(ile_faktur):
                 lp_faktury = faktury[nr_kol]
