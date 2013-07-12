@@ -29,7 +29,7 @@ class PoboroweSlupki(MojeSlupki):
         '''
         PoboroweSlupki:
         '''
-        MojeSlupki.__init__(self, tgk, aqr, dwk, dnw)
+        MojeSlupki.__init__(self, tgk, aqr, dnw)
         self.chce_po_lewej_miejsca_na_skale(self.ile_pikseli)
 
     def ustaw_skalowanie_obrazu(self):

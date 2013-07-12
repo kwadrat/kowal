@@ -22,7 +22,7 @@ class FakturoweRoczneSlupki(MojeSlupki):
         '''
         FakturoweRoczneSlupki:
         '''
-        MojeSlupki.__init__(self, tgk, aqr, dwk, dnw)
+        MojeSlupki.__init__(self, tgk, aqr, dnw)
 
     def ustaw_skalowanie_obrazu(self):
         '''
