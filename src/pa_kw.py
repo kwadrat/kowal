@@ -107,7 +107,7 @@ class MojPasek(KlasaObrazu):
         '''
         MojPasek:
         '''
-        tmp_nazwa2 = mf_kw.plik_grafiki(self.tgk, self.literka_typu, self.dwk.lp_miejsca, wersja)
+        tmp_nazwa2 = mf_kw.plik_grafiki(self.tgk, self.literka_typu, self.dnw.lp_miejsca, wersja)
         slownik = dict(
           px = lg_x,
           py = lg_y,

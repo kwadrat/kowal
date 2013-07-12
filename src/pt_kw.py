@@ -50,8 +50,8 @@ class KlasaObrazu:
         self.dnw = dnw
         self.literka_typu = literka_typu
         self.szerokosc_skali = 0
-        self.moja_nazwa = mf_kw.plik_grafiki(self.tgk, self.literka_typu, self.dwk.lp_miejsca, ())
-        self.html_name = self.html_my_name(self.literka_typu, self.dwk.lp_miejsca)
+        self.moja_nazwa = mf_kw.plik_grafiki(self.tgk, self.literka_typu, self.dnw.lp_miejsca, ())
+        self.html_name = self.html_my_name(self.literka_typu, self.dnw.lp_miejsca)
 
     def chce_po_lewej_miejsca_na_skale(self, ile_pikseli):
         '''
@@ -120,7 +120,7 @@ class KlasaObrazu:
         '''
         lista = []
         # Nazwa mapy dla tego obrazku
-        nazwa_tej_mapy = mf_kw.nazwa_mapy(self.literka_typu, self.dwk.lp_miejsca)
+        nazwa_tej_mapy = mf_kw.nazwa_mapy(self.literka_typu, self.dnw.lp_miejsca)
         if self.moja_mapa:
             lista.append(mf_kw.pocz_mapy(nazwa_tej_mapy))
             lista.extend(self.moja_mapa)
@@ -139,7 +139,7 @@ class KlasaObrazu:
         '''
         KlasaObrazu:
         '''
-        tmp_nazwa = mf_kw.plik_grafiki(self.tgk, self.literka_typu, self.dwk.lp_miejsca, wersja)
+        tmp_nazwa = mf_kw.plik_grafiki(self.tgk, self.literka_typu, self.dnw.lp_miejsca, wersja)
         im.save(oc_kw.SciezkaPlikow + tmp_nazwa)
 
     def rysuj_same_kreski(self, koniec_paska, akt, szerokosc_obrazu):
