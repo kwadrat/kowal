@@ -22,9 +22,16 @@ class SimpleDWN:
         '''
         self.lp_miejsca = lp_miejsca
 
+    def mam_wykres_zbiorczy(self):
+        '''
+        SimpleDWN:
+        '''
+        return 1
+
 class TestProstychDanych(unittest.TestCase):
     def test_prostych_danych(self):
         '''
         TestProstychDanych:
         '''
         obk = SimpleDWN(0)
+        self.assertTrue(obk.mam_wykres_zbiorczy())
