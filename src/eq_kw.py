@@ -82,3 +82,10 @@ class TestPoborowychSlupkow(unittest.TestCase):
         lp_wykresu = 0
         dwk = oh_kw.SimpleDWN(lp_wykresu)
         obk = PoboroweSlupki(tgk, aqr, dwk)
+        self.assertEqual(obk.ile_pikseli, 30)
+        self.assertEqual(obk.szerokosc_skali, 30)
+        self.assertEqual(obk.wysokosc_obrazu, 150)
+        self.assertEqual(obk.szerokosc_obrazu, 1250)
+        self.assertEqual(obk.szerokosc_wykresu, 1200)
+        self.assertEqual(obk.koniec_wykresu, 1230)
+        self.assertEqual(obk.szerokosc_slupka, 50)
