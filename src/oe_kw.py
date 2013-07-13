@@ -18,3 +18,10 @@ class LisSzerMiesiecznoRocznychFaktur(object):
         '''
         LisSzerMiesiecznoRocznychFaktur:
         '''
+
+    def najpierw_linia_tytulowa(self, lst_h, dfb, pokazywanie_licznikow):
+        '''
+        LisSzerMiesiecznoRocznychFaktur:
+        '''
+        tytul_zestawienia = self.linia_tytulu(dfb, self.tfi_domena, pokazywanie_licznikow)
+        lst_h.ddj(tytul_zestawienia)
