@@ -76,3 +76,9 @@ class TestPoborowychSlupkow(unittest.TestCase):
         '''
         TestPoborowychSlupkow:
         '''
+        tgk = od_kw.PseudoTGK()
+        tgk.wyznacz_unikalny_moment_dla_grafiki()
+        aqr = ey_kw.SzkieletDatDlaPoborow(lw_kw.Dn_Energy)
+        lp_wykresu = 0
+        dwk = oh_kw.SimpleDWN(lp_wykresu)
+        obk = PoboroweSlupki(tgk, aqr, dwk)
