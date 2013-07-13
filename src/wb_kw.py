@@ -20,7 +20,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-class KlasaZbitki:
+class KlasaZbitki(object):
     def __init__(self, punkt_pocz, punkt_kon):
         '''
         KlasaZbitki:

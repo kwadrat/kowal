@@ -16,7 +16,7 @@ for i in NazwyModulow:
 
 KSZ_Zmiennoprzecinkowa = 'zmiennoprzecinkowa z przecinkiem'
 
-class ArkuszExcel:
+class ArkuszExcel(object):
     def __init__(self, sh):
         '''
         ArkuszExcel:

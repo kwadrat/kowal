@@ -19,7 +19,7 @@ for i in NazwyModulow:
 Miejsc_dla_ilosci = 3
 Miejsc_dla_kwoty = 2
 
-class LiczbaPrecyzyjna:
+class LiczbaPrecyzyjna(object):
     def __init__(self, wartosc, precyzja = None):
         '''
         LiczbaPrecyzyjna:

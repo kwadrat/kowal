@@ -13,7 +13,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-class SpecGrupyWykFak:
+class SpecGrupyWykFak(object):
     '''
     Dane współdzielone przez grupę wykresów lub grupę faktur
     Paczka zwracana jako:

@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
-class JestemObca:
+class JestemObca(object):
     '''Informuje, że faktura jest obca lub przykryta fakturą korygującą'''
 
     def __init__(self):

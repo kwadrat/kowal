@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
-class WartosciExcel:
+class WartosciExcel(object):
     '''
     Stałe wartości na podstawie:
     http://nerds-central.blogspot.com/2007/02/excel-constant-definitions-for-vbscript.html

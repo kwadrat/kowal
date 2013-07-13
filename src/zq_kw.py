@@ -17,7 +17,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-class WartoscOpcjonalna:
+class WartoscOpcjonalna(object):
     def __init__(self, podalem_jednego, wartosc):
         '''
         WartoscOpcjonalna:

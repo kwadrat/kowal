@@ -3,7 +3,7 @@
 
 import unittest
 
-class ColCalc:
+class ColCalc(object):
     def __init__(self, my_offset):
         '''
         ColCalc:

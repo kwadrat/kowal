@@ -14,7 +14,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-class KlasaOgolnaSzkieletuDat:
+class KlasaOgolnaSzkieletuDat(object):
     def __init__(self):
         '''
         KlasaOgolnaSzkieletuDat:

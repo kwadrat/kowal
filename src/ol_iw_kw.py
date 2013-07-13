@@ -13,7 +13,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-class ObiektLiterujacy:
+class ObiektLiterujacy(object):
     def __init__(self, liczba_potrzebnych_liter):
         '''
         ObiektLiterujacy:

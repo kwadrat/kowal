@@ -28,7 +28,7 @@ def allowed_replacement(old_value, new_value):
         result = 0
     return result
 
-class SampleRow:
+class SampleRow(object):
     def __init__(self):
         '''
         SampleRow:

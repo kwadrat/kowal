@@ -7,7 +7,7 @@ import unittest
 def mam_znak(lista):
     return filter(None, lista)
 
-class ListaHTML:
+class ListaHTML(object):
     '''
     Zbieranie kodu HTML z poszczególnych fragmentów oraz przeplatanie ich separatorem
     '''

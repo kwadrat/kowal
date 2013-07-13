@@ -13,7 +13,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-class PorcjowanieLinii:
+class PorcjowanieLinii(object):
     def __init__(self, liczba):
         '''
         PorcjowanieLinii:

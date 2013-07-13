@@ -14,7 +14,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-class ListaOdcBazowych:
+class ListaOdcBazowych(object):
     def __init__(self):
         '''
         ListaOdcBazowych:

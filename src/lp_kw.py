@@ -52,7 +52,7 @@ def psycopg2_convert_date_format_to_text(slownik, pole):
     if has_date_from_dt(data):
         slownik[slownik._index[pole]] = rj_na_date(data)
 
-class HourMiniServer:
+class HourMiniServer(object):
     def __init__(self, start_col, column_index):
         '''
         HourMiniServer:
@@ -68,7 +68,7 @@ class HourMiniServer:
         '''
         return 'HS(%s)' % self.header_for_hour_column
 
-class HourServer:
+class HourServer(object):
     def __init__(self, start_col):
         '''
         HourServer:
@@ -92,7 +92,7 @@ class HourServer:
         '''
         return map(lambda elem: elem.canonical_hour, self.all_time_columns)
 
-class QuarterServer:
+class QuarterServer(object):
     def __init__(self):
         '''
         QuarterServer:

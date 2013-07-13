@@ -18,7 +18,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-class SimpleDWN:
+class SimpleDWN(object):
     def __init__(self, lp_miejsca):
         '''
         SimpleDWN:

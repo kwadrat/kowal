@@ -14,7 +14,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-class CommonTGK:
+class CommonTGK(object):
     def __init__(self):
         '''
         CommonTGK:

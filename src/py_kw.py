@@ -14,7 +14,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-class ZeszytOgolny:
+class ZeszytOgolny(object):
     def podlacz_arkusz_tego_pliku(self, pae, nazwa_pliku, nazwa_arkusza):
         '''
         ZeszytOgolny:

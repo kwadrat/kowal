@@ -18,7 +18,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-class BuilderBash:
+class BuilderBash(object):
     def __init__(self, this_time=None):
         '''
         BuilderBash:

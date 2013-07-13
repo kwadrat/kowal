@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
-class FabrykaLicznikow:
+class FabrykaLicznikow(object):
     '''
     Numeracja poszczególnych faktur
     '''

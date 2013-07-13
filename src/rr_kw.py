@@ -13,7 +13,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-class MojPisak:
+class MojPisak(object):
 
     '''
     Zbiera informacje o wartościach maksymalnych w raportach 1 i 2, aby

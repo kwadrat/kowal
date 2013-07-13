@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
-class KlasaBleduBazy:
+class KlasaBleduBazy(object):
     def ustaw_przyczyne(self, napis):
         '''
         KlasaBleduBazy:

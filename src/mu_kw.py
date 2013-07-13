@@ -69,7 +69,7 @@ def unique_sorted(dane_bazy, field):
     object_names.sort()
     return object_names
 
-class CommonReader:
+class CommonReader(object):
     def __init__(self, cnt_per_day, table_of_samples):
         '''
         CommonReader:

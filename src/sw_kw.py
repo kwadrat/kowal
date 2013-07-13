@@ -196,7 +196,7 @@ dane_testowe = '''\
 993992,dziewięćset dziewięćdziesiąt trzy tysiące dziewięćset dziewięćdziesiąt dwa złote
 '''
 
-class WyznaczanieSlownie:
+class WyznaczanieSlownie(object):
     def deklinacja(self, wartosc, odmiana):
         '''
         WyznaczanieSlownie:

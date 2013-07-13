@@ -16,7 +16,7 @@ for i in NazwyModulow:
 
 WlaczDiagnostykeZuzycia = 0
 
-class ZuzycieLicznika:
+class ZuzycieLicznika(object):
     def __init__(self, napis):
         '''
         ZuzycieLicznika:

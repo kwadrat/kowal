@@ -30,7 +30,7 @@ link_area_alt_title = ''' alt="%(tekst)s" title="%(tekst)s"'''
 link_area_kon = ''' />\n'''
 link_area_alter_this = ''' onMouseOver="%(over)s"\n onMouseOut="%(out)s"\n'''
 
-class KlasaObrazu:
+class KlasaObrazu(object):
     '''
     Klasa bazowa dla poszczególnych graficznych przedstawień w postaci PNG
     '''

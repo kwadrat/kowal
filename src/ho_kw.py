@@ -14,7 +14,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-class WykresDlaFakturPomiarow:
+class WykresDlaFakturPomiarow(object):
     def __init__(self, tgk, aqr):
         '''
         WykresDlaFakturPomiarow:

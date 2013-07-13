@@ -19,7 +19,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-class GeneratorUU:
+class GeneratorUU(object):
     def __init__(self, my_table_name):
         '''
         GeneratorUU:

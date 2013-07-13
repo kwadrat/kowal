@@ -39,7 +39,7 @@ def bledne_duplikaty(lista):
                 raise RuntimeError('Duplikat: %s %s' % (repr(akt), repr(lista)))
             akt = nast # Przejście na następny element
 
-class KlasaSlownika:
+class KlasaSlownika(object):
     def __init__(self):
         '''
         KlasaSlownika:

@@ -24,7 +24,7 @@ for i in NazwyModulow:
 CLL_Background_OK = 'zielone-tlo'
 CLL_Background_Problems = 'czerwone-tlo'
 
-class DayCellsStats:
+class DayCellsStats(object):
     def __init__(self):
         '''
         DayCellsStats:

@@ -15,7 +15,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-class ParametrySrodowiska:
+class ParametrySrodowiska(object):
     def __init__(self):
         '''
         ParametrySrodowiska:
