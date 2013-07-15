@@ -13,6 +13,8 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+WersjaUbuntu = 0
+
 RokPocz2 = 2004
 
 DodatkoweMiesiacePrzed = 1
