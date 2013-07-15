@@ -13,7 +13,8 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-WersjaUbuntu = 0
+WersjaUbuntuTest = 0
+WersjaUbuntuRun = WersjaUbuntuTest and 0
 
 RokPocz2 = 2004
 
@@ -139,7 +140,7 @@ TymczasowoPkzBaz = 1
 # Pokaż zbitki
 TymczasowoPkzZbt = 1
 
-if WersjaUbuntu:
+if WersjaUbuntuTest:
     ##############################################################################
     Docelowo_psyco_nie_pygresql = 1
     ##############################################################################

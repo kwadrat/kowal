@@ -23,7 +23,7 @@ rjb_sama_tylda = '~'
 PoczObrazka = 'plik_'
 RozszerzenieObrazka = '.png'
 url_ameryka_http = 'http://'
-if rq_kw.WersjaUbuntu:
+if rq_kw.WersjaUbuntuRun:
     ##############################################################################
     adres_maszyny = '192.168.56.101'
     ##############################################################################
