@@ -4,6 +4,7 @@
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import rq_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -22,7 +23,14 @@ rjb_sama_tylda = '~'
 PoczObrazka = 'plik_'
 RozszerzenieObrazka = '.png'
 url_ameryka_http = 'http://'
-adres_maszyny = 'media.ciri.pl'
+if rq_kw.WersjaUbuntu:
+    ##############################################################################
+    adres_maszyny = '192.168.56.101'
+    ##############################################################################
+else:
+    ##############################################################################
+    adres_maszyny = 'media.ciri.pl'
+    ##############################################################################
 url_kotw_a_ica = url_ameryka_http + adres_maszyny
 url_kotw_b_ica = url_kotw_a_ica + rjb_sam_slsh
 konto_uzytkownika = 'kwadrat'
