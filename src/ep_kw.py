@@ -4,6 +4,9 @@
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import ex_kw
+import oh_kw
+import od_kw
 import es_kw
 '''.splitlines()]
 
@@ -42,3 +45,13 @@ class TestPomiarowychSlupkow(unittest.TestCase):
         '''
         TestPomiarowychSlupkow:
         '''
+        tgk = od_kw.PseudoTGK()
+        tgk.wyznacz_unikalny_moment_dla_grafiki()
+        aqr = ex_kw.SzkieletDatDlaZuzycia()
+        lp_wykresu = 0
+        dwk = oh_kw.SimpleDWN(lp_wykresu)
+        obk = PomiaroweSlupki(tgk, aqr, dwk)
+        self.assertEqual(obk.szerokosc_dx_skali, 0)
+        self.assertEqual(obk.szerokosc_slupka, 30)
+        self.assertEqual(obk.wysokosc_obrazu, 150)
+        self.assertEqual(obk.MarginesSlupka, 20)
