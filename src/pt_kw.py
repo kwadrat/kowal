@@ -152,7 +152,7 @@ class KlasaObrazu(object):
         self.draw_line.append(((x, wsp_y_pocz, x, wsp_y_pocz + oa_kw.DlugoscKresekMiesiecy),
           oa_kw.Kolor_Kresek))
 
-    def wypisz_rzymskie_miesiace(self, poczatek_napisu, akt, nast):
+    def wypisz_rzymskie_miesiace(self, akt, nast):
         '''
         KlasaObrazu:
         '''
@@ -171,7 +171,7 @@ class KlasaObrazu(object):
         # Dolne kreski dla poszczególnych miesięcy
         for akt, nast in self.aqr.pary_szkieletu():
             self.rysuj_same_kreski(koniec_paska - oa_kw.DlugoscKresekMiesiecy, akt, self.szerokosc_obrazu)
-            self.wypisz_rzymskie_miesiace(poczatek_napisu, akt, nast)
+            self.wypisz_rzymskie_miesiace(akt, nast)
 
     def rysuj_zebrane_linie(self, draw):
         '''
