@@ -309,7 +309,7 @@ class MojeSlupki(KlasaObrazu):
         MojeSlupki:
         '''
         poczatek_napisu, koniec_paska = self.wsp_y_dla_napisow()
-        self.rzymskie_miesiace_z_kreskami(koniec_paska, poczatek_napisu)
+        self.rzymskie_miesiace_z_kreskami(koniec_paska, self.gorna_mniejsza)
 
     def ustaw_prosty_obraz(self):
         '''
