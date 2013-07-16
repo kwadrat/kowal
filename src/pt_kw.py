@@ -48,7 +48,7 @@ class KlasaObrazu(object):
         self.aqr = aqr
         self.dnw = dnw
         self.literka_typu = literka_typu
-        self.szerokosc_skali = 0
+        self.szerokosc_dx_skali = 0
         self.moja_nazwa = mf_kw.plik_grafiki(self.tgk, self.literka_typu, self.dnw.lp_miejsca, ())
         self.html_name = self.html_my_name(self.literka_typu, self.dnw.lp_miejsca)
 
@@ -56,7 +56,7 @@ class KlasaObrazu(object):
         '''
         KlasaObrazu:
         '''
-        self.szerokosc_skali = ile_pikseli
+        self.szerokosc_dx_skali = ile_pikseli
 
     def link_mapy(self, on_mouse, slownik):
         '''
@@ -145,7 +145,7 @@ class KlasaObrazu(object):
         '''
         KlasaObrazu:
         '''
-        x = self.aqr.poziomo_tego_dnia(akt, self.szerokosc_skali, szerokosc_obrazu)
+        x = self.aqr.poziomo_tego_dnia(akt, self.szerokosc_dx_skali, szerokosc_obrazu)
         self.draw_line.append(((x, koniec_paska - oa_kw.DlugoscKresekMiesiecy, x, koniec_paska),
           oa_kw.Kolor_Kresek))
 
@@ -154,7 +154,7 @@ class KlasaObrazu(object):
         KlasaObrazu:
         '''
         NapisMiesiaca = dn_kw.RzymskiDnia(akt)
-        wsp_x_napisu = self.aqr.poziomo_tego_dnia((nast + akt) // 2, self.szerokosc_skali, self.szerokosc_obrazu)
+        wsp_x_napisu = self.aqr.poziomo_tego_dnia((nast + akt) // 2, self.szerokosc_dx_skali, self.szerokosc_obrazu)
         self.my_texts.append(
           (wsp_x_napisu,
             poczatek_napisu,
@@ -166,7 +166,7 @@ class KlasaObrazu(object):
         KlasaObrazu:
         '''
         NapisCzasowy = self.aqr.tekst_pelnej_godziny(akt)
-        wsp_x_napisu = self.aqr.poziomo_tego_dnia((nast + akt) // 2, self.szerokosc_skali, self.koniec_wykresu)
+        wsp_x_napisu = self.aqr.poziomo_tego_dnia((nast + akt) // 2, self.szerokosc_dx_skali, self.koniec_wykresu)
         self.my_texts.append(
           (wsp_x_napisu,
             poczatek_napisu,

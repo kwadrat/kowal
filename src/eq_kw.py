@@ -62,7 +62,7 @@ class PoboroweSlupki(MojeSlupki):
             moje_paczki_faktur = self.dnw.odcinki_bazowe.p_odc_baz()
             for jeden_odc_bzw in moje_paczki_faktur:
                 pocz, kon = jeden_odc_bzw.get_pk()
-                SlWspX = self.aqr.miejsce_umieszczenia_slupka(pocz, kon, self.szerokosc_skali, self.koniec_wykresu)
+                SlWspX = self.aqr.miejsce_umieszczenia_slupka(pocz, kon, self.szerokosc_dx_skali, self.koniec_wykresu)
                 if SlWspX != None:
                     Wartosc = jeden_odc_bzw.slownik_qm.jh_kwota()
                     GoraSlupka, DolSlupka = self.wyznacz_gore_dol_slupka(MinY, MaxY, Wartosc)
@@ -83,7 +83,7 @@ class TestPoborowychSlupkow(unittest.TestCase):
         dwk = oh_kw.SimpleDWN(lp_wykresu)
         obk = PoboroweSlupki(tgk, aqr, dwk)
         self.assertEqual(obk.ile_pikseli, 30)
-        self.assertEqual(obk.szerokosc_skali, 30)
+        self.assertEqual(obk.szerokosc_dx_skali, 30)
         self.assertEqual(obk.wysokosc_obrazu, 150)
         self.assertEqual(obk.szerokosc_obrazu, 1250)
         self.assertEqual(obk.szerokosc_wykresu, 1200)

@@ -369,7 +369,7 @@ class MojeSlupki(KlasaObrazu):
             moje_paczki_faktur = self.dnw.odcinki_bazowe.p_odc_baz()
             for jeden_odc_bzw in moje_paczki_faktur:
                 pocz, kon = jeden_odc_bzw.get_pk()
-                SlWspX = self.aqr.miejsce_umieszczenia_slupka(pocz, kon, self.szerokosc_skali, self.szerokosc_obrazu)
+                SlWspX = self.aqr.miejsce_umieszczenia_slupka(pocz, kon, self.szerokosc_dx_skali, self.szerokosc_obrazu)
                 if SlWspX != None:
                     Wartosc = jeden_odc_bzw.slownik_qm.jh_kwota()
                     GoraSlupka, DolSlupka = self.wyznacz_gore_dol_slupka(MinY, MaxY, Wartosc)
@@ -390,8 +390,8 @@ class MojeSlupki(KlasaObrazu):
             moje_paczki_faktur = self.dnw.odcinki_bazowe.p_odc_baz()
             for jeden_odc_bzw in moje_paczki_faktur:
                 pocz, kon = jeden_odc_bzw.get_pk()
-                SlWspX1 = self.aqr.miejsce_umieszczenia_slupka(pocz, pocz, self.szerokosc_skali, self.szerokosc_obrazu)
-                SlWspX2 = self.aqr.miejsce_umieszczenia_slupka(kon, kon, self.szerokosc_skali, self.szerokosc_obrazu)
+                SlWspX1 = self.aqr.miejsce_umieszczenia_slupka(pocz, pocz, self.szerokosc_dx_skali, self.szerokosc_obrazu)
+                SlWspX2 = self.aqr.miejsce_umieszczenia_slupka(kon, kon, self.szerokosc_dx_skali, self.szerokosc_obrazu)
                 Wartosc = jeden_odc_bzw.slownik_qm.umw_wartosc_s_qm
                 if SlWspX1 is not None and SlWspX2 is not None and Wartosc is not None:
                     GoraSlupka, DolSlupka = self.wyznacz_gore_dol_slupka(MinY, MaxY, Wartosc)

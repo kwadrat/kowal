@@ -42,19 +42,19 @@ class KlasaOgolnaSzkieletuDat(object):
             nr_dnia = self.szkielet_kon
         return nr_dnia
 
-    def poziomo_tego_dnia(self, nr_dnia, szerokosc_skali, szerokosc_obrazu):
+    def poziomo_tego_dnia(self, nr_dnia, szerokosc_dx_skali, szerokosc_obrazu):
         '''
         KlasaOgolnaSzkieletuDat:
         '''
-        return oa_kw.poziomo_dla_dni(self.szkielet_pocz, nr_dnia, self.szkielet_kon, szerokosc_skali, szerokosc_obrazu)
+        return oa_kw.poziomo_dla_dni(self.szkielet_pocz, nr_dnia, self.szkielet_kon, szerokosc_dx_skali, szerokosc_obrazu)
 
-    def miejsce_umieszczenia_slupka(self, pocz, kon, szerokosc_skali, szerokosc_obrazu):
+    def miejsce_umieszczenia_slupka(self, pocz, kon, szerokosc_dx_skali, szerokosc_obrazu):
         '''
         KlasaOgolnaSzkieletuDat:
         X w połowie szerokości paska przeznaczonego na dany wykres
         '''
         nr_dnia = self.sprowadz_do_zakresu(pocz, kon)
-        SlWspX = int(self.poziomo_tego_dnia(nr_dnia, szerokosc_skali, szerokosc_obrazu))
+        SlWspX = int(self.poziomo_tego_dnia(nr_dnia, szerokosc_dx_skali, szerokosc_obrazu))
         return SlWspX
 
     def liczba_dat_szkieletu(self):

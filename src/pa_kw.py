@@ -52,8 +52,8 @@ class MojPasek(KlasaObrazu):
                     kolor = Kolor_Przyszlosc
                 else:
                     kolor = Kolor_Bledny
-            x_pocz = self.aqr.poziomo_tego_dnia(i, self.szerokosc_skali, self.szerokosc_obrazu)
-            x_kon = self.aqr.poziomo_tego_dnia(i + 1, self.szerokosc_skali, self.szerokosc_obrazu)
+            x_pocz = self.aqr.poziomo_tego_dnia(i, self.szerokosc_dx_skali, self.szerokosc_obrazu)
+            x_kon = self.aqr.poziomo_tego_dnia(i + 1, self.szerokosc_dx_skali, self.szerokosc_obrazu)
             for f in xrange(x_pocz, x_kon):
                 self.draw_line.append(((f, self.pocz_y_paska, f, koniec_paska), kolor))
 
@@ -67,7 +67,7 @@ class MojPasek(KlasaObrazu):
         if self.aqr.mam_dat_na_dluzszy_rok():
             for akt in self.dnw.odcinki_bazowe.lista_pocz():
                 if akt != None:
-                    tmp_x = self.aqr.poziomo_tego_dnia(akt, self.szerokosc_skali, self.szerokosc_obrazu)
+                    tmp_x = self.aqr.poziomo_tego_dnia(akt, self.szerokosc_dx_skali, self.szerokosc_obrazu)
                     self.draw_line.append(((tmp_x, pocz_kres_okr, tmp_x, kon_kres_okr),
                       oa_kw.Kolor_Kresek))
 
@@ -140,10 +140,10 @@ class MojPasek(KlasaObrazu):
                 # Czy rysować daną fakturę
                 if lp_faktury in wersja:
                     # Współrzędne lewego górnego rogu (włącznie)
-                    lg_x = oa_kw.poziomo_dla_dni(czas_t0, czas_akt, czas_tn, self.szerokosc_skali, self.szerokosc_obrazu)
+                    lg_x = oa_kw.poziomo_dla_dni(czas_t0, czas_akt, czas_tn, self.szerokosc_dx_skali, self.szerokosc_obrazu)
                     lg_y = self.pocz_y_paska + (nr_kol * self.wys_dy_paska) / ile_faktur
                     # Współrzędne prawego dolnego rogu (już poza obszarem)
-                    pd_x = oa_kw.poziomo_dla_dni(czas_t0, czas_nast, czas_tn, self.szerokosc_skali, self.szerokosc_obrazu)
+                    pd_x = oa_kw.poziomo_dla_dni(czas_t0, czas_nast, czas_tn, self.szerokosc_dx_skali, self.szerokosc_obrazu)
                     pd_y = self.pocz_y_paska + ((nr_kol + 1) * self.wys_dy_paska) / ile_faktur
                     self.rysuj_prostokat(draw, lg_x, lg_y, pd_x, pd_y, kolor)
                     # Gdy podano tylko jedną l.p. faktury, to znaczy, że możemy
@@ -197,7 +197,7 @@ class TestPaska(unittest.TestCase):
         lista = [15340, 15341, 15342, 15343, 15344, 15345, 15346]
         obk = MojPasek(lista, tgk, aqr, dwk)
         self.assertEqual(obk.szerokosc_obrazu, 1250)
-        self.assertEqual(obk.szerokosc_skali, 0)
+        self.assertEqual(obk.szerokosc_dx_skali, 0)
         self.assertEqual(obk.pocz_y_okr_rozlicz, 0)
         self.assertEqual(obk.pocz_y_paska, 10)
         self.assertEqual(obk.wys_dy_paska, 20)
