@@ -65,6 +65,14 @@ class PoboroweSlupki(MojeSlupki):
         wsp_x_napisu = self.aqr.poziomo_tego_dnia((nast + akt) // 2, self.szerokosc_dx_skali, self.koniec_x_wykresu)
         self.my_texts.append((wsp_x_napisu, wsp_y_napisu, NapisCzasowy))
 
+    def wypisz_jednostke_godziny(self):
+        '''
+        PoboroweSlupki:
+        '''
+        wsp_x_napisu = (self.pikseli_po_lewej + self.koniec_x_wykresu) // 2
+        wsp_y_napisu = 149
+        self.my_texts.append((wsp_x_napisu, wsp_y_napisu, 'godziny'))
+
     def kwadransy_godziny_z_kreskami(self, koniec_paska):
         '''
         PoboroweSlupki:
@@ -73,6 +81,7 @@ class PoboroweSlupki(MojeSlupki):
             if self.aqr.to_pelna_godzina(akt):
                 self.rysuj_same_kreski(self.wsp_y_na_dole_slupka + 1, akt, self.koniec_x_wykresu)
                 self.wypisz_kwadransy_godziny(self.gorna_mniejsza, akt, nast)
+        self.wypisz_jednostke_godziny()
 
     def podpisz_kwadransami_godzinami(self):
         '''
