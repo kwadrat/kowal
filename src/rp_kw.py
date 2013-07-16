@@ -25,7 +25,6 @@ class WykresRaportu(KlasaObrazu):
         KlasaObrazu.__init__(self, tgk, aqr, dnw, lk_kw.LITERA_WYKRES)
         self.szerokosc_obrazu = oa_kw.sk_pelny_obraz
         self.szerokosc_wykresu = self.szerokosc_obrazu - 10
-        self.wysokosc_obrazu = 200
         self.wysokosc_linii = 12
         self.wysokosc_obrazu = linii * self.wysokosc_linii + 10
 
