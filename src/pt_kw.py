@@ -55,11 +55,11 @@ class KlasaObrazu(object):
         self.moja_nazwa = mf_kw.plik_grafiki(self.tgk, self.literka_typu, self.dnw.lp_miejsca, ())
         self.html_name = self.html_my_name(self.literka_typu, self.dnw.lp_miejsca)
 
-    def chce_po_lewej_miejsca_na_skale(self, ile_pikseli):
+    def chce_po_lewej_miejsca_na_skale(self, pikseli_po_lewej):
         '''
         KlasaObrazu:
         '''
-        self.szerokosc_dx_skali = ile_pikseli
+        self.szerokosc_dx_skali = pikseli_po_lewej
 
     def link_mapy(self, on_mouse, slownik):
         '''

@@ -25,7 +25,7 @@ for i in NazwyModulow:
 MojeSlupki = es_kw.MojeSlupki
 
 class PoboroweSlupki(MojeSlupki):
-    ile_pikseli = 30
+    pikseli_po_lewej = 30
     def __init__(self, tgk, aqr, dnw):
         '''
         PoboroweSlupki:
@@ -33,7 +33,7 @@ class PoboroweSlupki(MojeSlupki):
         self.wysokosc_obrazu = 150
         self.margines_dy_slupka = 20
         MojeSlupki.__init__(self, tgk, aqr, dnw)
-        self.chce_po_lewej_miejsca_na_skale(self.ile_pikseli)
+        self.chce_po_lewej_miejsca_na_skale(self.pikseli_po_lewej)
 
     def ustaw_skalowanie_obrazu(self):
         '''
@@ -43,8 +43,8 @@ class PoboroweSlupki(MojeSlupki):
         if LiczbaPaskow not in (24, 96):
             raise RuntimeError('LiczbaPaskow: %d' % LiczbaPaskow)
         self.szerokosc_obrazu = oa_kw.sk_pelny_obraz
-        self.szerokosc_wykresu = oa_kw.zaokraglij_mi(self.szerokosc_obrazu - self.ile_pikseli, LiczbaPaskow)
-        self.koniec_x_wykresu = self.szerokosc_wykresu + self.ile_pikseli
+        self.szerokosc_wykresu = oa_kw.zaokraglij_mi(self.szerokosc_obrazu - self.pikseli_po_lewej, LiczbaPaskow)
+        self.koniec_x_wykresu = self.szerokosc_wykresu + self.pikseli_po_lewej
         self.szerokosc_slupka = self.szerokosc_wykresu / LiczbaPaskow
 
     def wyznacz_etykiete(self, pocz):
@@ -110,7 +110,7 @@ class TestPoborowychSlupkow(unittest.TestCase):
         lp_wykresu = 0
         dnw = oh_kw.SimpleDNW(lp_wykresu)
         obk = PoboroweSlupki(tgk, aqr, dnw)
-        self.assertEqual(obk.ile_pikseli, 30)
+        self.assertEqual(obk.pikseli_po_lewej, 30)
         self.assertEqual(obk.szerokosc_obrazu, 1250)
         self.assertEqual(obk.szerokosc_dx_skali, 30)
         self.assertEqual(obk.szerokosc_wykresu, 1200)
