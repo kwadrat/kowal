@@ -94,8 +94,8 @@ class MojeSlupki(KlasaObrazu):
             tmp_punkt.zaznacz_przekroczenie(jeden_odc_bzw.slownik_qm.przekroczenie_b_umw)
         self.lista_rectangle.append(tmp_punkt)
         pozycja_wart_y = GoraSlupka
-        if pozycja_wart_y > self.MinWysSlupka:
-            pozycja_wart_y = self.MinWysSlupka
+        if pozycja_wart_y > self.wsp_y_na_dole_slupka:
+            pozycja_wart_y = self.wsp_y_na_dole_slupka
         pozycja_wart_y -= oa_kw.wysokosc_napisu
         self.CenterNapis(SlWspX, pozycja_wart_y, lm_kw.rzeczywista_na_napis(Wartosc), jeden_odc_bzw)
         if Etykieta:
@@ -345,7 +345,7 @@ class MojeSlupki(KlasaObrazu):
         self.pusta_lista_wszystkiego()
         self.wysokosc_obrazu = 150
         self.margines_dy_slupka = 20
-        self.MinWysSlupka = self.wysokosc_obrazu - self.margines_dy_slupka
+        self.wsp_y_na_dole_slupka = self.wysokosc_obrazu - self.margines_dy_slupka
         self.szerokosc_slupka = SzerSlupka
         if self.brak_mi_dat_szkieletu():
             return # nic nie robimy # qaz - REFACTOR!!!
@@ -357,8 +357,8 @@ class MojeSlupki(KlasaObrazu):
         MojeSlupki:
         '''
         gora_slupka = wyznacz_gorna_wartosc(MinY, MaxY, Wartosc)
-        GoraSlupka = int(self.MinWysSlupka - (self.MinWysSlupka - self.margines_dy_slupka) * gora_slupka)
-        DolSlupka = int(self.MinWysSlupka)
+        GoraSlupka = int(self.wsp_y_na_dole_slupka - (self.wsp_y_na_dole_slupka - self.margines_dy_slupka) * gora_slupka)
+        DolSlupka = int(self.wsp_y_na_dole_slupka)
         return GoraSlupka, DolSlupka
 
     def wyznacz_slupki(self, MinY, MaxY):
