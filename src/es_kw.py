@@ -312,13 +312,6 @@ class MojeSlupki(KlasaObrazu):
         poczatek_napisu, koniec_paska = self.wsp_y_dla_napisow()
         self.rzymskie_miesiace_z_kreskami(koniec_paska, poczatek_napisu)
 
-    def podpisz_kwadransami_godzinami(self):
-        '''
-        MojeSlupki:
-        '''
-        poczatek_napisu, koniec_paska = self.wsp_y_dla_napisow()
-        self.kwadransy_godziny_z_kreskami(koniec_paska, poczatek_napisu)
-
     def ustaw_prosty_obraz(self):
         '''
         MojeSlupki:

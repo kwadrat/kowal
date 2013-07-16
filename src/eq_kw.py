@@ -53,6 +53,13 @@ class PoboroweSlupki(MojeSlupki):
         '''
         return ''
 
+    def podpisz_kwadransami_godzinami(self):
+        '''
+        PoboroweSlupki:
+        '''
+        poczatek_napisu, koniec_paska = self.wsp_y_dla_napisow()
+        self.kwadransy_godziny_z_kreskami(koniec_paska, poczatek_napisu)
+
     def wyznacz_poborowe_slupki(self, MinY, MaxY):
         '''
         PoboroweSlupki:
