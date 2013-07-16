@@ -85,8 +85,7 @@ class MojPasek(KlasaObrazu):
         KlasaObrazu.__init__(self, tgk, aqr, dnw, lk_kw.LITERA_PASEK)
         self.szerokosc_obrazu = oa_kw.sk_pelny_obraz
         pocz_okr_rozlicz = 0 # Początek dla "Okresy rozliczeniowe"
-        kon_okr_rozlicz = pocz_okr_rozlicz + oa_kw.wysokosc_napisu
-        self.pocz_paska = kon_okr_rozlicz # Od tego piksela zaczyna się pasek
+        self.pocz_paska = pocz_okr_rozlicz + oa_kw.wysokosc_napisu # Od tego piksela zaczyna się pasek
         self.wys_paska = 20 # Wysokość rysowanego paska
         # Koniec paska w osi Y (niżej niż początek, bo ma większą wartość)
         koniec_paska = self.pocz_paska + self.wys_paska
