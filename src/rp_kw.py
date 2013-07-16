@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+import unittest
+
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lk_kw
 import oa_kw
@@ -26,3 +28,9 @@ class WykresRaportu(KlasaObrazu):
         self.wysokosc_obrazu = 200
         self.wysokosc_linii = 12
         self.wysokosc_obrazu = linii * self.wysokosc_linii + 10
+
+class TestWykresuRaportu(unittest.TestCase):
+    def test_wykresu_raportu(self):
+        '''
+        TestWykresuRaportu:
+        '''
