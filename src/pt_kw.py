@@ -164,7 +164,7 @@ class KlasaObrazu(object):
             NapisMiesiaca,)
         )
 
-    def rzymskie_miesiace_z_kreskami(self, koniec_paska, poczatek_napisu):
+    def rzymskie_miesiace_z_kreskami(self, koniec_paska):
         '''
         KlasaObrazu:
         '''

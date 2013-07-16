@@ -94,7 +94,7 @@ class MojPasek(KlasaObrazu):
         # Wypisz na środku etykietę okresów rozliczeniowych
         self.my_texts.append((self.szerokosc_obrazu / 2, self.pocz_y_okr_rozlicz, 'Okresy rozliczeniowe'))
         self.pasek_podstawowy(lista, koniec_paska)
-        self.rzymskie_miesiace_z_kreskami(koniec_paska, self.gorna_mniejsza)
+        self.rzymskie_miesiace_z_kreskami(koniec_paska)
         self.kreski_dla_faktur()
 
     def rysuj_prostokat(self, draw, lg_x, lg_y, pd_x, pd_y, kolor):
