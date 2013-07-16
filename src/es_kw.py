@@ -335,7 +335,7 @@ class MojeSlupki(KlasaObrazu):
         '''
         KlasaObrazu.__init__(self, tgk, aqr, dnw, lk_kw.LITERA_SLUPEK)
         self.pusta_lista_wszystkiego()
-        self.margines_dy_slupka = 20
+        self.margines_dy_powyzej_slupka = 20
         self.wsp_y_na_dole_slupka = 130
         self.gorna_mniejsza = 140
         self.wysokosc_obrazu = self.gorna_mniejsza + oa_kw.wysokosc_napisu
@@ -350,7 +350,7 @@ class MojeSlupki(KlasaObrazu):
         MojeSlupki:
         '''
         gora_slupka = wyznacz_gorna_wartosc(MinY, MaxY, Wartosc)
-        GoraSlupka = int(self.wsp_y_na_dole_slupka - (self.wsp_y_na_dole_slupka - self.margines_dy_slupka) * gora_slupka)
+        GoraSlupka = int(self.wsp_y_na_dole_slupka - (self.wsp_y_na_dole_slupka - self.margines_dy_powyzej_slupka) * gora_slupka)
         DolSlupka = int(self.wsp_y_na_dole_slupka)
         return GoraSlupka, DolSlupka
 
