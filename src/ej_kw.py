@@ -26,6 +26,7 @@ class FakturoweMiesieczneSlupki(MojeSlupki):
         '''
         FakturoweMiesieczneSlupki:
         '''
+        self.wysokosc_obrazu = 150
         self.margines_dy_slupka = 20
         MojeSlupki.__init__(self, tgk, aqr, dnw)
 
