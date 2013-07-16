@@ -60,3 +60,4 @@ class TestFakturowychMiesiecznychSlupkow(unittest.TestCase):
         self.assertEqual(obk.margines_dy_slupka, 20)
         self.assertFalse(obk.brak_mi_dat_szkieletu())
         self.assertEqual(obk.wsp_y_na_dole_slupka, 130)
+        self.assertEqual(obk.gorna_mniejsza, 140)

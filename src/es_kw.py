@@ -337,6 +337,7 @@ class MojeSlupki(KlasaObrazu):
         KlasaObrazu.__init__(self, tgk, aqr, dnw, lk_kw.LITERA_SLUPEK)
         self.pusta_lista_wszystkiego()
         self.wsp_y_na_dole_slupka = self.wysokosc_obrazu - self.margines_dy_slupka
+        self.gorna_mniejsza = self.wysokosc_obrazu - oa_kw.wysokosc_napisu
         self.szerokosc_slupka = SzerSlupka
         if self.brak_mi_dat_szkieletu():
             return # nic nie robimy # qaz - REFACTOR!!!
