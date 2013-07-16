@@ -89,12 +89,12 @@ class MojPasek(KlasaObrazu):
         self.wys_dy_paska = 20 # Wysokość rysowanego paska
         # Koniec paska w osi Y (niżej niż początek, bo ma większą wartość)
         koniec_paska = self.pocz_y_paska + self.wys_dy_paska
-        poczatek_napisu = koniec_paska
-        self.wysokosc_obrazu = poczatek_napisu + oa_kw.wysokosc_napisu
+        self.gorna_mniejsza = koniec_paska
+        self.wysokosc_obrazu = self.gorna_mniejsza + oa_kw.wysokosc_napisu
         # Wypisz na środku etykietę okresów rozliczeniowych
         self.my_texts.append((self.szerokosc_obrazu / 2, self.pocz_y_okr_rozlicz, 'Okresy rozliczeniowe'))
         self.pasek_podstawowy(lista, koniec_paska)
-        self.rzymskie_miesiace_z_kreskami(koniec_paska, poczatek_napisu)
+        self.rzymskie_miesiace_z_kreskami(koniec_paska, self.gorna_mniejsza)
         self.kreski_dla_faktur()
 
     def rysuj_prostokat(self, draw, lg_x, lg_y, pd_x, pd_y, kolor):
@@ -202,3 +202,4 @@ class TestPaska(unittest.TestCase):
         self.assertEqual(obk.pocz_y_paska, 10)
         self.assertEqual(obk.wys_dy_paska, 20)
         self.assertEqual(obk.wysokosc_obrazu, 40)
+        self.assertEqual(obk.gorna_mniejsza, 30)
