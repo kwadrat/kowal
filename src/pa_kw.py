@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+import unittest
+
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lk_kw
 import dn_kw
@@ -178,3 +180,9 @@ class MojPasek(KlasaObrazu):
         self.wersje_kolejno_zaznaczonych_faktur(im, on_mouse)
         del im
         return self.link_do_obrazu()
+
+class TestPaska(unittest.TestCase):
+    def test_paska(self):
+        '''
+        TestPaska:
+        '''
