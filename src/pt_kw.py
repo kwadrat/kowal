@@ -144,12 +144,12 @@ class KlasaObrazu(object):
         tmp_nazwa = mf_kw.plik_grafiki(self.tgk, self.literka_typu, self.dnw.lp_miejsca, wersja)
         im.save(oc_kw.SciezkaPlikow + tmp_nazwa)
 
-    def rysuj_same_kreski(self, koniec_paska, akt, szerokosc_obrazu):
+    def rysuj_same_kreski(self, wsp_y_pocz, akt, szerokosc_obrazu):
         '''
         KlasaObrazu:
         '''
         x = self.aqr.poziomo_tego_dnia(akt, self.szerokosc_dx_skali, szerokosc_obrazu)
-        self.draw_line.append(((x, koniec_paska - oa_kw.DlugoscKresekMiesiecy, x, koniec_paska),
+        self.draw_line.append(((x, wsp_y_pocz, x, wsp_y_pocz + oa_kw.DlugoscKresekMiesiecy),
           oa_kw.Kolor_Kresek))
 
     def wypisz_rzymskie_miesiace(self, poczatek_napisu, akt, nast):
@@ -170,7 +170,7 @@ class KlasaObrazu(object):
         '''
         # Dolne kreski dla poszczególnych miesięcy
         for akt, nast in self.aqr.pary_szkieletu():
-            self.rysuj_same_kreski(koniec_paska, akt, self.szerokosc_obrazu)
+            self.rysuj_same_kreski(koniec_paska - oa_kw.DlugoscKresekMiesiecy, akt, self.szerokosc_obrazu)
             self.wypisz_rzymskie_miesiace(poczatek_napisu, akt, nast)
 
     def rysuj_zebrane_linie(self, draw):
