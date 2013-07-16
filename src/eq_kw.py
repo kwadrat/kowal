@@ -55,8 +55,6 @@ class PoboroweSlupki(MojeSlupki):
         '''
         PoboroweSlupki:
         '''
-        self.MinWysSlupka = self.wysokosc_obrazu - self.margines_dy_slupka
-
         pracuj = self.sprawdz_nietypowe_sytuacje(self.IleSlupkow, MinY, MaxY)
         if pracuj:
             moje_paczki_faktur = self.dnw.odcinki_bazowe.p_odc_baz()
@@ -90,3 +88,4 @@ class TestPoborowychSlupkow(unittest.TestCase):
         self.assertEqual(obk.szerokosc_slupka, 50)
         self.assertEqual(obk.wysokosc_obrazu, 150)
         self.assertEqual(obk.margines_dy_slupka, 20)
+        self.assertEqual(obk.MinWysSlupka, 130)

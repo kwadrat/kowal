@@ -345,6 +345,7 @@ class MojeSlupki(KlasaObrazu):
         self.pusta_lista_wszystkiego()
         self.wysokosc_obrazu = 150
         self.margines_dy_slupka = 20
+        self.MinWysSlupka = self.wysokosc_obrazu - self.margines_dy_slupka
         self.szerokosc_slupka = SzerSlupka
         if self.brak_mi_dat_szkieletu():
             return # nic nie robimy # qaz - REFACTOR!!!
@@ -364,8 +365,6 @@ class MojeSlupki(KlasaObrazu):
         '''
         MojeSlupki:
         '''
-        self.MinWysSlupka = self.wysokosc_obrazu - self.margines_dy_slupka
-
         pracuj = self.sprawdz_nietypowe_sytuacje(self.IleSlupkow, MinY, MaxY)
         if pracuj:
             moje_paczki_faktur = self.dnw.odcinki_bazowe.p_odc_baz()
@@ -385,8 +384,6 @@ class MojeSlupki(KlasaObrazu):
         MojeSlupki:
         Rysowanie mocy zamówionej jako tło - dla porównania z mocami pobranymi
         '''
-        self.MinWysSlupka = self.wysokosc_obrazu - self.margines_dy_slupka
-
         pracuj = self.sprawdz_nietypowe_sytuacje(self.IleSlupkow, MinY, MaxY)
         if pracuj:
             moje_paczki_faktur = self.dnw.odcinki_bazowe.p_odc_baz()
