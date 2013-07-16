@@ -57,3 +57,4 @@ class TestPomiarowychSlupkow(unittest.TestCase):
         self.assertEqual(obk.szerokosc_slupka, 30)
         self.assertEqual(obk.wysokosc_obrazu, 150)
         self.assertEqual(obk.margines_dy_slupka, 20)
+        self.assertEqual(obk.wsp_y_na_dole_slupka, 130)
