@@ -35,6 +35,23 @@ class WykresRaportu(KlasaObrazu):
         self.wysokosc_linii = 12
         self.wysokosc_obrazu = linii * self.wysokosc_linii + 10
 
+    if rq_kw.Docelowo_psyco_nie_pygresql:
+        ##############################################################################
+        def wylicz_dla_slupka(self, slupek, kwota):
+            '''
+            WykresRaportu:
+            '''
+            return (self.szerokosc_wykresu * slupek) / kwota
+        ##############################################################################
+    else:
+        ##############################################################################
+        def wylicz_dla_slupka(self, slupek, kwota):
+            '''
+            WykresRaportu:
+            '''
+            return float(self.szerokosc_wykresu * slupek) / kwota
+        ##############################################################################
+
 class TestWykresuRaportu(unittest.TestCase):
     def test_wykresu_raportu(self):
         '''
