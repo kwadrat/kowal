@@ -89,3 +89,4 @@ class TestPoborowychSlupkow(unittest.TestCase):
         self.assertEqual(obk.koniec_wykresu, 1230)
         self.assertEqual(obk.szerokosc_slupka, 50)
         self.assertEqual(obk.wysokosc_obrazu, 150)
+        self.assertEqual(obk.margines_dy_slupka, 20)
