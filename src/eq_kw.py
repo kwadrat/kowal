@@ -53,6 +53,18 @@ class PoboroweSlupki(MojeSlupki):
         '''
         return ''
 
+    def wypisz_kwadransy_godziny(self, poczatek_napisu, akt, nast):
+        '''
+        PoboroweSlupki:
+        '''
+        NapisCzasowy = self.aqr.tekst_pelnej_godziny(akt)
+        wsp_x_napisu = self.aqr.poziomo_tego_dnia((nast + akt) // 2, self.szerokosc_dx_skali, self.koniec_x_wykresu)
+        self.my_texts.append(
+          (wsp_x_napisu,
+            poczatek_napisu,
+            NapisCzasowy,)
+        )
+
     def kwadransy_godziny_z_kreskami(self, koniec_paska, poczatek_napisu):
         '''
         PoboroweSlupki:
