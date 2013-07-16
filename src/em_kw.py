@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+import unittest
+
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import dn_kw
 import es_kw
@@ -35,3 +37,9 @@ class FakturoweRoczneSlupki(MojeSlupki):
         FakturoweRoczneSlupki:
         '''
         return str(dn_kw.RokDnia(pocz))
+
+class TestFakturowychRocznychSlupkow(unittest.TestCase):
+    def test_fakturowych_rocznych_slupkow(self):
+        '''
+        TestFakturowychRocznychSlupkow:
+        '''
