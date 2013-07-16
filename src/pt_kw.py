@@ -160,7 +160,7 @@ class KlasaObrazu(object):
         wsp_x_napisu = self.aqr.poziomo_tego_dnia((nast + akt) // 2, self.szerokosc_dx_skali, self.szerokosc_obrazu)
         self.my_texts.append(
           (wsp_x_napisu,
-            poczatek_napisu,
+            self.gorna_mniejsza,
             NapisMiesiaca,)
         )
 
