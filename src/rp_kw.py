@@ -6,6 +6,9 @@ import unittest
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lk_kw
 import oa_kw
+import ew_kw
+import oh_kw
+import od_kw
 import pt_kw
 '''.splitlines()]
 
@@ -33,3 +36,15 @@ class TestWykresuRaportu(unittest.TestCase):
         '''
         TestWykresuRaportu:
         '''
+        tgk = od_kw.PseudoTGK()
+        tgk.wyznacz_unikalny_moment_dla_grafiki()
+        aqr = ew_kw.SzkieletDatDlaFakturMiesLat()
+        lp_wykresu = 0
+        dwk = oh_kw.SimpleDWN(lp_wykresu)
+        ile_linii = 3 # Liczba linii tekstu na wykresie
+        obk = WykresRaportu(tgk, aqr, dwk, ile_linii)
+        self.assertEqual(obk.szerokosc_obrazu, 1250)
+        self.assertEqual(obk.szerokosc_wykresu, 1240)
+        self.assertEqual(obk.wysokosc_obrazu, 46)
+        self.assertEqual(obk.szerokosc_dx_skali, 0)
+        self.assertEqual(obk.wysokosc_linii, 12)
