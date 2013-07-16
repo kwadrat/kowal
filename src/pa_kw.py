@@ -188,3 +188,17 @@ class TestPaska(unittest.TestCase):
         '''
         TestPaska:
         '''
+        tgk = od_kw.PseudoTGK()
+        tgk.wyznacz_unikalny_moment_dla_grafiki()
+        aqr = ew_kw.SzkieletDatDlaFakturMiesLat()
+        aqr.przypisz_dla_roku_szkielet(2012, rok_z_rozszerzeniem=0)
+        lp_wykresu = 0
+        dwk = oh_kw.SimpleDWN(lp_wykresu)
+        lista = [15340, 15341, 15342, 15343, 15344, 15345, 15346]
+        obk = MojPasek(lista, tgk, aqr, dwk)
+        self.assertEqual(obk.szerokosc_obrazu, 1250)
+        self.assertEqual(obk.szerokosc_skali, 0)
+        self.assertEqual(obk.pocz_okr_rozlicz, 0)
+        self.assertEqual(obk.pocz_paska, 10)
+        self.assertEqual(obk.wys_paska, 20)
+        self.assertEqual(obk.wysokosc_obrazu, 40)
