@@ -30,3 +30,11 @@ class SzkieletDatDlaZuzycia(KlasaSzkieletuDat):
         SzkieletDatDlaZuzycia:
         '''
         return self.szkielet_dat
+
+class TestSzkieletuDatDlaZuzycia(unittest.TestCase):
+    def test_szkieletu_dat_dla_zuzycia(self):
+        '''
+        TestSzkieletuDatDlaZuzycia:
+        '''
+        obk = SzkieletDatDlaZuzycia()
+        obk.przypisz_dla_roku_szkielet
