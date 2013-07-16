@@ -17,7 +17,11 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 def allowed_replacement(old_value, new_value):
-    if old_value is None or old_value == new_value:
+    if old_value is None:
+        result = 1
+    elif old_value == new_value:
+        result = 1
+    elif old_value == lm_kw.wartosc_zero_globalna:
         result = 1
     elif (
             lm_kw.have_dec_type(old_value) and
@@ -83,3 +87,4 @@ class TestRowChanges(unittest.TestCase):
         self.assertEqual(allowed_replacement(lm_kw.a2d('5.4200'), 5.42), 1)
         self.assertEqual(allowed_replacement(lm_kw.a2d('5.4568'), 5.456799999952317), 1)
         self.assertEqual(allowed_replacement(lm_kw.a2d('5.4200'), None), 0)
+        self.assertEqual(allowed_replacement(lm_kw.a2d('0.0000'), 5.42), 1)
