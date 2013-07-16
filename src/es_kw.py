@@ -63,6 +63,12 @@ else:
 KlasaObrazu = pt_kw.KlasaObrazu
 
 class MojeSlupki(KlasaObrazu):
+    def linii_na_dole(self):
+        '''
+        MojeSlupki:
+        '''
+        return 1
+
     def pusta_lista_wszystkiego(self):
         '''
         MojeSlupki:
@@ -338,7 +344,7 @@ class MojeSlupki(KlasaObrazu):
         self.margines_dy_powyzej_slupka = 20
         self.wsp_y_na_dole_slupka = 130
         self.gorna_mniejsza = 140
-        self.wysokosc_obrazu = self.gorna_mniejsza + oa_kw.wysokosc_napisu
+        self.wysokosc_obrazu = self.gorna_mniejsza + self.linii_na_dole() * oa_kw.wysokosc_napisu
         self.szerokosc_slupka = SzerSlupka
         if self.brak_mi_dat_szkieletu():
             return # nic nie robimy # qaz - REFACTOR!!!
