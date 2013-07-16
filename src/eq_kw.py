@@ -30,6 +30,7 @@ class PoboroweSlupki(MojeSlupki):
         '''
         PoboroweSlupki:
         '''
+        self.margines_dy_slupka = 20
         MojeSlupki.__init__(self, tgk, aqr, dnw)
         self.chce_po_lewej_miejsca_na_skale(self.ile_pikseli)
 

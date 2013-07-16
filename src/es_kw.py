@@ -344,7 +344,6 @@ class MojeSlupki(KlasaObrazu):
         KlasaObrazu.__init__(self, tgk, aqr, dnw, lk_kw.LITERA_SLUPEK)
         self.pusta_lista_wszystkiego()
         self.wysokosc_obrazu = 150
-        self.margines_dy_slupka = 20
         self.wsp_y_na_dole_slupka = self.wysokosc_obrazu - self.margines_dy_slupka
         self.szerokosc_slupka = SzerSlupka
         if self.brak_mi_dat_szkieletu():
