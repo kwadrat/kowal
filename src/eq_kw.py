@@ -55,7 +55,7 @@ class PoboroweSlupki(MojeSlupki):
         '''
         PoboroweSlupki:
         '''
-        self.MinWysSlupka = self.wysokosc_obrazu - self.MarginesSlupka
+        self.MinWysSlupka = self.wysokosc_obrazu - self.margines_dy_slupka
 
         pracuj = self.sprawdz_nietypowe_sytuacje(self.IleSlupkow, MinY, MaxY)
         if pracuj:

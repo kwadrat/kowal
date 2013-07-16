@@ -343,7 +343,7 @@ class MojeSlupki(KlasaObrazu):
         '''
         KlasaObrazu.__init__(self, tgk, aqr, dnw, lk_kw.LITERA_SLUPEK)
         self.pusta_lista_wszystkiego()
-        self.MarginesSlupka = 20
+        self.margines_dy_slupka = 20
         self.wysokosc_obrazu = 150
         self.szerokosc_slupka = SzerSlupka
         if self.brak_mi_dat_szkieletu():
@@ -356,7 +356,7 @@ class MojeSlupki(KlasaObrazu):
         MojeSlupki:
         '''
         gora_slupka = wyznacz_gorna_wartosc(MinY, MaxY, Wartosc)
-        GoraSlupka = int(self.MinWysSlupka - (self.MinWysSlupka - self.MarginesSlupka) * gora_slupka)
+        GoraSlupka = int(self.MinWysSlupka - (self.MinWysSlupka - self.margines_dy_slupka) * gora_slupka)
         DolSlupka = int(self.MinWysSlupka)
         return GoraSlupka, DolSlupka
 
@@ -364,7 +364,7 @@ class MojeSlupki(KlasaObrazu):
         '''
         MojeSlupki:
         '''
-        self.MinWysSlupka = self.wysokosc_obrazu - self.MarginesSlupka
+        self.MinWysSlupka = self.wysokosc_obrazu - self.margines_dy_slupka
 
         pracuj = self.sprawdz_nietypowe_sytuacje(self.IleSlupkow, MinY, MaxY)
         if pracuj:
@@ -385,7 +385,7 @@ class MojeSlupki(KlasaObrazu):
         MojeSlupki:
         Rysowanie mocy zamówionej jako tło - dla porównania z mocami pobranymi
         '''
-        self.MinWysSlupka = self.wysokosc_obrazu - self.MarginesSlupka
+        self.MinWysSlupka = self.wysokosc_obrazu - self.margines_dy_slupka
 
         pracuj = self.sprawdz_nietypowe_sytuacje(self.IleSlupkow, MinY, MaxY)
         if pracuj:

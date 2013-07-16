@@ -59,5 +59,5 @@ class TestFakturowychRocznychSlupkow(unittest.TestCase):
         self.assertEqual(obk.szerokosc_dx_skali, 0)
         self.assertEqual(obk.szerokosc_slupka, 30)
         self.assertEqual(obk.wysokosc_obrazu, 150)
-        self.assertEqual(obk.MarginesSlupka, 20)
+        self.assertEqual(obk.margines_dy_slupka, 20)
         self.assertFalse(obk.brak_mi_dat_szkieletu())
