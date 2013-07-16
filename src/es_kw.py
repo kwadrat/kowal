@@ -405,3 +405,6 @@ class TestMoichSlupkow(unittest.TestCase):
         '''
         TestMoichSlupkow:
         '''
+        self.assertEqual(CzescSlupka, 3)
+        self.assertEqual(SzerPaska, 90)
+        self.assertEqual(SzerSlupka, 30)
