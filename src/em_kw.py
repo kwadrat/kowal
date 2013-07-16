@@ -54,7 +54,7 @@ class TestFakturowychRocznychSlupkow(unittest.TestCase):
         szkielet_lat = dn_kw.daty_lat(dzien_pocz, dzien_kon)
         aqr.przypisz_szkielet(szkielet_lat)
         lp_wykresu = 0
-        dwk = oh_kw.SimpleDWN(lp_wykresu)
+        dwk = oh_kw.SimpleDNW(lp_wykresu)
         obk = FakturoweRoczneSlupki(tgk, aqr, dwk)
         self.assertEqual(obk.szerokosc_dx_skali, 0)
         self.assertEqual(obk.szerokosc_slupka, 30)

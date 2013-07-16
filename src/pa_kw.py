@@ -193,7 +193,7 @@ class TestPaska(unittest.TestCase):
         aqr = ew_kw.SzkieletDatDlaFakturMiesLat()
         aqr.przypisz_dla_roku_szkielet(2012, rok_z_rozszerzeniem=0)
         lp_wykresu = 0
-        dwk = oh_kw.SimpleDWN(lp_wykresu)
+        dwk = oh_kw.SimpleDNW(lp_wykresu)
         lista = [15340, 15341, 15342, 15343, 15344, 15345, 15346]
         obk = MojPasek(lista, tgk, aqr, dwk)
         self.assertEqual(obk.szerokosc_obrazu, 1250)

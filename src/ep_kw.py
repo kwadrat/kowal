@@ -49,7 +49,7 @@ class TestPomiarowychSlupkow(unittest.TestCase):
         tgk.wyznacz_unikalny_moment_dla_grafiki()
         aqr = ex_kw.SzkieletDatDlaZuzycia()
         lp_wykresu = 0
-        dwk = oh_kw.SimpleDWN(lp_wykresu)
+        dwk = oh_kw.SimpleDNW(lp_wykresu)
         obk = PomiaroweSlupki(tgk, aqr, dwk)
         self.assertEqual(obk.szerokosc_dx_skali, 0)
         self.assertEqual(obk.szerokosc_slupka, 30)

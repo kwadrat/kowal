@@ -18,10 +18,10 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-class SimpleDWN(object):
+class SimpleDNW(object):
     def __init__(self, lp_miejsca):
         '''
-        SimpleDWN:
+        SimpleDNW:
         '''
         self.lp_miejsca = lp_miejsca
         # Lista wersji danego obrazka - z zaznaczoną jedną (lub więcej) fakturą
@@ -32,13 +32,13 @@ class SimpleDWN(object):
 
     def mam_wykres_zbiorczy(self):
         '''
-        SimpleDWN:
+        SimpleDNW:
         '''
         return not self.lp_miejsca
 
     def kolor_tla(self):
         '''
-        SimpleDWN:
+        SimpleDNW:
         Wykres zbiorczy ma mieć inne tło
         '''
         if self.mam_wykres_zbiorczy():
@@ -49,7 +49,7 @@ class SimpleDWN(object):
 
     def ustaw_zbitke(self, punkt_pocz, punkt_kon):
         '''
-        SimpleDWN:
+        SimpleDNW:
         '''
         self.zbitki_qm = wb_kw.KlasaZbitki(punkt_pocz, punkt_kon)
 
@@ -58,7 +58,7 @@ class TestProstychDanych(unittest.TestCase):
         '''
         TestProstychDanych:
         '''
-        obk = SimpleDWN(0)
+        obk = SimpleDNW(0)
         self.assertTrue(obk.mam_wykres_zbiorczy())
         self.assertEqual(obk.kolor_tla(), oa_kw.KOLOR_TLO_SELEDYN)
         self.assertFalse(obk.odmiany_grafiki)
@@ -70,6 +70,6 @@ class TestProstychDanych(unittest.TestCase):
         '''
         TestProstychDanych:
         '''
-        obk = SimpleDWN(1)
+        obk = SimpleDNW(1)
         self.assertFalse(obk.mam_wykres_zbiorczy())
         self.assertEqual(obk.kolor_tla(), oa_kw.KOLOR_EXCEL_TLO_SZARE)
