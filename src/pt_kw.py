@@ -12,8 +12,11 @@ import lc_kw
 import ls_kw
 import dn_kw
 import oa_kw
+import dq_kw
+import oh_kw
 import oc_kw
 import mf_kw
+import od_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -208,4 +211,16 @@ class KlasaObrazu(object):
             oa_kw.rj_text(draw, (x, y), NapisMiesiaca)
 
 class TestGenerowaniaObrazu(unittest.TestCase):
-    pass
+    def test_generowania_obrazu(self):
+        '''
+        TestGenerowaniaObrazu:
+        '''
+        tgk = od_kw.PseudoTGK()
+        tgk.wyznacz_unikalny_moment_dla_grafiki()
+        aqr = dq_kw.KlasaOgolnaSzkieletuDat()
+        lp_wykresu = 0
+        dnw = oh_kw.SimpleDWN(lp_wykresu)
+        literka_typu = 'a'
+        obk = KlasaObrazu(tgk, aqr, dnw, literka_typu)
+        self.assertEqual(obk.literka_typu, 'a')
+        self.assertEqual(obk.html_name, 'a0')
