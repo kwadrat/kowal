@@ -84,15 +84,15 @@ class MojPasek(KlasaObrazu):
         '''
         KlasaObrazu.__init__(self, tgk, aqr, dnw, lk_kw.LITERA_PASEK)
         self.szerokosc_obrazu = oa_kw.sk_pelny_obraz
-        pocz_okr_rozlicz = 0 # Początek dla "Okresy rozliczeniowe"
-        self.pocz_paska = pocz_okr_rozlicz + oa_kw.wysokosc_napisu # Od tego piksela zaczyna się pasek
+        self.pocz_okr_rozlicz = 0 # Początek dla "Okresy rozliczeniowe"
+        self.pocz_paska = self.pocz_okr_rozlicz + oa_kw.wysokosc_napisu # Od tego piksela zaczyna się pasek
         self.wys_paska = 20 # Wysokość rysowanego paska
         # Koniec paska w osi Y (niżej niż początek, bo ma większą wartość)
         koniec_paska = self.pocz_paska + self.wys_paska
         poczatek_napisu = koniec_paska
         self.wysokosc_obrazu = poczatek_napisu + oa_kw.wysokosc_napisu
         # Wypisz na środku etykietę okresów rozliczeniowych
-        self.my_texts.append((self.szerokosc_obrazu / 2, pocz_okr_rozlicz, 'Okresy rozliczeniowe'))
+        self.my_texts.append((self.szerokosc_obrazu / 2, self.pocz_okr_rozlicz, 'Okresy rozliczeniowe'))
         self.pasek_podstawowy(lista, koniec_paska)
         self.rzymskie_miesiace_z_kreskami(koniec_paska, poczatek_napisu)
         self.kreski_dla_faktur()
