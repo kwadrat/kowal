@@ -65,7 +65,7 @@ class PoboroweSlupki(MojeSlupki):
             NapisCzasowy,)
         )
 
-    def kwadransy_godziny_z_kreskami(self, koniec_paska, poczatek_napisu):
+    def kwadransy_godziny_z_kreskami(self, koniec_paska):
         '''
         PoboroweSlupki:
         '''
@@ -79,7 +79,7 @@ class PoboroweSlupki(MojeSlupki):
         PoboroweSlupki:
         '''
         poczatek_napisu, koniec_paska = self.wsp_y_dla_napisow()
-        self.kwadransy_godziny_z_kreskami(koniec_paska, poczatek_napisu)
+        self.kwadransy_godziny_z_kreskami(koniec_paska)
 
     def wyznacz_poborowe_slupki(self, MinY, MaxY):
         '''
