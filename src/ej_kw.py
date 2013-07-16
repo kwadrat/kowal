@@ -50,8 +50,8 @@ class TestFakturowychMiesiecznychSlupkow(unittest.TestCase):
         aqr = ew_kw.SzkieletDatDlaFakturMiesLat()
         aqr.przypisz_dla_roku_szkielet(2012, rok_z_rozszerzeniem=0)
         lp_wykresu = 0
-        dwk = oh_kw.SimpleDNW(lp_wykresu)
-        obk = FakturoweMiesieczneSlupki(tgk, aqr, dwk)
+        dnw = oh_kw.SimpleDNW(lp_wykresu)
+        obk = FakturoweMiesieczneSlupki(tgk, aqr, dnw)
         self.assertEqual(obk.szerokosc_dx_skali, 0)
         self.assertEqual(obk.szerokosc_slupka, 30)
         self.assertEqual(obk.wysokosc_obrazu, 150)

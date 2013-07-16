@@ -61,9 +61,9 @@ class TestWykresuRaportu(unittest.TestCase):
         tgk.wyznacz_unikalny_moment_dla_grafiki()
         aqr = ew_kw.SzkieletDatDlaFakturMiesLat()
         lp_wykresu = 0
-        dwk = oh_kw.SimpleDNW(lp_wykresu)
+        dnw = oh_kw.SimpleDNW(lp_wykresu)
         ile_linii = 3 # Liczba linii tekstu na wykresie
-        obk = WykresRaportu(tgk, aqr, dwk, ile_linii)
+        obk = WykresRaportu(tgk, aqr, dnw, ile_linii)
         self.assertEqual(obk.szerokosc_obrazu, 1250)
         self.assertEqual(obk.szerokosc_wykresu, 1240)
         self.assertEqual(obk.wysokosc_obrazu, 46)

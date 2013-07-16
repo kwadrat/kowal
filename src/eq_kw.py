@@ -80,8 +80,8 @@ class TestPoborowychSlupkow(unittest.TestCase):
         tgk.wyznacz_unikalny_moment_dla_grafiki()
         aqr = ey_kw.SzkieletDatDlaPoborow(lw_kw.Dn_Energy)
         lp_wykresu = 0
-        dwk = oh_kw.SimpleDNW(lp_wykresu)
-        obk = PoboroweSlupki(tgk, aqr, dwk)
+        dnw = oh_kw.SimpleDNW(lp_wykresu)
+        obk = PoboroweSlupki(tgk, aqr, dnw)
         self.assertEqual(obk.ile_pikseli, 30)
         self.assertEqual(obk.szerokosc_dx_skali, 30)
         self.assertEqual(obk.wysokosc_obrazu, 150)
