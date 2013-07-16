@@ -5,7 +5,6 @@ import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import rq_kw
-import dn_kw
 import ez_kw
 '''.splitlines()]
 
@@ -34,13 +33,6 @@ class SzkieletDatDlaFakturMiesLat(KlasaSzkieletuDat):
         Liczba miesięcy dla ciągłych faktur miesięcznych
         '''
         return self.liczba_paskow() == rq_kw.RokDluzszy
-
-    def przypisz_dla_roku_szkielet(self, wybrany_rok, rok_z_rozszerzeniem):
-        '''
-        SzkieletDatDlaFakturMiesLat:
-        '''
-        tmp_szkielet = dn_kw.daty_roku(wybrany_rok, rok_z_rozszerzeniem=0)
-        self.przypisz_szkielet(tmp_szkielet)
 
 class TestSzkieletuDatDlaFakturMiesLat(unittest.TestCase):
     def test_szkieletu_dat_dla_faktur_mies_lat(self):

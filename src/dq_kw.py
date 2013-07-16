@@ -4,6 +4,7 @@
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import dn_kw
 import oa_kw
 '''.splitlines()]
 
@@ -83,6 +84,13 @@ class KlasaOgolnaSzkieletuDat(object):
             for nast in self.szkielet_dat[1:]:
                 yield akt, nast
                 akt = nast
+
+    def przypisz_dla_roku_szkielet(self, wybrany_rok, rok_z_rozszerzeniem):
+        '''
+        KlasaOgolnaSzkieletuDat:
+        '''
+        tmp_szkielet = dn_kw.daty_roku(wybrany_rok, rok_z_rozszerzeniem=0)
+        self.przypisz_szkielet(tmp_szkielet)
 
 class TestOgolnegoSzkieletuDat(unittest.TestCase):
     def test_ogolnego_szkieletu_dat(self):
