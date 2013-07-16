@@ -301,9 +301,8 @@ class MojeSlupki(KlasaObrazu):
         '''
         MojeSlupki:
         '''
-        gorna_mniejsza = self.wysokosc_obrazu - oa_kw.wysokosc_napisu
         dolna_wieksza = self.wysokosc_obrazu
-        return gorna_mniejsza, dolna_wieksza
+        return self.gorna_mniejsza, dolna_wieksza
 
     def podpisz_miesiacami(self):
         '''
