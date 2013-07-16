@@ -26,7 +26,6 @@ class FakturoweMiesieczneSlupki(MojeSlupki):
         '''
         FakturoweMiesieczneSlupki:
         '''
-        self.margines_dy_slupka = 20
         MojeSlupki.__init__(self, tgk, aqr, dnw)
 
     def ustaw_skalowanie_obrazu(self):
