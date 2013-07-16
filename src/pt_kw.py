@@ -169,7 +169,7 @@ class KlasaObrazu(object):
         KlasaObrazu:
         '''
         NapisCzasowy = self.aqr.tekst_pelnej_godziny(akt)
-        wsp_x_napisu = self.aqr.poziomo_tego_dnia((nast + akt) // 2, self.szerokosc_dx_skali, self.koniec_wykresu)
+        wsp_x_napisu = self.aqr.poziomo_tego_dnia((nast + akt) // 2, self.szerokosc_dx_skali, self.koniec_x_wykresu)
         self.my_texts.append(
           (wsp_x_napisu,
             poczatek_napisu,
@@ -191,7 +191,7 @@ class KlasaObrazu(object):
         '''
         for akt, nast in self.aqr.pary_szkieletu():
             if self.aqr.to_pelna_godzina(akt):
-                self.rysuj_same_kreski(self.wsp_y_na_dole_slupka + oa_kw.DlugoscKresekMiesiecy + 1, akt, self.koniec_wykresu)
+                self.rysuj_same_kreski(self.wsp_y_na_dole_slupka + oa_kw.DlugoscKresekMiesiecy + 1, akt, self.koniec_x_wykresu)
                 self.wypisz_kwadransy_godziny(poczatek_napisu, akt, nast)
 
     def rysuj_zebrane_linie(self, draw):

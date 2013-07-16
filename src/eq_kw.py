@@ -44,7 +44,7 @@ class PoboroweSlupki(MojeSlupki):
             raise RuntimeError('LiczbaPaskow: %d' % LiczbaPaskow)
         self.szerokosc_obrazu = oa_kw.sk_pelny_obraz
         self.szerokosc_wykresu = oa_kw.zaokraglij_mi(self.szerokosc_obrazu - self.ile_pikseli, LiczbaPaskow)
-        self.koniec_wykresu = self.szerokosc_wykresu + self.ile_pikseli
+        self.koniec_x_wykresu = self.szerokosc_wykresu + self.ile_pikseli
         self.szerokosc_slupka = self.szerokosc_wykresu / LiczbaPaskow
 
     def wyznacz_etykiete(self, pocz):
@@ -62,7 +62,7 @@ class PoboroweSlupki(MojeSlupki):
             moje_paczki_faktur = self.dnw.odcinki_bazowe.p_odc_baz()
             for jeden_odc_bzw in moje_paczki_faktur:
                 pocz, kon = jeden_odc_bzw.get_pk()
-                SlWspX = self.aqr.miejsce_umieszczenia_slupka(pocz, kon, self.szerokosc_dx_skali, self.koniec_wykresu)
+                SlWspX = self.aqr.miejsce_umieszczenia_slupka(pocz, kon, self.szerokosc_dx_skali, self.koniec_x_wykresu)
                 if SlWspX != None:
                     Wartosc = jeden_odc_bzw.slownik_qm.jh_kwota()
                     GoraSlupka, DolSlupka = self.wyznacz_gore_dol_slupka(MinY, MaxY, Wartosc)
@@ -86,7 +86,7 @@ class TestPoborowychSlupkow(unittest.TestCase):
         self.assertEqual(obk.szerokosc_obrazu, 1250)
         self.assertEqual(obk.szerokosc_dx_skali, 30)
         self.assertEqual(obk.szerokosc_wykresu, 1200)
-        self.assertEqual(obk.koniec_wykresu, 1230)
+        self.assertEqual(obk.koniec_x_wykresu, 1230)
         self.assertEqual(obk.szerokosc_slupka, 50)
         self.assertEqual(obk.wysokosc_obrazu, 150)
         self.assertEqual(obk.margines_dy_slupka, 20)
