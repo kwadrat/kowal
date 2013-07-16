@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+import unittest
+
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import es_kw
 '''.splitlines()]
@@ -34,3 +36,9 @@ class PomiaroweSlupki(MojeSlupki):
         PomiaroweSlupki:
         '''
         return ''
+
+class TestPomiarowychSlupkow(unittest.TestCase):
+    def test_pomiarowych_slupkow(self):
+        '''
+        TestPomiarowychSlupkow:
+        '''
