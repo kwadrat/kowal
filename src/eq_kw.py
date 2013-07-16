@@ -72,7 +72,7 @@ class PoboroweSlupki(MojeSlupki):
         for akt, nast in self.aqr.pary_szkieletu():
             if self.aqr.to_pelna_godzina(akt):
                 self.rysuj_same_kreski(self.wsp_y_na_dole_slupka + 1, akt, self.koniec_x_wykresu)
-                self.wypisz_kwadransy_godziny(poczatek_napisu, akt, nast)
+                self.wypisz_kwadransy_godziny(self.gorna_mniejsza, akt, nast)
 
     def podpisz_kwadransami_godzinami(self):
         '''
