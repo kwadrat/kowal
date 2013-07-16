@@ -89,7 +89,7 @@ class KlasaOgolnaSzkieletuDat(object):
         '''
         KlasaOgolnaSzkieletuDat:
         '''
-        tmp_szkielet = dn_kw.daty_roku(wybrany_rok, rok_z_rozszerzeniem=0)
+        tmp_szkielet = dn_kw.daty_roku(wybrany_rok, rok_z_rozszerzeniem)
         self.przypisz_szkielet(tmp_szkielet)
 
 class TestOgolnegoSzkieletuDat(unittest.TestCase):
