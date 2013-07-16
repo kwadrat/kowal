@@ -5,6 +5,9 @@ import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import dn_kw
+import ew_kw
+import oh_kw
+import od_kw
 import es_kw
 '''.splitlines()]
 
@@ -43,3 +46,18 @@ class TestFakturowychRocznychSlupkow(unittest.TestCase):
         '''
         TestFakturowychRocznychSlupkow:
         '''
+        tgk = od_kw.PseudoTGK()
+        tgk.wyznacz_unikalny_moment_dla_grafiki()
+        aqr = ew_kw.SzkieletDatDlaFakturMiesLat()
+        dzien_pocz = 13149
+        dzien_kon = 13879
+        szkielet_lat = dn_kw.daty_lat(dzien_pocz, dzien_kon)
+        aqr.przypisz_szkielet(szkielet_lat)
+        lp_wykresu = 0
+        dwk = oh_kw.SimpleDWN(lp_wykresu)
+        obk = FakturoweRoczneSlupki(tgk, aqr, dwk)
+        self.assertEqual(obk.szerokosc_dx_skali, 0)
+        self.assertEqual(obk.szerokosc_slupka, 30)
+        self.assertEqual(obk.wysokosc_obrazu, 150)
+        self.assertEqual(obk.MarginesSlupka, 20)
+        self.assertFalse(obk.brak_mi_dat_szkieletu())
