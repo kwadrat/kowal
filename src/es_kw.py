@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+import unittest
+
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lk_kw
 import lm_kw
@@ -397,3 +399,9 @@ class MojeSlupki(KlasaObrazu):
                     GoraSlupka, DolSlupka = self.wyznacz_gore_dol_slupka(MinY, MaxY, Wartosc)
                     tmp_punkt = hr_kw.ProstokatDoRysowania(SlWspX1, GoraSlupka, SlWspX2, DolSlupka)
                     self.lista_rect_umw.append(tmp_punkt)
+
+class TestMoichSlupkow(unittest.TestCase):
+    def test_moich_slupkow(self):
+        '''
+        TestMoichSlupkow:
+        '''
