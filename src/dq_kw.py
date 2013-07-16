@@ -89,3 +89,4 @@ class TestOgolnegoSzkieletuDat(unittest.TestCase):
         '''
         TestOgolnegoSzkieletuDat:
         '''
+        obk = KlasaOgolnaSzkieletuDat()
