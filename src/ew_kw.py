@@ -33,3 +33,10 @@ class SzkieletDatDlaFakturMiesLat(KlasaSzkieletuDat):
         Liczba miesięcy dla ciągłych faktur miesięcznych
         '''
         return self.liczba_paskow() == rq_kw.RokDluzszy
+
+class TestSzkieletuDatDlaFakturMiesLat(unittest.TestCase):
+    def test_szkieletu_dat_dla_faktur_mies_lat(self):
+        '''
+        TestSzkieletuDatDlaFakturMiesLat:
+        '''
+        obk = SzkieletDatDlaFakturMiesLat()
