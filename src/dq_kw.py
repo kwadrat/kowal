@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+import unittest
+
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import oa_kw
 '''.splitlines()]
@@ -81,3 +83,9 @@ class KlasaOgolnaSzkieletuDat(object):
             for nast in self.szkielet_dat[1:]:
                 yield akt, nast
                 akt = nast
+
+class TestOgolnegoSzkieletuDat(unittest.TestCase):
+    def test_ogolnego_szkieletu_dat(self):
+        '''
+        TestOgolnegoSzkieletuDat:
+        '''
