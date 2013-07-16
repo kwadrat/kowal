@@ -86,9 +86,9 @@ class MojPasek(KlasaObrazu):
         self.szerokosc_obrazu = oa_kw.sk_pelny_obraz
         self.pocz_y_okr_rozlicz = 0 # Początek dla "Okresy rozliczeniowe"
         self.pocz_y_paska = self.pocz_y_okr_rozlicz + oa_kw.wysokosc_napisu # Od tego piksela zaczyna się pasek
-        self.wys_paska = 20 # Wysokość rysowanego paska
+        self.wys_dy_paska = 20 # Wysokość rysowanego paska
         # Koniec paska w osi Y (niżej niż początek, bo ma większą wartość)
-        koniec_paska = self.pocz_y_paska + self.wys_paska
+        koniec_paska = self.pocz_y_paska + self.wys_dy_paska
         poczatek_napisu = koniec_paska
         self.wysokosc_obrazu = poczatek_napisu + oa_kw.wysokosc_napisu
         # Wypisz na środku etykietę okresów rozliczeniowych
@@ -141,10 +141,10 @@ class MojPasek(KlasaObrazu):
                 if lp_faktury in wersja:
                     # Współrzędne lewego górnego rogu (włącznie)
                     lg_x = oa_kw.poziomo_dla_dni(czas_t0, czas_akt, czas_tn, self.szerokosc_skali, self.szerokosc_obrazu)
-                    lg_y = self.pocz_y_paska + (nr_kol * self.wys_paska) / ile_faktur
+                    lg_y = self.pocz_y_paska + (nr_kol * self.wys_dy_paska) / ile_faktur
                     # Współrzędne prawego dolnego rogu (już poza obszarem)
                     pd_x = oa_kw.poziomo_dla_dni(czas_t0, czas_nast, czas_tn, self.szerokosc_skali, self.szerokosc_obrazu)
-                    pd_y = self.pocz_y_paska + ((nr_kol + 1) * self.wys_paska) / ile_faktur
+                    pd_y = self.pocz_y_paska + ((nr_kol + 1) * self.wys_dy_paska) / ile_faktur
                     self.rysuj_prostokat(draw, lg_x, lg_y, pd_x, pd_y, kolor)
                     # Gdy podano tylko jedną l.p. faktury, to znaczy, że możemy
                     # wygenerować zmianę (obrazka, słupka, tabelki) dla myszy nad tym obszarem
@@ -200,5 +200,5 @@ class TestPaska(unittest.TestCase):
         self.assertEqual(obk.szerokosc_skali, 0)
         self.assertEqual(obk.pocz_y_okr_rozlicz, 0)
         self.assertEqual(obk.pocz_y_paska, 10)
-        self.assertEqual(obk.wys_paska, 20)
+        self.assertEqual(obk.wys_dy_paska, 20)
         self.assertEqual(obk.wysokosc_obrazu, 40)
