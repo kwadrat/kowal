@@ -93,6 +93,7 @@ class TestRozmiaruObrazu(unittest.TestCase):
         TestRozmiaruObrazu:
         '''
         self.assertEqual(sk_pelny_obraz, 1250)
+        self.assertEqual(wysokosc_napisu, 10)
 
     def test_szkieletowego_datownika(self):
         '''
