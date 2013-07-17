@@ -403,3 +403,5 @@ class TestMoichSlupkow(unittest.TestCase):
         TestMoichSlupkow:
         '''
         self.assertEqual(wyznacz_gorna_wartosc(0, 1, 1), 1.0)
+        self.assertEqual(wyznacz_gorna_wartosc(0, 2, 1), 0.5)
+        self.assertEqual(wyznacz_gorna_wartosc(1, 5, 2), 0.25)
