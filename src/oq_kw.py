@@ -68,6 +68,17 @@ class ScaleAdvisor(object):
 
 
 class TestAxisScale(unittest.TestCase):
+    def test_helper_functions(self):
+        '''
+        TestAxisScale:
+        '''
+        self.assertEqual(by_ten(21, 0), 21)
+        self.assertEqual(by_ten(21, 1), 210)
+        self.assertEqual(by_ten(21, -1), 2.1)
+        self.assertEqual(calculate_scale(2, 3), 0)
+        self.assertEqual(calculate_scale(2, 21), 1)
+        self.assertEqual(calculate_scale(10, 3), -1)
+
     def test_axis_scale(self):
         '''
         TestAxisScale:
@@ -103,14 +114,3 @@ class TestAxisScale(unittest.TestCase):
         obk.rethink_my_state()
         self.assertEqual(obk.total_tick_periods, 21)
         self.assertEqual(obk.little_step, 1.5)
-
-    def test_helper_functions(self):
-        '''
-        TestAxisScale:
-        '''
-        self.assertEqual(by_ten(21, 0), 21)
-        self.assertEqual(by_ten(21, 1), 210)
-        self.assertEqual(by_ten(21, -1), 2.1)
-        self.assertEqual(calculate_scale(2, 3), 0)
-        self.assertEqual(calculate_scale(2, 21), 1)
-        self.assertEqual(calculate_scale(10, 3), -1)
