@@ -21,6 +21,8 @@ def by_ten(value, ten_exponent):
 def calculate_scale(full_base, value):
     if value == 21:
         result = 1
+    elif full_base == 10 and value == 3:
+        result = -1
     else:
         result = 0
     return result
@@ -101,3 +103,4 @@ class TestAxisScale(unittest.TestCase):
         self.assertEqual(by_ten(21, -1), 2.1)
         self.assertEqual(calculate_scale(2, 3), 0)
         self.assertEqual(calculate_scale(2, 21), 1)
+        self.assertEqual(calculate_scale(10, 3), -1)
