@@ -21,19 +21,19 @@ class KreskiWykresu(object):
         '''
         KreskiWykresu:
         '''
-        self.draw_line = []
+        self.collected_lines = []
 
     def append(self, krotka):
         '''
         KreskiWykresu:
         '''
-        self.draw_line.append(krotka)
+        self.collected_lines.append(krotka)
 
     def narysuj_na_obrazku(self, draw):
         '''
         KreskiWykresu:
         '''
-        for polozenie, kolor in self.draw_line:
+        for polozenie, kolor in self.collected_lines:
             draw.line(polozenie, kolor)
 
 class TestKresekWykresu(unittest.TestCase):
