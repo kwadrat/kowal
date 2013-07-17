@@ -397,3 +397,9 @@ class TestMoichSlupkow(unittest.TestCase):
         self.assertEqual(CzescSlupka, 3)
         self.assertEqual(SzerPaska, 90)
         self.assertEqual(SzerSlupka, 30)
+
+    def test_funkcji_liczacej(self):
+        '''
+        TestMoichSlupkow:
+        '''
+        self.assertEqual(wyznacz_gorna_wartosc(0, 1, 1), 1.0)
