@@ -14,8 +14,9 @@ for i in NazwyModulow:
             exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
         else:
             exec 'import %(modul)s' % dict(modul = i)
+
 def by_ten(value, ten_exponent):
-    return value
+    return value * 10 ** ten_exponent
 
 class ScaleAdvisor(object):
     def __init__(self, tick_base):
@@ -83,3 +84,5 @@ class TestAxisScale(unittest.TestCase):
         TestAxisScale:
         '''
         self.assertEqual(by_ten(21, 0), 21)
+        self.assertEqual(by_ten(21, 1), 210)
+        self.assertEqual(by_ten(21, -1), 2.1)
