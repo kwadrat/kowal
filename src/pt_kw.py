@@ -47,14 +47,7 @@ class KlasaObrazu(object):
         # Lista rejonów i numerów faktur dla generowanej mapy
         # Może też być z treścią dymka
         self.moja_mapa = []
-        if rq_kw.DocelowoObiektoweKreski:
-            ##############################################################################
-            self.draw_line = on_kw.KreskiWykresu()
-            ##############################################################################
-        else:
-            ##############################################################################
-            self.draw_line = []
-            ##############################################################################
+        self.draw_line = on_kw.KreskiWykresu()
         self.my_texts = []
         self.tgk = tgk
         self.aqr = aqr
@@ -186,15 +179,7 @@ class KlasaObrazu(object):
         '''
         KlasaObrazu:
         '''
-        if rq_kw.DocelowoObiektoweKreski:
-            ##############################################################################
-            self.draw_line.narysuj_na_obrazku(draw)
-            ##############################################################################
-        else:
-            ##############################################################################
-            for polozenie, kolor in self.draw_line:
-                draw.line(polozenie, kolor)
-            ##############################################################################
+        self.draw_line.narysuj_na_obrazku(draw)
 
     def wypisz_zebrane_napisy(self, draw):
         '''
