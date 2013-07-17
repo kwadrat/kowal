@@ -43,14 +43,14 @@ class ScaleAdvisor(object):
         '''
         self.my_value = my_value
         self.last_tick_value = int(self.my_value)
-        self.total_tick_periods = self.calculate_tick_periods(by_ten(self.my_value, 0))
+        self.make_calculations(0)
 
     def limit_tick_periods(self, min_tick_periods):
         '''
         ScaleAdvisor:
         '''
         self.min_tick_periods = min_tick_periods
-        self.total_tick_periods = self.calculate_tick_periods(by_ten(self.my_value, 1))
+        self.make_calculations(1)
 
 
 class TestAxisScale(unittest.TestCase):
