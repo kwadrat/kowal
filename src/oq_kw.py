@@ -42,7 +42,8 @@ class ScaleAdvisor(object):
         '''
         ScaleAdvisor:
         '''
-        return int(my_value / self.tick_base)
+        result = int(my_value / self.tick_base)
+        return result
 
     def make_calculations(self, scale_factor):
         '''
