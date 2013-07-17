@@ -43,6 +43,21 @@ class AxisY(object):
             return gora_slupka
         ##############################################################################
 
+    def zbyt_niski_wykres(self):
+        '''
+        AxisY:
+        '''
+        if self.MinY >= self.MaxY: # Omijamy wykresy bez zróżnicowanych danych
+            napis = ('Za malo roznicy w skali y, MinY = %(MinY)s, MaxY = %(MaxY)s' %
+              dict(
+                MinY = str(self.MinY),
+                MaxY = str(self.MaxY),
+              )
+            )
+        else:
+            napis = None
+        return napis
+
 class TestAxisVertical(unittest.TestCase):
     def test_axis_vertical(self):
         '''
@@ -61,3 +76,8 @@ class TestAxisVertical(unittest.TestCase):
         self.assertEqual(AxisY(0, 1).wyznacz_gorna_wartosc(1), 1.0)
         self.assertEqual(AxisY(0, 2).wyznacz_gorna_wartosc(1), 0.5)
         self.assertEqual(AxisY(1, 5).wyznacz_gorna_wartosc(2), 0.25)
+        self.assertEqual(
+            AxisY(5, 5).zbyt_niski_wykres(),
+            'Za malo roznicy w skali y, MinY = 5, MaxY = 5'
+            )
+        self.assertEqual(AxisY(0, 1).zbyt_niski_wykres(), None)
