@@ -3,6 +3,7 @@
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import rq_kw
+import op_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -72,6 +73,7 @@ class ListaOdcBazowych(object):
             MaxY = max(moje_kwoty)
         else:
             MaxY = 0
+        vert_axis = op_kw.AxisY(MinY, MaxY)
         return MinY, MaxY
 
     def lista_slownikow_qm(self):
