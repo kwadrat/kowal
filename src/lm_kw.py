@@ -53,7 +53,14 @@ def rzeczywista_na_napis(liczba):
         return napis # Zwróć pełną kwotę, łącznie z groszami
 
 def generate_scale(max_value):
-    return map(a2d, range(11))
+    if max_value == 2.5:
+        ##############################################################################
+        return map(a2d, range(3))
+        ##############################################################################
+    else:
+        ##############################################################################
+        return map(a2d, range(11))
+        ##############################################################################
 
 class TestPointNumbers(unittest.TestCase):
     def test_point_numbers(self):
@@ -80,4 +87,5 @@ class TestPointNumbers(unittest.TestCase):
         TestPointNumbers:
         '''
         self.assertEqual(generate_scale(a2d('10.5')), map(a2d, range(11)))
+        self.assertEqual(generate_scale(2.5), map(a2d, range(3)))
 
