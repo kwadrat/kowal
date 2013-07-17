@@ -48,7 +48,8 @@ class ScaleAdvisor(object):
         '''
         ScaleAdvisor:
         '''
-        scale_factor = calculate_scale(self.tick_base * self.min_tick_periods, self.my_value)
+        tmp_step = self.tick_base * self.min_tick_periods
+        scale_factor = calculate_scale(tmp_step, self.my_value)
         self.make_calculations( - scale_factor)
         if self.min_tick_periods == 3:
             self.little_step = 1.5
