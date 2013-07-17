@@ -15,8 +15,15 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+class KreskiWykresu(object):
+    def __init__(self):
+        '''
+        KreskiWykresu:
+        '''
+
 class TestKresekWykresu(unittest.TestCase):
     def test_kresek_wykresu(self):
         '''
         TestKresekWykresu:
         '''
+        obk = KreskiWykresu()
