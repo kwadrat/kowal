@@ -343,7 +343,7 @@ class MojeSlupki(KlasaObrazu):
                     self.DodajSlupek(jeden_slupek)
             self.RysujListeSlupkow()
 
-    def wyznacz_ukw_slupki(self, vert_axis, MinY, MaxY):
+    def wyznacz_ukw_slupki(self, vert_axis):
         '''
         MojeSlupki:
         Rysowanie mocy zamówionej jako tło - dla porównania z mocami pobranymi
