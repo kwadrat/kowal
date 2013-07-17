@@ -308,13 +308,13 @@ class MojeSlupki(KlasaObrazu):
         MojeSlupki:
         '''
         dolna_wieksza = self.wysokosc_obrazu
-        return self.gorna_mniejsza, dolna_wieksza
+        return dolna_wieksza
 
     def podpisz_miesiacami(self):
         '''
         MojeSlupki:
         '''
-        poczatek_napisu, koniec_paska = self.wsp_y_dla_napisow()
+        koniec_paska = self.wysokosc_obrazu
         self.rzymskie_miesiace_z_kreskami(koniec_paska)
 
     def ustaw_prosty_obraz(self):

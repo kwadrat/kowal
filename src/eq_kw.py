@@ -87,7 +87,7 @@ class PoboroweSlupki(MojeSlupki):
         '''
         PoboroweSlupki:
         '''
-        poczatek_napisu, koniec_paska = self.wsp_y_dla_napisow()
+        koniec_paska = self.wysokosc_obrazu
         self.kwadransy_godziny_z_kreskami(koniec_paska)
 
     def wyznacz_poborowe_slupki(self, MinY, MaxY):
