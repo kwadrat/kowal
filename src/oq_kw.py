@@ -30,6 +30,13 @@ class ScaleAdvisor(object):
         self.last_tick_value = int(self.my_value)
         self.total_tick_periods = int(self.my_value / self.tick_base)
 
+    def limit_tick_periods(self, min_tick_periods):
+        '''
+        ScaleAdvisor:
+        '''
+        self.min_tick_periods = min_tick_periods
+        self.total_tick_periods = 21
+
 
 class TestAxisScale(unittest.TestCase):
     def test_axis_scale(self):
@@ -52,3 +59,13 @@ class TestAxisScale(unittest.TestCase):
         obk = ScaleAdvisor(2)
         obk.set_value(10.5)
         self.assertEqual(obk.total_tick_periods, 5)
+
+    def test_axis_five_scale(self):
+        '''
+        TestAxisScale:
+        '''
+        obk = ScaleAdvisor(5)
+        obk.set_value(10.6)
+        self.assertEqual(obk.total_tick_periods, 2)
+        obk.limit_tick_periods(3)
+        self.assertEqual(obk.total_tick_periods, 21)
