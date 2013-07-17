@@ -53,7 +53,7 @@ class ScaleAdvisor(object):
         scale_factor = calculate_scale(self.my_step, self.my_value)
         self.little_step = by_ten(self.my_step, scale_factor)
         tmp_value = by_ten(self.my_value, - scale_factor)
-        self.total_tick_periods = self.calculate_tick_periods(tmp_value)
+        self.total_tick_periods = int(tmp_value / self.tick_base)
 
     def set_value(self, my_value):
         '''
