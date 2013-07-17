@@ -20,7 +20,6 @@ class ScaleAdvisor(object):
         '''
         ScaleAdvisor:
         '''
-        self.last_tick_value = 10
 
     def set_value(self, my_value):
         '''
