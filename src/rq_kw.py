@@ -149,4 +149,4 @@ else:
     Docelowo_psyco_nie_pygresql = 0
     ##############################################################################
 
-DocelowoObiektoweKreski = 0
+DocelowoObiektoweKreski = 1
