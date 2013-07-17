@@ -74,7 +74,7 @@ class ListaOdcBazowych(object):
         else:
             MaxY = 0
         vert_axis = op_kw.AxisY(MinY, MaxY)
-        return vert_axis, MinY, MaxY
+        return vert_axis
 
     def lista_slownikow_qm(self):
         '''
