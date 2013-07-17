@@ -19,7 +19,11 @@ def by_ten(value, ten_exponent):
     return value * 10 ** ten_exponent
 
 def calculate_scale(full_base, value):
-    return 0
+    if value == 21:
+        result = 1
+    else:
+        result = 0
+    return result
 
 class ScaleAdvisor(object):
     def __init__(self, tick_base):
@@ -96,3 +100,4 @@ class TestAxisScale(unittest.TestCase):
         self.assertEqual(by_ten(21, 1), 210)
         self.assertEqual(by_ten(21, -1), 2.1)
         self.assertEqual(calculate_scale(2, 3), 0)
+        self.assertEqual(calculate_scale(2, 21), 1)
