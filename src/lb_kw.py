@@ -73,8 +73,7 @@ class ListaOdcBazowych(object):
             MaxY = max(moje_kwoty)
         else:
             MaxY = 0
-        vert_axis = op_kw.AxisY(MinY, MaxY)
-        return vert_axis
+        return op_kw.AxisY(MinY, MaxY)
 
     def lista_slownikow_qm(self):
         '''
