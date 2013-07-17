@@ -16,14 +16,20 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 class AxisY(object):
-    def __init__(self):
+    def __init__(self, MinY, MaxY):
         '''
         AxisY:
         '''
+        self.MinY = MinY
+        self.MaxY = MaxY
 
 class TestAxisVertical(unittest.TestCase):
     def test_axis_vertical(self):
         '''
         TestAxisVertical:
         '''
-        obk = AxisY()
+        MinY = 10
+        MaxY = 110
+        obk = AxisY(MinY, MaxY)
+        self.assertEqual(obk.MinY, 10)
+        self.assertEqual(obk.MaxY, 110)
