@@ -29,6 +29,13 @@ class KreskiWykresu(object):
         '''
         self.collected_lines.append(krotka)
 
+    def line_with_default_color(self, dimensions):
+        '''
+        KreskiWykresu:
+        '''
+        krotka = (dimensions, oa_kw.Kolor_Kresek)
+        self.append(krotka)
+
     def narysuj_na_obrazku(self, draw):
         '''
         KreskiWykresu:
@@ -44,3 +51,4 @@ class TestKresekWykresu(unittest.TestCase):
         obk = KreskiWykresu()
         obk.append
         obk.narysuj_na_obrazku
+        obk.line_with_default_color
