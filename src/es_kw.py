@@ -303,13 +303,6 @@ class MojeSlupki(KlasaObrazu):
                 pracuj = 0
         return pracuj
 
-    def wsp_y_dla_napisow(self):
-        '''
-        MojeSlupki:
-        '''
-        dolna_wieksza = self.wysokosc_obrazu
-        return dolna_wieksza
-
     def podpisz_miesiacami(self):
         '''
         MojeSlupki:
