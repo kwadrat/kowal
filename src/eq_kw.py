@@ -73,7 +73,7 @@ class PoboroweSlupki(MojeSlupki):
         wsp_y_napisu = 149
         self.my_texts.append((wsp_x_napisu, wsp_y_napisu, 'godziny'))
 
-    def kwadransy_godziny_z_kreskami(self, koniec_paska):
+    def kwadransy_godziny_z_kreskami(self):
         '''
         PoboroweSlupki:
         '''
@@ -88,7 +88,7 @@ class PoboroweSlupki(MojeSlupki):
         PoboroweSlupki:
         '''
         koniec_paska = self.wysokosc_obrazu
-        self.kwadransy_godziny_z_kreskami(koniec_paska)
+        self.kwadransy_godziny_z_kreskami()
 
     def wyznacz_poborowe_slupki(self, MinY, MaxY):
         '''
