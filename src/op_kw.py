@@ -24,6 +24,25 @@ class AxisY(object):
         self.MinY = MinY
         self.MaxY = MaxY
 
+    if rq_kw.Docelowo_psyco_nie_pygresql:
+        ##############################################################################
+        def wyznacz_gorna_wartosc(self, Wartosc):
+            '''
+            AxisY:
+            '''
+            gora_slupka = (Wartosc - self.MinY) / (self.MaxY - self.MinY)
+            return gora_slupka
+        ##############################################################################
+    else:
+        ##############################################################################
+        def wyznacz_gorna_wartosc(self, Wartosc):
+            '''
+            AxisY:
+            '''
+            gora_slupka = float(Wartosc - self.MinY) / (self.MaxY - self.MinY)
+            return gora_slupka
+        ##############################################################################
+
 class TestAxisVertical(unittest.TestCase):
     def test_axis_vertical(self):
         '''
@@ -34,3 +53,11 @@ class TestAxisVertical(unittest.TestCase):
         obk = AxisY(MinY, MaxY)
         self.assertEqual(obk.MinY, 10)
         self.assertEqual(obk.MaxY, 110)
+
+    def test_funkcji_liczacej(self):
+        '''
+        TestAxisVertical:
+        '''
+        self.assertEqual(AxisY(0, 1).wyznacz_gorna_wartosc(1), 1.0)
+        self.assertEqual(AxisY(0, 2).wyznacz_gorna_wartosc(1), 0.5)
+        self.assertEqual(AxisY(1, 5).wyznacz_gorna_wartosc(2), 0.25)
