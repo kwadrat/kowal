@@ -186,8 +186,15 @@ class KlasaObrazu(object):
         '''
         KlasaObrazu:
         '''
-        for polozenie, kolor in self.draw_line:
-            draw.line(polozenie, kolor)
+        if rq_kw.DocelowoObiektoweKreski:
+            ##############################################################################
+            self.draw_line.narysuj_na_obrazku(draw)
+            ##############################################################################
+        else:
+            ##############################################################################
+            for polozenie, kolor in self.draw_line:
+                draw.line(polozenie, kolor)
+            ##############################################################################
 
     def wypisz_zebrane_napisy(self, draw):
         '''
