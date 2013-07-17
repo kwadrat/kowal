@@ -20,6 +20,7 @@ class ScaleAdvisor(object):
         '''
         ScaleAdvisor:
         '''
+        self.last_tick_value = 10
 
 class TestAxisScale(unittest.TestCase):
     def test_axis_scale(self):
@@ -27,3 +28,4 @@ class TestAxisScale(unittest.TestCase):
         TestAxisScale:
         '''
         obk = ScaleAdvisor()
+        self.assertEqual(obk.last_tick_value, 10.0)
