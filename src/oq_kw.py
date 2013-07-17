@@ -36,7 +36,7 @@ class ScaleAdvisor(object):
         ScaleAdvisor:
         '''
         self.tick_base = tick_base
-        self.min_tick_periods = 2
+        self.limit_tick_periods(2)
 
     def calculate_tick_periods(self, my_value):
         '''
