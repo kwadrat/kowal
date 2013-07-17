@@ -47,7 +47,14 @@ class KlasaObrazu(object):
         # Lista rejonów i numerów faktur dla generowanej mapy
         # Może też być z treścią dymka
         self.moja_mapa = []
-        self.draw_line = []
+        if rq_kw.DocelowoObiektoweKreski:
+            ##############################################################################
+            self.draw_line = on_kw.KreskiWykresu()
+            ##############################################################################
+        else:
+            ##############################################################################
+            self.draw_line = []
+            ##############################################################################
         self.my_texts = []
         self.tgk = tgk
         self.aqr = aqr
