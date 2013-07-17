@@ -68,8 +68,7 @@ class MojPasek(KlasaObrazu):
             for akt in self.dnw.odcinki_bazowe.lista_pocz():
                 if akt != None:
                     tmp_x = self.aqr.poziomo_tego_dnia(akt, self.szerokosc_dx_skali, self.szerokosc_obrazu)
-                    self.draw_line.append(((tmp_x, pocz_kres_okr, tmp_x, kon_kres_okr),
-                      oa_kw.Kolor_Kresek))
+                    self.draw_line.line_with_default_color((tmp_x, pocz_kres_okr, tmp_x, kon_kres_okr))
 
     def __init__(self, lista, tgk, aqr, dnw):
         '''
