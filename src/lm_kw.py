@@ -52,6 +52,9 @@ def rzeczywista_na_napis(liczba):
     else:
         return napis # Zwróć pełną kwotę, łącznie z groszami
 
+def generate_scale(max_value):
+    return map(a2d, range(11))
+
 class TestPointNumbers(unittest.TestCase):
     def test_point_numbers(self):
         '''
@@ -71,3 +74,10 @@ class TestPointNumbers(unittest.TestCase):
         self.assertEqual(readjust_number(3, 1.5555), decimal.Decimal('1.556'))
         self.assertEqual(rzeczywista_na_napis(589.56 * 100), '58956')
         self.assertEqual(rzeczywista_na_napis(589.56), '589.56')
+
+    def test_generate_yscale(self):
+        '''
+        TestPointNumbers:
+        '''
+        self.assertEqual(generate_scale(a2d('10.5')), map(a2d, range(11)))
+
