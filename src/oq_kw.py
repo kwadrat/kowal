@@ -45,13 +45,6 @@ class ScaleAdvisor(object):
         result = int(my_value / self.tick_base)
         return result
 
-    def make_calculations(self, scale_factor):
-        '''
-        ScaleAdvisor:
-        '''
-        tmp_value = by_ten(self.my_value, scale_factor)
-        self.total_tick_periods = self.calculate_tick_periods(tmp_value)
-
     def rethink_my_state(self):
         '''
         ScaleAdvisor:
