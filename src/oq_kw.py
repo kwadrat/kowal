@@ -41,7 +41,7 @@ class ScaleAdvisor(object):
         ScaleAdvisor:
         '''
         self.min_tick_periods = min_tick_periods
-        self.total_tick_periods = 21
+        self.total_tick_periods = self.calculate_tick_periods(self.my_value * 10)
 
 
 class TestAxisScale(unittest.TestCase):
