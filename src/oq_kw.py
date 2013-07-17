@@ -22,10 +22,21 @@ class ScaleAdvisor(object):
         '''
         self.last_tick_value = 10
 
+    def set_value(self, my_value):
+        '''
+        ScaleAdvisor:
+        '''
+        self.my_value = my_value
+        self.last_tick_value = int(self.my_value)
+
 class TestAxisScale(unittest.TestCase):
     def test_axis_scale(self):
         '''
         TestAxisScale:
         '''
         obk = ScaleAdvisor()
+        obk.set_value(10.5)
+        self.assertEqual(obk.my_value, 10.5)
         self.assertEqual(obk.last_tick_value, 10.0)
+        obk.set_value(9.5)
+        self.assertEqual(obk.last_tick_value, 9.0)
