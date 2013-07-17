@@ -60,7 +60,7 @@ class ScaleAdvisor(object):
         if self.min_tick_periods == 3:
             self.little_step = 1.5
         else:
-            self.little_step = 2
+            self.little_step = 4
 
     def set_value(self, my_value):
         '''
@@ -102,7 +102,7 @@ class TestAxisScale(unittest.TestCase):
         obk.set_value(10.5)
         obk.rethink_my_state()
         self.assertEqual(obk.total_tick_periods, 5)
-        self.assertEqual(obk.little_step, 2)
+        self.assertEqual(obk.little_step, 4)
 
     def test_axis_five_scale(self):
         '''
