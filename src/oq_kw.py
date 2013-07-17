@@ -16,7 +16,7 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 class ScaleAdvisor(object):
-    def __init__(self):
+    def __init__(self, tick_base):
         '''
         ScaleAdvisor:
         '''
@@ -36,7 +36,7 @@ class TestAxisScale(unittest.TestCase):
         '''
         TestAxisScale:
         '''
-        obk = ScaleAdvisor()
+        obk = ScaleAdvisor(1)
         obk.set_value(10.5)
         self.assertEqual(obk.my_value, 10.5)
         self.assertEqual(obk.last_tick_value, 10.0)
