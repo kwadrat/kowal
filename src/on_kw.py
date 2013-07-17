@@ -21,6 +21,13 @@ class KreskiWykresu(object):
         '''
         KreskiWykresu:
         '''
+        self.draw_line = []
+
+    def append(self, krotka):
+        '''
+        KreskiWykresu:
+        '''
+        self.draw_line.append(krotka)
 
 class TestKresekWykresu(unittest.TestCase):
     def test_kresek_wykresu(self):
@@ -28,3 +35,4 @@ class TestKresekWykresu(unittest.TestCase):
         TestKresekWykresu:
         '''
         obk = KreskiWykresu()
+        obk.append
