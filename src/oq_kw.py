@@ -25,6 +25,12 @@ def calculate_scale(full_base, value):
     return result[0]
 
 class ScaleAdvisor(object):
+    def limit_tick_periods(self, min_tick_periods):
+        '''
+        ScaleAdvisor:
+        '''
+        self.min_tick_periods = min_tick_periods
+
     def __init__(self, tick_base):
         '''
         ScaleAdvisor:
@@ -61,12 +67,6 @@ class ScaleAdvisor(object):
         ScaleAdvisor:
         '''
         self.my_value = my_value
-
-    def limit_tick_periods(self, min_tick_periods):
-        '''
-        ScaleAdvisor:
-        '''
-        self.min_tick_periods = min_tick_periods
 
 
 class TestAxisScale(unittest.TestCase):
