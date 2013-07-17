@@ -22,6 +22,12 @@ class ScaleAdvisor(object):
         '''
         self.tick_base = tick_base
 
+    def calculate_tick_periods(self):
+        '''
+        ScaleAdvisor:
+        '''
+        return int(self.my_value / self.tick_base)
+
     def set_value(self, my_value):
         '''
         ScaleAdvisor:
