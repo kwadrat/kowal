@@ -83,7 +83,7 @@ class PoboroweSlupki(MojeSlupki):
                 self.wypisz_kwadransy_godziny(self.gorna_mniejsza, akt, nast)
         self.wypisz_jednostke_godziny()
 
-    def podpisz_kwadransami_godzinami(self):
+    def podpisz_obie_osie(self):
         '''
         PoboroweSlupki:
         '''
