@@ -83,11 +83,20 @@ class PoboroweSlupki(MojeSlupki):
                 self.wypisz_kwadransy_godziny(self.gorna_mniejsza, akt, nast)
         self.wypisz_jednostke_godziny()
 
+    def add_vertical_axis(self):
+        '''
+        PoboroweSlupki:
+        '''
+        end_x = self.szerokosc_dx_skali
+        end_y = self.wsp_y_na_dole_slupka
+        self.draw_line.tick_on_vertical_axis(end_x, end_y)
+
     def podpisz_obie_osie(self):
         '''
         PoboroweSlupki:
         '''
         self.kwadransy_godziny_z_kreskami()
+        self.add_vertical_axis()
 
     def wyznacz_poborowe_slupki(self, MinY, MaxY):
         '''
