@@ -151,8 +151,7 @@ class KlasaObrazu(object):
         KlasaObrazu:
         '''
         x = self.aqr.poziomo_tego_dnia(akt, self.szerokosc_dx_skali, szerokosc_obrazu)
-        self.draw_line.append(((x, wsp_y_pocz, x, wsp_y_pocz + oa_kw.DlugoscKresekMiesiecy),
-          oa_kw.Kolor_Kresek))
+        self.draw_line.line_with_default_color((x, wsp_y_pocz, x, wsp_y_pocz + oa_kw.DlugoscKresekMiesiecy))
 
     def wypisz_rzymskie_miesiace(self, akt, nast):
         '''
