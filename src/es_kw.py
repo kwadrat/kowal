@@ -316,7 +316,7 @@ class MojeSlupki(KlasaObrazu):
         self.IleSlupkow = self.dnw.odcinki_bazowe.len_odcinkow_bazowych() # Tyle rysowanych słupków
         self.ustaw_skalowanie_obrazu()
 
-    def wyznacz_gore_dol_slupka(self, vert_axis, MinY, MaxY, Wartosc):
+    def wyznacz_gore_dol_slupka(self, vert_axis, Wartosc):
         '''
         MojeSlupki:
         '''
@@ -337,7 +337,7 @@ class MojeSlupki(KlasaObrazu):
                 SlWspX = self.aqr.miejsce_umieszczenia_slupka(pocz, kon, self.szerokosc_dx_skali, self.szerokosc_obrazu)
                 if SlWspX != None:
                     Wartosc = jeden_odc_bzw.slownik_qm.jh_kwota()
-                    GoraSlupka, DolSlupka = self.wyznacz_gore_dol_slupka(vert_axis, MinY, MaxY, Wartosc)
+                    GoraSlupka, DolSlupka = self.wyznacz_gore_dol_slupka(vert_axis, Wartosc)
                     Etykieta = self.wyznacz_etykiete(pocz)
                     jeden_slupek = sj_kw.JedenSlupek(SlWspX, DolSlupka, GoraSlupka, Etykieta, Wartosc, jeden_odc_bzw)
                     self.DodajSlupek(jeden_slupek)
@@ -357,7 +357,7 @@ class MojeSlupki(KlasaObrazu):
                 SlWspX2 = self.aqr.miejsce_umieszczenia_slupka(kon, kon, self.szerokosc_dx_skali, self.szerokosc_obrazu)
                 Wartosc = jeden_odc_bzw.slownik_qm.umw_wartosc_s_qm
                 if SlWspX1 is not None and SlWspX2 is not None and Wartosc is not None:
-                    GoraSlupka, DolSlupka = self.wyznacz_gore_dol_slupka(vert_axis, MinY, MaxY, Wartosc)
+                    GoraSlupka, DolSlupka = self.wyznacz_gore_dol_slupka(vert_axis, Wartosc)
                     tmp_punkt = hr_kw.ProstokatDoRysowania(SlWspX1, GoraSlupka, SlWspX2, DolSlupka)
                     self.lista_rect_umw.append(tmp_punkt)
 

@@ -110,7 +110,7 @@ class PoboroweSlupki(MojeSlupki):
                 SlWspX = self.aqr.miejsce_umieszczenia_slupka(pocz, kon, self.szerokosc_dx_skali, self.koniec_x_wykresu)
                 if SlWspX != None:
                     Wartosc = jeden_odc_bzw.slownik_qm.jh_kwota()
-                    GoraSlupka, DolSlupka = self.wyznacz_gore_dol_slupka(vert_axis, MinY, MaxY, Wartosc)
+                    GoraSlupka, DolSlupka = self.wyznacz_gore_dol_slupka(vert_axis, Wartosc)
                     Etykieta = self.wyznacz_etykiete(pocz)
                     jeden_slupek = sj_kw.JedenSlupek(SlWspX, DolSlupka, GoraSlupka, Etykieta, Wartosc, jeden_odc_bzw)
                     self.DodajSlupek(jeden_slupek)
