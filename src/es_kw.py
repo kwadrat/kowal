@@ -47,19 +47,6 @@ def prawdziwe_rysowanie(draw, lista_prostokatow, slownik_rect, slownik_przekrocz
             slownik_efektywny = slownik_rect
         draw.rectangle((x1, y1, x2, y2), ** slownik_efektywny)
 
-if rq_kw.Docelowo_psyco_nie_pygresql:
-    ##############################################################################
-    def wyznacz_gorna_wartosc(MinY, MaxY, Wartosc):
-        gora_slupka = (Wartosc - MinY) / (MaxY - MinY)
-        return gora_slupka
-    ##############################################################################
-else:
-    ##############################################################################
-    def wyznacz_gorna_wartosc(MinY, MaxY, Wartosc):
-        gora_slupka = float(Wartosc - MinY) / (MaxY - MinY)
-        return gora_slupka
-    ##############################################################################
-
 KlasaObrazu = pt_kw.KlasaObrazu
 
 class MojeSlupki(KlasaObrazu):
@@ -348,7 +335,7 @@ class MojeSlupki(KlasaObrazu):
         '''
         MojeSlupki:
         '''
-        gora_slupka = wyznacz_gorna_wartosc(MinY, MaxY, Wartosc)
+        gora_slupka = vert_axis.wyznacz_gorna_wartosc(Wartosc)
         GoraSlupka = int(self.wsp_y_na_dole_slupka - (self.wsp_y_na_dole_slupka - self.margines_dy_powyzej_slupka) * gora_slupka)
         DolSlupka = int(self.wsp_y_na_dole_slupka)
         return GoraSlupka, DolSlupka
@@ -397,11 +384,3 @@ class TestMoichSlupkow(unittest.TestCase):
         self.assertEqual(CzescSlupka, 3)
         self.assertEqual(SzerPaska, 90)
         self.assertEqual(SzerSlupka, 30)
-
-    def test_funkcji_liczacej(self):
-        '''
-        TestMoichSlupkow:
-        '''
-        self.assertEqual(wyznacz_gorna_wartosc(0, 1, 1), 1.0)
-        self.assertEqual(wyznacz_gorna_wartosc(0, 2, 1), 0.5)
-        self.assertEqual(wyznacz_gorna_wartosc(1, 5, 2), 0.25)
