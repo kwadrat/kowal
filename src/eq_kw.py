@@ -102,7 +102,7 @@ class PoboroweSlupki(MojeSlupki):
         '''
         PoboroweSlupki:
         '''
-        pracuj = self.sprawdz_nietypowe_sytuacje(self.IleSlupkow, MinY, MaxY)
+        pracuj = self.sprawdz_nietypowe_sytuacje(self.IleSlupkow, vert_axis, MinY, MaxY)
         if pracuj:
             moje_paczki_faktur = self.dnw.odcinki_bazowe.p_odc_baz()
             for jeden_odc_bzw in moje_paczki_faktur:

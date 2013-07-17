@@ -284,7 +284,7 @@ class MojeSlupki(KlasaObrazu):
             napis = None
         return napis
 
-    def sprawdz_nietypowe_sytuacje(self, IleSlupkow, MinY, MaxY):
+    def sprawdz_nietypowe_sytuacje(self, IleSlupkow, vert_axis, MinY, MaxY):
         '''
         MojeSlupki:
         '''
@@ -357,7 +357,7 @@ class MojeSlupki(KlasaObrazu):
         '''
         MojeSlupki:
         '''
-        pracuj = self.sprawdz_nietypowe_sytuacje(self.IleSlupkow, MinY, MaxY)
+        pracuj = self.sprawdz_nietypowe_sytuacje(self.IleSlupkow, vert_axis, MinY, MaxY)
         if pracuj:
             moje_paczki_faktur = self.dnw.odcinki_bazowe.p_odc_baz()
             for jeden_odc_bzw in moje_paczki_faktur:
@@ -376,7 +376,7 @@ class MojeSlupki(KlasaObrazu):
         MojeSlupki:
         Rysowanie mocy zamówionej jako tło - dla porównania z mocami pobranymi
         '''
-        pracuj = self.sprawdz_nietypowe_sytuacje(self.IleSlupkow, MinY, MaxY)
+        pracuj = self.sprawdz_nietypowe_sytuacje(self.IleSlupkow, vert_axis, MinY, MaxY)
         if pracuj:
             moje_paczki_faktur = self.dnw.odcinki_bazowe.p_odc_baz()
             for jeden_odc_bzw in moje_paczki_faktur:
