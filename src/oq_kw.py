@@ -57,7 +57,8 @@ class ScaleAdvisor(object):
         ScaleAdvisor:
         '''
         self.min_tick_periods = min_tick_periods
-        self.make_calculations(1)
+        scale_factor = 1
+        self.make_calculations(scale_factor)
         self.little_step = 1.5
 
 
