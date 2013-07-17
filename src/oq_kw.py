@@ -48,6 +48,8 @@ class ScaleAdvisor(object):
         '''
         ScaleAdvisor:
         '''
+        scale_factor = calculate_scale(self.tick_base * self.min_tick_periods, self.my_value)
+        self.make_calculations( - scale_factor)
 
     def set_value(self, my_value):
         '''
