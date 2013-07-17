@@ -48,7 +48,8 @@ class ScaleAdvisor(object):
         ScaleAdvisor:
         '''
         self.my_value = my_value
-        self.make_calculations(0)
+        scale_factor = 0
+        self.make_calculations(scale_factor)
         self.little_step = 2
 
     def limit_tick_periods(self, min_tick_periods):
