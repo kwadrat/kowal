@@ -353,7 +353,7 @@ class MojeSlupki(KlasaObrazu):
         DolSlupka = int(self.wsp_y_na_dole_slupka)
         return GoraSlupka, DolSlupka
 
-    def wyznacz_slupki(self, MinY, MaxY):
+    def wyznacz_slupki(self, vert_axis, MinY, MaxY):
         '''
         MojeSlupki:
         '''
