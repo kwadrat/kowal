@@ -29,6 +29,13 @@ class KreskiWykresu(object):
         '''
         self.draw_line.append(krotka)
 
+    def narysuj_na_obrazku(self, draw):
+        '''
+        KreskiWykresu:
+        '''
+        for polozenie, kolor in self.draw_line:
+            draw.line(polozenie, kolor)
+
 class TestKresekWykresu(unittest.TestCase):
     def test_kresek_wykresu(self):
         '''
@@ -36,3 +43,4 @@ class TestKresekWykresu(unittest.TestCase):
         '''
         obk = KreskiWykresu()
         obk.append
+        obk.narysuj_na_obrazku
