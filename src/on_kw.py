@@ -36,6 +36,12 @@ class KreskiWykresu(object):
         krotka = (dimensions, oa_kw.Kolor_Kresek)
         self.append(krotka)
 
+    def tick_on_vertical_axis(self, end_x, end_y):
+        '''
+        KreskiWykresu:
+        '''
+        self.line_with_default_color((end_x - oa_kw.DlugoscKresekMiesiecy, end_y, end_x, end_y))
+
     def narysuj_na_obrazku(self, draw):
         '''
         KreskiWykresu:
@@ -52,3 +58,4 @@ class TestKresekWykresu(unittest.TestCase):
         obk.append
         obk.narysuj_na_obrazku
         obk.line_with_default_color
+        obk.tick_on_vertical_axis
