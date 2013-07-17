@@ -20,13 +20,9 @@ def by_ten(value, ten_exponent):
     return value * 10 ** ten_exponent
 
 def calculate_scale(full_base, value):
-    if value == 21:
-        result = 1
-    elif full_base == 10 and value == 3:
-        result = -1
-    else:
-        result = 0
-    return result
+    quotient = float(value) / full_base
+    result = divmod(math.log10(quotient), 1)
+    return result[0]
 
 class ScaleAdvisor(object):
     def __init__(self, tick_base):
