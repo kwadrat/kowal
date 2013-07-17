@@ -256,21 +256,6 @@ class MojeSlupki(KlasaObrazu):
             napis = None
         return napis
 
-    def zbyt_niski_wykres(self, MinY, MaxY):
-        '''
-        MojeSlupki:
-        '''
-        if MinY >= MaxY: # Omijamy wykresy bez zróżnicowanych danych
-            napis = ('Za malo roznicy w skali y, MinY = %(MinY)s, MaxY = %(MaxY)s' %
-              dict(
-                MinY = str(MinY),
-                MaxY = str(MaxY),
-              )
-            )
-        else:
-            napis = None
-        return napis
-
     def sprawdz_nietypowe_sytuacje(self, IleSlupkow, vert_axis, MinY, MaxY):
         '''
         MojeSlupki:
@@ -283,7 +268,7 @@ class MojeSlupki(KlasaObrazu):
                 self.dolacz_napis_dla_rogu(Napis)
                 pracuj = 0
         if pracuj:
-            Napis = self.zbyt_niski_wykres(MinY, MaxY)
+            Napis = vert_axis.zbyt_niski_wykres()
             if Napis:
                 # Informacja o za małym zróżnicowaniu danych
                 self.dolacz_napis_dla_rogu(Napis)
