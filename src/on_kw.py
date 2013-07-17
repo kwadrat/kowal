@@ -4,6 +4,7 @@
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import oa_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
