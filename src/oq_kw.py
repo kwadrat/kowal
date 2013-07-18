@@ -45,7 +45,7 @@ class ScaleAdvisor(object):
         self.set_value(my_value)
         self.limit_tick_periods(2)
 
-    def rethink_my_state(self):
+    def rethink_my_state(self, delta):
         '''
         ScaleAdvisor:
         '''
@@ -60,7 +60,7 @@ class ScaleAdvisor(object):
         '''
         ScaleAdvisor:
         '''
-        total_tick_periods = self.rethink_my_state()
+        total_tick_periods = self.rethink_my_state(0)
         return (
             total_tick_periods,
             - total_tick_periods * self.little_step,
