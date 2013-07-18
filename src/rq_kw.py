@@ -51,6 +51,16 @@ DP_Tabela,
 'Tabela',
 )
 
+DanePoborowegoCzasu = (
+DPC_Dzien,
+DPC_Tydzien,
+DPC_Miesiac,
+) = (
+'Dzień',
+'Tydzień',
+'Miesiąc',
+)
+
 # Domyślnie chcemy wszystkie lata w zestawieniu
 PoleWszystko = 'Wszystko'
 PoleNN = 'None'
