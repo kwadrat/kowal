@@ -3,6 +3,7 @@
 
 fq_account_qv = 'account'
 fq_f_object_qv = 'f_object'
+fq_grupa_qv = 'grupa'
 fq_k_object_qv = 'k_object'
 fq_k_power_qv = 'k_power'
 fq_k_sample_qv = 'k_sample'
