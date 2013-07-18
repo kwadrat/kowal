@@ -84,7 +84,7 @@ class PoboroweSlupki(MojeSlupki):
                 self.wypisz_kwadransy_godziny(self.gorna_mniejsza, akt, nast)
         self.wypisz_jednostke_godziny()
 
-    def add_vertical_axis(self):
+    def add_vertical_axis(self, vert_axis):
         '''
         PoboroweSlupki:
         '''
@@ -97,7 +97,7 @@ class PoboroweSlupki(MojeSlupki):
         PoboroweSlupki:
         '''
         self.kwadransy_godziny_z_kreskami()
-        self.add_vertical_axis()
+        self.add_vertical_axis(vert_axis)
 
     def wyznacz_poborowe_slupki(self, vert_axis):
         '''
