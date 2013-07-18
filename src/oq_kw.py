@@ -63,6 +63,10 @@ class ScaleAdvisor(object):
         total_tick_periods = self.rethink_my_state(0)
         if total_tick_periods < self.min_tick_periods:
             total_tick_periods = self.rethink_my_state(1)
+            if total_tick_periods < self.min_tick_periods:
+                raise RuntimeError(
+                    'Required too many, achieved only: %d' %
+                    total_tick_periods)
         return (
             total_tick_periods,
             - total_tick_periods * self.little_step,
@@ -121,3 +125,5 @@ class TestAxisScale(unittest.TestCase):
         self.assertEqual(obk.get_values(), (10, -10.0, 1.0))
         obk.limit_tick_periods(3)
         self.assertEqual(obk.get_values(), (7, -10.5, 1.5))
+        obk.limit_tick_periods(100)
+        self.assertRaises(RuntimeError, obk.get_values)
