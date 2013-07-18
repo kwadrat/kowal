@@ -91,3 +91,5 @@ lxa_43_inst = """\
 formularz"""
 lxa_44_inst = '''\
 selwyborca'''
+lxa_45_inst = '''\
+this.form.submit();'''
