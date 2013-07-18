@@ -106,6 +106,4 @@ class TestAxisScale(unittest.TestCase):
         self.assertEqual(obk.total_tick_periods, 1)
         obk.limit_tick_periods(3)
         obk.rethink_my_state()
-        self.assertEqual(obk.total_tick_periods, 7)
-        self.assertEqual(obk.little_step, 1.5)
         self.assertEqual(obk.get_pair(), (7, 1.5))
