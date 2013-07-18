@@ -62,8 +62,8 @@ class ScaleAdvisor(object):
         '''
         total_tick_periods = self.rethink_my_state()
         return (
-            self.total_tick_periods,
-            - self.total_tick_periods * self.little_step,
+            total_tick_periods,
+            - total_tick_periods * self.little_step,
             self.little_step,
             )
 
