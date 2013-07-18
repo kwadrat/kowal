@@ -107,6 +107,40 @@ def op_ptd(srodek, *lista, **slownik):
 def op_32_sbf():
     return op_tbl(class_=fy_kw.lxa_40_inst, border=1)
 
+def op_select(nzw_sel, brak_idnt=0, class_=None, onchange=None, style=None, to_id=None, multiple=0):
+    if to_id is None:
+        moje_id = nzw_sel
+    else:
+        moje_id = to_id
+    if brak_idnt:
+        kawalek_idnt = ''
+    else:
+        kawalek_idnt = ' id="%(moje_id)s"' % dict(moje_id = moje_id)
+    if class_ is None:
+        kawalek_klasy = ''
+    else:
+        kawalek_klasy = ' class="%(class_)s"' % dict(class_ = class_)
+    if onchange is None:
+        kawalek_zmiany = ''
+    else:
+        kawalek_zmiany = ' onchange="%(onchange)s"' % dict(onchange = onchange)
+    if style is None:
+        kawalek_stylu = ''
+    else:
+        kawalek_stylu = ' style="%(style)s"' % dict(style = style)
+    if multiple:
+        kawalek_mltp = ' multiple="multiple"'
+    else:
+        kawalek_mltp = ''
+    return '<select%(kawalek_idnt)s name="%(nzw_sel)s"%(kawalek_klasy)s%(kawalek_mltp)s%(kawalek_stylu)s%(kawalek_zmiany)s>\n' % dict(
+      nzw_sel = nzw_sel,
+      kawalek_idnt = kawalek_idnt,
+      kawalek_klasy = kawalek_klasy,
+      kawalek_mltp = kawalek_mltp,
+      kawalek_stylu = kawalek_stylu,
+      kawalek_zmiany = kawalek_zmiany,
+      )
+
 class TestTytuluHtml(unittest.TestCase):
     def test_tytulu_html(self):
         '''
@@ -142,6 +176,12 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(op_option('abc', 'a', 1), '<option value="a" selected="selected">abc</option>\n')
         self.assertEqual(op_option('abc', 'a', 0), '<option value="a">abc</option>\n')
         self.assertEqual(op_option('abc', 'b', id='identyf'), '<option value="b" id="identyf">abc</option>\n')
+        self.assertEqual(op_select('abc', brak_idnt = 1), '<select name="abc">\n')
+        self.assertEqual(op_select('abc'), '<select id="abc" name="abc">\n')
+        self.assertEqual(op_select('abc', class_ = 'klasa_css'), '<select id="abc" name="abc" class="klasa_css">\n')
+        self.assertEqual(op_select('abc', class_ = 'klasa_css', onchange = 'def'), '<select id="abc" name="abc" class="klasa_css" onchange="def">\n')
+        self.assertEqual(op_select('abc', class_ = 'klasa_css', onchange = 'def', style ='ghi'),
+            '<select id="abc" name="abc" class="klasa_css" style="ghi" onchange="def">\n')
 
     def test_zaznaczania_opcji(self):
         '''
