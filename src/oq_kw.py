@@ -56,6 +56,17 @@ class ScaleAdvisor(object):
         total_tick_periods = int(tmp_value / my_step)
         return total_tick_periods
 
+    def err_message(self):
+        '''
+        ScaleAdvisor:
+        '''
+        return repr((
+            self.my_value,
+            self.tick_base,
+            self.min_tick_periods,
+            self.little_step,
+            ))
+
     def get_values(self):
         '''
         ScaleAdvisor:
