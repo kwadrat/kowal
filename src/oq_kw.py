@@ -37,11 +37,12 @@ class ScaleAdvisor(object):
         '''
         self.min_tick_periods = min_tick_periods
 
-    def __init__(self, tick_base):
+    def __init__(self, tick_base, my_value):
         '''
         ScaleAdvisor:
         '''
         self.tick_base = tick_base
+        self.set_value(my_value)
         self.limit_tick_periods(2)
 
     def rethink_my_state(self):
@@ -82,8 +83,7 @@ class TestAxisScale(unittest.TestCase):
         '''
         TestAxisScale:
         '''
-        obk = ScaleAdvisor(1)
-        obk.set_value(10.5)
+        obk = ScaleAdvisor(1, 10.5)
         self.assertEqual(obk.my_value, 10.5)
         self.assertEqual(obk.get_pair(), (5, -10.0, 2.0))
         obk.set_value(9.5)
@@ -93,16 +93,14 @@ class TestAxisScale(unittest.TestCase):
         '''
         TestAxisScale:
         '''
-        obk = ScaleAdvisor(2)
-        obk.set_value(10.5)
+        obk = ScaleAdvisor(2, 10.5)
         self.assertEqual(obk.get_pair(), (2, -8.0, 4.0))
 
     def test_axis_five_scale(self):
         '''
         TestAxisScale:
         '''
-        obk = ScaleAdvisor(5)
-        obk.set_value(10.6)
+        obk = ScaleAdvisor(5, 10.6)
         self.assertEqual(obk.get_pair(), (1, -10.0, 10.0))
         obk.limit_tick_periods(3)
         self.assertEqual(obk.get_pair(), (7, -10.5, 1.5))
