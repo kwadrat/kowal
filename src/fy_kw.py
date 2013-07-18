@@ -89,3 +89,5 @@ lxa_42_inst = """\
 SELECT k_sample FROM %(table_name)s WHERE f_object=%(id_obiekt)d;"""
 lxa_43_inst = """\
 formularz"""
+lxa_44_inst = '''\
+selwyborca'''
