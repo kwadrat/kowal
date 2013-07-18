@@ -23,6 +23,13 @@ formularz_1c_kon_komorki = '</td>\n'
 formularz_1c_zlm_wrsz = '<br />\n'
 hard_space = '&nbsp;'
 
+def op_sel_lgc(warunek):
+    if warunek:
+        napis = ' selected="selected"'
+    else:
+        napis = ''
+    return napis
+
 def qh_ttl(tmp_title):
     if tmp_title is None:
         wynik = ''
@@ -121,3 +128,10 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(op_ptd('fghi', colspan=2), '<td colspan="2">fghi</td>\n')
         self.assertEqual(hard_space, '&nbsp;')
         self.assertEqual(op_32_sbf(), '<table class="tabelkowiec" border="1">\n')
+
+    def test_zaznaczania_opcji(self):
+        '''
+        TestTytuluHtml:
+        '''
+        self.assertEqual(op_sel_lgc(False), '')
+        self.assertEqual(op_sel_lgc(True), ' selected="selected"')
