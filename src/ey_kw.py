@@ -32,6 +32,7 @@ class SzkieletDatDlaPoborow(KlasaOgolnaSzkieletuDat):
             lw_kw.Dn_Energy: 24,
             lw_kw.Dn_Power: 96,
             }[tvk_pobor]
+        self.tvk_pobor = tvk_pobor
         self.przypisz_szkielet(generator_szkieletu(wymiar_czasowy))
         self.wymiar_czasowy = wymiar_czasowy
 
