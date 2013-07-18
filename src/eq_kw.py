@@ -85,6 +85,15 @@ class PoboroweSlupki(MojeSlupki):
                 self.wypisz_kwadransy_godziny(self.gorna_mniejsza, akt, nast)
         self.wypisz_jednostke_godziny()
 
+    def jednostka_osi_pionowej(self):
+        '''
+        PoboroweSlupki:
+        '''
+        return {
+            lw_kw.Dn_Energy: 'kWh',
+            lw_kw.Dn_Power: 'kW',
+            }[self.aqr.tvk_pobor]
+
     def add_vertical_axis(self, vert_axis):
         '''
         PoboroweSlupki:
@@ -100,11 +109,7 @@ class PoboroweSlupki(MojeSlupki):
             napis_liczby = lm_kw.rzeczywista_na_napis(Wartosc)
             self.my_texts.append((end_x - 15, GoraSlupka, napis_liczby))
 
-        jednostka_osi_pionowej = {
-            lw_kw.Dn_Energy: 'kWh',
-            lw_kw.Dn_Power: 'kW',
-            }[self.aqr.tvk_pobor]
-        self.my_texts.append((15, 5, jednostka_osi_pionowej))
+        self.my_texts.append((15, 5, self.jednostka_osi_pionowej()))
 
     def podpisz_obie_osie(self, vert_axis):
         '''
