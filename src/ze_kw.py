@@ -141,6 +141,9 @@ def op_select(nzw_sel, brak_idnt=0, class_=None, onchange=None, style=None, to_i
       kawalek_zmiany = kawalek_zmiany,
       )
 
+def op_30_sbf(nzw_sel):
+    return op_select(nzw_sel=nzw_sel, brak_idnt=1, onchange=fy_kw.lxa_45_inst, class_=fy_kw.lxa_44_inst)
+
 class TestTytuluHtml(unittest.TestCase):
     def test_tytulu_html(self):
         '''
@@ -182,6 +185,7 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(op_select('abc', class_ = 'klasa_css', onchange = 'def'), '<select id="abc" name="abc" class="klasa_css" onchange="def">\n')
         self.assertEqual(op_select('abc', class_ = 'klasa_css', onchange = 'def', style ='ghi'),
             '<select id="abc" name="abc" class="klasa_css" style="ghi" onchange="def">\n')
+        self.assertEqual(op_30_sbf('abc'), '<select name="abc" class="selwyborca" onchange="this.form.submit();">\n')
 
     def test_zaznaczania_opcji(self):
         '''
