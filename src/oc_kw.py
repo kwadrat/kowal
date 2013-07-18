@@ -16,6 +16,9 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+# Nie ujednolicaj adresu IP z nazwą, bo na razie chcemy synchronizować różne treści
+rjb_klnt_ip = '87.101.66.154'
+
 rjb_sam_slsh = '/'
 rjb_pocz_hm_dir = '/home/'
 rjb_do_pbl_ht = rjb_sam_slsh + 'public_html'
@@ -73,3 +76,4 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(SciezkaPlikow, '/home/kwadrat/public_html/gen_kowal/')
         self.assertEqual(pelna_generowana_nazwa('tmp.png'), 'http://media.ciri.pl/~kwadrat/gen_kowal/tmp.png')
         self.assertEqual(pelna_generowana_nazwa('inny.jpg'), 'http://media.ciri.pl/~kwadrat/gen_kowal/inny.jpg')
+        self.assertEqual(rjb_klnt_ip, '87.101.66.154')
