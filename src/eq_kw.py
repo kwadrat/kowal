@@ -91,7 +91,14 @@ class PoboroweSlupki(MojeSlupki):
         '''
         end_x = self.szerokosc_dx_skali
         end_y = self.wsp_y_na_dole_slupka
-        self.draw_line.tick_on_vertical_axis(end_x, end_y)
+        n_total, n_step = oq_kw.determine_vert_params(vert_axis.MaxY)
+        for i in range(n_total + 1):
+            Wartosc = float(i * n_step)
+            gora_slupka = vert_axis.wyznacz_gorna_wartosc(Wartosc)
+            GoraSlupka = int(self.wsp_y_na_dole_slupka - (self.wsp_y_na_dole_slupka - self.margines_dy_powyzej_slupka) * gora_slupka)
+            self.draw_line.tick_on_vertical_axis(end_x, GoraSlupka)
+            napis_liczby = lm_kw.rzeczywista_na_napis(Wartosc)
+            self.my_texts.append((end_x - 15, GoraSlupka, napis_liczby))
 
     def podpisz_obie_osie(self, vert_axis):
         '''
