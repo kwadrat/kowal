@@ -16,6 +16,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+formularz_1c_kon_slct = '</select>\n'
 formularz_1c_kon_tabeli = '</table>\n'
 formularz_67c_kon_wiersza = '</tr>\n'
 formularz_1c_kon_komorki = '</td>\n'
@@ -114,6 +115,7 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(formularz_1c_kon_tabeli, '</table>\n')
         self.assertEqual(formularz_67c_kon_wiersza, '</tr>\n')
         self.assertEqual(formularz_1c_kon_komorki, '</td>\n')
+        self.assertEqual(formularz_1c_kon_slct, '</select>\n')
         self.assertEqual(op_ptd('abc'), '<td>abc</td>\n')
         self.assertEqual(op_ptd('de', class_='klasa', colspan=7), '<td class="klasa" colspan="7">de</td>\n')
         self.assertEqual(op_ptd('fghi', colspan=2), '<td colspan="2">fghi</td>\n')
