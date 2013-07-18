@@ -76,8 +76,8 @@ class ScaleAdvisor(object):
             total_tick_periods = self.rethink_my_state(1)
             if total_tick_periods < self.min_tick_periods:
                 raise RuntimeError(
-                    'Required too many, achieved only: %d' %
-                    total_tick_periods)
+                    'Required too many, achieved only: %d (%s)' %
+                    (total_tick_periods, self.err_message()))
         return (
             total_tick_periods,
             - total_tick_periods * self.little_step,
