@@ -71,7 +71,8 @@ class ScaleAdvisor(object):
 
 
 def determine_vert_params(my_value):
-    return (10, 1.0)
+    all_params = ScaleAdvisor(5, 10.6).get_values()
+    return all_params[0], all_params[2]
 
 class TestAxisScale(unittest.TestCase):
     def test_helper_functions(self):
