@@ -25,6 +25,12 @@ def calculate_scale(full_base, value):
     return result[0]
 
 class ScaleAdvisor(object):
+    def set_value(self, my_value):
+        '''
+        ScaleAdvisor:
+        '''
+        self.my_value = my_value
+
     def limit_tick_periods(self, min_tick_periods):
         '''
         ScaleAdvisor:
@@ -47,12 +53,6 @@ class ScaleAdvisor(object):
         self.little_step = by_ten(my_step, scale_factor)
         tmp_value = by_ten(self.my_value, - scale_factor)
         self.total_tick_periods = int(tmp_value / my_step)
-
-    def set_value(self, my_value):
-        '''
-        ScaleAdvisor:
-        '''
-        self.my_value = my_value
 
     def get_pair(self):
         '''
