@@ -54,6 +54,12 @@ class ScaleAdvisor(object):
         '''
         self.my_value = my_value
 
+    def get_pair(self):
+        '''
+        ScaleAdvisor:
+        '''
+        return self.total_tick_periods, self.little_step
+
 
 class TestAxisScale(unittest.TestCase):
     def test_helper_functions(self):
@@ -102,3 +108,4 @@ class TestAxisScale(unittest.TestCase):
         obk.rethink_my_state()
         self.assertEqual(obk.total_tick_periods, 7)
         self.assertEqual(obk.little_step, 1.5)
+        self.assertEqual(obk.get_pair(), (7, 1.5))
