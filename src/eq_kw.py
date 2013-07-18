@@ -100,6 +100,12 @@ class PoboroweSlupki(MojeSlupki):
             napis_liczby = lm_kw.rzeczywista_na_napis(Wartosc)
             self.my_texts.append((end_x - 15, GoraSlupka, napis_liczby))
 
+        jednostka_osi_pionowej = {
+            lw_kw.Dn_Energy: 'kWh',
+            lw_kw.Dn_Power: 'kW',
+            }[self.aqr.tvk_pobor]
+        self.my_texts.append((15, 5, jednostka_osi_pionowej))
+
     def podpisz_obie_osie(self, vert_axis):
         '''
         PoboroweSlupki:
