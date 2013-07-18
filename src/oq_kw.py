@@ -71,8 +71,12 @@ class ScaleAdvisor(object):
 
 
 def determine_vert_params(my_value):
-    all_params = ScaleAdvisor(5, 10.6).get_values()
-    return all_params[0], all_params[2]
+    list_of_results = map(
+        lambda tick_base: ScaleAdvisor(tick_base, my_value).get_values(),
+        [1, 2, 5])
+    list_of_results.sort()
+    solution = list_of_results[0]
+    return solution[0], solution[2]
 
 class TestAxisScale(unittest.TestCase):
     def test_helper_functions(self):
@@ -90,7 +94,7 @@ class TestAxisScale(unittest.TestCase):
         '''
         TestAxisScale:
         '''
-        self.assertEqual(determine_vert_params(10.6), (10, 1.0))
+        self.assertEqual(determine_vert_params(10.6), (2, 4.0))
 
     def test_axis_scale(self):
         '''
