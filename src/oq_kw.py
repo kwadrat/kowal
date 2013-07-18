@@ -54,12 +54,13 @@ class ScaleAdvisor(object):
         self.little_step = by_ten(my_step, scale_factor)
         tmp_value = by_ten(self.my_value, - scale_factor)
         self.total_tick_periods = int(tmp_value / my_step)
+        return self.total_tick_periods
 
     def get_values(self):
         '''
         ScaleAdvisor:
         '''
-        self.rethink_my_state()
+        total_tick_periods = self.rethink_my_state()
         return (
             self.total_tick_periods,
             - self.total_tick_periods * self.little_step,
