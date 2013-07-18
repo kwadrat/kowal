@@ -51,6 +51,15 @@ def wyznacz_wstawke(nazwa, wartosc):
         napis = ' %s="%s"' % (nazwa, wartosc)
     return napis
 
+def op_option(napis, wartosc=None, zaznaczenie=0, id=None):
+    if wartosc is None:
+        kod_wart = ''
+    else:
+        kod_wart = ' value="%s"' % wartosc
+    kod_idntf = wyznacz_wstawke('id', id)
+    kod_zazn = op_sel_lgc(zaznaczenie)
+    return '<option%s%s%s>%s</option>\n' % (kod_wart, kod_zazn, kod_idntf, napis)
+
 def op_td(class_ = None, colspan=None, rowspan=None, title=None):
     if class_:
         kawalek_klasy = ' class="%(class_)s"' % dict(class_ = class_)
@@ -128,6 +137,11 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(op_ptd('fghi', colspan=2), '<td colspan="2">fghi</td>\n')
         self.assertEqual(hard_space, '&nbsp;')
         self.assertEqual(op_32_sbf(), '<table class="tabelkowiec" border="1">\n')
+        self.assertEqual(op_option('abc'), '<option>abc</option>\n')
+        self.assertEqual(op_option('abc', 'a'), '<option value="a">abc</option>\n')
+        self.assertEqual(op_option('abc', 'a', 1), '<option value="a" selected="selected">abc</option>\n')
+        self.assertEqual(op_option('abc', 'a', 0), '<option value="a">abc</option>\n')
+        self.assertEqual(op_option('abc', 'b', id='identyf'), '<option value="b" id="identyf">abc</option>\n')
 
     def test_zaznaczania_opcji(self):
         '''
