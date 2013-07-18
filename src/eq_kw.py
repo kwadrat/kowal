@@ -92,7 +92,7 @@ class PoboroweSlupki(MojeSlupki):
         end_y = self.wsp_y_na_dole_slupka
         self.draw_line.tick_on_vertical_axis(end_x, end_y)
 
-    def podpisz_obie_osie(self):
+    def podpisz_obie_osie(self, vert_axis):
         '''
         PoboroweSlupki:
         '''
