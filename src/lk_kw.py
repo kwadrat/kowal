@@ -9,3 +9,4 @@ LITERA_PASEK = 'p'
 LITERA_WYKRES = 'w'
 KLD_CIEMNY = 0
 KLD_JASNY = 1
+EtykietaLP = 'L.p.' # Liczba porządkowa
