@@ -13,6 +13,9 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+# Baza produkcyjna/rozwojowa
+MamBazeProd = 0
+
 WersjaUbuntuTest = 0
 WersjaUbuntuRun = WersjaUbuntuTest and 0
 
