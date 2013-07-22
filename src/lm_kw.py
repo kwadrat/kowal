@@ -59,6 +59,14 @@ def generate_scale(max_value):
 def roznica_dokladna(a, b):
     return d2a(a2d(b) - a2d(a))
 
+def decimal_suma_wybranych_wpisow_slownika(slownik, klucze):
+    decimal_suma_wartosci = wartosc_zero_globalna
+    for klucz in klucze:
+        ulotna_wartosc = slownik.pobierz_element(klucz)
+        moja_wartosc = a2d(ulotna_wartosc)
+        decimal_suma_wartosci += moja_wartosc
+    return decimal_suma_wartosci
+
 class TestPointNumbers(unittest.TestCase):
     def test_point_numbers(self):
         '''
