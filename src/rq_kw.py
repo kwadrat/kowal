@@ -16,6 +16,8 @@ for i in NazwyModulow:
 # Baza produkcyjna/rozwojowa
 MamBazeProd = 0
 
+zst_wysyla_energie_na_prod = 0
+
 WersjaUbuntuTest = 0
 WersjaUbuntuRun = WersjaUbuntuTest and 0
 
