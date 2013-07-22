@@ -39,7 +39,7 @@ class BuilderBash(object):
             'git checkout -b %s; git checkout master\n' % cm_name,
             'cd ../dkw; git checkout -b %s; git checkout master; cd ../bkw\n' % cm_name,
             'vi ../dkw/src/rq_kw.py\n',
-            'rm ../ckw/src/*.py; cp ../dkw/src/*.py ../ckw/src/; rm ../akw/*.py; cp *.py ../akw/; git checkout co_kw.py; touch ../akw/pw_kw.py\n',
+            'rm ../ckw/src/*.py; cp ../dkw/src/*.py ../ckw/src/; rm ../akw/*.py; cp *.py ../akw/; cd ../dkw; git checkout src/rq_kw.py; cd ../bkw; touch ../akw/pw_kw.py\n',
             ])
 
     def code_snapshot(self):
