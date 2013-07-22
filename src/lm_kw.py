@@ -56,6 +56,9 @@ def generate_scale(max_value):
     the_last = int(max_value)
     return map(a2d, range(the_last + 1))
 
+def roznica_dokladna(a, b):
+    return d2a(a2d(b) - a2d(a))
+
 class TestPointNumbers(unittest.TestCase):
     def test_point_numbers(self):
         '''
