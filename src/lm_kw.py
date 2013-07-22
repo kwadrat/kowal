@@ -85,4 +85,3 @@ class TestPointNumbers(unittest.TestCase):
         '''
         self.assertEqual(generate_scale(a2d('10.5')), map(a2d, range(11)))
         self.assertEqual(generate_scale(2.5), map(a2d, range(3)))
-
