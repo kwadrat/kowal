@@ -38,7 +38,7 @@ class BuilderBash(object):
         return ''.join([
             'git checkout -b %s; git checkout master\n' % cm_name,
             'cd ../dkw; git checkout -b %s; git checkout master; cd ../bkw\n' % cm_name,
-            'vi co_kw.py\n',
+            'vi ../dkw/src/rq_kw.py\n',
             'rm ../ckw/src/*.py; cp ../dkw/src/*.py ../ckw/src/; rm ../akw/*.py; cp *.py ../akw/; git checkout co_kw.py; touch ../akw/pw_kw.py\n',
             ])
 
