@@ -46,6 +46,7 @@ GenPicDir = 'gen_kowal/'
 poczatek_gen = rjb_sciezka_a_kw + GenPicDir
 SciezkaPlikow = rjb_ph_uztk + GenPicDir
 EYK_lporz_fktr = 'lp_faktury'
+rjb_kwl_sam = 'kowal'
 
 def pelna_generowana_nazwa(nazwa):
     return poczatek_gen + nazwa
@@ -77,3 +78,4 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(pelna_generowana_nazwa('tmp.png'), 'http://media.ciri.pl/~kwadrat/gen_kowal/tmp.png')
         self.assertEqual(pelna_generowana_nazwa('inny.jpg'), 'http://media.ciri.pl/~kwadrat/gen_kowal/inny.jpg')
         self.assertEqual(rjb_klnt_ip, '87.101.66.154')
+        self.assertEqual(rjb_kwl_sam, 'kowal')
