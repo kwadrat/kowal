@@ -158,6 +158,9 @@ def op_dh(detect_missing_keyword=None, id=None, class_=None):
         wstawka_cls=wstawka_cls,
         )
 
+def op_li(srodek):
+    return '<li>%s</li>\n' % srodek
+
 
 class TestTytuluHtml(unittest.TestCase):
     def test_tytulu_html(self):
@@ -207,6 +210,7 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(op_dh(id='abc'), '<div id="abc">\n')
         self.assertEqual(op_dh(class_='klasa_css'), '<div class="klasa_css">\n')
         self.assertRaises(RuntimeError, op_dh, 'abc')
+        self.assertEqual(op_li('abc'), '<li>abc</li>\n')
 
     def test_zaznaczania_opcji(self):
         '''
