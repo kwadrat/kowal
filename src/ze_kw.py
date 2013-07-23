@@ -24,6 +24,7 @@ formularz_1c_zlm_wrsz = '<br />\n'
 formularz_1c_kon_formularza = '</form>\n'
 hard_space = '&nbsp;'
 formularz_1c_kon_dzialu = '</div>\n'
+formularz_1c_pocz_pozycji = '<li>'
 formularz_1c_kon_pozycji = '</li>\n'
 
 def op_sel_lgc(warunek):
@@ -213,5 +214,6 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertRaises(RuntimeError, op_dh, 'abc')
         self.assertEqual(op_sel_lgc(False), '')
         self.assertEqual(op_sel_lgc(True), ' selected="selected"')
+        self.assertEqual(formularz_1c_pocz_pozycji, '<li>')
         self.assertEqual(formularz_1c_kon_pozycji, '</li>\n')
         self.assertEqual(op_li('abc'), '<li>abc</li>\n')
