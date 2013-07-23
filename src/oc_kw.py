@@ -75,6 +75,9 @@ def fn_a_in_dwa(wersja_produkcyjna):
         wynik = 'inne2'
     return wynik
 
+def fn_adres_post(wersja_produkcyjna):
+    return rjb_sam_slsh + fn_a_in_dwa(wersja_produkcyjna) + rjb_sam_slsh + dodaj_py('l2')
+
 class TestConstantStrings(unittest.TestCase):
     def test_constant_strings(self):
         '''
@@ -119,3 +122,5 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(rjb_py_osma, 'l8.py')
         self.assertEqual(fn_a_in_dwa(0), 'inne2')
         self.assertEqual(fn_a_in_dwa(1), 'inne')
+        self.assertEqual(fn_adres_post(1), '/inne/l2.py')
+        self.assertEqual(fn_adres_post(0), '/inne2/l2.py')
