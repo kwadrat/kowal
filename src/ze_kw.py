@@ -23,6 +23,7 @@ formularz_1c_kon_komorki = '</td>\n'
 formularz_1c_zlm_wrsz = '<br />\n'
 formularz_1c_kon_formularza = '</form>\n'
 hard_space = '&nbsp;'
+formularz_1c_kon_dzialu = '</div>\n'
 
 def op_sel_lgc(warunek):
     if warunek:
@@ -171,6 +172,7 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(formularz_1c_kon_komorki, '</td>\n')
         self.assertEqual(formularz_1c_kon_slct, '</select>\n')
         self.assertEqual(formularz_1c_kon_formularza, '</form>\n')
+        self.assertEqual(formularz_1c_kon_dzialu, '</div>\n')
         self.assertEqual(op_ptd('abc'), '<td>abc</td>\n')
         self.assertEqual(op_ptd('de', class_='klasa', colspan=7), '<td class="klasa" colspan="7">de</td>\n')
         self.assertEqual(op_ptd('fghi', colspan=2), '<td colspan="2">fghi</td>\n')
