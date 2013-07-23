@@ -74,18 +74,18 @@ def op_td(class_ = None, colspan=None, rowspan=None, title=None):
     kawalek_rws = wstawka_liczba('rowspan', rowspan)
     wstawka_tytulu = qh_ttl(title)
     return '<td%(kawalek_klasy)s%(kawalek_csp)s%(kawalek_rws)s%(wstawka_tytulu)s>' % dict(
-      kawalek_klasy = kawalek_klasy,
-      kawalek_csp = kawalek_csp,
-      kawalek_rws = kawalek_rws,
-      wstawka_tytulu=wstawka_tytulu,
-      )
+        kawalek_klasy = kawalek_klasy,
+        kawalek_csp = kawalek_csp,
+        kawalek_rws = kawalek_rws,
+        wstawka_tytulu=wstawka_tytulu,
+        )
 
 def op_tr(id=None, nzw_wrsz=None, ukryty=0):
     wstawka_id = wyznacz_wstawke('id', id)
     wstawka_nzw = wyznacz_wstawke('name', nzw_wrsz)
     return '<tr%(wstawka_id)s%(wstawka_nzw)s>\n' % dict(
-      wstawka_id = wstawka_id,
-      wstawka_nzw = wstawka_nzw)
+        wstawka_id = wstawka_id,
+        wstawka_nzw = wstawka_nzw)
 
 formularz_67c_pocz_wiersza = op_tr()
 
@@ -95,18 +95,18 @@ def op_tbl(cellspacing=None, cellpadding=None, class_=None, border=None):
     wstawka_bdr = wstawka_liczba('border', border)
     wstawka_cls = wyznacz_wstawke('class', class_)
     return '<table%(wstawka_spc)s%(wstawka_pdd)s%(wstawka_cls)s%(wstawka_bdr)s>\n' % dict(
-      wstawka_spc=wstawka_spc,
-      wstawka_pdd=wstawka_pdd,
-      wstawka_cls=wstawka_cls,
-      wstawka_bdr=wstawka_bdr,
-      )
+        wstawka_spc=wstawka_spc,
+        wstawka_pdd=wstawka_pdd,
+        wstawka_cls=wstawka_cls,
+        wstawka_bdr=wstawka_bdr,
+        )
 
 def op_ptd(srodek, *lista, **slownik):
     return ''.join([
-      op_td(*lista, **slownik),
-      srodek,
-      formularz_1c_kon_komorki,
-      ])
+        op_td(*lista, **slownik),
+        srodek,
+        formularz_1c_kon_komorki,
+        ])
 
 def op_32_sbf():
     return op_tbl(class_=fy_kw.lxa_40_inst, border=1)
@@ -137,13 +137,13 @@ def op_select(nzw_sel, brak_idnt=0, class_=None, onchange=None, style=None, to_i
     else:
         kawalek_mltp = ''
     return '<select%(kawalek_idnt)s name="%(nzw_sel)s"%(kawalek_klasy)s%(kawalek_mltp)s%(kawalek_stylu)s%(kawalek_zmiany)s>\n' % dict(
-      nzw_sel = nzw_sel,
-      kawalek_idnt = kawalek_idnt,
-      kawalek_klasy = kawalek_klasy,
-      kawalek_mltp = kawalek_mltp,
-      kawalek_stylu = kawalek_stylu,
-      kawalek_zmiany = kawalek_zmiany,
-      )
+        nzw_sel = nzw_sel,
+        kawalek_idnt = kawalek_idnt,
+        kawalek_klasy = kawalek_klasy,
+        kawalek_mltp = kawalek_mltp,
+        kawalek_stylu = kawalek_stylu,
+        kawalek_zmiany = kawalek_zmiany,
+        )
 
 def op_30_sbf(nzw_sel):
     return op_select(nzw_sel=nzw_sel, brak_idnt=1, onchange=fy_kw.lxa_45_inst, class_=fy_kw.lxa_44_inst)
@@ -152,9 +152,9 @@ def op_dh(id=None, class_=None):
     wstawka_id = wyznacz_wstawke('id', id)
     wstawka_cls = wyznacz_wstawke('class', class_)
     return '<div%(wstawka_id)s%(wstawka_cls)s>\n' % dict(
-      wstawka_id=wstawka_id,
-      wstawka_cls=wstawka_cls,
-      )
+        wstawka_id=wstawka_id,
+        wstawka_cls=wstawka_cls,
+        )
 
 
 class TestTytuluHtml(unittest.TestCase):
