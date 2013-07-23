@@ -68,6 +68,13 @@ rjb_py_siodma = dodaj_py(rjb_strona_siodma)
 rjb_strona_osma = 'l8'
 rjb_py_osma = dodaj_py(rjb_strona_osma)
 
+def fn_a_in_dwa(wersja_produkcyjna):
+    if wersja_produkcyjna:
+        wynik = 'inne'
+    else:
+        wynik = 'inne2'
+    return wynik
+
 class TestConstantStrings(unittest.TestCase):
     def test_constant_strings(self):
         '''
@@ -110,3 +117,5 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(rjb_py_siodma, 'l7.py')
         self.assertEqual(rjb_strona_osma, 'l8')
         self.assertEqual(rjb_py_osma, 'l8.py')
+        self.assertEqual(fn_a_in_dwa(0), 'inne2')
+        self.assertEqual(fn_a_in_dwa(1), 'inne')
