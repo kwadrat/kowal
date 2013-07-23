@@ -161,7 +161,11 @@ def op_dh(detect_missing_keyword=None, id=None, class_=None):
         )
 
 def op_li(srodek):
-    return '<li>%s</li>\n' % srodek
+    return ''.join([
+        formularz_1c_pocz_pozycji,
+        srodek,
+        formularz_1c_kon_pozycji,
+        ])
 
 
 class TestTytuluHtml(unittest.TestCase):
