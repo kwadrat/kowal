@@ -87,6 +87,8 @@ def op_tr(id=None, nzw_wrsz=None, ukryty=0):
       wstawka_id = wstawka_id,
       wstawka_nzw = wstawka_nzw)
 
+formularz_67c_pocz_wiersza = op_tr()
+
 def op_tbl(cellspacing=None, cellpadding=None, class_=None, border=None):
     wstawka_spc = wstawka_liczba('cellspacing', cellspacing)
     wstawka_pdd = wstawka_liczba('cellpadding', cellpadding)
@@ -168,6 +170,7 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(op_tbl(cellspacing=1, cellpadding=1, class_='abc'), '<table cellspacing="1" cellpadding="1" class="abc">\n')
         self.assertEqual(op_tbl(cellspacing=1, cellpadding=2, class_='def'), '<table cellspacing="1" cellpadding="2" class="def">\n')
         self.assertEqual(formularz_1c_kon_tabeli, '</table>\n')
+        self.assertEqual(formularz_67c_pocz_wiersza, '<tr>\n')
         self.assertEqual(formularz_67c_kon_wiersza, '</tr>\n')
         self.assertEqual(formularz_1c_kon_komorki, '</td>\n')
         self.assertEqual(formularz_1c_kon_slct, '</select>\n')
