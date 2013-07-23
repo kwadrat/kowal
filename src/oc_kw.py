@@ -26,6 +26,7 @@ rjb_sama_tylda = '~'
 PoczObrazka = 'plik_'
 RozszerzenieObrazka = '.png'
 url_ameryka_http = 'http://'
+rjb_hs_pocz = 'https://'
 if rq_kw.WersjaUbuntuRun:
     ##############################################################################
     adres_maszyny = '192.168.56.101'
@@ -90,6 +91,7 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(PoczObrazka, 'plik_')
         self.assertEqual(RozszerzenieObrazka, '.png')
         self.assertEqual(url_ameryka_http, 'http://')
+        self.assertEqual(rjb_hs_pocz, 'https://')
         self.assertEqual(adres_maszyny, 'media.ciri.pl')
         self.assertEqual(url_kotw_a_ica, 'http://media.ciri.pl')
         self.assertEqual(url_kotw_b_ica, 'http://media.ciri.pl/')
