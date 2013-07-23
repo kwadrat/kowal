@@ -36,6 +36,7 @@ else:
     adres_maszyny = 'media.ciri.pl'
     ##############################################################################
 url_kotw_a_ica = url_ameryka_http + adres_maszyny
+rjb_hs_pcztk_sam = rjb_hs_pocz + adres_maszyny
 url_kotw_b_ica = url_kotw_a_ica + rjb_sam_slsh
 url_kotw_ica = url_kotw_b_ica + 'inne'
 konto_uzytkownika = 'kwadrat'
@@ -94,6 +95,7 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(rjb_hs_pocz, 'https://')
         self.assertEqual(adres_maszyny, 'media.ciri.pl')
         self.assertEqual(url_kotw_a_ica, 'http://media.ciri.pl')
+        self.assertEqual(rjb_hs_pcztk_sam, 'https://media.ciri.pl')
         self.assertEqual(url_kotw_b_ica, 'http://media.ciri.pl/')
         self.assertEqual(url_kotw_ica, 'http://media.ciri.pl/inne')
         self.assertEqual(konto_uzytkownika, 'kwadrat')
