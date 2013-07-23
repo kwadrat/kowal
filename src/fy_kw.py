@@ -93,3 +93,6 @@ lxa_44_inst = '''\
 selwyborca'''
 lxa_45_inst = '''\
 this.form.submit();'''
+lxa_46_inst = '''\
+Dziękujemy za wpisywanie faktur za wodę i kanalizację, od 1 lutego 2010 roku nie trzeba wpisywać nowych faktur, są one automatycznie wczytywane do systemu.
+'''
