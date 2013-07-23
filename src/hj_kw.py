@@ -42,6 +42,9 @@ def otocz_cudzyslowem(napis):
 def ls_przec(*args):
     return ladnie_przecinkami(args)
 
+def with_spaces(*args):
+    return ' '.join(args)
+
 class TestProcessingSQL(unittest.TestCase):
     def test_processing_sql(self):
         '''
@@ -54,3 +57,4 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(make_alternatives(['a', 'b', 'c']), "a OR b OR c")
         self.assertEqual(ladnie_przecinkami(['a', 'b', 'c']), "a, b, c")
         self.assertEqual(ls_przec('a', 'b', 'c'), 'a, b, c')
+        self.assertEqual(with_spaces('a', 'b', 'c'), 'a b c')
