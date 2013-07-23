@@ -210,11 +210,6 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(op_dh(id='abc'), '<div id="abc">\n')
         self.assertEqual(op_dh(class_='klasa_css'), '<div class="klasa_css">\n')
         self.assertRaises(RuntimeError, op_dh, 'abc')
-        self.assertEqual(op_li('abc'), '<li>abc</li>\n')
-
-    def test_zaznaczania_opcji(self):
-        '''
-        TestTytuluHtml:
-        '''
         self.assertEqual(op_sel_lgc(False), '')
         self.assertEqual(op_sel_lgc(True), ' selected="selected"')
+        self.assertEqual(op_li('abc'), '<li>abc</li>\n')
