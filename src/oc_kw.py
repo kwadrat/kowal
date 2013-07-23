@@ -54,6 +54,20 @@ LogDir = rjb_sczk_do_kwl + '/log'
 def pelna_generowana_nazwa(nazwa):
     return poczatek_gen + nazwa
 
+def dodaj_py(nazwa):
+    return nazwa + '.py'
+
+rjb_strona_pierwsza = 'l1'
+rjb_py_pierwsza = dodaj_py(rjb_strona_pierwsza)
+rjb_strona_piata = 'l5'
+rjb_py_piata = dodaj_py(rjb_strona_piata)
+rjb_strona_szosta = 'l6'
+rjb_py_szosta = dodaj_py(rjb_strona_szosta)
+rjb_strona_siodma = 'l7'
+rjb_py_siodma = dodaj_py(rjb_strona_siodma)
+rjb_strona_osma = 'l8'
+rjb_py_osma = dodaj_py(rjb_strona_osma)
+
 class TestConstantStrings(unittest.TestCase):
     def test_constant_strings(self):
         '''
@@ -85,3 +99,14 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(rjb_kwl_sam, 'kowal')
         self.assertEqual(rjb_sczk_do_kwl, '/home/kwadrat/kowal')
         self.assertEqual(LogDir, '/home/kwadrat/kowal/log')
+        self.assertEqual(dodaj_py('a'), 'a.py')
+        self.assertEqual(rjb_strona_pierwsza, 'l1')
+        self.assertEqual(rjb_py_pierwsza, 'l1.py')
+        self.assertEqual(rjb_strona_piata, 'l5')
+        self.assertEqual(rjb_py_piata, 'l5.py')
+        self.assertEqual(rjb_strona_szosta, 'l6')
+        self.assertEqual(rjb_py_szosta, 'l6.py')
+        self.assertEqual(rjb_strona_siodma, 'l7')
+        self.assertEqual(rjb_py_siodma, 'l7.py')
+        self.assertEqual(rjb_strona_osma, 'l8')
+        self.assertEqual(rjb_py_osma, 'l8.py')
