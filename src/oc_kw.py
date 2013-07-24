@@ -79,7 +79,7 @@ class KalejdoskopStron(object):
         self.rj_py_wersja = dodaj_py(self.rj_sam_rdzen)
 
 rjb_strona_pierwsza = KalejdoskopStron(1)
-rjb_strona_druga = 'l2'
+rjb_strona_druga = KalejdoskopStron(2)
 rjb_strona_piata = 'l5'
 rjb_py_piata = dodaj_py(rjb_strona_piata)
 rjb_strona_szosta = 'l6'
@@ -90,7 +90,7 @@ rjb_strona_osma = 'l8'
 rjb_py_osma = dodaj_py(rjb_strona_osma)
 
 def fn_adres_post(wersja_produkcyjna):
-    return rjb_sam_slsh + fn_a_in_dwa(wersja_produkcyjna) + rjb_sam_slsh + dodaj_py('l2')
+    return rjb_sam_slsh + fn_a_in_dwa(wersja_produkcyjna) + rjb_sam_slsh + dodaj_py(rjb_strona_druga.rj_sam_rdzen)
 
 class TestConstantStrings(unittest.TestCase):
     def test_constant_strings(self):
@@ -129,7 +129,7 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(dodaj_py('a'), 'a.py')
         self.assertEqual(rjb_strona_pierwsza.rj_sam_rdzen, 'l1')
         self.assertEqual(rjb_strona_pierwsza.rj_py_wersja, 'l1.py')
-        self.assertEqual(rjb_strona_druga, 'l2')
+        self.assertEqual(rjb_strona_druga.rj_sam_rdzen, 'l2')
         self.assertEqual(rjb_strona_piata, 'l5')
         self.assertEqual(rjb_py_piata, 'l5.py')
         self.assertEqual(rjb_strona_szosta, 'l6')
