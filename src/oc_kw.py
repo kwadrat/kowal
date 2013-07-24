@@ -84,6 +84,14 @@ def fn_a_in_dwa(wersja_produkcyjna):
 def fn_adres_post(wersja_produkcyjna):
     return rjb_sam_slsh + fn_a_in_dwa(wersja_produkcyjna) + rjb_sam_slsh + dodaj_py('l2')
 
+class KalejdoskopStron(object):
+    def __init__(self, numer_strony):
+        '''
+        KalejdoskopStron:
+        '''
+        self.rj_sam_rdzen = 'l%d' % numer_strony
+        self.rj_py_wersja = self.rj_sam_rdzen + '.py'
+
 class TestConstantStrings(unittest.TestCase):
     def test_constant_strings(self):
         '''
@@ -136,3 +144,19 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(rjb_tld_kw_d_apl, 'inne')
         self.assertEqual(rjb_tld_kw_e_apl, '2')
         self.assertEqual(rjb_tld_kw_f_apl, 'inne2')
+
+    def test_kalejdoskopu_stron(self):
+        '''
+        TestConstantStrings:
+        '''
+        obk = KalejdoskopStron(1)
+        self.assertEqual(obk.rj_sam_rdzen, 'l1')
+        self.assertEqual(obk.rj_py_wersja, 'l1.py')
+
+    def test_2_kalejdoskopu_stron(self):
+        '''
+        TestConstantStrings:
+        '''
+        obk = KalejdoskopStron(2)
+        self.assertEqual(obk.rj_sam_rdzen, 'l2')
+        self.assertEqual(obk.rj_py_wersja, 'l2.py')
