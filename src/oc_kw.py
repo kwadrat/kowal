@@ -78,7 +78,7 @@ def fn_a_in_dwa(wersja_produkcyjna):
     if wersja_produkcyjna:
         wynik = 'inne'
     else:
-        wynik = 'inne2'
+        wynik = rjb_tld_kw_f_apl
     return wynik
 
 def fn_adres_post(wersja_produkcyjna):
