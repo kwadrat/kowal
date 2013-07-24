@@ -70,9 +70,6 @@ def fn_a_in_dwa(wersja_produkcyjna):
         wynik = rjb_tld_kw_f_apl
     return wynik
 
-def fn_adres_post(wersja_produkcyjna):
-    return rjb_sam_slsh + fn_a_in_dwa(wersja_produkcyjna) + rjb_sam_slsh + dodaj_py('l2')
-
 class KalejdoskopStron(object):
     def __init__(self, numer_strony):
         '''
@@ -91,6 +88,9 @@ rjb_strona_siodma = 'l7'
 rjb_py_siodma = dodaj_py(rjb_strona_siodma)
 rjb_strona_osma = 'l8'
 rjb_py_osma = dodaj_py(rjb_strona_osma)
+
+def fn_adres_post(wersja_produkcyjna):
+    return rjb_sam_slsh + fn_a_in_dwa(wersja_produkcyjna) + rjb_sam_slsh + dodaj_py('l2')
 
 class TestConstantStrings(unittest.TestCase):
     def test_constant_strings(self):
