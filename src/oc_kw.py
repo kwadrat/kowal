@@ -81,8 +81,7 @@ class KalejdoskopStron(object):
         self.rj_sam_rdzen = 'l%d' % numer_strony
         self.rj_py_wersja = dodaj_py(self.rj_sam_rdzen)
 
-rjb_strona_pierwsza = 'l1'
-rjb_py_pierwsza = dodaj_py(rjb_strona_pierwsza)
+rjb_strona_pierwsza = KalejdoskopStron(1)
 rjb_strona_druga = 'l2'
 rjb_strona_piata = 'l5'
 rjb_py_piata = dodaj_py(rjb_strona_piata)
@@ -128,8 +127,8 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(LogDir, '/home/kwadrat/kowal/log')
         self.assertEqual(rjb_tld_kw_g_apl, '.py')
         self.assertEqual(dodaj_py('a'), 'a.py')
-        self.assertEqual(rjb_strona_pierwsza, 'l1')
-        self.assertEqual(rjb_py_pierwsza, 'l1.py')
+        self.assertEqual(rjb_strona_pierwsza.rj_sam_rdzen, 'l1')
+        self.assertEqual(rjb_strona_pierwsza.rj_py_wersja, 'l1.py')
         self.assertEqual(rjb_strona_druga, 'l2')
         self.assertEqual(rjb_strona_piata, 'l5')
         self.assertEqual(rjb_py_piata, 'l5.py')
