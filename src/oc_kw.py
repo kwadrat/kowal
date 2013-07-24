@@ -76,7 +76,7 @@ rjb_py_osma = dodaj_py(rjb_strona_osma)
 
 def fn_a_in_dwa(wersja_produkcyjna):
     if wersja_produkcyjna:
-        wynik = 'inne'
+        wynik = rjb_tld_kw_d_apl
     else:
         wynik = rjb_tld_kw_f_apl
     return wynik
