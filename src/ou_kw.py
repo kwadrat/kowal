@@ -15,8 +15,15 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+class KalejdoskopStron(object):
+    def __init__(self, numer_strony):
+        '''
+        KalejdoskopStron:
+        '''
+
 class TestKalejdoskopuStron(unittest.TestCase):
     def test_kalejdoskopu_stron(self):
         '''
         TestKalejdoskopuStron:
         '''
+        obk = KalejdoskopStron(1)
