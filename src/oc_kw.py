@@ -55,6 +55,7 @@ EYK_lporz_fktr = 'lp_faktury'
 rjb_kwl_sam = 'kowal'
 rjb_sczk_do_kwl = rjb_kt_dom_uzt + rjb_sam_slsh + rjb_kwl_sam
 LogDir = rjb_sczk_do_kwl + '/log'
+rjb_tld_kw_g_apl = '.py'
 
 def pelna_generowana_nazwa(nazwa):
     return poczatek_gen + nazwa
@@ -125,6 +126,7 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(rjb_kwl_sam, 'kowal')
         self.assertEqual(rjb_sczk_do_kwl, '/home/kwadrat/kowal')
         self.assertEqual(LogDir, '/home/kwadrat/kowal/log')
+        self.assertEqual(rjb_tld_kw_g_apl, '.py')
         self.assertEqual(dodaj_py('a'), 'a.py')
         self.assertEqual(rjb_strona_pierwsza, 'l1')
         self.assertEqual(rjb_py_pierwsza, 'l1.py')
