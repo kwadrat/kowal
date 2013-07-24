@@ -61,7 +61,7 @@ def pelna_generowana_nazwa(nazwa):
     return poczatek_gen + nazwa
 
 def dodaj_py(nazwa):
-    return nazwa + '.py'
+    return nazwa + rjb_tld_kw_g_apl
 
 rjb_strona_pierwsza = 'l1'
 rjb_py_pierwsza = dodaj_py(rjb_strona_pierwsza)
