@@ -20,7 +20,7 @@ class KalejdoskopStron(object):
         '''
         KalejdoskopStron:
         '''
-        self.rj_sam_rdzen = 'l1'
+        self.rj_sam_rdzen = 'l%d' % numer_strony
         self.rj_py_wersja = 'l1.py'
 
 class TestKalejdoskopuStron(unittest.TestCase):
@@ -31,3 +31,10 @@ class TestKalejdoskopuStron(unittest.TestCase):
         obk = KalejdoskopStron(1)
         self.assertEqual(obk.rj_sam_rdzen, 'l1')
         self.assertEqual(obk.rj_py_wersja, 'l1.py')
+
+    def test_2_kalejdoskopu_stron(self):
+        '''
+        TestKalejdoskopuStron:
+        '''
+        obk = KalejdoskopStron(2)
+        self.assertEqual(obk.rj_sam_rdzen, 'l2')
