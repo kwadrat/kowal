@@ -39,6 +39,7 @@ url_kotw_a_ica = url_ameryka_http + adres_maszyny
 rjb_hs_pcztk_sam = rjb_hs_pocz + adres_maszyny
 url_kotw_b_ica = url_kotw_a_ica + rjb_sam_slsh
 rjb_tld_kw_d_apl = 'inne'
+rjb_tld_kw_e_apl = '2'
 url_kotw_ica = url_kotw_b_ica + rjb_tld_kw_d_apl
 konto_uzytkownika = 'kwadrat'
 rjb_tld_kw_a_apl = rjb_sama_tylda + konto_uzytkownika
@@ -132,3 +133,4 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(fn_adres_post(1), '/inne/l2.py')
         self.assertEqual(fn_adres_post(0), '/inne2/l2.py')
         self.assertEqual(rjb_tld_kw_d_apl, 'inne')
+        self.assertEqual(rjb_tld_kw_e_apl, '2')
