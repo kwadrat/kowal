@@ -80,8 +80,7 @@ class KalejdoskopStron(object):
 
 rjb_strona_pierwsza = KalejdoskopStron(1)
 rjb_strona_druga = KalejdoskopStron(2)
-rjb_strona_piata = 'l5'
-rjb_py_piata = dodaj_py(rjb_strona_piata)
+rjb_strona_piata = KalejdoskopStron(5)
 rjb_strona_szosta = 'l6'
 rjb_py_szosta = dodaj_py(rjb_strona_szosta)
 rjb_strona_siodma = 'l7'
@@ -130,8 +129,8 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(rjb_strona_pierwsza.rj_sam_rdzen, 'l1')
         self.assertEqual(rjb_strona_pierwsza.rj_py_wersja, 'l1.py')
         self.assertEqual(rjb_strona_druga.rj_sam_rdzen, 'l2')
-        self.assertEqual(rjb_strona_piata, 'l5')
-        self.assertEqual(rjb_py_piata, 'l5.py')
+        self.assertEqual(rjb_strona_piata.rj_sam_rdzen, 'l5')
+        self.assertEqual(rjb_strona_piata.rj_py_wersja, 'l5.py')
         self.assertEqual(rjb_strona_szosta, 'l6')
         self.assertEqual(rjb_py_szosta, 'l6.py')
         self.assertEqual(rjb_strona_siodma, 'l7')
