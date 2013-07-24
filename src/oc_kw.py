@@ -91,7 +91,7 @@ class KalejdoskopStron(object):
         KalejdoskopStron:
         '''
         self.rj_sam_rdzen = 'l%d' % numer_strony
-        self.rj_py_wersja = self.rj_sam_rdzen + rjb_tld_kw_g_apl
+        self.rj_py_wersja = dodaj_py(self.rj_sam_rdzen)
 
 class TestConstantStrings(unittest.TestCase):
     def test_constant_strings(self):
