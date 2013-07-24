@@ -41,7 +41,6 @@ url_kotw_b_ica = url_kotw_a_ica + rjb_sam_slsh
 rjb_tld_kw_d_apl = 'inne'
 rjb_tld_kw_e_apl = '2'
 rjb_tld_kw_f_apl = rjb_tld_kw_d_apl + rjb_tld_kw_e_apl
-url_kotw_ica = url_kotw_b_ica + rjb_tld_kw_d_apl
 konto_uzytkownika = 'kwadrat'
 rjb_tld_kw_a_apl = rjb_sama_tylda + konto_uzytkownika
 rjb_tld_kw_b_apl = rjb_sam_slsh + rjb_sama_tylda + konto_uzytkownika
@@ -101,7 +100,6 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(url_kotw_a_ica, 'http://media.ciri.pl')
         self.assertEqual(rjb_hs_pcztk_sam, 'https://media.ciri.pl')
         self.assertEqual(url_kotw_b_ica, 'http://media.ciri.pl/')
-        self.assertEqual(url_kotw_ica, 'http://media.ciri.pl/inne')
         self.assertEqual(konto_uzytkownika, 'kwadrat')
         self.assertEqual(rjb_tld_kw_a_apl, '~kwadrat')
         self.assertEqual(rjb_tld_kw_b_apl, '/~kwadrat')
