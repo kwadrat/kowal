@@ -63,18 +63,6 @@ def pelna_generowana_nazwa(nazwa):
 def dodaj_py(nazwa):
     return nazwa + rjb_tld_kw_g_apl
 
-rjb_strona_pierwsza = 'l1'
-rjb_py_pierwsza = dodaj_py(rjb_strona_pierwsza)
-rjb_strona_druga = 'l2'
-rjb_strona_piata = 'l5'
-rjb_py_piata = dodaj_py(rjb_strona_piata)
-rjb_strona_szosta = 'l6'
-rjb_py_szosta = dodaj_py(rjb_strona_szosta)
-rjb_strona_siodma = 'l7'
-rjb_py_siodma = dodaj_py(rjb_strona_siodma)
-rjb_strona_osma = 'l8'
-rjb_py_osma = dodaj_py(rjb_strona_osma)
-
 def fn_a_in_dwa(wersja_produkcyjna):
     if wersja_produkcyjna:
         wynik = rjb_tld_kw_d_apl
@@ -92,6 +80,18 @@ class KalejdoskopStron(object):
         '''
         self.rj_sam_rdzen = 'l%d' % numer_strony
         self.rj_py_wersja = dodaj_py(self.rj_sam_rdzen)
+
+rjb_strona_pierwsza = 'l1'
+rjb_py_pierwsza = dodaj_py(rjb_strona_pierwsza)
+rjb_strona_druga = 'l2'
+rjb_strona_piata = 'l5'
+rjb_py_piata = dodaj_py(rjb_strona_piata)
+rjb_strona_szosta = 'l6'
+rjb_py_szosta = dodaj_py(rjb_strona_szosta)
+rjb_strona_siodma = 'l7'
+rjb_py_siodma = dodaj_py(rjb_strona_siodma)
+rjb_strona_osma = 'l8'
+rjb_py_osma = dodaj_py(rjb_strona_osma)
 
 class TestConstantStrings(unittest.TestCase):
     def test_constant_strings(self):
