@@ -167,6 +167,18 @@ def op_li(srodek):
         formularz_1c_kon_pozycji,
         ])
 
+def qh_ahtt(wstawka_adresu, tmp_tekst, tmp_title, target=0):
+    if target:
+        wstawka_tgt = ' target="_blank"'
+    else:
+        wstawka_tgt = ''
+    wstawka_tytulu = qh_ttl(tmp_title)
+    return ('<a href="%(wstawka_adresu)s"%(wstawka_tytulu)s%(wstawka_tgt)s>%(tmp_tekst)s</a>' % dict(
+        wstawka_adresu=wstawka_adresu,
+        wstawka_tytulu=wstawka_tytulu,
+        tmp_tekst=tmp_tekst,
+        wstawka_tgt=wstawka_tgt,
+        ))
 
 class TestTytuluHtml(unittest.TestCase):
     def test_tytulu_html(self):
@@ -221,3 +233,5 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(formularz_1c_pocz_pozycji, '<li>')
         self.assertEqual(formularz_1c_kon_pozycji, '</li>\n')
         self.assertEqual(op_li('abc'), '<li>abc</li>\n')
+        self.assertEqual(qh_ahtt('ghi', 'def', 'abc'), '<a href="ghi" title="abc">def</a>')
+        self.assertEqual(qh_ahtt('ghi', 'def', 'abc', target=1), '<a href="ghi" title="abc" target="_blank">def</a>')
