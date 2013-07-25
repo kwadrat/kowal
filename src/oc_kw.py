@@ -80,6 +80,7 @@ class KalejdoskopStron(object):
 
 rjb_strona_pierwsza = KalejdoskopStron(1)
 rjb_strona_druga = KalejdoskopStron(2)
+rjb_strona_trzecia = KalejdoskopStron(3)
 rjb_strona_piata = KalejdoskopStron(5)
 rjb_strona_szosta = KalejdoskopStron(6)
 rjb_strona_siodma = KalejdoskopStron(7)
