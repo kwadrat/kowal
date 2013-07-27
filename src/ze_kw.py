@@ -247,3 +247,4 @@ class TestTytuluHtml(unittest.TestCase):
             sp_stl('12', Jedn_zlotowki),
             '\n<span style="float: right;">(suma narastająco: <font size=+1 style="color:red;">12 zł</font>)</span><br/>\n')
         self.assertEqual(Jedn_zlotowki, 'zł')
+        self.assertEqual(formularz_1c_zlm_wrsz, '<br />\n')
