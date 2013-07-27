@@ -186,12 +186,13 @@ def qh_ahtt(wstawka_adresu, tmp_tekst, tmp_title, target=0):
 def sp_stl(liczba_tekstowo, jednostka):
     pieces = []
     pieces.append(formularz_1c_nw_wrsz)
-    elem = ('<span style="float: right;">(suma narastająco: <font size=+1 style="color:red;">%(liczba_tekstowo)s %(jednostka)s</font>)</span><br/>\n' %
+    elem = ('<span style="float: right;">(suma narastająco: <font size=+1 style="color:red;">%(liczba_tekstowo)s %(jednostka)s</font>)</span>' %
         dict(
             liczba_tekstowo=liczba_tekstowo,
             jednostka=jednostka,
             ))
     pieces.append(elem)
+    pieces.append(formularz_1c_zlm_wrsz)
     together = ''.join(pieces)
     return together
 
@@ -253,7 +254,7 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(qh_ahtt('ghi', 'def', 'abc', target=1), '<a href="ghi" title="abc" target="_blank">def</a>')
         self.assertEqual(
             sp_stl('12', Jedn_zlotowki),
-            '\n<span style="float: right;">(suma narastająco: <font size=+1 style="color:red;">12 zł</font>)</span><br/>\n')
+            '\n<span style="float: right;">(suma narastająco: <font size=+1 style="color:red;">12 zł</font>)</span><br />\n')
         self.assertEqual(Jedn_zlotowki, 'zł')
         self.assertEqual(formularz_1c_zlm_wrsz, '<br />\n')
         self.assertEqual(formularz_1c_nw_wrsz, '\n')
