@@ -184,8 +184,9 @@ def qh_ahtt(wstawka_adresu, tmp_tekst, tmp_title, target=0):
         wstawka_tgt=wstawka_tgt,
         ))
 
-def sp_a_stl(napis):
-    return '<span style="float: right;">%(napis)s</span>' % dict(
+def sp_a_stl(style, napis):
+    return '<span style="%(style)s">%(napis)s</span>' % dict(
+        style=style,
         napis=napis,
         )
 
@@ -197,7 +198,8 @@ def sp_stl(liczba_tekstowo, jednostka):
             liczba_tekstowo=liczba_tekstowo,
             jednostka=jednostka,
             ))
-    elem = sp_a_stl(middle_a)
+    middle_b = 'float: right;'
+    elem = sp_a_stl(middle_b, middle_a)
     pieces.append(elem)
     pieces.append(formularz_1c_zlm_wrsz)
     together = ''.join(pieces)
@@ -259,8 +261,8 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(op_li('abc'), '<li>abc</li>\n')
         self.assertEqual(qh_ahtt('ghi', 'def', 'abc'), '<a href="ghi" title="abc">def</a>')
         self.assertEqual(qh_ahtt('ghi', 'def', 'abc', target=1), '<a href="ghi" title="abc" target="_blank">def</a>')
-        self.assertEqual(sp_a_stl('napis'), '<span style="float: right;">napis</span>')
         self.assertEqual(naglowek_na_prawo, 'float: right;')
+        self.assertEqual(sp_a_stl(naglowek_na_prawo, 'napis'), '<span style="float: right;">napis</span>')
         self.assertEqual(
             sp_stl('12', Jedn_zlotowki),
             '\n<span style="float: right;">(suma narastająco: <font size=+1 style="color:red;">12 zł</font>)</span><br />\n')
