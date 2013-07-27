@@ -77,6 +77,18 @@ class SampleRow(object):
         '''
         return self.sample_key
 
+    def put_in_database(self, dfb, table_of_samples, local_key):
+        '''
+        SampleRow:
+        '''
+        (key_object, row_date) = local_key
+        sample_key = self.get_row_key()
+        all_samples = self.get_row_of_samples()
+        if sample_key:
+            le_kw.dq_update_vector_of_samples(dfb, table_of_samples, key_object, row_date, all_samples, sample_key)
+        else:
+            le_kw.dq_insert_vector_of_samples(dfb, table_of_samples, key_object, row_date, all_samples)
+
 class TestRowChanges(unittest.TestCase):
     def test_row_changes(self):
         '''
