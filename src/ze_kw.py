@@ -206,10 +206,10 @@ def sp_stl(liczba_tekstowo, jednostka):
 
 def pokoloruj(napis, kolor):
     '''Podkreślenie podanego napisu'''
-    polaczony = '<span style="background-color: %(kolor)s;">%(napis)s</span>' % dict(
-      napis = napis,
-      kolor = kolor,
-    )
+    middle_a = 'background-color: %(kolor)s;' % dict(
+        kolor = kolor,
+        )
+    polaczony = sp_a_stl(middle_a, napis)
     return polaczony
 
 class TestTytuluHtml(unittest.TestCase):
