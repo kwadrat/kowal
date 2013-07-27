@@ -137,6 +137,9 @@ def ptn_dane_jednego_obiektu(table_name, key_object):
         table_name=table_name,
         e_date=lc_kw.fq_m_date_qv,
         e_samples=lc_kw.fq_m_samples_qv,
+        e_sum=lc_kw.fq_m_sum_qv,
+        e_zero=lc_kw.fq_m_zero_qv,
+        e_none=lc_kw.fq_m_none_qv,
         e_object=lc_kw.fq_f_object_qv,
         f_object=key_object,
         )
