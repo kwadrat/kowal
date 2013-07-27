@@ -198,7 +198,7 @@ def sp_stl(liczba_tekstowo, jednostka):
             liczba_tekstowo=liczba_tekstowo,
             jednostka=jednostka,
             ))
-    middle_b = 'float: right;'
+    middle_b = naglowek_na_prawo
     elem = sp_a_stl(middle_b, middle_a)
     pieces.append(elem)
     pieces.append(formularz_1c_zlm_wrsz)
