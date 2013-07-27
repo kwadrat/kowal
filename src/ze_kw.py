@@ -184,7 +184,8 @@ def qh_ahtt(wstawka_adresu, tmp_tekst, tmp_title, target=0):
 
 def sp_stl(liczba_tekstowo, jednostka):
     pieces = []
-    elem = ('\n<span style="float: right;">(suma narastająco: <font size=+1 style="color:red;">%(liczba_tekstowo)s %(jednostka)s</font>)</span><br/>\n' %
+    pieces.append(formularz_1c_nw_wrsz)
+    elem = ('<span style="float: right;">(suma narastająco: <font size=+1 style="color:red;">%(liczba_tekstowo)s %(jednostka)s</font>)</span><br/>\n' %
         dict(
             liczba_tekstowo=liczba_tekstowo,
             jednostka=jednostka,
