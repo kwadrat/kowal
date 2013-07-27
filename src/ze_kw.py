@@ -204,6 +204,14 @@ def sp_stl(liczba_tekstowo, jednostka):
     together = ''.join(pieces)
     return together
 
+def pokoloruj(napis, kolor):
+    '''Podkreślenie podanego napisu'''
+    polaczony = '<span style="background-color: %(kolor)s;">%(napis)s</span>' % dict(
+      napis = napis,
+      kolor = kolor,
+    )
+    return polaczony
+
 class TestTytuluHtml(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual
     def test_tytulu_html(self):

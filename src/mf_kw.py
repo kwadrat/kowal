@@ -64,14 +64,6 @@ def UsunDuplikaty(lista):
             Poprz = elem
     return wynik
 
-def pokoloruj(napis, kolor):
-    '''Podkreślenie podanego napisu'''
-    polaczony = '<span style="background-color: %(kolor)s;">%(napis)s</span>' % dict(
-      napis = napis,
-      kolor = kolor,
-    )
-    return polaczony
-
 def ZrobTabHTML(tgk, on_mouse, lista):
     wynik = []
     wynik.append(ze_kw.op_32_sbf())
