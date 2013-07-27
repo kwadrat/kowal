@@ -8,6 +8,7 @@ NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lc_kw
 import lm_kw
 import le_kw
+import ze_kw
 import jb_kw
 import hq_kw
 import wn_kw
@@ -74,9 +75,9 @@ class PoboryDanegoDnia(WykresPomiarow):
         moja_jednostka = ms.jednostka_osi_pionowej()
         opis_dotyczy = []
         # qaz - duplikat
-        opis_dotyczy.append('\n<span style="float: right;">(suma narastająco: <font size=+1 style="color:red;">%s %s</font>)</span>' %
-            (lm_kw.rzeczywista_na_napis(moja_suma), moja_jednostka))
-        opis_dotyczy.append(' <br/>\n')
+        opis_dotyczy.append(ze_kw.sp_stl(
+            lm_kw.rzeczywista_na_napis(moja_suma),
+            moja_jednostka))
         # qaz - duplikat
         ms.podpisz_obie_osie(vert_axis)
         kod_html = ms.wykreslanie_slupkow(on_mouse)
