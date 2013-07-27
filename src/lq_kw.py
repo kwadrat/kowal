@@ -70,10 +70,9 @@ class SampleRow(object):
         SampleRow:
         '''
         (key_object, row_date) = local_key
-        sample_key = self.sample_key
         all_samples = self.list_of_samples
-        if sample_key:
-            le_kw.dq_update_vector_of_samples(dfb, table_of_samples, key_object, row_date, all_samples, sample_key)
+        if self.sample_key:
+            le_kw.dq_update_vector_of_samples(dfb, table_of_samples, key_object, row_date, all_samples, self.sample_key)
         else:
             le_kw.dq_insert_vector_of_samples(dfb, table_of_samples, key_object, row_date, all_samples)
 
