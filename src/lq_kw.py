@@ -34,7 +34,7 @@ def allowed_replacement(old_value, new_value):
     return result
 
 def cnt_none(elements):
-    return len(filter(lambda x: x is None, elements))
+    return len(filter(lambda x: x == '' or x is None, elements))
 
 def cnt_zero(elements):
     return len(filter(lambda x: x == lm_kw.wartosc_zero_globalna, elements))
