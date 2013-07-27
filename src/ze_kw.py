@@ -5,6 +5,7 @@ import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import fy_kw
+import dv_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -195,6 +196,7 @@ def sp_stl(liczba_tekstowo, jednostka):
     return together
 
 class TestTytuluHtml(unittest.TestCase):
+    vassertEqual = dv_kw.vassertEqual
     def test_tytulu_html(self):
         '''
         TestTytuluHtml:
