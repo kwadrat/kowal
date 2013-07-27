@@ -276,3 +276,6 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(Jedn_zlotowki, 'zł')
         self.assertEqual(formularz_1c_zlm_wrsz, '<br />\n')
         self.assertEqual(formularz_1c_nw_wrsz, '\n')
+        self.assertEqual(
+            pokoloruj('yellow', 'napis'),
+            '<span style="background-color: napis;">yellow</span>')
