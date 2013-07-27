@@ -96,3 +96,18 @@ this.form.submit();'''
 lxa_46_inst = '''\
 Dziękujemy za wpisywanie faktur za wodę i kanalizację, od 1 lutego 2010 roku nie trzeba wpisywać nowych faktur, są one automatycznie wczytywane do systemu.
 '''
+lxa_47_inst = '''\
+<script type="text/javascript">
+Calendar.setup({
+inputField  : "data",
+electric    : false,
+ifFormat    : "%Y-%m-%d",
+weekNumbers: false
+});
+
+var wzor_data = "regexp=^[0-9][0-9][0-9][0-9]-[0-1][0-9]-[0-3][0-9]$";
+var kmnt_data = "Podaj datę w postaci RRRR-MM-DD (albo kliknij dla otwarcia kalendarza)";
+frmvld = new Validator("formularz");
+frmvld.addValidation("data", "req", "Potrzebuję daty");
+frmvld.addValidation("data", wzor_data, kmnt_data);
+</script>'''
