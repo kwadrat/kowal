@@ -183,11 +183,14 @@ def qh_ahtt(wstawka_adresu, tmp_tekst, tmp_title, target=0):
         ))
 
 def sp_stl(liczba_tekstowo, jednostka):
-    together = ('\n<span style="float: right;">(suma narastająco: <font size=+1 style="color:red;">%(liczba_tekstowo)s %(jednostka)s</font>)</span><br/>\n' %
+    pieces = []
+    elem = ('\n<span style="float: right;">(suma narastająco: <font size=+1 style="color:red;">%(liczba_tekstowo)s %(jednostka)s</font>)</span><br/>\n' %
         dict(
             liczba_tekstowo=liczba_tekstowo,
             jednostka=jednostka,
             ))
+    pieces.append(elem)
+    together = ''.join(pieces)
     return together
 
 class TestTytuluHtml(unittest.TestCase):
