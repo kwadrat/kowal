@@ -189,13 +189,7 @@ class CommonReader(object):
         CommonReader:
         '''
         for local_key, my_sample_row in self.internal_rows.iteritems():
-            (key_object, row_date) = local_key
-            sample_key = my_sample_row.get_row_key()
-            all_samples = my_sample_row.get_row_of_samples()
-            if sample_key:
-                le_kw.dq_update_vector_of_samples(dfb, self.table_of_samples, key_object, row_date, all_samples, sample_key)
-            else:
-                le_kw.dq_insert_vector_of_samples(dfb, self.table_of_samples, key_object, row_date, all_samples)
+            my_sample_row.put_in_database(dfb, self.table_of_samples, local_key)
 
     def generate_one_file(self, xlwt, dfb, output_file):
         '''
