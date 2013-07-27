@@ -37,7 +37,6 @@ JednTon = 'ton'
 JednAsciiM3 = 'm3'
 JednMet3h = 'm<sup>3</sup>/h'
 Jedn_kWtow = 'kW'
-Jedn_zlotowki = 'zł'
 Jedn_sztuki = 'szt'
 Jedn_jy_sztuki = nawiasy_kwadratowe(Jedn_sztuki)
 
@@ -71,7 +70,7 @@ ux_4_a = NaglowekKolumny('Moc wykonana', jednostka=JednMet3h, separator=ze_kw.fo
 ux_5_a = NaglowekKolumny('Moc umowna', jednostka=JednMet3h, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
 ux_6_a = NaglowekKolumny('Moc - umowna', jednostka=Jedn_kWtow, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
 ux_7_a = NaglowekKolumny('Moc - pobrana', jednostka=Jedn_kWtow, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
-ux_8_a = NaglowekKolumny('Razem Brutto', jednostka=Jedn_zlotowki, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
+ux_8_a = NaglowekKolumny('Razem Brutto', jednostka=ze_kw.Jedn_zlotowki, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
 ux_9_a = NaglowekKolumny('Zużycie', jednostka=Jedn_kW_MWh, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
 ux_10_a = NaglowekKolumny('Zużycie', jednostka=Jedn_kWh, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
 ux_11_a = NaglowekKolumny('Zużycie', jednostka=Jedn_MWh, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()

@@ -2,6 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import ze_kw
 import pb_kw
 '''.splitlines()]
 
@@ -30,7 +31,7 @@ class DomenowaKlasaKwoty(object):
         '''
         DomenowaKlasaKwoty:
         '''
-        return pb_kw.Jedn_zlotowki, 'koszty'
+        return ze_kw.Jedn_zlotowki, 'koszty'
 
     def przedstaw_pole_sumy(self, pole_dla_ilosci, pole_dla_kwoty, pole_dla_mocy):
         '''

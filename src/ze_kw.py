@@ -26,6 +26,7 @@ hard_space = '&nbsp;'
 formularz_1c_kon_dzialu = '</div>\n'
 formularz_1c_pocz_pozycji = '<li>'
 formularz_1c_kon_pozycji = '</li>\n'
+Jedn_zlotowki = 'zł'
 
 def op_sel_lgc(warunek):
     if warunek:
@@ -239,3 +240,4 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(qh_ahtt('ghi', 'def', 'abc'), '<a href="ghi" title="abc">def</a>')
         self.assertEqual(qh_ahtt('ghi', 'def', 'abc', target=1), '<a href="ghi" title="abc" target="_blank">def</a>')
         self.assertEqual(sp_stl(), '')
+        self.assertEqual(Jedn_zlotowki, 'zł')
