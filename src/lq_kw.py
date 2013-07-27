@@ -70,11 +70,10 @@ class SampleRow(object):
         SampleRow:
         '''
         (key_object, row_date) = local_key
-        all_samples = self.list_of_samples
         if self.sample_key:
-            le_kw.dq_update_vector_of_samples(dfb, table_of_samples, key_object, row_date, all_samples, self.sample_key)
+            le_kw.dq_update_vector_of_samples(dfb, table_of_samples, key_object, row_date, self.list_of_samples, self.sample_key)
         else:
-            le_kw.dq_insert_vector_of_samples(dfb, table_of_samples, key_object, row_date, all_samples)
+            le_kw.dq_insert_vector_of_samples(dfb, table_of_samples, key_object, row_date, self.list_of_samples)
 
 class TestRowChanges(unittest.TestCase):
     def test_row_changes(self):
