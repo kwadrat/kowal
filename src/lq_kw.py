@@ -65,12 +65,6 @@ class SampleRow(object):
         self.sample_key = sample_key
         self.list_of_samples = sample_data
 
-    def get_row_key(self):
-        '''
-        SampleRow:
-        '''
-        return self.sample_key
-
     def put_in_database(self, dfb, table_of_samples, local_key):
         '''
         SampleRow:
