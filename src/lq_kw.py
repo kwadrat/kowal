@@ -34,7 +34,7 @@ def allowed_replacement(old_value, new_value):
     return result
 
 def cnt_none(elements):
-    return len(elements)
+    return len(filter(lambda x: x is None, elements))
 
 class SampleRow(object):
     def __init__(self):
@@ -92,3 +92,4 @@ class TestRowChanges(unittest.TestCase):
         self.assertEqual(allowed_replacement(lm_kw.a2d('0.0000'), 5.42), 1)
         self.assertEqual(cnt_none([]), 0)
         self.assertEqual(cnt_none([None]), 1)
+        self.assertEqual(cnt_none([1]), 0)
