@@ -33,7 +33,7 @@ class EnergyReader(CommonReader):
         EnergyReader:
         '''
         value = self.vx_date(my_col, my_row)
-        return '%04d-%02d-%02d' % value[:3]
+        return dn_kw.NapisDaty( * value[:3])
 
     def detect_energy_sheet_header(self):
         '''
