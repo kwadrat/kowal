@@ -486,3 +486,4 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(len(daty_roku(2008, rok_z_rozszerzeniem=1)), rq_kw.RokDluzszy + 1)
         self.assertEqual(rok_mies_z_napisu('2010-01-01'), (2010, 1))
         self.assertEqual(napis_z_rok_mies(2011, 9), '2011-09')
+        self.assertEqual(NapisDaty(2013, 7, 27), '2013-07-27')
