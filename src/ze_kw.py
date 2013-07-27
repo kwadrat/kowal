@@ -180,6 +180,9 @@ def qh_ahtt(wstawka_adresu, tmp_tekst, tmp_title, target=0):
         wstawka_tgt=wstawka_tgt,
         ))
 
+def sp_stl():
+    return ''
+
 class TestTytuluHtml(unittest.TestCase):
     def test_tytulu_html(self):
         '''
@@ -235,3 +238,4 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(op_li('abc'), '<li>abc</li>\n')
         self.assertEqual(qh_ahtt('ghi', 'def', 'abc'), '<a href="ghi" title="abc">def</a>')
         self.assertEqual(qh_ahtt('ghi', 'def', 'abc', target=1), '<a href="ghi" title="abc" target="_blank">def</a>')
+        self.assertEqual(sp_stl(), '')
