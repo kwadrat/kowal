@@ -20,6 +20,7 @@ formularz_1c_kon_slct = '</select>\n'
 formularz_1c_kon_tabeli = '</table>\n'
 formularz_67c_kon_wiersza = '</tr>\n'
 formularz_1c_kon_komorki = '</td>\n'
+formularz_1c_nw_wrsz = '\n'
 formularz_1c_zlm_wrsz = '<br />\n'
 formularz_1c_kon_formularza = '</form>\n'
 hard_space = '&nbsp;'
@@ -248,3 +249,4 @@ class TestTytuluHtml(unittest.TestCase):
             '\n<span style="float: right;">(suma narastająco: <font size=+1 style="color:red;">12 zł</font>)</span><br/>\n')
         self.assertEqual(Jedn_zlotowki, 'zł')
         self.assertEqual(formularz_1c_zlm_wrsz, '<br />\n')
+        self.assertEqual(formularz_1c_nw_wrsz, '\n')
