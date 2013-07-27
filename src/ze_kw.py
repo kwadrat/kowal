@@ -198,11 +198,12 @@ def sp_b_stl(napis):
 def sp_stl(liczba_tekstowo, jednostka):
     pieces = []
     pieces.append(formularz_1c_nw_wrsz)
-    middle_b = ('<font size=+1 style="color:red;">%(liczba_tekstowo)s %(jednostka)s</font>' %
+    middle_c = ('%(liczba_tekstowo)s %(jednostka)s' %
         dict(
             liczba_tekstowo=liczba_tekstowo,
             jednostka=jednostka,
             ))
+    middle_b = sp_b_stl(middle_c)
     middle_a = ('(suma narastająco: %(middle_b)s)' %
         dict(
             middle_b=middle_b,
