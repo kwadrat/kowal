@@ -40,7 +40,7 @@ class ListaHTML(object):
         '''
         ListaHTML:
         '''
-        self.oddziel_wykresy = '<hr />\n'
+        self.oddziel_wykresy = ze_kw.formularz_1c_horizontal_rule
         self.czysc_wieksze()
         self.czysc_mniejsze()
 
