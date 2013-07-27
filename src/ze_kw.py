@@ -183,11 +183,12 @@ def qh_ahtt(wstawka_adresu, tmp_tekst, tmp_title, target=0):
         ))
 
 def sp_stl(liczba_tekstowo, jednostka):
-    return ('\n<span style="float: right;">(suma narastająco: <font size=+1 style="color:red;">%(liczba_tekstowo)s %(jednostka)s</font>)</span><br/>\n' %
+    together = ('\n<span style="float: right;">(suma narastająco: <font size=+1 style="color:red;">%(liczba_tekstowo)s %(jednostka)s</font>)</span><br/>\n' %
         dict(
             liczba_tekstowo=liczba_tekstowo,
             jednostka=jednostka,
             ))
+    return together
 
 class TestTytuluHtml(unittest.TestCase):
     def test_tytulu_html(self):
