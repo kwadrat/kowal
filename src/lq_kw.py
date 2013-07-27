@@ -36,6 +36,9 @@ def allowed_replacement(old_value, new_value):
 def cnt_none(elements):
     return len(filter(lambda x: x is None, elements))
 
+def cnt_zero(elements):
+    return len(filter(lambda x: x == lm_kw.wartosc_zero_globalna, elements))
+
 class SampleRow(object):
     def __init__(self):
         '''
@@ -93,3 +96,9 @@ class TestRowChanges(unittest.TestCase):
         self.assertEqual(cnt_none([]), 0)
         self.assertEqual(cnt_none([None]), 1)
         self.assertEqual(cnt_none([1]), 0)
+        self.assertEqual(cnt_zero([
+            lm_kw.wartosc_zero_globalna,
+            lm_kw.wartosc_zero_globalna,
+            1,
+            None,
+            ]), 2)
