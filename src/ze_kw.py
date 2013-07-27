@@ -29,6 +29,7 @@ formularz_1c_kon_dzialu = '</div>\n'
 formularz_1c_pocz_pozycji = '<li>'
 formularz_1c_kon_pozycji = '</li>\n'
 Jedn_zlotowki = 'zł'
+naglowek_na_prawo = 'float: right;'
 
 def op_sel_lgc(warunek):
     if warunek:
@@ -259,6 +260,7 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(qh_ahtt('ghi', 'def', 'abc'), '<a href="ghi" title="abc">def</a>')
         self.assertEqual(qh_ahtt('ghi', 'def', 'abc', target=1), '<a href="ghi" title="abc" target="_blank">def</a>')
         self.assertEqual(sp_a_stl('napis'), '<span style="float: right;">napis</span>')
+        self.assertEqual(naglowek_na_prawo, 'float: right;')
         self.assertEqual(
             sp_stl('12', Jedn_zlotowki),
             '\n<span style="float: right;">(suma narastająco: <font size=+1 style="color:red;">12 zł</font>)</span><br />\n')
