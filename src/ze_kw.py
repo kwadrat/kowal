@@ -23,6 +23,7 @@ formularz_67c_kon_wiersza = '</tr>\n'
 formularz_1c_kon_komorki = '</td>\n'
 formularz_1c_nw_wrsz = '\n'
 formularz_1c_zlm_wrsz = '<br />\n'
+formularz_1c_horizontal_rule = '<hr />\n'
 formularz_1c_kon_formularza = '</form>\n'
 hard_space = '&nbsp;'
 formularz_1c_kon_dzialu = '</div>\n'
@@ -289,6 +290,7 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(Jedn_zlotowki, 'zł')
         self.assertEqual(formularz_1c_zlm_wrsz, '<br />\n')
         self.assertEqual(formularz_1c_nw_wrsz, '\n')
+        self.assertEqual(formularz_1c_horizontal_rule, '<hr />\n')
         self.assertEqual(
             pokoloruj('yellow', 'napis'),
             '<span style="background-color: napis;">yellow</span>')
