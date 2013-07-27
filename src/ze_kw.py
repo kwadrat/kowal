@@ -191,11 +191,12 @@ def sp_a_stl(napis):
 def sp_stl(liczba_tekstowo, jednostka):
     pieces = []
     pieces.append(formularz_1c_nw_wrsz)
-    elem = ('<span style="float: right;">(suma narastająco: <font size=+1 style="color:red;">%(liczba_tekstowo)s %(jednostka)s</font>)</span>' %
+    elem = ('(suma narastająco: <font size=+1 style="color:red;">%(liczba_tekstowo)s %(jednostka)s</font>)' %
         dict(
             liczba_tekstowo=liczba_tekstowo,
             jednostka=jednostka,
             ))
+    elem = sp_a_stl(elem)
     pieces.append(elem)
     pieces.append(formularz_1c_zlm_wrsz)
     together = ''.join(pieces)
