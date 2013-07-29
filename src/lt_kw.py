@@ -89,7 +89,7 @@ def wygeneruj_wiersz_miesiaca(lst_h, slownik_wpisow, wszystkie_dni, jeden_miesia
 def wygeneruj_tabelke_poborow(lst_h, slownik_wpisow):
     wszystkie_miesiace = wyznacz_daty_miesieczne(slownik_wpisow)
     wszystkie_dni = eu_kw.detect_my_days(slownik_wpisow)
-    lst_h.ddj(ze_kw.op_tbl(class_='tabelkowiec', border=1))
+    lst_h.ddj(ze_kw.op_tbl(class_=fy_kw.lxa_40_inst, border=1))
     wygeneruj_wiersz_naglowka(lst_h, wszystkie_dni)
     for jeden_miesiac in wszystkie_miesiace:
         wygeneruj_wiersz_miesiaca(lst_h, slownik_wpisow, wszystkie_dni, jeden_miesiac)
