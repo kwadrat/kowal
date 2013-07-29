@@ -164,7 +164,7 @@ class TestVariousPatterns(unittest.TestCase):
         self.assertEqual(ptn_load_from_db(lc_kw.fq_uu_power_qv), fy_kw.lxa_13_inst)
         self.assertEqual(ptn_add_new_object_key('n'), fy_kw.lxa_15_inst)
         self.assertEqual(ptn_insert_vector_of_samples(lc_kw.fq_uu_power_qv, 123, '2013-01-31', [None, 0, 0, 1.5, 2.5, 3]), fy_kw.lxa_17_inst)
-        self.assertEqual(ptn_update_vector_of_samples(lc_kw.fq_uu_power_qv, 123, '2013-01-31', [None, 0, 0, 1.5, 2.5, 3], 7), fy_kw.lxa_21_inst)
+        self.assertEqual(ptn_update_vector_of_samples(lc_kw.fq_uu_power_qv, 123, '2013-01-31', [None, 0, 0, 1.5, 2.5, 3], 8), fy_kw.lxa_21_inst)
         self.assertEqual(ptn_load_one_vector_from_db(lc_kw.fq_uu_power_qv, 18, '2013-01-31'), fy_kw.lxa_30_inst)
         self.assertEqual(ptn_liczniki_poboru_w_roku(lc_kw.fq_uu_power_qv, 18, '2013-01-31'), fy_kw.lxa_33_inst)
         self.assertEqual(ptn_liczniki_poboru_w_roku(lc_kw.fq_uu_energy_qv, 19, '2013-02-01'), fy_kw.lxa_36_inst)
