@@ -110,7 +110,8 @@ class CommonReader(object):
         CommonReader:
         '''
         local_key = (key_object, row_date)
-        self.internal_rows[local_key].update_for_index(sample_index, value)
+        adjusted = normalize_value(value)
+        self.internal_rows[local_key].update_for_index(sample_index, adjusted)
 
     def fetch_data_from_database(self, key_object, row_date, sample_data):
         '''
