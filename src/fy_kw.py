@@ -81,8 +81,7 @@ lxa_38_inst = """\
 SELECT m_date, m_samples, m_sum, m_zero, m_none FROM uu_energy WHERE f_object=7 ORDER BY m_date;"""
 lxa_39_inst = """\
 SELECT %(e_date)s, %(e_samples)s, %(e_sum)s, %(e_zero)s, %(e_none)s FROM %(table_name)s WHERE %(e_object)s=%(f_object)d ORDER BY %(e_date)s;"""
-lxa_40_inst = """\
-tabelkowiec"""
+lxa_40_inst = "tabelkowiec"
 lxa_41_inst = """\
 SELECT k_sample FROM uu_energy WHERE f_object=19;"""
 lxa_42_inst = """\
