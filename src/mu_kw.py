@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+import unittest
+
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import fv_kw
 import lc_kw
@@ -217,3 +219,9 @@ class CommonReader(object):
                         import pdb;pdb.set_trace()
                         raise
         wbk.save(output_file)
+
+class Test_Common_Reader(unittest.TestCase):
+    def test_common_reader(self):
+        '''
+        Test_Common_Reader:
+        '''
