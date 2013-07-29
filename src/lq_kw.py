@@ -40,7 +40,7 @@ def cnt_zero(elements):
     return len(filter(lambda x: x == lm_kw.wartosc_zero_globalna, elements))
 
 def sum_of_not_nones(elements):
-    return sum(filter(lambda x: x != '' and x is not None, elements))
+    return sum(filter(lambda x: x != '' and x is not None, elements), lm_kw.wartosc_zero_globalna)
 
 class SampleRow(object):
     def __init__(self):
@@ -116,3 +116,7 @@ class TestRowChanges(unittest.TestCase):
             3,
             ]),
             lm_kw.a2d('6'))
+        lm_kw.wartosc_zero_globalna
+        result = sum_of_not_nones([])
+        self.assertEqual(result, 0)
+        self.assertTrue(lm_kw.have_dec_type(result))
