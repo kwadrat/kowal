@@ -37,7 +37,7 @@ def cnt_none(elements):
     return len(filter(lambda x: x is None, elements))
 
 def cnt_zero(elements):
-    return len(filter(lambda x: x == lm_kw.wartosc_zero_globalna, elements))
+    return len(filter(lambda x: x in (0.0, lm_kw.wartosc_zero_globalna), elements))
 
 def sum_of_not_nones(elements):
     return sum(filter(lambda x: x is not None, elements))
@@ -108,6 +108,9 @@ class TestRowChanges(unittest.TestCase):
             1,
             None,
             ]), 2)
+        self.assertEqual(cnt_zero([
+            0.0,
+            ]), 1)
         self.assertEqual(sum_of_not_nones([
             lm_kw.wartosc_zero_globalna,
             None,
