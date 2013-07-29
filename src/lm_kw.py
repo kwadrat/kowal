@@ -27,7 +27,7 @@ def dec2flt(value):
 def for_storing(value):
     if have_dec_type(value):
         result = d2a(value)
-    elif isinstance(value, float):
+    elif isinstance(value, float) or isinstance(value, int):
         result = str(value)
     else:
         result = 'NULL'
@@ -80,6 +80,7 @@ class TestPointNumbers(unittest.TestCase):
         self.assertEqual(for_storing(None), 'NULL')
         self.assertEqual(for_storing(a2d('1.25')), '1.250000')
         self.assertEqual(for_storing(1.75), '1.75')
+        self.assertEqual(for_storing(2), '2')
         self.assertEqual(have_dec_type(a2d('0')), 1)
         self.assertEqual(have_dec_type(0), 0)
         self.assertEqual(calculate_rounding(3), decimal.Decimal('0.001'))
