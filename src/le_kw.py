@@ -35,7 +35,7 @@ def dq_insert_vector_of_samples(dfb, n_table, key_object, row_date, all_samples,
     dfb.query_silent(db_statement)
 
 def dq_update_vector_of_samples(dfb, n_table, key_object, row_date, all_samples, v_none, v_zero, v_sum, sample_key):
-    db_statement = fz_kw.ptn_update_vector_of_samples(n_table, key_object, row_date, all_samples, sample_key)
+    db_statement = fz_kw.ptn_update_vector_of_samples(n_table, key_object, row_date, all_samples, v_none, v_zero, v_sum, sample_key)
     dfb.query_silent(db_statement)
 
 def dq_load_one_vector_from_db(dfb, table_name, key_object, row_date):
