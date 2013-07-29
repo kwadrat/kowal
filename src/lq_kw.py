@@ -34,13 +34,13 @@ def allowed_replacement(old_value, new_value):
     return result
 
 def cnt_none(elements):
-    return len(filter(lambda x: x == '' or x is None, elements))
+    return len(filter(lambda x: x is None, elements))
 
 def cnt_zero(elements):
     return len(filter(lambda x: x == lm_kw.wartosc_zero_globalna, elements))
 
 def sum_of_not_nones(elements):
-    return sum(filter(lambda x: x != '' and x is not None, elements), lm_kw.wartosc_zero_globalna)
+    return sum(filter(lambda x: x is not None, elements), lm_kw.wartosc_zero_globalna)
 
 class SampleRow(object):
     def __init__(self):
