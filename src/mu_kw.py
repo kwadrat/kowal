@@ -72,7 +72,10 @@ def unique_sorted(dane_bazy, field):
     return object_names
 
 def normalize_value(before):
-    result = None
+    if before == '':
+        result = None
+    else:
+        result = before
     return result
 
 class CommonReader(object):
@@ -230,3 +233,4 @@ class Test_Common_Reader(unittest.TestCase):
         Test_Common_Reader:
         '''
         self.assertEqual(normalize_value(''), None)
+        self.assertEqual(normalize_value(0), 0)
