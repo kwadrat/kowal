@@ -44,7 +44,7 @@ lxa_20_inst = """\
 cd ..;tar cjf bkw_2013.01.31_23.59.00.tar.bz2 bkw dkw;mv bkw_2013.01.31_23.59.00.tar.bz2 bkw; cd bkw
 """
 lxa_21_inst = """\
-UPDATE uu_power SET m_samples='{NULL,NULL,NULL}' WHERE k_sample=7 AND f_object=123 AND m_date='2013-01-31';"""
+UPDATE uu_power SET m_samples='{NULL,0,0,1.5,2.5,3}' WHERE k_sample=7 AND f_object=123 AND m_date='2013-01-31';"""
 lxa_22_inst = """\
 UPDATE %(n_table)s SET %(e_samples)s=%(m_samples)s WHERE %(e_key_sample)s=%(k_sample)d AND %(e_object)s=%(f_object)d AND %(e_date)s='%(m_date)s';"""
 lxa_23_inst = """\
