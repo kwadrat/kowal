@@ -105,6 +105,12 @@ def ptn_update_vector_of_samples(n_table, key_object, row_date, all_samples, v_n
         m_date=row_date,
         e_samples=lc_kw.fq_m_samples_qv,
         m_samples=ln_kw.convert_all(all_samples),
+        e_none=lc_kw.fq_m_none_qv,
+        v_none=v_none,
+        e_zero=lc_kw.fq_m_zero_qv,
+        v_zero=v_zero,
+        e_sum=lc_kw.fq_m_sum_qv,
+        v_sum=v_sum,
         e_key_sample=lc_kw.fq_k_sample_qv,
         k_sample=sample_key,
         )
