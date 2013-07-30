@@ -236,6 +236,11 @@ class CommonReader(object):
         obk = lr_kw.GeneratorUU(self.table_of_samples)
         db_statement = obk.samples_for_recalculating()
         self.all_results = dfb.query_dct(db_statement)
+        for one_result in self.all_results:
+            sample_key = one_result[lc_kw.fq_k_sample_qv]
+            tmp_samples = one_result[lc_kw.fq_m_samples_qv]
+            my_sample_row = lq_kw.SampleRow()
+            my_sample_row.fill_from_data(sample_key, tmp_samples)
 
 class Test_Common_Reader(unittest.TestCase):
     def test_common_reader(self):
