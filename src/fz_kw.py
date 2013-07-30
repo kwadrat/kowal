@@ -115,6 +115,19 @@ def ptn_update_vector_of_samples(n_table, key_object, row_date, all_samples, v_n
         k_sample=sample_key,
         )
 
+def ptn_update_stats_of_samples(n_table, v_none, v_zero, v_sum, sample_key):
+    return fy_kw.lxa_51_inst % dict(
+        n_table=n_table,
+        e_none=lc_kw.fq_m_none_qv,
+        v_none=v_none,
+        e_zero=lc_kw.fq_m_zero_qv,
+        v_zero=v_zero,
+        e_sum=lc_kw.fq_m_sum_qv,
+        v_sum=v_sum,
+        e_key_sample=lc_kw.fq_k_sample_qv,
+        k_sample=sample_key,
+        )
+
 def ptn_load_one_vector_from_db(table_name, key_object, row_date):
     return fy_kw.lxa_31_inst % dict(
         table_name=table_name,
@@ -171,6 +184,7 @@ class TestVariousPatterns(unittest.TestCase):
         self.assertEqual(ptn_add_new_object_key('n'), fy_kw.lxa_15_inst)
         self.assertEqual(ptn_insert_vector_of_samples(lc_kw.fq_uu_power_qv, 123, '2013-01-31', [None, 0, 0, 1.5, 2.5, 3], 1, 2, 7.0), fy_kw.lxa_17_inst)
         self.assertEqual(ptn_update_vector_of_samples(lc_kw.fq_uu_power_qv, 123, '2013-01-31', [None, 0, 0, 1.5, 2.5, 3], 1, 2, 7.0, 8), fy_kw.lxa_21_inst)
+        self.assertEqual(ptn_update_stats_of_samples(lc_kw.fq_uu_power_qv, 1, 2, 7.0, 8), fy_kw.lxa_50_inst)
         self.assertEqual(ptn_load_one_vector_from_db(lc_kw.fq_uu_power_qv, 18, '2013-01-31'), fy_kw.lxa_30_inst)
         self.assertEqual(ptn_liczniki_poboru_w_roku(lc_kw.fq_uu_power_qv, 18, '2013-01-31'), fy_kw.lxa_33_inst)
         self.assertEqual(ptn_liczniki_poboru_w_roku(lc_kw.fq_uu_energy_qv, 19, '2013-02-01'), fy_kw.lxa_36_inst)
