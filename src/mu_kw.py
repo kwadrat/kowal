@@ -241,6 +241,8 @@ class CommonReader(object):
             tmp_samples = one_result[lc_kw.fq_m_samples_qv]
             my_sample_row = lq_kw.SampleRow()
             my_sample_row.fill_from_data(sample_key, tmp_samples)
+            my_sample_row.make_stats_of_samples(
+                dfb, self.table_of_samples, sample_key)
 
 class Test_Common_Reader(unittest.TestCase):
     def test_common_reader(self):
