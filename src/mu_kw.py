@@ -233,6 +233,7 @@ class CommonReader(object):
         '''
         CommonReader:
         '''
+        obk = lr_kw.GeneratorUU(self.table_of_samples)
 
 class Test_Common_Reader(unittest.TestCase):
     def test_common_reader(self):
