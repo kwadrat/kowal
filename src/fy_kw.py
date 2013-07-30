@@ -112,3 +112,5 @@ frmvld.addValidation("data", wzor_data, kmnt_data);
 </script>'''
 lxa_48_inst = """\
 SELECT k_sample, m_samples FROM uu_energy;"""
+lxa_49_inst = """\
+SELECT %(e_key_sample)s, %(e_samples)s FROM %(my_table_name)s;"""
