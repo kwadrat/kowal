@@ -85,9 +85,7 @@ class SampleRow(object):
         SampleRow:
         '''
         (key_object, row_date) = local_key
-        v_none = cnt_none(self.list_of_samples)
-        v_zero = cnt_zero(self.list_of_samples)
-        v_sum = sum_of_not_nones(self.list_of_samples)
+        v_none, v_zero, v_sum = obtain_stats(self.list_of_samples)
         if self.sample_key:
             le_kw.dq_update_vector_of_samples(dfb, table_of_samples, key_object, row_date, self.list_of_samples, v_none, v_zero, v_sum, self.sample_key)
         else:
