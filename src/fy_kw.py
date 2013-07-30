@@ -114,3 +114,5 @@ lxa_48_inst = """\
 SELECT k_sample, m_samples FROM uu_energy;"""
 lxa_49_inst = """\
 SELECT %(e_key_sample)s, %(e_samples)s FROM %(my_table_name)s;"""
+lxa_50_inst = """\
+UPDATE uu_power SET m_none=1, m_zero=2, m_sum=7.0 WHERE k_sample=8;"""
