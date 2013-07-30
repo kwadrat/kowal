@@ -234,6 +234,8 @@ class CommonReader(object):
         CommonReader:
         '''
         obk = lr_kw.GeneratorUU(self.table_of_samples)
+        db_statement = obk.samples_for_recalculating()
+        self.all_results = dfb.query_dct(db_statement)
 
 class Test_Common_Reader(unittest.TestCase):
     def test_common_reader(self):
