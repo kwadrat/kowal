@@ -42,6 +42,12 @@ def cnt_zero(elements):
 def sum_of_not_nones(elements):
     return sum(filter(lambda x: x is not None, elements))
 
+def obtain_stats(list_of_samples):
+    v_none = cnt_none(list_of_samples)
+    v_zero = cnt_zero(list_of_samples)
+    v_sum = sum_of_not_nones(list_of_samples)
+    return v_none, v_zero, v_sum
+
 class SampleRow(object):
     def __init__(self):
         '''
