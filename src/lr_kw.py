@@ -73,6 +73,12 @@ class GeneratorUU(object):
         '''
         self.my_week_day = my_week_day
 
+    def samples_for_recalculating(self):
+        '''
+        GeneratorUU:
+        '''
+        return fy_kw.lxa_48_inst
+
 def generate_specific_drawing(dfb, pytanie, multiplier):
     result = dfb.query_dct(pytanie)
     tmp_frags = []
@@ -154,3 +160,10 @@ class TestUUQueries(unittest.TestCase):
         obk.set_place(1)
         obk.set_week_day(0)
         self.assertEqual(obk.final_shape(), fy_kw.lxa_29_inst)
+
+    def test_uu_6_queries(self):
+        '''
+        TestUUQueries:
+        '''
+        obk = GeneratorUU(lc_kw.fq_uu_energy_qv)
+        self.assertEqual(obk.samples_for_recalculating(), fy_kw.lxa_48_inst)
