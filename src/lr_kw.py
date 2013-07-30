@@ -77,7 +77,11 @@ class GeneratorUU(object):
         '''
         GeneratorUU:
         '''
-        return fy_kw.lxa_48_inst
+        return fy_kw.lxa_49_inst % dict(
+            e_key_sample=lc_kw.fq_k_sample_qv,
+            e_samples=lc_kw.fq_m_samples_qv,
+            my_table_name=self.my_table_name,
+            )
 
 def generate_specific_drawing(dfb, pytanie, multiplier):
     result = dfb.query_dct(pytanie)
