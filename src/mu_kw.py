@@ -228,6 +228,11 @@ class CommonReader(object):
                         raise
         wbk.save(output_file)
 
+    def recalculate_statistics(self, dfb):
+        '''
+        CommonReader:
+        '''
+
 class Test_Common_Reader(unittest.TestCase):
     def test_common_reader(self):
         '''
