@@ -110,3 +110,5 @@ frmvld = new Validator("formularz");
 frmvld.addValidation("data", "req", "Potrzebuję daty");
 frmvld.addValidation("data", wzor_data, kmnt_data);
 </script>'''
+lxa_48_inst = """\
+SELECT k_sample, m_samples FROM uu_energy;"""
