@@ -33,13 +33,13 @@ class DayCellsStats(object):
         self.zero_cells = 0
         self.sum_of_cells = lm_kw.wartosc_zero_globalna
 
-    def analyze_the_cell(self, single_cell):
+    def analyze_the_cell(self, value_in_cell):
         '''
         DayCellsStats:
         '''
-        if single_cell is None:
+        if value_in_cell is None:
             self.empty_cells += 1
-        elif single_cell == lm_kw.wartosc_zero_globalna:
+        elif value_in_cell == lm_kw.wartosc_zero_globalna:
             self.zero_cells += 1
 
     def cell_problems(self):
