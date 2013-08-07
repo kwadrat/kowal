@@ -47,6 +47,7 @@ def przemysl_wiersz_poborow(slownik_wpisow, single_row):
         for single_col in single_row[lc_kw.fq_m_samples_qv]:
             day_cell.analyze_the_cell(single_col)
         compare_values(day_cell.empty_cells, single_row[lc_kw.fq_m_none_qv])
+        compare_values(day_cell.zero_cells, single_row[lc_kw.fq_m_zero_qv])
         ##############################################################################
     else:
         ##############################################################################
