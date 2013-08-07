@@ -31,7 +31,6 @@ class DayCellsStats(object):
         '''
         self.empty_cells = 0
         self.zero_cells = 0
-        self.sum_of_cells = lm_kw.wartosc_zero_globalna
 
     def analyze_the_cell(self, value_in_cell):
         '''
@@ -42,7 +41,6 @@ class DayCellsStats(object):
         else:
             if value_in_cell == lm_kw.wartosc_zero_globalna:
                 self.zero_cells += 1
-            self.sum_of_cells += value_in_cell
 
     def cell_problems(self):
         '''
@@ -113,13 +111,3 @@ class TestDeficits(unittest.TestCase):
         self.assertEqual(obk.cell_background(), CLL_Background_Problems)
         self.assertEqual(obk.cell_message(), '0/1')
         self.assertEqual(obk.cell_problems(), 1)
-
-    def test_3_deficits(self):
-        '''
-        TestDeficits:
-        '''
-        obk = DayCellsStats()
-        self.assertEqual(obk.sum_of_cells, lm_kw.wartosc_zero_globalna)
-        obk.analyze_the_cell(lm_kw.a2d('1'))
-        obk.analyze_the_cell(lm_kw.a2d('2'))
-        self.assertEqual(obk.sum_of_cells, lm_kw.a2d('3'))
