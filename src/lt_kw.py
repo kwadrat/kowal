@@ -8,7 +8,6 @@ NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import fy_kw
 import lc_kw
 import le_kw
-import rq_kw
 import dn_kw
 import lw_kw
 import ze_kw
@@ -42,16 +41,8 @@ def compare_values(slow_value, fast_value):
 
 def przemysl_wiersz_poborow(slownik_wpisow, single_row):
     day_cell = fx_kw.DayCellsStats()
-    if rq_kw.Aim_for_Fast_Statistics:
-        ##############################################################################
-        day_cell.empty_cells = single_row[lc_kw.fq_m_none_qv]
-        day_cell.zero_cells = single_row[lc_kw.fq_m_zero_qv]
-        ##############################################################################
-    else:
-        ##############################################################################
-        for single_col in single_row[lc_kw.fq_m_samples_qv]:
-            day_cell.analyze_the_cell(single_col)
-        ##############################################################################
+    day_cell.empty_cells = single_row[lc_kw.fq_m_none_qv]
+    day_cell.zero_cells = single_row[lc_kw.fq_m_zero_qv]
     full_date = single_row[lc_kw.fq_m_date_qv]
     zapamietaj_pomiar(
         slownik_wpisow,

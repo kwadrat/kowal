@@ -157,5 +157,3 @@ else:
 Tymczasowo_pokaz_klucz_faktury_zamiast_licz_porz = 0
 
 Niebezpieczne_testowa_aplikacja_produkcyjna_baza = 0
-
-Aim_for_Fast_Statistics = 1
