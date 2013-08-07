@@ -72,9 +72,9 @@ def wygeneruj_wiersz_miesiaca(lst_h, slownik_wpisow, wszystkie_dni, jeden_miesia
     lst_h.ddj(ze_kw.op_ptd(jeden_miesiac))
     for jeden_dzien in wszystkie_dni:
         day_cell = dane_miesiaca.get(jeden_dzien)
-        class_ = None
         if day_cell is None:
             tresc = ze_kw.hard_space
+            class_ = None
         else:
             tresc = day_cell.cell_message()
             class_ = day_cell.cell_background()
