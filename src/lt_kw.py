@@ -41,7 +41,7 @@ def compare_values(slow_value, fast_value):
 
 def przemysl_wiersz_poborow(slownik_wpisow, single_row):
     day_cell = fx_kw.DayCellsStats()
-    day_cell.analyze_the_cell(single_row[lc_kw.fq_m_none_qv], single_row[lc_kw.fq_m_zero_qv])
+    day_cell.cell_params(single_row[lc_kw.fq_m_none_qv], single_row[lc_kw.fq_m_zero_qv])
     full_date = single_row[lc_kw.fq_m_date_qv]
     zapamietaj_pomiar(
         slownik_wpisow,
