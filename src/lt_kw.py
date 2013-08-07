@@ -75,7 +75,7 @@ def wygeneruj_wiersz_miesiaca(lst_h, slownik_wpisow, wszystkie_dni, jeden_miesia
         if day_cell is None:
             tresc = ze_kw.hard_space
             class_ = None
-            title = 'Brakuje tutaj danych'
+            title = None
         else:
             tresc = day_cell.cell_message()
             class_ = day_cell.cell_background()
