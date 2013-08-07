@@ -35,6 +35,10 @@ def zapamietaj_pomiar(slownik_wpisow, year, month, day, day_cell):
     slownik_miesiaca = slownik_wpisow[etykieta_miesiaca]
     slownik_miesiaca[day] = day_cell
 
+def compare_values(slow_value, fast_value):
+    if slow_value != fast_value:
+        raise RuntimeError('Rozne: %s, %s' % (repr(slow_value), repr(fast_value)))
+
 def przemysl_wiersz_poborow(slownik_wpisow, single_row):
     day_cell = fx_kw.DayCellsStats()
     for single_col in single_row[lc_kw.fq_m_samples_qv]:
