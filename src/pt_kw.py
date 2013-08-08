@@ -31,7 +31,6 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-link_area_kon = ''' />\n'''
 link_area_alter_this = ''' onMouseOver="%(over)s"\n onMouseOut="%(out)s"\n'''
 
 class KlasaObrazu(object):
@@ -96,7 +95,7 @@ class KlasaObrazu(object):
         if lc_kw.fq_tekst_qv in slownik:
             wynik.append(ow_kw.link_area_alt_title % slownik)
         # Zakończenie adresu
-        wynik.append(link_area_kon)
+        wynik.append(ow_kw.link_area_kon)
         return ''.join(wynik)
 
     def html_my_name(self, literka, lp_miejsca):
