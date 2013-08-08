@@ -14,3 +14,9 @@ for i in NazwyModulow:
             exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
         else:
             exec 'import %(modul)s' % dict(modul = i)
+
+class TestLinkuMapy(unittest.TestCase):
+    def test_linku_mapy(self):
+        '''
+        TestLinkuMapy:
+        '''
