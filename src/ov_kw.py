@@ -5,6 +5,7 @@ Analiza poboru - pokryciowy szereg list
 '''
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import lc_kw
 import le_kw
 import lh_kw
 import lt_kw
