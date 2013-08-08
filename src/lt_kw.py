@@ -13,7 +13,6 @@ import lw_kw
 import ze_kw
 import eu_kw
 import fx_kw
-import lh_kw
 import ey_kw
 import hq_kw
 import lu_kw
@@ -199,12 +198,3 @@ class OgolnySzeregListPoborow(WykresPomiarow):
         '''
         result = le_kw.dq_dane_jednego_obiektu(self.dfb, self.table_name, self.id_obiekt)
         zrob_tabele_poborow(lst_h, result)
-
-    def html_pokrycia_szeregu_poborow(self, on_mouse):
-        '''
-        OgolnySzeregListPoborow:
-        '''
-        lst_h = lh_kw.ListaHTML()
-        self.przygotuj_dla_pokrycia_poborow()
-        self.wizualizacja_pokrycia_poborami(lst_h)
-        return lst_h.polacz_html()

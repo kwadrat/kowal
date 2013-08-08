@@ -26,3 +26,12 @@ class PokryciowySzeregListPoborow(OgolnySzeregListPoborow):
         PokryciowySzeregListPoborow:
         '''
         OgolnySzeregListPoborow.__init__(self, tgk, dfb)
+
+    def html_pokrycia_szeregu_poborow(self, on_mouse):
+        '''
+        PokryciowySzeregListPoborow:
+        '''
+        lst_h = lh_kw.ListaHTML()
+        self.przygotuj_dla_pokrycia_poborow()
+        self.wizualizacja_pokrycia_poborami(lst_h)
+        return lst_h.polacz_html()
