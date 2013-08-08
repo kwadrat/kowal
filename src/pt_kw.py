@@ -70,8 +70,8 @@ class KlasaObrazu(object):
         # Zmiana aktualnego obrazka
         lista_over = []
         lista_out = []
-        if 'nowy_this' in slownik:
-            lista_over.append("%s.src='%s'" % (self.html_name, oc_kw.pelna_generowana_nazwa(slownik['nowy_this'])))
+        if oc_kw.fq_nowy_this_qv in slownik:
+            lista_over.append("%s.src='%s'" % (self.html_name, oc_kw.pelna_generowana_nazwa(slownik[oc_kw.fq_nowy_this_qv])))
             lista_out.append("%s.src='%s'" % (self.html_name, oc_kw.pelna_generowana_nazwa(self.moja_nazwa)))
         if oc_kw.EYK_lporz_fktr in slownik:
             moj_nr_faktury = slownik[oc_kw.EYK_lporz_fktr]
