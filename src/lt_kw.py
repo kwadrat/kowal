@@ -200,16 +200,6 @@ class OgolnySzeregListPoborow(WykresPomiarow):
         result = le_kw.dq_dane_jednego_obiektu(self.dfb, self.table_name, self.id_obiekt)
         zrob_tabele_poborow(lst_h, result)
 
-    def html_szeregu_poborow(self, on_mouse):
-        '''
-        OgolnySzeregListPoborow:
-        '''
-        lst_h = lh_kw.ListaHTML()
-        lst_h.ddj(fy_kw.lxa_47_inst)
-        self.przygotuj_dla_poborow()
-        self.grafika_poborow_dla_pomiarow(lst_h, on_mouse)
-        return lst_h.polacz_html()
-
     def html_pokrycia_szeregu_poborow(self, on_mouse):
         '''
         OgolnySzeregListPoborow:

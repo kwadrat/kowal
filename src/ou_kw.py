@@ -27,3 +27,13 @@ class PomiarowySzeregListPoborow(OgolnySzeregListPoborow):
         PomiarowySzeregListPoborow:
         '''
         OgolnySzeregListPoborow.__init__(self, tgk, dfb)
+
+    def html_szeregu_poborow(self, on_mouse):
+        '''
+        PomiarowySzeregListPoborow:
+        '''
+        lst_h = lh_kw.ListaHTML()
+        lst_h.ddj(fy_kw.lxa_47_inst)
+        self.przygotuj_dla_poborow()
+        self.grafika_poborow_dla_pomiarow(lst_h, on_mouse)
+        return lst_h.polacz_html()
