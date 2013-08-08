@@ -64,7 +64,7 @@ class KlasaObrazu(object):
         KlasaObrazu:
         '''
         wynik = []
-        self.tgk.zmniejsz_obszar_aktywny_dla_firefox(slownik)
+        ow_kw.zmniejsz_obszar_aktywny_dla_firefox(self.tgk.jestem_msie, slownik)
         # Początek i współrzędne obszaru
         wynik.append(ow_kw.link_area_pocz % slownik)
         # Zmiana aktualnego obrazka
