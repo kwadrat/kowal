@@ -114,14 +114,7 @@ class MojeSlupki(KlasaObrazu):
         # Tylko gdy dostaliśmy prawdziwą fakturę (ciągłą, nie punktową),
         # to prosimy ją o dymek
         if jeden_odc_bzw is not None:
-            (px, py, kx, ky) = pozycja
-            if self.tgk.jestem_msie:
-                # MSIE ma tylko wnętrze, poszerzymy trochę koniec X i koniec Y
-                kx += 1
-                ky += 1
-            else:
-                # Firefox
-                pass
+            (px, py, kx, ky) = ow_kw.poszerz_pozycje(self.tgk.jestem_msie, pozycja)
             tmp_slownik = dict(
                 px=px,
                 py=py,
