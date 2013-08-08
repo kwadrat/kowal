@@ -154,9 +154,8 @@ class OgolnySzeregListPoborow(WykresPomiarow):
         '''
         OgolnySzeregListPoborow:
         '''
-        on_mouse = {}
         for lista_poborow in self.szereg_poborow:
-            lista_poborow.html_ls_poborow(lst_h, on_mouse)
+            lista_poborow.html_ls_poborow(lst_h)
 
     def wizualizacja_pokrycia_poborami(self, lst_h):
         '''

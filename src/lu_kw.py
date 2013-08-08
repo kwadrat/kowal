@@ -64,7 +64,7 @@ class PoboryDanegoDnia(WykresPomiarow):
                 slownik_qm.jh_ustaw_kwt_qm(kwota)
                 self.dnw.odcinki_bazowe.app_end(jb_kw.JedenOdcinekBazowy(2 * akt, 2 * nast, slownik_qm))
 
-    def html_ls_poborow(self, lst_h, on_mouse):
+    def html_ls_poborow(self, lst_h):
         '''
         PoboryDanegoDnia:
         '''
@@ -80,6 +80,7 @@ class PoboryDanegoDnia(WykresPomiarow):
             moja_jednostka))
         # qaz - duplikat
         ms.podpisz_obie_osie(vert_axis)
+        on_mouse = {}
         kod_html = ms.wykreslanie_slupkow(on_mouse)
         lst_h.ddj(''.join(opis_dotyczy))
         lst_h.ddj(kod_html)
