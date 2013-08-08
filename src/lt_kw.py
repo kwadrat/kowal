@@ -150,10 +150,11 @@ class OgolnySzeregListPoborow(WykresPomiarow):
             lw_kw.Dn_Power: lc_kw.fq_uu_power_qv,
             }[self.tvk_pobor]
 
-    def grafika_poborow_dla_pomiarow(self, lst_h, on_mouse):
+    def grafika_poborow_dla_pomiarow(self, lst_h):
         '''
         OgolnySzeregListPoborow:
         '''
+        on_mouse = {}
         for lista_poborow in self.szereg_poborow:
             lista_poborow.html_ls_poborow(lst_h, on_mouse)
 
