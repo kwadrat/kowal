@@ -21,6 +21,11 @@ link_area_alt_title = ''' alt="%(tekst)s" title="%(tekst)s"'''
 link_area_kon = ''' />\n'''
 link_area_alter_this = ''' onMouseOver="%(over)s"\n onMouseOut="%(out)s"\n'''
 
+def zmniejsz_obszar_aktywny_dla_firefox(jestem_msie, slownik):
+    if not jestem_msie:
+        slownik[oc_kw.fq_kx_qv] -= 1
+        slownik[oc_kw.fq_ky_qv] -= 1
+
 class TestLinkuMapy(unittest.TestCase):
     def test_linku_mapy(self):
         '''
@@ -30,3 +35,27 @@ class TestLinkuMapy(unittest.TestCase):
         self.assertEqual(link_area_alt_title, ''' alt="%(tekst)s" title="%(tekst)s"''')
         self.assertEqual(link_area_kon, ''' />\n''')
         self.assertEqual(link_area_alter_this, ''' onMouseOver="%(over)s"\n onMouseOut="%(out)s"\n''')
+
+    def test_2_linku_mapy(self):
+        '''
+        TestLinkuMapy:
+        '''
+        slownik = {
+            oc_kw.fq_kx_qv: 10,
+            oc_kw.fq_ky_qv: 20,
+            }
+        zmniejsz_obszar_aktywny_dla_firefox(1, slownik)
+        self.assertEqual(slownik[oc_kw.fq_kx_qv], 10)
+        self.assertEqual(slownik[oc_kw.fq_ky_qv], 20)
+
+    def test_3_linku_mapy(self):
+        '''
+        TestLinkuMapy:
+        '''
+        slownik = {
+            oc_kw.fq_kx_qv: 10,
+            oc_kw.fq_ky_qv: 20,
+            }
+        zmniejsz_obszar_aktywny_dla_firefox(0, slownik)
+        self.assertEqual(slownik[oc_kw.fq_kx_qv], 9)
+        self.assertEqual(slownik[oc_kw.fq_ky_qv], 19)
