@@ -106,7 +106,7 @@ class MojeSlupki(KlasaObrazu):
         '''
         self.mam_slupki.append(jeden_slupek)
 
-    def dodaj_paczke(self, on_mouse, pozycja, jeden_odc_bzw):
+    def dodaj_paczke(self, on_real_mouse, pozycja, jeden_odc_bzw):
         '''
         MojeSlupki:
         '''
@@ -128,7 +128,7 @@ class MojeSlupki(KlasaObrazu):
                 ky=ky,
                 tekst=jeden_odc_bzw.dymek_dla_slupka(self.tgk),
                 )
-            self.moja_mapa.append(self.link_mapy(on_mouse, tmp_slownik))
+            self.moja_mapa.append(self.link_mapy(on_real_mouse, tmp_slownik))
 
     def rysowanie_prostokatow(self, draw):
         '''
