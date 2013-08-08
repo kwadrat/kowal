@@ -58,6 +58,8 @@ LogDir = rjb_sczk_do_kwl + '/log'
 rjb_tld_kw_g_apl = '.py'
 fq_kx_qv = 'kx'
 fq_ky_qv = 'ky'
+fq_px_qv = 'px'
+fq_py_qv = 'py'
 
 def pelna_generowana_nazwa(nazwa):
     return poczatek_gen + nazwa
