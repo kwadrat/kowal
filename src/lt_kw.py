@@ -106,10 +106,10 @@ def zrob_tabele_poborow(lst_h, result):
 
 WykresPomiarow = hq_kw.WykresPomiarow
 
-class SzeregListPoborow(WykresPomiarow):
+class OgolnySzeregListPoborow(WykresPomiarow):
     def __init__(self, tgk, dfb):
         '''
-        SzeregListPoborow:
+        OgolnySzeregListPoborow:
         '''
         self.dfb = dfb
         self.lista_slupkow = []
@@ -121,14 +121,14 @@ class SzeregListPoborow(WykresPomiarow):
 
     def pobory_dla_licznikow(self):
         '''
-        SzeregListPoborow:
+        OgolnySzeregListPoborow:
         '''
         for lista_poborow in self.szereg_poborow:
             lista_poborow.pobory_dla_parametrow(self.dfb, self.id_obiekt, self.table_name)
 
     def przygotuj_sie_dla_listy_dni(self, lista_nr_probek):
         '''
-        SzeregListPoborow:
+        OgolnySzeregListPoborow:
         '''
         tmp_lista = []
         for nr_probki in lista_nr_probek:
@@ -138,13 +138,13 @@ class SzeregListPoborow(WykresPomiarow):
 
     def zapamietaj_wybory_formularza_poborow(self):
         '''
-        SzeregListPoborow:
+        OgolnySzeregListPoborow:
         '''
         self.id_obiekt = int(self.tgk.wez_obiekt())
 
     def determine_table_name(self):
         '''
-        SzeregListPoborow:
+        OgolnySzeregListPoborow:
         '''
         self.table_name = {
             lw_kw.Dn_Energy: lc_kw.fq_uu_energy_qv,
@@ -153,7 +153,7 @@ class SzeregListPoborow(WykresPomiarow):
 
     def numer_probki_na_podstawie_formularza(self):
         '''
-        SzeregListPoborow:
+        OgolnySzeregListPoborow:
         '''
         self.determine_table_name()
         tvk_data = self.tgk.wez_date()
@@ -162,7 +162,7 @@ class SzeregListPoborow(WykresPomiarow):
 
     def numer_probki_pokrycia_na_podstawie_formularza(self):
         '''
-        SzeregListPoborow:
+        OgolnySzeregListPoborow:
         '''
         self.determine_table_name()
         result = le_kw.dq_ogolnie_liczniki_poboru(self.dfb, self.table_name, self.id_obiekt)
@@ -170,7 +170,7 @@ class SzeregListPoborow(WykresPomiarow):
 
     def przygotuj_dla_poborow(self):
         '''
-        SzeregListPoborow:
+        OgolnySzeregListPoborow:
         '''
         self.zapamietaj_wybory_formularza_poborow()
         lista_nr_probek = self.numer_probki_na_podstawie_formularza()
@@ -179,7 +179,7 @@ class SzeregListPoborow(WykresPomiarow):
 
     def przygotuj_dla_pokrycia_poborow(self):
         '''
-        SzeregListPoborow:
+        OgolnySzeregListPoborow:
         '''
         self.zapamietaj_wybory_formularza_poborow()
         lista_nr_probek = self.numer_probki_pokrycia_na_podstawie_formularza()
@@ -188,21 +188,21 @@ class SzeregListPoborow(WykresPomiarow):
 
     def grafika_poborow_dla_pomiarow(self, lst_h, on_mouse):
         '''
-        SzeregListPoborow:
+        OgolnySzeregListPoborow:
         '''
         for lista_poborow in self.szereg_poborow:
             lista_poborow.html_ls_poborow(lst_h, on_mouse)
 
     def wizualizacja_pokrycia_poborami(self, lst_h):
         '''
-        SzeregListPoborow:
+        OgolnySzeregListPoborow:
         '''
         result = le_kw.dq_dane_jednego_obiektu(self.dfb, self.table_name, self.id_obiekt)
         zrob_tabele_poborow(lst_h, result)
 
     def html_szeregu_poborow(self, on_mouse):
         '''
-        SzeregListPoborow:
+        OgolnySzeregListPoborow:
         '''
         lst_h = lh_kw.ListaHTML()
         lst_h.ddj(fy_kw.lxa_47_inst)
@@ -212,7 +212,7 @@ class SzeregListPoborow(WykresPomiarow):
 
     def html_pokrycia_szeregu_poborow(self, on_mouse):
         '''
-        SzeregListPoborow:
+        OgolnySzeregListPoborow:
         '''
         lst_h = lh_kw.ListaHTML()
         self.przygotuj_dla_pokrycia_poborow()
