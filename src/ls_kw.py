@@ -16,8 +16,8 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-def prepare_new_image(mode, size, color):
-    im = Image.new(mode, size, color)
+def prepare_new_image(size, color):
+    im = Image.new('RGB', size, color)
     draw = ImageDraw.Draw(im)
     return im, draw
 

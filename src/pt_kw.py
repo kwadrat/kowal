@@ -110,7 +110,7 @@ class KlasaObrazu(object):
         '''
         KlasaObrazu:
         '''
-        return ls_kw.prepare_new_image('RGB', (self.szerokosc_obrazu, self.wysokosc_obrazu), tlo)
+        return ls_kw.prepare_new_image((self.szerokosc_obrazu, self.wysokosc_obrazu), tlo)
 
     def kopia_obrazu(self, im):
         '''
