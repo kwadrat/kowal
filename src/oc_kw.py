@@ -60,6 +60,7 @@ fq_kx_qv = 'kx'
 fq_ky_qv = 'ky'
 fq_px_qv = 'px'
 fq_py_qv = 'py'
+fq_nowy_this_qv = 'nowy_this'
 
 def pelna_generowana_nazwa(nazwa):
     return poczatek_gen + nazwa
