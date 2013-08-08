@@ -26,6 +26,17 @@ def zmniejsz_obszar_aktywny_dla_firefox(jestem_msie, slownik):
         slownik[oc_kw.fq_kx_qv] -= 1
         slownik[oc_kw.fq_ky_qv] -= 1
 
+def poszerz_pozycje(jestem_msie, pozycja):
+    (px, py, kx, ky) = pozycja
+    if jestem_msie:
+        # MSIE ma tylko wnętrze, poszerzymy trochę koniec X i koniec Y
+        kx += 1
+        ky += 1
+    else:
+        # Firefox
+        pass
+    return (px, py, kx, ky)
+
 class TestLinkuMapy(unittest.TestCase):
     def test_linku_mapy(self):
         '''
@@ -59,3 +70,10 @@ class TestLinkuMapy(unittest.TestCase):
         zmniejsz_obszar_aktywny_dla_firefox(0, slownik)
         self.assertEqual(slownik[oc_kw.fq_kx_qv], 9)
         self.assertEqual(slownik[oc_kw.fq_ky_qv], 19)
+
+    def test_4_linku_mapy(self):
+        '''
+        TestLinkuMapy:
+        '''
+        self.assertEqual(poszerz_pozycje(1, (10, 20, 30, 40)), (10, 20, 31, 41))
+        self.assertEqual(poszerz_pozycje(0, (10, 20, 30, 40)), (10, 20, 30, 40))
