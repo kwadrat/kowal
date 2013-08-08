@@ -63,7 +63,7 @@ class KlasaObrazu(object):
         '''
         self.szerokosc_dx_skali = pikseli_po_lewej
 
-    def link_mapy(self, on_mouse, slownik):
+    def link_mapy(self, on_real_mouse, slownik):
         '''
         KlasaObrazu:
         '''
@@ -92,7 +92,7 @@ class KlasaObrazu(object):
             on_the_mouse = link_area_alter_this % zmiany
             wynik.append(on_the_mouse)
             if oc_kw.EYK_lporz_fktr in slownik:
-                on_mouse[slownik[oc_kw.EYK_lporz_fktr]] = on_the_mouse
+                on_real_mouse[slownik[oc_kw.EYK_lporz_fktr]] = on_the_mouse
         # Dymek (opcjonalny)
         if lc_kw.fq_tekst_qv in slownik:
             wynik.append(link_area_alt_title % slownik)
