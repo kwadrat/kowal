@@ -4,7 +4,10 @@
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import lc_kw
+import oa_kw
 import oc_kw
+import mf_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -36,6 +39,40 @@ def poszerz_pozycje(jestem_msie, pozycja):
         # Firefox
         pass
     return (px, py, kx, ky)
+
+def link_a_mapy(on_real_mouse, slownik, jestem_msie, html_name, moja_nazwa):
+    wynik = []
+    zmniejsz_obszar_aktywny_dla_firefox(jestem_msie, slownik)
+    # Początek i współrzędne obszaru
+    wynik.append(link_area_pocz % slownik)
+    # Zmiana aktualnego obrazka
+    lista_over = []
+    lista_out = []
+    if oc_kw.fq_nowy_this_qv in slownik:
+        lista_over.append("%s.src='%s'" % (html_name, oc_kw.pelna_generowana_nazwa(slownik[oc_kw.fq_nowy_this_qv])))
+        lista_out.append("%s.src='%s'" % (html_name, oc_kw.pelna_generowana_nazwa(moja_nazwa)))
+    if oc_kw.EYK_lporz_fktr in slownik:
+        moj_nr_faktury = slownik[oc_kw.EYK_lporz_fktr]
+        etyk = mf_kw.nazwa_wiersza(moj_nr_faktury)
+        lista_over.append("%s.bgColor='%s'" % (etyk, oa_kw.HEX_ZIELONY))
+        lista_out.append("%s.bgColor='%s'" % (etyk,oa_kw.HEX_BIALY))
+        if lc_kw.fq_tekst_qv not in slownik:
+            slownik[lc_kw.fq_tekst_qv] = 'Faktura: %d' % moj_nr_faktury
+    if lista_over or lista_out:
+        zmiany = dict(
+        over = ';'.join(lista_over),
+        out = ';'.join(lista_out),
+        )
+        on_the_mouse = link_area_alter_this % zmiany
+        wynik.append(on_the_mouse)
+        if oc_kw.EYK_lporz_fktr in slownik:
+            on_real_mouse[slownik[oc_kw.EYK_lporz_fktr]] = on_the_mouse
+    # Dymek (opcjonalny)
+    if lc_kw.fq_tekst_qv in slownik:
+        wynik.append(link_area_alt_title % slownik)
+    # Zakończenie adresu
+    wynik.append(link_area_kon)
+    return ''.join(wynik)
 
 class TestLinkuMapy(unittest.TestCase):
     def test_linku_mapy(self):
