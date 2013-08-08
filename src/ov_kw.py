@@ -29,6 +29,14 @@ class PokryciowySzeregListPoborow(OgolnySzeregListPoborow):
         '''
         OgolnySzeregListPoborow.__init__(self, tgk, dfb)
 
+    def numer_probki_pokrycia_na_podstawie_formularza(self):
+        '''
+        PokryciowySzeregListPoborow:
+        '''
+        self.determine_table_name()
+        result = le_kw.dq_ogolnie_liczniki_poboru(self.dfb, self.table_name, self.id_obiekt)
+        return map(lambda x: x[lc_kw.fq_k_sample_qv], result)
+
     def przygotuj_dla_pokrycia_poborow(self):
         '''
         PokryciowySzeregListPoborow:

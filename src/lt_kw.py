@@ -150,14 +150,6 @@ class OgolnySzeregListPoborow(WykresPomiarow):
             lw_kw.Dn_Power: lc_kw.fq_uu_power_qv,
             }[self.tvk_pobor]
 
-    def numer_probki_pokrycia_na_podstawie_formularza(self):
-        '''
-        OgolnySzeregListPoborow:
-        '''
-        self.determine_table_name()
-        result = le_kw.dq_ogolnie_liczniki_poboru(self.dfb, self.table_name, self.id_obiekt)
-        return map(lambda x: x[lc_kw.fq_k_sample_qv], result)
-
     def grafika_poborow_dla_pomiarow(self, lst_h, on_mouse):
         '''
         OgolnySzeregListPoborow:
