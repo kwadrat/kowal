@@ -113,13 +113,15 @@ class MojPasek(KlasaObrazu):
         '''
         tmp_nazwa2 = mf_kw.plik_grafiki(self.tgk, self.literka_typu, self.dnw.lp_miejsca, wersja)
         slownik = dict(
-          px = lg_x,
-          py = lg_y,
-          kx = pd_x,
-          ky = pd_y,
-          nowy_this = tmp_nazwa2,
-          lp_faktury = wersja[0], # wersja to jednoelementowa lista l.p. faktur
         )
+        slownik = {
+            oc_kw.fq_px_qv: lg_x,
+            oc_kw.fq_py_qv: lg_y,
+            oc_kw.fq_kx_qv: pd_x,
+            oc_kw.fq_ky_qv: pd_y,
+            oc_kw.fq_nowy_this_qv: tmp_nazwa2,
+            oc_kw.EYK_lporz_fktr: wersja[0], # wersja to jednoelementowa lista l.p. faktur
+            }
         self.moja_mapa.append(self.link_mapy(on_real_mouse, slownik))
 
     def zaznacz_faktury(self, draw, wersja, on_mouse, kolor):
