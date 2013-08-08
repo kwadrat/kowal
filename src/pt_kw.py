@@ -63,38 +63,7 @@ class KlasaObrazu(object):
         '''
         KlasaObrazu:
         '''
-        wynik = []
-        ow_kw.zmniejsz_obszar_aktywny_dla_firefox(self.tgk.jestem_msie, slownik)
-        # Początek i współrzędne obszaru
-        wynik.append(ow_kw.link_area_pocz % slownik)
-        # Zmiana aktualnego obrazka
-        lista_over = []
-        lista_out = []
-        if oc_kw.fq_nowy_this_qv in slownik:
-            lista_over.append("%s.src='%s'" % (self.html_name, oc_kw.pelna_generowana_nazwa(slownik[oc_kw.fq_nowy_this_qv])))
-            lista_out.append("%s.src='%s'" % (self.html_name, oc_kw.pelna_generowana_nazwa(self.moja_nazwa)))
-        if oc_kw.EYK_lporz_fktr in slownik:
-            moj_nr_faktury = slownik[oc_kw.EYK_lporz_fktr]
-            etyk = mf_kw.nazwa_wiersza(moj_nr_faktury)
-            lista_over.append("%s.bgColor='%s'" % (etyk, oa_kw.HEX_ZIELONY))
-            lista_out.append("%s.bgColor='%s'" % (etyk,oa_kw.HEX_BIALY))
-            if lc_kw.fq_tekst_qv not in slownik:
-                slownik[lc_kw.fq_tekst_qv] = 'Faktura: %d' % moj_nr_faktury
-        if lista_over or lista_out:
-            zmiany = dict(
-            over = ';'.join(lista_over),
-            out = ';'.join(lista_out),
-            )
-            on_the_mouse = ow_kw.link_area_alter_this % zmiany
-            wynik.append(on_the_mouse)
-            if oc_kw.EYK_lporz_fktr in slownik:
-                on_real_mouse[slownik[oc_kw.EYK_lporz_fktr]] = on_the_mouse
-        # Dymek (opcjonalny)
-        if lc_kw.fq_tekst_qv in slownik:
-            wynik.append(ow_kw.link_area_alt_title % slownik)
-        # Zakończenie adresu
-        wynik.append(ow_kw.link_area_kon)
-        return ''.join(wynik)
+        return ow_kw.link_a_mapy(on_real_mouse, slownik, self.tgk.jestem_msie, self.html_name, self.moja_nazwa)
 
     def html_my_name(self, literka, lp_miejsca):
         '''
