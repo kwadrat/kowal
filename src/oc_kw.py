@@ -56,6 +56,7 @@ rjb_kwl_sam = 'kowal'
 rjb_sczk_do_kwl = rjb_kt_dom_uzt + rjb_sam_slsh + rjb_kwl_sam
 LogDir = rjb_sczk_do_kwl + '/log'
 rjb_tld_kw_g_apl = '.py'
+fq_kx_qv = 'kx'
 
 def pelna_generowana_nazwa(nazwa):
     return poczatek_gen + nazwa
