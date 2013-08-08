@@ -106,7 +106,7 @@ class MojPasek(KlasaObrazu):
         if lg_x <= pd_x and lg_y <= pd_y:
             draw.rectangle((lg_x, lg_y, pd_x, pd_y), kolor)
 
-    def dodaj_mouse_over(self, on_mouse, lg_x, lg_y, pd_x, pd_y, wersja):
+    def dodaj_mouse_over(self, on_real_mouse, lg_x, lg_y, pd_x, pd_y, wersja):
         '''
         MojPasek:
         '''
@@ -119,7 +119,7 @@ class MojPasek(KlasaObrazu):
           nowy_this = tmp_nazwa2,
           lp_faktury = wersja[0], # wersja to jednoelementowa lista l.p. faktur
         )
-        self.moja_mapa.append(self.link_mapy(on_mouse, slownik))
+        self.moja_mapa.append(self.link_mapy(on_real_mouse, slownik))
 
     def zaznacz_faktury(self, draw, wersja, on_mouse, kolor):
         '''
