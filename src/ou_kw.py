@@ -30,6 +30,15 @@ class PomiarowySzeregListPoborow(OgolnySzeregListPoborow):
         '''
         OgolnySzeregListPoborow.__init__(self, tgk, dfb)
 
+    def numer_probki_na_podstawie_formularza(self):
+        '''
+        PomiarowySzeregListPoborow:
+        '''
+        self.determine_table_name()
+        tvk_data = self.tgk.wez_date()
+        result = le_kw.dq_liczniki_poboru_w_roku(self.dfb, self.table_name, self.id_obiekt, tvk_data)
+        return map(lambda x: x[lc_kw.fq_k_sample_qv], result)
+
     def przygotuj_dla_poborow(self):
         '''
         PomiarowySzeregListPoborow:
