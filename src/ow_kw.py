@@ -18,6 +18,7 @@ for i in NazwyModulow:
 link_area_pocz = '''<area shape="rect" coords="%(px)d,%(py)d,%(kx)d,%(ky)d"\n'''
 link_area_alt_title = ''' alt="%(tekst)s" title="%(tekst)s"'''
 link_area_kon = ''' />\n'''
+link_area_alter_this = ''' onMouseOver="%(over)s"\n onMouseOut="%(out)s"\n'''
 
 class TestLinkuMapy(unittest.TestCase):
     def test_linku_mapy(self):
@@ -27,3 +28,4 @@ class TestLinkuMapy(unittest.TestCase):
         self.assertEqual(link_area_pocz, '''<area shape="rect" coords="%(px)d,%(py)d,%(kx)d,%(ky)d"\n''')
         self.assertEqual(link_area_alt_title, ''' alt="%(tekst)s" title="%(tekst)s"''')
         self.assertEqual(link_area_kon, ''' />\n''')
+        self.assertEqual(link_area_alter_this, ''' onMouseOver="%(over)s"\n onMouseOut="%(out)s"\n''')

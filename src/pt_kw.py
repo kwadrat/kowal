@@ -31,8 +31,6 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-link_area_alter_this = ''' onMouseOver="%(over)s"\n onMouseOut="%(out)s"\n'''
-
 class KlasaObrazu(object):
     '''
     Klasa bazowa dla poszczególnych graficznych przedstawień w postaci PNG
@@ -87,7 +85,7 @@ class KlasaObrazu(object):
             over = ';'.join(lista_over),
             out = ';'.join(lista_out),
             )
-            on_the_mouse = link_area_alter_this % zmiany
+            on_the_mouse = ow_kw.link_area_alter_this % zmiany
             wynik.append(on_the_mouse)
             if oc_kw.EYK_lporz_fktr in slownik:
                 on_real_mouse[slownik[oc_kw.EYK_lporz_fktr]] = on_the_mouse
