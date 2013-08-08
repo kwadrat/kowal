@@ -31,7 +31,6 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-link_area_alt_title = ''' alt="%(tekst)s" title="%(tekst)s"'''
 link_area_kon = ''' />\n'''
 link_area_alter_this = ''' onMouseOver="%(over)s"\n onMouseOut="%(out)s"\n'''
 
@@ -95,7 +94,7 @@ class KlasaObrazu(object):
                 on_real_mouse[slownik[oc_kw.EYK_lporz_fktr]] = on_the_mouse
         # Dymek (opcjonalny)
         if lc_kw.fq_tekst_qv in slownik:
-            wynik.append(link_area_alt_title % slownik)
+            wynik.append(ow_kw.link_area_alt_title % slownik)
         # Zakończenie adresu
         wynik.append(link_area_kon)
         return ''.join(wynik)
