@@ -15,8 +15,11 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+link_area_pocz = '''<area shape="rect" coords="%(px)d,%(py)d,%(kx)d,%(ky)d"\n'''
+
 class TestLinkuMapy(unittest.TestCase):
     def test_linku_mapy(self):
         '''
         TestLinkuMapy:
         '''
+        self.assertEqual(link_area_pocz, '''<area shape="rect" coords="%(px)d,%(py)d,%(kx)d,%(ky)d"\n''')

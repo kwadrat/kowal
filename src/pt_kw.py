@@ -31,7 +31,6 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-link_area_pocz = '''<area shape="rect" coords="%(px)d,%(py)d,%(kx)d,%(ky)d"\n'''
 link_area_alt_title = ''' alt="%(tekst)s" title="%(tekst)s"'''
 link_area_kon = ''' />\n'''
 link_area_alter_this = ''' onMouseOver="%(over)s"\n onMouseOut="%(out)s"\n'''
@@ -71,7 +70,7 @@ class KlasaObrazu(object):
         wynik = []
         self.tgk.zmniejsz_obszar_aktywny_dla_firefox(slownik)
         # Początek i współrzędne obszaru
-        wynik.append(link_area_pocz % slownik)
+        wynik.append(ow_kw.link_area_pocz % slownik)
         # Zmiana aktualnego obrazka
         lista_over = []
         lista_out = []
