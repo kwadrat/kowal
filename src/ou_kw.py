@@ -24,4 +24,4 @@ class PomiarowySzeregListPoborow(OgolnySzeregListPoborow):
         '''
         PomiarowySzeregListPoborow:
         '''
-        OgolnySzeregListPoborow.__init__(tgk, dfb)
+        OgolnySzeregListPoborow.__init__(self, tgk, dfb)

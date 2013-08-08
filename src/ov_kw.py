@@ -24,4 +24,4 @@ class PokryciowySzeregListPoborow(OgolnySzeregListPoborow):
         '''
         PokryciowySzeregListPoborow:
         '''
-        OgolnySzeregListPoborow.__init__(tgk, dfb)
+        OgolnySzeregListPoborow.__init__(self, tgk, dfb)
