@@ -172,7 +172,17 @@ class ConsumptionQry(object):
         '''
         ConsumptionQry:
         '''
-        return fy_kw.lxa_38_inst
+        table_name = lc_kw.fq_uu_energy_qv
+        key_object = 7
+        return fy_kw.lxa_39_inst % dict(
+            table_name=table_name,
+            e_date=lc_kw.fq_m_date_qv,
+            e_none=lc_kw.fq_m_none_qv,
+            e_zero=lc_kw.fq_m_zero_qv,
+            e_sum=lc_kw.fq_m_sum_qv,
+            e_object=lc_kw.fq_f_object_qv,
+            f_object=key_object,
+            )
 
 class TestVariousPatterns(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual
