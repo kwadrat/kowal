@@ -33,7 +33,6 @@ class PokryciowySzeregListPoborow(OgolnySzeregListPoborow):
         '''
         PokryciowySzeregListPoborow:
         '''
-        self.determine_table_name()
         result = le_kw.dq_ogolnie_liczniki_poboru(self.dfb, self.table_name, self.id_obiekt)
         return map(lambda x: x[lc_kw.fq_k_sample_qv], result)
 
