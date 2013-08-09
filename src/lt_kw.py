@@ -106,6 +106,15 @@ def zrob_tabele_poborow(lst_h, result):
 WykresPomiarow = hq_kw.WykresPomiarow
 
 class OgolnySzeregListPoborow(WykresPomiarow):
+    def determine_table_name(self):
+        '''
+        OgolnySzeregListPoborow:
+        '''
+        self.table_name = {
+            lw_kw.Dn_Energy: lc_kw.fq_uu_energy_qv,
+            lw_kw.Dn_Power: lc_kw.fq_uu_power_qv,
+            }[self.tvk_pobor]
+
     def __init__(self, tgk, dfb):
         '''
         OgolnySzeregListPoborow:
@@ -140,15 +149,6 @@ class OgolnySzeregListPoborow(WykresPomiarow):
         OgolnySzeregListPoborow:
         '''
         self.id_obiekt = int(self.tgk.wez_obiekt())
-
-    def determine_table_name(self):
-        '''
-        OgolnySzeregListPoborow:
-        '''
-        self.table_name = {
-            lw_kw.Dn_Energy: lc_kw.fq_uu_energy_qv,
-            lw_kw.Dn_Power: lc_kw.fq_uu_power_qv,
-            }[self.tvk_pobor]
 
     def grafika_poborow_dla_pomiarow(self, lst_h):
         '''
