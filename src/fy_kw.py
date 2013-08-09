@@ -82,8 +82,6 @@ SELECT m_date, m_none, m_zero, m_sum FROM uu_energy WHERE f_object=7 ORDER BY m_
 lxa_39_inst = """\
 SELECT %(e_date)s, %(e_none)s, %(e_zero)s, %(e_sum)s FROM %(table_name)s WHERE %(e_object)s=%(f_object)d ORDER BY %(e_date)s;"""
 lxa_40_inst = "tabelkowiec"
-lxa_42_inst = """\
-SELECT k_sample FROM %(table_name)s WHERE f_object=%(id_obiekt)d;"""
 lxa_43_inst = """\
 formularz"""
 lxa_44_inst = '''\
