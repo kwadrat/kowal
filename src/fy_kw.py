@@ -116,3 +116,5 @@ lxa_51_inst = """\
 UPDATE %(n_table)s SET %(e_none)s=%(v_none)s, %(e_zero)s=%(v_zero)s, %(e_sum)s=%(v_sum)s WHERE %(e_key_sample)s=%(k_sample)d;"""
 lxa_52_inst = """\
 SELECT m_date, m_none, m_zero, m_sum FROM uu_energy WHERE f_object=8 ORDER BY m_date;"""
+lxa_53_inst = """\
+SELECT m_date, m_none, m_zero, m_sum FROM uu_power WHERE f_object=8 ORDER BY m_date;"""

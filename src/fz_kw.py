@@ -168,6 +168,12 @@ class ConsumptionQry(object):
         ConsumptionQry:
         '''
 
+    def set_table(self, table_name):
+        '''
+        ConsumptionQry:
+        '''
+        self.table_name = table_name
+
     def set_object(self, key_object):
         '''
         ConsumptionQry:
@@ -178,9 +184,8 @@ class ConsumptionQry(object):
         '''
         ConsumptionQry:
         '''
-        table_name = lc_kw.fq_uu_energy_qv
         return fy_kw.lxa_39_inst % dict(
-            table_name=table_name,
+            table_name=self.table_name,
             e_date=lc_kw.fq_m_date_qv,
             e_none=lc_kw.fq_m_none_qv,
             e_zero=lc_kw.fq_m_zero_qv,
@@ -217,6 +222,7 @@ class TestVariousPatterns(unittest.TestCase):
         TestVariousPatterns:
         '''
         obk = ConsumptionQry()
+        obk.set_table(lc_kw.fq_uu_energy_qv)
         obk.set_object(7)
         odp = obk.cons_question()
         self.assertEqual(odp, fy_kw.lxa_38_inst)
@@ -226,6 +232,17 @@ class TestVariousPatterns(unittest.TestCase):
         TestVariousPatterns:
         '''
         obk = ConsumptionQry()
+        obk.set_table(lc_kw.fq_uu_energy_qv)
         obk.set_object(8)
         odp = obk.cons_question()
         self.assertEqual(odp, fy_kw.lxa_52_inst)
+
+    def test_4_various_patterns(self):
+        '''
+        TestVariousPatterns:
+        '''
+        obk = ConsumptionQry()
+        obk.set_table(lc_kw.fq_uu_power_qv)
+        obk.set_object(8)
+        odp = obk.cons_question()
+        self.assertEqual(odp, fy_kw.lxa_53_inst)
