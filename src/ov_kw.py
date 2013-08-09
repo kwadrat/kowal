@@ -41,9 +41,6 @@ class PokryciowySzeregListPoborow(OgolnySzeregListPoborow):
         PokryciowySzeregListPoborow:
         '''
         self.zapamietaj_wybory_formularza_poborow()
-        lista_nr_probek = self.numer_probki_pokrycia_na_podstawie_formularza()
-        self.przygotuj_sie_dla_listy_dni(lista_nr_probek)
-        self.pobory_dla_licznikow()
 
     def html_pokrycia_szeregu_poborow(self):
         '''
