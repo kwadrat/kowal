@@ -47,6 +47,6 @@ class PokryciowySzeregListPoborow(OgolnySzeregListPoborow):
         PokryciowySzeregListPoborow:
         '''
         lst_h = lh_kw.ListaHTML()
-        self.przygotuj_dla_pokrycia_poborow()
+        self.zapamietaj_wybory_formularza_poborow()
         self.wizualizacja_pokrycia_poborami(lst_h)
         return lst_h.polacz_html()
