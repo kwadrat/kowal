@@ -168,6 +168,11 @@ class ConsumptionQry(object):
         ConsumptionQry:
         '''
 
+    def cons_question(self):
+        '''
+        ConsumptionQry:
+        '''
+
 class TestVariousPatterns(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual
     def test_various_patterns(self):
@@ -196,3 +201,4 @@ class TestVariousPatterns(unittest.TestCase):
         TestVariousPatterns:
         '''
         obk = ConsumptionQry()
+        odp = obk.cons_question()
