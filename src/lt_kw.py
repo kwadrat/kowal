@@ -15,7 +15,6 @@ import eu_kw
 import fx_kw
 import ey_kw
 import hq_kw
-import lu_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -134,16 +133,6 @@ class OgolnySzeregListPoborow(WykresPomiarow):
         '''
         for lista_poborow in self.szereg_poborow:
             lista_poborow.pobory_dla_parametrow(self.dfb, self.id_obiekt, self.table_name)
-
-    def przygotuj_sie_dla_listy_dni(self, lista_nr_probek):
-        '''
-        OgolnySzeregListPoborow:
-        '''
-        tmp_lista = []
-        for nr_probki in lista_nr_probek:
-            elem = lu_kw.PoboryDanegoDnia(self.tgk, self.aqr, self.tekstowa_diagnostyka, self.id_obiekt, nr_probki)
-            tmp_lista.append(elem)
-        self.szereg_poborow = tmp_lista
 
     def zapamietaj_wybory_formularza_poborow(self):
         '''

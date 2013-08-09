@@ -39,6 +39,16 @@ class PomiarowySzeregListPoborow(OgolnySzeregListPoborow):
         result = le_kw.dq_liczniki_poboru_w_roku(self.dfb, self.table_name, self.id_obiekt, tvk_data)
         return map(lambda x: x[lc_kw.fq_k_sample_qv], result)
 
+    def przygotuj_sie_dla_listy_dni(self, lista_nr_probek):
+        '''
+        PomiarowySzeregListPoborow:
+        '''
+        tmp_lista = []
+        for nr_probki in lista_nr_probek:
+            elem = lu_kw.PoboryDanegoDnia(self.tgk, self.aqr, self.tekstowa_diagnostyka, self.id_obiekt, nr_probki)
+            tmp_lista.append(elem)
+        self.szereg_poborow = tmp_lista
+
     def przygotuj_dla_poborow(self):
         '''
         PomiarowySzeregListPoborow:
