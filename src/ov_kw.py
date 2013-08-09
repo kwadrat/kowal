@@ -36,12 +36,6 @@ class PokryciowySzeregListPoborow(OgolnySzeregListPoborow):
         result = le_kw.dq_ogolnie_liczniki_poboru(self.dfb, self.table_name, self.id_obiekt)
         return map(lambda x: x[lc_kw.fq_k_sample_qv], result)
 
-    def przygotuj_dla_pokrycia_poborow(self):
-        '''
-        PokryciowySzeregListPoborow:
-        '''
-        self.zapamietaj_wybory_formularza_poborow()
-
     def html_pokrycia_szeregu_poborow(self):
         '''
         PokryciowySzeregListPoborow:
