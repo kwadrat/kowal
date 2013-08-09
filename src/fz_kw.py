@@ -162,6 +162,12 @@ def ptn_dane_jednego_obiektu(table_name, key_object):
         f_object=key_object,
         )
 
+class ConsumptionQry(object):
+    def __init__(self):
+        '''
+        ConsumptionQry:
+        '''
+
 class TestVariousPatterns(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual
     def test_various_patterns(self):
@@ -184,3 +190,9 @@ class TestVariousPatterns(unittest.TestCase):
         self.assertEqual(ptn_jeden_licznik_poboru_w_roku(lc_kw.fq_uu_power_qv, 1860), fy_kw.lxa_35_inst)
         self.assertEqual(ptn_jeden_licznik_poboru_w_roku(lc_kw.fq_uu_energy_qv, 1861), fy_kw.lxa_37_inst)
         self.assertEqual(ptn_dane_jednego_obiektu(lc_kw.fq_uu_energy_qv, 7), fy_kw.lxa_38_inst)
+
+    def test_2_various_patterns(self):
+        '''
+        TestVariousPatterns:
+        '''
+        obk = ConsumptionQry()
