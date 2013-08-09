@@ -172,6 +172,7 @@ class ConsumptionQry(object):
         '''
         ConsumptionQry:
         '''
+        return fy_kw.lxa_38_inst
 
 class TestVariousPatterns(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual
@@ -202,3 +203,4 @@ class TestVariousPatterns(unittest.TestCase):
         '''
         obk = ConsumptionQry()
         odp = obk.cons_question()
+        self.assertEqual(odp, fy_kw.lxa_38_inst)
