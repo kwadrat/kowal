@@ -49,6 +49,13 @@ class PomiarowySzeregListPoborow(OgolnySzeregListPoborow):
             tmp_lista.append(elem)
         self.szereg_poborow = tmp_lista
 
+    def pobory_dla_licznikow(self):
+        '''
+        PomiarowySzeregListPoborow:
+        '''
+        for lista_poborow in self.szereg_poborow:
+            lista_poborow.pobory_dla_parametrow(self.dfb, self.id_obiekt, self.table_name)
+
     def przygotuj_dla_poborow(self):
         '''
         PomiarowySzeregListPoborow:

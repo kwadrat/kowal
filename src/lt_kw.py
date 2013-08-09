@@ -127,13 +127,6 @@ class OgolnySzeregListPoborow(WykresPomiarow):
         WykresPomiarow.__init__(self, tgk, aqr)
         self.ustaw_diagnostyke()
 
-    def pobory_dla_licznikow(self):
-        '''
-        OgolnySzeregListPoborow:
-        '''
-        for lista_poborow in self.szereg_poborow:
-            lista_poborow.pobory_dla_parametrow(self.dfb, self.id_obiekt, self.table_name)
-
     def zapamietaj_wybory_formularza_poborow(self):
         '''
         OgolnySzeregListPoborow:
