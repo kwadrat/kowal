@@ -118,3 +118,5 @@ lxa_52_inst = """\
 SELECT m_date, m_none, m_zero, m_sum FROM uu_energy WHERE f_object=8 ORDER BY m_date;"""
 lxa_53_inst = """\
 SELECT m_date, m_none, m_zero, m_sum FROM uu_power WHERE f_object=8 ORDER BY m_date;"""
+lxa_54_inst = """\
+SELECT m_date, m_none, m_zero, m_sum FROM uu_energy ORDER BY m_date;"""
