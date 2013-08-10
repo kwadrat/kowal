@@ -184,15 +184,10 @@ class ConsumptionQry(object):
             )
 
 def ptn_dane_jednego_obiektu(table_name, key_object):
-    return fy_kw.lxa_39_inst % dict(
-        table_name=table_name,
-        e_date=lc_kw.fq_m_date_qv,
-        e_none=lc_kw.fq_m_none_qv,
-        e_zero=lc_kw.fq_m_zero_qv,
-        e_sum=lc_kw.fq_m_sum_qv,
-        e_object=lc_kw.fq_f_object_qv,
-        f_object=key_object,
-        )
+    obk = ConsumptionQry()
+    obk.set_table(table_name)
+    obk.set_object(key_object)
+    return obk.cons_question()
 
 class TestVariousPatterns(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual
