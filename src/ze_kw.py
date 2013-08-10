@@ -46,6 +46,13 @@ def qh_ttl(tmp_title):
         wynik = ' title="%(tmp_title)s"' % dict(tmp_title=tmp_title)
     return wynik
 
+def wstawka_common_liczba(nazwa, liczba, shape):
+    if liczba is None:
+        napis = ''
+    else:
+        napis = shape % (nazwa, liczba)
+    return napis
+
 def wstawka_liczba(nazwa, liczba):
     if liczba is None:
         napis = ''
