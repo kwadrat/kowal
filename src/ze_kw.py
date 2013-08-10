@@ -57,7 +57,7 @@ def wstawka_liczba(nazwa, liczba):
     return wstawka_common_liczba(nazwa, liczba, ' %s="%d"')
 
 def wstawka_sql_liczba(nazwa, liczba):
-    return wstawka_common_liczba(nazwa, liczba, ' %s=%d')
+    return wstawka_common_liczba(nazwa, liczba, '%s=%d')
 
 def wyznacz_wstawke(nazwa, wartosc):
     if wartosc is None:
@@ -238,7 +238,7 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(qh_ttl('abc'), ' title="abc"')
         self.assertEqual(qh_ttl(None), '')
         self.assertEqual(wstawka_liczba('abc', 7), ' abc="7"')
-        self.assertEqual(wstawka_sql_liczba('abc', 7), ' abc=7')
+        self.assertEqual(wstawka_sql_liczba('abc', 7), 'abc=7')
         self.assertEqual(op_td(), '<td>')
         self.assertEqual(op_td(class_ = 'klasa_css'), '<td class="klasa_css">')
         self.assertEqual(op_td(class_ = 'klasa_css', colspan=2, rowspan=3), '<td class="klasa_css" colspan="2" rowspan="3">')
