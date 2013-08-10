@@ -54,18 +54,10 @@ def wstawka_common_liczba(nazwa, liczba, shape):
     return napis
 
 def wstawka_liczba(nazwa, liczba):
-    if liczba is None:
-        napis = ''
-    else:
-        napis = ' %s="%d"' % (nazwa, liczba)
-    return napis
+    return wstawka_common_liczba(nazwa, liczba, ' %s="%d"')
 
 def wstawka_sql_liczba(nazwa, liczba):
-    if liczba is None:
-        napis = ''
-    else:
-        napis = ' %s=%d' % (nazwa, liczba)
-    return napis
+    return wstawka_common_liczba(nazwa, liczba, ' %s=%d')
 
 def wyznacz_wstawke(nazwa, wartosc):
     if wartosc is None:
