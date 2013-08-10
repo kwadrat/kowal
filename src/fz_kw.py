@@ -175,6 +175,13 @@ class ConsumptionQry(object):
         '''
         ConsumptionQry:
         '''
+        if self.key_object is None:
+            wstawka_war = ''
+        else:
+            wstawka_war = ' WHERE %(e_object)s=%(f_object)d' % dict(
+                e_object=lc_kw.fq_f_object_qv,
+                f_object=self.key_object,
+                )
         return fy_kw.lxa_39_inst % dict(
             table_name=self.table_name,
             e_date=lc_kw.fq_m_date_qv,
