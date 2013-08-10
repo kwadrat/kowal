@@ -188,8 +188,7 @@ class ConsumptionQry(object):
             e_none=lc_kw.fq_m_none_qv,
             e_zero=lc_kw.fq_m_zero_qv,
             e_sum=lc_kw.fq_m_sum_qv,
-            e_object=lc_kw.fq_f_object_qv,
-            f_object=self.key_object,
+            wstawka_war=wstawka_war,
             )
 
 def ptn_dane_jednego_obiektu(table_name, key_object):
@@ -220,6 +219,15 @@ class TestVariousPatterns(unittest.TestCase):
         self.assertEqual(ptn_jeden_licznik_poboru_w_roku(lc_kw.fq_uu_power_qv, 1860), fy_kw.lxa_35_inst)
         self.assertEqual(ptn_jeden_licznik_poboru_w_roku(lc_kw.fq_uu_energy_qv, 1861), fy_kw.lxa_37_inst)
         self.assertEqual(ptn_dane_jednego_obiektu(lc_kw.fq_uu_energy_qv, 7), fy_kw.lxa_38_inst)
+
+    def test_2_various_patterns(self):
+        '''
+        TestVariousPatterns:
+        '''
+        obk = ConsumptionQry()
+        obk.set_table(lc_kw.fq_uu_energy_qv)
+        odp = obk.cons_question()
+        self.assertEqual(odp, fy_kw.lxa_54_inst)
 
     def test_3_various_patterns(self):
         '''
