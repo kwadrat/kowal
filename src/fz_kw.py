@@ -157,6 +157,7 @@ class ConsumptionQry(object):
         '''
         ConsumptionQry:
         '''
+        self.key_object = None
 
     def set_table(self, table_name):
         '''
