@@ -105,12 +105,6 @@ def zrob_tabele_poborow(lst_h, result):
 WykresPomiarow = hq_kw.WykresPomiarow
 
 class OgolnySzeregListPoborow(WykresPomiarow):
-    def determine_table_name(self):
-        '''
-        OgolnySzeregListPoborow:
-        '''
-        self.table_name = self.krt_pobor.krt_table
-
     def __init__(self, tgk, dfb):
         '''
         OgolnySzeregListPoborow:
@@ -119,7 +113,7 @@ class OgolnySzeregListPoborow(WykresPomiarow):
         self.lista_slupkow = []
         self.tvk_pobor = tgk.wez_pobor()
         self.krt_pobor = dd_kw.CechaEnergii(self.tvk_pobor)
-        self.determine_table_name()
+        self.table_name = self.krt_pobor.krt_table
         aqr = ey_kw.SzkieletDatDlaPoborow(self.tvk_pobor, self.krt_pobor)
         tgk.przygotuj_pobory(aqr, self.dfb)
         WykresPomiarow.__init__(self, tgk, aqr)
