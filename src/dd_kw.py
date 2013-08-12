@@ -7,6 +7,7 @@ Cechy energii pobranej - energia, moc
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import lw_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
