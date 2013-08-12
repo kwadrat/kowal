@@ -49,6 +49,26 @@ class GeneratorUU(object):
             my_table_name=self.my_table_name,
             )
 
+    def cons_question(self):
+        '''
+        GeneratorUU:
+        '''
+        if self.key_object is None:
+            wstawka_war = ''
+        else:
+            wstawka_war = ' WHERE %(e_object)s=%(f_object)d' % dict(
+                e_object=lc_kw.fq_f_object_qv,
+                f_object=self.key_object,
+                )
+        return fy_kw.lxa_39_inst % dict(
+            my_table_name=self.my_table_name,
+            e_date=lc_kw.fq_m_date_qv,
+            e_none=lc_kw.fq_m_none_qv,
+            e_zero=lc_kw.fq_m_zero_qv,
+            e_sum=lc_kw.fq_m_sum_qv,
+            wstawka_war=wstawka_war,
+            )
+
     def set_object(self, key_object):
         '''
         GeneratorUU:
@@ -89,26 +109,6 @@ class ConsumptionQry(GeneratorUU):
         ConsumptionQry:
         '''
         GeneratorUU.__init__(self, my_table_name)
-
-    def cons_question(self):
-        '''
-        ConsumptionQry:
-        '''
-        if self.key_object is None:
-            wstawka_war = ''
-        else:
-            wstawka_war = ' WHERE %(e_object)s=%(f_object)d' % dict(
-                e_object=lc_kw.fq_f_object_qv,
-                f_object=self.key_object,
-                )
-        return fy_kw.lxa_39_inst % dict(
-            my_table_name=self.my_table_name,
-            e_date=lc_kw.fq_m_date_qv,
-            e_none=lc_kw.fq_m_none_qv,
-            e_zero=lc_kw.fq_m_zero_qv,
-            e_sum=lc_kw.fq_m_sum_qv,
-            wstawka_war=wstawka_war,
-            )
 
 def generate_specific_drawing(dfb, pytanie, multiplier):
     result = dfb.query_dct(pytanie)
