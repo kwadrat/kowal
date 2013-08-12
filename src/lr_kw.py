@@ -49,7 +49,7 @@ class GeneratorUU(object):
             my_table_name=self.my_table_name,
             )
 
-    def set_place(self, key_object):
+    def set_object(self, key_object):
         '''
         GeneratorUU:
         '''
@@ -141,7 +141,7 @@ def generate_gnuplot_drawing(dfb):
         for my_object in xrange(1, 20 + 1):
             for week_day in range(7):
                 obk = GeneratorUU(my_domain)
-                obk.set_place(my_object)
+                obk.set_object(my_object)
                 obk.set_week_day(week_day)
                 pytanie = obk.final_shape()
                 together = generate_specific_drawing(dfb, pytanie, multiplier)
@@ -154,7 +154,7 @@ class TestUUQueries(unittest.TestCase):
         TestUUQueries:
         '''
         obk = GeneratorUU(lc_kw.fq_uu_energy_qv)
-        obk.set_place(1)
+        obk.set_object(1)
         obk.set_start_date('2013-03-11')
         obk.set_end_date('2013-03-25')
         self.assertEqual(obk.final_shape(), fy_kw.lxa_24_inst)
@@ -173,7 +173,7 @@ class TestUUQueries(unittest.TestCase):
         TestUUQueries:
         '''
         obk = GeneratorUU(lc_kw.fq_uu_energy_qv)
-        obk.set_place(1)
+        obk.set_object(1)
         obk.set_end_date('2013-03-25')
         self.assertEqual(obk.final_shape(), fy_kw.lxa_26_inst)
 
@@ -182,7 +182,7 @@ class TestUUQueries(unittest.TestCase):
         TestUUQueries:
         '''
         obk = GeneratorUU(lc_kw.fq_uu_energy_qv)
-        obk.set_place(1)
+        obk.set_object(1)
         obk.set_start_date('2013-03-11')
         self.assertEqual(obk.final_shape(), fy_kw.lxa_27_inst)
 
@@ -191,7 +191,7 @@ class TestUUQueries(unittest.TestCase):
         TestUUQueries:
         '''
         obk = GeneratorUU(lc_kw.fq_uu_energy_qv)
-        obk.set_place(1)
+        obk.set_object(1)
         obk.set_week_day(0)
         self.assertEqual(obk.final_shape(), fy_kw.lxa_28_inst)
 
@@ -200,7 +200,7 @@ class TestUUQueries(unittest.TestCase):
         TestUUQueries:
         '''
         obk = GeneratorUU(lc_kw.fq_uu_power_qv)
-        obk.set_place(1)
+        obk.set_object(1)
         obk.set_week_day(0)
         self.assertEqual(obk.final_shape(), fy_kw.lxa_29_inst)
 
