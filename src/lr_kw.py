@@ -74,13 +74,7 @@ class GeneratorUU(object):
             lc_kw.fq_m_sum_qv,
             ]
         part_my_fields = hj_kw.ladnie_przecinkami(returned_fields)
-        if self.key_object is None:
-            part_my_limits = ''
-        else:
-            part_my_limits = ' WHERE %(e_object)s=%(f_object)d' % dict(
-                e_object=lc_kw.fq_f_object_qv,
-                f_object=self.key_object,
-                )
+        part_my_limits = self.detect_my_limits()
         return fy_kw.lxa_39_inst % dict(
             part_my_fields=part_my_fields,
             my_table_name=self.my_table_name,
