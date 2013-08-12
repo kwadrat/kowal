@@ -32,3 +32,9 @@ class TestEnergyFeatures(unittest.TestCase):
         TestEnergyFeatures:
         '''
         obk = CechaEnergii(lw_kw.Dn_Energy)
+
+    def test_2_energy_features(self):
+        '''
+        TestEnergyFeatures:
+        '''
+        obk = CechaEnergii(lw_kw.Dn_Power)
