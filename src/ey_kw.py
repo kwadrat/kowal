@@ -60,12 +60,16 @@ class TestSzkieletowegoDatownika(unittest.TestCase):
         '''
         self.assertEqual(generator_szkieletu(1), [0, 2])
         self.assertEqual(generator_szkieletu(3), [0, 2, 4, 6])
-        obk = SzkieletDatDlaPoborow(lw_kw.Dn_Energy)
+        tvk_pobor = lw_kw.Dn_Energy
+        krt_pobor = dd_kw.CechaEnergii(tvk_pobor)
+        obk = SzkieletDatDlaPoborow(tvk_pobor)
         self.assertEqual(obk.szkielet_dat, generator_szkieletu(24))
 
     def test_mocy_szkieletowego_datownika(self):
         '''
         TestSzkieletowegoDatownika:
         '''
-        obk = SzkieletDatDlaPoborow(lw_kw.Dn_Power)
+        tvk_pobor = lw_kw.Dn_Power
+        krt_pobor = dd_kw.CechaEnergii(tvk_pobor)
+        obk = SzkieletDatDlaPoborow(tvk_pobor)
         self.assertEqual(obk.szkielet_dat, generator_szkieletu(96))
