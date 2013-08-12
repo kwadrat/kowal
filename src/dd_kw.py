@@ -25,10 +25,12 @@ energy_chooser = {
     lw_kw.Dn_Energy: [
         24,
         lc_kw.fq_uu_energy_qv,
+        gb_kw.Jedn_kWh,
         ],
     lw_kw.Dn_Power: [
         96,
         lc_kw.fq_uu_power_qv,
+        gb_kw.Jedn_kWtow,
         ],
     }
 
@@ -41,6 +43,7 @@ class CechaEnergii(object):
         (
             self.krt_wymiar,
             self.krt_table,
+            self.krt_jedn,
             ) = energy_chooser[self.tvk_pobor]
 
 class TestEnergyFeatures(unittest.TestCase):
@@ -51,6 +54,7 @@ class TestEnergyFeatures(unittest.TestCase):
         obk = CechaEnergii(lw_kw.Dn_Energy)
         self.assertEqual(obk.krt_wymiar, 24)
         self.assertEqual(obk.krt_table, lc_kw.fq_uu_energy_qv)
+        self.assertEqual(obk.krt_jedn, gb_kw.Jedn_kWh)
 
     def test_2_energy_features(self):
         '''
@@ -59,3 +63,4 @@ class TestEnergyFeatures(unittest.TestCase):
         obk = CechaEnergii(lw_kw.Dn_Power)
         self.assertEqual(obk.krt_wymiar, 96)
         self.assertEqual(obk.krt_table, lc_kw.fq_uu_power_qv)
+        self.assertEqual(obk.krt_jedn, gb_kw.Jedn_kWtow)
