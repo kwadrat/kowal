@@ -84,18 +84,18 @@ class GeneratorUU(object):
             )
 
 class ConsumptionQry(object):
-    def set_table(self, table_name):
+    def set_table(self, my_table_name):
         '''
         ConsumptionQry:
         '''
-        self.table_name = table_name
+        self.my_table_name = my_table_name
 
-    def __init__(self, table_name):
+    def __init__(self, my_table_name):
         '''
         ConsumptionQry:
         '''
         self.key_object = None
-        self.set_table(table_name)
+        self.set_table(my_table_name)
 
     def set_object(self, key_object):
         '''
@@ -115,7 +115,7 @@ class ConsumptionQry(object):
                 f_object=self.key_object,
                 )
         return fy_kw.lxa_39_inst % dict(
-            table_name=self.table_name,
+            my_table_name=self.my_table_name,
             e_date=lc_kw.fq_m_date_qv,
             e_none=lc_kw.fq_m_none_qv,
             e_zero=lc_kw.fq_m_zero_qv,
