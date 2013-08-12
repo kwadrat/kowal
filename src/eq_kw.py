@@ -8,6 +8,7 @@ import lm_kw
 import lw_kw
 import sj_kw
 import oa_kw
+import gb_kw
 import dd_kw
 import ey_kw
 import oh_kw
@@ -92,7 +93,7 @@ class PoboroweSlupki(MojeSlupki):
         PoboroweSlupki:
         '''
         return {
-            lw_kw.Dn_Energy: 'kWh',
+            lw_kw.Dn_Energy: gb_kw.Jedn_kWh,
             lw_kw.Dn_Power: 'kW',
             }[self.aqr.tvk_pobor]
 
