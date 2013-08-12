@@ -19,6 +19,15 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+energy_chooser = {
+    lw_kw.Dn_Energy: [
+        24,
+        ],
+    lw_kw.Dn_Power: [
+        96,
+        ],
+    }
+
 class CechaEnergii(object):
     def __init__(self, tvk_pobor):
         '''
