@@ -48,7 +48,7 @@ UPDATE uu_power SET m_samples='{NULL,0,0,1.5,2.5,3}', m_none=1, m_zero=2, m_sum=
 lxa_22_inst = """\
 UPDATE %(n_table)s SET %(e_samples)s=%(m_samples)s, %(e_none)s=%(v_none)s, %(e_zero)s=%(v_zero)s, %(e_sum)s=%(v_sum)s WHERE %(e_key_sample)s=%(k_sample)d AND %(e_object)s=%(f_object)d AND %(e_date)s='%(m_date)s';"""
 lxa_23_inst = """\
-SELECT %(part_my_fields)s FROM %(my_table_name)s WHERE %(part_my_limits)s ORDER BY m_date;"""
+SELECT %(part_my_fields)s FROM %(my_table_name)s%(part_my_limits)s ORDER BY m_date;"""
 lxa_24_inst = """\
 SELECT m_samples FROM uu_energy WHERE f_object=1 AND m_date >= '2013-03-11' AND m_date < '2013-03-25' ORDER BY m_date;"""
 lxa_25_inst = """\
