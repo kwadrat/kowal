@@ -20,6 +20,7 @@ for i in NazwyModulow:
 
 # Kilowatogodzin
 Jedn_kWh = 'kWh'
+Jedn_kWtow = 'kW'
 
 class TestUnitNames(unittest.TestCase):
     def test_unit_names(self):
@@ -27,3 +28,4 @@ class TestUnitNames(unittest.TestCase):
         TestUnitNames:
         '''
         self.assertEqual(Jedn_kWh, 'kWh')
+        self.assertEqual(Jedn_kWtow, 'kW')
