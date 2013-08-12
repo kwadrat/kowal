@@ -75,9 +75,9 @@ class GeneratorUU(object):
             ]
         part_my_fields = hj_kw.ladnie_przecinkami(returned_fields)
         if self.key_object is None:
-            wstawka_war = ''
+            part_my_limits = ''
         else:
-            wstawka_war = ' WHERE %(e_object)s=%(f_object)d' % dict(
+            part_my_limits = ' WHERE %(e_object)s=%(f_object)d' % dict(
                 e_object=lc_kw.fq_f_object_qv,
                 f_object=self.key_object,
                 )
@@ -85,7 +85,7 @@ class GeneratorUU(object):
             part_my_fields=part_my_fields,
             my_table_name=self.my_table_name,
             e_date=lc_kw.fq_m_date_qv,
-            wstawka_war=wstawka_war,
+            part_my_limits=part_my_limits,
             )
 
     def set_object(self, key_object):
