@@ -10,7 +10,6 @@ import lc_kw
 import ze_kw
 import le_kw
 import dn_kw
-import lw_kw
 import eu_kw
 import fx_kw
 import dd_kw
@@ -110,10 +109,7 @@ class OgolnySzeregListPoborow(WykresPomiarow):
         '''
         OgolnySzeregListPoborow:
         '''
-        self.table_name = {
-            lw_kw.Dn_Energy: lc_kw.fq_uu_energy_qv,
-            lw_kw.Dn_Power: lc_kw.fq_uu_power_qv,
-            }[self.tvk_pobor]
+        self.table_name = self.krt_pobor.krt_table
 
     def __init__(self, tgk, dfb):
         '''
