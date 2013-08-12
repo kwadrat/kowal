@@ -36,7 +36,7 @@ class GeneratorUU(object):
         '''
         all_my_limits = []
         if self.key_object is not None:
-            all_my_limits.append('f_object=%d' % self.key_object)
+            all_my_limits.append('%s=%d' % (lc_kw.fq_f_object_qv, self.key_object))
         if self.my_start_date is not None:
             all_my_limits.append("m_date >= '2013-03-11'")
         if self.my_end_date is not None:
