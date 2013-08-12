@@ -8,6 +8,7 @@ import fy_kw
 import lc_kw
 import sf_iw_kw
 import dv_kw
+import hj_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
