@@ -182,7 +182,7 @@ class TestUUQueries(unittest.TestCase):
         '''
         obk = GeneratorUU(lc_kw.fq_uu_power_qv)
         obk.set_object(1)
-        obk.set_week_day(0)
+        obk.set_week_day(1)
         self.assertEqual(obk.final_shape(), fy_kw.lxa_29_inst)
 
     def test_uu_6_queries(self):
