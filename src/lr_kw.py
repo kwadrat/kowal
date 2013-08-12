@@ -90,12 +90,6 @@ class ConsumptionQry(GeneratorUU):
         '''
         GeneratorUU.__init__(self, my_table_name)
 
-    def set_object(self, key_object):
-        '''
-        ConsumptionQry:
-        '''
-        self.key_object = key_object
-
     def cons_question(self):
         '''
         ConsumptionQry:
