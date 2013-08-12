@@ -24,7 +24,7 @@ def generator_szkieletu(liczba_przedzialow):
 KlasaOgolnaSzkieletuDat = dq_kw.KlasaOgolnaSzkieletuDat
 
 class SzkieletDatDlaPoborow(KlasaOgolnaSzkieletuDat):
-    def __init__(self, tvk_pobor):
+    def __init__(self, tvk_pobor, krt_pobor):
         '''
         SzkieletDatDlaPoborow:
         '''
@@ -62,7 +62,7 @@ class TestSzkieletowegoDatownika(unittest.TestCase):
         self.assertEqual(generator_szkieletu(3), [0, 2, 4, 6])
         tvk_pobor = lw_kw.Dn_Energy
         krt_pobor = dd_kw.CechaEnergii(tvk_pobor)
-        obk = SzkieletDatDlaPoborow(tvk_pobor)
+        obk = SzkieletDatDlaPoborow(tvk_pobor, krt_pobor)
         self.assertEqual(obk.szkielet_dat, generator_szkieletu(24))
 
     def test_mocy_szkieletowego_datownika(self):
@@ -71,5 +71,5 @@ class TestSzkieletowegoDatownika(unittest.TestCase):
         '''
         tvk_pobor = lw_kw.Dn_Power
         krt_pobor = dd_kw.CechaEnergii(tvk_pobor)
-        obk = SzkieletDatDlaPoborow(tvk_pobor)
+        obk = SzkieletDatDlaPoborow(tvk_pobor, krt_pobor)
         self.assertEqual(obk.szkielet_dat, generator_szkieletu(96))
