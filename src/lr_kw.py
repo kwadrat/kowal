@@ -49,16 +49,7 @@ class GeneratorUU(object):
         '''
         GeneratorUU:
         '''
-        all_my_limits = []
-        if self.key_object is not None:
-            all_my_limits.append('%s=%d' % (lc_kw.fq_f_object_qv, self.key_object))
-        if self.my_start_date is not None:
-            all_my_limits.append("%s >= '%s'" % (lc_kw.fq_m_date_qv, self.my_start_date))
-        if self.my_end_date is not None:
-            all_my_limits.append("%s < '%s'" % (lc_kw.fq_m_date_qv, self.my_end_date))
-        if self.my_week_day is not None:
-            all_my_limits.append("EXTRACT(dow FROM %s)=%d" % (lc_kw.fq_m_date_qv, self.my_week_day))
-        part_my_limits = ' AND '.join(all_my_limits)
+        part_my_limits = self.detect_my_limits()
         return fy_kw.lxa_23_inst % dict(
             part_my_limits=part_my_limits,
             my_table_name=self.my_table_name,
