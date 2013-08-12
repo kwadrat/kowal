@@ -181,32 +181,3 @@ class TestVariousPatterns(unittest.TestCase):
         self.assertEqual(ptn_jeden_licznik_poboru_w_roku(lc_kw.fq_uu_power_qv, 1860), fy_kw.lxa_35_inst)
         self.assertEqual(ptn_jeden_licznik_poboru_w_roku(lc_kw.fq_uu_energy_qv, 1861), fy_kw.lxa_37_inst)
         self.assertEqual(ptn_dane_jednego_obiektu(lc_kw.fq_uu_energy_qv, 7), fy_kw.lxa_38_inst)
-
-    def test_2_various_patterns(self):
-        '''
-        TestVariousPatterns:
-        '''
-        obk = lr_kw.ConsumptionQry()
-        obk.set_table(lc_kw.fq_uu_energy_qv)
-        odp = obk.cons_question()
-        self.assertEqual(odp, fy_kw.lxa_54_inst)
-
-    def test_3_various_patterns(self):
-        '''
-        TestVariousPatterns:
-        '''
-        obk = lr_kw.ConsumptionQry()
-        obk.set_table(lc_kw.fq_uu_energy_qv)
-        obk.set_object(8)
-        odp = obk.cons_question()
-        self.assertEqual(odp, fy_kw.lxa_52_inst)
-
-    def test_4_various_patterns(self):
-        '''
-        TestVariousPatterns:
-        '''
-        obk = lr_kw.ConsumptionQry()
-        obk.set_table(lc_kw.fq_uu_power_qv)
-        obk.set_object(8)
-        odp = obk.cons_question()
-        self.assertEqual(odp, fy_kw.lxa_53_inst)
