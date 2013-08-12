@@ -84,17 +84,17 @@ class GeneratorUU(object):
             )
 
 class ConsumptionQry(object):
-    def __init__(self):
-        '''
-        ConsumptionQry:
-        '''
-        self.key_object = None
-
     def set_table(self, table_name):
         '''
         ConsumptionQry:
         '''
         self.table_name = table_name
+
+    def __init__(self):
+        '''
+        ConsumptionQry:
+        '''
+        self.key_object = None
 
     def set_object(self, key_object):
         '''
