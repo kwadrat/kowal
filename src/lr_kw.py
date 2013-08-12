@@ -51,8 +51,10 @@ class GeneratorUU(object):
         GeneratorUU:
         '''
         returned_fields = [lc_kw.fq_m_samples_qv]
+        part_my_fields = hj_kw.ladnie_przecinkami(returned_fields)
         part_my_limits = self.detect_my_limits()
         return fy_kw.lxa_23_inst % dict(
+            part_my_fields=part_my_fields,
             part_my_limits=part_my_limits,
             my_table_name=self.my_table_name,
             )
