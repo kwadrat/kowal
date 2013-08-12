@@ -103,13 +103,6 @@ class GeneratorUU(object):
             my_table_name=self.my_table_name,
             )
 
-class ConsumptionQry(GeneratorUU):
-    def __init__(self, my_table_name):
-        '''
-        ConsumptionQry:
-        '''
-        GeneratorUU.__init__(self, my_table_name)
-
 def generate_specific_drawing(dfb, pytanie, multiplier):
     result = dfb.query_dct(pytanie)
     tmp_frags = []
