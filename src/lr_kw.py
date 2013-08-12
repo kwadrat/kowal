@@ -45,9 +45,10 @@ class GeneratorUU(object):
         if self.my_week_day is not None:
             all_my_limits.append("EXTRACT(dow FROM %s)=%d" % (lc_kw.fq_m_date_qv, self.my_week_day))
         if all_my_limits:
-            return ' WHERE ' + ' AND '.join(all_my_limits)
+            result = ' WHERE ' + ' AND '.join(all_my_limits)
         else:
-            return ''
+            result = ''
+        return result
 
     def final_shape(self):
         '''
