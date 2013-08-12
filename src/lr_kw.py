@@ -44,7 +44,10 @@ class GeneratorUU(object):
             all_my_limits.append("%s < '%s'" % (lc_kw.fq_m_date_qv, self.my_end_date))
         if self.my_week_day is not None:
             all_my_limits.append("EXTRACT(dow FROM %s)=%d" % (lc_kw.fq_m_date_qv, self.my_week_day))
-        return ' WHERE ' + ' AND '.join(all_my_limits)
+        if all_my_limits:
+            return ' WHERE ' + ' AND '.join(all_my_limits)
+        else:
+            return ''
 
     def final_shape(self):
         '''
@@ -232,3 +235,10 @@ class TestUUQueries(unittest.TestCase):
         obk.set_object(8)
         odp = obk.cons_question()
         self.assertEqual(odp, fy_kw.lxa_53_inst)
+
+    def test_uu_10_queries(self):
+        '''
+        TestUUQueries:
+        '''
+        obk = GeneratorUU(lc_kw.fq_uu_power_qv)
+        self.assertEqual(obk.final_shape(), fy_kw.lxa_55_inst)
