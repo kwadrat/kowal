@@ -92,10 +92,7 @@ class PoboroweSlupki(MojeSlupki):
         '''
         PoboroweSlupki:
         '''
-        return {
-            lw_kw.Dn_Energy: gb_kw.Jedn_kWh,
-            lw_kw.Dn_Power: gb_kw.Jedn_kWtow,
-            }[self.aqr.tvk_pobor]
+        return self.aqr.krt_pobor.krt_jedn
 
     def add_vertical_axis(self, vert_axis):
         '''
