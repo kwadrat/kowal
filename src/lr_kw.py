@@ -203,7 +203,7 @@ class TestUUQueries(unittest.TestCase):
         '''
         TestUUQueries:
         '''
-        obk = ConsumptionQry(lc_kw.fq_uu_energy_qv)
+        obk = GeneratorUU(lc_kw.fq_uu_energy_qv)
         odp = obk.cons_question()
         self.assertEqual(odp, fy_kw.lxa_54_inst)
 
@@ -211,7 +211,7 @@ class TestUUQueries(unittest.TestCase):
         '''
         TestUUQueries:
         '''
-        obk = ConsumptionQry(lc_kw.fq_uu_energy_qv)
+        obk = GeneratorUU(lc_kw.fq_uu_energy_qv)
         obk.set_object(8)
         odp = obk.cons_question()
         self.assertEqual(odp, fy_kw.lxa_52_inst)
@@ -220,7 +220,7 @@ class TestUUQueries(unittest.TestCase):
         '''
         TestUUQueries:
         '''
-        obk = ConsumptionQry(lc_kw.fq_uu_power_qv)
+        obk = GeneratorUU(lc_kw.fq_uu_power_qv)
         obk.set_object(8)
         odp = obk.cons_question()
         self.assertEqual(odp, fy_kw.lxa_53_inst)
