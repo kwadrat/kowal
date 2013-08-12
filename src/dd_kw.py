@@ -34,6 +34,9 @@ class CechaEnergii(object):
         TestEnergyFeatures:
         '''
         self.tvk_pobor = tvk_pobor
+        (
+            self.krt_wymiar,
+            ) = energy_chooser[self.tvk_pobor]
 
 class TestEnergyFeatures(unittest.TestCase):
     def test_energy_features(self):
@@ -41,9 +44,11 @@ class TestEnergyFeatures(unittest.TestCase):
         TestEnergyFeatures:
         '''
         obk = CechaEnergii(lw_kw.Dn_Energy)
+        self.assertEqual(obk.krt_wymiar, 24)
 
     def test_2_energy_features(self):
         '''
         TestEnergyFeatures:
         '''
         obk = CechaEnergii(lw_kw.Dn_Power)
+        self.assertEqual(obk.krt_wymiar, 96)
