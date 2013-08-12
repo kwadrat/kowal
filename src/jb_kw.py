@@ -53,7 +53,7 @@ class JedenOdcinekBazowy(object):
         '''
         return self.pocz is None and self.kon is None
 
-    def dymek_dla_slupka(self, tgk):
+    def dymek_dla_slupka(self, tgk, chce_bez_tresci):
         '''
         JedenOdcinekBazowy:
         '''
