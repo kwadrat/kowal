@@ -115,10 +115,7 @@ class MojeSlupki(KlasaObrazu):
         # to prosimy ją o dymek
         if jeden_odc_bzw is not None:
             (px, py, kx, ky) = ow_kw.poszerz_pozycje(self.tgk.jestem_msie, pozycja)
-            tekst = jeden_odc_bzw.dymek_dla_slupka(
-                self.tgk,
-                self.chce_bez_tresci,
-                )
+            tekst = jeden_odc_bzw.dymek_dla_slupka(self.chce_bez_tresci)
             tmp_slownik = dict(
                 px=px,
                 py=py,
