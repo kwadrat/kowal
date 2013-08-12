@@ -38,7 +38,7 @@ class GeneratorUU(object):
         if self.key_object is not None:
             all_my_limits.append('%s=%d' % (lc_kw.fq_f_object_qv, self.key_object))
         if self.my_start_date is not None:
-            all_my_limits.append("m_date >= '2013-03-11'")
+            all_my_limits.append("%s >= '%s'" % (lc_kw.fq_m_date_qv, self.my_start_date))
         if self.my_end_date is not None:
             all_my_limits.append("m_date < '2013-03-25'")
         if self.my_week_day is not None:
@@ -145,7 +145,7 @@ class TestUUQueries(unittest.TestCase):
         TestUUQueries:
         '''
         obk = GeneratorUU(lc_kw.fq_uu_energy_qv)
-        obk.set_start_date('2013-03-11')
+        obk.set_start_date('2013-03-12')
         obk.set_end_date('2013-03-25')
         self.assertEqual(obk.final_shape(), fy_kw.lxa_25_inst)
 
