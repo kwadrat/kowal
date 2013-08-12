@@ -19,8 +19,16 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+class CechaEnergii(object):
+    def __init__(self, tvk_pobor):
+        '''
+        TestEnergyFeatures:
+        '''
+        self.tvk_pobor = tvk_pobor
+
 class TestEnergyFeatures(unittest.TestCase):
     def test_energy_features(self):
         '''
         TestEnergyFeatures:
         '''
+        obk = CechaEnergii(lw_kw.Dn_Energy)
