@@ -153,47 +153,8 @@ def ptn_jeden_licznik_poboru_w_roku(table_name, nr_probki):
         nr_probki=nr_probki,
         )
 
-class ConsumptionQry(object):
-    def __init__(self):
-        '''
-        ConsumptionQry:
-        '''
-        self.key_object = None
-
-    def set_table(self, table_name):
-        '''
-        ConsumptionQry:
-        '''
-        self.table_name = table_name
-
-    def set_object(self, key_object):
-        '''
-        ConsumptionQry:
-        '''
-        self.key_object = key_object
-
-    def cons_question(self):
-        '''
-        ConsumptionQry:
-        '''
-        if self.key_object is None:
-            wstawka_war = ''
-        else:
-            wstawka_war = ' WHERE %(e_object)s=%(f_object)d' % dict(
-                e_object=lc_kw.fq_f_object_qv,
-                f_object=self.key_object,
-                )
-        return fy_kw.lxa_39_inst % dict(
-            table_name=self.table_name,
-            e_date=lc_kw.fq_m_date_qv,
-            e_none=lc_kw.fq_m_none_qv,
-            e_zero=lc_kw.fq_m_zero_qv,
-            e_sum=lc_kw.fq_m_sum_qv,
-            wstawka_war=wstawka_war,
-            )
-
 def ptn_dane_jednego_obiektu(table_name, key_object):
-    obk = ConsumptionQry()
+    obk = lr_kw.ConsumptionQry()
     obk.set_table(table_name)
     obk.set_object(key_object)
     return obk.cons_question()
@@ -225,7 +186,7 @@ class TestVariousPatterns(unittest.TestCase):
         '''
         TestVariousPatterns:
         '''
-        obk = ConsumptionQry()
+        obk = lr_kw.ConsumptionQry()
         obk.set_table(lc_kw.fq_uu_energy_qv)
         odp = obk.cons_question()
         self.assertEqual(odp, fy_kw.lxa_54_inst)
@@ -234,7 +195,7 @@ class TestVariousPatterns(unittest.TestCase):
         '''
         TestVariousPatterns:
         '''
-        obk = ConsumptionQry()
+        obk = lr_kw.ConsumptionQry()
         obk.set_table(lc_kw.fq_uu_energy_qv)
         obk.set_object(8)
         odp = obk.cons_question()
@@ -244,7 +205,7 @@ class TestVariousPatterns(unittest.TestCase):
         '''
         TestVariousPatterns:
         '''
-        obk = ConsumptionQry()
+        obk = lr_kw.ConsumptionQry()
         obk.set_table(lc_kw.fq_uu_power_qv)
         obk.set_object(8)
         odp = obk.cons_question()

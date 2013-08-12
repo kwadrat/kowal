@@ -83,6 +83,45 @@ class GeneratorUU(object):
             my_table_name=self.my_table_name,
             )
 
+class ConsumptionQry(object):
+    def __init__(self):
+        '''
+        ConsumptionQry:
+        '''
+        self.key_object = None
+
+    def set_table(self, table_name):
+        '''
+        ConsumptionQry:
+        '''
+        self.table_name = table_name
+
+    def set_object(self, key_object):
+        '''
+        ConsumptionQry:
+        '''
+        self.key_object = key_object
+
+    def cons_question(self):
+        '''
+        ConsumptionQry:
+        '''
+        if self.key_object is None:
+            wstawka_war = ''
+        else:
+            wstawka_war = ' WHERE %(e_object)s=%(f_object)d' % dict(
+                e_object=lc_kw.fq_f_object_qv,
+                f_object=self.key_object,
+                )
+        return fy_kw.lxa_39_inst % dict(
+            table_name=self.table_name,
+            e_date=lc_kw.fq_m_date_qv,
+            e_none=lc_kw.fq_m_none_qv,
+            e_zero=lc_kw.fq_m_zero_qv,
+            e_sum=lc_kw.fq_m_sum_qv,
+            wstawka_war=wstawka_war,
+            )
+
 def generate_specific_drawing(dfb, pytanie, multiplier):
     result = dfb.query_dct(pytanie)
     tmp_frags = []
