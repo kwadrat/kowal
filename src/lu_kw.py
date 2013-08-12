@@ -79,8 +79,11 @@ class PoboryDanegoDnia(WykresPomiarow):
             lm_kw.rzeczywista_na_napis(moja_suma),
             moja_jednostka))
         # qaz - duplikat
-        ms.podpisz_obie_osie(vert_axis)
-        on_mouse = {}
-        kod_html = ms.wykreslanie_slupkow(on_mouse)
-        lst_h.ddj(''.join(opis_dotyczy))
-        lst_h.ddj(kod_html)
+        if vert_axis.MaxY:
+            ms.podpisz_obie_osie(vert_axis)
+            on_mouse = {}
+            kod_html = ms.wykreslanie_slupkow(on_mouse)
+            lst_h.ddj(''.join(opis_dotyczy))
+            lst_h.ddj(kod_html)
+        else:
+            lst_h.ddj('Brak zróżnicowania danych w pionie, MaxY=%s' % repr(vert_axis.MaxY))
