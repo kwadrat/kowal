@@ -6,6 +6,7 @@ import unittest
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import dv_kw
 import ze_kw
+import gb_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -24,8 +25,6 @@ def nawiasy_kwadratowe(jednostka):
 JednGJ = 'GJ'
 # Megawatów
 JednMW = 'MW'
-# Kilowatogodzin
-Jedn_kWh = 'kWh'
 # Kilowatogodzin/Megawatogodzin? Ludzie różnie wpisują, na razie nie
 # szukałem sposobu na rozróżnienie, którą jednostkę podają.
 Jedn_kW_MWh = 'kWh/MWh'
@@ -72,7 +71,7 @@ ux_6_a = NaglowekKolumny('Moc - umowna', jednostka=Jedn_kWtow, separator=ze_kw.f
 ux_7_a = NaglowekKolumny('Moc - pobrana', jednostka=Jedn_kWtow, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
 ux_8_a = NaglowekKolumny('Razem Brutto', jednostka=ze_kw.Jedn_zlotowki, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
 ux_9_a = NaglowekKolumny('Zużycie', jednostka=Jedn_kW_MWh, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
-ux_10_a = NaglowekKolumny('Zużycie', jednostka=Jedn_kWh, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
+ux_10_a = NaglowekKolumny('Zużycie', jednostka=gb_kw.Jedn_kWh, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
 ux_11_a = NaglowekKolumny('Zużycie', jednostka=Jedn_MWh, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
 ux_12_a = NaglowekKolumny('Zużycie', jednostka=JednGJ, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
 ux_13_a = NaglowekKolumny('Moc - umowna', jednostka=JednMW, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()

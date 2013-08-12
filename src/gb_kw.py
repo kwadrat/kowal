@@ -18,8 +18,12 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+# Kilowatogodzin
+Jedn_kWh = 'kWh'
+
 class TestUnitNames(unittest.TestCase):
     def test_unit_names(self):
         '''
         TestUnitNames:
         '''
+        self.assertEqual(Jedn_kWh, 'kWh')
