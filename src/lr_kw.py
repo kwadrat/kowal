@@ -90,11 +90,12 @@ class ConsumptionQry(object):
         '''
         self.table_name = table_name
 
-    def __init__(self):
+    def __init__(self, table_name):
         '''
         ConsumptionQry:
         '''
         self.key_object = None
+        self.set_table(table_name)
 
     def set_object(self, key_object):
         '''
@@ -215,8 +216,7 @@ class TestUUQueries(unittest.TestCase):
         '''
         TestUUQueries:
         '''
-        obk = ConsumptionQry()
-        obk.set_table(lc_kw.fq_uu_energy_qv)
+        obk = ConsumptionQry(lc_kw.fq_uu_energy_qv)
         odp = obk.cons_question()
         self.assertEqual(odp, fy_kw.lxa_54_inst)
 
@@ -224,8 +224,7 @@ class TestUUQueries(unittest.TestCase):
         '''
         TestUUQueries:
         '''
-        obk = ConsumptionQry()
-        obk.set_table(lc_kw.fq_uu_energy_qv)
+        obk = ConsumptionQry(lc_kw.fq_uu_energy_qv)
         obk.set_object(8)
         odp = obk.cons_question()
         self.assertEqual(odp, fy_kw.lxa_52_inst)
@@ -234,8 +233,7 @@ class TestUUQueries(unittest.TestCase):
         '''
         TestUUQueries:
         '''
-        obk = ConsumptionQry()
-        obk.set_table(lc_kw.fq_uu_power_qv)
+        obk = ConsumptionQry(lc_kw.fq_uu_power_qv)
         obk.set_object(8)
         odp = obk.cons_question()
         self.assertEqual(odp, fy_kw.lxa_53_inst)

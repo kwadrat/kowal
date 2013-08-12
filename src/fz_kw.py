@@ -154,8 +154,7 @@ def ptn_jeden_licznik_poboru_w_roku(table_name, nr_probki):
         )
 
 def ptn_dane_jednego_obiektu(table_name, key_object):
-    obk = lr_kw.ConsumptionQry()
-    obk.set_table(table_name)
+    obk = lr_kw.ConsumptionQry(table_name)
     obk.set_object(key_object)
     return obk.cons_question()
 
