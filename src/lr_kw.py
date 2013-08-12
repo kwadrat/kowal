@@ -68,14 +68,7 @@ class GeneratorUU(object):
         GeneratorUU:
         '''
         returned_fields = [lc_kw.fq_m_samples_qv]
-        part_my_fields = hj_kw.ladnie_przecinkami(returned_fields)
-        part_my_limits = self.detect_my_limits()
-        return fy_kw.lxa_39_inst % dict(
-            part_my_fields=part_my_fields,
-            my_table_name=self.my_table_name,
-            e_date=lc_kw.fq_m_date_qv,
-            part_my_limits=part_my_limits,
-            )
+        return self.prepare_shape(returned_fields)
 
     def cons_question(self):
         '''
@@ -87,14 +80,7 @@ class GeneratorUU(object):
             lc_kw.fq_m_zero_qv,
             lc_kw.fq_m_sum_qv,
             ]
-        part_my_fields = hj_kw.ladnie_przecinkami(returned_fields)
-        part_my_limits = self.detect_my_limits()
-        return fy_kw.lxa_39_inst % dict(
-            part_my_fields=part_my_fields,
-            my_table_name=self.my_table_name,
-            e_date=lc_kw.fq_m_date_qv,
-            part_my_limits=part_my_limits,
-            )
+        return self.prepare_shape(returned_fields)
 
     def set_object(self, key_object):
         '''
