@@ -13,9 +13,9 @@ import dn_kw
 import lw_kw
 import eu_kw
 import fx_kw
+import dd_kw
 import ey_kw
 import hq_kw
-import dd_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
