@@ -59,7 +59,7 @@ class JedenOdcinekBazowy(object):
         '''
         if self.pseudoodcinek_etykiety_roku():
             wynik = dymek_bez_tresci
-        elif tgk.interesuja_nas_pomiary():
+        elif chce_bez_tresci:
             wynik = dymek_bez_tresci
         else:
             wynik = self.slownik_qm.polaczony_dymek()
