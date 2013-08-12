@@ -33,6 +33,7 @@ class PoboroweSlupki(MojeSlupki):
         PoboroweSlupki:
         '''
         MojeSlupki.__init__(self, tgk, aqr, dnw)
+        self.chce_bez_tresci = 1
         self.chce_po_lewej_miejsca_na_skale(self.pikseli_po_lewej)
 
     def linii_na_dole(self):
@@ -160,4 +161,4 @@ class TestPoborowychSlupkow(unittest.TestCase):
         self.assertEqual(obk.margines_dy_powyzej_slupka, 20)
         self.assertEqual(obk.wsp_y_na_dole_slupka, 130)
         self.assertEqual(obk.gorna_mniejsza, 140)
-        self.assertEqual(obk.chce_bez_tresci, 0)
+        self.assertEqual(obk.chce_bez_tresci, 1)
