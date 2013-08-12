@@ -42,7 +42,7 @@ class GeneratorUU(object):
         if self.my_end_date is not None:
             all_my_limits.append("%s < '%s'" % (lc_kw.fq_m_date_qv, self.my_end_date))
         if self.my_week_day is not None:
-            all_my_limits.append("EXTRACT(dow FROM m_date)=%d" % self.my_week_day)
+            all_my_limits.append("EXTRACT(dow FROM %s)=%d" % (lc_kw.fq_m_date_qv, self.my_week_day))
         part_my_limits = ' AND '.join(all_my_limits)
         return fy_kw.lxa_23_inst % dict(
             part_my_limits=part_my_limits,
