@@ -63,6 +63,13 @@ class GeneratorUU(object):
         '''
         GeneratorUU:
         '''
+        returned_fields = [
+            lc_kw.fq_m_date_qv,
+            lc_kw.fq_m_none_qv,
+            lc_kw.fq_m_zero_qv,
+            lc_kw.fq_m_sum_qv,
+            ]
+        part_my_fields = hj_kw.ladnie_przecinkami(returned_fields)
         if self.key_object is None:
             wstawka_war = ''
         else:
@@ -71,11 +78,9 @@ class GeneratorUU(object):
                 f_object=self.key_object,
                 )
         return fy_kw.lxa_39_inst % dict(
+            part_my_fields=part_my_fields,
             my_table_name=self.my_table_name,
             e_date=lc_kw.fq_m_date_qv,
-            e_none=lc_kw.fq_m_none_qv,
-            e_zero=lc_kw.fq_m_zero_qv,
-            e_sum=lc_kw.fq_m_sum_qv,
             wstawka_war=wstawka_war,
             )
 
