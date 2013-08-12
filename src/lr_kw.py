@@ -24,7 +24,7 @@ class GeneratorUU(object):
         '''
         GeneratorUU:
         '''
-        self.my_place = None
+        self.key_object = None
         self.my_start_date = None
         self.my_end_date = None
         self.my_week_day = None
@@ -35,8 +35,8 @@ class GeneratorUU(object):
         GeneratorUU:
         '''
         all_my_limits = []
-        if self.my_place is not None:
-            all_my_limits.append('f_object=%d' % self.my_place)
+        if self.key_object is not None:
+            all_my_limits.append('f_object=%d' % self.key_object)
         if self.my_start_date is not None:
             all_my_limits.append("m_date >= '2013-03-11'")
         if self.my_end_date is not None:
@@ -49,11 +49,11 @@ class GeneratorUU(object):
             my_table_name=self.my_table_name,
             )
 
-    def set_place(self, my_place):
+    def set_place(self, key_object):
         '''
         GeneratorUU:
         '''
-        self.my_place = my_place
+        self.key_object = key_object
 
     def set_start_date(self, my_start_date):
         '''
