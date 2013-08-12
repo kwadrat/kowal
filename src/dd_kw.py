@@ -7,6 +7,7 @@ Cechy energii pobranej - energia, moc
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import lc_kw
 import lw_kw
 '''.splitlines()]
 
@@ -22,9 +23,11 @@ for i in NazwyModulow:
 energy_chooser = {
     lw_kw.Dn_Energy: [
         24,
+        lc_kw.fq_uu_energy_qv,
         ],
     lw_kw.Dn_Power: [
         96,
+        lc_kw.fq_uu_power_qv,
         ],
     }
 
@@ -36,6 +39,7 @@ class CechaEnergii(object):
         self.tvk_pobor = tvk_pobor
         (
             self.krt_wymiar,
+            self.krt_table,
             ) = energy_chooser[self.tvk_pobor]
 
 class TestEnergyFeatures(unittest.TestCase):
@@ -45,6 +49,7 @@ class TestEnergyFeatures(unittest.TestCase):
         '''
         obk = CechaEnergii(lw_kw.Dn_Energy)
         self.assertEqual(obk.krt_wymiar, 24)
+        self.assertEqual(obk.krt_table, lc_kw.fq_uu_energy_qv)
 
     def test_2_energy_features(self):
         '''
@@ -52,3 +57,4 @@ class TestEnergyFeatures(unittest.TestCase):
         '''
         obk = CechaEnergii(lw_kw.Dn_Power)
         self.assertEqual(obk.krt_wymiar, 96)
+        self.assertEqual(obk.krt_table, lc_kw.fq_uu_power_qv)
