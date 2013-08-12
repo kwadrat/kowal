@@ -305,6 +305,7 @@ class MojeSlupki(KlasaObrazu):
         self.gorna_mniejsza = 140
         self.wysokosc_obrazu = self.gorna_mniejsza + self.linii_na_dole() * oa_kw.wysokosc_napisu
         self.szerokosc_slupka = SzerSlupka
+        self.chce_bez_tresci = 0
         if self.brak_mi_dat_szkieletu():
             return # nic nie robimy # qaz - REFACTOR!!!
         self.IleSlupkow = self.dnw.odcinki_bazowe.len_odcinkow_bazowych() # Tyle rysowanych słupków
