@@ -28,10 +28,6 @@ def zapamietaj_pomiar(slownik_wpisow, year, month, day, day_cell):
     slownik_miesiaca = slownik_wpisow[etykieta_miesiaca]
     slownik_miesiaca[day] = day_cell
 
-def compare_values(slow_value, fast_value):
-    if slow_value != fast_value:
-        raise RuntimeError('Rozne: %s, %s' % (repr(slow_value), repr(fast_value)))
-
 WykresPomiarow = hq_kw.WykresPomiarow
 
 class OgolnySzeregListPoborow(WykresPomiarow):
