@@ -45,12 +45,6 @@ def przemysl_wiersz_poborow(slownik_wpisow, single_row):
         day_cell,
         )
 
-def wykonaj_analize_danych(result):
-    slownik_wpisow = {}
-    for single_row in result:
-        przemysl_wiersz_poborow(slownik_wpisow, single_row)
-    return slownik_wpisow
-
 WykresPomiarow = hq_kw.WykresPomiarow
 
 class OgolnySzeregListPoborow(WykresPomiarow):

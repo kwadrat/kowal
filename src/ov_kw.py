@@ -64,9 +64,15 @@ def wygeneruj_tabelke_poborow(lst_h, slownik_wpisow):
         wygeneruj_wiersz_miesiaca(lst_h, slownik_wpisow, wszystkie_dni, jeden_miesiac)
     lst_h.ddj(ze_kw.formularz_1c_kon_tabeli)
 
+def wykonaj_analize_danych(result):
+    slownik_wpisow = {}
+    for single_row in result:
+        lt_kw.przemysl_wiersz_poborow(slownik_wpisow, single_row)
+    return slownik_wpisow
+
 def zrob_tabele_poborow(lst_h, result):
     lst_h.ddj(ze_kw.formularz_1c_zlm_wrsz)
-    slownik_wpisow = lt_kw.wykonaj_analize_danych(result)
+    slownik_wpisow = wykonaj_analize_danych(result)
     wygeneruj_tabelke_poborow(lst_h, slownik_wpisow)
 
 OgolnySzeregListPoborow = lt_kw.OgolnySzeregListPoborow
