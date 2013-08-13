@@ -88,12 +88,6 @@ class PoboroweSlupki(MojeSlupki):
                 self.wypisz_kwadransy_godziny(self.gorna_mniejsza, akt, nast)
         self.wypisz_jednostke_godziny()
 
-    def jednostka_osi_pionowej(self):
-        '''
-        PoboroweSlupki:
-        '''
-        return self.aqr.krt_pobor.krt_jedn
-
     def add_vertical_axis(self, vert_axis, krt_pobor):
         '''
         PoboroweSlupki:
