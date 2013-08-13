@@ -42,13 +42,13 @@ def cnt_zero(elements):
 def remove_nones(elements):
     return filter(lambda x: x is not None, elements)
 
-def sum_of_not_nones(elements):
-    return sum(remove_nones(elements))
+def sum_of_not_nones(krt_vl_fnctn, elements):
+    return krt_vl_fnctn(remove_nones(elements))
 
 def obtain_stats(krt_vl_fnctn, list_of_samples):
     v_none = cnt_none(list_of_samples)
     v_zero = cnt_zero(list_of_samples)
-    v_sum = sum_of_not_nones(list_of_samples)
+    v_sum = sum_of_not_nones(krt_vl_fnctn, list_of_samples)
     return v_none, v_zero, v_sum
 
 class SampleRow(object):
@@ -125,7 +125,7 @@ class TestRowChanges(unittest.TestCase):
         self.assertEqual(cnt_zero([
             0.0,
             ]), 1)
-        self.assertEqual(sum_of_not_nones([
+        self.assertEqual(sum_of_not_nones(sum, [
             lm_kw.wartosc_zero_globalna,
             None,
             1,
