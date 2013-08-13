@@ -125,7 +125,7 @@ class OgolnySzeregListPoborow(WykresPomiarow):
         '''
         self.id_obiekt = int(self.tgk.wez_obiekt())
 
-    def grafika_poborow_dla_pomiarow(self, lst_h):
+    def grafika_poborow_dla_pomiarow(self, lst_h, krt_pobor):
         '''
         OgolnySzeregListPoborow:
         '''

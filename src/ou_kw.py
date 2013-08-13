@@ -72,5 +72,5 @@ class PomiarowySzeregListPoborow(OgolnySzeregListPoborow):
         lst_h = lh_kw.ListaHTML()
         lst_h.ddj(fy_kw.lxa_47_inst)
         self.przygotuj_dla_poborow()
-        self.grafika_poborow_dla_pomiarow(lst_h)
+        self.grafika_poborow_dla_pomiarow(lst_h, krt_pobor)
         return lst_h.polacz_html()
