@@ -65,6 +65,7 @@ class PomiarowySzeregListPoborow(OgolnySzeregListPoborow):
         lista_nr_probek = self.numer_probki_na_podstawie_formularza()
         szereg_poborow = self.przygotuj_sie_dla_listy_dni(lista_nr_probek)
         self.pobory_dla_licznikow(szereg_poborow)
+        return szereg_poborow
 
     def html_szeregu_poborow(self, krt_pobor):
         '''
@@ -72,6 +73,6 @@ class PomiarowySzeregListPoborow(OgolnySzeregListPoborow):
         '''
         lst_h = lh_kw.ListaHTML()
         lst_h.ddj(fy_kw.lxa_47_inst)
-        self.przygotuj_dla_poborow()
+        szereg_poborow = self.przygotuj_dla_poborow()
         self.grafika_poborow_dla_pomiarow(lst_h, krt_pobor)
         return lst_h.polacz_html()
