@@ -96,11 +96,6 @@ def wygeneruj_tabelke_poborow(lst_h, slownik_wpisow):
         wygeneruj_wiersz_miesiaca(lst_h, slownik_wpisow, wszystkie_dni, jeden_miesiac)
     lst_h.ddj(ze_kw.formularz_1c_kon_tabeli)
 
-def zrob_tabele_poborow(lst_h, result):
-    lst_h.ddj(ze_kw.formularz_1c_zlm_wrsz)
-    slownik_wpisow = wykonaj_analize_danych(result)
-    wygeneruj_tabelke_poborow(lst_h, slownik_wpisow)
-
 WykresPomiarow = hq_kw.WykresPomiarow
 
 class OgolnySzeregListPoborow(WykresPomiarow):

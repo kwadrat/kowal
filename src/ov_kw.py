@@ -6,6 +6,7 @@ Analiza poboru - pokryciowy szereg list
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lc_kw
+import ze_kw
 import le_kw
 import lh_kw
 import lt_kw
@@ -19,6 +20,11 @@ for i in NazwyModulow:
             exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
         else:
             exec 'import %(modul)s' % dict(modul = i)
+
+def zrob_tabele_poborow(lst_h, result):
+    lst_h.ddj(ze_kw.formularz_1c_zlm_wrsz)
+    slownik_wpisow = lt_kw.wykonaj_analize_danych(result)
+    lt_kw.wygeneruj_tabelke_poborow(lst_h, slownik_wpisow)
 
 OgolnySzeregListPoborow = lt_kw.OgolnySzeregListPoborow
 
@@ -34,7 +40,7 @@ class PokryciowySzeregListPoborow(OgolnySzeregListPoborow):
         PokryciowySzeregListPoborow:
         '''
         result = le_kw.dq_dane_jednego_obiektu(self.dfb, self.table_name, self.id_obiekt)
-        lt_kw.zrob_tabele_poborow(lst_h, result)
+        zrob_tabele_poborow(lst_h, result)
 
     def html_pokrycia_szeregu_poborow(self):
         '''
