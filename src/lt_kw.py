@@ -12,7 +12,6 @@ import le_kw
 import dn_kw
 import eu_kw
 import fx_kw
-import dd_kw
 import ey_kw
 import hq_kw
 '''.splitlines()]
@@ -111,8 +110,6 @@ class OgolnySzeregListPoborow(WykresPomiarow):
         '''
         self.dfb = dfb
         self.lista_slupkow = []
-        tvk_pobor = tgk.wez_pobor()
-        self.krt_pobor = dd_kw.CechaEnergii(tvk_pobor)
         self.table_name = krt_pobor.krt_table
         aqr = ey_kw.SzkieletDatDlaPoborow(krt_pobor)
         tgk.przygotuj_pobory(aqr, self.dfb)
