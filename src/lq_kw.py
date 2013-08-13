@@ -80,7 +80,7 @@ class SampleRow(object):
         self.sample_key = sample_key
         self.list_of_samples = sample_data
 
-    def put_in_database(self, dfb, table_of_samples, local_key):
+    def put_in_database(self, dfb, krt_pobor, table_of_samples, local_key):
         '''
         SampleRow:
         '''
