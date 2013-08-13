@@ -80,7 +80,7 @@ def normalize_value(before):
     return result
 
 class CommonReader(object):
-    def __init__(self, cnt_per_day, table_of_samples):
+    def __init__(self, cnt_per_day, table_of_samples, tvk_pobor):
         '''
         CommonReader:
         '''

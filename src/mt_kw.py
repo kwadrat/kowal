@@ -24,7 +24,7 @@ class PowerReader(CommonReader):
         '''
         PowerReader:
         '''
-        CommonReader.__init__(self, 96, lc_kw.fq_uu_power_qv)
+        CommonReader.__init__(self, 96, lc_kw.fq_uu_power_qv, lw_kw.Dn_Power)
         self.period_server = lp_kw.QuarterServer()
 
     def vx_th_date(self, my_col, my_row):
