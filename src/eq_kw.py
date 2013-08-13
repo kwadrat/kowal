@@ -122,7 +122,7 @@ class PoboroweSlupki(MojeSlupki):
         '''
         PoboroweSlupki:
         '''
-        self.aqr.krt_pobor.cumulative_init()
+        krt_pobor.cumulative_init()
         pracuj = self.sprawdz_nietypowe_sytuacje(self.IleSlupkow, vert_axis)
         if pracuj:
             moje_paczki_faktur = self.dnw.odcinki_bazowe.p_odc_baz()
@@ -131,7 +131,7 @@ class PoboroweSlupki(MojeSlupki):
                 SlWspX = self.aqr.miejsce_umieszczenia_slupka(pocz, kon, self.szerokosc_dx_skali, self.koniec_x_wykresu)
                 if SlWspX != None:
                     Wartosc = jeden_odc_bzw.slownik_qm.jh_kwota()
-                    self.aqr.krt_pobor.cumulative_update(Wartosc)
+                    krt_pobor.cumulative_update(Wartosc)
                     GoraSlupka, DolSlupka = self.wyznacz_gore_dol_slupka(vert_axis, Wartosc)
                     Etykieta = self.wyznacz_etykiete(pocz)
                     jeden_slupek = sj_kw.JedenSlupek(SlWspX, DolSlupka, GoraSlupka, Etykieta, Wartosc, jeden_odc_bzw)
