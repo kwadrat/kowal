@@ -6,9 +6,11 @@ Analiza poboru - pokryciowy szereg list
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import fy_kw
+import lc_kw
 import ze_kw
 import le_kw
 import eu_kw
+import fx_kw
 import lh_kw
 import lt_kw
 '''.splitlines()]
@@ -64,10 +66,22 @@ def wygeneruj_tabelke_poborow(lst_h, slownik_wpisow):
         wygeneruj_wiersz_miesiaca(lst_h, slownik_wpisow, wszystkie_dni, jeden_miesiac)
     lst_h.ddj(ze_kw.formularz_1c_kon_tabeli)
 
+def przemysl_wiersz_poborow(slownik_wpisow, single_row):
+    day_cell = fx_kw.DayCellsStats()
+    day_cell.cell_params(single_row[lc_kw.fq_m_none_qv], single_row[lc_kw.fq_m_zero_qv])
+    full_date = single_row[lc_kw.fq_m_date_qv]
+    lt_kw.zapamietaj_pomiar(
+        slownik_wpisow,
+        full_date.year,
+        full_date.month,
+        full_date.day,
+        day_cell,
+        )
+
 def wykonaj_analize_danych(result):
     slownik_wpisow = {}
     for single_row in result:
-        lt_kw.przemysl_wiersz_poborow(slownik_wpisow, single_row)
+        przemysl_wiersz_poborow(slownik_wpisow, single_row)
     return slownik_wpisow
 
 def zrob_tabele_poborow(lst_h, result):

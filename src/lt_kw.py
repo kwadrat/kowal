@@ -8,7 +8,6 @@ NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lc_kw
 import ze_kw
 import dn_kw
-import fx_kw
 import ey_kw
 import hq_kw
 '''.splitlines()]
@@ -32,18 +31,6 @@ def zapamietaj_pomiar(slownik_wpisow, year, month, day, day_cell):
 def compare_values(slow_value, fast_value):
     if slow_value != fast_value:
         raise RuntimeError('Rozne: %s, %s' % (repr(slow_value), repr(fast_value)))
-
-def przemysl_wiersz_poborow(slownik_wpisow, single_row):
-    day_cell = fx_kw.DayCellsStats()
-    day_cell.cell_params(single_row[lc_kw.fq_m_none_qv], single_row[lc_kw.fq_m_zero_qv])
-    full_date = single_row[lc_kw.fq_m_date_qv]
-    zapamietaj_pomiar(
-        slownik_wpisow,
-        full_date.year,
-        full_date.month,
-        full_date.day,
-        day_cell,
-        )
 
 WykresPomiarow = hq_kw.WykresPomiarow
 
