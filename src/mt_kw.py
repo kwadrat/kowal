@@ -2,7 +2,6 @@
 # -*- coding: UTF-8 -*-
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
-import lc_kw
 import lp_kw
 import lw_kw
 import mu_kw
@@ -24,7 +23,7 @@ class PowerReader(CommonReader):
         '''
         PowerReader:
         '''
-        CommonReader.__init__(self, lc_kw.fq_uu_power_qv, lw_kw.Dn_Power)
+        CommonReader.__init__(self, lw_kw.Dn_Power)
         self.period_server = lp_kw.QuarterServer()
 
     def vx_th_date(self, my_col, my_row):
