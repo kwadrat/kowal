@@ -86,7 +86,7 @@ class TestEnergyFeatures(unittest.TestCase):
         self.assertEqual(obk.krt_jedn, gb_kw.Jedn_kWtow)
         self.assertEqual(obk.krt_etykieta, fy_kw.lxa_57_inst)
 
-    def test_3_energy_features(self):
+    def test_sum_of_energy(self):
         '''
         TestEnergyFeatures:
         '''
@@ -100,7 +100,7 @@ class TestEnergyFeatures(unittest.TestCase):
         obk.cumulative_update(2)
         self.assertEqual(obk.cumulative_value, 6.0)
 
-    def test_4_energy_features(self):
+    def test_maximum_of_power(self):
         '''
         TestEnergyFeatures:
         '''
