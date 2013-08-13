@@ -300,3 +300,4 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(
             pokoloruj('yellow', 'napis'),
             '<span style="background-color: napis;">yellow</span>')
+        self.assertEqual(fy_kw.lxa_56_inst, 'suma narastająco')
