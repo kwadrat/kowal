@@ -82,6 +82,16 @@ class GeneratorUU(object):
             ]
         return self.prepare_shape(returned_fields)
 
+    def cons_couple(self):
+        '''
+        GeneratorUU:
+        '''
+        returned_fields = [
+            lc_kw.fq_m_date_qv,
+            lc_kw.fq_m_sum_qv,
+            ]
+        return self.prepare_shape(returned_fields)
+
     def set_object(self, key_object):
         '''
         GeneratorUU:
