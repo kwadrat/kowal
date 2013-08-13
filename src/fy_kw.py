@@ -122,3 +122,5 @@ lxa_55_inst = """\
 SELECT m_samples FROM uu_power ORDER BY m_date;"""
 lxa_56_inst = """\
 suma narastająco"""
+lxa_57_inst = """\
+moc maksymalna"""
