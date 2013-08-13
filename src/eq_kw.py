@@ -94,7 +94,7 @@ class PoboroweSlupki(MojeSlupki):
         '''
         return self.aqr.krt_pobor.krt_jedn
 
-    def add_vertical_axis(self, vert_axis):
+    def add_vertical_axis(self, vert_axis, krt_pobor):
         '''
         PoboroweSlupki:
         '''
@@ -116,7 +116,7 @@ class PoboroweSlupki(MojeSlupki):
         PoboroweSlupki:
         '''
         self.kwadransy_godziny_z_kreskami()
-        self.add_vertical_axis(vert_axis)
+        self.add_vertical_axis(vert_axis, krt_pobor)
 
     def wyznacz_poborowe_slupki(self, vert_axis, krt_pobor):
         '''
