@@ -109,7 +109,7 @@ class PoboroweSlupki(MojeSlupki):
             napis_liczby = lm_kw.rzeczywista_na_napis(Wartosc)
             self.my_texts.append((end_x - 15, GoraSlupka, napis_liczby))
 
-        self.my_texts.append((15, 5, self.jednostka_osi_pionowej()))
+        self.my_texts.append((15, 5, krt_pobor.krt_jedn))
 
     def podpisz_obie_osie(self, vert_axis, krt_pobor):
         '''
