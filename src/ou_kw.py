@@ -47,7 +47,6 @@ class PomiarowySzeregListPoborow(OgolnySzeregListPoborow):
         for nr_probki in lista_nr_probek:
             elem = lu_kw.PoboryDanegoDnia(self.tgk, self.aqr, self.tekstowa_diagnostyka, self.id_obiekt, nr_probki)
             tmp_lista.append(elem)
-        self.szereg_poborow = tmp_lista
         return tmp_lista
 
     def pobory_dla_licznikow(self, szereg_poborow):
