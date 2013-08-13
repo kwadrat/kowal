@@ -128,10 +128,3 @@ class OgolnySzeregListPoborow(WykresPomiarow):
         '''
         for lista_poborow in szereg_poborow:
             lista_poborow.html_ls_poborow(lst_h, krt_pobor)
-
-    def wizualizacja_pokrycia_poborami(self, lst_h):
-        '''
-        OgolnySzeregListPoborow:
-        '''
-        result = le_kw.dq_dane_jednego_obiektu(self.dfb, self.table_name, self.id_obiekt)
-        zrob_tabele_poborow(lst_h, result)

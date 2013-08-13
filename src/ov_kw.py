@@ -29,6 +29,13 @@ class PokryciowySzeregListPoborow(OgolnySzeregListPoborow):
         '''
         OgolnySzeregListPoborow.__init__(self, tgk, dfb, krt_pobor)
 
+    def wizualizacja_pokrycia_poborami(self, lst_h):
+        '''
+        PokryciowySzeregListPoborow:
+        '''
+        result = le_kw.dq_dane_jednego_obiektu(self.dfb, self.table_name, self.id_obiekt)
+        lt_kw.zrob_tabele_poborow(lst_h, result)
+
     def html_pokrycia_szeregu_poborow(self):
         '''
         PokryciowySzeregListPoborow:
