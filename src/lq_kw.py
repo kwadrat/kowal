@@ -43,7 +43,7 @@ def remove_nones(elements):
     return filter(lambda x: x is not None, elements)
 
 def sum_of_not_nones(elements):
-    return sum(filter(lambda x: x is not None, elements))
+    return sum(remove_nones(elements))
 
 def obtain_stats(list_of_samples):
     v_none = cnt_none(list_of_samples)
