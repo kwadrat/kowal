@@ -77,7 +77,7 @@ class PoboryDanegoDnia(WykresPomiarow):
         opis_dotyczy = []
         # qaz - duplikat
         opis_dotyczy.append(ze_kw.sp_stl(
-            fy_kw.lxa_56_inst,
+            self.aqr.krt_pobor.krt_etykieta,
             lm_kw.rzeczywista_na_napis(moja_suma),
             moja_jednostka))
         # qaz - duplikat
