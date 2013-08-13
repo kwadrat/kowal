@@ -33,7 +33,7 @@ energy_chooser = {
         96,
         lc_kw.fq_uu_power_qv,
         gb_kw.Jedn_kWtow,
-        fy_kw.lxa_56_inst,
+        fy_kw.lxa_57_inst,
         ],
     }
 
@@ -69,4 +69,4 @@ class TestEnergyFeatures(unittest.TestCase):
         self.assertEqual(obk.krt_wymiar, 96)
         self.assertEqual(obk.krt_table, lc_kw.fq_uu_power_qv)
         self.assertEqual(obk.krt_jedn, gb_kw.Jedn_kWtow)
-        self.assertEqual(obk.krt_etykieta, fy_kw.lxa_56_inst)
+        self.assertEqual(obk.krt_etykieta, fy_kw.lxa_57_inst)
