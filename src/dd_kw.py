@@ -60,7 +60,10 @@ class CechaEnergii(object):
         '''
         TestEnergyFeatures:
         '''
-        self.cumulative_value += new_value
+        if self.tvk_pobor == lw_kw.Dn_Energy:
+            self.cumulative_value += new_value
+        else:
+            self.cumulative_value = max(self.cumulative_value, new_value)
 
 class TestEnergyFeatures(unittest.TestCase):
     def test_energy_features(self):
@@ -96,3 +99,17 @@ class TestEnergyFeatures(unittest.TestCase):
         self.assertEqual(obk.cumulative_value, 4.0)
         obk.cumulative_update(2)
         self.assertEqual(obk.cumulative_value, 6.0)
+
+    def test_4_energy_features(self):
+        '''
+        TestEnergyFeatures:
+        '''
+        obk = CechaEnergii(lw_kw.Dn_Power)
+        obk.cumulative_init()
+        self.assertEqual(obk.cumulative_value, 0.0)
+        obk.cumulative_update(1)
+        self.assertEqual(obk.cumulative_value, 1.0)
+        obk.cumulative_update(3)
+        self.assertEqual(obk.cumulative_value, 3.0)
+        obk.cumulative_update(2)
+        self.assertEqual(obk.cumulative_value, 3.0)
