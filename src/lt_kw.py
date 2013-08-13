@@ -31,7 +31,7 @@ class OgolnySzeregListPoborow(WykresPomiarow):
         aqr = ey_kw.SzkieletDatDlaPoborow(krt_pobor)
         tgk.przygotuj_pobory(aqr, self.dfb)
         WykresPomiarow.__init__(self, tgk, aqr)
-        self.zapamietaj_wybory_formularza_poborow()
+        self.id_obiekt = int(self.tgk.wez_obiekt())
         self.ustaw_diagnostyke()
 
     def zapamietaj_wybory_formularza_poborow(self):
