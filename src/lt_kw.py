@@ -51,11 +51,6 @@ def wykonaj_analize_danych(result):
         przemysl_wiersz_poborow(slownik_wpisow, single_row)
     return slownik_wpisow
 
-def wyznacz_daty_miesieczne(slownik_wpisow):
-    wszystkie_miesiace = slownik_wpisow.keys()
-    wszystkie_miesiace.sort()
-    return wszystkie_miesiace
-
 WykresPomiarow = hq_kw.WykresPomiarow
 
 class OgolnySzeregListPoborow(WykresPomiarow):

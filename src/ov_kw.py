@@ -22,6 +22,11 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+def wyznacz_daty_miesieczne(slownik_wpisow):
+    wszystkie_miesiace = slownik_wpisow.keys()
+    wszystkie_miesiace.sort()
+    return wszystkie_miesiace
+
 def wygeneruj_wiersz_miesiaca(lst_h, slownik_wpisow, wszystkie_dni, jeden_miesiac):
     lst_h.ddj(ze_kw.op_tr())
     dane_miesiaca = slownik_wpisow[jeden_miesiac]
@@ -51,7 +56,7 @@ def wygeneruj_wiersz_naglowka(lst_h, wszystkie_dni):
     lst_h.ddj(ze_kw.formularz_67c_kon_wiersza)
 
 def wygeneruj_tabelke_poborow(lst_h, slownik_wpisow):
-    wszystkie_miesiace = lt_kw.wyznacz_daty_miesieczne(slownik_wpisow)
+    wszystkie_miesiace = wyznacz_daty_miesieczne(slownik_wpisow)
     wszystkie_dni = eu_kw.detect_my_days(slownik_wpisow)
     lst_h.ddj(ze_kw.op_tbl(class_=fy_kw.lxa_40_inst, border=1))
     wygeneruj_wiersz_naglowka(lst_h, wszystkie_dni)
