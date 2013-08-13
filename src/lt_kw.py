@@ -63,27 +63,6 @@ def wygeneruj_wiersz_naglowka(lst_h, wszystkie_dni):
         lst_h.ddj(ze_kw.op_ptd(str(jeden_dzien)))
     lst_h.ddj(ze_kw.formularz_67c_kon_wiersza)
 
-def wygeneruj_wiersz_miesiaca(lst_h, slownik_wpisow, wszystkie_dni, jeden_miesiac):
-    lst_h.ddj(ze_kw.op_tr())
-    dane_miesiaca = slownik_wpisow[jeden_miesiac]
-    lst_h.ddj(ze_kw.op_ptd(jeden_miesiac))
-    for jeden_dzien in wszystkie_dni:
-        day_cell = dane_miesiaca.get(jeden_dzien)
-        if day_cell is None:
-            tresc = ze_kw.hard_space
-            class_ = None
-            title = None
-        else:
-            tresc = day_cell.cell_message()
-            class_ = day_cell.cell_background()
-            title = day_cell.cell_title()
-        lst_h.ddj(ze_kw.op_ptd(
-            str(tresc),
-            class_=class_,
-            title=title,
-            ))
-    lst_h.ddj(ze_kw.formularz_67c_kon_wiersza)
-
 WykresPomiarow = hq_kw.WykresPomiarow
 
 class OgolnySzeregListPoborow(WykresPomiarow):

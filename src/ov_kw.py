@@ -22,13 +22,34 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+def wygeneruj_wiersz_miesiaca(lst_h, slownik_wpisow, wszystkie_dni, jeden_miesiac):
+    lst_h.ddj(ze_kw.op_tr())
+    dane_miesiaca = slownik_wpisow[jeden_miesiac]
+    lst_h.ddj(ze_kw.op_ptd(jeden_miesiac))
+    for jeden_dzien in wszystkie_dni:
+        day_cell = dane_miesiaca.get(jeden_dzien)
+        if day_cell is None:
+            tresc = ze_kw.hard_space
+            class_ = None
+            title = None
+        else:
+            tresc = day_cell.cell_message()
+            class_ = day_cell.cell_background()
+            title = day_cell.cell_title()
+        lst_h.ddj(ze_kw.op_ptd(
+            str(tresc),
+            class_=class_,
+            title=title,
+            ))
+    lst_h.ddj(ze_kw.formularz_67c_kon_wiersza)
+
 def wygeneruj_tabelke_poborow(lst_h, slownik_wpisow):
     wszystkie_miesiace = lt_kw.wyznacz_daty_miesieczne(slownik_wpisow)
     wszystkie_dni = eu_kw.detect_my_days(slownik_wpisow)
     lst_h.ddj(ze_kw.op_tbl(class_=fy_kw.lxa_40_inst, border=1))
     lt_kw.wygeneruj_wiersz_naglowka(lst_h, wszystkie_dni)
     for jeden_miesiac in wszystkie_miesiace:
-        lt_kw.wygeneruj_wiersz_miesiaca(lst_h, slownik_wpisow, wszystkie_dni, jeden_miesiac)
+        wygeneruj_wiersz_miesiaca(lst_h, slownik_wpisow, wszystkie_dni, jeden_miesiac)
     lst_h.ddj(ze_kw.formularz_1c_kon_tabeli)
 
 def zrob_tabele_poborow(lst_h, result):
