@@ -5,6 +5,7 @@ Analiza poboru - pomiarowy szereg list dla miesiąca
 '''
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import lh_kw
 import gc_kw
 '''.splitlines()]
 
@@ -25,3 +26,10 @@ class PomiarowyMiesiecznySzeregListPoborow(OgolnyPomiarowySzeregListPoborow):
         PomiarowyMiesiecznySzeregListPoborow:
         '''
         OgolnyPomiarowySzeregListPoborow.__init__(self, tgk, dfb, krt_pobor)
+
+    def html_szeregu_poborow(self, krt_pobor):
+        '''
+        PomiarowyMiesiecznySzeregListPoborow:
+        '''
+        lst_h = lh_kw.ListaHTML()
+        return lst_h.polacz_html()
