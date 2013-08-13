@@ -105,7 +105,7 @@ def zrob_tabele_poborow(lst_h, result):
 WykresPomiarow = hq_kw.WykresPomiarow
 
 class OgolnySzeregListPoborow(WykresPomiarow):
-    def __init__(self, tgk, dfb):
+    def __init__(self, tgk, dfb, krt_pobor):
         '''
         OgolnySzeregListPoborow:
         '''

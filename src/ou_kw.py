@@ -29,7 +29,7 @@ class PomiarowySzeregListPoborow(OgolnySzeregListPoborow):
         '''
         PomiarowySzeregListPoborow:
         '''
-        OgolnySzeregListPoborow.__init__(self, tgk, dfb)
+        OgolnySzeregListPoborow.__init__(self, tgk, dfb, krt_pobor)
 
     def numer_probki_na_podstawie_formularza(self):
         '''

@@ -27,7 +27,7 @@ class PokryciowySzeregListPoborow(OgolnySzeregListPoborow):
         '''
         PokryciowySzeregListPoborow:
         '''
-        OgolnySzeregListPoborow.__init__(self, tgk, dfb)
+        OgolnySzeregListPoborow.__init__(self, tgk, dfb, krt_pobor)
 
     def html_pokrycia_szeregu_poborow(self):
         '''
