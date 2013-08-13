@@ -54,6 +54,7 @@ class CechaEnergii(object):
         '''
         TestEnergyFeatures:
         '''
+        self.cumulative_value = 0.0
 
 class TestEnergyFeatures(unittest.TestCase):
     def test_energy_features(self):
@@ -82,3 +83,4 @@ class TestEnergyFeatures(unittest.TestCase):
         '''
         obk = CechaEnergii(lw_kw.Dn_Energy)
         obk.cumulative_init()
+        self.assertEqual(obk.cumulative_value, 0.0)
