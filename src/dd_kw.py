@@ -50,6 +50,11 @@ class CechaEnergii(object):
             self.krt_etykieta,
             ) = energy_chooser[self.tvk_pobor]
 
+    def cumulative_init(self):
+        '''
+        TestEnergyFeatures:
+        '''
+
 class TestEnergyFeatures(unittest.TestCase):
     def test_energy_features(self):
         '''
@@ -70,3 +75,10 @@ class TestEnergyFeatures(unittest.TestCase):
         self.assertEqual(obk.krt_table, lc_kw.fq_uu_power_qv)
         self.assertEqual(obk.krt_jedn, gb_kw.Jedn_kWtow)
         self.assertEqual(obk.krt_etykieta, fy_kw.lxa_57_inst)
+
+    def test_3_energy_features(self):
+        '''
+        TestEnergyFeatures:
+        '''
+        obk = CechaEnergii(lw_kw.Dn_Energy)
+        obk.cumulative_init()
