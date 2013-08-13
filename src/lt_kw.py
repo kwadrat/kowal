@@ -111,8 +111,8 @@ class OgolnySzeregListPoborow(WykresPomiarow):
         '''
         self.dfb = dfb
         self.lista_slupkow = []
-        self.tvk_pobor = tgk.wez_pobor()
-        self.krt_pobor = dd_kw.CechaEnergii(self.tvk_pobor)
+        tvk_pobor = tgk.wez_pobor()
+        self.krt_pobor = dd_kw.CechaEnergii(tvk_pobor)
         self.table_name = self.krt_pobor.krt_table
         aqr = ey_kw.SzkieletDatDlaPoborow(self.krt_pobor)
         tgk.przygotuj_pobory(aqr, self.dfb)
