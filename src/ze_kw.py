@@ -30,7 +30,6 @@ hard_space = '&nbsp;'
 formularz_1c_kon_dzialu = '</div>\n'
 formularz_1c_pocz_pozycji = '<li>'
 formularz_1c_kon_pozycji = '</li>\n'
-Jedn_zlotowki = 'zł'
 naglowek_na_prawo = 'float: right;'
 
 def op_sel_lgc(warunek):
@@ -293,9 +292,8 @@ class TestTytuluHtml(unittest.TestCase):
             sp_b_stl('srodek'),
             '<font size=+1 style="color:red;">srodek</font>')
         self.assertEqual(
-            sp_stl('12', Jedn_zlotowki),
+            sp_stl('12', gb_kw.Jedn_zlotowki),
             '\n<span style="float: right;">(suma narastająco: <font size=+1 style="color:red;">12 zł</font>)</span><br />\n')
-        self.assertEqual(Jedn_zlotowki, 'zł')
         self.assertEqual(formularz_1c_zlm_wrsz, '<br />\n')
         self.assertEqual(formularz_1c_nw_wrsz, '\n')
         self.assertEqual(formularz_1c_horizontal_rule, '<hr />\n')
