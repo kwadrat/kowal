@@ -24,16 +24,16 @@ for i in NazwyModulow:
 
 OgolnySzeregListPoborow = lt_kw.OgolnySzeregListPoborow
 
-class OgolnyPomiarowySzeregListPoborow(OgolnySzeregListPoborow):
+class PomiarowyDziennySzeregListPoborow(OgolnySzeregListPoborow):
     def __init__(self, tgk, dfb, krt_pobor):
         '''
-        OgolnyPomiarowySzeregListPoborow:
+        PomiarowyDziennySzeregListPoborow:
         '''
         OgolnySzeregListPoborow.__init__(self, tgk, dfb, krt_pobor)
 
     def numer_probki_na_podstawie_formularza(self):
         '''
-        OgolnyPomiarowySzeregListPoborow:
+        PomiarowyDziennySzeregListPoborow:
         '''
         tvk_data = self.tgk.wez_date()
         result = le_kw.dq_liczniki_poboru_w_roku(self.dfb, self.table_name, self.id_obiekt, tvk_data)
@@ -41,7 +41,7 @@ class OgolnyPomiarowySzeregListPoborow(OgolnySzeregListPoborow):
 
     def przygotuj_sie_dla_listy_dni(self, lista_nr_probek):
         '''
-        OgolnyPomiarowySzeregListPoborow:
+        PomiarowyDziennySzeregListPoborow:
         '''
         tmp_lista = []
         for nr_probki in lista_nr_probek:
@@ -51,28 +51,28 @@ class OgolnyPomiarowySzeregListPoborow(OgolnySzeregListPoborow):
 
     def pobory_dla_licznikow(self, szereg_poborow):
         '''
-        OgolnyPomiarowySzeregListPoborow:
+        PomiarowyDziennySzeregListPoborow:
         '''
         for lista_poborow in szereg_poborow:
             lista_poborow.pobory_dla_parametrow(self.dfb, self.id_obiekt, self.table_name)
 
     def przygotuj_dla_poborow(self):
         '''
-        OgolnyPomiarowySzeregListPoborow:
+        PomiarowyDziennySzeregListPoborow:
         '''
         lista_nr_probek = self.numer_probki_na_podstawie_formularza()
         return self.przygotuj_sie_dla_listy_dni(lista_nr_probek)
 
     def grafika_poborow_dla_pomiarow(self, lst_h, krt_pobor, szereg_poborow):
         '''
-        OgolnyPomiarowySzeregListPoborow:
+        PomiarowyDziennySzeregListPoborow:
         '''
         for lista_poborow in szereg_poborow:
             lista_poborow.html_ls_poborow(lst_h, krt_pobor)
 
     def html_szeregu_poborow(self, krt_pobor):
         '''
-        OgolnyPomiarowySzeregListPoborow:
+        PomiarowyDziennySzeregListPoborow:
         '''
         lst_h = lh_kw.ListaHTML()
         lst_h.ddj(fy_kw.lxa_47_inst)
