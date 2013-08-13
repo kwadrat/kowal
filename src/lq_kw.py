@@ -91,7 +91,7 @@ class SampleRow(object):
         else:
             le_kw.dq_insert_vector_of_samples(dfb, table_of_samples, key_object, row_date, self.list_of_samples, v_none, v_zero, v_sum)
 
-    def make_stats_of_samples(self, dfb, table_of_samples, local_key):
+    def make_stats_of_samples(self, dfb, krt_pobor, table_of_samples, local_key):
         '''
         SampleRow:
         '''
