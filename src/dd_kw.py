@@ -92,3 +92,7 @@ class TestEnergyFeatures(unittest.TestCase):
         self.assertEqual(obk.cumulative_value, 0.0)
         obk.cumulative_update(1)
         self.assertEqual(obk.cumulative_value, 1.0)
+        obk.cumulative_update(3)
+        self.assertEqual(obk.cumulative_value, 4.0)
+        obk.cumulative_update(2)
+        self.assertEqual(obk.cumulative_value, 6.0)
