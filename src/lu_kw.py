@@ -5,6 +5,7 @@ Analiza zużycia - lista pomiarów dla jednego licznika
 '''
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import fy_kw
 import lc_kw
 import lm_kw
 import ze_kw
