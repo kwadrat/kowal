@@ -202,7 +202,7 @@ def sp_b_stl(napis):
         napis=napis,
         )
 
-def sp_stl(liczba_tekstowo, jednostka):
+def sp_stl(etykieta_wartosci, liczba_tekstowo, jednostka):
     pieces = []
     pieces.append(formularz_1c_nw_wrsz)
     middle_c = ('%(liczba_tekstowo)s %(jednostka)s' %
@@ -211,8 +211,9 @@ def sp_stl(liczba_tekstowo, jednostka):
             jednostka=jednostka,
             ))
     middle_b = sp_b_stl(middle_c)
-    middle_a = ('(suma narastająco: %(middle_b)s)' %
+    middle_a = ('(%(etykieta_wartosci)s: %(middle_b)s)' %
         dict(
+            etykieta_wartosci=etykieta_wartosci,
             middle_b=middle_b,
             ))
     elem = sp_a_stl(naglowek_na_prawo, middle_a)
@@ -292,7 +293,7 @@ class TestTytuluHtml(unittest.TestCase):
             sp_b_stl('srodek'),
             '<font size=+1 style="color:red;">srodek</font>')
         self.assertEqual(
-            sp_stl('12', gb_kw.Jedn_zlotowki),
+            sp_stl(fy_kw.lxa_56_inst, '12', gb_kw.Jedn_zlotowki),
             '\n<span style="float: right;">(suma narastająco: <font size=+1 style="color:red;">12 zł</font>)</span><br />\n')
         self.assertEqual(formularz_1c_zlm_wrsz, '<br />\n')
         self.assertEqual(formularz_1c_nw_wrsz, '\n')
