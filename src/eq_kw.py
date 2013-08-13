@@ -146,8 +146,7 @@ class TestPoborowychSlupkow(unittest.TestCase):
         '''
         tgk = od_kw.PseudoTGK()
         tgk.wyznacz_unikalny_moment_dla_grafiki()
-        tvk_pobor = lw_kw.Dn_Energy
-        krt_pobor = dd_kw.CechaEnergii(tvk_pobor)
+        krt_pobor = dd_kw.CechaEnergii(lw_kw.Dn_Energy)
         aqr = ey_kw.SzkieletDatDlaPoborow(krt_pobor)
         lp_wykresu = 0
         dnw = oh_kw.SimpleDNW(lp_wykresu)
