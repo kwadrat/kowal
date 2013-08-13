@@ -60,7 +60,6 @@ class OgolnyPomiarowySzeregListPoborow(OgolnySzeregListPoborow):
         '''
         OgolnyPomiarowySzeregListPoborow:
         '''
-        self.zapamietaj_wybory_formularza_poborow()
         lista_nr_probek = self.numer_probki_na_podstawie_formularza()
         return self.przygotuj_sie_dla_listy_dni(lista_nr_probek)
 
