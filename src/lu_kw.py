@@ -72,7 +72,8 @@ class PoboryDanegoDnia(WykresPomiarow):
         self.zbuduj_odcinki_y_bazowe()
         vert_axis = self.dnw.odcinki_bazowe.zakres_pionowy()
         ms = eq_kw.PoboroweSlupki(self.tgk, self.aqr, self.dnw)
-        moja_suma = ms.wyznacz_poborowe_slupki(vert_axis)
+        ms.wyznacz_poborowe_slupki(vert_axis)
+        moja_suma = self.aqr.krt_pobor.cumulative_value
         moja_jednostka = ms.jednostka_osi_pionowej()
         opis_dotyczy = []
         # qaz - duplikat
