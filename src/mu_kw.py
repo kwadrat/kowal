@@ -86,7 +86,6 @@ class CommonReader(object):
         CommonReader:
         '''
         self.krt_pobor = dd_kw.CechaEnergii(tvk_pobor)
-        self.cnt_per_day = cnt_per_day
         self.table_of_samples = self.krt_pobor.krt_table
         self.vx_zero = fv_kw.vx_zero
         self.internal_rows = {}
