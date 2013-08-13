@@ -72,18 +72,18 @@ class PoboryDanegoDnia(WykresPomiarow):
         self.zbuduj_odcinki_y_bazowe()
         vert_axis = self.dnw.odcinki_bazowe.zakres_pionowy()
         ms = eq_kw.PoboroweSlupki(self.tgk, self.aqr, self.dnw)
-        ms.wyznacz_poborowe_slupki(vert_axis, self.aqr.krt_pobor)
-        moja_suma = self.aqr.krt_pobor.cumulative_value
-        moja_jednostka = self.aqr.krt_pobor.krt_jedn
+        ms.wyznacz_poborowe_slupki(vert_axis, krt_pobor)
+        moja_suma = krt_pobor.cumulative_value
+        moja_jednostka = krt_pobor.krt_jedn
         opis_dotyczy = []
         # qaz - duplikat
         opis_dotyczy.append(ze_kw.sp_stl(
-            self.aqr.krt_pobor.krt_etykieta,
+            krt_pobor.krt_etykieta,
             lm_kw.rzeczywista_na_napis(moja_suma),
             moja_jednostka))
         # qaz - duplikat
         if vert_axis.MaxY:
-            ms.podpisz_obie_osie(vert_axis, self.aqr.krt_pobor)
+            ms.podpisz_obie_osie(vert_axis, krt_pobor)
             on_mouse = {}
             kod_html = ms.wykreslanie_slupkow(on_mouse)
             lst_h.ddj(''.join(opis_dotyczy))
