@@ -105,7 +105,7 @@ class CommonReader(object):
         '''
         local_key = (key_object, row_date)
         my_sample_row = lq_kw.SampleRow()
-        my_sample_row.new_and_empty(self.cnt_per_day)
+        my_sample_row.new_and_empty(self.krt_pobor.krt_wymiar)
         self.internal_rows[local_key] = my_sample_row
 
     def store_value_in_row(self, key_object, row_date, sample_index, value):
