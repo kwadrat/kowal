@@ -43,11 +43,18 @@ def wygeneruj_wiersz_miesiaca(lst_h, slownik_wpisow, wszystkie_dni, jeden_miesia
             ))
     lst_h.ddj(ze_kw.formularz_67c_kon_wiersza)
 
+def wygeneruj_wiersz_naglowka(lst_h, wszystkie_dni):
+    lst_h.ddj(ze_kw.op_tr())
+    lst_h.ddj(ze_kw.op_ptd('Miesiąc'))
+    for jeden_dzien in wszystkie_dni:
+        lst_h.ddj(ze_kw.op_ptd(str(jeden_dzien)))
+    lst_h.ddj(ze_kw.formularz_67c_kon_wiersza)
+
 def wygeneruj_tabelke_poborow(lst_h, slownik_wpisow):
     wszystkie_miesiace = lt_kw.wyznacz_daty_miesieczne(slownik_wpisow)
     wszystkie_dni = eu_kw.detect_my_days(slownik_wpisow)
     lst_h.ddj(ze_kw.op_tbl(class_=fy_kw.lxa_40_inst, border=1))
-    lt_kw.wygeneruj_wiersz_naglowka(lst_h, wszystkie_dni)
+    wygeneruj_wiersz_naglowka(lst_h, wszystkie_dni)
     for jeden_miesiac in wszystkie_miesiace:
         wygeneruj_wiersz_miesiaca(lst_h, slownik_wpisow, wszystkie_dni, jeden_miesiac)
     lst_h.ddj(ze_kw.formularz_1c_kon_tabeli)

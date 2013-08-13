@@ -56,13 +56,6 @@ def wyznacz_daty_miesieczne(slownik_wpisow):
     wszystkie_miesiace.sort()
     return wszystkie_miesiace
 
-def wygeneruj_wiersz_naglowka(lst_h, wszystkie_dni):
-    lst_h.ddj(ze_kw.op_tr())
-    lst_h.ddj(ze_kw.op_ptd('Miesiąc'))
-    for jeden_dzien in wszystkie_dni:
-        lst_h.ddj(ze_kw.op_ptd(str(jeden_dzien)))
-    lst_h.ddj(ze_kw.formularz_67c_kon_wiersza)
-
 WykresPomiarow = hq_kw.WykresPomiarow
 
 class OgolnySzeregListPoborow(WykresPomiarow):
