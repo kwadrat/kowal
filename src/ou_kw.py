@@ -24,16 +24,16 @@ for i in NazwyModulow:
 
 OgolnySzeregListPoborow = lt_kw.OgolnySzeregListPoborow
 
-class PomiarowySzeregListPoborow(OgolnySzeregListPoborow):
+class OgolnyPomiarowySzeregListPoborow(OgolnySzeregListPoborow):
     def __init__(self, tgk, dfb, krt_pobor):
         '''
-        PomiarowySzeregListPoborow:
+        OgolnyPomiarowySzeregListPoborow:
         '''
         OgolnySzeregListPoborow.__init__(self, tgk, dfb, krt_pobor)
 
     def numer_probki_na_podstawie_formularza(self):
         '''
-        PomiarowySzeregListPoborow:
+        OgolnyPomiarowySzeregListPoborow:
         '''
         tvk_data = self.tgk.wez_date()
         result = le_kw.dq_liczniki_poboru_w_roku(self.dfb, self.table_name, self.id_obiekt, tvk_data)
@@ -41,7 +41,7 @@ class PomiarowySzeregListPoborow(OgolnySzeregListPoborow):
 
     def przygotuj_sie_dla_listy_dni(self, lista_nr_probek):
         '''
-        PomiarowySzeregListPoborow:
+        OgolnyPomiarowySzeregListPoborow:
         '''
         tmp_lista = []
         for nr_probki in lista_nr_probek:
@@ -51,14 +51,14 @@ class PomiarowySzeregListPoborow(OgolnySzeregListPoborow):
 
     def pobory_dla_licznikow(self, szereg_poborow):
         '''
-        PomiarowySzeregListPoborow:
+        OgolnyPomiarowySzeregListPoborow:
         '''
         for lista_poborow in szereg_poborow:
             lista_poborow.pobory_dla_parametrow(self.dfb, self.id_obiekt, self.table_name)
 
     def przygotuj_dla_poborow(self):
         '''
-        PomiarowySzeregListPoborow:
+        OgolnyPomiarowySzeregListPoborow:
         '''
         self.zapamietaj_wybory_formularza_poborow()
         lista_nr_probek = self.numer_probki_na_podstawie_formularza()
@@ -66,7 +66,7 @@ class PomiarowySzeregListPoborow(OgolnySzeregListPoborow):
 
     def html_szeregu_poborow(self, krt_pobor):
         '''
-        PomiarowySzeregListPoborow:
+        OgolnyPomiarowySzeregListPoborow:
         '''
         lst_h = lh_kw.ListaHTML()
         lst_h.ddj(fy_kw.lxa_47_inst)
