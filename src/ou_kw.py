@@ -64,6 +64,13 @@ class OgolnyPomiarowySzeregListPoborow(OgolnySzeregListPoborow):
         lista_nr_probek = self.numer_probki_na_podstawie_formularza()
         return self.przygotuj_sie_dla_listy_dni(lista_nr_probek)
 
+    def grafika_poborow_dla_pomiarow(self, lst_h, krt_pobor, szereg_poborow):
+        '''
+        OgolnyPomiarowySzeregListPoborow:
+        '''
+        for lista_poborow in szereg_poborow:
+            lista_poborow.html_ls_poborow(lst_h, krt_pobor)
+
     def html_szeregu_poborow(self, krt_pobor):
         '''
         OgolnyPomiarowySzeregListPoborow:
