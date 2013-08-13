@@ -5,9 +5,6 @@ Analiza zużycia - szereg list pomiarów, prezentacja w postacji HTML
 '''
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
-import lc_kw
-import ze_kw
-import dn_kw
 import ey_kw
 import hq_kw
 '''.splitlines()]
@@ -20,13 +17,6 @@ for i in NazwyModulow:
             exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
         else:
             exec 'import %(modul)s' % dict(modul = i)
-
-def zapamietaj_pomiar(slownik_wpisow, year, month, day, day_cell):
-    etykieta_miesiaca = dn_kw.napis_z_rok_mies(year, month)
-    if etykieta_miesiaca not in slownik_wpisow:
-        slownik_wpisow[etykieta_miesiaca] = {}
-    slownik_miesiaca = slownik_wpisow[etykieta_miesiaca]
-    slownik_miesiaca[day] = day_cell
 
 WykresPomiarow = hq_kw.WykresPomiarow
 

@@ -9,6 +9,7 @@ import fy_kw
 import lc_kw
 import ze_kw
 import le_kw
+import dn_kw
 import eu_kw
 import fx_kw
 import lh_kw
@@ -66,11 +67,18 @@ def wygeneruj_tabelke_poborow(lst_h, slownik_wpisow):
         wygeneruj_wiersz_miesiaca(lst_h, slownik_wpisow, wszystkie_dni, jeden_miesiac)
     lst_h.ddj(ze_kw.formularz_1c_kon_tabeli)
 
+def zapamietaj_pomiar(slownik_wpisow, year, month, day, day_cell):
+    etykieta_miesiaca = dn_kw.napis_z_rok_mies(year, month)
+    if etykieta_miesiaca not in slownik_wpisow:
+        slownik_wpisow[etykieta_miesiaca] = {}
+    slownik_miesiaca = slownik_wpisow[etykieta_miesiaca]
+    slownik_miesiaca[day] = day_cell
+
 def przemysl_wiersz_poborow(slownik_wpisow, single_row):
     day_cell = fx_kw.DayCellsStats()
     day_cell.cell_params(single_row[lc_kw.fq_m_none_qv], single_row[lc_kw.fq_m_zero_qv])
     full_date = single_row[lc_kw.fq_m_date_qv]
-    lt_kw.zapamietaj_pomiar(
+    zapamietaj_pomiar(
         slownik_wpisow,
         full_date.year,
         full_date.month,
