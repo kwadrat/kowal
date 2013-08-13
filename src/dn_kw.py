@@ -254,6 +254,9 @@ def ZakresMiesiaca(rok, miesiac):
     kon = dzien_nowego_miesiaca(rok, miesiac)
     return pocz, kon
 
+def daty_skrajne_miesiaca(rok, miesiac):
+    return map(NapisDnia, ZakresMiesiaca(rok, miesiac))
+
 def rok_przestepny(rok):
     '''
     Wartość zwracana:
@@ -470,6 +473,7 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(daty_roczne, [13149, 13514, 13879])
         self.assertEqual(map(DataDnia, daty_roczne), [(2006, 1, 1), (2007, 1, 1), (2008, 1, 1)])
         self.assertEqual(ZakresMiesiaca(2008, 2), (13910, 13939))
+        self.assertEqual(daty_skrajne_miesiaca(2008, 2), ['2008-02-01', '2008-03-01'])
         self.assertEqual(RokMscDnia(14975), (2011, 1))
         self.assertEqual(RokMscDnia(15006), (2011, 2))
 
