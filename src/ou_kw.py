@@ -54,7 +54,7 @@ class PomiarowySzeregListPoborow(OgolnySzeregListPoborow):
         '''
         PomiarowySzeregListPoborow:
         '''
-        for lista_poborow in self.szereg_poborow:
+        for lista_poborow in szereg_poborow:
             lista_poborow.pobory_dla_parametrow(self.dfb, self.id_obiekt, self.table_name)
 
     def przygotuj_dla_poborow(self):
