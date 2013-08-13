@@ -110,6 +110,13 @@ class GeneratorUU(object):
         '''
         self.my_end_date = my_end_date
 
+    def set_month_date(self, my_middle_date):
+        '''
+        GeneratorUU:
+        '''
+        self.set_start_date('2013-03-01')
+        self.set_end_date('2013-04-01')
+
     def set_week_day(self, my_week_day):
         '''
         GeneratorUU:
@@ -247,3 +254,12 @@ class TestUUQueries(unittest.TestCase):
         '''
         obk = GeneratorUU(lc_kw.fq_uu_power_qv)
         self.assertEqual(obk.final_shape(), fy_kw.lxa_55_inst)
+
+    def test_uu_11_queries(self):
+        '''
+        TestUUQueries:
+        '''
+        obk = GeneratorUU(lc_kw.fq_uu_energy_qv)
+        obk.set_month_date('2013-03-12')
+        self.assertEqual(obk.my_start_date, '2013-03-01')
+        self.assertEqual(obk.my_end_date, '2013-04-01')
