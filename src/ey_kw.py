@@ -30,7 +30,6 @@ class SzkieletDatDlaPoborow(KlasaOgolnaSzkieletuDat):
         '''
         KlasaOgolnaSzkieletuDat.__init__(self)
         wymiar_czasowy = krt_pobor.krt_wymiar
-        self.krt_pobor = krt_pobor
         self.przypisz_szkielet(generator_szkieletu(wymiar_czasowy))
         self.wymiar_czasowy = wymiar_czasowy
 
