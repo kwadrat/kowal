@@ -111,7 +111,7 @@ class PoboroweSlupki(MojeSlupki):
 
         self.my_texts.append((15, 5, self.jednostka_osi_pionowej()))
 
-    def podpisz_obie_osie(self, vert_axis):
+    def podpisz_obie_osie(self, vert_axis, krt_pobor):
         '''
         PoboroweSlupki:
         '''

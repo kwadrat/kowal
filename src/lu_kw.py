@@ -83,7 +83,7 @@ class PoboryDanegoDnia(WykresPomiarow):
             moja_jednostka))
         # qaz - duplikat
         if vert_axis.MaxY:
-            ms.podpisz_obie_osie(vert_axis)
+            ms.podpisz_obie_osie(vert_axis, self.aqr.krt_pobor)
             on_mouse = {}
             kod_html = ms.wykreslanie_slupkow(on_mouse)
             lst_h.ddj(''.join(opis_dotyczy))
