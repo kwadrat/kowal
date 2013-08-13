@@ -45,7 +45,7 @@ def remove_nones(elements):
 def sum_of_not_nones(elements):
     return sum(remove_nones(elements))
 
-def obtain_stats(list_of_samples):
+def obtain_stats(krt_vl_fnctn, list_of_samples):
     v_none = cnt_none(list_of_samples)
     v_zero = cnt_zero(list_of_samples)
     v_sum = sum_of_not_nones(list_of_samples)
@@ -88,7 +88,7 @@ class SampleRow(object):
         SampleRow:
         '''
         (key_object, row_date) = local_key
-        v_none, v_zero, v_sum = obtain_stats(self.list_of_samples)
+        v_none, v_zero, v_sum = obtain_stats(krt_pobor.krt_vl_fnctn, self.list_of_samples)
         if self.sample_key:
             le_kw.dq_update_vector_of_samples(dfb, table_of_samples, key_object, row_date, self.list_of_samples, v_none, v_zero, v_sum, self.sample_key)
         else:
@@ -98,7 +98,7 @@ class SampleRow(object):
         '''
         SampleRow:
         '''
-        v_none, v_zero, v_sum = obtain_stats(self.list_of_samples)
+        v_none, v_zero, v_sum = obtain_stats(krt_pobor.krt_vl_fnctn, self.list_of_samples)
         le_kw.dq_update_stats_of_samples(dfb, table_of_samples, v_none, v_zero, v_sum, self.sample_key)
 
 class TestRowChanges(unittest.TestCase):
