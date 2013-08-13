@@ -50,7 +50,7 @@ class PomiarowySzeregListPoborow(OgolnySzeregListPoborow):
         self.szereg_poborow = tmp_lista
         return tmp_lista
 
-    def pobory_dla_licznikow(self):
+    def pobory_dla_licznikow(self, szereg_poborow):
         '''
         PomiarowySzeregListPoborow:
         '''
@@ -64,7 +64,7 @@ class PomiarowySzeregListPoborow(OgolnySzeregListPoborow):
         self.zapamietaj_wybory_formularza_poborow()
         lista_nr_probek = self.numer_probki_na_podstawie_formularza()
         szereg_poborow = self.przygotuj_sie_dla_listy_dni(lista_nr_probek)
-        self.pobory_dla_licznikow()
+        self.pobory_dla_licznikow(szereg_poborow)
 
     def html_szeregu_poborow(self, krt_pobor):
         '''
