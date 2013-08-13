@@ -5,12 +5,9 @@ Analiza zużycia - szereg list pomiarów, prezentacja w postacji HTML
 '''
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
-import fy_kw
 import lc_kw
 import ze_kw
-import le_kw
 import dn_kw
-import eu_kw
 import fx_kw
 import ey_kw
 import hq_kw
@@ -86,15 +83,6 @@ def wygeneruj_wiersz_miesiaca(lst_h, slownik_wpisow, wszystkie_dni, jeden_miesia
             title=title,
             ))
     lst_h.ddj(ze_kw.formularz_67c_kon_wiersza)
-
-def wygeneruj_tabelke_poborow(lst_h, slownik_wpisow):
-    wszystkie_miesiace = wyznacz_daty_miesieczne(slownik_wpisow)
-    wszystkie_dni = eu_kw.detect_my_days(slownik_wpisow)
-    lst_h.ddj(ze_kw.op_tbl(class_=fy_kw.lxa_40_inst, border=1))
-    wygeneruj_wiersz_naglowka(lst_h, wszystkie_dni)
-    for jeden_miesiac in wszystkie_miesiace:
-        wygeneruj_wiersz_miesiaca(lst_h, slownik_wpisow, wszystkie_dni, jeden_miesiac)
-    lst_h.ddj(ze_kw.formularz_1c_kon_tabeli)
 
 WykresPomiarow = hq_kw.WykresPomiarow
 

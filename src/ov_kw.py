@@ -5,9 +5,10 @@ Analiza poboru - pokryciowy szereg list
 '''
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
-import lc_kw
+import fy_kw
 import ze_kw
 import le_kw
+import eu_kw
 import lh_kw
 import lt_kw
 '''.splitlines()]
@@ -21,10 +22,19 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+def wygeneruj_tabelke_poborow(lst_h, slownik_wpisow):
+    wszystkie_miesiace = lt_kw.wyznacz_daty_miesieczne(slownik_wpisow)
+    wszystkie_dni = eu_kw.detect_my_days(slownik_wpisow)
+    lst_h.ddj(ze_kw.op_tbl(class_=fy_kw.lxa_40_inst, border=1))
+    lt_kw.wygeneruj_wiersz_naglowka(lst_h, wszystkie_dni)
+    for jeden_miesiac in wszystkie_miesiace:
+        lt_kw.wygeneruj_wiersz_miesiaca(lst_h, slownik_wpisow, wszystkie_dni, jeden_miesiac)
+    lst_h.ddj(ze_kw.formularz_1c_kon_tabeli)
+
 def zrob_tabele_poborow(lst_h, result):
     lst_h.ddj(ze_kw.formularz_1c_zlm_wrsz)
     slownik_wpisow = lt_kw.wykonaj_analize_danych(result)
-    lt_kw.wygeneruj_tabelke_poborow(lst_h, slownik_wpisow)
+    wygeneruj_tabelke_poborow(lst_h, slownik_wpisow)
 
 OgolnySzeregListPoborow = lt_kw.OgolnySzeregListPoborow
 
