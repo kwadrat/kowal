@@ -130,7 +130,7 @@ class OgolnySzeregListPoborow(WykresPomiarow):
         OgolnySzeregListPoborow:
         '''
         for lista_poborow in self.szereg_poborow:
-            lista_poborow.html_ls_poborow(lst_h)
+            lista_poborow.html_ls_poborow(lst_h, krt_pobor)
 
     def wizualizacja_pokrycia_poborami(self, lst_h):
         '''
