@@ -7,9 +7,9 @@ NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lm_kw
 import gb_kw
 import lw_kw
+import dd_kw
 import sj_kw
 import oa_kw
-import dd_kw
 import ey_kw
 import oh_kw
 import od_kw
