@@ -74,7 +74,7 @@ class PoboryDanegoDnia(WykresPomiarow):
         ms = eq_kw.PoboroweSlupki(self.tgk, self.aqr, self.dnw)
         ms.wyznacz_poborowe_slupki(vert_axis, self.aqr.krt_pobor)
         moja_suma = self.aqr.krt_pobor.cumulative_value
-        moja_jednostka = ms.jednostka_osi_pionowej()
+        moja_jednostka = self.aqr.krt_pobor.krt_jedn
         opis_dotyczy = []
         # qaz - duplikat
         opis_dotyczy.append(ze_kw.sp_stl(
