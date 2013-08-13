@@ -25,7 +25,7 @@ for i in NazwyModulow:
 OgolnySzeregListPoborow = lt_kw.OgolnySzeregListPoborow
 
 class PomiarowySzeregListPoborow(OgolnySzeregListPoborow):
-    def __init__(self, tgk, dfb):
+    def __init__(self, tgk, dfb, krt_pobor):
         '''
         PomiarowySzeregListPoborow:
         '''
