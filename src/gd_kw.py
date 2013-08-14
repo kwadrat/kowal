@@ -9,7 +9,6 @@ import fy_kw
 import le_kw
 import lh_kw
 import lt_kw
-import gc_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -21,14 +20,14 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-OgolnyPomiarowySzeregListPoborow = gc_kw.OgolnyPomiarowySzeregListPoborow
+OgolnySzeregListPoborow = lt_kw.OgolnySzeregListPoborow
 
-class PomiarowyMiesiecznySzeregListPoborow(OgolnyPomiarowySzeregListPoborow):
+class PomiarowyMiesiecznySzeregListPoborow(OgolnySzeregListPoborow):
     def __init__(self, tgk, dfb, krt_pobor):
         '''
         PomiarowyMiesiecznySzeregListPoborow:
         '''
-        OgolnyPomiarowySzeregListPoborow.__init__(self, tgk, dfb, krt_pobor)
+        OgolnySzeregListPoborow.__init__(self, tgk, dfb, krt_pobor)
 
     def html_szeregu_poborow(self, krt_pobor):
         '''

@@ -11,7 +11,6 @@ import le_kw
 import lh_kw
 import lu_kw
 import lt_kw
-import gc_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -23,14 +22,14 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-OgolnyPomiarowySzeregListPoborow = gc_kw.OgolnyPomiarowySzeregListPoborow
+OgolnySzeregListPoborow = lt_kw.OgolnySzeregListPoborow
 
-class PomiarowyDziennySzeregListPoborow(OgolnyPomiarowySzeregListPoborow):
+class PomiarowyDziennySzeregListPoborow(OgolnySzeregListPoborow):
     def __init__(self, tgk, dfb, krt_pobor):
         '''
         PomiarowyDziennySzeregListPoborow:
         '''
-        OgolnyPomiarowySzeregListPoborow.__init__(self, tgk, dfb, krt_pobor)
+        OgolnySzeregListPoborow.__init__(self, tgk, dfb, krt_pobor)
 
     def numer_probki_na_podstawie_formularza(self):
         '''
