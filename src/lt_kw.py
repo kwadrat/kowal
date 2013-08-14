@@ -5,7 +5,6 @@ Analiza zużycia - szereg list pomiarów, prezentacja w postacji HTML
 '''
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
-import ey_kw
 import hq_kw
 '''.splitlines()]
 
@@ -21,14 +20,13 @@ for i in NazwyModulow:
 WykresPomiarow = hq_kw.WykresPomiarow
 
 class OgolnySzeregListPoborow(WykresPomiarow):
-    def __init__(self, tgk, dfb, krt_pobor):
+    def __init__(self, tgk, aqr, dfb, krt_pobor):
         '''
         OgolnySzeregListPoborow:
         '''
         self.dfb = dfb
         self.lista_slupkow = []
         self.table_name = krt_pobor.krt_table
-        aqr = ey_kw.SzkieletDatDlaPoborow(krt_pobor)
         tgk.przygotuj_pobory(aqr, self.dfb)
         WykresPomiarow.__init__(self, tgk, aqr)
         self.id_obiekt = int(self.tgk.wez_obiekt())

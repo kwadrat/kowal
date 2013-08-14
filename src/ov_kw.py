@@ -13,6 +13,7 @@ import le_kw
 import eu_kw
 import fx_kw
 import lh_kw
+import ey_kw
 import lt_kw
 '''.splitlines()]
 
@@ -104,7 +105,8 @@ class PokryciowaListaPoborow(OgolnySzeregListPoborow):
         '''
         PokryciowaListaPoborow:
         '''
-        OgolnySzeregListPoborow.__init__(self, tgk, dfb, krt_pobor)
+        aqr = ey_kw.SzkieletDatDlaPoborow(krt_pobor)
+        OgolnySzeregListPoborow.__init__(self, tgk, aqr, dfb, krt_pobor)
 
     def wizualizacja_pokrycia_poborami(self, lst_h):
         '''

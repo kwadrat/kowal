@@ -9,6 +9,7 @@ import fy_kw
 import lc_kw
 import le_kw
 import lh_kw
+import ey_kw
 import lu_kw
 import lt_kw
 '''.splitlines()]
@@ -29,7 +30,8 @@ class PomiarowyDziennySzeregListPoborow(OgolnySzeregListPoborow):
         '''
         PomiarowyDziennySzeregListPoborow:
         '''
-        OgolnySzeregListPoborow.__init__(self, tgk, dfb, krt_pobor)
+        aqr = ey_kw.SzkieletDatDlaPoborow(krt_pobor)
+        OgolnySzeregListPoborow.__init__(self, tgk, aqr, dfb, krt_pobor)
 
     def numer_probki_na_podstawie_formularza(self):
         '''

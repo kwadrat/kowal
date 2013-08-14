@@ -27,7 +27,8 @@ class PomiarowyMiesiecznySzeregListPoborow(OgolnySzeregListPoborow):
         '''
         PomiarowyMiesiecznySzeregListPoborow:
         '''
-        OgolnySzeregListPoborow.__init__(self, tgk, dfb, krt_pobor)
+        aqr = None
+        OgolnySzeregListPoborow.__init__(self, tgk, aqr, dfb, krt_pobor)
 
     def html_szeregu_poborow(self, krt_pobor):
         '''
