@@ -4,6 +4,11 @@
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import lw_kw
+import dd_kw
+import ey_kw
+import oh_kw
+import od_kw
 import gc_kw
 '''.splitlines()]
 
@@ -30,3 +35,10 @@ class TestPoborowychSlupkow(unittest.TestCase):
         '''
         TestPoborowychSlupkow:
         '''
+        tgk = od_kw.PseudoTGK()
+        tgk.wyznacz_unikalny_moment_dla_grafiki()
+        krt_pobor = dd_kw.CechaEnergii(lw_kw.Dn_Energy)
+        aqr = ey_kw.SzkieletDatDlaPoborow(krt_pobor)
+        lp_wykresu = 0
+        dnw = oh_kw.SimpleDNW(lp_wykresu)
+        obk = PoboroweDzienneSlupki(tgk, aqr, dnw)
