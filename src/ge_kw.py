@@ -39,7 +39,6 @@ class SzkieletDziennyDlaPoborow(KlasaOgolnaSzkieletuDat):
         '''
         SzkieletDziennyDlaPoborow:
         '''
-        print akt
         return 'a'
 
 class TestDziennegoSzkieletu(unittest.TestCase):
