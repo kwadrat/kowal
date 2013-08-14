@@ -22,17 +22,17 @@ for i in NazwyModulow:
 
 OgolnySzeregListPoborow = lt_kw.OgolnySzeregListPoborow
 
-class PomiarowyMiesiecznySzeregListPoborow(OgolnySzeregListPoborow):
+class PomiarowaMiesiecznaListaPoborow(OgolnySzeregListPoborow):
     def __init__(self, tgk, dfb, krt_pobor):
         '''
-        PomiarowyMiesiecznySzeregListPoborow:
+        PomiarowaMiesiecznaListaPoborow:
         '''
         aqr = None
         OgolnySzeregListPoborow.__init__(self, tgk, aqr, dfb, krt_pobor)
 
     def html_szeregu_poborow(self, krt_pobor):
         '''
-        PomiarowyMiesiecznySzeregListPoborow:
+        PomiarowaMiesiecznaListaPoborow:
         '''
         lst_h = lh_kw.ListaHTML()
         lst_h.ddj(fy_kw.lxa_47_inst)
