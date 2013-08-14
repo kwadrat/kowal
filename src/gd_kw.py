@@ -30,13 +30,13 @@ class PomiarowaMiesiecznaListaPoborow(OgolnySzeregListPoborow):
         '''
         PomiarowaMiesiecznaListaPoborow:
         '''
-        self.tvk_data = tgk.wez_date()
+        tvk_data = tgk.wez_date()
         my_pob_czas = tgk.wez_pob_czas()
         if my_pob_czas == lw_kw.DPC_Tydzien:
-            my_start_day = dn_kw.napis_na_numer_dnia(self.tvk_data)
+            my_start_day = dn_kw.napis_na_numer_dnia(tvk_data)
             my_end_day = my_start_day + 7
         elif my_pob_czas == lw_kw.DPC_Miesiac:
-            my_year, my_month = dn_kw.rok_mies_z_napisu(self.tvk_data)
+            my_year, my_month = dn_kw.rok_mies_z_napisu(tvk_data)
             my_start_day, my_end_day = dn_kw.ZakresMiesiaca(my_year, my_month)
         else:
             raise RuntimeError('Nieznany my_pob_czas?: %s' % repr(my_pob_czas))
