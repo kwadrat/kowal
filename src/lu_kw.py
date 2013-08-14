@@ -71,7 +71,7 @@ class PoboryDanegoDnia(WykresPomiarow):
         '''
         self.zbuduj_odcinki_y_bazowe()
         vert_axis = self.dnw.odcinki_bazowe.zakres_pionowy()
-        ms = eq_kw.PoboroweSlupki(self.tgk, self.aqr, self.dnw)
+        ms = eq_kw.PoboroweDzienneSlupki(self.tgk, self.aqr, self.dnw)
         ms.wyznacz_poborowe_slupki(vert_axis, krt_pobor)
         moja_suma = krt_pobor.cumulative_value
         moja_jednostka = krt_pobor.krt_jedn

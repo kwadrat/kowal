@@ -28,11 +28,11 @@ for i in NazwyModulow:
 
 MojeSlupki = es_kw.MojeSlupki
 
-class PoboroweSlupki(MojeSlupki):
+class PoboroweDzienneSlupki(MojeSlupki):
     pikseli_po_lewej = 30
     def __init__(self, tgk, aqr, dnw):
         '''
-        PoboroweSlupki:
+        PoboroweDzienneSlupki:
         '''
         MojeSlupki.__init__(self, tgk, aqr, dnw)
         self.chce_bez_tresci = 1
@@ -40,13 +40,13 @@ class PoboroweSlupki(MojeSlupki):
 
     def linii_na_dole(self):
         '''
-        PoboroweSlupki:
+        PoboroweDzienneSlupki:
         '''
         return 2
 
     def ustaw_skalowanie_obrazu(self):
         '''
-        PoboroweSlupki:
+        PoboroweDzienneSlupki:
         '''
         LiczbaPaskow = self.aqr.liczba_paskow()
         self.szerokosc_obrazu = oa_kw.sk_pelny_obraz
@@ -56,13 +56,13 @@ class PoboroweSlupki(MojeSlupki):
 
     def wyznacz_etykiete(self, pocz):
         '''
-        PoboroweSlupki:
+        PoboroweDzienneSlupki:
         '''
         return ''
 
     def wypisz_kwadransy_godziny(self, wsp_y_napisu, akt, nast):
         '''
-        PoboroweSlupki:
+        PoboroweDzienneSlupki:
         '''
         NapisCzasowy = self.aqr.tekst_pelnej_godziny(akt)
         wsp_x_napisu = self.aqr.poziomo_tego_dnia((nast + akt) // 2, self.szerokosc_dx_skali, self.koniec_x_wykresu)
@@ -70,7 +70,7 @@ class PoboroweSlupki(MojeSlupki):
 
     def wypisz_jednostke_godziny(self):
         '''
-        PoboroweSlupki:
+        PoboroweDzienneSlupki:
         '''
         wsp_x_napisu = (self.pikseli_po_lewej + self.koniec_x_wykresu) // 2
         wsp_y_napisu = 149
@@ -78,7 +78,7 @@ class PoboroweSlupki(MojeSlupki):
 
     def kwadransy_godziny_z_kreskami(self):
         '''
-        PoboroweSlupki:
+        PoboroweDzienneSlupki:
         '''
         for akt, nast in self.aqr.pary_szkieletu():
             if self.aqr.to_pelna_godzina(akt):
@@ -88,7 +88,7 @@ class PoboroweSlupki(MojeSlupki):
 
     def add_vertical_axis(self, vert_axis, krt_pobor):
         '''
-        PoboroweSlupki:
+        PoboroweDzienneSlupki:
         '''
         end_x = self.szerokosc_dx_skali
         end_y = self.wsp_y_na_dole_slupka
@@ -105,14 +105,14 @@ class PoboroweSlupki(MojeSlupki):
 
     def podpisz_obie_osie(self, vert_axis, krt_pobor):
         '''
-        PoboroweSlupki:
+        PoboroweDzienneSlupki:
         '''
         self.kwadransy_godziny_z_kreskami()
         self.add_vertical_axis(vert_axis, krt_pobor)
 
     def wyznacz_poborowe_slupki(self, vert_axis, krt_pobor):
         '''
-        PoboroweSlupki:
+        PoboroweDzienneSlupki:
         '''
         krt_pobor.cumulative_init()
         pracuj = self.sprawdz_nietypowe_sytuacje(self.IleSlupkow, vert_axis)
@@ -141,7 +141,7 @@ class TestPoborowychSlupkow(unittest.TestCase):
         aqr = ey_kw.SzkieletDatDlaPoborow(krt_pobor)
         lp_wykresu = 0
         dnw = oh_kw.SimpleDNW(lp_wykresu)
-        obk = PoboroweSlupki(tgk, aqr, dnw)
+        obk = PoboroweDzienneSlupki(tgk, aqr, dnw)
         self.assertEqual(obk.pikseli_po_lewej, 30)
         self.assertEqual(obk.szerokosc_obrazu, 1250)
         self.assertEqual(obk.szerokosc_dx_skali, 30)
