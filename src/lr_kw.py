@@ -115,8 +115,10 @@ class GeneratorUU(object):
         '''
         GeneratorUU:
         '''
-        self.set_start_date('2013-03-01')
-        self.set_end_date('2013-04-01')
+        my_year, my_month = dn_kw.rok_mies_z_napisu(my_middle_date)
+        my_start_date, my_end_date = dn_kw.daty_skrajne_miesiaca(my_year, my_month)
+        self.set_start_date(my_start_date)
+        self.set_end_date(my_end_date)
 
     def set_week_day(self, my_week_day):
         '''
