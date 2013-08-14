@@ -49,8 +49,6 @@ class PoboroweSlupki(MojeSlupki):
         PoboroweSlupki:
         '''
         LiczbaPaskow = self.aqr.liczba_paskow()
-        if LiczbaPaskow not in (24, 96):
-            raise RuntimeError('LiczbaPaskow: %d' % LiczbaPaskow)
         self.szerokosc_obrazu = oa_kw.sk_pelny_obraz
         self.szerokosc_wykresu = oa_kw.zaokraglij_mi(self.szerokosc_obrazu - self.pikseli_po_lewej, LiczbaPaskow)
         self.koniec_x_wykresu = self.szerokosc_wykresu + self.pikseli_po_lewej
