@@ -26,6 +26,8 @@ class SzkieletDziennyDlaPoborow(KlasaOgolnaSzkieletuDat):
         KlasaOgolnaSzkieletuDat.__init__(self)
         self.my_start_day = my_start_day
         self.my_end_day = my_end_day
+        wymiar_czasowy = my_end_day - my_start_day
+        self.przypisz_szkielet(dq_kw.generator_szkieletu(wymiar_czasowy))
 
 class TestDziennegoSzkieletu(unittest.TestCase):
     def test_energii_szkieletowego_datownika(self):
