@@ -8,6 +8,7 @@ NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import fy_kw
 import dn_kw
 import le_kw
+import lw_kw
 import lh_kw
 import ge_kw
 import lt_kw
@@ -30,8 +31,15 @@ class PomiarowaMiesiecznaListaPoborow(OgolnySzeregListPoborow):
         PomiarowaMiesiecznaListaPoborow:
         '''
         self.tvk_data = tgk.wez_date()
-        my_year, my_month = dn_kw.rok_mies_z_napisu(self.tvk_data)
-        my_start_day, my_end_day = dn_kw.ZakresMiesiaca(my_year, my_month)
+        my_pob_czas = tgk.wez_pob_czas()
+        if my_pob_czas == lw_kw.DPC_Tydzien:
+            my_start_day = dn_kw.napis_na_numer_dnia(self.tvk_data)
+            my_end_day = my_start_day + 7
+        elif my_pob_czas == lw_kw.DPC_Miesiac:
+            my_year, my_month = dn_kw.rok_mies_z_napisu(self.tvk_data)
+            my_start_day, my_end_day = dn_kw.ZakresMiesiaca(my_year, my_month)
+        else:
+            raise RuntimeError('Nieznany my_pob_czas?: %s' % repr(my_pob_czas))
         aqr = ge_kw.SzkieletDziennyDlaPoborow(krt_pobor, my_start_day, my_end_day)
         OgolnySzeregListPoborow.__init__(self, tgk, aqr, dfb, krt_pobor)
 
