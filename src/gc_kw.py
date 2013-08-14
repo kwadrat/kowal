@@ -74,7 +74,7 @@ class PoboroweOgolneSlupki(MojeSlupki):
         '''
         wsp_x_napisu = (self.pikseli_po_lewej + self.koniec_x_wykresu) // 2
         wsp_y_napisu = 149
-        self.my_texts.append((wsp_x_napisu, wsp_y_napisu, 'godziny'))
+        self.my_texts.append((wsp_x_napisu, wsp_y_napisu, self.dolny_podpis))
 
     def kwadransy_godziny_z_kreskami(self):
         '''
