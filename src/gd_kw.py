@@ -29,7 +29,7 @@ class PomiarowaMiesiecznaListaPoborow(OgolnySzeregListPoborow):
         '''
         PomiarowaMiesiecznaListaPoborow:
         '''
-        self.tvk_data = self.tgk.wez_date()
+        self.tvk_data = tgk.wez_date()
         my_year, my_month = dn_kw.rok_mies_z_napisu(self.tvk_data)
         my_start_day, my_end_day = dn_kw.ZakresMiesiaca(my_year, my_month)
         aqr = ge_kw.SzkieletDziennyDlaPoborow(krt_pobor, my_start_day, my_end_day)
