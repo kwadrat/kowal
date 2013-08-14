@@ -66,10 +66,10 @@ def wyznacz_dzisiejsza_date(czas = None):
     dzien = krotka_daty.tm_mday
     dz_tygodnia = krotka_daty.tm_wday
     napis_daty = '%(tygodnia)s, %(dzien)d %(miesiac)s, %(rok)d' % dict(
-      tygodnia = dni_tygodnia[dz_tygodnia],
-      rok = rok,
-      miesiac = tab_miesiecy[miesiac - 1],
-      dzien = dzien)
+        tygodnia = dni_tygodnia[dz_tygodnia],
+        rok = rok,
+        miesiac = tab_miesiecy[miesiac - 1],
+        dzien = dzien)
     return napis_daty
 
 def NumerDnia(rok, miesiac, dzien):
