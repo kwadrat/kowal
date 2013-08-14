@@ -4,6 +4,7 @@
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import dn_kw
 import dq_kw
 '''.splitlines()]
 
@@ -39,7 +40,7 @@ class SzkieletDziennyDlaPoborow(KlasaOgolnaSzkieletuDat):
         '''
         SzkieletDziennyDlaPoborow:
         '''
-        return 'a'
+        return dn_kw.NapisDnia(self.my_start_day + akt / 2)[-2:]
 
 class TestDziennegoSzkieletu(unittest.TestCase):
     def test_energii_szkieletowego_datownika(self):
