@@ -28,6 +28,7 @@ class PoboroweDzienneSlupki(PoboroweOgolneSlupki):
         '''
         PoboroweDzienneSlupki:
         '''
+        self.dolny_podpis = 'godziny'
         PoboroweOgolneSlupki.__init__(self, tgk, aqr, dnw)
 
 class TestPoborowychSlupkow(unittest.TestCase):
@@ -42,3 +43,4 @@ class TestPoborowychSlupkow(unittest.TestCase):
         lp_wykresu = 0
         dnw = oh_kw.SimpleDNW(lp_wykresu)
         obk = PoboroweDzienneSlupki(tgk, aqr, dnw)
+        self.assertEqual(obk.dolny_podpis, 'godziny')
