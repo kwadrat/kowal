@@ -51,5 +51,5 @@ class PomiarowaMiesiecznaListaPoborow(OgolnySzeregListPoborow):
         lst_h.ddj(fy_kw.lxa_47_inst)
         my_start_date = dn_kw.NapisDnia(aqr.my_start_day)
         my_end_date = dn_kw.NapisDnia(aqr.my_end_day)
-        szereg_poborow = le_kw.dq_liczniki_poboru_w_miesiacu(self.dfb, self.table_name, self.id_obiekt, self.tvk_data, my_start_date, my_end_date)
+        szereg_poborow = le_kw.dq_liczniki_poboru_w_miesiacu(self.dfb, self.table_name, self.id_obiekt, my_start_date, my_end_date)
         return lst_h.polacz_html()
