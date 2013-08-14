@@ -29,6 +29,19 @@ class SzkieletDziennyDlaPoborow(KlasaOgolnaSzkieletuDat):
         wymiar_czasowy = my_end_day - my_start_day
         self.przypisz_szkielet(dq_kw.generator_szkieletu(wymiar_czasowy))
 
+    def to_pelna_godzina(self, akt):
+        '''
+        SzkieletDziennyDlaPoborow:
+        '''
+        return 1
+
+    def tekst_pelnej_godziny(self, akt):
+        '''
+        SzkieletDziennyDlaPoborow:
+        '''
+        print akt
+        return 'a'
+
 class TestDziennegoSzkieletu(unittest.TestCase):
     def test_energii_szkieletowego_datownika(self):
         '''
