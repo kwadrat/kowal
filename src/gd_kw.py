@@ -28,6 +28,7 @@ class PomiarowaMiesiecznaListaPoborow(OgolnySzeregListPoborow):
         '''
         PomiarowaMiesiecznaListaPoborow:
         '''
+        self.tvk_data = self.tgk.wez_date()
         aqr = None
         OgolnySzeregListPoborow.__init__(self, tgk, aqr, dfb, krt_pobor)
 
@@ -37,6 +38,5 @@ class PomiarowaMiesiecznaListaPoborow(OgolnySzeregListPoborow):
         '''
         lst_h = lh_kw.ListaHTML()
         lst_h.ddj(fy_kw.lxa_47_inst)
-        tvk_data = self.tgk.wez_date()
-        szereg_poborow = le_kw.dq_liczniki_poboru_w_miesiacu(self.dfb, self.table_name, self.id_obiekt, tvk_data)
+        szereg_poborow = le_kw.dq_liczniki_poboru_w_miesiacu(self.dfb, self.table_name, self.id_obiekt, self.tvk_data)
         return lst_h.polacz_html()
