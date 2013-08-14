@@ -35,4 +35,6 @@ class PomiarowyMiesiecznySzeregListPoborow(OgolnyPomiarowySzeregListPoborow):
         '''
         lst_h = lh_kw.ListaHTML()
         lst_h.ddj(fy_kw.lxa_47_inst)
+        tvk_data = self.tgk.wez_date()
+        szereg_poborow = le_kw.dq_liczniki_poboru_w_miesiacu(self.dfb, self.table_name, self.id_obiekt, tvk_data)
         return lst_h.polacz_html()
