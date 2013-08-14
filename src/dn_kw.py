@@ -220,6 +220,9 @@ def RoboczyDnia(x):
     '''
     return szczegolowa_krotka(x).tm_wday < 5
 
+def get_monday(x):
+    return x
+
 def NapisDnia(numer):
     '''Zwraca napis z datą na podstawie podanego numeru dnia
     Parametr:
@@ -468,6 +471,7 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(RoboczyDnia(4), 1)
         self.assertEqual(RoboczyDnia(5), 1)
         self.assertEqual(RoboczyDnia(6), 1) # Środa
+        self.assertEqual(get_monday(4), 4)
         self.assertEqual(data_rmd(data_testowa_a), (2011, 8, 29))
         daty_roczne = daty_lat(13149, 13879)
         self.assertEqual(daty_roczne, [13149, 13514, 13879])
