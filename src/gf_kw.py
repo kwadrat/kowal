@@ -4,6 +4,11 @@
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import lw_kw
+import dd_kw
+import ey_kw
+import oh_kw
+import od_kw
 import gc_kw
 '''.splitlines()]
 
@@ -23,6 +28,7 @@ class PoboroweMiesieczneSlupki(PoboroweOgolneSlupki):
         '''
         PoboroweMiesieczneSlupki:
         '''
+        self.dolny_podpis = 'dni'
         PoboroweOgolneSlupki.__init__(self, tgk, aqr, dnw)
 
 class TestPoborowychMiesiecznychSlupkow(unittest.TestCase):
@@ -30,3 +36,11 @@ class TestPoborowychMiesiecznychSlupkow(unittest.TestCase):
         '''
         TestPoborowychMiesiecznychSlupkow:
         '''
+        tgk = od_kw.PseudoTGK()
+        tgk.wyznacz_unikalny_moment_dla_grafiki()
+        krt_pobor = dd_kw.CechaEnergii(lw_kw.Dn_Energy)
+        aqr = ey_kw.SzkieletDatDlaPoborow(krt_pobor)
+        lp_wykresu = 0
+        dnw = oh_kw.SimpleDNW(lp_wykresu)
+        obk = PoboroweMiesieczneSlupki(tgk, aqr, dnw)
+        self.assertEqual(obk.dolny_podpis, 'dni')
