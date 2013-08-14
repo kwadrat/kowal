@@ -99,23 +99,23 @@ def zrob_tabele_poborow(lst_h, result):
 
 OgolnySzeregListPoborow = lt_kw.OgolnySzeregListPoborow
 
-class PokryciowySzeregListPoborow(OgolnySzeregListPoborow):
+class PokryciowaListaPoborow(OgolnySzeregListPoborow):
     def __init__(self, tgk, dfb, krt_pobor):
         '''
-        PokryciowySzeregListPoborow:
+        PokryciowaListaPoborow:
         '''
         OgolnySzeregListPoborow.__init__(self, tgk, dfb, krt_pobor)
 
     def wizualizacja_pokrycia_poborami(self, lst_h):
         '''
-        PokryciowySzeregListPoborow:
+        PokryciowaListaPoborow:
         '''
         result = le_kw.dq_dane_jednego_obiektu(self.dfb, self.table_name, self.id_obiekt)
         zrob_tabele_poborow(lst_h, result)
 
     def html_pokrycia_szeregu_poborow(self):
         '''
-        PokryciowySzeregListPoborow:
+        PokryciowaListaPoborow:
         '''
         lst_h = lh_kw.ListaHTML()
         self.wizualizacja_pokrycia_poborami(lst_h)
