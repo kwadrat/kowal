@@ -8,8 +8,8 @@ NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import fy_kw
 import lc_kw
 import ze_kw
-import le_kw
 import dn_kw
+import le_kw
 import eu_kw
 import fx_kw
 import lh_kw

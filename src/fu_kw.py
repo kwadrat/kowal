@@ -2,10 +2,10 @@
 # -*- coding: UTF-8 -*-
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import dn_kw
 import lp_kw
 import lw_kw
 import mu_kw
-import dn_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
