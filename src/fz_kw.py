@@ -150,7 +150,8 @@ def ptn_liczniki_poboru_w_roku(table_name, id_obiekt, tvk_data):
 def ptn_liczniki_poboru_w_miesiacu(table_name, id_obiekt, tvk_data, my_start_date, my_end_date):
     obk = lr_kw.GeneratorUU(table_name)
     obk.set_object(id_obiekt)
-    obk.set_month_date(tvk_data)
+    obk.set_start_date(my_start_date)
+    obk.set_end_date(my_end_date)
     return obk.cons_couple()
 
 def ptn_jeden_licznik_poboru_w_roku(table_name, nr_probki):
