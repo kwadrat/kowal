@@ -6,11 +6,14 @@ Analiza poboru - pomiarowy szereg list dla miesiąca
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import fy_kw
+import lc_kw
 import dn_kw
 import le_kw
 import lw_kw
 import lh_kw
+import jb_kw
 import ge_kw
+import wn_kw
 import lt_kw
 '''.splitlines()]
 
@@ -52,4 +55,13 @@ class PomiarowaMiesiecznaListaPoborow(OgolnySzeregListPoborow):
         my_start_date = dn_kw.NapisDnia(self.aqr.my_start_day)
         my_end_date = dn_kw.NapisDnia(self.aqr.my_end_day)
         szereg_poborow = le_kw.dq_liczniki_poboru_w_miesiacu(self.dfb, self.table_name, self.id_obiekt, my_start_date, my_end_date)
+        for jeden_pobor in szereg_poborow:
+            my_cur_date = str(jeden_pobor[lc_kw.fq_m_date_qv])
+            my_cur_day = dn_kw.napis_na_numer_dnia(my_cur_date)
+            akt = my_cur_day - self.aqr.my_start_day
+            nast = akt + 1
+            kwota = jeden_pobor[lc_kw.fq_m_sum_qv]
+            slownik_qm = wn_kw.KlasaSlownika()
+            slownik_qm.jh_ustaw_kwt_qm(kwota)
+            self.dnw.odcinki_bazowe.app_end(jb_kw.JedenOdcinekBazowy(2 * akt, 2 * nast, slownik_qm))
         return lst_h.polacz_html()
