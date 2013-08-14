@@ -19,11 +19,13 @@ for i in NazwyModulow:
 KlasaOgolnaSzkieletuDat = dq_kw.KlasaOgolnaSzkieletuDat
 
 class SzkieletDziennyDlaPoborow(KlasaOgolnaSzkieletuDat):
-    def __init__(self, krt_pobor):
+    def __init__(self, krt_pobor, my_start_day, my_end_day):
         '''
         SzkieletDziennyDlaPoborow:
         '''
         KlasaOgolnaSzkieletuDat.__init__(self)
+        self.my_start_day = my_start_day
+        self.my_end_day = my_end_day
 
 class TestDziennegoSzkieletu(unittest.TestCase):
     def test_energii_szkieletowego_datownika(self):

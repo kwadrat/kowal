@@ -32,7 +32,7 @@ class PomiarowaMiesiecznaListaPoborow(OgolnySzeregListPoborow):
         self.tvk_data = self.tgk.wez_date()
         my_year, my_month = dn_kw.rok_mies_z_napisu(self.tvk_data)
         my_start_day, my_end_day = dn_kw.ZakresMiesiaca(my_year, my_month)
-        aqr = ge_kw.SzkieletDziennyDlaPoborow(krt_pobor)
+        aqr = ge_kw.SzkieletDziennyDlaPoborow(krt_pobor, my_start_day, my_end_day)
         OgolnySzeregListPoborow.__init__(self, tgk, aqr, dfb, krt_pobor)
 
     def html_szeregu_poborow(self, krt_pobor):
