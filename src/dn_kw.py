@@ -221,7 +221,9 @@ def RoboczyDnia(x):
     return szczegolowa_krotka(x).tm_wday < 5
 
 def get_monday(x):
-    return x
+    '''Na podstawie dowolnego dnia tygodnia wyznacz
+    początkowy poniedziałek'''
+    return 4 + divmod(x - 4, 7)[0] * 7
 
 def NapisDnia(numer):
     '''Zwraca napis z datą na podstawie podanego numeru dnia
@@ -472,6 +474,13 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(RoboczyDnia(5), 1)
         self.assertEqual(RoboczyDnia(6), 1) # Środa
         self.assertEqual(get_monday(4), 4)
+        self.assertEqual(get_monday(5), 4)
+        self.assertEqual(get_monday(6), 4)
+        self.assertEqual(get_monday(7), 4)
+        self.assertEqual(get_monday(8), 4)
+        self.assertEqual(get_monday(9), 4)
+        self.assertEqual(get_monday(10), 4)
+        self.assertEqual(get_monday(11), 11)
         self.assertEqual(data_rmd(data_testowa_a), (2011, 8, 29))
         daty_roczne = daty_lat(13149, 13879)
         self.assertEqual(daty_roczne, [13149, 13514, 13879])
