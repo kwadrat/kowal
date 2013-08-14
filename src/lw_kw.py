@@ -13,8 +13,10 @@ DanePoborowegoCzasu = (
 DPC_Dzien,
 DPC_Tydzien,
 DPC_Miesiac,
+DPC_Rok,
 ) = (
 'Dzień',
 'Tydzień',
 'Miesiąc',
+'Rok',
 )
