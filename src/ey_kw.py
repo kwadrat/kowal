@@ -18,9 +18,6 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-def generator_szkieletu(liczba_przedzialow):
-    return range(0, 2 * liczba_przedzialow + 1, 2)
-
 KlasaOgolnaSzkieletuDat = dq_kw.KlasaOgolnaSzkieletuDat
 
 class SzkieletDatDlaPoborow(KlasaOgolnaSzkieletuDat):
@@ -30,7 +27,7 @@ class SzkieletDatDlaPoborow(KlasaOgolnaSzkieletuDat):
         '''
         KlasaOgolnaSzkieletuDat.__init__(self)
         wymiar_czasowy = krt_pobor.krt_wymiar
-        self.przypisz_szkielet(generator_szkieletu(wymiar_czasowy))
+        self.przypisz_szkielet(dq_kw.generator_szkieletu(wymiar_czasowy))
         self.wymiar_czasowy = wymiar_czasowy
 
     def to_pelna_godzina(self, akt):
@@ -54,11 +51,9 @@ class TestSzkieletowegoDatownika(unittest.TestCase):
         '''
         TestSzkieletowegoDatownika:
         '''
-        self.assertEqual(generator_szkieletu(1), [0, 2])
-        self.assertEqual(generator_szkieletu(3), [0, 2, 4, 6])
         krt_pobor = dd_kw.CechaEnergii(lw_kw.Dn_Energy)
         obk = SzkieletDatDlaPoborow(krt_pobor)
-        self.assertEqual(obk.szkielet_dat, generator_szkieletu(24))
+        self.assertEqual(obk.szkielet_dat, dq_kw.generator_szkieletu(24))
 
     def test_mocy_szkieletowego_datownika(self):
         '''
@@ -66,4 +61,4 @@ class TestSzkieletowegoDatownika(unittest.TestCase):
         '''
         krt_pobor = dd_kw.CechaEnergii(lw_kw.Dn_Power)
         obk = SzkieletDatDlaPoborow(krt_pobor)
-        self.assertEqual(obk.szkielet_dat, generator_szkieletu(96))
+        self.assertEqual(obk.szkielet_dat, dq_kw.generator_szkieletu(96))

@@ -17,6 +17,9 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+def generator_szkieletu(liczba_przedzialow):
+    return range(0, 2 * liczba_przedzialow + 1, 2)
+
 class KlasaOgolnaSzkieletuDat(object):
     def __init__(self):
         '''
@@ -98,3 +101,5 @@ class TestOgolnegoSzkieletuDat(unittest.TestCase):
         TestOgolnegoSzkieletuDat:
         '''
         obk = KlasaOgolnaSzkieletuDat()
+        self.assertEqual(generator_szkieletu(1), [0, 2])
+        self.assertEqual(generator_szkieletu(3), [0, 2, 4, 6])
