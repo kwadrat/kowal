@@ -38,13 +38,6 @@ class PomiarowyDziennaListaPoborow(OgolnySzeregListPoborow):
         aqr = ey_kw.SzkieletDatDlaPoborow(krt_pobor)
         OgolnySzeregListPoborow.__init__(self, tgk, aqr, dfb, krt_pobor)
 
-    def grafika_poborow_dla_pomiarow(self, lst_h, krt_pobor, szereg_poborow):
-        '''
-        PomiarowyDziennaListaPoborow:
-        '''
-        for lista_poborow in szereg_poborow:
-            lista_poborow.html_ls_poborow(lst_h, krt_pobor, self.dfb, self.id_obiekt, self.table_name)
-
     def html_szeregu_poborow(self, krt_pobor):
         '''
         PomiarowyDziennaListaPoborow:
@@ -58,5 +51,6 @@ class PomiarowyDziennaListaPoborow(OgolnySzeregListPoborow):
         for nr_probki in lista_nr_probek:
             elem = lu_kw.PoboryDanegoDnia(self.tgk, self.aqr, self.id_obiekt, nr_probki)
             szereg_poborow.append(elem)
-        self.grafika_poborow_dla_pomiarow(lst_h, krt_pobor, szereg_poborow)
+        for lista_poborow in szereg_poborow:
+            lista_poborow.html_ls_poborow(lst_h, krt_pobor, self.dfb, self.id_obiekt, self.table_name)
         return lst_h.polacz_html()
