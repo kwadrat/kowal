@@ -93,6 +93,6 @@ class PomiarowaDziennaListaPoborow(OgolnySzeregListPoborow):
         tvk_data = self.tgk.wez_date()
         result = le_kw.dq_liczniki_poboru_w_roku(self.dfb, self.table_name, self.id_obiekt, tvk_data)
         lista_nr_probek = map(lambda x: x[lc_kw.fq_k_sample_qv], result)
-        for nr_probki in lista_nr_probek:
+        for single_record, nr_probki in zip(result, lista_nr_probek):
             self.html_ls_poborow(lst_h, krt_pobor, self.dfb, self.id_obiekt, self.table_name, nr_probki)
         return lst_h.polacz_html()
