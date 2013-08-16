@@ -60,7 +60,7 @@ class PoboryDanegoDnia(WykresPomiarow):
         '''
         PoboryDanegoDnia:
         '''
-        lista_pomiarow = wykonaj_pobor(dfb, table_name, self.nr_probki)
+        lista_pomiarow = wykonaj_pobor(dfb, table_name, nr_probki)
         self.zbuduj_odcinki_y_bazowe(lista_pomiarow)
         vert_axis = self.dnw.odcinki_bazowe.zakres_pionowy()
         ms = eq_kw.PoboroweDzienneSlupki(self.tgk, self.aqr, self.dnw)
