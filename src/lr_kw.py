@@ -29,6 +29,7 @@ class GeneratorUU(object):
         self.key_object = None
         self.my_start_date = None
         self.my_end_date = None
+        self.my_exact_date = None
         self.my_week_day = None
         self.my_table_name = my_table_name
 
@@ -43,6 +44,8 @@ class GeneratorUU(object):
             all_my_limits.append("%s >= '%s'" % (lc_kw.fq_m_date_qv, self.my_start_date))
         if self.my_end_date is not None:
             all_my_limits.append("%s < '%s'" % (lc_kw.fq_m_date_qv, self.my_end_date))
+        if self.my_exact_date is not None:
+            all_my_limits.append("%s = '%s'" % (lc_kw.fq_m_date_qv, self.my_exact_date))
         if self.my_week_day is not None:
             all_my_limits.append("EXTRACT(dow FROM %s)=%d" % (lc_kw.fq_m_date_qv, self.my_week_day))
         if all_my_limits:
@@ -110,6 +113,12 @@ class GeneratorUU(object):
         GeneratorUU:
         '''
         self.my_end_date = my_end_date
+
+    def set_exact_date(self, my_exact_date):
+        '''
+        GeneratorUU:
+        '''
+        self.my_exact_date = my_exact_date
 
     def set_month_date(self, my_middle_date):
         '''
