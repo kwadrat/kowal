@@ -141,11 +141,10 @@ def ptn_load_one_vector_from_db(table_name, key_object, row_date):
         )
 
 def ptn_liczniki_poboru_w_roku(table_name, id_obiekt, tvk_data):
-    return fy_kw.lxa_32_inst % dict(
-        table_name=table_name,
-        id_obiekt=id_obiekt,
-        tvk_data=tvk_data,
-        )
+    obk = lr_kw.GeneratorUU(table_name)
+    obk.set_object(id_obiekt)
+    obk.set_exact_date(tvk_data)
+    return obk.final_shape()
 
 def ptn_liczniki_poboru_w_miesiacu(table_name, id_obiekt, my_start_date, my_end_date):
     obk = lr_kw.GeneratorUU(table_name)
