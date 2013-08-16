@@ -38,19 +38,6 @@ class PomiarowyDziennaListaPoborow(OgolnySzeregListPoborow):
         aqr = ey_kw.SzkieletDatDlaPoborow(krt_pobor)
         OgolnySzeregListPoborow.__init__(self, tgk, aqr, dfb, krt_pobor)
 
-    def przygotuj_dla_poborow(self):
-        '''
-        PomiarowyDziennaListaPoborow:
-        '''
-        tvk_data = self.tgk.wez_date()
-        result = le_kw.dq_liczniki_poboru_w_roku(self.dfb, self.table_name, self.id_obiekt, tvk_data)
-        lista_nr_probek = map(lambda x: x[lc_kw.fq_k_sample_qv], result)
-        tmp_lista = []
-        for nr_probki in lista_nr_probek:
-            elem = lu_kw.PoboryDanegoDnia(self.tgk, self.aqr, self.id_obiekt, nr_probki)
-            tmp_lista.append(elem)
-        return tmp_lista
-
     def grafika_poborow_dla_pomiarow(self, lst_h, krt_pobor, szereg_poborow):
         '''
         PomiarowyDziennaListaPoborow:
@@ -64,6 +51,12 @@ class PomiarowyDziennaListaPoborow(OgolnySzeregListPoborow):
         '''
         lst_h = lh_kw.ListaHTML()
         lst_h.ddj(fy_kw.lxa_47_inst)
-        szereg_poborow = self.przygotuj_dla_poborow()
+        tvk_data = self.tgk.wez_date()
+        result = le_kw.dq_liczniki_poboru_w_roku(self.dfb, self.table_name, self.id_obiekt, tvk_data)
+        lista_nr_probek = map(lambda x: x[lc_kw.fq_k_sample_qv], result)
+        szereg_poborow = []
+        for nr_probki in lista_nr_probek:
+            elem = lu_kw.PoboryDanegoDnia(self.tgk, self.aqr, self.id_obiekt, nr_probki)
+            szereg_poborow.append(elem)
         self.grafika_poborow_dla_pomiarow(lst_h, krt_pobor, szereg_poborow)
         return lst_h.polacz_html()
