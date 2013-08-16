@@ -30,17 +30,17 @@ for i in NazwyModulow:
 
 OgolnySzeregListPoborow = lt_kw.OgolnySzeregListPoborow
 
-class PomiarowyDziennaListaPoborow(OgolnySzeregListPoborow):
+class PomiarowaDziennaListaPoborow(OgolnySzeregListPoborow):
     def __init__(self, tgk, dfb, krt_pobor):
         '''
-        PomiarowyDziennaListaPoborow:
+        PomiarowaDziennaListaPoborow:
         '''
         aqr = ey_kw.SzkieletDatDlaPoborow(krt_pobor)
         OgolnySzeregListPoborow.__init__(self, tgk, aqr, dfb, krt_pobor)
 
     def html_szeregu_poborow(self, krt_pobor):
         '''
-        PomiarowyDziennaListaPoborow:
+        PomiarowaDziennaListaPoborow:
         '''
         lst_h = lh_kw.ListaHTML()
         lst_h.ddj(fy_kw.lxa_47_inst)
