@@ -27,14 +27,6 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-def wykonaj_pobor(dfb, table_name, nr_probki):
-    jeden_pomiar = le_kw.dq_jeden_licznik_poboru_w_roku(dfb, table_name, nr_probki)
-    if jeden_pomiar:
-        wynik = jeden_pomiar[0][lc_kw.fq_m_samples_qv]
-    else:
-        wynik = None
-    return wynik
-
 OgolnySzeregListPoborow = lt_kw.OgolnySzeregListPoborow
 
 class PomiarowaDziennaListaPoborow(OgolnySzeregListPoborow):
@@ -62,7 +54,6 @@ class PomiarowaDziennaListaPoborow(OgolnySzeregListPoborow):
         PomiarowaDziennaListaPoborow:
         '''
         nr_probki = single_record[lc_kw.fq_k_sample_qv]
-        lista_pomiarow = wykonaj_pobor(dfb, table_name, nr_probki)
         lista_pomiarow = single_record[lc_kw.fq_m_samples_qv]
         self.zbuduj_odcinki_y_bazowe(lista_pomiarow)
         vert_axis = self.dnw.odcinki_bazowe.zakres_pionowy()
