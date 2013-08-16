@@ -62,7 +62,7 @@ class PoboryDanegoDnia(WykresPomiarow):
                 slownik_qm.jh_ustaw_kwt_qm(kwota)
                 self.dnw.odcinki_bazowe.app_end(jb_kw.JedenOdcinekBazowy(2 * akt, 2 * nast, slownik_qm))
 
-    def html_ls_poborow(self, lst_h, krt_pobor):
+    def html_ls_poborow(self, lst_h, krt_pobor, dfb, id_obiekt, table_name):
         '''
         PoboryDanegoDnia:
         '''
