@@ -49,5 +49,5 @@ class PomiarowyDziennaListaPoborow(OgolnySzeregListPoborow):
         lista_nr_probek = map(lambda x: x[lc_kw.fq_k_sample_qv], result)
         for nr_probki in lista_nr_probek:
             elem = lu_kw.PoboryDanegoDnia(self.tgk, self.aqr, self.id_obiekt, nr_probki)
-            elem.html_ls_poborow(lst_h, krt_pobor, self.dfb, self.id_obiekt, self.table_name)
+            elem.html_ls_poborow(lst_h, krt_pobor, self.dfb, self.id_obiekt, self.table_name, nr_probki)
         return lst_h.polacz_html()
