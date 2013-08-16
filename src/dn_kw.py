@@ -146,10 +146,10 @@ MozliweLataFaktur = map(str, range(RokObecnyStaly + 1, rq_kw.RokPocz2 - 1, -1))
 MozliweLataDlaARok = [rq_kw.PoleWszystko] + MozliweLataZuzyc
 MozliweLataDlaBRok = MozliweLataZuzyc
 
-def NumerDzisiaj():
+def NumerDzisiaj(czas=None):
     '''Zwraca numer dzisiejszego dnia
     '''
-    return NumerDnia( * DataDzisiaj())
+    return NumerDnia( * DataDzisiaj(czas))
 
 def NapisDaty(rok, miesiac, dzien):
     '''Zwraca napis w postaci "RRRR-MM-DD"
@@ -506,3 +506,4 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(NapisDaty(2013, 7, 27), '2013-07-27')
         self.assertEqual(CzasDzisiaj(data_testowa_c), (2011, 12, 13, 10, 41, 32))
         self.assertEqual(DataDzisiaj(data_testowa_c), (2011, 12, 13))
+        self.assertEqual(NumerDzisiaj(data_testowa_c), 15321)
