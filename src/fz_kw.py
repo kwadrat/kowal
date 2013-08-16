@@ -131,14 +131,10 @@ def ptn_update_stats_of_samples(n_table, v_none, v_zero, v_sum, sample_key):
         )
 
 def ptn_load_one_vector_from_db(table_name, key_object, row_date):
-    return fy_kw.lxa_31_inst % dict(
-        table_name=table_name,
-        e_date=lc_kw.fq_m_date_qv,
-        e_samples=lc_kw.fq_m_samples_qv,
-        e_object=lc_kw.fq_f_object_qv,
-        f_object=key_object,
-        m_date=row_date,
-        )
+    obk = lr_kw.GeneratorUU(table_name)
+    obk.set_object(key_object)
+    obk.set_exact_date(row_date)
+    return obk.final_shape()
 
 def ptn_liczniki_poboru_w_roku(table_name, id_obiekt, tvk_data):
     obk = lr_kw.GeneratorUU(table_name)
