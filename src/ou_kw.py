@@ -53,7 +53,6 @@ class PomiarowaDziennaListaPoborow(OgolnySzeregListPoborow):
         '''
         PomiarowaDziennaListaPoborow:
         '''
-        nr_probki = single_record[lc_kw.fq_k_sample_qv]
         lista_pomiarow = single_record[lc_kw.fq_m_samples_qv]
         self.zbuduj_odcinki_y_bazowe(lista_pomiarow)
         vert_axis = self.dnw.odcinki_bazowe.zakres_pionowy()
