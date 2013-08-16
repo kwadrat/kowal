@@ -54,7 +54,7 @@ class PoboryDanegoDnia(WykresPomiarow):
         '''
         PoboryDanegoDnia:
         '''
-        for akt, kwota in enumerate(self.lista_pomiarow):
+        for akt, kwota in enumerate(lista_pomiarow):
             nast = akt + 1
             kwota = lm_kw.dec2flt(kwota)
             if kwota is not None:
