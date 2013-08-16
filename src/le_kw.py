@@ -42,10 +42,6 @@ def dq_update_stats_of_samples(dfb, n_table, v_none, v_zero, v_sum, sample_key):
     db_statement = fz_kw.ptn_update_stats_of_samples(n_table, v_none, v_zero, v_sum, sample_key)
     dfb.query_silent(db_statement)
 
-def dq_load_one_vector_from_db(dfb, table_name, key_object, row_date):
-    db_statement = fz_kw.ptn_load_one_vector_from_db(table_name, key_object, row_date)
-    return dfb.query_dct(db_statement)
-
 def dq_liczniki_poboru_w_roku(dfb, table_name, id_obiekt, tvk_data):
     db_statement = fz_kw.ptn_liczniki_poboru_w_roku(table_name, id_obiekt, tvk_data)
     return dfb.query_dct(db_statement)
