@@ -119,7 +119,7 @@ def CzasDzisiaj(czas=None):
     - rok, miesiąc, dzień
     - godzina, minuta, sekunda
     '''
-    return time.localtime()[:6]
+    return time.localtime(czas)[:6]
 
 def DataDzisiaj():
     '''
@@ -504,4 +504,4 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(rok_mies_z_napisu('2010-01-01'), (2010, 1))
         self.assertEqual(napis_z_rok_mies(2011, 9), '2011-09')
         self.assertEqual(NapisDaty(2013, 7, 27), '2013-07-27')
-        CzasDzisiaj(data_testowa_c)
+        self.assertEqual(CzasDzisiaj(data_testowa_c), (2011, 12, 13, 10, 41, 32))
