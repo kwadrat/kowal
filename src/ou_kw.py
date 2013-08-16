@@ -15,7 +15,6 @@ import jb_kw
 import ey_kw
 import wn_kw
 import eq_kw
-import lu_kw
 import lt_kw
 '''.splitlines()]
 
@@ -28,6 +27,14 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+def wykonaj_pobor(dfb, table_name, nr_probki):
+    jeden_pomiar = le_kw.dq_jeden_licznik_poboru_w_roku(dfb, table_name, nr_probki)
+    if jeden_pomiar:
+        wynik = jeden_pomiar[0][lc_kw.fq_m_samples_qv]
+    else:
+        wynik = None
+    return wynik
+
 OgolnySzeregListPoborow = lt_kw.OgolnySzeregListPoborow
 
 class PomiarowaDziennaListaPoborow(OgolnySzeregListPoborow):
@@ -37,6 +44,45 @@ class PomiarowaDziennaListaPoborow(OgolnySzeregListPoborow):
         '''
         aqr = ey_kw.SzkieletDatDlaPoborow(krt_pobor)
         OgolnySzeregListPoborow.__init__(self, tgk, aqr, dfb, krt_pobor)
+
+    def zbuduj_odcinki_y_bazowe(self, lista_pomiarow):
+        '''
+        PomiarowaDziennaListaPoborow:
+        '''
+        for akt, kwota in enumerate(lista_pomiarow):
+            nast = akt + 1
+            kwota = lm_kw.dec2flt(kwota)
+            if kwota is not None:
+                slownik_qm = wn_kw.KlasaSlownika()
+                slownik_qm.jh_ustaw_kwt_qm(kwota)
+                self.dnw.odcinki_bazowe.app_end(jb_kw.JedenOdcinekBazowy(2 * akt, 2 * nast, slownik_qm))
+
+    def html_ls_poborow(self, lst_h, krt_pobor, dfb, id_obiekt, table_name, nr_probki):
+        '''
+        PomiarowaDziennaListaPoborow:
+        '''
+        lista_pomiarow = wykonaj_pobor(dfb, table_name, nr_probki)
+        self.zbuduj_odcinki_y_bazowe(lista_pomiarow)
+        vert_axis = self.dnw.odcinki_bazowe.zakres_pionowy()
+        ms = eq_kw.PoboroweDzienneSlupki(self.tgk, self.aqr, self.dnw)
+        ms.wyznacz_poborowe_slupki(vert_axis, krt_pobor)
+        moja_suma = krt_pobor.cumulative_value
+        moja_jednostka = krt_pobor.krt_jedn
+        opis_dotyczy = []
+        # qaz - duplikat
+        opis_dotyczy.append(ze_kw.sp_stl(
+            krt_pobor.krt_etykieta,
+            lm_kw.rzeczywista_na_napis(moja_suma),
+            moja_jednostka))
+        # qaz - duplikat
+        if vert_axis.MaxY:
+            ms.podpisz_obie_osie(vert_axis, krt_pobor)
+            on_mouse = {}
+            kod_html = ms.wykreslanie_slupkow(on_mouse)
+            lst_h.ddj(''.join(opis_dotyczy))
+            lst_h.ddj(kod_html)
+        else:
+            lst_h.ddj('Brak zróżnicowania danych w pionie, MaxY=%s' % repr(vert_axis.MaxY))
 
     def html_szeregu_poborow(self, krt_pobor):
         '''
@@ -48,6 +94,5 @@ class PomiarowaDziennaListaPoborow(OgolnySzeregListPoborow):
         result = le_kw.dq_liczniki_poboru_w_roku(self.dfb, self.table_name, self.id_obiekt, tvk_data)
         lista_nr_probek = map(lambda x: x[lc_kw.fq_k_sample_qv], result)
         for nr_probki in lista_nr_probek:
-            elem = lu_kw.PoboryDanegoDnia(self.tgk, self.aqr)
-            elem.html_ls_poborow(lst_h, krt_pobor, self.dfb, self.id_obiekt, self.table_name, nr_probki)
+            self.html_ls_poborow(lst_h, krt_pobor, self.dfb, self.id_obiekt, self.table_name, nr_probki)
         return lst_h.polacz_html()
