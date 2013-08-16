@@ -153,12 +153,6 @@ def ptn_liczniki_poboru_w_miesiacu(table_name, id_obiekt, my_start_date, my_end_
     obk.set_end_date(my_end_date)
     return obk.cons_couple()
 
-def ptn_jeden_licznik_poboru_w_roku(table_name, nr_probki):
-    return fy_kw.lxa_34_inst % dict(
-        table_name=table_name,
-        nr_probki=nr_probki,
-        )
-
 def ptn_dane_jednego_obiektu(table_name, key_object):
     obk = lr_kw.GeneratorUU(table_name)
     obk.set_object(key_object)
@@ -183,7 +177,5 @@ class TestVariousPatterns(unittest.TestCase):
         self.assertEqual(ptn_load_one_vector_from_db(lc_kw.fq_uu_power_qv, 18, '2013-01-31'), fy_kw.lxa_30_inst)
         self.assertEqual(ptn_liczniki_poboru_w_roku(lc_kw.fq_uu_power_qv, 18, '2013-01-31'), fy_kw.lxa_33_inst)
         self.assertEqual(ptn_liczniki_poboru_w_roku(lc_kw.fq_uu_energy_qv, 19, '2013-02-01'), fy_kw.lxa_36_inst)
-        self.assertEqual(ptn_jeden_licznik_poboru_w_roku(lc_kw.fq_uu_power_qv, 1860), fy_kw.lxa_35_inst)
-        self.assertEqual(ptn_jeden_licznik_poboru_w_roku(lc_kw.fq_uu_energy_qv, 1861), fy_kw.lxa_37_inst)
         self.assertEqual(ptn_dane_jednego_obiektu(lc_kw.fq_uu_energy_qv, 7), fy_kw.lxa_38_inst)
         self.assertEqual(ptn_liczniki_poboru_w_miesiacu(lc_kw.fq_uu_energy_qv, 19, '2013-02-01', '2013-03-01'), fy_kw.lxa_58_inst)
