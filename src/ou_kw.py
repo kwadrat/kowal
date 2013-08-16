@@ -12,6 +12,7 @@ import lh_kw
 import jb_kw
 import ey_kw
 import wn_kw
+import eq_kw
 import lu_kw
 import lt_kw
 '''.splitlines()]
