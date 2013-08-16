@@ -44,12 +44,6 @@ class PoboryDanegoDnia(WykresPomiarow):
         self.nr_probki = nr_probki
         WykresPomiarow.__init__(self, tgk, aqr)
 
-    def pobory_dla_parametrow(self, dfb, id_obiekt, table_name):
-        '''
-        PoboryDanegoDnia:
-        '''
-        self.lista_pomiarow = wykonaj_pobor(dfb, table_name, self.nr_probki)
-
     def zbuduj_odcinki_y_bazowe(self, lista_pomiarow):
         '''
         PoboryDanegoDnia:

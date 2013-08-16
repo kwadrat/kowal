@@ -63,7 +63,6 @@ class PomiarowyDziennaListaPoborow(OgolnySzeregListPoborow):
         PomiarowyDziennaListaPoborow:
         '''
         for lista_poborow in szereg_poborow:
-            lista_poborow.pobory_dla_parametrow(self.dfb, self.id_obiekt, self.table_name)
             lista_poborow.html_ls_poborow(lst_h, krt_pobor, self.dfb, self.id_obiekt, self.table_name)
 
     def html_szeregu_poborow(self, krt_pobor):
