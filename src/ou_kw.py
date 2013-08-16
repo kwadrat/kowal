@@ -57,7 +57,7 @@ class PomiarowaDziennaListaPoborow(OgolnySzeregListPoborow):
                 slownik_qm.jh_ustaw_kwt_qm(kwota)
                 self.dnw.odcinki_bazowe.app_end(jb_kw.JedenOdcinekBazowy(2 * akt, 2 * nast, slownik_qm))
 
-    def html_ls_poborow(self, lst_h, krt_pobor, dfb, id_obiekt, table_name, nr_probki):
+    def html_ls_poborow(self, lst_h, krt_pobor, dfb, id_obiekt, table_name, nr_probki, single_record):
         '''
         PomiarowaDziennaListaPoborow:
         '''
@@ -94,5 +94,5 @@ class PomiarowaDziennaListaPoborow(OgolnySzeregListPoborow):
         result = le_kw.dq_liczniki_poboru_w_roku(self.dfb, self.table_name, self.id_obiekt, tvk_data)
         lista_nr_probek = map(lambda x: x[lc_kw.fq_k_sample_qv], result)
         for single_record, nr_probki in zip(result, lista_nr_probek):
-            self.html_ls_poborow(lst_h, krt_pobor, self.dfb, self.id_obiekt, self.table_name, nr_probki)
+            self.html_ls_poborow(lst_h, krt_pobor, self.dfb, self.id_obiekt, self.table_name, nr_probki, single_record)
         return lst_h.polacz_html()
