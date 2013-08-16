@@ -47,7 +47,7 @@ class PomiarowyDziennaListaPoborow(OgolnySzeregListPoborow):
         '''
         tmp_lista = []
         for nr_probki in lista_nr_probek:
-            elem = lu_kw.PoboryDanegoDnia(self.tgk, self.aqr, self.tekstowa_diagnostyka, self.id_obiekt, nr_probki)
+            elem = lu_kw.PoboryDanegoDnia(self.tgk, self.aqr, self.id_obiekt, nr_probki)
             tmp_lista.append(elem)
         return tmp_lista
 
