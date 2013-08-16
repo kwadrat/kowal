@@ -64,15 +64,15 @@ SELECT m_samples FROM uu_power WHERE f_object=18 AND m_date='2013-01-31';"""
 lxa_31_inst = """\
 SELECT %(e_samples)s FROM %(table_name)s WHERE %(e_object)s=%(f_object)d AND %(e_date)s='%(m_date)s';"""
 lxa_32_inst = """\
-SELECT k_sample, m_samples FROM %(table_name)s WHERE f_object=%(id_obiekt)d AND m_date='%(tvk_data)s';"""
+SELECT m_samples FROM %(table_name)s WHERE f_object=%(id_obiekt)d AND m_date='%(tvk_data)s';"""
 lxa_33_inst = """\
-SELECT k_sample, m_samples FROM uu_power WHERE f_object=18 AND m_date='2013-01-31';"""
+SELECT m_samples FROM uu_power WHERE f_object=18 AND m_date='2013-01-31';"""
 lxa_34_inst = """\
 SELECT m_samples FROM %(table_name)s WHERE k_sample=%(nr_probki)d;"""
 lxa_35_inst = """\
 SELECT m_samples FROM uu_power WHERE k_sample=1860;"""
 lxa_36_inst = """\
-SELECT k_sample, m_samples FROM uu_energy WHERE f_object=19 AND m_date='2013-02-01';"""
+SELECT m_samples FROM uu_energy WHERE f_object=19 AND m_date='2013-02-01';"""
 lxa_37_inst = """\
 SELECT m_samples FROM uu_energy WHERE k_sample=1861;"""
 lxa_38_inst = """\
