@@ -51,13 +51,6 @@ class PomiarowyDziennaListaPoborow(OgolnySzeregListPoborow):
             tmp_lista.append(elem)
         return tmp_lista
 
-    def pobory_dla_licznikow(self, szereg_poborow):
-        '''
-        PomiarowyDziennaListaPoborow:
-        '''
-        for lista_poborow in szereg_poborow:
-            lista_poborow.pobory_dla_parametrow(self.dfb, self.id_obiekt, self.table_name)
-
     def przygotuj_dla_poborow(self):
         '''
         PomiarowyDziennaListaPoborow:
@@ -70,6 +63,7 @@ class PomiarowyDziennaListaPoborow(OgolnySzeregListPoborow):
         PomiarowyDziennaListaPoborow:
         '''
         for lista_poborow in szereg_poborow:
+            lista_poborow.pobory_dla_parametrow(self.dfb, self.id_obiekt, self.table_name)
             lista_poborow.html_ls_poborow(lst_h, krt_pobor)
 
     def html_szeregu_poborow(self, krt_pobor):
@@ -79,6 +73,5 @@ class PomiarowyDziennaListaPoborow(OgolnySzeregListPoborow):
         lst_h = lh_kw.ListaHTML()
         lst_h.ddj(fy_kw.lxa_47_inst)
         szereg_poborow = self.przygotuj_dla_poborow()
-        self.pobory_dla_licznikow(szereg_poborow)
         self.grafika_poborow_dla_pomiarow(lst_h, krt_pobor, szereg_poborow)
         return lst_h.polacz_html()
