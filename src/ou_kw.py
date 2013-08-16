@@ -63,6 +63,7 @@ class PomiarowaDziennaListaPoborow(OgolnySzeregListPoborow):
         '''
         nr_probki = single_record[lc_kw.fq_k_sample_qv]
         lista_pomiarow = wykonaj_pobor(dfb, table_name, nr_probki)
+        lista_pomiarow = single_record[lc_kw.fq_m_samples_qv]
         self.zbuduj_odcinki_y_bazowe(lista_pomiarow)
         vert_axis = self.dnw.odcinki_bazowe.zakres_pionowy()
         ms = eq_kw.PoboroweDzienneSlupki(self.tgk, self.aqr, self.dnw)
