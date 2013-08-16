@@ -65,8 +65,6 @@ lxa_31_inst = """\
 SELECT %(e_samples)s FROM %(table_name)s WHERE %(e_object)s=%(f_object)d AND %(e_date)s='%(m_date)s';"""
 lxa_33_inst = """\
 SELECT m_samples FROM uu_power WHERE f_object=18 AND m_date = '2013-01-31' ORDER BY m_date;"""
-lxa_35_inst = """\
-SELECT m_samples FROM uu_power WHERE k_sample=1860;"""
 lxa_36_inst = """\
 SELECT m_samples FROM uu_energy WHERE f_object=19 AND m_date = '2013-02-01' ORDER BY m_date;"""
 lxa_37_inst = """\
