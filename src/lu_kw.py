@@ -36,11 +36,10 @@ def wykonaj_pobor(dfb, table_name, nr_probki):
 WykresPomiarow = hq_kw.WykresPomiarow
 
 class PoboryDanegoDnia(WykresPomiarow):
-    def __init__(self, tgk, aqr, id_obiekt):
+    def __init__(self, tgk, aqr):
         '''
         PoboryDanegoDnia:
         '''
-        self.id_obiekt = id_obiekt
         WykresPomiarow.__init__(self, tgk, aqr)
 
     def zbuduj_odcinki_y_bazowe(self, lista_pomiarow):
