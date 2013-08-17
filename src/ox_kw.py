@@ -21,7 +21,7 @@ for i in NazwyModulow:
 KlasaOgolnaSzkieletuDat = dq_kw.KlasaOgolnaSzkieletuDat
 
 class SzkieletMiesiecznyDlaPoborow(KlasaOgolnaSzkieletuDat):
-    def __init__(self, krt_pobor, my_start_day, my_end_day):
+    def __init__(self, krt_pobor):
         '''
         SzkieletMiesiecznyDlaPoborow:
         '''
@@ -45,3 +45,5 @@ class TestMiesiecznegoSzkieletu(unittest.TestCase):
         '''
         TestMiesiecznegoSzkieletu:
         '''
+        krt_pobor = dd_kw.CechaEnergii(lw_kw.Dn_Energy)
+        obk = SzkieletMiesiecznyDlaPoborow(krt_pobor)
