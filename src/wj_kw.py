@@ -40,13 +40,13 @@ class KlasaNakladki(object):
         '''
         return self.vz_nakladki[key]
 
-    def wstepne_ustawienie(self, przedzial):
+    def wstepne_ustawienie(self, pk_przedzial):
         '''
         KlasaNakladki:
         '''
-        if przedzial not in self.vz_nakladki:
+        if pk_przedzial not in self.vz_nakladki:
             slownik_qm = wn_kw.KlasaSlownika()
-            self.vz_nakladki[przedzial] = slownik_qm
+            self.vz_nakladki[pk_przedzial] = slownik_qm
 
     def przedzialy_czasowe_dla_nakladek(self):
         '''
