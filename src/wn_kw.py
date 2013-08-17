@@ -7,8 +7,8 @@ Słownik przedziałów czasowych
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
-import lm_kw
 import rq_kw
+import lm_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
