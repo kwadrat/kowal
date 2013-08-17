@@ -322,7 +322,7 @@ def daty_lat(dzien_pocz, dzien_kon):
     '''
     Parametry:
     dzien_pocz (integer) - pierwszy dzień pierwszego roku zakresu
-    dzien_kon (integer) - pierszy dzień ostatniego roku, który już nie wejdzie na wykres
+    dzien_kon (integer) - pierwszy dzień ostatniego roku, który już nie wejdzie na wykres
     Wartość zwracana:
     - lista dat pierwszych styczni od roku początkowego aż do roku
     końcowego włącznie
