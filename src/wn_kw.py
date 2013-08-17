@@ -163,10 +163,10 @@ class KlasaSlownika(object):
         wynik = ''
         if self.umw_wartosc_s_qm is not None:
             wynik = '%(nwln)sMoc umowna: %(emu)s%(nwln)sMoc pobrana: %(emp)s' % dict(
-              emu = pokaz_kwote(self.umw_wartosc_s_qm),
-              emp = pokaz_kwote(self.jh_kwota()),
-              nwln = ' ',
-              )
+                emu = pokaz_kwote(self.umw_wartosc_s_qm),
+                emp = pokaz_kwote(self.jh_kwota()),
+                nwln = ' ',
+                )
         return wynik
 
     def polaczony_dymek(self):
