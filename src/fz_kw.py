@@ -58,15 +58,17 @@ def ptn_object_key(under_name):
         account=lc_kw.fq_account_qv,
         )
 
-def ptn_entry_already_inserted(n_table, key_object, row_date):
-    return fy_kw.lxa_10_inst % dict(
-        n_table=n_table,
-        e_fields=hj_kw.ls_przec(lc_kw.fq_k_sample_qv, lc_kw.fq_f_object_qv, lc_kw.fq_m_date_qv, lc_kw.fq_m_samples_qv),
-        e_object=lc_kw.fq_f_object_qv,
-        f_object=key_object,
-        e_date=lc_kw.fq_m_date_qv,
-        m_date=row_date,
-        )
+def ptn_entry_already_inserted(table_name, id_obiekt, tvk_data):
+    obk = lr_kw.GeneratorUU(table_name)
+    obk.set_object(id_obiekt)
+    obk.set_exact_date(tvk_data)
+    returned_fields = [
+        lc_kw.fq_k_sample_qv,
+        lc_kw.fq_f_object_qv,
+        lc_kw.fq_m_date_qv,
+        lc_kw.fq_m_samples_qv,
+        ]
+    return obk.final_fields(returned_fields)
 
 def ptn_load_from_db(table_name):
     return fy_kw.lxa_14_inst % dict(
