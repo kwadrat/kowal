@@ -68,7 +68,7 @@ def ptn_entry_already_inserted(table_name, id_obiekt, tvk_data):
         lc_kw.fq_m_date_qv,
         lc_kw.fq_m_samples_qv,
         ]
-    return obk.final_fields(returned_fields)
+    return obk.prepare_shape(returned_fields)
 
 def ptn_load_from_db(table_name):
     return fy_kw.lxa_14_inst % dict(
