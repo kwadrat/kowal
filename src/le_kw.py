@@ -53,3 +53,7 @@ def dq_liczniki_poboru_w_miesiacu(dfb, table_name, id_obiekt, my_start_date, my_
 def dq_dane_jednego_obiektu(dfb, table_name, key_object):
     db_statement = fz_kw.ptn_dane_jednego_obiektu(table_name, key_object)
     return dfb.query_dct(db_statement)
+
+def dq_liczniki_poboru_w_roku(dfb, table_name, id_obiekt, my_start_year):
+    db_statement = fz_kw.ptn_liczniki_poboru_w_roku(table_name, id_obiekt, my_start_year)
+    return dfb.query_dct(db_statement)
