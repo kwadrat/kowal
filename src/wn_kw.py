@@ -7,7 +7,6 @@ Słownik przedziałów czasowych
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
-import rq_kw
 import lm_kw
 '''.splitlines()]
 
@@ -45,14 +44,7 @@ class KlasaSlownika(object):
         KlasaSlownika:
         '''
         self.vz_slownik = {}
-        if rq_kw.Docelowo_psyco_nie_pygresql:
-            ##############################################################################
-            self.vz_kwota = lm_kw.wartosc_zero_globalna
-            ##############################################################################
-        else:
-            ##############################################################################
-            self.vz_kwota = 0.0
-            ##############################################################################
+        self.vz_kwota = lm_kw.wartosc_zero_z_bazy
         self.umw_wartosc_s_qm = None
         self.przekroczenie_b_umw = 0
 
