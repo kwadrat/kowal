@@ -45,9 +45,6 @@ class PomiaryPoborowSasiadujacychDni(OgolnySzeregListPoborow):
         elif my_pob_czas == lw_kw.DPC_Miesiac:
             my_year, my_month = dn_kw.rok_mies_z_napisu(tvk_data)
             my_start_day, my_end_day = dn_kw.ZakresMiesiaca(my_year, my_month)
-        elif my_pob_czas == lw_kw.DPC_Rok:
-            my_year, my_month = dn_kw.rok_mies_z_napisu(tvk_data)
-            my_start_day, my_end_day = dn_kw.ZakresMiesiaca(my_year, my_month)
         else:
             raise RuntimeError('Nieznany my_pob_czas?: %s' % repr(my_pob_czas))
         aqr = ge_kw.SzkieletDziennyDlaPoborow(krt_pobor, my_start_day, my_end_day)
