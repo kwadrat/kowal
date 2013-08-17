@@ -81,7 +81,6 @@ class PomiaryPoborowJednegoDnia(OgolnySzeregListPoborow):
         PomiaryPoborowJednegoDnia:
         '''
         lst_h = lh_kw.ListaHTML()
-        lst_h.ddj(fy_kw.lxa_47_inst)
         tvk_data = self.tgk.wez_date()
         result = le_kw.dq_liczniki_poboru_w_roku(self.dfb, self.table_name, self.id_obiekt, tvk_data)
         for single_record in result:
