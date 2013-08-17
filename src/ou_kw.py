@@ -82,7 +82,7 @@ class PomiaryPoborowJednegoDnia(OgolnySzeregListPoborow):
         '''
         lst_h = lh_kw.ListaHTML()
         tvk_data = self.tgk.wez_date()
-        result = le_kw.dq_liczniki_poboru_w_roku(self.dfb, self.table_name, self.id_obiekt, tvk_data)
+        result = le_kw.dq_liczniki_poboru_w_dniu(self.dfb, self.table_name, self.id_obiekt, tvk_data)
         for single_record in result:
             self.html_ls_poborow(lst_h, krt_pobor, self.dfb, self.id_obiekt, self.table_name, single_record)
         return lst_h.polacz_html()
