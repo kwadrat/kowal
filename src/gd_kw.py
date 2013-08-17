@@ -31,10 +31,10 @@ for i in NazwyModulow:
 
 OgolnySzeregListPoborow = lt_kw.OgolnySzeregListPoborow
 
-class PomiarowaMiesiecznaListaPoborow(OgolnySzeregListPoborow):
+class PomiaryPoborowSasiadujacychDni(OgolnySzeregListPoborow):
     def __init__(self, tgk, dfb, krt_pobor):
         '''
-        PomiarowaMiesiecznaListaPoborow:
+        PomiaryPoborowSasiadujacychDni:
         '''
         tvk_data = tgk.wez_date()
         my_pob_czas = tgk.wez_pob_czas()
@@ -55,7 +55,7 @@ class PomiarowaMiesiecznaListaPoborow(OgolnySzeregListPoborow):
 
     def html_szeregu_poborow(self, krt_pobor):
         '''
-        PomiarowaMiesiecznaListaPoborow:
+        PomiaryPoborowSasiadujacychDni:
         '''
         lst_h = lh_kw.ListaHTML()
         lst_h.ddj(fy_kw.lxa_47_inst)
