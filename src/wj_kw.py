@@ -34,7 +34,7 @@ class KlasaNakladki(object):
         '''
         return self.vz_nakladki.keys()
 
-    def __getitem__(self, key):
+    def jh__getitem__(self, key):
         '''
         KlasaNakladki:
         '''
