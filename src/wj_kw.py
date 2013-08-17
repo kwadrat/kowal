@@ -40,7 +40,7 @@ class KlasaNakladki(object):
         '''
         return self.vz_nakladki[key]
 
-    def wstepne_ustawienie(self, pk_przedzial):
+    def zwroc_odcinek_lub_utworz(self, pk_przedzial):
         '''
         KlasaNakladki:
         '''
