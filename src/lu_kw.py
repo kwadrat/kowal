@@ -36,4 +36,7 @@ class PomiaryPoborowMiesiecznie(OgolnySzeregListPoborow):
         PomiaryPoborowMiesiecznie:
         '''
         lst_h = lh_kw.ListaHTML()
+        tvk_data = self.tgk.wez_date()
+        fvk_rok, fvk_miesiac = dn_kw.rok_mies_z_napisu(tvk_data)
+        result = le_kw.dq_liczniki_poboru_w_roku(self.dfb, self.table_name, self.id_obiekt, fvk_rok)
         return lst_h.polacz_html()
