@@ -28,6 +28,11 @@ def d2a(a):
 wartosc_zero_globalna = a2d('0')
 value_ten_const = a2d(10)
 
+if rq_kw.Docelowo_psyco_nie_pygresql:
+    wartosc_zero_z_bazy = wartosc_zero_globalna
+else:
+    wartosc_zero_z_bazy = 0.0
+
 def have_dec_type(value):
     return isinstance(value, decimal.Decimal)
 
@@ -107,3 +112,16 @@ class TestPointNumbers(unittest.TestCase):
         '''
         self.assertEqual(generate_scale(a2d('10.5')), map(a2d, range(11)))
         self.assertEqual(generate_scale(2.5), map(a2d, range(3)))
+
+    def test_zero_from_db(self):
+        '''
+        TestPointNumbers:
+        '''
+        if rq_kw.Docelowo_psyco_nie_pygresql:
+            ##############################################################################
+            self.assertEqual(wartosc_zero_z_bazy, wartosc_zero_globalna)
+            ##############################################################################
+        else:
+            ##############################################################################
+            self.assertEqual(wartosc_zero_z_bazy, 0.0)
+            ##############################################################################
