@@ -27,7 +27,7 @@ class OgolnySzeregListPoborow(WykresPomiarow):
         self.dfb = dfb
         self.lista_slupkow = []
         self.table_name = krt_pobor.krt_table
-        tgk.przygotuj_pobory(aqr, self.dfb)
+        tgk.przygotuj_pobory()
         WykresPomiarow.__init__(self, tgk, aqr)
         self.id_obiekt = int(self.tgk.wez_obiekt())
         self.ustaw_diagnostyke()
