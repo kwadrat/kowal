@@ -100,6 +100,9 @@ def dzien_nowego_roku(rok):
     '''
     return NumerDnia(rok, 1, 1)
 
+def data_z_napisu(napis):
+    return time.strptime(napis, '%Y-%m-%d')[:3]
+
 def napis_na_numer_dnia(data):
     '''Zwraca numer dnia począwszy od 1 stycznia 1970
     Parametr:
@@ -399,9 +402,6 @@ def wyznacz_sekunde_logu(czas = None):
 
 def wyznacz_minute_logu(czas = None):
     return wyznacz_moment_wg_wzorca('%H:%M', czas)
-
-def data_z_napisu(napis):
-    return time.strptime(napis, '%Y-%m-%d')[:3]
 
 def checkdate(napis):
     poprawna = True
