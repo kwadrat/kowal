@@ -29,17 +29,17 @@ for i in NazwyModulow:
 
 OgolnySzeregListPoborow = lt_kw.OgolnySzeregListPoborow
 
-class PomiarowaDziennaListaPoborow(OgolnySzeregListPoborow):
+class PomiaryPoborowJednegoDnia(OgolnySzeregListPoborow):
     def __init__(self, tgk, dfb, krt_pobor):
         '''
-        PomiarowaDziennaListaPoborow:
+        PomiaryPoborowJednegoDnia:
         '''
         aqr = ey_kw.SzkieletDatDlaPoborow(krt_pobor)
         OgolnySzeregListPoborow.__init__(self, tgk, aqr, dfb, krt_pobor)
 
     def zbuduj_odcinki_y_bazowe(self, lista_pomiarow):
         '''
-        PomiarowaDziennaListaPoborow:
+        PomiaryPoborowJednegoDnia:
         '''
         for akt, kwota in enumerate(lista_pomiarow):
             nast = akt + 1
@@ -51,7 +51,7 @@ class PomiarowaDziennaListaPoborow(OgolnySzeregListPoborow):
 
     def html_ls_poborow(self, lst_h, krt_pobor, dfb, id_obiekt, table_name, single_record):
         '''
-        PomiarowaDziennaListaPoborow:
+        PomiaryPoborowJednegoDnia:
         '''
         lista_pomiarow = single_record[lc_kw.fq_m_samples_qv]
         self.zbuduj_odcinki_y_bazowe(lista_pomiarow)
@@ -78,7 +78,7 @@ class PomiarowaDziennaListaPoborow(OgolnySzeregListPoborow):
 
     def html_szeregu_poborow(self, krt_pobor):
         '''
-        PomiarowaDziennaListaPoborow:
+        PomiaryPoborowJednegoDnia:
         '''
         lst_h = lh_kw.ListaHTML()
         lst_h.ddj(fy_kw.lxa_47_inst)
