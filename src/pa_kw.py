@@ -133,7 +133,7 @@ class MojPasek(KlasaObrazu):
         czas_t0 = czas_akt = momenty[0]
         czas_tn = momenty[-1]
         for czas_nast in momenty[1:]:
-            faktury = self.dnw.zbitki_qm[czas_akt]
+            faktury = self.dnw.zbitki_qm.jh__getitem__(czas_akt)
             ile_faktur = len(faktury)
             for nr_kol in range(ile_faktur):
                 lp_faktury = faktury[nr_kol]

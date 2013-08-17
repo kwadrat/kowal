@@ -54,7 +54,7 @@ class KlasaZbitki(object):
         '''
         return self.vz_zbitki.keys()
 
-    def __getitem__(self, key):
+    def jh__getitem__(self, key):
         '''
         KlasaZbitki:
         '''
