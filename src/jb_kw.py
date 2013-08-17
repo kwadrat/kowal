@@ -21,7 +21,8 @@ class JedenOdcinekBazowy(object):
         '''
         JedenOdcinekBazowy:
         '''
-        return ((self.pocz, self.kon), self.slownik_qm)
+        pk_przedzial = (self.pocz, self.kon)
+        return (pk_przedzial, self.slownik_qm)
 
     def formatted_pkks(self):
         '''
