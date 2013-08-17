@@ -94,8 +94,10 @@ class KlasaSlownika(object):
         '''
         KlasaSlownika:
         '''
-        if key not in self.vz_slownik:
-            self.vz_slownik[key] = []
+        tmp_slownik = self.vz_slownik.get(key)
+        if tmp_slownik is None:
+            tmp_slownik = self.vz_slownik[key] = []
+        return tmp_slownik
 
     def jh_sprawdz_powielenie(self):
         '''
@@ -131,8 +133,8 @@ class KlasaSlownika(object):
         '''
         klucze = slownik_qm.jh_keys()
         for klucz in klucze:
-            self.jh_na_poczatek_puste(klucz)
-            self.vz_slownik[klucz].extend(slownik_qm.jh__getitem__(klucz))
+            tmp_slownik = self.jh_na_poczatek_puste(klucz)
+            tmp_slownik.extend(slownik_qm.jh__getitem__(klucz))
             self.vz_kwota += slownik_qm.vz_kwota
 
     def jh_kwota(self):
