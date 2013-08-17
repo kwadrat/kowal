@@ -44,10 +44,11 @@ class KlasaNakladki(object):
         '''
         KlasaNakladki:
         '''
-        if pk_przedzial not in self.vz_nakladki:
+        slownik_qm = self.vz_nakladki.get(pk_przedzial)
+        if slownik_qm is None:
             slownik_qm = wn_kw.KlasaSlownika()
             self.vz_nakladki[pk_przedzial] = slownik_qm
-        return self.vz_nakladki[pk_przedzial]
+        return slownik_qm
 
     def przedzialy_czasowe_dla_nakladek(self):
         '''
