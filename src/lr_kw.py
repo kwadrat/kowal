@@ -74,6 +74,12 @@ class GeneratorUU(object):
         returned_fields = [lc_kw.fq_m_samples_qv]
         return self.prepare_shape(returned_fields)
 
+    def final_fields(self, returned_fields):
+        '''
+        GeneratorUU:
+        '''
+        return self.prepare_shape(returned_fields)
+
     def cons_question(self):
         '''
         GeneratorUU:
