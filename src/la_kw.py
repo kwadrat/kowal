@@ -27,10 +27,10 @@ def check_module_dependencies_linux():
     new_module_for_reading_spreadsheet()
     new_module_for_writing_spreadsheet()
 
-def generate_excel_files(dfb):
+def generate_excel_files(dfb, plik_energii, plik_mocy):
     xlwt = new_module_for_writing_spreadsheet()
-    fu_kw.EnergyReader().generate_one_file(xlwt, dfb, 'e.xls')
-    mt_kw.PowerReader().generate_one_file(xlwt, dfb, 'p.xls')
+    fu_kw.EnergyReader().generate_one_file(xlwt, dfb, plik_energii)
+    mt_kw.PowerReader().generate_one_file(xlwt, dfb, plik_mocy)
 
 def analyze_excel_files(dfb, worker_class, filenames):
     xlrd = new_module_for_reading_spreadsheet()
