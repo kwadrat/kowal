@@ -5,6 +5,7 @@ Analiza poboru - pomiarowy szereg list dla miesięcy w ciągu roku
 '''
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import lc_kw
 import dn_kw
 import le_kw
 import lh_kw
