@@ -211,7 +211,6 @@ class CommonReader(object):
         object_names = unique_sorted(dane_bazy, lc_kw.fq_account_qv)
         wbk = xlwt.Workbook()
         for nr, name in enumerate(object_names):
-            tmp_format = 'name'; print 'Eval:', tmp_format, eval(tmp_format)
             sheet = wbk.add_sheet(dict_names[name])
             selected_data = filter(lambda x: x[lc_kw.fq_account_qv] == name, dane_bazy)
             all_dates = unique_sorted(selected_data, lc_kw.fq_m_date_qv)
