@@ -15,7 +15,7 @@ import lh_kw
 import jb_kw
 import ox_kw
 import wn_kw
-import gf_kw
+import oy_kw
 import lt_kw
 '''.splitlines()]
 
@@ -65,7 +65,7 @@ class PomiaryPoborowMiesiecznie(OgolnySzeregListPoborow):
             slownik_qm.jh_ustaw_kwt_qm(kwota)
             self.dnw.odcinki_bazowe.app_end(jb_kw.JedenOdcinekBazowy(2 * akt, 2 * nast, slownik_qm))
         vert_axis = self.dnw.odcinki_bazowe.zakres_pionowy()
-        ms = gf_kw.PoboroweMiesieczneSlupki(self.tgk, self.aqr, self.dnw)
+        ms = oy_kw.PoboroweRoczneSlupki(self.tgk, self.aqr, self.dnw)
         ms.wyznacz_poborowe_slupki(vert_axis, krt_pobor)
         moja_suma = krt_pobor.cumulative_value
         moja_jednostka = krt_pobor.krt_jedn
