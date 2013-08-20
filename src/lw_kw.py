@@ -20,3 +20,7 @@ DPC_Rok,
 'Miesiąc',
 'Rok',
 )
+
+PDS_Godziny = 'godziny'
+PDS_Dni = 'dni'
+PDS_Miesiace = 'miesiace'
