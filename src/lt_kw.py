@@ -22,10 +22,10 @@ for i in NazwyModulow:
 
 WykresPomiarow = hq_kw.WykresPomiarow
 
-class OgolnySzeregListPoborow(WykresPomiarow):
+class OgolnaListaPoborow(WykresPomiarow):
     def __init__(self, tgk, aqr, dfb, krt_pobor):
         '''
-        OgolnySzeregListPoborow:
+        OgolnaListaPoborow:
         '''
         self.dfb = dfb
         self.lista_slupkow = []
@@ -37,7 +37,7 @@ class OgolnySzeregListPoborow(WykresPomiarow):
 
     def rdzen_rysowania(self, lst_h, krt_pobor, dolny_podpis):
         '''
-        OgolnySzeregListPoborow:
+        OgolnaListaPoborow:
         '''
         vert_axis = self.dnw.odcinki_bazowe.zakres_pionowy()
         ms = gc_kw.PoboroweOgolneSlupki(self.tgk, self.aqr, self.dnw, dolny_podpis)

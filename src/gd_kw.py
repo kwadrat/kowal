@@ -29,9 +29,9 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-OgolnySzeregListPoborow = lt_kw.OgolnySzeregListPoborow
+OgolnaListaPoborow = lt_kw.OgolnaListaPoborow
 
-class PomiaryPoborowSasiadujacychDni(OgolnySzeregListPoborow):
+class PomiaryPoborowSasiadujacychDni(OgolnaListaPoborow):
     def __init__(self, tgk, dfb, krt_pobor):
         '''
         PomiaryPoborowSasiadujacychDni:
@@ -48,7 +48,7 @@ class PomiaryPoborowSasiadujacychDni(OgolnySzeregListPoborow):
         else:
             raise RuntimeError('Nieznany my_pob_czas?: %s' % repr(my_pob_czas))
         aqr = ge_kw.SzkieletDziennyDlaPoborow(krt_pobor, my_start_day, my_end_day)
-        OgolnySzeregListPoborow.__init__(self, tgk, aqr, dfb, krt_pobor)
+        OgolnaListaPoborow.__init__(self, tgk, aqr, dfb, krt_pobor)
 
     def html_szeregu_poborow(self, krt_pobor):
         '''

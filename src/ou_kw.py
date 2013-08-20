@@ -28,15 +28,15 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-OgolnySzeregListPoborow = lt_kw.OgolnySzeregListPoborow
+OgolnaListaPoborow = lt_kw.OgolnaListaPoborow
 
-class PomiaryPoborowJednegoDnia(OgolnySzeregListPoborow):
+class PomiaryPoborowJednegoDnia(OgolnaListaPoborow):
     def __init__(self, tgk, dfb, krt_pobor):
         '''
         PomiaryPoborowJednegoDnia:
         '''
         aqr = ey_kw.SzkieletDatDlaPoborow(krt_pobor)
-        OgolnySzeregListPoborow.__init__(self, tgk, aqr, dfb, krt_pobor)
+        OgolnaListaPoborow.__init__(self, tgk, aqr, dfb, krt_pobor)
 
     def zbuduj_odcinki_y_bazowe(self, lista_pomiarow):
         '''

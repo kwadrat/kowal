@@ -98,15 +98,15 @@ def zrob_tabele_poborow(lst_h, result):
     slownik_wpisow = wykonaj_analize_danych(result)
     wygeneruj_tabelke_poborow(lst_h, slownik_wpisow)
 
-OgolnySzeregListPoborow = lt_kw.OgolnySzeregListPoborow
+OgolnaListaPoborow = lt_kw.OgolnaListaPoborow
 
-class PokryciowaListaPoborow(OgolnySzeregListPoborow):
+class PokryciowaListaPoborow(OgolnaListaPoborow):
     def __init__(self, tgk, dfb, krt_pobor):
         '''
         PokryciowaListaPoborow:
         '''
         aqr = ey_kw.SzkieletDatDlaPoborow(krt_pobor)
-        OgolnySzeregListPoborow.__init__(self, tgk, aqr, dfb, krt_pobor)
+        OgolnaListaPoborow.__init__(self, tgk, aqr, dfb, krt_pobor)
 
     def wizualizacja_pokrycia_poborami(self, lst_h):
         '''
