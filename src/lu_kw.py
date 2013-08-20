@@ -66,24 +66,5 @@ class PomiaryPoborowMiesiecznie(OgolnySzeregListPoborow):
             slownik_qm.jh_ustaw_kwt_qm(kwota)
             self.dnw.odcinki_bazowe.app_end(jb_kw.JedenOdcinekBazowy(2 * akt, 2 * nast, slownik_qm))
         dolny_podpis = lw_kw.PDS_Miesiace
-        vert_axis = self.dnw.odcinki_bazowe.zakres_pionowy()
-        ms = gc_kw.PoboroweOgolneSlupki(self.tgk, self.aqr, self.dnw, dolny_podpis)
-        ms.wyznacz_poborowe_slupki(vert_axis, krt_pobor)
-        moja_suma = krt_pobor.cumulative_value
-        moja_jednostka = krt_pobor.krt_jedn
-        opis_dotyczy = []
-        # qaz - duplikat
-        opis_dotyczy.append(ze_kw.sp_stl(
-            krt_pobor.krt_etykieta,
-            lm_kw.rzeczywista_na_napis(moja_suma),
-            moja_jednostka))
-        # qaz - duplikat
-        if vert_axis.MaxY:
-            ms.podpisz_obie_osie(vert_axis, krt_pobor)
-            on_mouse = {}
-            kod_html = ms.wykreslanie_slupkow(on_mouse)
-            lst_h.ddj(''.join(opis_dotyczy))
-            lst_h.ddj(kod_html)
-        else:
-            lst_h.ddj('Brak zróżnicowania danych w pionie, MaxY=%s' % repr(vert_axis.MaxY))
+        self.rdzen_rysowania(lst_h, krt_pobor, dolny_podpis)
         return lst_h.polacz_html()

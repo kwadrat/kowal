@@ -57,26 +57,7 @@ class PomiaryPoborowJednegoDnia(OgolnySzeregListPoborow):
         lista_pomiarow = single_record[lc_kw.fq_m_samples_qv]
         self.zbuduj_odcinki_y_bazowe(lista_pomiarow)
         dolny_podpis = lw_kw.PDS_Godziny
-        vert_axis = self.dnw.odcinki_bazowe.zakres_pionowy()
-        ms = gc_kw.PoboroweOgolneSlupki(self.tgk, self.aqr, self.dnw, dolny_podpis)
-        ms.wyznacz_poborowe_slupki(vert_axis, krt_pobor)
-        moja_suma = krt_pobor.cumulative_value
-        moja_jednostka = krt_pobor.krt_jedn
-        opis_dotyczy = []
-        # qaz - duplikat
-        opis_dotyczy.append(ze_kw.sp_stl(
-            krt_pobor.krt_etykieta,
-            lm_kw.rzeczywista_na_napis(moja_suma),
-            moja_jednostka))
-        # qaz - duplikat
-        if vert_axis.MaxY:
-            ms.podpisz_obie_osie(vert_axis, krt_pobor)
-            on_mouse = {}
-            kod_html = ms.wykreslanie_slupkow(on_mouse)
-            lst_h.ddj(''.join(opis_dotyczy))
-            lst_h.ddj(kod_html)
-        else:
-            lst_h.ddj('Brak zróżnicowania danych w pionie, MaxY=%s' % repr(vert_axis.MaxY))
+        self.rdzen_rysowania(lst_h, krt_pobor, dolny_podpis)
 
     def html_szeregu_poborow(self, krt_pobor):
         '''
