@@ -155,3 +155,4 @@ class TestPoborowychOgolnychSlupkow(unittest.TestCase):
         self.assertEqual(obk.gorna_mniejsza, 140)
         self.assertEqual(obk.linii_na_dole(), 2)
         self.assertEqual(obk.chce_bez_tresci, 1)
+        self.assertEqual(obk.dolny_podpis, 'godziny')
