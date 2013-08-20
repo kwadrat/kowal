@@ -32,6 +32,7 @@ formularz_1c_pocz_pozycji = '<li>'
 formularz_1c_kon_pozycji = '</li>\n'
 naglowek_na_prawo = 'float: right;'
 frm_mt_gt = 'get'
+frm_mt_pst = 'post'
 
 def op_sel_lgc(warunek):
     if warunek:
@@ -238,6 +239,7 @@ class TestTytuluHtml(unittest.TestCase):
         TestTytuluHtml:
         '''
         self.assertEqual(frm_mt_gt, 'get')
+        self.assertEqual(frm_mt_pst, 'post')
         self.assertEqual(qh_ttl('abc'), ' title="abc"')
         self.assertEqual(qh_ttl(None), '')
         self.assertEqual(wstawka_liczba('abc', 7), ' abc="7"')
