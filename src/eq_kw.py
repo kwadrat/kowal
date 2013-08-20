@@ -28,8 +28,7 @@ class PoboroweDzienneSlupki(PoboroweOgolneSlupki):
         '''
         PoboroweDzienneSlupki:
         '''
-        self.dolny_podpis = 'godziny'
-        PoboroweOgolneSlupki.__init__(self, tgk, aqr, dnw)
+        PoboroweOgolneSlupki.__init__(self, tgk, aqr, dnw, lw_kw.PDS_Godziny)
 
 class TestPoborowychSlupkow(unittest.TestCase):
     def test_poborowych_slupkow(self):

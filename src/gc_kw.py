@@ -30,13 +30,14 @@ MojeSlupki = es_kw.MojeSlupki
 
 class PoboroweOgolneSlupki(MojeSlupki):
     pikseli_po_lewej = 30
-    def __init__(self, tgk, aqr, dnw):
+    def __init__(self, tgk, aqr, dnw, dolny_podpis):
         '''
         PoboroweOgolneSlupki:
         '''
         MojeSlupki.__init__(self, tgk, aqr, dnw)
         self.chce_bez_tresci = 1
         self.chce_po_lewej_miejsca_na_skale(self.pikseli_po_lewej)
+        self.dolny_podpis = dolny_podpis
 
     def linii_na_dole(self):
         '''
@@ -141,7 +142,7 @@ class TestPoborowychOgolnychSlupkow(unittest.TestCase):
         aqr = ey_kw.SzkieletDatDlaPoborow(krt_pobor)
         lp_wykresu = 0
         dnw = oh_kw.SimpleDNW(lp_wykresu)
-        obk = PoboroweOgolneSlupki(tgk, aqr, dnw)
+        obk = PoboroweOgolneSlupki(tgk, aqr, dnw, lw_kw.PDS_Godziny)
         self.assertEqual(obk.pikseli_po_lewej, 30)
         self.assertEqual(obk.szerokosc_obrazu, 1250)
         self.assertEqual(obk.szerokosc_dx_skali, 30)

@@ -28,8 +28,7 @@ class PoboroweMiesieczneSlupki(PoboroweOgolneSlupki):
         '''
         PoboroweMiesieczneSlupki:
         '''
-        self.dolny_podpis = 'dni'
-        PoboroweOgolneSlupki.__init__(self, tgk, aqr, dnw)
+        PoboroweOgolneSlupki.__init__(self, tgk, aqr, dnw, lw_kw.PDS_Dni)
 
 class TestPoborowychMiesiecznychSlupkow(unittest.TestCase):
     def test_poborowych_miesiecznych_slupkow(self):
