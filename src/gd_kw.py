@@ -67,8 +67,9 @@ class PomiaryPoborowSasiadujacychDni(OgolnySzeregListPoborow):
             slownik_qm = wn_kw.KlasaSlownika()
             slownik_qm.jh_ustaw_kwt_qm(kwota)
             self.dnw.odcinki_bazowe.app_end(jb_kw.JedenOdcinekBazowy(2 * akt, 2 * nast, slownik_qm))
+        dolny_podpis = lw_kw.PDS_Dni
         vert_axis = self.dnw.odcinki_bazowe.zakres_pionowy()
-        ms = gc_kw.PoboroweOgolneSlupki(self.tgk, self.aqr, self.dnw, lw_kw.PDS_Dni)
+        ms = gc_kw.PoboroweOgolneSlupki(self.tgk, self.aqr, self.dnw, dolny_podpis)
         ms.wyznacz_poborowe_slupki(vert_axis, krt_pobor)
         moja_suma = krt_pobor.cumulative_value
         moja_jednostka = krt_pobor.krt_jedn

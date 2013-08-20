@@ -56,8 +56,9 @@ class PomiaryPoborowJednegoDnia(OgolnySzeregListPoborow):
         '''
         lista_pomiarow = single_record[lc_kw.fq_m_samples_qv]
         self.zbuduj_odcinki_y_bazowe(lista_pomiarow)
+        dolny_podpis = lw_kw.PDS_Godziny
         vert_axis = self.dnw.odcinki_bazowe.zakres_pionowy()
-        ms = gc_kw.PoboroweOgolneSlupki(self.tgk, self.aqr, self.dnw, lw_kw.PDS_Godziny)
+        ms = gc_kw.PoboroweOgolneSlupki(self.tgk, self.aqr, self.dnw, dolny_podpis)
         ms.wyznacz_poborowe_slupki(vert_axis, krt_pobor)
         moja_suma = krt_pobor.cumulative_value
         moja_jednostka = krt_pobor.krt_jedn
