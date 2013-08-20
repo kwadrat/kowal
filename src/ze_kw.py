@@ -232,6 +232,21 @@ def pokoloruj(napis, kolor):
     polaczony = sp_a_stl(middle_a, napis)
     return polaczony
 
+def op_fmd(enctype=None, id=None, name=None, method=frm_mt_pst, adres=None):
+    wstawka_enc = wyznacz_wstawke('enctype', enctype)
+    wstawka_idntf = wyznacz_wstawke('id', id)
+    wstawka_nazwy = wyznacz_wstawke('name', name)
+    return (
+        '<form%(wstawka_enc)s action="%(pelny_adr)s"'
+        '%(wstawka_idntf)s%(wstawka_nazwy)s '
+        'method="%(method)s">\n' % dict(
+        pelny_adr=adres,
+        wstawka_enc=wstawka_enc,
+        wstawka_idntf=wstawka_idntf,
+        wstawka_nazwy=wstawka_nazwy,
+        method=method,
+        ))
+
 class TestTytuluHtml(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual
     def test_tytulu_html(self):
@@ -240,6 +255,7 @@ class TestTytuluHtml(unittest.TestCase):
         '''
         self.assertEqual(frm_mt_gt, 'get')
         self.assertEqual(frm_mt_pst, 'post')
+        self.assertEqual(op_fmd(id='id_form', name = 'nazwa_form', adres='https://maszyna/strona.py'), '<form action="https://maszyna/strona.py" id="id_form" name="nazwa_form" method="post">\n')
         self.assertEqual(qh_ttl('abc'), ' title="abc"')
         self.assertEqual(qh_ttl(None), '')
         self.assertEqual(wstawka_liczba('abc', 7), ' abc="7"')
