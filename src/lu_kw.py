@@ -52,6 +52,16 @@ class PomiaryPoborowMiesiecznie(OgolnaListaPoborow):
             zbiornik_przedzialow[fvk_miesiac].append(single_record[lc_kw.fq_m_sum_qv])
         return zbiornik_przedzialow
 
+    def html_poboru_dla_miesiaca(self, krt_pobor, zbiornik_przedzialow, single_key):
+        '''
+        PomiaryPoborowMiesiecznie:
+        '''
+        akt = single_key - 1
+        list_of_values = zbiornik_przedzialow[single_key]
+        kwota = lq_kw.sum_of_not_nones(krt_pobor.krt_vl_fnctn, list_of_values)
+        kwota = lm_kw.dec2flt(kwota)
+        self.rdzen_kwoty(akt, kwota)
+
     def html_szeregu_poborow(self, krt_pobor):
         '''
         PomiaryPoborowMiesiecznie:
