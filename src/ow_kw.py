@@ -61,8 +61,8 @@ def link_a_mapy(on_real_mouse, slownik, jestem_msie, html_name, moja_nazwa):
     if oc_kw.EYK_lporz_fktr in slownik:
         moj_nr_faktury = slownik[oc_kw.EYK_lporz_fktr]
         etyk = mf_kw.nazwa_wiersza(moj_nr_faktury)
-        lista_over.append("%s.bgColor='%s'" % (etyk, oa_kw.HEX_ZIELONY))
-        lista_out.append("%s.bgColor='%s'" % (etyk,oa_kw.HEX_BIALY))
+        lista_over.append(set_bg_color(etyk, oa_kw.HEX_ZIELONY))
+        lista_out.append(set_bg_color(etyk, oa_kw.HEX_BIALY))
         if lc_kw.fq_tekst_qv not in slownik:
             slownik[lc_kw.fq_tekst_qv] = 'Faktura: %d' % moj_nr_faktury
     if lista_over or lista_out:
