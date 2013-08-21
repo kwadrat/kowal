@@ -34,4 +34,3 @@ TymczasowoPokazSQL = 1
 
 # Pokazywanie słupków i tabelek (można wyłączyć, aby dostać same paski)
 DocelowoSlupki = 1
-DocelowoTabelki = 1
