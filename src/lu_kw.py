@@ -59,13 +59,7 @@ class PomiaryPoborowMiesiecznie(OgolnaListaPoborow):
         lst_h = lh_kw.ListaHTML()
         tvk_data = self.tgk.wez_date()
         fvk_rok, fvk_miesiac = dn_kw.rok_mies_z_napisu(tvk_data)
-        zbiornik_przedzialow = {}
-        result = le_kw.dq_liczniki_poboru_w_roku(self.dfb, self.table_name, self.id_obiekt, fvk_rok)
-        for single_record in result:
-            fvk_rok, fvk_miesiac = dn_kw.rok_mies_z_napisu(str(single_record[lc_kw.fq_m_date_qv]))
-            if fvk_miesiac not in zbiornik_przedzialow:
-                zbiornik_przedzialow[fvk_miesiac] = []
-            zbiornik_przedzialow[fvk_miesiac].append(single_record[lc_kw.fq_m_sum_qv])
+        zbiornik_przedzialow = self.html_przedzialy(fvk_rok)
         all_keys = zbiornik_przedzialow.keys()
         all_keys.sort()
         for single_key in all_keys:
