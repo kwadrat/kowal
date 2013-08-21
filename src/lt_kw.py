@@ -37,6 +37,15 @@ class OgolnaListaPoborow(WykresPomiarow):
         self.id_obiekt = int(self.tgk.wez_obiekt())
         self.ustaw_diagnostyke()
 
+    def rdzen_kwoty(self, akt, kwota):
+        '''
+        OgolnaListaPoborow:
+        '''
+        nast = akt + 1
+        slownik_qm = wn_kw.KlasaSlownika()
+        slownik_qm.jh_ustaw_kwt_qm(kwota)
+        self.dnw.odcinki_bazowe.app_end(jb_kw.JedenOdcinekBazowy(2 * akt, 2 * nast, slownik_qm))
+
     def rdzen_rysowania(self, lst_h, krt_pobor, dolny_podpis):
         '''
         OgolnaListaPoborow:
