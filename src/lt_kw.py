@@ -59,12 +59,10 @@ class OgolnaListaPoborow(WykresPomiarow):
             moja_suma = krt_pobor.cumulative_value
             moja_jednostka = krt_pobor.krt_jedn
             opis_dotyczy = []
-            # qaz - duplikat
             opis_dotyczy.append(ze_kw.sp_stl(
                 krt_pobor.krt_etykieta,
                 lm_kw.rzeczywista_na_napis(moja_suma),
                 moja_jednostka))
-            # qaz - duplikat
             if vert_axis.MaxY:
                 ms.podpisz_obie_osie(vert_axis, krt_pobor)
                 on_mouse = {}
