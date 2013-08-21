@@ -50,13 +50,6 @@ class PomiaryPoborowJednegoDnia(OgolnaListaPoborow):
                 slownik_qm.jh_ustaw_kwt_qm(kwota)
                 self.dnw.odcinki_bazowe.app_end(jb_kw.JedenOdcinekBazowy(2 * akt, 2 * nast, slownik_qm))
 
-    def html_ls_poborow(self, lst_h, krt_pobor, lista_pomiarow):
-        '''
-        PomiaryPoborowJednegoDnia:
-        '''
-        self.zbuduj_odcinki_y_bazowe(lista_pomiarow)
-        self.rdzen_rysowania(lst_h, krt_pobor, lw_kw.PDS_Godziny)
-
     def html_szeregu_poborow(self, krt_pobor):
         '''
         PomiaryPoborowJednegoDnia:
