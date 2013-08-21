@@ -8,6 +8,9 @@ def Poprzecinkuj(lista):
     '''
     return ','.join(lista)
 
+def semicolon_join(lista):
+    return ';'.join(lista)
+
 def ladnie_przecinkami(lista):
     return ', '.join(lista)
 
@@ -51,6 +54,7 @@ class TestProcessingSQL(unittest.TestCase):
         TestProcessingSQL:
         '''
         self.assertEqual(Poprzecinkuj(['a', 'b', 'c']), 'a,b,c')
+        self.assertEqual(semicolon_join(['a', 'b', 'c']), 'a;b;c')
         self.assertEqual(conditions_separately(['a'], {'a': None}), ["a is null"])
         self.assertEqual(conditions_separately(['b'], {'b': 45}), ["b = '45'"])
         self.assertEqual(condition_kv('b', 45), "b = '45'")
