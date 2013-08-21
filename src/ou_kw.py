@@ -55,8 +55,7 @@ class PomiaryPoborowJednegoDnia(OgolnaListaPoborow):
         PomiaryPoborowJednegoDnia:
         '''
         self.zbuduj_odcinki_y_bazowe(lista_pomiarow)
-        dolny_podpis = lw_kw.PDS_Godziny
-        self.rdzen_rysowania(lst_h, krt_pobor, dolny_podpis)
+        self.rdzen_rysowania(lst_h, krt_pobor, lw_kw.PDS_Godziny)
 
     def html_szeregu_poborow(self, krt_pobor):
         '''
