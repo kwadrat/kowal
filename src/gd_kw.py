@@ -50,6 +50,15 @@ class PomiaryPoborowSasiadujacychDni(OgolnaListaPoborow):
         aqr = ge_kw.SzkieletDziennyDlaPoborow(krt_pobor, my_start_day, my_end_day)
         OgolnaListaPoborow.__init__(self, tgk, aqr, dfb, krt_pobor)
 
+    def wyznacz_dla_sasiadujacych_dni(self):
+        '''
+        PomiaryPoborowSasiadujacychDni:
+        '''
+        my_start_date = dn_kw.NapisDnia(self.aqr.my_start_day)
+        my_end_date = dn_kw.NapisDnia(self.aqr.my_end_day)
+        szereg_poborow = le_kw.dq_liczniki_poboru_w_miesiacu(self.dfb, self.table_name, self.id_obiekt, my_start_date, my_end_date)
+        return szereg_poborow
+
     def html_poboru_dla_dnia(self, jeden_pobor):
         '''
         PomiaryPoborowSasiadujacychDni:
