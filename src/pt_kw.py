@@ -50,7 +50,7 @@ class KlasaObrazu(object):
         self.dnw = dnw
         self.literka_typu = literka_typu
         self.szerokosc_dx_skali = 0
-        self.moja_nazwa = mf_kw.plik_grafiki(self.tgk, self.literka_typu, self.dnw.lp_miejsca, ())
+        self.moja_nazwa = mf_kw.plik_grafiki(self.tgk.znacznik_unik, self.literka_typu, self.dnw.lp_miejsca, ())
         self.html_name = self.html_my_name(self.literka_typu, self.dnw.lp_miejsca)
 
     def chce_po_lewej_miejsca_na_skale(self, pikseli_po_lewej):
@@ -108,7 +108,7 @@ class KlasaObrazu(object):
         '''
         KlasaObrazu:
         '''
-        tmp_nazwa = mf_kw.plik_grafiki(self.tgk, self.literka_typu, self.dnw.lp_miejsca, wersja)
+        tmp_nazwa = mf_kw.plik_grafiki(self.tgk.znacznik_unik, self.literka_typu, self.dnw.lp_miejsca, wersja)
         im.save(oc_kw.SciezkaPlikow + tmp_nazwa)
 
     def rysuj_same_kreski(self, wsp_y_pocz, akt, szerokosc_obrazu):

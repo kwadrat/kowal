@@ -95,7 +95,7 @@ link_slownika = '''\
 <pre>%s</pre>
 '''
 
-def plik_grafiki(tgk, litera_typu, nr_miejsca, wersja):
+def plik_grafiki(znacznik_unik, litera_typu, nr_miejsca, wersja):
     '''
     Zwraca nazwę pliku graficznego PNG
     litera_typu - 's' (słupek), 'p' (pasek), 'w' (wykres raportu 1, 2)
@@ -104,7 +104,7 @@ def plik_grafiki(tgk, litera_typu, nr_miejsca, wersja):
     '''
     return '%s%s_%s%d_%s%s' % (
       oc_kw.PoczObrazka,
-      tgk.znacznik_unik,
+      znacznik_unik,
       litera_typu,
       nr_miejsca,
       '_'.join(map(str, wersja)),
