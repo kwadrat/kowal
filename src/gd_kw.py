@@ -64,6 +64,5 @@ class PomiaryPoborowSasiadujacychDni(OgolnaListaPoborow):
             akt = my_cur_day - self.aqr.my_start_day
             kwota = lm_kw.dec2flt(jeden_pobor[lc_kw.fq_m_sum_qv])
             self.rdzen_kwoty(akt, kwota)
-        dolny_podpis = lw_kw.PDS_Dni
-        self.rdzen_rysowania(lst_h, krt_pobor, dolny_podpis)
+        self.rdzen_rysowania(lst_h, krt_pobor, lw_kw.PDS_Dni)
         return lst_h.polacz_html()
