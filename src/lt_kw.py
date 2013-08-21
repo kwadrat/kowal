@@ -7,6 +7,7 @@ Analiza zużycia - szereg list pomiarów, prezentacja w postacji HTML
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lm_kw
 import ze_kw
+import jb_kw
 import hq_kw
 import wn_kw
 import gc_kw
