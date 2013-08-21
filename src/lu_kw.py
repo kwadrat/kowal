@@ -47,10 +47,11 @@ class PomiaryPoborowMiesiecznie(OgolnaListaPoborow):
         fvk_rok, fvk_miesiac = dn_kw.rok_mies_z_napisu(tvk_data)
         return fvk_rok
 
-    def html_przedzialy(self, fvk_rok):
+    def html_przedzialy(self):
         '''
         PomiaryPoborowMiesiecznie:
         '''
+        fvk_rok = self.html_rok_poboru()
         zbiornik_przedzialow = {}
         result = le_kw.dq_liczniki_poboru_w_roku(self.dfb, self.table_name, self.id_obiekt, fvk_rok)
         for single_record in result:
@@ -75,8 +76,7 @@ class PomiaryPoborowMiesiecznie(OgolnaListaPoborow):
         PomiaryPoborowMiesiecznie:
         '''
         lst_h = lh_kw.ListaHTML()
-        fvk_rok = self.html_rok_poboru()
-        zbiornik_przedzialow = self.html_przedzialy(fvk_rok)
+        zbiornik_przedzialow = self.html_przedzialy()
         all_keys = zbiornik_przedzialow.keys()
         all_keys.sort()
         for single_key in all_keys:
