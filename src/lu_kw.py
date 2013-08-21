@@ -42,7 +42,6 @@ class PomiaryPoborowMiesiecznie(OgolnaListaPoborow):
     def html_szeregu_poborow(self, krt_pobor):
         '''
         PomiaryPoborowMiesiecznie:
-        qaz - powielenie z gd_kw.py
         '''
         lst_h = lh_kw.ListaHTML()
         tvk_data = self.tgk.wez_date()
