@@ -41,6 +41,9 @@ def poszerz_pozycje(jestem_msie, pozycja):
         pass
     return (px, py, kx, ky)
 
+def set_src(name, value):
+    return "%s.src='%s'" % (name, value)
+
 def link_a_mapy(on_real_mouse, slownik, jestem_msie, html_name, moja_nazwa):
     wynik = []
     zmniejsz_obszar_aktywny_dla_firefox(jestem_msie, slownik)
@@ -115,3 +118,5 @@ class TestLinkuMapy(unittest.TestCase):
         '''
         self.assertEqual(poszerz_pozycje(1, (10, 20, 30, 40)), (10, 20, 31, 41))
         self.assertEqual(poszerz_pozycje(0, (10, 20, 30, 40)), (10, 20, 30, 40))
+        self.assertEqual(set_src('abc', 'def'), "abc.src='def'")
+
