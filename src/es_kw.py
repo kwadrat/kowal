@@ -206,18 +206,10 @@ class MojeSlupki(KlasaObrazu):
             self.kolorowanie_faktur_wodociagow(slownik_qm, draw, px, py, kx, ky)
             oa_kw.rj_text(draw, (px, py), napis)
 
-    def brak_mi_dat_szkieletu(self):
-        '''
-        MojeSlupki:
-        '''
-        return self.aqr.malo_dat_szkieletu()
-
     def wykreslanie_slupkow(self, on_mouse):
         '''
         MojeSlupki:
         '''
-        if self.brak_mi_dat_szkieletu():
-            return '' # nic nie robimy
         moje_tlo = self.dnw.kolor_tla()
         im, draw = self.im_draw(moje_tlo)
         self.rysowanie_prost_umw(draw)
@@ -307,8 +299,6 @@ class MojeSlupki(KlasaObrazu):
         self.wysokosc_obrazu = self.gorna_mniejsza + self.linii_na_dole() * oa_kw.wysokosc_napisu
         self.szerokosc_slupka = SzerSlupka
         self.chce_bez_tresci = 0
-        if self.brak_mi_dat_szkieletu():
-            return # nic nie robimy # qaz - REFACTOR!!!
         self.IleSlupkow = self.dnw.odcinki_bazowe.len_odcinkow_bazowych() # Tyle rysowanych słupków
         self.ustaw_skalowanie_obrazu()
 
