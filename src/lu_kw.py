@@ -62,6 +62,14 @@ class PomiaryPoborowMiesiecznie(OgolnaListaPoborow):
         kwota = lm_kw.dec2flt(kwota)
         self.rdzen_kwoty(akt, kwota)
 
+    def html_rok_poboru(self):
+        '''
+        PomiaryPoborowMiesiecznie:
+        '''
+        tvk_data = self.tgk.wez_date()
+        fvk_rok, fvk_miesiac = dn_kw.rok_mies_z_napisu(tvk_data)
+        return fvk_rok
+
     def html_szeregu_poborow(self, krt_pobor):
         '''
         PomiaryPoborowMiesiecznie:
