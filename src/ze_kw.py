@@ -95,7 +95,7 @@ def op_td(class_ = None, colspan=None, rowspan=None, title=None):
         wstawka_tytulu=wstawka_tytulu,
         )
 
-def op_tr(id=None, nzw_wrsz=None, ukryty=0):
+def op_tr(id=None, nzw_wrsz=None):
     wstawka_id = wyznacz_wstawke('id', id)
     wstawka_nzw = wyznacz_wstawke('name', nzw_wrsz)
     return '<tr%(wstawka_id)s%(wstawka_nzw)s>\n' % dict(
