@@ -61,8 +61,8 @@ def link_a_mapy(on_real_mouse, slownik, jestem_msie, html_name, moja_nazwa):
             slownik[lc_kw.fq_tekst_qv] = 'Faktura: %d' % moj_nr_faktury
     if lista_over or lista_out:
         zmiany = dict(
-        over = ';'.join(lista_over),
-        out = ';'.join(lista_out),
+        over = hj_kw.semicolon_join(lista_over),
+        out = hj_kw.semicolon_join(lista_out),
         )
         on_the_mouse = link_area_alter_this % zmiany
         wynik.append(on_the_mouse)
