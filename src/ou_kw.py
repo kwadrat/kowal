@@ -66,5 +66,6 @@ class PomiaryPoborowJednegoDnia(OgolnaListaPoborow):
         result = le_kw.dq_liczniki_poboru_w_dniu(self.dfb, self.table_name, self.id_obiekt, tvk_data)
         for single_record in result:
             lista_pomiarow = single_record[lc_kw.fq_m_samples_qv]
-            self.html_ls_poborow(lst_h, krt_pobor, lista_pomiarow)
+            self.zbuduj_odcinki_y_bazowe(lista_pomiarow)
+            self.rdzen_rysowania(lst_h, krt_pobor, lw_kw.PDS_Godziny)
         return lst_h.polacz_html()
