@@ -49,6 +49,7 @@ class TestPomiarowychSlupkow(unittest.TestCase):
         tgk = od_kw.PseudoTGK()
         tgk.wyznacz_unikalny_moment_dla_grafiki()
         aqr = ex_kw.SzkieletDatDlaZuzycia()
+        aqr.przypisz_dla_roku_szkielet(2012, rok_z_rozszerzeniem=0)
         lp_wykresu = 0
         dnw = oh_kw.SimpleDNW(lp_wykresu)
         obk = PomiaroweSlupki(tgk, aqr, dnw)
