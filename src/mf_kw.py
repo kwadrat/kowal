@@ -128,6 +128,7 @@ class TestListyNagTabeli(unittest.TestCase):
         '''
         TestListyNagTabeli:
         '''
+        self.assertEqual(plik_grafiki('t123p45', lk_kw.LITERA_SLUPEK, 0, ()), 'plik_t123p45_s0_.png')
         self.assertEqual(quote_html(''''"<>&'''), '&prime;&quot;&lt;&gt;&amp;')
         self.assertEqual(nazwa_wiersza(7), 'w7')
         self.assertEqual(nazwa_mapy('s', 1), 'mapa_s1')
