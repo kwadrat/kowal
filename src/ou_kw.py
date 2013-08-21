@@ -50,7 +50,7 @@ class PomiaryPoborowJednegoDnia(OgolnaListaPoborow):
                 slownik_qm.jh_ustaw_kwt_qm(kwota)
                 self.dnw.odcinki_bazowe.app_end(jb_kw.JedenOdcinekBazowy(2 * akt, 2 * nast, slownik_qm))
 
-    def html_ls_poborow(self, lst_h, krt_pobor, dfb, id_obiekt, table_name, single_record):
+    def html_ls_poborow(self, lst_h, krt_pobor, single_record):
         '''
         PomiaryPoborowJednegoDnia:
         '''
@@ -67,5 +67,5 @@ class PomiaryPoborowJednegoDnia(OgolnaListaPoborow):
         tvk_data = self.tgk.wez_date()
         result = le_kw.dq_liczniki_poboru_w_dniu(self.dfb, self.table_name, self.id_obiekt, tvk_data)
         for single_record in result:
-            self.html_ls_poborow(lst_h, krt_pobor, self.dfb, self.id_obiekt, self.table_name, single_record)
+            self.html_ls_poborow(lst_h, krt_pobor, single_record)
         return lst_h.polacz_html()
