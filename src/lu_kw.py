@@ -39,6 +39,19 @@ class PomiaryPoborowMiesiecznie(OgolnaListaPoborow):
         aqr = ox_kw.SzkieletMiesiecznyDlaPoborow(krt_pobor)
         OgolnaListaPoborow.__init__(self, tgk, aqr, dfb, krt_pobor)
 
+    def html_przedzialy(self, fvk_rok):
+        '''
+        PomiaryPoborowMiesiecznie:
+        '''
+        zbiornik_przedzialow = {}
+        result = le_kw.dq_liczniki_poboru_w_roku(self.dfb, self.table_name, self.id_obiekt, fvk_rok)
+        for single_record in result:
+            fvk_rok, fvk_miesiac = dn_kw.rok_mies_z_napisu(str(single_record[lc_kw.fq_m_date_qv]))
+            if fvk_miesiac not in zbiornik_przedzialow:
+                zbiornik_przedzialow[fvk_miesiac] = []
+            zbiornik_przedzialow[fvk_miesiac].append(single_record[lc_kw.fq_m_sum_qv])
+        return zbiornik_przedzialow
+
     def html_szeregu_poborow(self, krt_pobor):
         '''
         PomiaryPoborowMiesiecznie:
