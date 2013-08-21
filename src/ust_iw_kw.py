@@ -31,6 +31,3 @@ WyswietlWynikoweSlowniki = 0
 
 # Pokaz zapytań SQL
 TymczasowoPokazSQL = 1
-
-# Pokazywanie słupków i tabelek (można wyłączyć, aby dostać same paski)
-DocelowoSlupki = 1
