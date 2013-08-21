@@ -69,10 +69,6 @@ class PomiaryPoborowSasiadujacychDni(OgolnaListaPoborow):
         my_end_date = dn_kw.NapisDnia(self.aqr.my_end_day)
         szereg_poborow = le_kw.dq_liczniki_poboru_w_miesiacu(self.dfb, self.table_name, self.id_obiekt, my_start_date, my_end_date)
         for jeden_pobor in szereg_poborow:
-            my_cur_date = str(jeden_pobor[lc_kw.fq_m_date_qv])
-            my_cur_day = dn_kw.napis_na_numer_dnia(my_cur_date)
-            akt = my_cur_day - self.aqr.my_start_day
-            kwota = lm_kw.dec2flt(jeden_pobor[lc_kw.fq_m_sum_qv])
-            self.rdzen_kwoty(akt, kwota)
+            self.html_poboru_dla_dnia(jeden_pobor)
         self.rdzen_rysowania(lst_h, krt_pobor, lw_kw.PDS_Dni)
         return lst_h.polacz_html()
