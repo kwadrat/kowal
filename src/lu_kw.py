@@ -73,10 +73,6 @@ class PomiaryPoborowMiesiecznie(OgolnaListaPoborow):
         all_keys = zbiornik_przedzialow.keys()
         all_keys.sort()
         for single_key in all_keys:
-            akt = single_key - 1
-            list_of_values = zbiornik_przedzialow[single_key]
-            kwota = lq_kw.sum_of_not_nones(krt_pobor.krt_vl_fnctn, list_of_values)
-            kwota = lm_kw.dec2flt(kwota)
-            self.rdzen_kwoty(akt, kwota)
+            self.html_poboru_dla_miesiaca(krt_pobor, zbiornik_przedzialow, single_key)
         self.rdzen_rysowania(lst_h, krt_pobor, lw_kw.PDS_Miesiace)
         return lst_h.polacz_html()
