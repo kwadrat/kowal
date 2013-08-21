@@ -74,9 +74,7 @@ class PomiaryPoborowSasiadujacychDni(OgolnaListaPoborow):
         PomiaryPoborowSasiadujacychDni:
         '''
         lst_h = lh_kw.ListaHTML()
-        my_start_date = dn_kw.NapisDnia(self.aqr.my_start_day)
-        my_end_date = dn_kw.NapisDnia(self.aqr.my_end_day)
-        szereg_poborow = le_kw.dq_liczniki_poboru_w_miesiacu(self.dfb, self.table_name, self.id_obiekt, my_start_date, my_end_date)
+        szereg_poborow = self.wyznacz_dla_sasiadujacych_dni()
         for jeden_pobor in szereg_poborow:
             self.html_poboru_dla_dnia(jeden_pobor)
         self.rdzen_rysowania(lst_h, krt_pobor, lw_kw.PDS_Dni)
