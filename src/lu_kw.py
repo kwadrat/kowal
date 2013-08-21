@@ -58,13 +58,10 @@ class PomiaryPoborowMiesiecznie(OgolnaListaPoborow):
         all_keys.sort()
         for single_key in all_keys:
             akt = single_key - 1
-            nast = akt + 1
             list_of_values = zbiornik_przedzialow[single_key]
             kwota = lq_kw.sum_of_not_nones(krt_pobor.krt_vl_fnctn, list_of_values)
             kwota = lm_kw.dec2flt(kwota)
-            slownik_qm = wn_kw.KlasaSlownika()
-            slownik_qm.jh_ustaw_kwt_qm(kwota)
-            self.dnw.odcinki_bazowe.app_end(jb_kw.JedenOdcinekBazowy(2 * akt, 2 * nast, slownik_qm))
+            self.rdzen_kwoty(akt, kwota)
         dolny_podpis = lw_kw.PDS_Miesiace
         self.rdzen_rysowania(lst_h, krt_pobor, dolny_podpis)
         return lst_h.polacz_html()

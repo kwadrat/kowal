@@ -62,11 +62,8 @@ class PomiaryPoborowSasiadujacychDni(OgolnaListaPoborow):
             my_cur_date = str(jeden_pobor[lc_kw.fq_m_date_qv])
             my_cur_day = dn_kw.napis_na_numer_dnia(my_cur_date)
             akt = my_cur_day - self.aqr.my_start_day
-            nast = akt + 1
             kwota = lm_kw.dec2flt(jeden_pobor[lc_kw.fq_m_sum_qv])
-            slownik_qm = wn_kw.KlasaSlownika()
-            slownik_qm.jh_ustaw_kwt_qm(kwota)
-            self.dnw.odcinki_bazowe.app_end(jb_kw.JedenOdcinekBazowy(2 * akt, 2 * nast, slownik_qm))
+            self.rdzen_kwoty(akt, kwota)
         dolny_podpis = lw_kw.PDS_Dni
         self.rdzen_rysowania(lst_h, krt_pobor, dolny_podpis)
         return lst_h.polacz_html()

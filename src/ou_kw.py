@@ -43,12 +43,9 @@ class PomiaryPoborowJednegoDnia(OgolnaListaPoborow):
         PomiaryPoborowJednegoDnia:
         '''
         for akt, kwota in enumerate(lista_pomiarow):
-            nast = akt + 1
             kwota = lm_kw.dec2flt(kwota)
             if kwota is not None:
-                slownik_qm = wn_kw.KlasaSlownika()
-                slownik_qm.jh_ustaw_kwt_qm(kwota)
-                self.dnw.odcinki_bazowe.app_end(jb_kw.JedenOdcinekBazowy(2 * akt, 2 * nast, slownik_qm))
+                self.rdzen_kwoty(akt, kwota)
 
     def html_szeregu_poborow(self, krt_pobor):
         '''
