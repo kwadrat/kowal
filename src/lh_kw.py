@@ -78,6 +78,12 @@ class ListaHTML(object):
         '''
         self.mniejsze.extend(lista)
 
+    def info_o_braku_dat(self):
+        '''
+        ListaHTML:
+        '''
+        self.ddj('Brakuje dat szkieletu')
+
 class TestLsH(unittest.TestCase):
     def test_wykonania(self):
         '''
