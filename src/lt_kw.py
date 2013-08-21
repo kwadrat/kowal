@@ -51,7 +51,7 @@ class OgolnaListaPoborow(WykresPomiarow):
         OgolnaListaPoborow:
         '''
         if self.aqr.malo_dat_szkieletu():
-            pass
+            lst_h.info_o_braku_dat()
         else:
             vert_axis = self.dnw.odcinki_bazowe.zakres_pionowy()
             ms = gc_kw.PoboroweOgolneSlupki(self.tgk, self.aqr, self.dnw, dolny_podpis)
