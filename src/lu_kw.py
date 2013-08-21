@@ -75,8 +75,7 @@ class PomiaryPoborowMiesiecznie(OgolnaListaPoborow):
         PomiaryPoborowMiesiecznie:
         '''
         lst_h = lh_kw.ListaHTML()
-        tvk_data = self.tgk.wez_date()
-        fvk_rok, fvk_miesiac = dn_kw.rok_mies_z_napisu(tvk_data)
+        fvk_rok = self.html_rok_poboru()
         zbiornik_przedzialow = self.html_przedzialy(fvk_rok)
         all_keys = zbiornik_przedzialow.keys()
         all_keys.sort()
