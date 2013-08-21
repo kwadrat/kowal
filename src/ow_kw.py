@@ -53,8 +53,8 @@ def link_a_mapy(on_real_mouse, slownik, jestem_msie, html_name, moja_nazwa):
     lista_over = []
     lista_out = []
     if oc_kw.fq_nowy_this_qv in slownik:
-        lista_over.append("%s.src='%s'" % (html_name, oc_kw.pelna_generowana_nazwa(slownik[oc_kw.fq_nowy_this_qv])))
-        lista_out.append("%s.src='%s'" % (html_name, oc_kw.pelna_generowana_nazwa(moja_nazwa)))
+        lista_over.append(set_src(html_name, oc_kw.pelna_generowana_nazwa(slownik[oc_kw.fq_nowy_this_qv])))
+        lista_out.append(set_src(html_name, oc_kw.pelna_generowana_nazwa(moja_nazwa)))
     if oc_kw.EYK_lporz_fktr in slownik:
         moj_nr_faktury = slownik[oc_kw.EYK_lporz_fktr]
         etyk = mf_kw.nazwa_wiersza(moj_nr_faktury)
