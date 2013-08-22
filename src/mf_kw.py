@@ -92,10 +92,6 @@ def nazwa_wiersza(lp_faktury):
     '''
     return 'w%d' % lp_faktury
 
-link_slownika = '''\
-<pre>%s</pre>
-'''
-
 def plik_grafiki(znacznik_unik, litera_typu, nr_miejsca, wersja):
     '''
     Zwraca nazwę pliku graficznego PNG
