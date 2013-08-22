@@ -84,6 +84,12 @@ class ListaHTML(object):
         '''
         self.ddj('Brakuje dat szkieletu')
 
+    def info_o_braku_roznic_w_pionie(self, MaxY):
+        '''
+        ListaHTML:
+        '''
+        self.ddj('Brak zróżnicowania danych w pionie, MaxY=%s' % repr(MaxY))
+
 class TestLsH(unittest.TestCase):
     def test_wykonania(self):
         '''
