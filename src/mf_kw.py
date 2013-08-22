@@ -107,8 +107,6 @@ def plik_grafiki(znacznik_unik, litera_typu, nr_miejsca, wersja):
       '_'.join(map(str, wersja)),
       oc_kw.RozszerzenieObrazka)
 
-nazwa_lokalna_mapy = 'mapa_slupkow'
-
 def nazwa_mapy(litera_typu, nr_miejsca):
     '''
     Zwraca nazwę pliku graficznego PNG
