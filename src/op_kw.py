@@ -75,7 +75,7 @@ class TestAxisVertical(unittest.TestCase):
         '''
         self.assertEqual(AxisY(0, 1).wyznacz_gorna_wartosc(1), 1.0)
         self.assertEqual(AxisY(0, 2.0).wyznacz_gorna_wartosc(1), 0.5)
-        self.assertEqual(AxisY(1, 5).wyznacz_gorna_wartosc(2), 0.25)
+        self.assertEqual(AxisY(1, 5.0).wyznacz_gorna_wartosc(2), 0.25)
         self.assertEqual(
             AxisY(5, 5).zbyt_niski_wykres(),
             'Za malo roznicy w skali y, MinY = 5, MaxY = 5'
