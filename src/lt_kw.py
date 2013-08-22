@@ -70,4 +70,4 @@ class OgolnaListaPoborow(WykresPomiarow):
                 lst_h.ddj(''.join(opis_dotyczy))
                 lst_h.ddj(kod_html)
             else:
-                lst_h.ddj('Brak zróżnicowania danych w pionie, MaxY=%s' % repr(vert_axis.MaxY))
+                lst_h.info_o_braku_roznic_w_pionie(vert_axis.MaxY)
