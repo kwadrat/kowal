@@ -27,9 +27,22 @@ KLD_JASNY = 1
 EtykietaLP = 'L.p.' # Liczba porządkowa
 LTR_GLR_STAMP = 'stamp'
 LTR_GLR_SMALL = 'small'
+CHC_PIC_NON = 0 # to nie zdjęcie
+CHC_PIC_ORYG = 1 # oryginał zdjęcia
+CHC_PIC_STAMP = 2 # miniaturka zdjęcia
+CHC_PIC_SMALL = 3 # zdjęcie standardowe
+
+wyznacz_wielkosc = {
+    CHC_PIC_ORYG: lc_kw.fq_oryg_qv,
+    CHC_PIC_STAMP: LTR_GLR_STAMP,
+    CHC_PIC_SMALL: LTR_GLR_SMALL,
+    }
 
 class TestSomeConstants(unittest.TestCase):
     def test_some_constants(self):
         '''
         TestSomeConstants:
         '''
+        self.assertEqual(wyznacz_wielkosc[CHC_PIC_ORYG], lc_kw.fq_oryg_qv)
+        self.assertEqual(wyznacz_wielkosc[CHC_PIC_STAMP], LTR_GLR_STAMP)
+        self.assertEqual(wyznacz_wielkosc[CHC_PIC_SMALL], LTR_GLR_SMALL)
