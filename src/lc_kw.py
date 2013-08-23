@@ -2,6 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 fq_account_qv = 'account'
+fq_data_qv = 'data'
 fq_f_object_qv = 'f_object'
 fq_grupa_qv = 'grupa'
 fq_imie_qv = 'imie'
