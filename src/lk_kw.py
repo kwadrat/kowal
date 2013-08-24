@@ -28,6 +28,7 @@ EtykietaLP = 'L.p.' # Liczba porządkowa
 RDZ_Audyt = '/kaud'
 RDZ_Inwentaryzacja = '/kinw'
 RDZ_Zdjecia = '/kzdj'
+RDZ_Oswietlenie = '/kosw'
 LTR_GLR_STAMP = 'stamp'
 LTR_GLR_SMALL = 'small'
 CHC_PIC_NON = 0 # to nie zdjęcie
@@ -52,3 +53,4 @@ class TestSomeConstants(unittest.TestCase):
         self.assertEqual(RDZ_Audyt, '/kaud')
         self.assertEqual(RDZ_Inwentaryzacja, '/kinw')
         self.assertEqual(RDZ_Zdjecia, '/kzdj')
+        self.assertEqual(RDZ_Oswietlenie, '/kosw')
