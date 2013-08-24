@@ -4,6 +4,7 @@
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import lk_kw
 import rq_kw
 '''.splitlines()]
 
@@ -19,9 +20,8 @@ for i in NazwyModulow:
 # Nie ujednolicaj adresu IP z nazwą, bo na razie chcemy synchronizować różne treści
 rjb_klnt_ip = '87.101.66.154'
 
-rjb_sam_slsh = '/'
 rjb_pocz_hm_dir = '/home/'
-rjb_do_pbl_ht = rjb_sam_slsh + 'public_html'
+rjb_do_pbl_ht = lk_kw.rjb_sam_slsh + 'public_html'
 rjb_sama_tylda = '~'
 PoczObrazka = 'plik_'
 RozszerzenieObrazka = '.png'
@@ -37,23 +37,23 @@ else:
     ##############################################################################
 url_kotw_a_ica = url_ameryka_http + adres_maszyny
 rjb_hs_pcztk_sam = rjb_hs_pocz + adres_maszyny
-url_kotw_b_ica = url_kotw_a_ica + rjb_sam_slsh
+url_kotw_b_ica = url_kotw_a_ica + lk_kw.rjb_sam_slsh
 rjb_tld_kw_d_apl = 'inne'
 rjb_tld_kw_e_apl = '2'
 rjb_tld_kw_f_apl = rjb_tld_kw_d_apl + rjb_tld_kw_e_apl
 konto_uzytkownika = 'kwadrat'
 rjb_tld_kw_a_apl = rjb_sama_tylda + konto_uzytkownika
-rjb_tld_kw_b_apl = rjb_sam_slsh + rjb_sama_tylda + konto_uzytkownika
+rjb_tld_kw_b_apl = lk_kw.rjb_sam_slsh + rjb_sama_tylda + konto_uzytkownika
 rjb_sciezka_kw = url_kotw_b_ica + rjb_tld_kw_a_apl
 rjb_kt_dom_uzt = rjb_pocz_hm_dir + konto_uzytkownika
-rjb_ph_uztk = rjb_kt_dom_uzt + rjb_do_pbl_ht + rjb_sam_slsh
-rjb_sciezka_a_kw = rjb_sciezka_kw + rjb_sam_slsh
+rjb_ph_uztk = rjb_kt_dom_uzt + rjb_do_pbl_ht + lk_kw.rjb_sam_slsh
+rjb_sciezka_a_kw = rjb_sciezka_kw + lk_kw.rjb_sam_slsh
 GenPicDir = 'gen_kowal/'
 poczatek_gen = rjb_sciezka_a_kw + GenPicDir
 SciezkaPlikow = rjb_ph_uztk + GenPicDir
 EYK_lporz_fktr = 'lp_faktury'
 rjb_kwl_sam = 'kowal'
-rjb_sczk_do_kwl = rjb_kt_dom_uzt + rjb_sam_slsh + rjb_kwl_sam
+rjb_sczk_do_kwl = rjb_kt_dom_uzt + lk_kw.rjb_sam_slsh + rjb_kwl_sam
 LogDir = rjb_sczk_do_kwl + '/log'
 rjb_tld_kw_g_apl = '.py'
 fq_kx_qv = 'kx'
@@ -95,14 +95,13 @@ rjb_strona_dziewiata = KalejdoskopStron(9)
 rjb_strona_dziesiata = KalejdoskopStron(10)
 
 def fn_adres_post(wersja_produkcyjna):
-    return rjb_sam_slsh + fn_a_in_dwa(wersja_produkcyjna) + rjb_sam_slsh + dodaj_py(rjb_strona_druga.rj_sam_rdzen)
+    return lk_kw.rjb_sam_slsh + fn_a_in_dwa(wersja_produkcyjna) + lk_kw.rjb_sam_slsh + dodaj_py(rjb_strona_druga.rj_sam_rdzen)
 
 class TestConstantStrings(unittest.TestCase):
     def test_constant_strings(self):
         '''
         TestConstantStrings:
         '''
-        self.assertEqual(rjb_sam_slsh, '/')
         self.assertEqual(rjb_pocz_hm_dir, '/home/')
         self.assertEqual(rjb_do_pbl_ht, '/public_html')
         self.assertEqual(rjb_sama_tylda, '~')
