@@ -25,6 +25,9 @@ LITERA_WYKRES = 'w'
 KLD_CIEMNY = 0
 KLD_JASNY = 1
 EtykietaLP = 'L.p.' # Liczba porządkowa
+RDZ_Audyt = '/kaud'
+RDZ_Inwentaryzacja = '/kinw'
+RDZ_Zdjecia = '/kzdj'
 LTR_GLR_STAMP = 'stamp'
 LTR_GLR_SMALL = 'small'
 CHC_PIC_NON = 0 # to nie zdjęcie
@@ -46,3 +49,6 @@ class TestSomeConstants(unittest.TestCase):
         self.assertEqual(wyznacz_wielkosc[CHC_PIC_ORYG], lc_kw.fq_oryg_qv)
         self.assertEqual(wyznacz_wielkosc[CHC_PIC_STAMP], LTR_GLR_STAMP)
         self.assertEqual(wyznacz_wielkosc[CHC_PIC_SMALL], LTR_GLR_SMALL)
+        self.assertEqual(RDZ_Audyt, '/kaud')
+        self.assertEqual(RDZ_Inwentaryzacja, '/kinw')
+        self.assertEqual(RDZ_Zdjecia, '/kzdj')
