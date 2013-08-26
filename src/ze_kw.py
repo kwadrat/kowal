@@ -81,10 +81,7 @@ def op_option(napis, wartosc=None, zaznaczenie=0, id=None):
     return '<option%s%s%s>%s</option>\n' % (kod_wart, kod_zazn, kod_idntf, napis)
 
 def op_td(class_ = None, colspan=None, rowspan=None, title=None):
-    if class_:
-        kawalek_klasy = ' class="%(class_)s"' % dict(class_ = class_)
-    else:
-        kawalek_klasy = ''
+    kawalek_klasy = wyznacz_klasawa_wstawke(class_)
     if colspan is None:
         kawalek_csp = ''
     else:
@@ -138,10 +135,7 @@ def op_select(nzw_sel, brak_idnt=0, class_=None, onchange=None, style=None, to_i
         kawalek_idnt = ''
     else:
         kawalek_idnt = ' id="%(moje_id)s"' % dict(moje_id = moje_id)
-    if class_ is None:
-        kawalek_klasy = ''
-    else:
-        kawalek_klasy = ' class="%(class_)s"' % dict(class_ = class_)
+    kawalek_klasy = wyznacz_klasawa_wstawke(class_)
     if onchange is None:
         kawalek_zmiany = ''
     else:
