@@ -58,6 +58,11 @@ def sprawdz_lub_utworz_katalog_logu(pelna_nazwa_klt_lgu):
     if not os.path.isdir(pelna_nazwa_klt_lgu):
         os.mkdir(pelna_nazwa_klt_lgu)
 
+def create_dir_if_nonexistent(nazwa_katalogu):
+    if not os.path.isdir(nazwa_katalogu):
+        os.mkdir(nazwa_katalogu)
+        zrob_odpowiednie_prawa(nazwa_katalogu)
+
 def zrob_katalog_jesli_nie_istnieje(czy_zakladanie, nazwa_katalogu):
     if czy_zakladanie == lk_kw.CHC_YES:
         if not os.path.isdir(nazwa_katalogu):
