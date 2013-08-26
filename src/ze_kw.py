@@ -247,6 +247,9 @@ def op_fmd(enctype=None, id=None, name=None, method=frm_mt_pst, adres=None):
         method=method,
         ))
 
+def op_prgph(tmp_tekst):
+    return '<p></p>\n'
+
 class TestTytuluHtml(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual
     def test_tytulu_html(self):
@@ -323,3 +326,4 @@ class TestTytuluHtml(unittest.TestCase):
             '<span style="background-color: napis;">yellow</span>')
         self.assertEqual(fy_kw.lxa_56_inst, 'suma narastająco')
         self.assertEqual(fy_kw.lxa_57_inst, 'moc maksymalna')
+        self.assertEqual(op_prgph(''), '<p></p>\n')
