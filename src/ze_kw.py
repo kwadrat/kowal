@@ -244,8 +244,10 @@ def op_fmd(enctype=None, id=None, name=None, method=frm_mt_pst, adres=None):
         method=method,
         ))
 
-def op_prgph(tmp_tekst):
-    return '<p>%(tmp_tekst)s</p>\n' % dict(
+def op_prgph(tmp_tekst, class_=None):
+    kawalek_klasy = wyznacz_klasawa_wstawke(class_)
+    return '<p%(kawalek_klasy)s>%(tmp_tekst)s</p>\n' % dict(
+        kawalek_klasy=kawalek_klasy,
         tmp_tekst=tmp_tekst,
         )
 
@@ -329,3 +331,4 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(fy_kw.lxa_57_inst, 'moc maksymalna')
         self.assertEqual(op_prgph(''), '<p></p>\n')
         self.assertEqual(op_prgph('abc'), '<p>abc</p>\n')
+        self.assertEqual(op_prgph('abc', class_='klasa_css'), '<p class="klasa_css">abc</p>\n')
