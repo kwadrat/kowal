@@ -68,6 +68,9 @@ def wyznacz_wstawke(nazwa, wartosc):
         napis = ' %s="%s"' % (nazwa, wartosc)
     return napis
 
+def wyznacz_klasawa_wstawke(class_):
+    return wyznacz_wstawke('class', class_)
+
 def op_option(napis, wartosc=None, zaznaczenie=0, id=None):
     if wartosc is None:
         kod_wart = ''
@@ -271,6 +274,8 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(op_td(class_ = 'klasa_css', colspan=2, rowspan=3, title='abc'), '<td class="klasa_css" colspan="2" rowspan="3" title="abc">')
         self.assertEqual(wyznacz_wstawke('e1', None), '')
         self.assertEqual(wyznacz_wstawke('e2', 'napis'), ' e2="napis"')
+        self.assertEqual(wyznacz_klasawa_wstawke(None), '')
+        self.assertEqual(wyznacz_klasawa_wstawke('abc'), ' class="abc"')
         self.assertEqual(op_tr(id = 'abc'), '<tr id="abc">\n')
         self.assertEqual(op_tr(id='abc', nzw_wrsz='def'), '<tr id="abc" name="def">\n')
         self.assertEqual(op_tbl(), '<table>\n')
