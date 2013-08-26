@@ -43,7 +43,7 @@ wyznacz_wielkosc = {
     CHC_PIC_SMALL: LTR_GLR_SMALL,
     }
 
-def formatuj_nadzorujacego(adresat):
+def formatuj_pelne_in(adresat):
     return '%(imie)s %(nazwisko)s' % adresat
 
 class TestSomeConstants(unittest.TestCase):
@@ -59,7 +59,7 @@ class TestSomeConstants(unittest.TestCase):
         self.assertEqual(RDZ_Inwentaryzacja, '/kinw')
         self.assertEqual(RDZ_Zdjecia, '/kzdj')
         self.assertEqual(RDZ_Oswietlenie, '/kosw')
-        self.assertEqual(formatuj_nadzorujacego({
+        self.assertEqual(formatuj_pelne_in({
             lc_kw.fq_imie_qv: 'Imię',
             lc_kw.fq_nazwisko_qv: 'Nazwisko',
             }), 'Imię Nazwisko')
