@@ -248,7 +248,9 @@ def op_fmd(enctype=None, id=None, name=None, method=frm_mt_pst, adres=None):
         ))
 
 def op_prgph(tmp_tekst):
-    return '<p></p>\n'
+    return '<p>%(tmp_tekst)s</p>\n' % dict(
+        tmp_tekst=tmp_tekst,
+        )
 
 class TestTytuluHtml(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual
@@ -327,3 +329,4 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(fy_kw.lxa_56_inst, 'suma narastająco')
         self.assertEqual(fy_kw.lxa_57_inst, 'moc maksymalna')
         self.assertEqual(op_prgph(''), '<p></p>\n')
+        self.assertEqual(op_prgph('abc'), '<p>abc</p>\n')
