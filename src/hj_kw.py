@@ -48,6 +48,9 @@ def ls_przec(*args):
 def with_spaces(*args):
     return ' '.join(args)
 
+def zamien_na_logiczne(wartosc):
+    return not not wartosc
+
 class TestProcessingSQL(unittest.TestCase):
     def test_processing_sql(self):
         '''
@@ -63,3 +66,5 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(ladnie_przecinkami(['a', 'b', 'c']), "a, b, c")
         self.assertEqual(ls_przec('a', 'b', 'c'), 'a, b, c')
         self.assertEqual(with_spaces('a', 'b', 'c'), 'a b c')
+        self.assertEqual(zamien_na_logiczne('abc'), 1)
+        self.assertEqual(zamien_na_logiczne([]), 0)
