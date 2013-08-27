@@ -36,7 +36,9 @@ CHC_PIC_NON = 0 # to nie zdjęcie
 CHC_PIC_ORYG = 1 # oryginał zdjęcia
 CHC_PIC_STAMP = 2 # miniaturka zdjęcia
 CHC_PIC_SMALL = 3 # zdjęcie standardowe
+# Rozmiary dla pomniejszanych obrazków
 LTR_GLR_X_SMALL = 1024 # Format 4/3
+LTR_GLR_X_STAMP = 150 # Mniej więcej format 4/3
 
 wyznacz_wielkosc = {
     CHC_PIC_ORYG: lc_kw.fq_oryg_qv,
@@ -60,8 +62,9 @@ class TestSomeConstants(unittest.TestCase):
         self.assertEqual(RDZ_Inwentaryzacja, '/kinw')
         self.assertEqual(RDZ_Zdjecia, '/kzdj')
         self.assertEqual(RDZ_Oswietlenie, '/kosw')
-        self.assertEqual(LTR_GLR_X_SMALL, 1024)
         self.assertEqual(formatuj_pelne_in({
             lc_kw.fq_imie_qv: 'Imię',
             lc_kw.fq_nazwisko_qv: 'Nazwisko',
             }), 'Imię Nazwisko')
+        self.assertEqual(LTR_GLR_X_SMALL, 1024)
+        self.assertEqual(LTR_GLR_X_STAMP, 150)
