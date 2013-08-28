@@ -252,6 +252,14 @@ def op_prgph(tmp_tekst, class_=None):
         tmp_tekst=tmp_tekst,
         )
 
+def op_styl(adres, media=None):
+    if media is None:
+        media = 'screen'
+    return '<link rel="stylesheet" type="text/css" href="%(adres)s" media="%(media)s" />\n' % dict(
+        adres=adres,
+        media=media,
+        )
+
 class TestTytuluHtml(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual
     def test_tytulu_html(self):
@@ -333,3 +341,5 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(op_prgph(''), '<p></p>\n')
         self.assertEqual(op_prgph('abc'), '<p>abc</p>\n')
         self.assertEqual(op_prgph('abc', class_='klasa_css'), '<p class="klasa_css">abc</p>\n')
+        self.assertEqual(op_styl('pies'), '<link rel="stylesheet" type="text/css" href="pies" media="screen" />\n')
+        self.assertEqual(op_styl('pies', media=oc_kw.rjb_dla_drukowania), '<link rel="stylesheet" type="text/css" href="pies" media="print" />\n')
