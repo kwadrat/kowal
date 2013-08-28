@@ -65,6 +65,7 @@ fq_ky_qv = 'ky'
 fq_px_qv = 'px'
 fq_py_qv = 'py'
 fq_nowy_this_qv = 'nowy_this'
+rjb_dla_drukowania = 'print'
 
 def pelna_generowana_nazwa(nazwa):
     return poczatek_gen + nazwa
@@ -109,6 +110,7 @@ class TestConstantStrings(unittest.TestCase):
         '''
         self.assertEqual(mthd_get, 'GET')
         self.assertEqual(mthd_post, 'POST')
+        self.assertEqual(rjb_dla_drukowania, 'print')
         self.assertEqual(rjb_pocz_hm_dir, '/home/')
         self.assertEqual(rjb_do_pbl_ht, '/public_html')
         self.assertEqual(rjb_sama_tylda, '~')
