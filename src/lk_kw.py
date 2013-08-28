@@ -76,6 +76,14 @@ wyznacz_opis_akcji = {
 def formatuj_pelne_in(adresat):
     return '%(imie)s %(nazwisko)s' % adresat
 
+def ladny_rozmiar(ile):
+    if ile < 2 * 1024:
+        return "%d B" % ile
+    elif ile < 2 * 1024 * 1024:
+        return "%d KB" % (ile // 1024)
+    else:
+        return "%d MB" % (ile // 1024 // 1024)
+
 class TestSomeConstants(unittest.TestCase):
     def test_opisow_akcji(self):
         '''
@@ -103,3 +111,5 @@ class TestSomeConstants(unittest.TestCase):
             }), 'Imię Nazwisko')
         self.assertEqual(LTR_GLR_X_SMALL, 1024)
         self.assertEqual(LTR_GLR_X_STAMP, 150)
+        self.assertEqual(ladny_rozmiar(2047), '2047 B')
+        self.assertEqual(ladny_rozmiar(2097151), '2047 KB')
