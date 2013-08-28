@@ -6,8 +6,8 @@ import unittest
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lc_kw
 import hj_kw
-import oa_kw
 import oc_kw
+import oa_kw
 import mf_kw
 '''.splitlines()]
 
