@@ -44,6 +44,22 @@ CHC_UR = 1 # ścieżka URL
 KEY_ROZMIAR = 'rozmiar'
 KEY_DODANY_PRZEZ = 'dodany_przez'
 KEY_ZAZNACZ = 'zaznacz'
+LTR_CHBOX_ID_WPISU = 'p_zaznacz_to_'
+LTR_CHBOX_SUFFIX_PLIK = 'moj_plik'
+LTR_CHBOX_SUFFIX_KATALOG = 'moj_katalog'
+LTR_FORM_EDYCJA_NAZWY = 'p_zmieniam_nazwe_'
+LTR_PRAWO_DO_EDYCJI = 'prawo_do_edycji'
+LTR_DLA_ZAZNACZONYCH = 'dla_zaznaczonych'
+LTR_ZAZN_NIC = 'zazn_nic'
+LTR_ZAZN_ZMIEN = 'zazn_zmien'
+LTR_ZAZN_USUN = 'zazn_usun'
+LTR_JESZCZE_CHCEMY_GLOWNY_KATALOG = 1
+LTR_FORM_BIEZACY_KATALOG = 'nazwa_biezacego1'
+LTR_FORM_BIEZACY_ID_KATALOG = 'id_biez'
+LTR_FORM_PLIK_DO_ZALADOWANIA = 'nazwa_pliku1'
+LTR_FORM_NAZWA_NOWEGO_KATALOGU = 'nazwa_katalogu1'
+LTR_KLUCZ_WLACZONY = '1' # Do kasowania danych
+LTR_KLUCZ_ZABLOKOWANY = '0' # Do kasowania danych
 
 wyznacz_wielkosc = {
     CHC_PIC_ORYG: lc_kw.fq_oryg_qv,
