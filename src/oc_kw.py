@@ -20,6 +20,8 @@ for i in NazwyModulow:
 # Nie ujednolicaj adresu IP z nazwą, bo na razie chcemy synchronizować różne treści
 rjb_klnt_ip = '87.101.66.154'
 
+mthd_get = 'GET'
+
 rjb_pocz_hm_dir = '/home/'
 rjb_do_pbl_ht = lk_kw.rjb_sam_slsh + 'public_html'
 rjb_sama_tylda = '~'
@@ -103,6 +105,7 @@ class TestConstantStrings(unittest.TestCase):
         '''
         TestConstantStrings:
         '''
+        self.assertEqual(mthd_get, 'GET')
         self.assertEqual(rjb_pocz_hm_dir, '/home/')
         self.assertEqual(rjb_do_pbl_ht, '/public_html')
         self.assertEqual(rjb_sama_tylda, '~')
