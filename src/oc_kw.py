@@ -19,6 +19,7 @@ for i in NazwyModulow:
 
 # Nie ujednolicaj adresu IP z nazwą, bo na razie chcemy synchronizować różne treści
 rjb_klnt_ip = '87.101.66.154'
+rjb_havn_ip = '78.31.136.60'
 
 mthd_get = 'GET'
 mthd_post = 'POST'
