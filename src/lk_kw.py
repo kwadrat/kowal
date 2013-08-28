@@ -67,10 +67,24 @@ wyznacz_wielkosc = {
     CHC_PIC_SMALL: LTR_GLR_SMALL,
     }
 
+wyznacz_opis_akcji = {
+    LTR_ZAZN_NIC: 'Nic nie rób',
+    LTR_ZAZN_ZMIEN: 'Zmień nazwę',
+    LTR_ZAZN_USUN: 'Usuń',
+    }
+
 def formatuj_pelne_in(adresat):
     return '%(imie)s %(nazwisko)s' % adresat
 
 class TestSomeConstants(unittest.TestCase):
+    def test_opisow_akcji(self):
+        '''
+        TestSomeConstants:
+        '''
+        self.assertEqual(wyznacz_opis_akcji[LTR_ZAZN_NIC], 'Nic nie rób')
+        self.assertEqual(wyznacz_opis_akcji[LTR_ZAZN_ZMIEN], 'Zmień nazwę')
+        self.assertEqual(wyznacz_opis_akcji[LTR_ZAZN_USUN], 'Usuń')
+
     def test_some_constants(self):
         '''
         TestSomeConstants:
