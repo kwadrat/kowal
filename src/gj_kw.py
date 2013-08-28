@@ -38,8 +38,7 @@ class TestOpisuBudynku(unittest.TestCase):
         '''
         TestOpisuBudynku:
         '''
-        lokalny_the_building = None
-        obk = BuildingIndicator(lokalny_the_building)
+        obk = BuildingIndicator(None)
         self.assertEqual(obk.lokalny_the_building, None)
         self.assertEqual(obk.lokalny_mam_realny_obiekt, 0)
         self.assertEqual(obk.zrob_z_pustego_budynku_zero(), 0)
@@ -48,8 +47,7 @@ class TestOpisuBudynku(unittest.TestCase):
         '''
         TestOpisuBudynku:
         '''
-        lokalny_the_building = 4
-        obk = BuildingIndicator(lokalny_the_building)
+        obk = BuildingIndicator(4)
         self.assertEqual(obk.lokalny_the_building, 4)
         self.assertEqual(obk.lokalny_mam_realny_obiekt, 1)
         self.assertEqual(obk.zrob_z_pustego_budynku_zero(), 4)
