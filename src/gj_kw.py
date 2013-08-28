@@ -33,6 +33,12 @@ class BuildingIndicator(object):
             wartosc = 0
         return wartosc
 
+    def czy_budynek_konkretny_i_dokladnie_taki(self, liczba_calkowita):
+        '''
+        BuildingIndicator:
+        '''
+        return self.lokalny_mam_realny_obiekt and liczba_calkowita == self.lokalny_the_building
+
 class TestOpisuBudynku(unittest.TestCase):
     def test_opisu_a_budynku(self):
         '''
@@ -42,6 +48,7 @@ class TestOpisuBudynku(unittest.TestCase):
         self.assertEqual(obk.lokalny_the_building, None)
         self.assertEqual(obk.lokalny_mam_realny_obiekt, 0)
         self.assertEqual(obk.zrob_z_pustego_budynku_zero(), 0)
+        self.assertEqual(obk.czy_budynek_konkretny_i_dokladnie_taki(4), 0)
 
     def test_opisu_b_budynku(self):
         '''
@@ -51,3 +58,4 @@ class TestOpisuBudynku(unittest.TestCase):
         self.assertEqual(obk.lokalny_the_building, 4)
         self.assertEqual(obk.lokalny_mam_realny_obiekt, 1)
         self.assertEqual(obk.zrob_z_pustego_budynku_zero(), 4)
+        self.assertEqual(obk.czy_budynek_konkretny_i_dokladnie_taki(4), 1)
