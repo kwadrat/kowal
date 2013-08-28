@@ -411,6 +411,9 @@ def wyznacz_sekunde_logu(czas = None):
 def wyznacz_minute_logu(czas = None):
     return wyznacz_moment_wg_wzorca('%H:%M', czas)
 
+def gesty_moment(czas=None):
+    return wyznacz_moment_wg_wzorca('%Y%m%d%H%M%S', czas)
+
 def RokMscDnia(x):
     return szczegolowa_krotka(x)[:2]
 
@@ -507,3 +510,4 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(CzasDzisiaj(data_testowa_c), (2011, 12, 13, 10, 41, 32))
         self.assertEqual(DataDzisiaj(data_testowa_c), (2011, 12, 13))
         self.assertEqual(NumerDzisiaj(data_testowa_c), 15321)
+        self.assertEqual(gesty_moment(data_testowa_c), '20111213104132')
