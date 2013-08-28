@@ -39,6 +39,8 @@ CHC_PIC_SMALL = 3 # zdjęcie standardowe
 # Rozmiary dla pomniejszanych obrazków
 LTR_GLR_X_SMALL = 1024 # Format 4/3
 LTR_GLR_X_STAMP = 150 # Mniej więcej format 4/3
+CHC_FL = 0 # ścieżka pliku
+CHC_UR = 1 # ścieżka URL
 
 wyznacz_wielkosc = {
     CHC_PIC_ORYG: lc_kw.fq_oryg_qv,
