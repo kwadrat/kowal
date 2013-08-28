@@ -41,6 +41,9 @@ LTR_GLR_X_SMALL = 1024 # Format 4/3
 LTR_GLR_X_STAMP = 150 # Mniej więcej format 4/3
 CHC_FL = 0 # ścieżka pliku
 CHC_UR = 1 # ścieżka URL
+KEY_ROZMIAR = 'rozmiar'
+KEY_DODANY_PRZEZ = 'dodany_przez'
+KEY_ZAZNACZ = 'zaznacz'
 
 wyznacz_wielkosc = {
     CHC_PIC_ORYG: lc_kw.fq_oryg_qv,
