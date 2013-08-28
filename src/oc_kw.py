@@ -21,6 +21,7 @@ for i in NazwyModulow:
 rjb_klnt_ip = '87.101.66.154'
 
 mthd_get = 'GET'
+mthd_post = 'POST'
 
 rjb_pocz_hm_dir = '/home/'
 rjb_do_pbl_ht = lk_kw.rjb_sam_slsh + 'public_html'
@@ -106,6 +107,7 @@ class TestConstantStrings(unittest.TestCase):
         TestConstantStrings:
         '''
         self.assertEqual(mthd_get, 'GET')
+        self.assertEqual(mthd_post, 'POST')
         self.assertEqual(rjb_pocz_hm_dir, '/home/')
         self.assertEqual(rjb_do_pbl_ht, '/public_html')
         self.assertEqual(rjb_sama_tylda, '~')
