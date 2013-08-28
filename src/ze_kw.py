@@ -260,6 +260,9 @@ def op_styl(adres, media=None):
         media=media,
         )
 
+def op_skrypt(adres):
+    return '<script src="%s"></script>\n' % adres
+
 class TestTytuluHtml(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual
     def test_tytulu_html(self):
@@ -343,3 +346,4 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(op_prgph('abc', class_='klasa_css'), '<p class="klasa_css">abc</p>\n')
         self.assertEqual(op_styl('pies'), '<link rel="stylesheet" type="text/css" href="pies" media="screen" />\n')
         self.assertEqual(op_styl('pies', media=oc_kw.rjb_dla_drukowania), '<link rel="stylesheet" type="text/css" href="pies" media="print" />\n')
+        self.assertEqual(op_skrypt('kot'), '<script src="kot"></script>\n')
