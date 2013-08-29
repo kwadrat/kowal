@@ -63,12 +63,6 @@ def create_dir_if_nonexistent(nazwa_katalogu):
         os.mkdir(nazwa_katalogu)
         zrob_odpowiednie_prawa(nazwa_katalogu)
 
-def zrob_katalog_jesli_nie_istnieje(czy_zakladanie, nazwa_katalogu):
-    if czy_zakladanie == lk_kw.CHC_YES:
-        if not os.path.isdir(nazwa_katalogu):
-            os.mkdir(nazwa_katalogu)
-            zrob_odpowiednie_prawa(nazwa_katalogu)
-
 def wczytaj_plik(nazwa):
     fd = open(nazwa, 'rb')
     dane = fd.read()
