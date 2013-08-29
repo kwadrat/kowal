@@ -40,7 +40,7 @@ class PseudoReq(object):
         '''
         PseudoReq:
         '''
-        return 5
+        return self.lokalny_the_building
 
     def s_dflt_get(self, etyk, domyslnie=None):
         '''
