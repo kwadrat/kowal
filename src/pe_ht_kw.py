@@ -29,3 +29,9 @@ class PseudoReq(object):
         PseudoReq:
         '''
         open('/tmp/wyjscie_z_aplikacji_kw.html', 'ab').write(dane)
+
+    def int_num_dflt_post(self, etyk):
+        '''
+        PseudoReq:
+        '''
+        return 5
