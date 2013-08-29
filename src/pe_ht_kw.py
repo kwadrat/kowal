@@ -41,3 +41,9 @@ class PseudoReq(object):
         PseudoReq:
         '''
         return domyslnie
+
+    def posiadane_etykiety(self):
+        '''
+        PseudoReq:
+        '''
+        return []
