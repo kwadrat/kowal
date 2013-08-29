@@ -19,6 +19,13 @@ for i in NazwyModulow:
 
 class PseudoReq(object):
     def get_remote_host(self):
+        '''
+        PseudoReq:
+        '''
         return oc_kw.rjb_klnt_ip
+
     def write(self, dane):
+        '''
+        PseudoReq:
+        '''
         open('/tmp/wyjscie_z_aplikacji_kw.html', 'ab').write(dane)
