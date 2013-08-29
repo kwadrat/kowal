@@ -35,3 +35,9 @@ class PseudoReq(object):
         PseudoReq:
         '''
         return 5
+
+    def s_dflt_get(self, etyk, domyslnie=None):
+        '''
+        PseudoReq:
+        '''
+        return domyslnie
