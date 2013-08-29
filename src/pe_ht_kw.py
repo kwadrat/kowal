@@ -18,6 +18,12 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 class PseudoReq(object):
+    def __init__(self, lokalny_the_building=None):
+        '''
+        PseudoReq:
+        '''
+        self.lokalny_the_building = lokalny_the_building
+
     def get_remote_host(self):
         '''
         PseudoReq:
