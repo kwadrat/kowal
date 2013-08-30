@@ -427,6 +427,12 @@ def one_common_date_of_energy_as_month_and_year(data_pocz, data_kon):
         raise RuntimeError('Specyfikacje?: %s %s - %s, %s' % (data_pocz, data_kon, spcf_pocz, spcf_kon))
     return spcf_pocz
 
+def surowy_czas(czas=None):
+    if czas is None:
+        return time.time()
+    else:
+        return czas
+
 class TestDaysDates(unittest.TestCase):
     def test_stalych_datownika(self):
         '''
@@ -511,3 +517,4 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(DataDzisiaj(data_testowa_c), (2011, 12, 13))
         self.assertEqual(NumerDzisiaj(data_testowa_c), 15321)
         self.assertEqual(gesty_moment(data_testowa_c), '20111213104132')
+        self.assertEqual(surowy_czas(data_testowa_c), 1323769292)
