@@ -51,6 +51,9 @@ def with_spaces(*args):
 def zamien_na_logiczne(wartosc):
     return not not wartosc
 
+def przytnij_nazwe(nazwa_katalogu):
+    return nazwa_katalogu.replace('/', '')
+
 class TestProcessingSQL(unittest.TestCase):
     def test_processing_sql(self):
         '''
@@ -68,3 +71,5 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(with_spaces('a', 'b', 'c'), 'a b c')
         self.assertEqual(zamien_na_logiczne('abc'), 1)
         self.assertEqual(zamien_na_logiczne([]), 0)
+        self.assertEqual(przytnij_nazwe('abc'), 'abc')
+        self.assertEqual(przytnij_nazwe('/abc/'), 'abc')
