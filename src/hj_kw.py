@@ -57,6 +57,9 @@ def przytnij_nazwe(nazwa_katalogu):
 def wyznacz_litere_faktury(nr_faktury):
     return chr(ord('A') + nr_faktury)
 
+def letter_to_number(single_letter):
+    return ord(single_letter.upper()) - ord('A')
+
 class TestProcessingSQL(unittest.TestCase):
     def test_processing_sql(self):
         '''
@@ -79,3 +82,5 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(wyznacz_litere_faktury(0), 'A')
         self.assertEqual(wyznacz_litere_faktury(1), 'B')
         self.assertEqual(wyznacz_litere_faktury(25), 'Z')
+        self.assertEqual(letter_to_number('a'), 0)
+        self.assertEqual(letter_to_number('Z'), 25)
