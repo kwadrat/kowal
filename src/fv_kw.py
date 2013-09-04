@@ -34,7 +34,7 @@ class ColCalc(object):
         ColCalc:
         '''
         if self.my_offset <= liczba <= 25 + self.my_offset:
-            return chr(ord('A') + liczba - self.my_offset)
+            return hj_kw.wyznacz_litere_faktury(liczba - self.my_offset)
         else:
             raise RuntimeError('Poza zakresem?: %s' % repr(liczba))
 
