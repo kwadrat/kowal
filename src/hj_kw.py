@@ -54,6 +54,9 @@ def zamien_na_logiczne(wartosc):
 def przytnij_nazwe(nazwa_katalogu):
     return nazwa_katalogu.replace('/', '')
 
+def wyznacz_litere_faktury(nr_faktury):
+    return chr(ord('A') + nr_faktury)
+
 class TestProcessingSQL(unittest.TestCase):
     def test_processing_sql(self):
         '''
@@ -73,3 +76,6 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(zamien_na_logiczne([]), 0)
         self.assertEqual(przytnij_nazwe('abc'), 'abc')
         self.assertEqual(przytnij_nazwe('/abc/'), 'abc')
+        self.assertEqual(wyznacz_litere_faktury(0), 'A')
+        self.assertEqual(wyznacz_litere_faktury(1), 'B')
+        self.assertEqual(wyznacz_litere_faktury(25), 'Z')
