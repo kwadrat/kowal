@@ -27,7 +27,7 @@ class ColCalc(object):
         '''
         ColCalc:
         '''
-        return ord(litera.upper()) - ord('A') + self.my_offset
+        return hj_kw.letter_to_number(litera) + self.my_offset
 
     def vx_litera(self, liczba):
         '''
