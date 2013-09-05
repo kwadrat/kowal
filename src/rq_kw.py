@@ -33,6 +33,9 @@ RokDluzszy = DodatkoweMiesiacePrzed + RokZwykly + DodatkoweMiesiacePo
 
 ZEZWOLENIE_NSK = 1 # Ogranicz tylko dla poszczególnych lat
 
+ECHO_NIE = 0 # Pracuj po cichu
+ECHO_TAK = 1 # Generuj HTML
+
 PoprawneLiczbyPaskowDlaOkresuMiesiecznego = (
   RokZwykly, # faktury miesięczne punktowe
   RokDluzszy, # faktury miesięczne ciągłe
