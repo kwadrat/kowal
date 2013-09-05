@@ -31,6 +31,8 @@ RokZwykly = 12
 # Dla faktur ciągłych pozwalamy na dodatkowe miesiące na ekranie
 RokDluzszy = DodatkoweMiesiacePrzed + RokZwykly + DodatkoweMiesiacePo
 
+ZEZWOLENIE_NSK = 1 # Ogranicz tylko dla poszczególnych lat
+
 PoprawneLiczbyPaskowDlaOkresuMiesiecznego = (
   RokZwykly, # faktury miesięczne punktowe
   RokDluzszy, # faktury miesięczne ciągłe
