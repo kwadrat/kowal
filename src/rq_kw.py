@@ -159,6 +159,17 @@ else:
     Docelowo_psyco_nie_pygresql = 0
     ##############################################################################
 
+# (default: 0) Sumowanie słupka indywidualnego:
+# 1 - słupki indywidualne od razu są sumowane, potem drugie sumowanie
+# jest w słupku zbiorczym
+# 0 - jest tylko sumowanie w słupku zbiorczym
+# Sumowanie słupka:
+# - zbiorczego - zawsze
+# - indywidualnego - być może
+
+# Sumowanie słupka na wykresie indywidualnego licznika
+TymczasowoSumowanieInd = 0
+
 Tymczasowo_pokaz_klucz_faktury_zamiast_licz_porz = 0
 
 Niebezpieczne_testowa_aplikacja_produkcyjna_baza = 0
