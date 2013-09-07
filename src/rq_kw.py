@@ -150,6 +150,8 @@ TymczasowoPkzBaz = 1
 # Pokaż zbitki
 TymczasowoPkzZbt = 1
 
+jquery_enabled = 0
+
 if WersjaUbuntuTest:
     ##############################################################################
     Docelowo_psyco_nie_pygresql = 1
