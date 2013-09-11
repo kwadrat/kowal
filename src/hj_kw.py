@@ -63,6 +63,9 @@ def zakres_liter_faktury(liczba_faktur):
 def letter_to_number(single_letter):
     return ord(single_letter.upper()) - ord('A')
 
+def podpis_faktury(rest_of_txt):
+    return 'fakt. ' + rest_of_txt
+
 class TestProcessingSQL(unittest.TestCase):
     def test_processing_sql(self):
         '''
@@ -88,3 +91,4 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(zakres_liter_faktury(2), '(A+B)')
         self.assertEqual(letter_to_number('a'), 0)
         self.assertEqual(letter_to_number('Z'), 25)
+        self.assertEqual(podpis_faktury('a'), 'fakt. a')
