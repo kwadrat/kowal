@@ -150,6 +150,9 @@ TymczasowoPkzBaz = 1
 # Pokaż zbitki
 TymczasowoPkzZbt = 1
 
+# (Docelowo: 0) Testowo, wywołujemy padanie aplikacji dla śledzenia
+TymczasowoPadnijPrzySklejaniu = 0
+
 jquery_enabled = 0
 
 if WersjaUbuntuTest:
