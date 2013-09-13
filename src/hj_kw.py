@@ -69,6 +69,9 @@ def podpis_faktury(rest_of_txt):
 def significant_values_for_months(my_dict):
     return any(v for month, v in my_dict.iteritems() if 1 <= month <= 12)
 
+def rcp_plus(list_of_terms):
+    return '+'.join(list_of_terms)
+
 class TestProcessingSQL(unittest.TestCase):
     def test_processing_sql(self):
         '''
@@ -99,3 +102,4 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(significant_values_for_months({1:3}), 1)
         self.assertEqual(significant_values_for_months({1:0}), 0)
         self.assertEqual(significant_values_for_months({13:3}), 0)
+        self.assertEqual(rcp_plus(['A1', 'B2', 'C3']), 'A1+B2+C3')
