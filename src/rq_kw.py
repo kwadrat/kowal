@@ -182,4 +182,5 @@ Niebezpieczne_testowa_aplikacja_produkcyjna_baza = 0
 DocelowoWirtualneKolumny = 0
 DocelowoOdwrotnieWCzasie = 0
 DocelowoDolaczSumeZuzycia = 0
+DocelowoUsuwajPuste = 0
 TymczasowoTylkoJeden = 1
