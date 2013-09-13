@@ -51,3 +51,10 @@ class WriterGateway(object):
         WriterGateway:
         '''
         self.wbk = self.xlwt.Workbook()
+
+    def workbook_save(self, nazwa_docelowa):
+        '''
+        WriterGateway:
+        '''
+        self.wbk.save(nazwa_docelowa)
+        self.wbk = None
