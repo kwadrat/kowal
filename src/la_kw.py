@@ -46,7 +46,7 @@ class WriterGateway(object):
         '''
         self.xlwt = new_module_for_writing_spreadsheet()
 
-    def Workbook(self):
+    def workbook_create(self):
         '''
         WriterGateway:
         '''
