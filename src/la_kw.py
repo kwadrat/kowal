@@ -52,6 +52,13 @@ class WriterGateway(object):
         '''
         self.wbk = self.xlwt.Workbook()
 
+    def add_a_sheet(self, sheet_name):
+        '''
+        WriterGateway:
+        '''
+        self.sheet = self.wbk.add_sheet(sheet_name)
+        return self.sheet
+
     def workbook_save(self, nazwa_docelowa):
         '''
         WriterGateway:
