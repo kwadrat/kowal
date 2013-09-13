@@ -38,3 +38,16 @@ def analyze_excel_files(dfb, worker_class, filenames):
         print single_file
         obk = worker_class()
         obk.analyze_this_file(dfb, xlrd, single_file)
+
+class WriterGateway(object):
+    def __init__(self):
+        '''
+        WriterGateway:
+        '''
+        self.xlwt = new_module_for_writing_spreadsheet()
+
+    def Workbook(self):
+        '''
+        WriterGateway:
+        '''
+        self.wbk = self.xlwt.Workbook()
