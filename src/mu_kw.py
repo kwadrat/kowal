@@ -56,7 +56,7 @@ def generate_hours_horizontally(xrg, all_hours):
     for nr, one_hour in enumerate(all_hours):
         row = 0
         col = nr + 1
-        xrg.zapisz_flt(row, col, one_hour)
+        xrg.zapisz_direct(row, col, one_hour)
 
 def locate_object_key(dfb, under_name):
     key_object = le_kw.dq_object_key(dfb, under_name)
