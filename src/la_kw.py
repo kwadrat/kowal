@@ -83,6 +83,13 @@ class WriterGateway(object):
         '''
         self.sheet.write(akt_wiersz, akt_kolumna, liczba)
 
+    def zapisz_nazwe_miesiaca(self, akt_wiersz, nr_mies):
+        '''
+        WriterGateway:
+        '''
+        akt_kolumna = 0
+        self.zapisz_mi(akt_wiersz, akt_kolumna, dn_kw.tab_miesiecy[nr_mies - 1])
+
     if rq_kw.DocelowoWirtualneKolumny:
         ##############################################################################
         pass
