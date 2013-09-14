@@ -44,6 +44,8 @@ class WriterGateway(object):
         WriterGateway:
         '''
         self.xlwt = new_module_for_writing_spreadsheet()
+        self.n1_style = self.xlwt.XFStyle()
+        self.n1_style.num_format_str = '#,##0.00'
 
     def workbook_create(self):
         '''
