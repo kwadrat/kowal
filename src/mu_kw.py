@@ -223,12 +223,7 @@ class CommonReader(object):
                 for sample_index, my_sample in enumerate(my_data[lc_kw.fq_m_samples_qv]):
                     row = all_dates.index(my_data[lc_kw.fq_m_date_qv]) + 1
                     col = sample_index + 1
-                    try:
-                        xrg.zapisz_flt(row, col, my_sample)
-                    except ValueError:
-                        tmp_format = 'row, col, my_sample'; print 'Eval:', tmp_format, eval(tmp_format)
-                        import pdb;pdb.set_trace()
-                        raise
+                    xrg.zapisz_flt(row, col, my_sample)
         xrg.workbook_save(output_file)
 
     def recalculate_statistics(self, dfb):
