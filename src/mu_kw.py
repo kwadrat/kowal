@@ -46,11 +46,10 @@ dict_names = {
     }
 
 def generate_dates_vertically(xrg, all_dates):
-    sheet = xrg.sheet
     for nr, one_date in enumerate(all_dates):
         row = nr + 1
         col = 0
-        sheet.write(row, col, one_date)
+        xrg.zapisz_flt(row, col, one_date)
 
 def generate_hours_horizontally(sheet, all_hours):
     for nr, one_hour in enumerate(all_hours):
