@@ -203,7 +203,7 @@ class CommonReader(object):
         for local_key, my_sample_row in self.internal_rows.iteritems():
             my_sample_row.put_in_database(dfb, self.krt_pobor, self.table_of_samples, local_key)
 
-    def generate_one_file(self, xlwt, dfb, output_file):
+    def generate_one_file(self, xrg, xlwt, dfb, output_file):
         '''
         CommonReader:
         '''
