@@ -80,7 +80,7 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        self.sheet.write(akt_wiersz, akt_kolumna, liczba)
+        self.zapisz_direct(akt_wiersz, akt_kolumna, liczba)
 
     def zapisz_wzor(self, akt_wiersz, akt_kolumna, tekst_wzoru):
         '''
