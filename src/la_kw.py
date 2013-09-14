@@ -101,6 +101,5 @@ class WriterGateway(object):
 
 def generate_excel_files(dfb, plik_energii, plik_mocy):
     xrg = WriterGateway()
-    xlwt = new_module_for_writing_spreadsheet()
-    fu_kw.EnergyReader().generate_one_file(xrg, xlwt, dfb, plik_energii)
-    mt_kw.PowerReader().generate_one_file(xrg, xlwt, dfb, plik_mocy)
+    fu_kw.EnergyReader().generate_one_file(xrg, dfb, plik_energii)
+    mt_kw.PowerReader().generate_one_file(xrg, dfb, plik_mocy)
