@@ -2,7 +2,6 @@
 # -*- coding: UTF-8 -*-
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
-import rq_kw
 import dn_kw
 import en_kw
 import mt_kw
@@ -89,21 +88,6 @@ class WriterGateway(object):
         '''
         akt_kolumna = 0
         self.zapisz_mi(akt_wiersz, akt_kolumna, dn_kw.tab_miesiecy[nr_mies - 1])
-
-    if rq_kw.DocelowoWirtualneKolumny:
-        ##############################################################################
-        pass
-        ##############################################################################
-    else:
-        ##############################################################################
-        def zapisz_pare(self, akt_wiersz, akt_kolumna, napis, litera_faktury):
-            '''
-            WriterGateway:
-            '''
-            self.zapisz_mi(akt_wiersz, akt_kolumna, napis)
-            if litera_faktury is not None:
-                self.zapisz_mi(akt_wiersz + 1, akt_kolumna, litera_faktury)
-        ##############################################################################
 
 def generate_excel_files(dfb, plik_energii, plik_mocy):
     xrg = WriterGateway()
