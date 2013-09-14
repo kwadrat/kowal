@@ -92,6 +92,12 @@ class WriterGateway(object):
         '''
         self.zapisz_ze_stylem(akt_wiersz, akt_kolumna, liczba, self.n1_style)
 
+    def zapisz_date(self, akt_wiersz, akt_kolumna, liczba):
+        '''
+        WriterGateway:
+        '''
+        self.zapisz_ze_stylem(akt_wiersz, akt_kolumna, liczba, self.n2_style)
+
     def zapisz_wzor(self, akt_wiersz, akt_kolumna, tekst_wzoru):
         '''
         WriterGateway:
