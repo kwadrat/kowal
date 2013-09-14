@@ -78,6 +78,12 @@ class WriterGateway(object):
         '''
         self.sheet.write(akt_wiersz, akt_kolumna, liczba)
 
+    def zapisz_ze_stylem(self, akt_wiersz, akt_kolumna, liczba, style):
+        '''
+        WriterGateway:
+        '''
+        self.sheet.write(akt_wiersz, akt_kolumna, liczba, style)
+
     def zapisz_flt(self, akt_wiersz, akt_kolumna, liczba):
         '''
         WriterGateway:
