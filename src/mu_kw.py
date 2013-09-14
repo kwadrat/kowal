@@ -210,7 +210,6 @@ class CommonReader(object):
         dane_bazy = le_kw.dq_load_from_db(dfb, self.table_of_samples)
         object_names = unique_sorted(dane_bazy, lc_kw.fq_account_qv)
         xrg.workbook_create()
-        wbk = xrg.wbk
         for nr, name in enumerate(object_names):
             xrg.add_a_sheet(dict_names[name])
             selected_data = filter(lambda x: x[lc_kw.fq_account_qv] == name, dane_bazy)
