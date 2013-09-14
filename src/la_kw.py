@@ -46,6 +46,8 @@ class WriterGateway(object):
         self.xlwt = new_module_for_writing_spreadsheet()
         self.n1_style = self.xlwt.XFStyle()
         self.n1_style.num_format_str = '#,##0.00' # użyj separatora 1000
+        self.n2_style = self.xlwt.XFStyle()
+        self.n2_style.num_format_str = 'm/d/yyyy' # data RRRR-MM-DD
 
     def workbook_create(self):
         '''
