@@ -2,6 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import rq_kw
 import en_kw
 import mt_kw
 import fu_kw
@@ -80,3 +81,19 @@ class WriterGateway(object):
         WriterGateway:
         '''
         self.sheet.write(akt_wiersz, akt_kolumna, liczba)
+
+    if rq_kw.DocelowoWirtualneKolumny:
+        ##############################################################################
+        pass
+        ##############################################################################
+    else:
+        ##############################################################################
+        def zapisz_pare(self, akt_wiersz, akt_kolumna, napis, litera_faktury):
+            '''
+            WriterGateway:
+            '''
+            self.zapisz_mi(akt_wiersz, akt_kolumna, napis)
+            if litera_faktury is not None:
+                self.zapisz_mi(akt_wiersz + 1, akt_kolumna, litera_faktury)
+        ##############################################################################
+
