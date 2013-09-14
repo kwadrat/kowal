@@ -48,6 +48,10 @@ class WriterGateway(object):
         self.n1_style.num_format_str = '#,##0.00' # użyj separatora 1000
         self.n2_style = self.xlwt.XFStyle()
         self.n2_style.num_format_str = 'yyyy/mm/dd;@' # data RRRR-MM-DD
+        align_on = self.xlwt.Alignment()
+        align_on.wrap = 1
+        self.n3_style = self.xlwt.XFStyle()
+        self.n3_style.alignment = align_on
 
     def workbook_create(self):
         '''
