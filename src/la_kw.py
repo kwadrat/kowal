@@ -62,7 +62,6 @@ class WriterGateway(object):
         WriterGateway:
         '''
         self.sheet = self.wbk.add_sheet(sheet_name)
-        return self.sheet
 
     def workbook_save(self, nazwa_docelowa):
         '''
