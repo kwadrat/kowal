@@ -70,6 +70,12 @@ class WriterGateway(object):
         '''
         self.sheet.write(akt_wiersz, akt_kolumna, en_kw.utf_to_unicode(napis))
 
+    def zapisz_direct(self, akt_wiersz, akt_kolumna, liczba):
+        '''
+        WriterGateway:
+        '''
+        self.sheet.write(akt_wiersz, akt_kolumna, liczba)
+
     def zapisz_flt(self, akt_wiersz, akt_kolumna, liczba):
         '''
         WriterGateway:
