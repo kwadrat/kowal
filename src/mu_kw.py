@@ -224,7 +224,7 @@ class CommonReader(object):
                     row = all_dates.index(my_data[lc_kw.fq_m_date_qv]) + 1
                     col = sample_index + 1
                     try:
-                        sheet.write(row, col, my_sample)
+                        xrg.zapisz_flt(row, col, my_sample)
                     except ValueError:
                         tmp_format = 'row, col, my_sample'; print 'Eval:', tmp_format, eval(tmp_format)
                         import pdb;pdb.set_trace()
