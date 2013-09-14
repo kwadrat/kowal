@@ -51,7 +51,7 @@ class WriterGateway(object):
         align_on = self.xlwt.Alignment()
         align_on.wrap = 1
         self.n3_style = self.xlwt.XFStyle()
-        self.n3_style.alignment = align_on
+        self.n3_style.alignment = align_on # Zawijaj tekst
 
     def workbook_create(self):
         '''
