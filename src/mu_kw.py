@@ -213,7 +213,6 @@ class CommonReader(object):
         wbk = xrg.wbk
         for nr, name in enumerate(object_names):
             xrg.add_a_sheet(dict_names[name])
-            sheet = xrg.sheet
             selected_data = filter(lambda x: x[lc_kw.fq_account_qv] == name, dane_bazy)
             all_dates = unique_sorted(selected_data, lc_kw.fq_m_date_qv)
             all_hours = self.period_server.hours_for_header()
