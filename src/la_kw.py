@@ -77,6 +77,12 @@ class WriterGateway(object):
         '''
         self.sheet.write(akt_wiersz, akt_kolumna, liczba)
 
+    def zapisz_wzor(self, akt_wiersz, akt_kolumna, tekst_wzoru):
+        '''
+        WriterGateway:
+        '''
+        self.sheet.write(akt_wiersz, akt_kolumna, self.xlwt.Formula(tekst_wzoru))
+
     def zapisz_nazwe_miesiaca(self, akt_wiersz, nr_mies):
         '''
         WriterGateway:
