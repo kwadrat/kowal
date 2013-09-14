@@ -72,6 +72,13 @@ def significant_values_for_months(my_dict):
 def rcp_plus(list_of_terms):
     return '+'.join(list_of_terms)
 
+def rcp_pion(wiersz_bazowy_miesiecy, kl_letter_of_col):
+    return 'SUM(%(kl_letter_of_col)s%(mon_january)d:%(kl_letter_of_col)s%(mon_december)d)' % dict(
+        mon_january=wiersz_bazowy_miesiecy + 2,
+        mon_december=wiersz_bazowy_miesiecy + 13,
+        kl_letter_of_col=kl_letter_of_col,
+        )
+
 class TestProcessingSQL(unittest.TestCase):
     def test_processing_sql(self):
         '''
@@ -103,3 +110,6 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(significant_values_for_months({1:0}), 0)
         self.assertEqual(significant_values_for_months({13:3}), 0)
         self.assertEqual(rcp_plus(['A1', 'B2', 'C3']), 'A1+B2+C3')
+        self.assertEqual(rcp_pion(0, 'A'), 'SUM(A2:A13)')
+        self.assertEqual(rcp_pion(1, 'A'), 'SUM(A3:A14)')
+        self.assertEqual(rcp_pion(0, 'B'), 'SUM(B2:B13)')
