@@ -52,11 +52,10 @@ def generate_dates_vertically(xrg, all_dates):
         xrg.zapisz_flt(row, col, one_date)
 
 def generate_hours_horizontally(xrg, all_hours):
-    sheet = xrg.sheet
     for nr, one_hour in enumerate(all_hours):
         row = 0
         col = nr + 1
-        sheet.write(row, col, one_hour)
+        xrg.zapisz_flt(row, col, one_hour)
 
 def locate_object_key(dfb, under_name):
     key_object = le_kw.dq_object_key(dfb, under_name)
