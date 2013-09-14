@@ -68,3 +68,9 @@ class WriterGateway(object):
         '''
         self.wbk.save(nazwa_docelowa)
         self.wbk = None
+
+    def zapisz_mi(self, akt_wiersz, akt_kolumna, napis):
+        '''
+        WriterGateway:
+        '''
+        self.sheet.write(akt_wiersz, akt_kolumna, en_kw.utf_to_unicode(napis))
