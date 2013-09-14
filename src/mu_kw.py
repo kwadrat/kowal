@@ -228,7 +228,7 @@ class CommonReader(object):
                         tmp_format = 'row, col, my_sample'; print 'Eval:', tmp_format, eval(tmp_format)
                         import pdb;pdb.set_trace()
                         raise
-        wbk.save(output_file)
+        xrg.workbook_save(output_file)
 
     def recalculate_statistics(self, dfb):
         '''
