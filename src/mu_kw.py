@@ -51,7 +51,8 @@ def generate_dates_vertically(xrg, all_dates):
         col = 0
         xrg.zapisz_flt(row, col, one_date)
 
-def generate_hours_horizontally(sheet, all_hours):
+def generate_hours_horizontally(xrg, all_hours):
+    sheet = xrg.sheet
     for nr, one_hour in enumerate(all_hours):
         row = 0
         col = nr + 1
@@ -218,7 +219,7 @@ class CommonReader(object):
             all_dates = unique_sorted(selected_data, lc_kw.fq_m_date_qv)
             all_hours = self.period_server.hours_for_header()
             generate_dates_vertically(xrg, all_dates)
-            generate_hours_horizontally(sheet, all_hours)
+            generate_hours_horizontally(xrg, all_hours)
             for my_data in selected_data:
                 for sample_index, my_sample in enumerate(my_data[lc_kw.fq_m_samples_qv]):
                     row = all_dates.index(my_data[lc_kw.fq_m_date_qv]) + 1
