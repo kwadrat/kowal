@@ -180,6 +180,5 @@ Tymczasowo_pokaz_klucz_faktury_zamiast_licz_porz = 0
 Niebezpieczne_testowa_aplikacja_produkcyjna_baza = 0
 
 DocelowoOdwrotnieWCzasie = 0
-DocelowoDolaczSumeZuzycia = 1
 DocelowoUsuwajPuste = 0
 TymczasowoTylkoJeden = 1
