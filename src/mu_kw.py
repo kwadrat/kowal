@@ -45,7 +45,8 @@ dict_names = {
     'ZESPOL_SZKOL_RYBNIK_SWIERKLANSKA': 'ZSB',
     }
 
-def generate_dates_vertically(sheet, all_dates):
+def generate_dates_vertically(xrg, all_dates):
+    sheet = xrg.sheet
     for nr, one_date in enumerate(all_dates):
         row = nr + 1
         col = 0
@@ -217,7 +218,7 @@ class CommonReader(object):
             selected_data = filter(lambda x: x[lc_kw.fq_account_qv] == name, dane_bazy)
             all_dates = unique_sorted(selected_data, lc_kw.fq_m_date_qv)
             all_hours = self.period_server.hours_for_header()
-            generate_dates_vertically(sheet, all_dates)
+            generate_dates_vertically(xrg, all_dates)
             generate_hours_horizontally(sheet, all_hours)
             for my_data in selected_data:
                 for sample_index, my_sample in enumerate(my_data[lc_kw.fq_m_samples_qv]):
