@@ -78,6 +78,12 @@ class WriterGateway(object):
         '''
         self.sheet.write(akt_wiersz, akt_kolumna, en_kw.utf_to_unicode(napis))
 
+    def zapisz_zawijane(self, akt_wiersz, akt_kolumna, napis):
+        '''
+        WriterGateway:
+        '''
+        self.sheet.write(akt_wiersz, akt_kolumna, en_kw.utf_to_unicode(napis), self.n3_style)
+
     def zapisz_direct(self, akt_wiersz, akt_kolumna, liczba):
         '''
         WriterGateway:
