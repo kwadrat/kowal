@@ -92,7 +92,9 @@ def wybierz_ze_slownikow(tmp_list, tmp_key):
     return map(lambda the_dict: the_dict[tmp_key], tmp_list)
 
 def ogranicz_wartosci_umowne(tmp_list):
-    return [36.0]
+    without_zero = filter(None, tmp_list)
+    without_duplicates = list(set(without_zero))
+    return without_duplicates
 
 class TestProcessingSQL(unittest.TestCase):
     def test_processing_sql(self):
@@ -133,3 +135,4 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(wybierz_ze_slownikow([{'a': 1}], 'a'), [1])
         self.assertEqual(wybierz_ze_slownikow([{'a': 1, 'b': 2}], 'b'), [2])
         self.assertEqual(ogranicz_wartosci_umowne([0.0, 0.0, 36.0]), [36.0])
+        self.assertEqual(ogranicz_wartosci_umowne([40.0, 40.0, 0.0]), [40.0])
