@@ -180,5 +180,5 @@ Tymczasowo_pokaz_etykiety_pol_faktury = 0
 
 Niebezpieczne_testowa_aplikacja_produkcyjna_baza = 0
 
-DocelowoOdwrotnieWCzasie = 1
+DocelowoOdwrotnieOproczOstatniego = 1
 TymczasowoTylkoJeden = 0
