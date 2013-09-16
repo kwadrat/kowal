@@ -89,7 +89,7 @@ def reverse_but_last(tmp_list):
         end_ptr -= 1
 
 def wybierz_ze_slownikow(tmp_list, tmp_key):
-    return [1]
+    return map(lambda the_dict: the_dict[tmp_key], tmp_list)
 
 class TestProcessingSQL(unittest.TestCase):
     def test_processing_sql(self):
@@ -128,3 +128,4 @@ class TestProcessingSQL(unittest.TestCase):
         a = [1, 4, 2, 3]; reverse_but_last(a)
         self.assertEqual(a, [3, 2, 1, 4])
         self.assertEqual(wybierz_ze_slownikow([{'a': 1}], 'a'), [1])
+        self.assertEqual(wybierz_ze_slownikow([{'a': 1, 'b': 2}], 'b'), [2])
