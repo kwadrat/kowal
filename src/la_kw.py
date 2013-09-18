@@ -80,6 +80,13 @@ class WriterGateway(object):
         '''
         self.sheet.write(akt_wiersz, akt_kolumna, en_kw.utf_to_unicode(napis))
 
+    def zapisz_polaczone_komorki(self, akt_wiersz, akt_kolumna, napis):
+        '''
+        WriterGateway:
+        '''
+        ile_w_poziomie = 10
+        self.sheet.write_merge(akt_wiersz, akt_kolumna, akt_wiersz, akt_kolumna + ile_w_poziomie, en_kw.utf_to_unicode(napis))
+
     def zapisz_zawijane(self, akt_wiersz, akt_kolumna, napis):
         '''
         WriterGateway:
