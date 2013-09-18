@@ -75,6 +75,9 @@ def rcp_plus(list_of_terms):
 def rcp_minus(first, second):
     return ''.join([first, '-', second])
 
+def rcp_dziel(first, second):
+    return ''.join([first, '/', second])
+
 def rcp_pion(wiersz_bazowy_miesiecy, kl_letter_of_col):
     return 'SUM(%(kl_letter_of_col)s%(mon_january)d:%(kl_letter_of_col)s%(mon_december)d)' % dict(
         mon_january=wiersz_bazowy_miesiecy + 2,
@@ -140,3 +143,4 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(ogranicz_wartosci_umowne([0.0, 0.0, 36.0]), [36.0])
         self.assertEqual(ogranicz_wartosci_umowne([40.0, 40.0, 0.0]), [40.0])
         self.assertEqual(rcp_minus('A1', 'B1'), 'A1-B1')
+        self.assertEqual(rcp_dziel('A1', 'B1'), 'A1/B1')
