@@ -52,6 +52,8 @@ class WriterGateway(object):
         align_on.wrap = 1
         self.n3_style = self.xlwt.XFStyle()
         self.n3_style.alignment = align_on # Zawijaj tekst
+        self.n4_style = self.xlwt.XFStyle()
+        self.n4_style.num_format_str = '#,##0.00_;[Red]-#,##0.00' # Liczby ujemne na czerwono, użyj separatora 1000
 
     def workbook_create(self):
         '''
