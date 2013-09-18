@@ -110,6 +110,12 @@ class WriterGateway(object):
         '''
         self.zapisz_ze_stylem(akt_wiersz, akt_kolumna, liczba, self.n2_style)
 
+    def zapisz_stylowy_wzor(self, akt_wiersz, akt_kolumna, tekst_wzoru, the_style):
+        '''
+        WriterGateway:
+        '''
+        self.sheet.write(akt_wiersz, akt_kolumna, self.xlwt.Formula(tekst_wzoru), the_style)
+
     def zapisz_wzor(self, akt_wiersz, akt_kolumna, tekst_wzoru):
         '''
         WriterGateway:
