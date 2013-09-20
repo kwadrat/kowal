@@ -79,6 +79,9 @@ def okresl_spcf_dla_blednych(data_pocz, data_kon):
         spcf_wyznaczona = None
     return spcf_wyznaczona
 
+def to_int_koniec_miesiaca(rm_akt, rm_nast):
+    return rm_akt != rm_nast
+
 def oba_konce_miesiecy(data_pocz, data_kon):
     spcf_wyznaczona = None
     return spcf_wyznaczona
