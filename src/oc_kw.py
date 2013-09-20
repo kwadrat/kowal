@@ -99,6 +99,7 @@ rjb_strona_osma = KalejdoskopStron(8)
 rjb_strona_dziewiata = KalejdoskopStron(9)
 rjb_strona_dziesiata = KalejdoskopStron(10)
 rjb_strona_jedenasta = KalejdoskopStron(11)
+rjb_strona_dwunasta = KalejdoskopStron(12)
 
 def fn_adres_post(wersja_produkcyjna):
     return lk_kw.rjb_sam_slsh + fn_a_in_dwa(wersja_produkcyjna) + lk_kw.rjb_sam_slsh + dodaj_py(rjb_strona_druga.rj_sam_rdzen)
@@ -157,6 +158,8 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(rjb_strona_dziesiata.rj_py_wersja, 'l10.py')
         self.assertEqual(rjb_strona_jedenasta.rj_sam_rdzen, 'l11')
         self.assertEqual(rjb_strona_jedenasta.rj_py_wersja, 'l11.py')
+        self.assertEqual(rjb_strona_dwunasta.rj_sam_rdzen, 'l12')
+        self.assertEqual(rjb_strona_dwunasta.rj_py_wersja, 'l12.py')
         self.assertEqual(fn_a_in_dwa(0), 'inne2')
         self.assertEqual(fn_a_in_dwa(1), 'inne')
         self.assertEqual(fn_adres_post(1), '/inne/l2.py')
