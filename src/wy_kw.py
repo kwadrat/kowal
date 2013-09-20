@@ -53,6 +53,7 @@ faktura_jest_za_dwa_miesiace = zrob_same_daty('''\
 
 faktura_jest_za_trzy_miesiace = zrob_same_daty('''\
 2011-08-30 2011-11-28 Zespół Szkół nr 2
+2011-08-30 2011-10-31 Zespół Szkół nr 2
 ''')
 
 faktura_jest_niezrozumiala = zrob_same_daty('''\
@@ -100,4 +101,5 @@ class TestNiejasnychDatEnElektr(unittest.TestCase):
         self.assertEqual(dates_of_energy_as_month_and_year('2011-11-29', '2011-12-31'), (2011, 12))
         self.assertEqual(dates_of_energy_as_month_and_year('2010-10-01', '2010-12-31'), (2010, 10))
         self.assertEqual(dates_of_energy_as_month_and_year('2010-01-15', '2010-02-28'), (2010, 2))
+        self.assertEqual(dates_of_energy_as_month_and_year('2011-08-30', '2011-10-31'), (2011, 10))
         self.assertRaises(RuntimeError, dates_of_energy_as_month_and_year, '2010-01-01', '2010-02-01')
