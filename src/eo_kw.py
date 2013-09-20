@@ -21,6 +21,7 @@ Przedszkole35_x = 29
 Przedszkole43 = 35
 BT_SP2_x = 38 # Szkoła podstawowa nr 2
 BT_SP3 = 39 # Szkoła podstawowa nr 3
+BT_SP11_x = 42 # Szkoła podstawowa nr 11
 BT_SP20 = 51 # Szkoła podstawowa nr 13
 BT_SP22_x = 53 # Szkoła podstawowa nr 22
 BT_SP24_x = 54 # Szkoła podstawowa nr 24
