@@ -86,6 +86,8 @@ def oba_konce_miesiecy(data_pocz, data_kon):
 def dates_of_energy_as_month_and_year(data_pocz, data_kon):
     spcf_pocz = okresl_spcf_dla_blednych(data_pocz, data_kon)
     if spcf_pocz is None:
+        spcf_pocz = oba_konce_miesiecy(data_pocz, data_kon)
+    if spcf_pocz is None:
         spcf_pocz = dn_kw.one_common_date_of_energy_as_month_and_year(data_pocz, data_kon)
     return spcf_pocz
 
