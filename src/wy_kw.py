@@ -89,14 +89,20 @@ def to_koniec_miesiaca(data_pocz):
     return to_int_koniec_miesiaca(rm_akt, rm_nast)
 
 def oba_konce_miesiecy(data_pocz, data_kon):
-    if 1:
-        if data_pocz == '2013-05-31' and data_kon == '2013-06-30':
-            return (2013, 6)
-        else:
-            return None
-    numer_pocz = dn_kw.napis_na_numer_dnia(data_pocz)
-    numer_kon = dn_kw.napis_na_numer_dnia(data_kon)
-    spcf_wyznaczona = None
+    numer_a = dn_kw.napis_na_numer_dnia(data_pocz)
+    numer_b = numer_a + 1
+    numer_c = dn_kw.napis_na_numer_dnia(data_kon)
+    numer_d = numer_c + 1
+    rm_dla_a = dn_kw.RokMscDnia(numer_a)
+    rm_dla_b = dn_kw.RokMscDnia(numer_b)
+    rm_dla_c = dn_kw.RokMscDnia(numer_c)
+    rm_dla_d = dn_kw.RokMscDnia(numer_d)
+    if (rm_dla_a != rm_dla_b and # Koniec miesiąca
+            rm_dla_c != rm_dla_d and # Koniec miesiąca
+            rm_dla_b == rm_dla_c): # Między końcami jest dokładnie jeden miesiąc
+        spcf_wyznaczona = rm_dla_c
+    else:
+        spcf_wyznaczona = None
     return spcf_wyznaczona
 
 def dates_of_energy_as_month_and_year(data_pocz, data_kon):
