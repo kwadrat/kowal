@@ -119,6 +119,7 @@ class TestConstantStrings(unittest.TestCase):
         '''
         TestConstantStrings:
         '''
+        obk = CoreResolver('media.ciri.pl')
         self.assertEqual(mthd_get, 'GET')
         self.assertEqual(mthd_post, 'POST')
         self.assertEqual(rjb_dla_drukowania, 'print')
@@ -129,7 +130,7 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(RozszerzenieObrazka, '.png')
         self.assertEqual(url_ameryka_http, 'http://')
         self.assertEqual(rjb_hs_pocz, 'https://')
-        self.assertEqual(adres_maszyny, 'media.ciri.pl')
+        self.assertEqual(obk.adres_maszyny, 'media.ciri.pl')
         self.assertEqual(url_kotw_a_ica, 'http://media.ciri.pl')
         self.assertEqual(rjb_hs_pcztk_sam, 'https://media.ciri.pl')
         self.assertEqual(url_kotw_b_ica, 'http://media.ciri.pl/')
