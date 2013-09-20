@@ -79,6 +79,10 @@ def okresl_spcf_dla_blednych(data_pocz, data_kon):
         spcf_wyznaczona = None
     return spcf_wyznaczona
 
+def oba_konce_miesiecy(data_pocz, data_kon):
+    spcf_wyznaczona = None
+    return spcf_wyznaczona
+
 def dates_of_energy_as_month_and_year(data_pocz, data_kon):
     spcf_pocz = okresl_spcf_dla_blednych(data_pocz, data_kon)
     if spcf_pocz is None:
@@ -103,3 +107,9 @@ class TestNiejasnychDatEnElektr(unittest.TestCase):
         self.assertEqual(dates_of_energy_as_month_and_year('2010-01-15', '2010-02-28'), (2010, 2))
         self.assertEqual(dates_of_energy_as_month_and_year('2011-08-30', '2011-10-31'), (2011, 10))
         self.assertRaises(RuntimeError, dates_of_energy_as_month_and_year, '2010-01-01', '2010-02-01')
+
+    def test_faktury_koncow_miesiecy(self):
+        '''
+        TestNiejasnychDatEnElektr:
+        '''
+        self.assertEqual(oba_konce_miesiecy(None, None), None)
