@@ -49,6 +49,7 @@ tylko_koncowa_data_jest_dobra = zrob_same_daty('''\
 faktura_jest_za_dwa_miesiace = zrob_same_daty('''\
 2011-02-01 2011-03-31 Szkoła Podstawowa nr 3 im. Św. Stanisława Kostki
 2011-01-01 2011-02-28 Zespół Szkolno-Przedszkolny nr 3
+2013-01-01 2013-02-28 Szkoła Podstawowa nr 34
 ''')
 
 faktura_jest_za_trzy_miesiace = zrob_same_daty('''\
@@ -121,6 +122,7 @@ class TestNiejasnychDatEnElektr(unittest.TestCase):
         self.assertEqual(dates_of_energy_as_month_and_year('2010-10-01', '2010-12-31'), (2010, 10))
         self.assertEqual(dates_of_energy_as_month_and_year('2010-01-15', '2010-02-28'), (2010, 2))
         self.assertEqual(dates_of_energy_as_month_and_year('2011-08-30', '2011-10-31'), (2011, 10))
+        self.assertEqual(dates_of_energy_as_month_and_year('2013-01-01', '2013-02-28'), (2013, 2))
         self.assertRaises(RuntimeError, dates_of_energy_as_month_and_year, '2010-01-01', '2010-02-01')
 
     def test_faktury_koncow_miesiecy(self):
