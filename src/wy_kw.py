@@ -89,7 +89,7 @@ class TestNiejasnychDatEnElektr(unittest.TestCase):
         '''
         TestNiejasnychDatEnElektr:
         '''
-        self.assertEqual(dates_of_energy_as_month_and_year('2010-01-01', '2010-01-30'), (2010, 01))
+        self.assertEqual(dates_of_energy_as_month_and_year('2010-01-01', '2010-01-30'), (2010, 1))
         self.assertEqual(dates_of_energy_as_month_and_year('2010-01-31', '2010-02-28'), (2010, 2))
         self.assertEqual(dates_of_energy_as_month_and_year('2010-08-31', '2010-09-30'), (2010, 9))
         self.assertEqual(dates_of_energy_as_month_and_year('2011-02-01', '2011-03-31'), (2011, 3))
