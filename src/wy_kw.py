@@ -79,15 +79,6 @@ def okresl_spcf_dla_blednych(data_pocz, data_kon):
         spcf_wyznaczona = None
     return spcf_wyznaczona
 
-def to_int_koniec_miesiaca(rm_akt, rm_nast):
-    return rm_akt != rm_nast
-
-def to_koniec_miesiaca(data_pocz):
-    numer_dnia = dn_kw.napis_na_numer_dnia(data_pocz)
-    rm_akt = dn_kw.RokMscDnia(numer_dnia)
-    rm_nast = dn_kw.RokMscDnia(numer_dnia + 1)
-    return to_int_koniec_miesiaca(rm_akt, rm_nast)
-
 def oba_konce_miesiecy(data_pocz, data_kon):
     numer_a = dn_kw.napis_na_numer_dnia(data_pocz)
     numer_b = numer_a + 1
@@ -140,5 +131,3 @@ class TestNiejasnychDatEnElektr(unittest.TestCase):
         self.assertEqual(oba_konce_miesiecy('2013-05-31', '2013-06-29'), None)
         self.assertEqual(oba_konce_miesiecy('2013-05-30', '2013-06-30'), None)
         self.assertEqual(oba_konce_miesiecy('2013-04-30', '2013-06-30'), None)
-        self.assertEqual(to_koniec_miesiaca('2013-07-27'), 0)
-        self.assertEqual(to_koniec_miesiaca('2013-07-31'), 1)
