@@ -31,6 +31,14 @@ PoczObrazka = 'plik_'
 RozszerzenieObrazka = '.png'
 url_ameryka_http = 'http://'
 rjb_hs_pocz = 'https://'
+
+class CoreResolver(object):
+    def __init__(self, adres_maszyny):
+        '''
+        CoreResolver:
+        '''
+        self.adres_maszyny = adres_maszyny
+
 if rq_kw.WersjaUbuntuRun:
     ##############################################################################
     adres_maszyny = '192.168.56.102'
