@@ -106,6 +106,12 @@ class WriterGateway(object):
         c2 = akt_kolumna + ile_w_poziomie
         self.sheet.write_merge(r1, r2, c1, c2, en_kw.utf_to_unicode(napis), style=style)
 
+    def zapisz_rozmiar_14_komorki(self, akt_wiersz, akt_kolumna, napis):
+        '''
+        WriterGateway:
+        '''
+        self.zapisz_stylowe_polaczone_komorki(akt_wiersz, akt_kolumna, napis, style=self.n5_style)
+
     def zapisz_zawijane(self, akt_wiersz, akt_kolumna, napis):
         '''
         WriterGateway:
