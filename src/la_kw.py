@@ -70,8 +70,9 @@ class WriterGateway(object):
         self.xlwt = new_module_for_writing_spreadsheet()
         self.n1_style = self.xlwt.XFStyle()
         self.n1_style.num_format_str = '#,##0.00' # użyj separatora 1000
-        self.n2_style = self.xlwt.XFStyle()
-        self.n2_style.num_format_str = 'yyyy/mm/dd;@' # data RRRR-MM-DD
+        self.n2_style = self.prepare_cell(
+            num_format_str='yyyy/mm/dd;@' # data RRRR-MM-DD
+            )
         self.n3_style = self.prepare_cell(wrap=1) # Zawijaj tekst
         self.n4_style = self.prepare_cell(
             num_format_str='[Red]#,##0.00_ ;-#,##0.00 '
