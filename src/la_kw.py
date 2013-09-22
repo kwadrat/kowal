@@ -70,8 +70,9 @@ class WriterGateway(object):
         align_on.wrap = 1
         self.n3_style = self.xlwt.XFStyle()
         self.n3_style.alignment = align_on # Zawijaj tekst
-        self.n4_style = self.xlwt.XFStyle()
-        self.n4_style.num_format_str = '[Red]#,##0.00_ ;-#,##0.00 ' # Liczby nieujemne na czerwono, użyj separatora 1000
+        self.n4_style = self.prepare_font_size(
+            num_format_str='[Red]#,##0.00_ ;-#,##0.00 '
+            ) # Liczby nieujemne na czerwono, użyj separatora 1000
         self.n5_style = self.prepare_font_size(14) # Arial 14 pt
         self.n6_style = self.prepare_font_size(12, bold=1) # Arial 12 pt, bold
 
