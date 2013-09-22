@@ -45,7 +45,8 @@ class WriterGateway(object):
         '''
         the_style = self.xlwt.XFStyle()
         the_font = self.xlwt.Font()
-        if the_size is not None:
+        needed_size = the_size is not None
+        if needed_size:
             the_font.height = the_size * 20 # Arial "the_size" pt
         if bold is not None:
             the_font.bold = bold
