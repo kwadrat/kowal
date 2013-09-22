@@ -46,8 +46,8 @@ class WriterGateway(object):
         the_style = self.xlwt.XFStyle()
         the_font = self.xlwt.Font()
         the_font.height = the_size * 20 # Arial "the_size" pt
+        the_font.bold = bold
         the_style.font = the_font
-        the_style.bold = bold
         return the_style
 
     def __init__(self):
