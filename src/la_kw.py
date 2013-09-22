@@ -86,6 +86,10 @@ class WriterGateway(object):
             ) # Liczby nieujemne na czerwono, użyj separatora 1000
         self.n5_style = self.prepare_cell(14) # Arial 14 pt
         self.n6_style = self.prepare_cell(12, bold=1) # Arial 12 pt, bold
+        self.n7_style = self.prepare_cell(
+            vert=self.xlwt.Alignment.VERT_CENTER,
+            horz=self.xlwt.Alignment.HORZ_CENTER,
+            ) # Center vertically, center horizontally
 
     def workbook_create(self):
         '''
