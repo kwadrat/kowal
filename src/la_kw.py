@@ -39,7 +39,7 @@ def analyze_excel_files(dfb, worker_class, filenames):
         obk.analyze_this_file(dfb, xlrd, single_file)
 
 class WriterGateway(object):
-    def prepare_font_size(self, the_size=None, bold=0, num_format_str=None):
+    def prepare_font_size(self, the_size=None, bold=None, num_format_str=None):
         '''
         WriterGateway:
         '''
@@ -47,7 +47,8 @@ class WriterGateway(object):
         the_font = self.xlwt.Font()
         if the_size is not None:
             the_font.height = the_size * 20 # Arial "the_size" pt
-        the_font.bold = bold
+        if bold is not None:
+            the_font.bold = bold
         the_style.font = the_font
         if num_format_str is not None:
             the_style.num_format_str = num_format_str
