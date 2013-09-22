@@ -39,11 +39,17 @@ def analyze_excel_files(dfb, worker_class, filenames):
         obk.analyze_this_file(dfb, xlrd, single_file)
 
 class WriterGateway(object):
-    def prepare_cell(self, the_size=None, bold=None, num_format_str=None):
+    def prepare_cell(self, the_size=None, bold=None, num_format_str=None, wrap=None):
         '''
         WriterGateway:
         '''
         the_style = self.xlwt.XFStyle()
+        needed_wrap = wrap is not None
+        if needed_wrap:
+            the_align = self.xlwt.Alignment()
+            if needed_wrap:
+                the_align.wrap = wrap
+            the_style.alignment = the_align
         needed_size = the_size is not None
         needed_bold = bold is not None
         if needed_size or needed_bold:
