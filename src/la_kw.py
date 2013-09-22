@@ -68,8 +68,9 @@ class WriterGateway(object):
         WriterGateway:
         '''
         self.xlwt = new_module_for_writing_spreadsheet()
-        self.n1_style = self.xlwt.XFStyle()
-        self.n1_style.num_format_str = '#,##0.00' # użyj separatora 1000
+        self.n1_style = self.prepare_cell(
+            num_format_str = '#,##0.00' # użyj separatora 1000
+            )
         self.n2_style = self.prepare_cell(
             num_format_str='yyyy/mm/dd;@' # data RRRR-MM-DD
             )
