@@ -39,7 +39,7 @@ def analyze_excel_files(dfb, worker_class, filenames):
         obk.analyze_this_file(dfb, xlrd, single_file)
 
 class WriterGateway(object):
-    def prepare_font_size(self, the_size=None, bold=None, num_format_str=None):
+    def prepare_cell(self, the_size=None, bold=None, num_format_str=None):
         '''
         WriterGateway:
         '''
@@ -70,11 +70,11 @@ class WriterGateway(object):
         align_on.wrap = 1
         self.n3_style = self.xlwt.XFStyle()
         self.n3_style.alignment = align_on # Zawijaj tekst
-        self.n4_style = self.prepare_font_size(
+        self.n4_style = self.prepare_cell(
             num_format_str='[Red]#,##0.00_ ;-#,##0.00 '
             ) # Liczby nieujemne na czerwono, użyj separatora 1000
-        self.n5_style = self.prepare_font_size(14) # Arial 14 pt
-        self.n6_style = self.prepare_font_size(12, bold=1) # Arial 12 pt, bold
+        self.n5_style = self.prepare_cell(14) # Arial 14 pt
+        self.n6_style = self.prepare_cell(12, bold=1) # Arial 12 pt, bold
 
     def workbook_create(self):
         '''
