@@ -91,6 +91,17 @@ class WriterGateway(object):
         c2 = akt_kolumna + ile_w_poziomie
         self.sheet.write_merge(r1, r2, c1, c2, en_kw.utf_to_unicode(napis))
 
+    def zapisz_stylowe_polaczone_komorki(self, akt_wiersz, akt_kolumna, napis, style):
+        '''
+        WriterGateway:
+        '''
+        ile_w_poziomie = 10
+        r1 = akt_wiersz
+        r2 = akt_wiersz
+        c1 = akt_kolumna
+        c2 = akt_kolumna + ile_w_poziomie
+        self.sheet.write_merge(r1, r2, c1, c2, en_kw.utf_to_unicode(napis), style=style)
+
     def zapisz_zawijane(self, akt_wiersz, akt_kolumna, napis):
         '''
         WriterGateway:
