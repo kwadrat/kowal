@@ -48,7 +48,8 @@ class WriterGateway(object):
         needed_size = the_size is not None
         if needed_size:
             the_font.height = the_size * 20 # Arial "the_size" pt
-        if bold is not None:
+        needed_bold = bold is not None
+        if needed_bold:
             the_font.bold = bold
         the_style.font = the_font
         if num_format_str is not None:
