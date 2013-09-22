@@ -64,10 +64,7 @@ class WriterGateway(object):
         self.n3_style.alignment = align_on # Zawijaj tekst
         self.n4_style = self.xlwt.XFStyle()
         self.n4_style.num_format_str = '[Red]#,##0.00_ ;-#,##0.00 ' # Liczby nieujemne na czerwono, użyj separatora 1000
-        self.n5_style = self.xlwt.XFStyle() # Arial 14 pt
-        n5_font = self.xlwt.Font()
-        n5_font.height = 14 * 20
-        self.n5_style.font = n5_font
+        self.n5_style = self.prepare_font_size(14) # Arial 14 pt
 
     def workbook_create(self):
         '''
