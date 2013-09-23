@@ -245,6 +245,14 @@ class WriterGateway(object):
         akt_kolumna = 0
         self.zapisz_mi(akt_wiersz, akt_kolumna, dn_kw.tab_miesiecy[nr_mies - 1])
 
+    def ustaw_sam_styl(self, akt_wiersz, akt_kolumna, kl_miejsc=2):
+        '''
+        WriterGateway:
+        '''
+        the_style = self.decimal_digits[kl_miejsc]
+        tekst_wzoru = None
+        self.zapisz_direct(akt_wiersz, akt_kolumna, tekst_wzoru, style=the_style)
+
 def generate_excel_files(dfb, plik_energii, plik_mocy):
     xrg = WriterGateway()
     fu_kw.EnergyReader().generate_one_file(xrg, dfb, plik_energii)
