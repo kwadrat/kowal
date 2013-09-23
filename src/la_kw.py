@@ -97,6 +97,9 @@ class WriterGateway(object):
         self.n8_style = self.prepare_cell(
             num_format_str = '#,##0.000' # użyj separatora 1000, 3 miejsca po przecinku
             )
+        self.n9_style = self.prepare_cell(
+            num_format_str = 'General' # Liczby całkowite bez przecinka
+            )
         self.decimal_digits = {
             2: self.n1_style,
             3: self.n8_style,
