@@ -225,10 +225,11 @@ class WriterGateway(object):
         '''
         self.sheet.write(akt_wiersz, akt_kolumna, self.xlwt.Formula(tekst_wzoru), the_style)
 
-    def zapisz_wzor(self, akt_wiersz, akt_kolumna, tekst_wzoru):
+    def zapisz_wzor(self, akt_wiersz, akt_kolumna, tekst_wzoru, kl_miejsc=2):
         '''
         WriterGateway:
         '''
+        the_style = self.decimal_digits[kl_miejsc]
         self.zapisz_stylowy_wzor(akt_wiersz, akt_kolumna, tekst_wzoru, self.n1_style)
 
     def zapisz_odwrotny_czerwony_wzor(self, akt_wiersz, akt_kolumna, tekst_wzoru):
