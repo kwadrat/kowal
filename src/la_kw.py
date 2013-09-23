@@ -94,6 +94,9 @@ class WriterGateway(object):
             vert=self.xlwt.Alignment.VERT_CENTER,
             horz=self.xlwt.Alignment.HORZ_CENTER,
             ) # Center vertically, center horizontally
+        self.n8_style = self.prepare_cell(
+            num_format_str = '#,##0.000' # użyj separatora 1000, 3 miejsca po przecinku
+            )
 
     def workbook_create(self):
         '''
