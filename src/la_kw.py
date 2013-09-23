@@ -165,11 +165,14 @@ class WriterGateway(object):
         '''
         self.sheet.write(akt_wiersz, akt_kolumna, en_kw.utf_to_unicode(napis), self.n3_style)
 
-    def zapisz_direct(self, akt_wiersz, akt_kolumna, liczba):
+    def zapisz_direct(self, akt_wiersz, akt_kolumna, liczba, style=None):
         '''
         WriterGateway:
         '''
-        self.sheet.write(akt_wiersz, akt_kolumna, liczba)
+        dc_style = {}
+        if style is not None:
+            dc_style['style'] = style
+        self.sheet.write(akt_wiersz, akt_kolumna, liczba, **dc_style)
 
     def zapisz_ze_stylem(self, akt_wiersz, akt_kolumna, liczba, style):
         '''
