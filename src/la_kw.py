@@ -101,6 +101,7 @@ class WriterGateway(object):
             num_format_str = 'General' # Liczby całkowite bez przecinka
             )
         self.decimal_digits = {
+            0: self.n9_style,
             2: self.n1_style,
             3: self.n8_style,
             }
