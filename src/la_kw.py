@@ -75,7 +75,7 @@ class WriterGateway(object):
         '''
         self.xlwt = new_module_for_writing_spreadsheet()
         self.n1_style = self.prepare_cell(
-            num_format_str = '#,##0.00' # użyj separatora 1000
+            num_format_str = '#,##0.00' # użyj separatora 1000, 2 miejsca po przecinku
             )
         self.n2_style = self.prepare_cell(
             num_format_str='yyyy/mm/dd;@' # data RRRR-MM-DD
