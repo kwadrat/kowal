@@ -144,11 +144,11 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        ile_w_poziomie = 10
+        liczba_kolumn = 8
         r1 = akt_wiersz
         r2 = akt_wiersz
         c1 = akt_kolumna
-        c2 = akt_kolumna + ile_w_poziomie
+        c2 = akt_kolumna + liczba_kolumn - 1
         self.sheet.write_merge(r1, r2, c1, c2, en_kw.utf_to_unicode(napis), style=style)
 
     def zapisz_rozmiar_14_komorki(self, akt_wiersz, akt_kolumna, napis):
