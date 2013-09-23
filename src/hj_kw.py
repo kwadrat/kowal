@@ -85,6 +85,12 @@ def rcp_pion(wiersz_bazowy_miesiecy, kl_letter_of_col):
         kl_letter_of_col=kl_letter_of_col,
         )
 
+def rcp_sred(etk_a, etk_b):
+    return 'AVERAGE(%(etk_a)s:%(etk_b)s)' % dict(
+        etk_a=etk_a,
+        etk_b=etk_b,
+        )
+
 def reverse_but_last(tmp_list):
     tmp_list.sort()
     start_ptr = 0
@@ -136,6 +142,7 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(rcp_pion(0, 'A'), 'SUM(A2:A13)')
         self.assertEqual(rcp_pion(1, 'A'), 'SUM(A3:A14)')
         self.assertEqual(rcp_pion(0, 'B'), 'SUM(B2:B13)')
+        self.assertEqual(rcp_sred('E23', 'G23'), 'AVERAGE(E23:G23)')
         a = [1, 4, 2, 3]; reverse_but_last(a)
         self.assertEqual(a, [3, 2, 1, 4])
         self.assertEqual(wybierz_ze_slownikow([{'a': 1}], 'a'), [1])
