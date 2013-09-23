@@ -230,7 +230,7 @@ class WriterGateway(object):
         WriterGateway:
         '''
         the_style = self.decimal_digits[kl_miejsc]
-        self.zapisz_stylowy_wzor(akt_wiersz, akt_kolumna, tekst_wzoru, self.n1_style)
+        self.zapisz_stylowy_wzor(akt_wiersz, akt_kolumna, tekst_wzoru, the_style)
 
     def zapisz_odwrotny_czerwony_wzor(self, akt_wiersz, akt_kolumna, tekst_wzoru):
         '''
