@@ -250,8 +250,8 @@ class WriterGateway(object):
         WriterGateway:
         '''
         the_style = self.decimal_digits[kl_miejsc]
-        tekst_wzoru = None
-        self.zapisz_direct(akt_wiersz, akt_kolumna, tekst_wzoru, style=the_style)
+        tresc_napisu = None
+        self.zapisz_direct(akt_wiersz, akt_kolumna, tresc_napisu, style=the_style)
 
 def generate_excel_files(dfb, plik_energii, plik_mocy):
     xrg = WriterGateway()
