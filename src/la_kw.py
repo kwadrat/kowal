@@ -200,11 +200,12 @@ class WriterGateway(object):
         '''
         self.sheet.write(akt_wiersz, akt_kolumna, liczba, style)
 
-    def zapisz_flt(self, akt_wiersz, akt_kolumna, liczba):
+    def zapisz_flt(self, akt_wiersz, akt_kolumna, liczba, kl_miejsc=2):
         '''
         WriterGateway:
         '''
-        self.zapisz_ze_stylem(akt_wiersz, akt_kolumna, liczba, self.n1_style)
+        the_style = self.decimal_digits[kl_miejsc]
+        self.zapisz_ze_stylem(akt_wiersz, akt_kolumna, liczba, the_style)
 
     def zapisz_date(self, akt_wiersz, akt_kolumna, liczba):
         '''
