@@ -80,7 +80,11 @@ class WriterGateway(object):
         self.n2_style = self.prepare_cell(
             num_format_str='yyyy/mm/dd;@' # data RRRR-MM-DD
             )
-        self.n3_style = self.prepare_cell(wrap=1) # Zawijaj tekst
+        self.n3_style = self.prepare_cell(
+            vert=self.xlwt.Alignment.VERT_CENTER,
+            horz=self.xlwt.Alignment.HORZ_CENTER,
+            wrap=1,
+            ) # Zawijaj tekst, wycentruj
         self.n4_style = self.prepare_cell(
             num_format_str='[Red]#,##0.00_ ;-#,##0.00 '
             ) # Liczby nieujemne na czerwono, użyj separatora 1000
