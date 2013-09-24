@@ -5,6 +5,13 @@ import unittest
 
 zerowe_pole = '0 AS '
 
+def zeruj_dla_tabeli(tabela_wzorcowa, tabela_aktualna, nazwa_pola):
+    if tabela_wzorcowa == tabela_aktualna:
+        result = zerowe_pole + nazwa_pola
+    else:
+        result = nazwa_pola
+    return result
+
 def Poprzecinkuj(lista):
     '''Zwraca napisy połączone przecinkami
     '''
@@ -115,6 +122,8 @@ class TestProcessingSQL(unittest.TestCase):
         '''
         TestProcessingSQL:
         '''
+        self.assertEqual(zeruj_dla_tabeli('a', 'b', 'pole'), 'pole')
+        self.assertEqual(zeruj_dla_tabeli('a', 'a', 'pole'), '0 AS pole')
         self.assertEqual(Poprzecinkuj(['a', 'b', 'c']), 'a,b,c')
         self.assertEqual(semicolon_join(['a', 'b', 'c']), 'a;b;c')
         self.assertEqual(conditions_separately(['a'], {'a': None}), ["a is null"])
