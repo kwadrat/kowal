@@ -3,6 +3,8 @@
 
 import unittest
 
+zerowe_pole = '0 AS '
+
 def Poprzecinkuj(lista):
     '''Zwraca napisy połączone przecinkami
     '''
