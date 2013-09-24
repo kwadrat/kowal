@@ -122,6 +122,7 @@ class TestProcessingSQL(unittest.TestCase):
         '''
         TestProcessingSQL:
         '''
+        self.assertEqual(zerowe_pole, '0 AS ')
         self.assertEqual(zeruj_dla_tabeli('a', 'b', 'pole'), 'pole')
         self.assertEqual(zeruj_dla_tabeli('a', 'a', 'pole'), '0 AS pole')
         self.assertEqual(Poprzecinkuj(['a', 'b', 'c']), 'a,b,c')
