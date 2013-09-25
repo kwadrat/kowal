@@ -39,6 +39,12 @@ class OgOpDaneDlaMiesiaca(object):
         '''
         return len(self.faktury_w_miesiacu)
 
+    def wybierz_ze_slownikow(self, tmp_key):
+        '''
+        OgOpDaneDlaMiesiaca:
+        '''
+        return map(lambda the_dict: the_dict[tmp_key], self.faktury_w_miesiacu)
+
 class TestMiesiacaGazu(unittest.TestCase):
     def test_miesiaca_gazu(self):
         '''
@@ -46,5 +52,14 @@ class TestMiesiacaGazu(unittest.TestCase):
         '''
         obk = OgOpDaneDlaMiesiaca()
         self.assertEqual(obk.faktur_w_miesiacu(), 0)
-        obk.wstaw_informacje_o_fakturze(None)
+        obk.wstaw_informacje_o_fakturze({'a': 1})
         self.assertEqual(obk.faktur_w_miesiacu(), 1)
+        self.assertEqual(obk.wybierz_ze_slownikow('a'), [1])
+
+    def test_2_miesiaca_gazu(self):
+        '''
+        TestMiesiacaGazu:
+        '''
+        obk = OgOpDaneDlaMiesiaca()
+        obk.wstaw_informacje_o_fakturze({'a': 1, 'b': 2})
+        self.assertEqual(obk.wybierz_ze_slownikow('b'), [2])

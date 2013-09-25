@@ -116,9 +116,6 @@ def reverse_but_last(tmp_list):
         start_ptr += 1
         end_ptr -= 1
 
-def wybierz_ze_slownikow(tmp_list, tmp_key):
-    return map(lambda the_dict: the_dict[tmp_key], tmp_list)
-
 def ogranicz_wartosci_umowne(tmp_list):
     without_zero = filter(None, tmp_list)
     without_duplicates = list(set(without_zero))
@@ -166,8 +163,6 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(rcp_sred('E23', 'G23'), 'AVERAGE(E23:G23)')
         a = [1, 4, 2, 3]; reverse_but_last(a)
         self.assertEqual(a, [3, 2, 1, 4])
-        self.assertEqual(wybierz_ze_slownikow([{'a': 1}], 'a'), [1])
-        self.assertEqual(wybierz_ze_slownikow([{'a': 1, 'b': 2}], 'b'), [2])
         self.assertEqual(ogranicz_wartosci_umowne([0.0, 0.0, 36.0]), [36.0])
         self.assertEqual(ogranicz_wartosci_umowne([40.0, 40.0, 0.0]), [40.0])
         self.assertEqual(rcp_minus('A1', 'B1'), 'A1-B1')
