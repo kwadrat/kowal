@@ -45,6 +45,17 @@ class OgOpDaneDlaMiesiaca(object):
         '''
         return map(lambda the_dict: the_dict[tmp_key], self.faktury_w_miesiacu)
 
+    def wyznacz_sume_faktur(self, tmp_key):
+        '''
+        OgOpDaneDlaMiesiaca:
+        '''
+        moja_suma = lm_kw.wartosc_zero_z_bazy
+        for jedna_faktura in self.faktury_w_miesiacu:
+            moja_wartosc = jedna_faktura.get(tmp_key)
+            if moja_wartosc is not None:
+                moja_suma += moja_wartosc
+        return moja_suma
+
 class TestMiesiacaGazu(unittest.TestCase):
     def test_miesiaca_gazu(self):
         '''
@@ -55,6 +66,7 @@ class TestMiesiacaGazu(unittest.TestCase):
         obk.wstaw_informacje_o_fakturze({'a': 1})
         self.assertEqual(obk.faktur_w_miesiacu(), 1)
         self.assertEqual(obk.wybierz_ze_slownikow('a'), [1])
+        self.assertEqual(obk.wyznacz_sume_faktur('a'), 1)
 
     def test_2_miesiaca_gazu(self):
         '''
