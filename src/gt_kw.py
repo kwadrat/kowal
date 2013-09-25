@@ -26,6 +26,7 @@ class OgOpDaneDlaMiesiaca(object):
         OgOpDaneDlaMiesiaca:
         '''
         self.faktury_w_miesiacu = []
+        self.jednorazowe_wartosci = {}
 
     def wstaw_informacje_o_fakturze(self, dane_faktury):
         '''
@@ -60,11 +61,9 @@ class OgOpDaneDlaMiesiaca(object):
         '''
         OgOpDaneDlaMiesiaca:
         '''
-        moja_suma = lm_kw.wartosc_zero_z_bazy
-        for jedna_faktura in self.faktury_w_miesiacu:
-            moja_wartosc = jedna_faktura.get(tmp_key)
-            if moja_wartosc is not None:
-                moja_suma += moja_wartosc
+        moja_suma = self.jednorazowe_wartosci.get(tmp_key)
+        if moja_suma is None:
+            moja_suma = self.oblicz_jednorazowo(tmp_key)
         return moja_suma
 
 class TestMiesiacaGazu(unittest.TestCase):
