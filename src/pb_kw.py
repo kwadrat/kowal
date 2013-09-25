@@ -18,9 +18,6 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-def nawiasy_kwadratowe(jednostka):
-    return '[%s]' % jednostka
-
 # Gigadżuli
 JednGJ = 'GJ'
 # Megawatów
@@ -36,7 +33,7 @@ JednTon = 'ton'
 JednAsciiM3 = 'm3'
 JednMet3h = 'm<sup>3</sup>/h'
 Jedn_sztuki = 'szt'
-Jedn_jy_sztuki = nawiasy_kwadratowe(Jedn_sztuki)
+Jedn_jy_sztuki = gb_kw.nawiasy_kwadratowe(Jedn_sztuki)
 
 class NaglowekKolumny(object):
     '''Nagłówek kolumny, opcjonalnie z jednostką, być może

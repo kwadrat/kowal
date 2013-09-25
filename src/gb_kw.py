@@ -23,6 +23,9 @@ Jedn_kWh = 'kWh'
 Jedn_kWtow = 'kW'
 Jedn_zlotowki = 'zł'
 
+def nawiasy_kwadratowe(jednostka):
+    return '[%s]' % jednostka
+
 class TestUnitNames(unittest.TestCase):
     def test_unit_names(self):
         '''
