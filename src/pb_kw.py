@@ -32,8 +32,7 @@ JednM3 = 'm<sup>3</sup>'
 JednTon = 'ton'
 JednAsciiM3 = 'm3'
 JednMet3h = 'm<sup>3</sup>/h'
-Jedn_sztuki = 'szt'
-Jedn_jy_sztuki = gb_kw.nawiasy_kwadratowe(Jedn_sztuki)
+Jedn_jy_sztuki = gb_kw.nawiasy_kwadratowe(gb_kw.Jedn_sztuki)
 
 class NaglowekKolumny(object):
     '''Nagłówek kolumny, opcjonalnie z jednostką, być może
@@ -86,5 +85,4 @@ class TestNagKol(unittest.TestCase):
         self.assertEqual(ux_3_a, 'Zużycie<br />\n[m<sup>3</sup>]')
         self.assertEqual(ux_4_a, 'Moc wykonana<br />\n[m<sup>3</sup>/h]')
         self.assertEqual(ux_5_a, 'Moc umowna<br />\n[m<sup>3</sup>/h]')
-        self.assertEqual(Jedn_sztuki, 'szt')
         self.assertEqual(Jedn_jy_sztuki, '[szt]')

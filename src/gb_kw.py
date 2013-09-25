@@ -18,6 +18,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+Jedn_sztuki = 'szt'
 # Kilowatogodzin
 Jedn_kWh = 'kWh'
 Jedn_kWtow = 'kW'
@@ -33,6 +34,7 @@ class TestUnitNames(unittest.TestCase):
         '''
         TestUnitNames:
         '''
+        self.assertEqual(Jedn_sztuki, 'szt')
         self.assertEqual(Jedn_kWh, 'kWh')
         self.assertEqual(Jedn_kWtow, 'kW')
         self.assertEqual(Jedn_zlotowki, 'zł')
