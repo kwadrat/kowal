@@ -26,6 +26,8 @@ Jedn_zlotowki = 'zł'
 def nawiasy_kwadratowe(jednostka):
     return '[%s]' % jednostka
 
+Jedn_k_zlotowki = nawiasy_kwadratowe(Jedn_zlotowki)
+
 class TestUnitNames(unittest.TestCase):
     def test_unit_names(self):
         '''
@@ -34,3 +36,4 @@ class TestUnitNames(unittest.TestCase):
         self.assertEqual(Jedn_kWh, 'kWh')
         self.assertEqual(Jedn_kWtow, 'kW')
         self.assertEqual(Jedn_zlotowki, 'zł')
+        self.assertEqual(Jedn_k_zlotowki, '[zł]')
