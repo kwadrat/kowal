@@ -19,6 +19,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+DocelowoRich = 1
 class RichNumber(object):
     def __init__(self, rn_value, rn_after=2, rn_colour=None):
         '''
