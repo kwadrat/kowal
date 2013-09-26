@@ -223,6 +223,22 @@ class WriterGateway(object):
         the_style = self.decimal_digits[kl_miejsc]
         self.zapisz_ze_stylem(akt_wiersz, akt_kolumna, liczba, the_style)
 
+    def zapisz_rn_flt(self, akt_wiersz, akt_kolumna, rn_liczba):
+        '''
+        WriterGateway:
+        '''
+        liczba = rn_liczba.rn_value
+        kl_miejsc = rn_liczba.rn_after
+        if rn_liczba.rn_colour is None:
+            the_style = self.decimal_digits[kl_miejsc]
+        else:
+            colour = self.xlwt.Style.colour_map[rn_liczba.rn_colour]
+            the_style = self.prepare_cell(
+                num_format_str=self.format_map[kl_miejsc],
+                colour=colour,
+                )
+        self.zapisz_ze_stylem(akt_wiersz, akt_kolumna, liczba, the_style)
+
     def zapisz_date(self, akt_wiersz, akt_kolumna, liczba):
         '''
         WriterGateway:
