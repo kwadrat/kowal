@@ -8,6 +8,7 @@ Raport opłat stałych, zmiennych za gaz W-5
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import lc_kw
 import gv_kw
 import lm_kw
 '''.splitlines()]
@@ -74,6 +75,16 @@ class OgOpDaneDlaMiesiaca(object):
         '''
         moja_suma = self.wyznacz_sume_faktur(tmp_key)
         return gv_kw.RichNumber(moja_suma, rn_after=rn_after)
+
+    def wyznacz_rn_sume_z_przekroczeniem(self, tmp_key, rn_after):
+        '''
+        OgOpDaneDlaMiesiaca:
+        '''
+        rn_liczba = self.wyznacz_rn_sume_faktur(tmp_key, rn_after)
+        umowna_suma = self.wyznacz_sume_faktur(lc_kw.fq_moc_umowna_qv)
+        if rn_liczba.rn_value > umowna_suma:
+            rn_liczba.update_colour('red')
+        return rn_liczba
 
 class TestMiesiacaGazu(unittest.TestCase):
     def test_miesiaca_gazu(self):
