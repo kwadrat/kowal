@@ -34,3 +34,10 @@ class TestTheNumber(unittest.TestCase):
         TestTheNumber:
         '''
         obk = RichNumber(0, rn_after=1, rn_colour='red')
+
+    def test_2_the_number(self):
+        '''
+        TestTheNumber:
+        '''
+        obk = RichNumber(1)
+        self.assertEqual(obk.rn_after, 2)
