@@ -66,7 +66,7 @@ class WriterGateway(object):
             if needed_bold:
                 the_font.bold = bold
             if needed_colour:
-                the_font.colour = colour
+                the_font.colour_index = colour
             the_style.font = the_font
         if num_format_str is not None:
             the_style.num_format_str = num_format_str
