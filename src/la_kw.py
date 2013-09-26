@@ -76,9 +76,14 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
+        self.format_map = {
+            0: 'General', # Liczby całkowite bez przecinka, center
+            2: '#,##0.00', # użyj separatora 1000, 2 miejsca po przecinku
+            3: '#,##0.000', # użyj separatora 1000, 3 miejsca po przecinku
+            }
         self.xlwt = new_module_for_writing_spreadsheet()
         self.n1_style = self.prepare_cell(
-            num_format_str = '#,##0.00' # użyj separatora 1000, 2 miejsca po przecinku
+            num_format_str = self.format_map[2],
             )
         self.n2_style = self.prepare_cell(
             num_format_str='yyyy/mm/dd;@' # data RRRR-MM-DD
@@ -98,12 +103,12 @@ class WriterGateway(object):
             horz=self.xlwt.Alignment.HORZ_CENTER,
             ) # Center vertically, center horizontally
         self.n8_style = self.prepare_cell(
-            num_format_str = '#,##0.000', # użyj separatora 1000, 3 miejsca po przecinku
+            num_format_str = self.format_map[3],
             vert=self.xlwt.Alignment.VERT_CENTER,
             horz=self.xlwt.Alignment.HORZ_CENTER,
             )
         self.n9_style = self.prepare_cell(
-            num_format_str = 'General', # Liczby całkowite bez przecinka, center
+            num_format_str = self.format_map[0],
             vert=self.xlwt.Alignment.VERT_CENTER,
             horz=self.xlwt.Alignment.HORZ_CENTER,
             )
