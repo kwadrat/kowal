@@ -20,6 +20,12 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 class RichNumber(object):
+    def update_after(self, rn_after):
+        '''
+        RichNumber:
+        '''
+        self.rn_after = rn_after
+
     def update_colour(self, rn_colour):
         '''
         RichNumber:
@@ -48,3 +54,5 @@ class TestTheNumber(unittest.TestCase):
         '''
         obk = RichNumber(1)
         self.assertEqual(obk.rn_after, 2)
+        obk.update_after(3)
+        self.assertEqual(obk.rn_after, 3)
