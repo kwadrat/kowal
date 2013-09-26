@@ -130,6 +130,8 @@ class WriterGateway(object):
             the_style = self.prepare_cell(
                 num_format_str=self.format_map[kl_miejsc],
                 colour=colour,
+                vert=self.xlwt.Alignment.VERT_CENTER,
+                horz=self.xlwt.Alignment.HORZ_CENTER,
                 )
             self.generated_style_cache[the_key] = the_style
         return the_style
