@@ -95,16 +95,8 @@ def letter_to_number(single_letter):
 def podpis_faktury(rest_of_txt):
     return 'fakt. ' + rest_of_txt
 
-if gv_kw.DocelowoRich:
-    ##############################################################################
-    def significant_values_for_months(my_dict):
-        return any(v.rn_value for month, v in my_dict.iteritems() if 1 <= month <= 12)
-    ##############################################################################
-else:
-    ##############################################################################
-    def significant_values_for_months(my_dict):
-        return any(v for month, v in my_dict.iteritems() if 1 <= month <= 12)
-    ##############################################################################
+def significant_values_for_months(my_dict):
+    return any(v.rn_value for month, v in my_dict.iteritems() if 1 <= month <= 12)
 
 def rcp_plus(list_of_terms):
     return '+'.join(list_of_terms)
@@ -174,18 +166,9 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(letter_to_number('Z'), 25)
         self.assertEqual(podpis_faktury('a'), 'fakt. a')
         self.assertEqual(significant_values_for_months({}), 0)
-        if gv_kw.DocelowoRich:
-            ##############################################################################
-            self.assertEqual(significant_values_for_months({1:gv_kw.RichNumber(3)}), 1)
-            self.assertEqual(significant_values_for_months({1:gv_kw.RichNumber(0)}), 0)
-            self.assertEqual(significant_values_for_months({13:gv_kw.RichNumber(3)}), 0)
-            ##############################################################################
-        else:
-            ##############################################################################
-            self.assertEqual(significant_values_for_months({1:3}), 1)
-            self.assertEqual(significant_values_for_months({1:0}), 0)
-            self.assertEqual(significant_values_for_months({13:3}), 0)
-            ##############################################################################
+        self.assertEqual(significant_values_for_months({1:gv_kw.RichNumber(3)}), 1)
+        self.assertEqual(significant_values_for_months({1:gv_kw.RichNumber(0)}), 0)
+        self.assertEqual(significant_values_for_months({13:gv_kw.RichNumber(3)}), 0)
         self.assertEqual(rcp_plus(['A1', 'B2', 'C3']), 'A1+B2+C3')
         self.assertEqual(rcp_pion(0, 'A'), 'SUM(A2:A13)')
         self.assertEqual(rcp_pion(1, 'A'), 'SUM(A3:A14)')
