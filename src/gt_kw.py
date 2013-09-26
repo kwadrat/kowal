@@ -76,7 +76,7 @@ class OgOpDaneDlaMiesiaca(object):
         moja_suma = self.wyznacz_sume_faktur(tmp_key)
         return gv_kw.RichNumber(moja_suma)
 
-    def wyznacz_rn_sume_z_przekroczeniem(self, tmp_key, rn_after):
+    def wyznacz_rn_sume_z_przekroczeniem(self, tmp_key):
         '''
         OgOpDaneDlaMiesiaca:
         '''
