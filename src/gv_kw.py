@@ -20,7 +20,7 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 class RichNumber(object):
-    def __init__(self, rn_value, rn_after=None, rn_colour=None):
+    def __init__(self, rn_value, rn_after=2, rn_colour=None):
         '''
         RichNumber:
         '''
@@ -33,4 +33,4 @@ class TestTheNumber(unittest.TestCase):
         '''
         TestTheNumber:
         '''
-        obk = RichNumber(0, rn_after=2, rn_colour='red')
+        obk = RichNumber(0, rn_after=1, rn_colour='red')
