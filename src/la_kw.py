@@ -76,6 +76,7 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
+        self.generated_style_cache = {}
         self.format_map = {
             0: 'General', # Liczby całkowite bez przecinka, center
             2: '#,##0.00', # użyj separatora 1000, 2 miejsca po przecinku
@@ -117,6 +118,21 @@ class WriterGateway(object):
             2: self.n1_style,
             3: self.n8_style,
             }
+
+    def get_or_generate_style(self, kl_miejsc, rn_colour):
+        '''
+        WriterGateway:
+        '''
+        the_key = (kl_miejsc, rn_colour)
+        the_style = self.generated_style_cache.get(the_key)
+        if the_style is None:
+            colour = self.xlwt.Style.colour_map[rn_colour]
+            the_style = self.prepare_cell(
+                num_format_str=self.format_map[kl_miejsc],
+                colour=colour,
+                )
+            self.generated_style_cache[the_key] = the_style
+        return the_style
 
     def workbook_create(self):
         '''
