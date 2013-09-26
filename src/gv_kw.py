@@ -37,7 +37,7 @@ class RichNumber(object):
         RichNumber:
         '''
         self.rn_value = rn_value
-        self.rn_after = rn_after
+        self.update_after(rn_after)
         self.update_colour(rn_colour)
 
 class TestTheNumber(unittest.TestCase):
