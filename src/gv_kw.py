@@ -46,7 +46,9 @@ class TestTheNumber(unittest.TestCase):
         TestTheNumber:
         '''
         obk = RichNumber(0, rn_after=1, rn_colour='red')
+        self.assertEqual(obk.rn_colour, 'red')
         obk.update_colour('indigo')
+        self.assertEqual(obk.rn_colour, 'indigo')
 
     def test_2_the_number(self):
         '''
