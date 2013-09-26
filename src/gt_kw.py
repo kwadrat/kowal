@@ -68,6 +68,13 @@ class OgOpDaneDlaMiesiaca(object):
             self.jednorazowe_wartosci[tmp_key] = moja_suma
         return moja_suma
 
+    def wyznacz_rn_sume_faktur(self, tmp_key, rn_after):
+        '''
+        OgOpDaneDlaMiesiaca:
+        '''
+        moja_suma = self.wyznacz_sume_faktur(tmp_key)
+        return gv_kw.RichNumber(moja_suma, rn_after=rn_after)
+
 class TestMiesiacaGazu(unittest.TestCase):
     def test_miesiaca_gazu(self):
         '''
