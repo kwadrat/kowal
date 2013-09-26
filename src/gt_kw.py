@@ -8,6 +8,7 @@ Raport opłat stałych, zmiennych za gaz W-5
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import gv_kw
 import lm_kw
 '''.splitlines()]
 
