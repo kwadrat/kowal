@@ -40,6 +40,21 @@ class StiffForSheet(object):
         self.wbk = wbk
         self.sheet = sheet
 
+    def przetworz_arkusz(self):
+        '''
+        StiffForSheet:
+        '''
+        ark_name = repr(get_name(self.sheet))
+        print ark_name
+        klm_ads = gu_kw.KolumnowyAdresator()
+        klm_ads.set_ka_base_address('B22')
+        wiersz = klm_ads.wiersz_bazowy_miesiecy
+        kolumna = klm_ads.kl_assigned_col
+        tmp_format = 'self.sheet.cell(wiersz, kolumna)'; print 'Eval:', tmp_format, eval(tmp_format)
+        for fvk_miesiac in la_kw.numery_miesiecy:
+            my_xf_value = self.sheet.cell(wiersz + fvk_miesiac, kolumna)
+            tmp_format = 'my_xf_value'; print 'Eval:', tmp_format, eval(tmp_format)
+
 class StiffGeneral(object):
     def __init__(self, wbk):
         '''
