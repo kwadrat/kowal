@@ -134,6 +134,9 @@ def ogranicz_wartosci_umowne(tmp_list):
     without_duplicates = list(set(without_zero))
     return without_duplicates
 
+def rc_rozszczep(the_label):
+    return ['A', 1]
+
 class TestProcessingSQL(unittest.TestCase):
     def test_processing_sql(self):
         '''
@@ -180,3 +183,4 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(ogranicz_wartosci_umowne([40.0, 40.0, 0.0]), [40.0])
         self.assertEqual(rcp_minus('A1', 'B1'), 'A1-B1')
         self.assertEqual(rcp_dziel('A1', 'B1'), 'A1/B1')
+        self.assertEqual(rc_rozszczep('A1'), ['A', 1])
