@@ -59,6 +59,13 @@ class StiffGeneral(object):
             my_xf_value = sheet.cell(wiersz + fvk_miesiac, kolumna)
             tmp_format = 'my_xf_value'; print 'Eval:', tmp_format, eval(tmp_format)
 
+    def wykonaj_operacje(self, klm_ads):
+        '''
+        StiffGeneral:
+        '''
+        for sheet in self.wbk.sheets():
+            self.przetworz_arkusz(sheet, klm_ads)
+
 def generate_stiff_data(filename):
     xlrd = la_kw.new_module_for_reading_spreadsheet()
     wbk = xlrd.open_workbook(filename, formatting_info=True)
