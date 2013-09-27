@@ -73,10 +73,7 @@ class OgOpDaneDlaMiesiaca(object):
         '''
         OgOpDaneDlaMiesiaca:
         '''
-        moja_suma = self.jednorazowe_wartosci.get(tmp_key)
-        if moja_suma is None:
-            moja_suma = self.oblicz_jednorazowo(tmp_key)
-            self.jednorazowe_wartosci[tmp_key] = moja_suma
+        moja_suma = self.wyznacz_pracowicie_sume_faktur(tmp_key)
         return moja_suma
 
     def wyznacz_rn_sume_faktur(self, tmp_key):
