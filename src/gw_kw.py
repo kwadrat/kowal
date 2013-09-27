@@ -62,21 +62,6 @@ class StiffGeneral(object):
         '''
         self.wbk = wbk
 
-    def przetworz_arkusz(self, sheet):
-        '''
-        StiffGeneral:
-        '''
-        ark_name = repr(get_name(sheet))
-        print ark_name
-        klm_ads = gu_kw.KolumnowyAdresator()
-        klm_ads.set_ka_base_address('B22')
-        wiersz = klm_ads.wiersz_bazowy_miesiecy
-        kolumna = klm_ads.kl_assigned_col
-        tmp_format = 'sheet.cell(wiersz, kolumna)'; print 'Eval:', tmp_format, eval(tmp_format)
-        for fvk_miesiac in la_kw.numery_miesiecy:
-            my_xf_value = sheet.cell(wiersz + fvk_miesiac, kolumna)
-            tmp_format = 'my_xf_value'; print 'Eval:', tmp_format, eval(tmp_format)
-
     def wykonaj_operacje(self):
         '''
         StiffGeneral:
