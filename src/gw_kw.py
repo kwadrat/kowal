@@ -39,16 +39,19 @@ class StiffData(object):
         '''
         self.wbk = wbk
 
-def przetworz_arkusz(sheet, klm_ads):
-    ark_name = repr(get_name(sheet))
-    print ark_name
-    klm_ads.set_ka_base_address('B22')
-    wiersz = klm_ads.wiersz_bazowy_miesiecy
-    kolumna = klm_ads.kl_assigned_col
-    tmp_format = 'sheet.cell(wiersz, kolumna)'; print 'Eval:', tmp_format, eval(tmp_format)
-    for fvk_miesiac in la_kw.numery_miesiecy:
-        my_xf_index = sheet.cell(wiersz + fvk_miesiac, kolumna)
-        tmp_format = 'my_xf_index'; print 'Eval:', tmp_format, eval(tmp_format)
+    def przetworz_arkusz(self, sheet, klm_ads):
+        '''
+        StiffData:
+        '''
+        ark_name = repr(get_name(sheet))
+        print ark_name
+        klm_ads.set_ka_base_address('B22')
+        wiersz = klm_ads.wiersz_bazowy_miesiecy
+        kolumna = klm_ads.kl_assigned_col
+        tmp_format = 'sheet.cell(wiersz, kolumna)'; print 'Eval:', tmp_format, eval(tmp_format)
+        for fvk_miesiac in la_kw.numery_miesiecy:
+            my_xf_index = sheet.cell(wiersz + fvk_miesiac, kolumna)
+            tmp_format = 'my_xf_index'; print 'Eval:', tmp_format, eval(tmp_format)
 
 def generate_stiff_data(filename):
     xlrd = la_kw.new_module_for_reading_spreadsheet()
@@ -56,7 +59,7 @@ def generate_stiff_data(filename):
     klm_ads = gu_kw.KolumnowyAdresator()
     stiff_data = StiffData(wbk)
     for sheet in wbk.sheets():
-        przetworz_arkusz(sheet, klm_ads)
+        stiff_data.przetworz_arkusz(sheet, klm_ads)
 
 class TestTheStiffValues(unittest.TestCase):
     def test_stiff_data(self):
