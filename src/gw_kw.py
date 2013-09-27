@@ -9,6 +9,7 @@ móc ich potem użyć do generowania raportów
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import la_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
