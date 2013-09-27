@@ -26,6 +26,9 @@ class StiffData(object):
         StiffData:
         '''
 
+def generate_stiff_data(filename):
+    pass
+
 class TestTheStiffValues(unittest.TestCase):
     def test_stiff_data(self):
         '''
