@@ -20,12 +20,6 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-class StiffData(object):
-    def __init__(self):
-        '''
-        StiffData:
-        '''
-
 def generate_stiff_data(filename):
     pass
 
@@ -34,4 +28,3 @@ class TestTheStiffValues(unittest.TestCase):
         '''
         TestTheStiffValues:
         '''
-        obk = StiffData()
