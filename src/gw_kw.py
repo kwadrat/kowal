@@ -40,7 +40,7 @@ class StiffForSheet(object):
         self.wbk = wbk
         self.sheet = sheet
 
-    def przetworz_arkusz(self):
+    def przetworz_jeden_obiekt(self):
         '''
         StiffForSheet:
         '''
@@ -68,7 +68,7 @@ class StiffGeneral(object):
         '''
         for sheet in self.wbk.sheets():
             stiff_for_sheet = StiffForSheet(self.wbk, sheet)
-            stiff_for_sheet.przetworz_arkusz()
+            stiff_for_sheet.przetworz_jeden_obiekt()
 
 def generate_stiff_data(filename):
     xlrd = la_kw.new_module_for_reading_spreadsheet()
