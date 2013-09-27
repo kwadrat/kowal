@@ -25,6 +25,10 @@ for i in NazwyModulow:
 def get_name(sheet):
     return sheet.name
 
+def przetworz_arkusz(sheet):
+    ark_name = repr(get_name(sheet))
+    print ark_name
+
 def generate_stiff_data(filename):
     pass
 
