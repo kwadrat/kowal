@@ -50,8 +50,8 @@ class StiffData(object):
         kolumna = klm_ads.kl_assigned_col
         tmp_format = 'sheet.cell(wiersz, kolumna)'; print 'Eval:', tmp_format, eval(tmp_format)
         for fvk_miesiac in la_kw.numery_miesiecy:
-            my_xf_index = sheet.cell(wiersz + fvk_miesiac, kolumna)
-            tmp_format = 'my_xf_index'; print 'Eval:', tmp_format, eval(tmp_format)
+            my_xf_value = sheet.cell(wiersz + fvk_miesiac, kolumna)
+            tmp_format = 'my_xf_value'; print 'Eval:', tmp_format, eval(tmp_format)
 
 def generate_stiff_data(filename):
     xlrd = la_kw.new_module_for_reading_spreadsheet()
