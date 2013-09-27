@@ -25,6 +25,13 @@ for i in NazwyModulow:
 def get_name(sheet):
     return sheet.name
 
+def wyznacz_mi_kolor(wbk, my_xf_index):
+    the_font = wbk.xf_list[my_xf_index]
+    my_font_index = the_font.font_index
+    the_font = wbk.font_list[my_font_index]
+    the_colour_index = the_font.colour_index
+    return the_colour_index
+
 def przetworz_arkusz(sheet, klm_ads):
     ark_name = repr(get_name(sheet))
     print ark_name
