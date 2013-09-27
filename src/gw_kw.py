@@ -33,10 +33,12 @@ def wyznacz_mi_kolor(wbk, my_xf_index):
     return the_colour_index
 
 class StiffForSheet(object):
-    def __init__(self):
+    def __init__(self, wbk, sheet):
         '''
         StiffForSheet:
         '''
+        self.wbk = wbk
+        self.sheet = sheet
 
 class StiffGeneral(object):
     def __init__(self, wbk):
