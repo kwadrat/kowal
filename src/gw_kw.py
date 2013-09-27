@@ -54,6 +54,7 @@ def generate_stiff_data(filename):
     xlrd = la_kw.new_module_for_reading_spreadsheet()
     wbk = xlrd.open_workbook(filename, formatting_info=True)
     klm_ads = gu_kw.KolumnowyAdresator()
+    stiff_data = StiffData(wbk)
     for sheet in wbk.sheets():
         przetworz_arkusz(sheet, klm_ads)
 
