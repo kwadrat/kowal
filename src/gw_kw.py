@@ -71,8 +71,7 @@ def generate_stiff_data(filename):
     wbk = xlrd.open_workbook(filename, formatting_info=True)
     klm_ads = gu_kw.KolumnowyAdresator()
     stiff_data = StiffGeneral(wbk)
-    for sheet in wbk.sheets():
-        stiff_data.przetworz_arkusz(sheet, klm_ads)
+    stiff_data.wykonaj_operacje(klm_ads)
 
 class TestTheStiffValues(unittest.TestCase):
     def test_stiff_data(self):
