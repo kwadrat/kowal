@@ -29,6 +29,7 @@ class OgOpDaneDlaMiesiaca(object):
         '''
         self.faktury_w_miesiacu = []
         self.jednorazowe_wartosci = {}
+        self.sztywna_wartosc = None
 
     def wstaw_informacje_o_fakturze(self, dane_faktury):
         '''
@@ -73,7 +74,10 @@ class OgOpDaneDlaMiesiaca(object):
         '''
         OgOpDaneDlaMiesiaca:
         '''
-        moja_suma = self.wyznacz_pracowicie_sume_faktur(tmp_key)
+        if self.sztywna_wartosc is None:
+            moja_suma = self.wyznacz_pracowicie_sume_faktur(tmp_key)
+        else:
+            moja_suma = self.sztywna_wartosc
         return moja_suma
 
     def wyznacz_rn_sume_faktur(self, tmp_key):
