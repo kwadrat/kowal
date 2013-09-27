@@ -30,7 +30,11 @@ def przetworz_arkusz(sheet):
     print ark_name
 
 def generate_stiff_data(filename):
-    pass
+    xlrd = la_kw.new_module_for_reading_spreadsheet()
+    wbk = xlrd.open_workbook(filename, formatting_info=True)
+    klm_ads = gu_kw.KolumnowyAdresator()
+    for sheet in wbk.sheets():
+        przetworz_arkusz(sheet)
 
 class TestTheStiffValues(unittest.TestCase):
     def test_stiff_data(self):
