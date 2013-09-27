@@ -66,9 +66,11 @@ class StiffGeneral(object):
         '''
         StiffGeneral:
         '''
+        self.moje_obiekty = []
         for sheet in self.wbk.sheets():
             stiff_for_sheet = StiffForSheet(self.wbk, sheet)
             stiff_for_sheet.przetworz_jeden_obiekt()
+            self.moje_obiekty.append(stiff_for_sheet)
 
 def generate_stiff_data(filename):
     xlrd = la_kw.new_module_for_reading_spreadsheet()
