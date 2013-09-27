@@ -51,8 +51,9 @@ class KolumnowyAdresator(object):
         '''
         KolumnowyAdresator:
         '''
-        wiersz_bazowy_miesiecy = 21
-        kl_assigned_col = 1
+        the_letters, the_number = hj_kw.rc_rozszczep(the_label)
+        wiersz_bazowy_miesiecy = the_number - 1
+        kl_assigned_col = fv_kw.vx_zero.vx_lt(the_letters)
         self.ustaw_ka_wiersz(wiersz_bazowy_miesiecy)
         self.ustaw_ka_kolumne(kl_assigned_col)
 
@@ -107,3 +108,5 @@ class TestKolumnowegoAdresatora(unittest.TestCase):
         obk = KolumnowyAdresator()
         obk.set_ka_base_address('B22')
         self.assertEqual(obk.get_ka_official_address(), 'B22')
+        obk.set_ka_base_address('D41')
+        self.assertEqual(obk.get_ka_official_address(), 'D41')
