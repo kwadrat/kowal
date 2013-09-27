@@ -21,6 +21,9 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+def get_name(sheet):
+    return sheet.name
+
 def generate_stiff_data(filename):
     pass
 
