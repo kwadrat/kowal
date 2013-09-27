@@ -67,7 +67,7 @@ class StiffGeneral(object):
         StiffGeneral:
         '''
         for sheet in self.wbk.sheets():
-            stiff_for_sheet = StiffForSheet(wbk, sheet)
+            stiff_for_sheet = StiffForSheet(self.wbk, sheet)
             stiff_for_sheet.przetworz_arkusz(sheet)
 
 def generate_stiff_data(filename):
