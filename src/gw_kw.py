@@ -32,16 +32,16 @@ def wyznacz_mi_kolor(wbk, my_xf_index):
     the_colour_index = the_font.colour_index
     return the_colour_index
 
-class StiffData(object):
+class StiffGeneral(object):
     def __init__(self, wbk):
         '''
-        StiffData:
+        StiffGeneral:
         '''
         self.wbk = wbk
 
     def przetworz_arkusz(self, sheet, klm_ads):
         '''
-        StiffData:
+        StiffGeneral:
         '''
         ark_name = repr(get_name(sheet))
         print ark_name
@@ -57,7 +57,7 @@ def generate_stiff_data(filename):
     xlrd = la_kw.new_module_for_reading_spreadsheet()
     wbk = xlrd.open_workbook(filename, formatting_info=True)
     klm_ads = gu_kw.KolumnowyAdresator()
-    stiff_data = StiffData(wbk)
+    stiff_data = StiffGeneral(wbk)
     for sheet in wbk.sheets():
         stiff_data.przetworz_arkusz(sheet, klm_ads)
 
