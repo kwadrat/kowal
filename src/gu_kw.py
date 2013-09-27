@@ -47,6 +47,13 @@ class KolumnowyAdresator(object):
         '''
         return fv_kw.vx_zero.vx_rev_lt(self.kl_assigned_col)
 
+    def set_ka_letter_address(self, the_letters):
+        '''
+        KolumnowyAdresator:
+        '''
+        kl_assigned_col = fv_kw.vx_zero.vx_lt(the_letters)
+        self.ustaw_ka_kolumne(kl_assigned_col)
+
     def set_ka_base_address(self, the_label):
         '''
         KolumnowyAdresator:
@@ -110,3 +117,5 @@ class TestKolumnowegoAdresatora(unittest.TestCase):
         self.assertEqual(obk.get_ka_official_address(), 'B22')
         obk.set_ka_base_address('D41')
         self.assertEqual(obk.get_ka_official_address(), 'D41')
+        obk.set_ka_letter_address('C')
+        self.assertEqual(obk.get_ka_official_address(), 'C41')
