@@ -51,6 +51,7 @@ class StiffGeneral(object):
         '''
         ark_name = repr(get_name(sheet))
         print ark_name
+        klm_ads = gu_kw.KolumnowyAdresator()
         klm_ads.set_ka_base_address('B22')
         wiersz = klm_ads.wiersz_bazowy_miesiecy
         kolumna = klm_ads.kl_assigned_col
