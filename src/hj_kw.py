@@ -138,6 +138,7 @@ def rc_rozszczep(the_label):
     return {
         'A1': ['A', 1],
         'B1': ['B', 1],
+        'B2': ['B', 2],
     }[the_label]
 
 class TestProcessingSQL(unittest.TestCase):
@@ -188,3 +189,4 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(rcp_dziel('A1', 'B1'), 'A1/B1')
         self.assertEqual(rc_rozszczep('A1'), ['A', 1])
         self.assertEqual(rc_rozszczep('B1'), ['B', 1])
+        self.assertEqual(rc_rozszczep('B2'), ['B', 2])
