@@ -294,6 +294,6 @@ class WriterGateway(object):
         self.zapisz_direct(akt_wiersz, akt_kolumna, tresc_napisu, style=the_style)
 
 def generate_excel_files(dfb, plik_energii, plik_mocy):
-    xrg = WriterGateway()
-    fu_kw.EnergyReader().generate_one_file(xrg, dfb, plik_energii)
-    mt_kw.PowerReader().generate_one_file(xrg, dfb, plik_mocy)
+    xwg = WriterGateway()
+    fu_kw.EnergyReader().generate_one_file(xwg, dfb, plik_energii)
+    mt_kw.PowerReader().generate_one_file(xwg, dfb, plik_mocy)
