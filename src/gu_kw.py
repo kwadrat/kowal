@@ -8,6 +8,7 @@ Konwerter z adresu kolumny dla miesięcy na współrzędne w arkuszu
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import hj_kw
 import fv_kw
 '''.splitlines()]
 
