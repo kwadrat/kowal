@@ -135,12 +135,15 @@ def ogranicz_wartosci_umowne(tmp_list):
     return without_duplicates
 
 def rc_rozszczep(the_label):
-    return {
-        'A1': ('A', 1),
-        'B1': ('B', 1),
-        'B2': ('B', 2),
-        'AB234': ('AB', 234),
-    }[the_label]
+    the_index = None
+    for the_index, the_sign in enumerate(the_label):
+        if the_sign.isdigit():
+            break
+    else:
+        raise RuntimeError('The label?: %s' % repr(the_label))
+    the_letters = the_label[:the_index]
+    the_number = int(the_label[the_index:])
+    return the_letters, the_number
 
 class TestProcessingSQL(unittest.TestCase):
     def test_processing_sql(self):
@@ -192,3 +195,4 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(rc_rozszczep('B1'), ('B', 1))
         self.assertEqual(rc_rozszczep('B2'), ('B', 2))
         self.assertEqual(rc_rozszczep('AB234'), ('AB', 234))
+        self.assertRaises(RuntimeError, rc_rozszczep, 'A')
