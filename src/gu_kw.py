@@ -66,8 +66,7 @@ class KolumnowyAdresator(object):
         KolumnowyAdresator:
         '''
         the_letters, the_number = hj_kw.rc_rozszczep(the_label)
-        wiersz_bazowy_miesiecy = the_number - 1
-        self.ustaw_ka_wiersz(wiersz_bazowy_miesiecy)
+        self.set_ka_number_address(the_number)
         self.set_ka_letter_address(the_letters)
 
     def get_ka_official_address(self, fvk_miesiac=0):
