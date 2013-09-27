@@ -60,7 +60,7 @@ class StiffGeneral(object):
             my_xf_value = sheet.cell(wiersz + fvk_miesiac, kolumna)
             tmp_format = 'my_xf_value'; print 'Eval:', tmp_format, eval(tmp_format)
 
-    def wykonaj_operacje(self, klm_ads):
+    def wykonaj_operacje(self):
         '''
         StiffGeneral:
         '''
@@ -70,9 +70,8 @@ class StiffGeneral(object):
 def generate_stiff_data(filename):
     xlrd = la_kw.new_module_for_reading_spreadsheet()
     wbk = xlrd.open_workbook(filename, formatting_info=True)
-    klm_ads = gu_kw.KolumnowyAdresator()
     stiff_data = StiffGeneral(wbk)
-    stiff_data.wykonaj_operacje(klm_ads)
+    stiff_data.wykonaj_operacje()
 
 class TestTheStiffValues(unittest.TestCase):
     def test_stiff_data(self):
