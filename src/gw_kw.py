@@ -25,7 +25,7 @@ for i in NazwyModulow:
 def get_name(sheet):
     return sheet.name
 
-def przetworz_arkusz(sheet):
+def przetworz_arkusz(sheet, klm_ads):
     ark_name = repr(get_name(sheet))
     print ark_name
 
@@ -34,7 +34,7 @@ def generate_stiff_data(filename):
     wbk = xlrd.open_workbook(filename, formatting_info=True)
     klm_ads = gu_kw.KolumnowyAdresator()
     for sheet in wbk.sheets():
-        przetworz_arkusz(sheet)
+        przetworz_arkusz(sheet, klm_ads)
 
 class TestTheStiffValues(unittest.TestCase):
     def test_stiff_data(self):
