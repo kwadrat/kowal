@@ -32,6 +32,13 @@ def wyznacz_mi_kolor(wbk, my_xf_index):
     the_colour_index = the_font.colour_index
     return the_colour_index
 
+class StiffData(object):
+    def __init__(self, wbk):
+        '''
+        StiffData:
+        '''
+        self.wbk = wbk
+
 def przetworz_arkusz(sheet, klm_ads):
     ark_name = repr(get_name(sheet))
     print ark_name
