@@ -28,6 +28,13 @@ def get_name(sheet):
 def przetworz_arkusz(sheet, klm_ads):
     ark_name = repr(get_name(sheet))
     print ark_name
+    klm_ads.set_ka_base_address('B22')
+    wiersz = klm_ads.wiersz_bazowy_miesiecy
+    kolumna = klm_ads.kl_assigned_col
+    tmp_format = 'sheet.cell(wiersz, kolumna)'; print 'Eval:', tmp_format, eval(tmp_format)
+    for fvk_miesiac in la_kw.numery_miesiecy:
+        my_xf_index = sheet.cell(wiersz + fvk_miesiac, kolumna)
+        tmp_format = 'my_xf_index'; print 'Eval:', tmp_format, eval(tmp_format)
 
 def generate_stiff_data(filename):
     xlrd = la_kw.new_module_for_reading_spreadsheet()
