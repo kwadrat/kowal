@@ -29,13 +29,13 @@ class OgOpDaneDlaMiesiaca(object):
         '''
         self.faktury_w_miesiacu = []
         self.jednorazowe_wartosci = {}
-        self.sztywna_wartosc = None
+        self.sztywna_wartosc = {}
 
-    def nadpisz_sume_w_miesiacu(self, sztywna_wartosc):
+    def nadpisz_sume_w_miesiacu(self, tmp_key, sztywna_wartosc):
         '''
         OgOpDaneDlaMiesiaca:
         '''
-        self.sztywna_wartosc = sztywna_wartosc
+        self.sztywna_wartosc[tmp_key] = sztywna_wartosc
 
     def wstaw_informacje_o_fakturze(self, dane_faktury):
         '''
@@ -80,10 +80,10 @@ class OgOpDaneDlaMiesiaca(object):
         '''
         OgOpDaneDlaMiesiaca:
         '''
-        if self.sztywna_wartosc is None:
-            moja_suma = self.wyznacz_pracowicie_sume_faktur(tmp_key)
+        if tmp_key in self.sztywna_wartosc:
+            moja_suma = self.sztywna_wartosc[tmp_key]
         else:
-            moja_suma = self.sztywna_wartosc
+            moja_suma = self.wyznacz_pracowicie_sume_faktur(tmp_key)
         return moja_suma
 
     def wyznacz_rn_sume_faktur(self, tmp_key):
@@ -114,8 +114,9 @@ class TestMiesiacaGazu(unittest.TestCase):
         self.assertEqual(obk.faktur_w_miesiacu(), 1)
         self.assertEqual(obk.wybierz_ze_slownikow('a'), [1])
         self.assertEqual(obk.wyznacz_sume_faktur('a'), 1)
-        obk.nadpisz_sume_w_miesiacu(5)
+        obk.nadpisz_sume_w_miesiacu('a', 5)
         self.assertEqual(obk.wyznacz_sume_faktur('a'), 5)
+        self.assertEqual(obk.wyznacz_sume_faktur('b'), 0)
 
     def test_2_miesiaca_gazu(self):
         '''
