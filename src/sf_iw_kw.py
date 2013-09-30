@@ -104,7 +104,7 @@ def zapisz_plik(nazwa, dane, verbose = 0, mode = None):
     fd.write(dane)
     domknij_zapisany_plik(nazwa, fd, verbose, mode)
 
-def zapisz_ladnie(nazwa, dane, verbose = 0, mode = None):
+def zapisz_ladnie(nazwa, dane, verbose=0, mode=None):
     fd = otworz_do_zapisu(nazwa)
     pprint.pprint(dane, stream=fd)
     domknij_zapisany_plik(nazwa, fd, verbose, mode)
