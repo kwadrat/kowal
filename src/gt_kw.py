@@ -76,6 +76,12 @@ class OgOpDaneDlaMiesiaca(object):
             self.jednorazowe_wartosci[tmp_key] = moja_suma
         return moja_suma
 
+    def podano_sztywna_wartosc(self, tmp_key):
+        '''
+        OgOpDaneDlaMiesiaca:
+        '''
+        return tmp_key in self.sztywna_wartosc
+
     def wyznacz_sume_faktur(self, tmp_key):
         '''
         OgOpDaneDlaMiesiaca:
