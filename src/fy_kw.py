@@ -29,9 +29,9 @@ INSERT INTO uu_object (account) VALUES ('n') RETURNING k_object;"""
 lxa_16_inst = """\
 INSERT INTO %(uu_object)s (%(account)s) VALUES ('%(under_name)s') RETURNING %(k_object)s;"""
 lxa_17_inst = """\
-INSERT INTO uu_power (f_object, m_date, m_samples) VALUES (123, '2013-01-31', '{NULL,0,0,1.5,2.5,3}');"""
+INSERT INTO uu_power (f_object, m_date, m_samples, m_none, m_zero, m_sum) VALUES (123, '2013-01-31', '{NULL,0,0,1.5,2.5,3}', 1, 2, 7.0);"""
 lxa_18_inst = """\
-INSERT INTO %(n_table)s (%(e_object)s, %(e_date)s, %(e_samples)s) VALUES (%(f_object)d, '%(m_date)s', %(m_samples)s);"""
+INSERT INTO %(n_table)s (%(e_object)s, %(e_date)s, %(e_samples)s, %(e_none)s, %(e_zero)s, %(e_sum)s) VALUES (%(f_object)d, '%(m_date)s', %(m_samples)s, %(v_none)s, %(v_zero)s, %(v_sum)s);"""
 lxa_19_inst = """\
 git checkout -b akw_2013.01.31_23.59.00; git checkout master
 cd ../dkw; git checkout -b akw_2013.01.31_23.59.00; git checkout master; cd ../bkw
