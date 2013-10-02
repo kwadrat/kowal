@@ -29,6 +29,12 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+def wyznacz_kwote(krt_pobor, zbiornik_przedzialow, single_key):
+    list_of_values = zbiornik_przedzialow[single_key]
+    kwota = lq_kw.sum_of_not_nones(krt_pobor.krt_vl_fnctn, list_of_values)
+    kwota = lm_kw.dec2flt(kwota)
+    return kwota
+
 OgolnaListaPoborow = lt_kw.OgolnaListaPoborow
 
 class PomiaryPoborowMiesiecznie(OgolnaListaPoborow):
