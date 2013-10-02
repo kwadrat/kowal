@@ -22,6 +22,8 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+protected_max = max
+
 energy_chooser = {
     lw_kw.Dn_Energy: [
         24,
@@ -35,7 +37,7 @@ energy_chooser = {
         lc_kw.fq_uu_power_qv,
         gb_kw.Jedn_kWtow,
         fy_kw.lxa_57_inst,
-        max,
+        protected_max,
         ],
     }
 
