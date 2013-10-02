@@ -4,6 +4,8 @@
 Analiza poboru - pomiarowy szereg list dla miesięcy w ciągu roku
 '''
 
+import unittest
+
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lc_kw
 import lm_kw
@@ -87,3 +89,9 @@ class PomiaryPoborowMiesiecznie(OgolnaListaPoborow):
             self.html_poboru_dla_miesiaca(krt_pobor, zbiornik_przedzialow, single_key)
         self.rdzen_rysowania(lst_h, krt_pobor, lw_kw.PDS_Miesiace)
         return lst_h.polacz_html()
+
+class TestCalculateAmount(unittest.TestCase):
+    def test_calculate_amount(self):
+        '''
+        TestCalculateAmount:
+        '''
