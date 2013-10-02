@@ -17,8 +17,6 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-numery_miesiecy = range(1, 12 + 1)
-
 def new_module_for_reading_spreadsheet():
     import xlrd
     return xlrd
