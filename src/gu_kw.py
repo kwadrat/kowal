@@ -94,7 +94,16 @@ class KolumnowyAdresator(object):
         self.wiersz_bazowy_miesiecy += row_delta
 
 def generate_every_three(start_label, end_label):
-    return ['B10', 'B13', 'B16']
+    labels = []
+    klm_ads = KolumnowyAdresator()
+    klm_ads.set_ka_base_address(end_label)
+    the_last_row = klm_ads.wiersz_bazowy_miesiecy
+    klm_ads.set_ka_base_address(start_label)
+    while klm_ads.wiersz_bazowy_miesiecy <= the_last_row:
+        the_label = klm_ads.get_ka_official_address()
+        labels.append(the_label)
+        klm_ads.set_advance_row(3)
+    return labels
 
 class TestKolumnowegoAdresatora(unittest.TestCase):
     def test_kolumnowy_adresator(self):
@@ -155,3 +164,4 @@ class TestKolumnowegoAdresatora(unittest.TestCase):
         obk.set_advance_row(3)
         self.assertEqual(obk.get_ka_official_address(), 'D46')
         self.assertEqual(generate_every_three('B10', 'B16'), ['B10', 'B13', 'B16'])
+        self.assertEqual(generate_every_three('B42', 'B51'), ['B42', 'B45', 'B48', 'B51'])
