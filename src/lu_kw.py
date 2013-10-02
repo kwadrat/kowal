@@ -13,6 +13,7 @@ import ze_kw
 import dn_kw
 import le_kw
 import lw_kw
+import dd_kw
 import lq_kw
 import lh_kw
 import jb_kw
@@ -95,3 +96,8 @@ class TestCalculateAmount(unittest.TestCase):
         '''
         TestCalculateAmount:
         '''
+        krt_pobor = dd_kw.CechaEnergii(lw_kw.Dn_Power)
+        single_key = 'a'
+        zbiornik_przedzialow = {single_key:[]}
+        kwota = wyznacz_kwote(krt_pobor, zbiornik_przedzialow, single_key)
+        self.assertEqual(kwota, 0)

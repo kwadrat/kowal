@@ -22,7 +22,12 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-protected_max = max
+def protected_max(values):
+    if values:
+        result = max(values)
+    else:
+        result = 0
+    return result
 
 energy_chooser = {
     lw_kw.Dn_Energy: [
@@ -91,7 +96,7 @@ class TestEnergyFeatures(unittest.TestCase):
         self.assertEqual(obk.krt_table, lc_kw.fq_uu_power_qv)
         self.assertEqual(obk.krt_jedn, gb_kw.Jedn_kWtow)
         self.assertEqual(obk.krt_etykieta, fy_kw.lxa_57_inst)
-        self.assertEqual(obk.krt_vl_fnctn, max)
+        self.assertEqual(obk.krt_vl_fnctn, protected_max)
 
     def test_sum_of_energy(self):
         '''
