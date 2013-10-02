@@ -4,3 +4,6 @@
 '''
 Settings
 '''
+verbose_flags = frozenset([
+    #'nazwy_obiektow',
+    ])
