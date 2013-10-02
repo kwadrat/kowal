@@ -72,9 +72,7 @@ class PomiaryPoborowMiesiecznie(OgolnaListaPoborow):
         PomiaryPoborowMiesiecznie:
         '''
         akt = single_key - 1
-        list_of_values = zbiornik_przedzialow[single_key]
-        kwota = lq_kw.sum_of_not_nones(krt_pobor.krt_vl_fnctn, list_of_values)
-        kwota = lm_kw.dec2flt(kwota)
+        kwota = wyznacz_kwote(krt_pobor, zbiornik_przedzialow, single_key)
         self.rdzen_kwoty(akt, kwota)
 
     def html_szeregu_poborow(self, krt_pobor):
