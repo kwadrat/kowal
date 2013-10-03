@@ -29,6 +29,8 @@ tab_rzymskich = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X',
 
 numery_miesiecy = range(1, 12 + 1)
 
+roman_map = dict((k, v) for k, v in zip(tab_rzymskich, numery_miesiecy))
+
 dni_tygodnia = ['poniedziałek', 'wtorek', 'środa', 'czwartek', 'piątek', 'sobota', 'niedziela',]
 
 dm_rk_baz = 2005 # Domyślny rok bazowy
@@ -520,3 +522,5 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(NumerDzisiaj(data_testowa_c), 15321)
         self.assertEqual(gesty_moment(data_testowa_c), '20111213104132')
         self.assertEqual(surowy_czas(data_testowa_c), 1323769292)
+        self.assertEqual(roman_map['I'], 1)
+        self.assertEqual(roman_map['XII'], 12)
