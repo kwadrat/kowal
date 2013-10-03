@@ -93,6 +93,12 @@ class KolumnowyAdresator(object):
         '''
         self.wiersz_bazowy_miesiecy += row_delta
 
+    def advance_col_by(self, col_delta=1):
+        '''
+        KolumnowyAdresator:
+        '''
+        self.kl_assigned_col += col_delta
+
     def create_new_ka_delta(self, row_delta, col_delta):
         '''
         KolumnowyAdresator:
@@ -175,3 +181,5 @@ class TestKolumnowegoAdresatora(unittest.TestCase):
         self.assertEqual(generate_every_three('B42', 'B51'), ['B42', 'B45', 'B48', 'B51'])
         nowy = obk.create_new_ka_delta(1, 2)
         self.assertEqual(nowy.get_ka_official_address(), 'F47')
+        nowy.advance_col_by(6)
+        self.assertEqual(nowy.get_ka_official_address(), 'L47')
