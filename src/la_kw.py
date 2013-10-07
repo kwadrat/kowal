@@ -252,13 +252,13 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        self.zapisz_stylowe_polaczone_komorki(akt_wiersz, akt_kolumna, napis, style=self.n5_style, liczba_kolumn=8)
+        self.zapisz_polaczone_komorki(akt_wiersz, akt_kolumna, napis, style=self.n5_style, liczba_kolumn=8)
 
     def zapisz_bold_rozmiar_12_komorki(self, akt_wiersz, akt_kolumna, napis, liczba_kolumn=1):
         '''
         WriterGateway:
         '''
-        self.zapisz_stylowe_polaczone_komorki(akt_wiersz, akt_kolumna, napis, style=self.n6_style, liczba_kolumn=liczba_kolumn)
+        self.zapisz_polaczone_komorki(akt_wiersz, akt_kolumna, napis, style=self.n6_style, liczba_kolumn=liczba_kolumn)
 
     def zapisz_zawijane(self, akt_wiersz, akt_kolumna, napis):
         '''
