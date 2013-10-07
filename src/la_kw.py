@@ -157,7 +157,7 @@ class WriterGateway(object):
         self.n15_style = self.prepare_cell(
             12,
             vert=self.xlwt.Alignment.VERT_CENTER,
-            colour=self.xlwt.Style.colour_map['indigo'],
+            colour=self.xlwt.Style.colour_map[gv_kw.ECR_indigo],
             )
         self.decimal_digits = {
             0: self.n9_style,
