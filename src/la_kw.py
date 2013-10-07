@@ -164,6 +164,15 @@ class WriterGateway(object):
         '''
         self.sheet.write(akt_wiersz, akt_kolumna, en_kw.utf_to_unicode(napis))
 
+    def zapisz_swobodne_polaczone_num_komorki(self, r1, r2, c1, c2, napis, style=None):
+        '''
+        WriterGateway:
+        '''
+        dc_style = {}
+        if style is not None:
+            dc_style['style'] = style
+        self.sheet.write_merge(r1, r2, c1, c2, napis, **dc_style)
+
     def zapisz_polaczone_komorki(self, akt_wiersz, akt_kolumna, napis):
         '''
         WriterGateway:
@@ -178,15 +187,6 @@ class WriterGateway(object):
         if style is not None:
             dc_style['style'] = style
         self.sheet.write_merge(r1, r2, c1, c2, en_kw.utf_to_unicode(napis), **dc_style)
-
-    def zapisz_swobodne_polaczone_num_komorki(self, r1, r2, c1, c2, napis, style=None):
-        '''
-        WriterGateway:
-        '''
-        dc_style = {}
-        if style is not None:
-            dc_style['style'] = style
-        self.sheet.write_merge(r1, r2, c1, c2, napis, **dc_style)
 
     def zapisz_swobodne_polaczone_komorki(self, r1, r2, c1, c2, napis, style=None):
         '''
