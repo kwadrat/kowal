@@ -207,11 +207,12 @@ class WriterGateway(object):
         dc_style = calculate_style(style)
         self.sheet.write(akt_wiersz, akt_kolumna, liczba, **dc_style)
 
-    def zapisz_mi(self, akt_wiersz, akt_kolumna, napis):
+    def zapisz_mi(self, akt_wiersz, akt_kolumna, napis, style=None):
         '''
         WriterGateway:
         '''
-        self.sheet.write(akt_wiersz, akt_kolumna, en_kw.utf_to_unicode(napis))
+        dc_style = calculate_style(style)
+        self.sheet.write(akt_wiersz, akt_kolumna, en_kw.utf_to_unicode(napis), **dc_style)
 
     def zapisz_swobodne_polaczone_num_komorki(self, r1, r2, c1, c2, napis, style=None):
         '''
