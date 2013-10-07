@@ -239,8 +239,7 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        dc_style = calculate_style(style)
-        self.sheet.write_merge(r1, r2, c1, c2, en_kw.utf_to_unicode(napis), **dc_style)
+        self.zapisz_swobodne_polaczone_num_komorki(r1, r2, c1, c2, en_kw.utf_to_unicode(napis), style)
 
     def zapisz_stylowe_polaczone_komorki(self, akt_wiersz, akt_kolumna, napis, style, liczba_kolumn=8):
         '''
