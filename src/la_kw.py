@@ -241,11 +241,11 @@ class WriterGateway(object):
         dc_style = calculate_style(style)
         self.sheet.write_merge(r1, r2, c1, c2, en_kw.utf_to_unicode(napis), **dc_style)
 
-    def zapisz_stylowe_polaczone_komorki(self, akt_wiersz, akt_kolumna, napis, style):
+    def zapisz_stylowe_polaczone_komorki(self, akt_wiersz, akt_kolumna, napis, style, liczba_kolumn=8):
         '''
         WriterGateway:
         '''
-        r1, r2, c1, c2 = wyznacz_cztery(akt_wiersz, akt_kolumna, 8)
+        r1, r2, c1, c2 = wyznacz_cztery(akt_wiersz, akt_kolumna, liczba_kolumn)
         self.sheet.write_merge(r1, r2, c1, c2, en_kw.utf_to_unicode(napis), style=style)
 
     def zapisz_rozmiar_14_komorki(self, akt_wiersz, akt_kolumna, napis):
