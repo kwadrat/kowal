@@ -164,11 +164,10 @@ class WriterGateway(object):
             3: self.n8_style,
             }
 
-    def get_or_generate_style(self, kl_miejsc, rn_colour):
+    def get_or_generate_style(self, kl_miejsc, rn_colour, bold):
         '''
         WriterGateway:
         '''
-        bold = 0
         the_key = (kl_miejsc, rn_colour, bold)
         the_style = self.generated_style_cache.get(the_key)
         if the_style is None:
@@ -279,10 +278,11 @@ class WriterGateway(object):
         '''
         liczba = rn_liczba.rn_value
         kl_miejsc = rn_liczba.rn_after
+        bold = 0
         if rn_liczba.rn_colour is None:
             the_style = self.decimal_digits[kl_miejsc]
         else:
-            the_style = self.get_or_generate_style(kl_miejsc, rn_liczba.rn_colour)
+            the_style = self.get_or_generate_style(kl_miejsc, rn_liczba.rn_colour, bold)
         self.zapisz_ze_stylem(akt_wiersz, akt_kolumna, liczba, the_style)
 
     def zapisz_date(self, akt_wiersz, akt_kolumna, liczba):
