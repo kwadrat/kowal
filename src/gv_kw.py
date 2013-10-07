@@ -49,7 +49,7 @@ class TestTheNumber(unittest.TestCase):
         '''
         TestTheNumber:
         '''
-        obk = RichNumber(0, rn_after=1, rn_colour='red')
+        obk = RichNumber(0, rn_after=1, rn_colour=ECR_red)
         self.assertEqual(obk.rn_colour, 'red')
         obk.update_colour(ECR_indigo)
         self.assertEqual(obk.rn_colour, 'indigo')

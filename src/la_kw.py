@@ -152,7 +152,7 @@ class WriterGateway(object):
         self.n14_style = self.prepare_cell(
             12,
             vert=self.xlwt.Alignment.VERT_CENTER,
-            colour=self.xlwt.Style.colour_map['red'],
+            colour=self.xlwt.Style.colour_map[gv_kw.ECR_red],
             )
         self.n15_style = self.prepare_cell(
             12,
