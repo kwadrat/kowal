@@ -173,7 +173,11 @@ class WriterGateway(object):
         r2 = akt_wiersz
         c1 = akt_kolumna
         c2 = akt_kolumna + ile_w_poziomie
-        self.sheet.write_merge(r1, r2, c1, c2, en_kw.utf_to_unicode(napis))
+        style = self.n10_style
+        dc_style = {}
+        if style is not None:
+            dc_style['style'] = style
+        self.sheet.write_merge(r1, r2, c1, c2, en_kw.utf_to_unicode(napis), **dc_style)
 
     def zapisz_swobodne_polaczone_num_komorki(self, r1, r2, c1, c2, napis, style=None):
         '''
