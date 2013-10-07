@@ -295,7 +295,7 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        self.sheet.write(akt_wiersz, akt_kolumna, self.xlwt.Formula(tekst_wzoru), the_style)
+        self.zapisz_direct(akt_wiersz, akt_kolumna, self.xlwt.Formula(tekst_wzoru), the_style)
 
     def zapisz_wzor(self, akt_wiersz, akt_kolumna, tekst_wzoru, kl_miejsc=2):
         '''
