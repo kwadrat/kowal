@@ -211,8 +211,7 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        dc_style = calculate_style(style)
-        self.sheet.write(akt_wiersz, akt_kolumna, en_kw.utf_to_unicode(napis), **dc_style)
+        self.zapisz_direct(akt_wiersz, akt_kolumna, en_kw.utf_to_unicode(napis), style)
 
     def zapisz_swobodne_polaczone_num_komorki(self, r1, r2, c1, c2, napis, style=None):
         '''
