@@ -325,13 +325,10 @@ class WriterGateway(object):
         akt_kolumna = 0
         self.zapisz_mi(akt_wiersz, akt_kolumna, dn_kw.tab_miesiecy[nr_mies - 1])
 
-    def ustaw_sam_styl(self, akt_wiersz, akt_kolumna, kl_miejsc=2):
+    def ustaw_sam_styl(self, akt_wiersz, akt_kolumna, kl_miejsc=2, rn_colour=None, bold=0, size=None):
         '''
         WriterGateway:
         '''
-        rn_colour = None
-        bold = 0
-        size = None
         the_style = self.get_or_generate_style(kl_miejsc, rn_colour, bold, size)
         tresc_napisu = None
         self.zapisz_direct(akt_wiersz, akt_kolumna, tresc_napisu, style=the_style)
