@@ -130,18 +130,18 @@ class WriterGateway(object):
         self.n10_style = self.prepare_cell(
             16,
             vert=self.xlwt.Alignment.VERT_CENTER,
-            colour=self.xlwt.Style.colour_map['sea_green'],
+            colour=self.xlwt.Style.colour_map[gv_kw.ECR_sea_green],
             )
         self.n11_style = self.prepare_cell(
             12,
             vert=self.xlwt.Alignment.VERT_CENTER,
-            colour=self.xlwt.Style.colour_map['sea_green'],
+            colour=self.xlwt.Style.colour_map[gv_kw.ECR_sea_green],
             bold=1,
             )
         self.n12_style = self.prepare_cell(
             12,
             vert=self.xlwt.Alignment.VERT_CENTER,
-            colour=self.xlwt.Style.colour_map['sea_green'],
+            colour=self.xlwt.Style.colour_map[gv_kw.ECR_sea_green],
             )
         self.n13_style = self.prepare_cell(
             12,
