@@ -265,7 +265,7 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        self.sheet.write(akt_wiersz, akt_kolumna, en_kw.utf_to_unicode(napis), self.n3_style)
+        self.zapisz_direct(akt_wiersz, akt_kolumna, en_kw.utf_to_unicode(napis), self.n3_style)
 
     def zapisz_flt(self, akt_wiersz, akt_kolumna, liczba, kl_miejsc=2):
         '''
