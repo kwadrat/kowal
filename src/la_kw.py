@@ -171,12 +171,19 @@ class WriterGateway(object):
         the_key = (kl_miejsc, rn_colour, bold, size)
         the_style = self.generated_style_cache.get(the_key)
         if the_style is None:
-            colour = self.xlwt.Style.colour_map[rn_colour]
+            dc_params = {}
+            if rn_colour is not None:
+                colour = self.xlwt.Style.colour_map[rn_colour]
+                dc_params['colour'] = colour
+            if bold is not None:
+                dc_params['bold'] = bold
+            if size is not None:
+                dc_params['size'] = size
             the_style = self.prepare_cell(
                 num_format_str=self.format_map[kl_miejsc],
-                colour=colour,
                 vert=self.xlwt.Alignment.VERT_CENTER,
                 horz=self.xlwt.Alignment.HORZ_CENTER,
+                **dc_params
                 )
             self.generated_style_cache[the_key] = the_style
         return the_style
@@ -322,7 +329,10 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        the_style = self.decimal_digits[kl_miejsc]
+        rn_colour = None
+        bold = 0
+        size = None
+        the_style = self.get_or_generate_style(kl_miejsc, rn_colour, bold, size)
         tresc_napisu = None
         self.zapisz_direct(akt_wiersz, akt_kolumna, tresc_napisu, style=the_style)
 
