@@ -210,9 +210,7 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        dc_style = {}
-        if style is not None:
-            dc_style['style'] = style
+        dc_style = calculate_style(style)
         self.sheet.write_merge(r1, r2, c1, c2, napis, **dc_style)
 
     def zapisz_polaczone_komorki(self, akt_wiersz, akt_kolumna, napis, style, liczba_kolumn):
@@ -229,9 +227,7 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        dc_style = {}
-        if style is not None:
-            dc_style['style'] = style
+        dc_style = calculate_style(style)
         self.sheet.write_merge(r1, r2, c1, c2, en_kw.utf_to_unicode(napis), **dc_style)
 
     def zapisz_stylowe_polaczone_komorki(self, akt_wiersz, akt_kolumna, napis, style):
@@ -263,9 +259,7 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        dc_style = {}
-        if style is not None:
-            dc_style['style'] = style
+        dc_style = calculate_style(style)
         self.sheet.write(akt_wiersz, akt_kolumna, liczba, **dc_style)
 
     def zapisz_ze_stylem(self, akt_wiersz, akt_kolumna, liczba, style):
