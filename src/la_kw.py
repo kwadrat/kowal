@@ -199,7 +199,7 @@ class WriterGateway(object):
             dc_style['style'] = style
         self.sheet.write_merge(r1, r2, c1, c2, napis, **dc_style)
 
-    def zapisz_polaczone_komorki(self, akt_wiersz, akt_kolumna, napis, style=None, liczba_kolumn=10):
+    def zapisz_polaczone_komorki(self, akt_wiersz, akt_kolumna, napis, style, liczba_kolumn):
         '''
         WriterGateway:
         '''
