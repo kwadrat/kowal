@@ -19,6 +19,10 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+ECR_indigo = 'indigo'
+ECR_red = 'red'
+ECR_sea_green = 'sea_green'
+
 class RichNumber(object):
     def update_after(self, rn_after):
         '''
