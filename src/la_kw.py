@@ -226,8 +226,6 @@ class WriterGateway(object):
         '''
         r1, r2, c1, c2 = wyznacz_cztery(akt_wiersz, akt_kolumna, liczba_kolumn)
         napis = en_kw.utf_to_unicode(napis)
-        if style is None:
-            style = self.n10_style
         self.zapisz_swobodne_polaczone_num_komorki(r1, r2, c1, c2, napis, style)
 
     def zapisz_swobodne_polaczone_komorki(self, r1, r2, c1, c2, napis, style=None):
