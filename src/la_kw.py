@@ -129,6 +129,7 @@ class WriterGateway(object):
             12,
             vert=self.xlwt.Alignment.VERT_CENTER,
             colour=self.xlwt.Style.colour_map['sea_green'],
+            bold=1,
             )
         self.decimal_digits = {
             0: self.n9_style,
