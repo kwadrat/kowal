@@ -45,6 +45,12 @@ def wyznacz_cztery(akt_wiersz, akt_kolumna, liczba_kolumn):
     c2 = c1 + liczba_kolumn - 1
     return r1, r2, c1, c2
 
+def calculate_style(style):
+    dc_style = {}
+    if style is not None:
+        dc_style['style'] = style
+    return dc_style
+
 class WriterGateway(object):
     def prepare_cell(self, size=None, bold=None, num_format_str=None, wrap=None, vert=None, horz=None, colour=None):
         '''
@@ -338,3 +344,5 @@ class TestArkuszowy(unittest.TestCase):
         TestArkuszowy:
         '''
         self.assertEqual(wyznacz_cztery(1, 2, 3), (1, 1, 2, 4))
+        self.assertEqual(calculate_style(None), {})
+        self.assertEqual(calculate_style(1), {'style':1})
