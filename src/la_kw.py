@@ -246,7 +246,7 @@ class WriterGateway(object):
         WriterGateway:
         '''
         r1, r2, c1, c2 = wyznacz_cztery(akt_wiersz, akt_kolumna, liczba_kolumn)
-        self.sheet.write_merge(r1, r2, c1, c2, en_kw.utf_to_unicode(napis), style=style)
+        self.zapisz_swobodne_polaczone_komorki(r1, r2, c1, c2, napis, style)
 
     def zapisz_rozmiar_14_komorki(self, akt_wiersz, akt_kolumna, napis):
         '''
