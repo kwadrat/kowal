@@ -228,17 +228,17 @@ class WriterGateway(object):
         '''
         self.zapisz_direct(akt_wiersz, akt_kolumna, en_kw.utf_to_unicode(napis), style)
 
+    def zapisz_swobodne_polaczone_komorki(self, r1, r2, c1, c2, napis, style=None):
+        '''
+        WriterGateway:
+        '''
+        self.zapisz_swobodne_polaczone_num_komorki(r1, r2, c1, c2, en_kw.utf_to_unicode(napis), style)
+
     def zapisz_polaczone_komorki(self, akt_wiersz, akt_kolumna, napis, style, liczba_kolumn):
         '''
         WriterGateway:
         '''
         r1, r2, c1, c2 = wyznacz_cztery(akt_wiersz, akt_kolumna, liczba_kolumn)
-        self.zapisz_swobodne_polaczone_num_komorki(r1, r2, c1, c2, en_kw.utf_to_unicode(napis), style)
-
-    def zapisz_swobodne_polaczone_komorki(self, r1, r2, c1, c2, napis, style=None):
-        '''
-        WriterGateway:
-        '''
         self.zapisz_swobodne_polaczone_num_komorki(r1, r2, c1, c2, en_kw.utf_to_unicode(napis), style)
 
     def zapisz_stylowe_polaczone_komorki(self, akt_wiersz, akt_kolumna, napis, style, liczba_kolumn=8):
