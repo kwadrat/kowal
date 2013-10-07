@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+import unittest
+
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import dn_kw
 import en_kw
@@ -35,6 +37,13 @@ def analyze_excel_files(dfb, worker_class, filenames):
         print single_file
         obk = worker_class()
         obk.analyze_this_file(dfb, xlrd, single_file)
+
+def wyznacz_cztery(akt_wiersz, akt_kolumna, liczba_kolumn):
+    r1 = akt_wiersz
+    r2 = r1
+    c1 = akt_kolumna
+    c2 = c1 + liczba_kolumn - 1
+    return r1, r2, c1, c2
 
 class WriterGateway(object):
     def prepare_cell(self, size=None, bold=None, num_format_str=None, wrap=None, vert=None, horz=None, colour=None):
@@ -302,3 +311,10 @@ def generate_excel_files(dfb, plik_energii, plik_mocy):
     xwg = WriterGateway()
     fu_kw.EnergyReader().generate_one_file(xwg, dfb, plik_energii)
     mt_kw.PowerReader().generate_one_file(xwg, dfb, plik_mocy)
+
+class TestArkuszowy(unittest.TestCase):
+    def test_arkuszowy(self):
+        '''
+        TestArkuszowy:
+        '''
+        self.assertEqual(wyznacz_cztery(1, 2, 3), (1, 1, 2, 4))
