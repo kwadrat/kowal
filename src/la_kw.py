@@ -148,6 +148,12 @@ class WriterGateway(object):
             horz=self.xlwt.Alignment.HORZ_CENTER,
             colour=self.xlwt.Style.colour_map['red'],
             )
+        self.n15_style = self.prepare_cell(
+            12,
+            vert=self.xlwt.Alignment.VERT_CENTER,
+            horz=self.xlwt.Alignment.HORZ_CENTER,
+            colour=self.xlwt.Style.colour_map['indigo'],
+            )
         self.decimal_digits = {
             0: self.n9_style,
             2: self.n1_style,
