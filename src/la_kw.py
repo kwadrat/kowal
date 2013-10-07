@@ -168,7 +168,8 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        the_key = (kl_miejsc, rn_colour)
+        bold = 0
+        the_key = (kl_miejsc, rn_colour, bold)
         the_style = self.generated_style_cache.get(the_key)
         if the_style is None:
             colour = self.xlwt.Style.colour_map[rn_colour]
