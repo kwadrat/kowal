@@ -279,7 +279,7 @@ class WriterGateway(object):
         WriterGateway:
         '''
         the_style = self.decimal_digits[kl_miejsc]
-        self.zapisz_ze_stylem(akt_wiersz, akt_kolumna, liczba, the_style)
+        self.zapisz_direct(akt_wiersz, akt_kolumna, liczba, the_style)
 
     def zapisz_rn_flt(self, akt_wiersz, akt_kolumna, rn_liczba):
         '''
@@ -290,13 +290,13 @@ class WriterGateway(object):
         bold = 0
         size = None
         the_style = self.get_or_generate_style(kl_miejsc, rn_liczba.rn_colour, bold, size)
-        self.zapisz_ze_stylem(akt_wiersz, akt_kolumna, liczba, the_style)
+        self.zapisz_direct(akt_wiersz, akt_kolumna, liczba, the_style)
 
     def zapisz_date(self, akt_wiersz, akt_kolumna, liczba):
         '''
         WriterGateway:
         '''
-        self.zapisz_ze_stylem(akt_wiersz, akt_kolumna, liczba, self.n2_style)
+        self.zapisz_direct(akt_wiersz, akt_kolumna, liczba, self.n2_style)
 
     def zapisz_stylowy_wzor(self, akt_wiersz, akt_kolumna, tekst_wzoru, the_style):
         '''
