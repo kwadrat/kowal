@@ -186,11 +186,7 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        ile_w_poziomie = 10
-        r1 = akt_wiersz
-        r2 = akt_wiersz
-        c1 = akt_kolumna
-        c2 = akt_kolumna + ile_w_poziomie
+        r1, r2, c1, c2 = wyznacz_cztery(akt_wiersz, akt_kolumna, 10)
         style = self.n10_style
         napis = en_kw.utf_to_unicode(napis)
         self.zapisz_swobodne_polaczone_num_komorki(r1, r2, c1, c2, napis, style)
