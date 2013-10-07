@@ -208,7 +208,7 @@ class WriterGateway(object):
         self.wbk.save(nazwa_docelowa)
         self.wbk = None
 
-    def zapisz_direct(self, akt_wiersz, akt_kolumna, liczba, style=None):
+    def write_single(self, akt_wiersz, akt_kolumna, liczba, style=None):
         '''
         WriterGateway:
         '''
@@ -226,7 +226,7 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        self.zapisz_direct(akt_wiersz, akt_kolumna, en_kw.utf_to_unicode(napis), style)
+        self.write_single(akt_wiersz, akt_kolumna, en_kw.utf_to_unicode(napis), style)
 
     def zapisz_swobodne_polaczone_komorki(self, r1, r2, c1, c2, napis, style=None):
         '''
@@ -264,7 +264,7 @@ class WriterGateway(object):
         WriterGateway:
         '''
         the_style = self.decimal_digits[kl_miejsc]
-        self.zapisz_direct(akt_wiersz, akt_kolumna, liczba, the_style)
+        self.write_single(akt_wiersz, akt_kolumna, liczba, the_style)
 
     def zapisz_rn_flt(self, akt_wiersz, akt_kolumna, rn_liczba):
         '''
@@ -275,19 +275,19 @@ class WriterGateway(object):
         bold = 0
         size = None
         the_style = self.get_or_generate_style(kl_miejsc, rn_liczba.rn_colour, bold, size)
-        self.zapisz_direct(akt_wiersz, akt_kolumna, liczba, the_style)
+        self.write_single(akt_wiersz, akt_kolumna, liczba, the_style)
 
     def zapisz_date(self, akt_wiersz, akt_kolumna, liczba):
         '''
         WriterGateway:
         '''
-        self.zapisz_direct(akt_wiersz, akt_kolumna, liczba, self.n2_style)
+        self.write_single(akt_wiersz, akt_kolumna, liczba, self.n2_style)
 
     def zapisz_stylowy_wzor(self, akt_wiersz, akt_kolumna, tekst_wzoru, the_style):
         '''
         WriterGateway:
         '''
-        self.zapisz_direct(akt_wiersz, akt_kolumna, self.xlwt.Formula(tekst_wzoru), the_style)
+        self.write_single(akt_wiersz, akt_kolumna, self.xlwt.Formula(tekst_wzoru), the_style)
 
     def zapisz_wzor(self, akt_wiersz, akt_kolumna, tekst_wzoru, kl_miejsc=2):
         '''
@@ -315,7 +315,7 @@ class WriterGateway(object):
         '''
         the_style = self.get_or_generate_style(kl_miejsc, rn_colour, bold, size)
         tresc_napisu = None
-        self.zapisz_direct(akt_wiersz, akt_kolumna, tresc_napisu, style=the_style)
+        self.write_single(akt_wiersz, akt_kolumna, tresc_napisu, style=the_style)
 
 def generate_excel_files(dfb, plik_energii, plik_mocy):
     xwg = WriterGateway()
