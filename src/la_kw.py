@@ -100,6 +100,7 @@ class WriterGateway(object):
             0: 'General', # Liczby całkowite bez przecinka, center
             2: '#,##0.00', # użyj separatora 1000, 2 miejsca po przecinku
             3: '#,##0.000', # użyj separatora 1000, 3 miejsca po przecinku
+            NMF_1_above_red: '[Red]#,##0.00_ ;-#,##0.00 ',
             }
         self.xlwt = new_module_for_writing_spreadsheet()
         self.n1_style = self.prepare_cell(
