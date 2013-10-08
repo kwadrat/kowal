@@ -138,9 +138,8 @@ class WriterGateway(object):
             horz=self.xlwt.Alignment.HORZ_CENTER,
             wrap=1,
             ) # Zawijaj tekst, wycentruj
-        self.n4_style = self.prepare_cell(
-            num_format_str='[Red]#,##0.00_ ;-#,##0.00 '
-            ) # Liczby nieujemne na czerwono, użyj separatora 1000
+        # Liczby nieujemne na czerwono, użyj separatora 1000
+        self.n4_style = self.get_or_generate_style(NMF_1_above_red, rn_colour=None, bold=None, size=None)
         self.n5_style = self.prepare_cell(14) # Arial 14 pt
         self.n6_style = self.prepare_cell(12, bold=1) # Arial 12 pt, bold
         self.n7_style = self.prepare_cell(
