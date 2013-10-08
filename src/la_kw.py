@@ -53,11 +53,14 @@ def calculate_style(style):
     return dc_style
 
 class WriterGateway(object):
-    def prepare_cell(self, size=None, bold=None, num_format_str=None, wrap=None, vert=None, horz=None, colour=None):
+    def prepare_cell(self, size=None, bold=None, num_format_str=None, wrap=None, vert=None, horz=None, colour=None, borders=None):
         '''
         WriterGateway:
         '''
         the_style = self.xlwt.XFStyle()
+        if borders is not None:
+            the_borders = the_style.borders
+            the_borders.left = the_borders.right = the_borders.top = the_borders.bottom = the_borders.THIN
         needed_wrap = wrap is not None
         needed_vert = vert is not None
         needed_horz = horz is not None
