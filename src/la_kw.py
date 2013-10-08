@@ -145,11 +145,7 @@ class WriterGateway(object):
             horz=self.xlwt.Alignment.HORZ_CENTER,
             ) # Center vertically, center horizontally
         self.n8_style = self.get_or_generate_style(3, rn_colour=None, bold=None, size=None)
-        self.n9_style = self.prepare_cell(
-            num_format_str=self.format_map[0],
-            vert=self.xlwt.Alignment.VERT_CENTER,
-            horz=self.xlwt.Alignment.HORZ_CENTER,
-            )
+        self.n9_style = self.get_or_generate_style(0, rn_colour=None, bold=None, size=None)
         self.n10_style = self.prepare_cell(
             16,
             vert=self.xlwt.Alignment.VERT_CENTER,
