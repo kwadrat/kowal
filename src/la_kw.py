@@ -91,6 +91,30 @@ class WriterGateway(object):
             the_style.num_format_str = num_format_str
         return the_style
 
+    def get_or_generate_style(self, kl_miejsc, rn_colour, bold, size):
+        '''
+        WriterGateway:
+        '''
+        the_key = (kl_miejsc, rn_colour, bold, size)
+        the_style = self.generated_style_cache.get(the_key)
+        if the_style is None:
+            dc_params = {}
+            if rn_colour is not None:
+                colour = self.xlwt.Style.colour_map[rn_colour]
+                dc_params['colour'] = colour
+            if bold is not None:
+                dc_params['bold'] = bold
+            if size is not None:
+                dc_params['size'] = size
+            the_style = self.prepare_cell(
+                num_format_str=self.format_map[kl_miejsc],
+                vert=self.xlwt.Alignment.VERT_CENTER,
+                horz=self.xlwt.Alignment.HORZ_CENTER,
+                **dc_params
+                )
+            self.generated_style_cache[the_key] = the_style
+        return the_style
+
     def __init__(self):
         '''
         WriterGateway:
@@ -170,30 +194,6 @@ class WriterGateway(object):
             2: self.n1_style,
             3: self.n8_style,
             }
-
-    def get_or_generate_style(self, kl_miejsc, rn_colour, bold, size):
-        '''
-        WriterGateway:
-        '''
-        the_key = (kl_miejsc, rn_colour, bold, size)
-        the_style = self.generated_style_cache.get(the_key)
-        if the_style is None:
-            dc_params = {}
-            if rn_colour is not None:
-                colour = self.xlwt.Style.colour_map[rn_colour]
-                dc_params['colour'] = colour
-            if bold is not None:
-                dc_params['bold'] = bold
-            if size is not None:
-                dc_params['size'] = size
-            the_style = self.prepare_cell(
-                num_format_str=self.format_map[kl_miejsc],
-                vert=self.xlwt.Alignment.VERT_CENTER,
-                horz=self.xlwt.Alignment.HORZ_CENTER,
-                **dc_params
-                )
-            self.generated_style_cache[the_key] = the_style
-        return the_style
 
     def workbook_create(self):
         '''
