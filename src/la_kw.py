@@ -20,6 +20,8 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+NMF_1_above_red = -1
+
 def new_module_for_reading_spreadsheet():
     import xlrd
     return xlrd
