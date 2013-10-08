@@ -127,9 +127,7 @@ class WriterGateway(object):
             NMF_1_above_red: '[Red]#,##0.00_ ;-#,##0.00 ',
             }
         self.xlwt = new_module_for_writing_spreadsheet()
-        self.n1_style = self.prepare_cell(
-            num_format_str=self.format_map[2],
-            )
+        self.n1_style = self.get_or_generate_style(2, rn_colour=None, bold=None, size=None)
         self.n2_style = self.prepare_cell(
             num_format_str='yyyy/mm/dd;@' # data RRRR-MM-DD
             )
