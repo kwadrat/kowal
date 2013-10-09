@@ -117,6 +117,13 @@ def rcp_pion(wiersz_bazowy_miesiecy, kl_letter_of_col):
         kl_letter_of_col=kl_letter_of_col,
         )
 
+def rcp_wspolne(command, etk_a, etk_b):
+    return '%(command)s(%(etk_a)s:%(etk_b)s)' % dict(
+        command=command,
+        etk_a=etk_a,
+        etk_b=etk_b,
+        )
+
 def rcp_poziom(etk_a, etk_b):
     return 'SUM(%(etk_a)s:%(etk_b)s)' % dict(
         etk_a=etk_a,
