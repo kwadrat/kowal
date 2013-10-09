@@ -125,16 +125,10 @@ def rcp_wspolne(command, etk_a, etk_b):
         )
 
 def rcp_poziom(etk_a, etk_b):
-    return 'SUM(%(etk_a)s:%(etk_b)s)' % dict(
-        etk_a=etk_a,
-        etk_b=etk_b,
-        )
+    return rcp_wspolne('SUM', etk_a, etk_b)
 
 def rcp_sred(etk_a, etk_b):
-    return 'AVERAGE(%(etk_a)s:%(etk_b)s)' % dict(
-        etk_a=etk_a,
-        etk_b=etk_b,
-        )
+    return rcp_wspolne('AVERAGE', etk_a, etk_b)
 
 def reverse_but_last(tmp_list):
     tmp_list.sort()
