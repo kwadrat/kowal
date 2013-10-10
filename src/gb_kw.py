@@ -23,12 +23,14 @@ Jedn_sztuki = 'szt'
 Jedn_kWh = 'kWh'
 Jedn_kWtow = 'kW'
 Jedn_zlotowki = 'zł'
+Jedn_procent = '%'
 
 def nawiasy_kwadratowe(jednostka):
     return '[%s]' % jednostka
 
 Jedn_k_zlotowki = nawiasy_kwadratowe(Jedn_zlotowki)
 Jedn_jy_sztuki = nawiasy_kwadratowe(Jedn_sztuki)
+Jedn_k_procenty = nawiasy_kwadratowe(Jedn_procent)
 
 class TestUnitNames(unittest.TestCase):
     def test_unit_names(self):
@@ -41,3 +43,4 @@ class TestUnitNames(unittest.TestCase):
         self.assertEqual(Jedn_kWtow, 'kW')
         self.assertEqual(Jedn_zlotowki, 'zł')
         self.assertEqual(Jedn_k_zlotowki, '[zł]')
+        self.assertEqual(Jedn_k_procenty, '[%]')
