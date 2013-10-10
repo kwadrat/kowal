@@ -180,10 +180,12 @@ class WriterGateway(object):
             vert=self.xlwt.Alignment.VERT_CENTER,
             colour=self.xlwt.Style.colour_map[gv_kw.ECR_indigo],
             )
+        self.n16_style = self.get_or_generate_style(NMF_2_percent, rn_colour=None, bold=None, size=None)
         self.decimal_digits = {
             0: self.n9_style,
             2: self.n1_style,
             3: self.n8_style,
+            NMF_2_percent: self.n16_style,
             }
 
     def workbook_create(self):
