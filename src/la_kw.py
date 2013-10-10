@@ -240,11 +240,11 @@ class WriterGateway(object):
         r1, r2, c1, c2 = wyznacz_cztery(akt_wiersz, akt_kolumna, liczba_kolumn)
         self.zapisz_swobodne_polaczone_komorki(r1, r2, c1, c2, napis, style)
 
-    def zapisz_rozmiar_14_komorki(self, akt_wiersz, akt_kolumna, napis):
+    def zapisz_rozmiar_14_komorki(self, akt_wiersz, akt_kolumna, napis, liczba_kolumn=8):
         '''
         WriterGateway:
         '''
-        self.zapisz_polaczone_komorki(akt_wiersz, akt_kolumna, napis, style=self.n5_style, liczba_kolumn=8)
+        self.zapisz_polaczone_komorki(akt_wiersz, akt_kolumna, napis, style=self.n5_style, liczba_kolumn=liczba_kolumn)
 
     def zapisz_bold_rozmiar_12_komorki(self, akt_wiersz, akt_kolumna, napis, liczba_kolumn=1):
         '''
