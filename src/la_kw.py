@@ -21,6 +21,7 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 NMF_1_above_red = -1
+NMF_2_percent = -2
 
 def new_module_for_reading_spreadsheet():
     import xlrd
@@ -125,6 +126,7 @@ class WriterGateway(object):
             2: '#,##0.00', # użyj separatora 1000, 2 miejsca po przecinku
             3: '#,##0.000', # użyj separatora 1000, 3 miejsca po przecinku
             NMF_1_above_red: '[Red]#,##0.00_ ;-#,##0.00 ',
+            NMF_2_percent: '0.00%',
             }
         self.xlwt = new_module_for_writing_spreadsheet()
         self.n1_style = self.get_or_generate_style(2, rn_colour=None, bold=None, size=None)
