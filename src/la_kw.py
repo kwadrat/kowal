@@ -42,9 +42,9 @@ def analyze_excel_files(dfb, worker_class, filenames):
         obk = worker_class()
         obk.analyze_this_file(dfb, xlrd, single_file)
 
-def wyznacz_cztery(akt_wiersz, akt_kolumna, liczba_kolumn):
+def wyznacz_cztery(akt_wiersz, akt_kolumna, liczba_kolumn=1, liczba_wierszy=1):
     r1 = akt_wiersz
-    r2 = r1
+    r2 = r1 + liczba_wierszy - 1
     c1 = akt_kolumna
     c2 = c1 + liczba_kolumn - 1
     return r1, r2, c1, c2
@@ -332,5 +332,6 @@ class TestArkuszowy(unittest.TestCase):
         TestArkuszowy:
         '''
         self.assertEqual(wyznacz_cztery(1, 2, 3), (1, 1, 2, 4))
+        self.assertEqual(wyznacz_cztery(1, 2, liczba_wierszy=3), (1, 3, 2, 2))
         self.assertEqual(calculate_style(None), {})
         self.assertEqual(calculate_style(1), {'style':1})
