@@ -287,7 +287,14 @@ class WriterGateway(object):
         WriterGateway:
         '''
         the_content = self.xlwt.Formula(tekst_wzoru)
-        self.write_single(akt_wiersz, akt_kolumna, self.xlwt.Formula(tekst_wzoru), the_style)
+        if liczba_kolumn == 1:
+            ##############################################################################
+            self.write_single(akt_wiersz, akt_kolumna, the_content, the_style)
+            ##############################################################################
+        else:
+            ##############################################################################
+            self.write_single(akt_wiersz, akt_kolumna, the_content, the_style)
+            ##############################################################################
 
     def zapisz_wzor(self, akt_wiersz, akt_kolumna, tekst_wzoru, kl_miejsc=2):
         '''
