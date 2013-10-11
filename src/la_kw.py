@@ -221,7 +221,7 @@ class WriterGateway(object):
         dc_style = calculate_style(style)
         self.sheet.write_merge(r1, r2, c1, c2, napis, **dc_style)
 
-    def zapisz_mi(self, akt_wiersz, akt_kolumna, napis, style=None):
+    def zapisz_mi(self, akt_wiersz, akt_kolumna, napis, style=None, liczba_wierszy=1):
         '''
         WriterGateway:
         '''
