@@ -261,7 +261,7 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        self.zapisz_mi(akt_wiersz, akt_kolumna, napis, self.n3_style)
+        self.zapisz_mi(akt_wiersz, akt_kolumna, napis, self.n3_style, liczba_wierszy=liczba_wierszy)
 
     def zapisz_flt(self, akt_wiersz, akt_kolumna, liczba, kl_miejsc=2):
         '''
