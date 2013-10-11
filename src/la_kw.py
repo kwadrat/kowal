@@ -282,7 +282,7 @@ class WriterGateway(object):
         '''
         self.write_single(akt_wiersz, akt_kolumna, liczba, self.n2_style)
 
-    def zapisz_stylowy_wzor(self, akt_wiersz, akt_kolumna, tekst_wzoru, the_style):
+    def zapisz_stylowy_wzor(self, akt_wiersz, akt_kolumna, tekst_wzoru, the_style, liczba_kolumn=1):
         '''
         WriterGateway:
         '''
