@@ -293,12 +293,12 @@ class WriterGateway(object):
             r1, r2, c1, c2 = wyznacz_cztery(akt_wiersz, akt_kolumna, liczba_kolumn)
             self.write_multi(r1, r2, c1, c2, the_content, the_style)
 
-    def zapisz_wzor(self, akt_wiersz, akt_kolumna, tekst_wzoru, kl_miejsc=2):
+    def zapisz_wzor(self, akt_wiersz, akt_kolumna, tekst_wzoru, kl_miejsc=2, liczba_kolumn=1):
         '''
         WriterGateway:
         '''
         the_style = self.decimal_digits[kl_miejsc]
-        self.zapisz_stylowy_wzor(akt_wiersz, akt_kolumna, tekst_wzoru, the_style)
+        self.zapisz_stylowy_wzor(akt_wiersz, akt_kolumna, tekst_wzoru, the_style, liczba_kolumn=liczba_kolumn)
 
     def zapisz_odwrotny_czerwony_wzor(self, akt_wiersz, akt_kolumna, tekst_wzoru):
         '''
