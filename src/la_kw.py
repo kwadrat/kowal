@@ -225,6 +225,7 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
+        the_content = en_kw.utf_to_unicode(napis)
         self.write_single(akt_wiersz, akt_kolumna, en_kw.utf_to_unicode(napis), style)
 
     def zapisz_swobodne_polaczone_komorki(self, r1, r2, c1, c2, napis, style=None):
