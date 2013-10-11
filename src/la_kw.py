@@ -257,7 +257,7 @@ class WriterGateway(object):
         '''
         self.zapisz_polaczone_komorki(akt_wiersz, akt_kolumna, napis, style=self.n6_style, liczba_kolumn=liczba_kolumn)
 
-    def zapisz_zawijane(self, akt_wiersz, akt_kolumna, napis):
+    def zapisz_zawijane(self, akt_wiersz, akt_kolumna, napis, liczba_wierszy=1):
         '''
         WriterGateway:
         '''
