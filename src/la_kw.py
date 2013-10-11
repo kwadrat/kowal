@@ -288,13 +288,10 @@ class WriterGateway(object):
         '''
         the_content = self.xlwt.Formula(tekst_wzoru)
         if liczba_kolumn == 1:
-            ##############################################################################
             self.write_single(akt_wiersz, akt_kolumna, the_content, the_style)
-            ##############################################################################
         else:
-            ##############################################################################
-            self.write_single(akt_wiersz, akt_kolumna, the_content, the_style)
-            ##############################################################################
+            r1, r2, c1, c2 = wyznacz_cztery(akt_wiersz, akt_kolumna, liczba_kolumn)
+            self.write_multi(r1, r2, c1, c2, the_content, the_style)
 
     def zapisz_wzor(self, akt_wiersz, akt_kolumna, tekst_wzoru, kl_miejsc=2):
         '''
