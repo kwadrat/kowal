@@ -24,10 +24,17 @@ ECR_red = 'red'
 ECR_sea_green = 'sea_green'
 
 class RichCommon(object):
+    def update_colour(self, rn_colour):
+        '''
+        RichCommon:
+        '''
+        self.rn_colour = rn_colour
+
     def __init__(self, rn_colour=None):
         '''
         RichCommon:
         '''
+        self.update_colour(rn_colour)
 
 class RichString(RichCommon):
     def __init__(self):
@@ -42,12 +49,6 @@ class RichNumber(RichCommon):
         RichNumber:
         '''
         self.rn_after = rn_after
-
-    def update_colour(self, rn_colour):
-        '''
-        RichNumber:
-        '''
-        self.rn_colour = rn_colour
 
     def __init__(self, rn_value, rn_after=2, rn_colour=None):
         '''
@@ -82,6 +83,7 @@ class TestTheNumber(unittest.TestCase):
         TestTheNumber:
         '''
         obk = RichCommon(rn_colour=ECR_red)
+        self.assertEqual(obk.rn_colour, 'red')
 
     def test_4_the_number(self):
         '''
