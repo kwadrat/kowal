@@ -48,7 +48,7 @@ class RichString(RichCommon):
         '''
         RichString:
         '''
-        RichCommon.__init__(self)
+        RichCommon.__init__(self, rn_value)
 
 class RichNumber(RichCommon):
     def update_after(self, rn_after):
@@ -101,3 +101,4 @@ class TestTheNumber(unittest.TestCase):
         TestTheNumber:
         '''
         obk = RichString('abc')
+        self.assertEqual(obk.rn_value, 'abc')
