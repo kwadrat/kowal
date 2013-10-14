@@ -29,6 +29,13 @@ class RichCommon(object):
         RichCommon:
         '''
 
+class RichString(RichCommon):
+    def __init__(self):
+        '''
+        RichString:
+        '''
+        RichCommon.__init__(self)
+
 class RichNumber(object):
     def update_after(self, rn_after):
         '''
@@ -74,3 +81,9 @@ class TestTheNumber(unittest.TestCase):
         TestTheNumber:
         '''
         obk = RichCommon()
+
+    def test_4_the_number(self):
+        '''
+        TestTheNumber:
+        '''
+        obk = RichString()
