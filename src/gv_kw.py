@@ -54,10 +54,9 @@ class RichNumber(RichCommon):
         '''
         RichNumber:
         '''
-        RichCommon.__init__(self)
+        RichCommon.__init__(self, rn_colour=rn_colour)
         self.rn_value = rn_value
         self.update_after(rn_after)
-        self.update_colour(rn_colour)
 
 class TestTheNumber(unittest.TestCase):
     def test_the_number(self):
