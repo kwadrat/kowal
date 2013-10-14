@@ -24,7 +24,7 @@ ECR_red = 'red'
 ECR_sea_green = 'sea_green'
 
 class RichCommon(object):
-    def __init__(self):
+    def __init__(self, rn_colour=None):
         '''
         RichCommon:
         '''
@@ -81,7 +81,7 @@ class TestTheNumber(unittest.TestCase):
         '''
         TestTheNumber:
         '''
-        obk = RichCommon()
+        obk = RichCommon(rn_colour=ECR_red)
 
     def test_4_the_number(self):
         '''
