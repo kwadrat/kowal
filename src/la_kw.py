@@ -325,6 +325,14 @@ class WriterGateway(object):
         the_style = self.get_or_generate_style(kl_miejsc, rn_colour, bold, size)
         self.write_single(akt_wiersz, akt_kolumna, tresc_napisu, style=the_style)
 
+    def wymus_szerokosci(self, lista_rozmiarow):
+        '''
+        WriterGateway:
+        '''
+        for nr_kol, szer_kol in enumerate(lista_rozmiarow):
+            skalowana_szerokosc = lista_rozmiarow[nr_kol]
+            self.sheet.col(nr_kol).width = skalowana_szerokosc
+
 def generate_excel_files(dfb, plik_energii, plik_mocy):
     xwg = WriterGateway()
     fu_kw.EnergyReader().generate_one_file(xwg, dfb, plik_energii)
