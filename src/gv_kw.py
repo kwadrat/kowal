@@ -64,11 +64,11 @@ class RichNumber(RichCommon):
         '''
         self.rn_after = rn_after
 
-    def __init__(self, rn_value, rn_after=2, rn_colour=None):
+    def __init__(self, rn_value, rn_after=2, rn_colour=None, rn_size=None):
         '''
         RichNumber:
         '''
-        RichCommon.__init__(self, rn_value, rn_colour=rn_colour)
+        RichCommon.__init__(self, rn_value, rn_colour=rn_colour, rn_size=rn_size)
         self.update_after(rn_after)
 
 class TestTheNumber(unittest.TestCase):
@@ -85,10 +85,11 @@ class TestTheNumber(unittest.TestCase):
         '''
         TestTheNumber:
         '''
-        obk = RichNumber(1)
+        obk = RichNumber(1, rn_size=14)
         self.assertEqual(obk.rn_after, 2)
         obk.update_after(3)
         self.assertEqual(obk.rn_after, 3)
+        self.assertEqual(obk.rn_size, 14)
 
     def test_3_the_number(self):
         '''
