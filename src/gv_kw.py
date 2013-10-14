@@ -36,7 +36,7 @@ class RichString(RichCommon):
         '''
         RichCommon.__init__(self)
 
-class RichNumber(object):
+class RichNumber(RichCommon):
     def update_after(self, rn_after):
         '''
         RichNumber:
@@ -53,6 +53,7 @@ class RichNumber(object):
         '''
         RichNumber:
         '''
+        RichCommon.__init__(self)
         self.rn_value = rn_value
         self.update_after(rn_after)
         self.update_colour(rn_colour)
