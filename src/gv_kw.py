@@ -44,7 +44,7 @@ class RichCommon(object):
         self.update_colour(rn_colour)
 
 class RichString(RichCommon):
-    def __init__(self, rn_value=None):
+    def __init__(self, rn_value=None, rn_size=None):
         '''
         RichString:
         '''
@@ -102,3 +102,9 @@ class TestTheNumber(unittest.TestCase):
         '''
         obk = RichString('abc')
         self.assertEqual(obk.rn_value, 'abc')
+
+    def test_6_the_number(self):
+        '''
+        TestTheNumber:
+        '''
+        obk = RichString('abc', rn_size=8)
