@@ -44,7 +44,7 @@ class RichCommon(object):
         self.update_colour(rn_colour)
 
 class RichString(RichCommon):
-    def __init__(self):
+    def __init__(self, rn_value=None):
         '''
         RichString:
         '''
@@ -95,3 +95,9 @@ class TestTheNumber(unittest.TestCase):
         TestTheNumber:
         '''
         obk = RichString()
+
+    def test_5_the_number(self):
+        '''
+        TestTheNumber:
+        '''
+        obk = RichString('abc')
