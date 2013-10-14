@@ -48,7 +48,13 @@ class RichCommon(object):
         '''
         self.rn_centered = rn_centered
 
-    def __init__(self, rn_value=None, rn_colour=None, rn_size=None, rn_centered=0):
+    def update_cols(self, liczba_kolumn):
+        '''
+        RichCommon:
+        '''
+        self.liczba_kolumn = liczba_kolumn
+
+    def __init__(self, rn_value=None, rn_colour=None, rn_size=None, rn_centered=0, liczba_kolumn=1):
         '''
         RichCommon:
         '''
@@ -56,13 +62,14 @@ class RichCommon(object):
         self.update_colour(rn_colour)
         self.update_size(rn_size)
         self.update_centered(rn_centered)
+        self.update_cols(liczba_kolumn)
 
 class RichString(RichCommon):
-    def __init__(self, rn_value=None, rn_size=None, rn_centered=0):
+    def __init__(self, rn_value=None, rn_size=None, rn_centered=0, liczba_kolumn=1):
         '''
         RichString:
         '''
-        RichCommon.__init__(self, rn_value, rn_size=rn_size, rn_centered=rn_centered)
+        RichCommon.__init__(self, rn_value, rn_size=rn_size, rn_centered=rn_centered, liczba_kolumn=liczba_kolumn)
 
 class RichNumber(RichCommon):
     def update_after(self, rn_after):
@@ -125,3 +132,4 @@ class TestTheNumber(unittest.TestCase):
         obk = RichString('abc', rn_size=8)
         self.assertEqual(obk.rn_size, 8)
         self.assertEqual(obk.rn_centered, 0)
+        self.assertEqual(obk.liczba_kolumn, 1)
