@@ -36,19 +36,26 @@ class RichCommon(object):
         '''
         self.rn_colour = rn_colour
 
-    def __init__(self, rn_value=None, rn_colour=None):
+    def update_size(self, rn_size):
+        '''
+        RichCommon:
+        '''
+        self.rn_size = rn_size
+
+    def __init__(self, rn_value=None, rn_colour=None, rn_size=None):
         '''
         RichCommon:
         '''
         self.update_value(rn_value)
         self.update_colour(rn_colour)
+        self.update_size(rn_size)
 
 class RichString(RichCommon):
     def __init__(self, rn_value=None, rn_size=None):
         '''
         RichString:
         '''
-        RichCommon.__init__(self, rn_value)
+        RichCommon.__init__(self, rn_value, rn_size=rn_size)
 
 class RichNumber(RichCommon):
     def update_after(self, rn_after):
@@ -108,3 +115,4 @@ class TestTheNumber(unittest.TestCase):
         TestTheNumber:
         '''
         obk = RichString('abc', rn_size=8)
+        self.assertEqual(obk.rn_size, 8)
