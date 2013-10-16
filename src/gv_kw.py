@@ -85,6 +85,13 @@ class RichNumber(RichCommon):
         RichCommon.__init__(self, rn_value, rn_colour=rn_colour, rn_size=rn_size)
         self.update_after(rn_after)
 
+class RichFormula(RichCommon):
+    def __init__(self):
+        '''
+        RichString:
+        '''
+        RichCommon.__init__(self)
+
 class TestTheNumber(unittest.TestCase):
     def test_the_number(self):
         '''
@@ -133,3 +140,9 @@ class TestTheNumber(unittest.TestCase):
         self.assertEqual(obk.rn_size, 8)
         self.assertEqual(obk.rn_centered, 0)
         self.assertEqual(obk.liczba_kolumn, 1)
+
+    def test_7_the_number(self):
+        '''
+        TestTheNumber:
+        '''
+        obk = RichFormula()
