@@ -86,7 +86,7 @@ class RichNumber(RichCommon):
         self.update_after(rn_after)
 
 class RichFormula(RichCommon):
-    def __init__(self, liczba_kolumn=1):
+    def __init__(self, liczba_kolumn=1, rn_after=2):
         '''
         RichString:
         '''
@@ -151,4 +151,4 @@ class TestTheNumber(unittest.TestCase):
         '''
         TestTheNumber:
         '''
-        obk = RichFormula(liczba_kolumn=1)
+        obk = RichFormula(liczba_kolumn=1, rn_after=3)
