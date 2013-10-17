@@ -54,6 +54,12 @@ class RichCommon(object):
         '''
         self.liczba_kolumn = liczba_kolumn
 
+    def update_after(self, rn_after):
+        '''
+        RichCommon:
+        '''
+        self.rn_after = rn_after
+
     def __init__(self, rn_value=None, rn_colour=None, rn_size=None, rn_centered=0, liczba_kolumn=1):
         '''
         RichCommon:
@@ -72,12 +78,6 @@ class RichString(RichCommon):
         RichCommon.__init__(self, rn_value, rn_size=rn_size, rn_centered=rn_centered, liczba_kolumn=liczba_kolumn)
 
 class RichNumber(RichCommon):
-    def update_after(self, rn_after):
-        '''
-        RichNumber:
-        '''
-        self.rn_after = rn_after
-
     def __init__(self, rn_value, rn_after=2, rn_colour=None, rn_size=None):
         '''
         RichNumber:
@@ -91,6 +91,7 @@ class RichFormula(RichCommon):
         RichString:
         '''
         RichCommon.__init__(self, liczba_kolumn=liczba_kolumn)
+        self.update_after(rn_after)
 
 class TestTheNumber(unittest.TestCase):
     def test_the_number(self):
@@ -152,3 +153,4 @@ class TestTheNumber(unittest.TestCase):
         TestTheNumber:
         '''
         obk = RichFormula(liczba_kolumn=1, rn_after=3)
+        self.assertEqual(obk.rn_after, 3)
