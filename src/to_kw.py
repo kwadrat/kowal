@@ -27,6 +27,12 @@ def wyznacz_cztery(akt_wiersz, akt_kolumna, liczba_kolumn=1, liczba_wierszy=1):
     return r1, r2, c1, c2
 
 class MergedCoords(object):
+    def update_cols(self, liczba_kolumn):
+        '''
+        MergedCoords:
+        '''
+        self.liczba_kolumn = liczba_kolumn
+
     def update_rows(self, liczba_wierszy):
         '''
         MergedCoords:
@@ -62,6 +68,8 @@ class TestMergedCoords(unittest.TestCase):
         '''
         obk = MergedCoords(liczba_kolumn=2)
         self.assertEqual(obk.is_one(), 0)
+        obk.update_cols(1)
+        self.assertEqual(obk.is_one(), 1)
 
     def test_3_merged_coords(self):
         '''
