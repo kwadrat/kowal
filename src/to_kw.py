@@ -19,13 +19,6 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-def wyznacz_cztery(akt_wiersz, akt_kolumna, liczba_kolumn=1, liczba_wierszy=1):
-    r1 = akt_wiersz
-    r2 = r1 + liczba_wierszy - 1
-    c1 = akt_kolumna
-    c2 = c1 + liczba_kolumn - 1
-    return r1, r2, c1, c2
-
 class MergedCoords(object):
     def update_cols(self, liczba_kolumn):
         '''
@@ -51,6 +44,16 @@ class MergedCoords(object):
         MergedCoords:
         '''
         return self.liczba_kolumn == 1 and self.liczba_wierszy == 1
+
+    def wyznacz_cztery(self, akt_wiersz, akt_kolumna, liczba_kolumn=1, liczba_wierszy=1):
+        '''
+        MergedCoords:
+        '''
+        r1 = akt_wiersz
+        r2 = r1 + liczba_wierszy - 1
+        c1 = akt_kolumna
+        c2 = c1 + liczba_kolumn - 1
+        return r1, r2, c1, c2
 
 class TestMergedCoords(unittest.TestCase):
     def test_merged_coords(self):
@@ -82,5 +85,6 @@ class TestMergedCoords(unittest.TestCase):
         '''
         TestMergedCoords:
         '''
-        self.assertEqual(wyznacz_cztery(1, 2, 3), (1, 1, 2, 4))
-        self.assertEqual(wyznacz_cztery(1, 2, liczba_wierszy=3), (1, 3, 2, 2))
+        obk = MergedCoords()
+        self.assertEqual(obk.wyznacz_cztery(1, 2, 3), (1, 1, 2, 4))
+        self.assertEqual(obk.wyznacz_cztery(1, 2, liczba_wierszy=3), (1, 3, 2, 2))
