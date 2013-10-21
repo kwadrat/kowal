@@ -32,10 +32,12 @@ class MergedCoords(object):
         '''
         self.liczba_wierszy = liczba_wierszy
 
-    def __init__(self, liczba_kolumn=1, liczba_wierszy=1):
+    def __init__(self, akt_wiersz=None, akt_kolumna=None, liczba_kolumn=1, liczba_wierszy=1):
         '''
         MergedCoords:
         '''
+        self.akt_wiersz = akt_wiersz
+        self.akt_kolumna = akt_kolumna
         self.update_cols(liczba_kolumn)
         self.update_rows(liczba_wierszy)
 
@@ -45,14 +47,14 @@ class MergedCoords(object):
         '''
         return self.liczba_kolumn == 1 and self.liczba_wierszy == 1
 
-    def wyznacz_cztery(self, akt_wiersz, akt_kolumna, liczba_kolumn=1, liczba_wierszy=1):
+    def wyznacz_cztery(self):
         '''
         MergedCoords:
         '''
-        r1 = akt_wiersz
-        r2 = r1 + liczba_wierszy - 1
-        c1 = akt_kolumna
-        c2 = c1 + liczba_kolumn - 1
+        r1 = self.akt_wiersz
+        r2 = r1 + self.liczba_wierszy - 1
+        c1 = self.akt_kolumna
+        c2 = c1 + self.liczba_kolumn - 1
         return r1, r2, c1, c2
 
 class TestMergedCoords(unittest.TestCase):
@@ -85,6 +87,7 @@ class TestMergedCoords(unittest.TestCase):
         '''
         TestMergedCoords:
         '''
-        obk = MergedCoords()
-        self.assertEqual(obk.wyznacz_cztery(1, 2, 3), (1, 1, 2, 4))
-        self.assertEqual(obk.wyznacz_cztery(1, 2, liczba_wierszy=3), (1, 3, 2, 2))
+        obk = MergedCoords(1, 2, 3)
+        self.assertEqual(obk.wyznacz_cztery(), (1, 1, 2, 4))
+        obk = MergedCoords(1, 2, liczba_wierszy=3)
+        self.assertEqual(obk.wyznacz_cztery(), (1, 3, 2, 2))

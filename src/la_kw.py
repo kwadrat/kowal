@@ -222,8 +222,8 @@ class WriterGateway(object):
         if liczba_kolumn == 1:
             self.write_single(akt_wiersz, akt_kolumna, the_content, the_style)
         else:
-            m_coor = to_kw.MergedCoords()
-            r1, r2, c1, c2 = m_coor.wyznacz_cztery(akt_wiersz, akt_kolumna, liczba_kolumn)
+            m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna, liczba_kolumn)
+            r1, r2, c1, c2 = m_coor.wyznacz_cztery()
             self.write_multi(r1, r2, c1, c2, the_content, the_style)
 
     def zapisz_mi(self, akt_wiersz, akt_kolumna, napis, style=None, liczba_wierszy=1):
@@ -234,8 +234,8 @@ class WriterGateway(object):
         if liczba_wierszy == 1:
             self.write_single(akt_wiersz, akt_kolumna, the_content, style)
         else:
-            m_coor = to_kw.MergedCoords()
-            r1, r2, c1, c2 = m_coor.wyznacz_cztery(akt_wiersz, akt_kolumna, liczba_wierszy=liczba_wierszy)
+            m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna, liczba_wierszy=liczba_wierszy)
+            r1, r2, c1, c2 = m_coor.wyznacz_cztery()
             self.write_multi(r1, r2, c1, c2, the_content, style)
 
     def zapisz_swobodne_polaczone_komorki(self, napis, r1, r2, c1, c2, style=None):
@@ -248,8 +248,8 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        m_coor = to_kw.MergedCoords()
-        r1, r2, c1, c2 = m_coor.wyznacz_cztery(akt_wiersz, akt_kolumna, liczba_kolumn)
+        m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna, liczba_kolumn)
+        r1, r2, c1, c2 = m_coor.wyznacz_cztery()
         self.zapisz_swobodne_polaczone_komorki(napis, r1, r2, c1, c2, style)
 
     def zapisz_rozmiar_14_komorki(self, akt_wiersz, akt_kolumna, napis, liczba_kolumn=8):
