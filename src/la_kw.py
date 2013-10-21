@@ -4,6 +4,7 @@
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import to_kw
 import gv_kw
 import dn_kw
 import en_kw
@@ -41,13 +42,6 @@ def analyze_excel_files(dfb, worker_class, filenames):
         print single_file
         obk = worker_class()
         obk.analyze_this_file(dfb, xlrd, single_file)
-
-def wyznacz_cztery(akt_wiersz, akt_kolumna, liczba_kolumn=1, liczba_wierszy=1):
-    r1 = akt_wiersz
-    r2 = r1 + liczba_wierszy - 1
-    c1 = akt_kolumna
-    c2 = c1 + liczba_kolumn - 1
-    return r1, r2, c1, c2
 
 def calculate_style(style):
     dc_style = {}
@@ -228,7 +222,7 @@ class WriterGateway(object):
         if liczba_kolumn == 1:
             self.write_single(akt_wiersz, akt_kolumna, the_content, the_style)
         else:
-            r1, r2, c1, c2 = wyznacz_cztery(akt_wiersz, akt_kolumna, liczba_kolumn)
+            r1, r2, c1, c2 = to_kw.wyznacz_cztery(akt_wiersz, akt_kolumna, liczba_kolumn)
             self.write_multi(r1, r2, c1, c2, the_content, the_style)
 
     def zapisz_mi(self, akt_wiersz, akt_kolumna, napis, style=None, liczba_wierszy=1):
@@ -239,7 +233,7 @@ class WriterGateway(object):
         if liczba_wierszy == 1:
             self.write_single(akt_wiersz, akt_kolumna, the_content, style)
         else:
-            r1, r2, c1, c2 = wyznacz_cztery(akt_wiersz, akt_kolumna, liczba_wierszy=liczba_wierszy)
+            r1, r2, c1, c2 = to_kw.wyznacz_cztery(akt_wiersz, akt_kolumna, liczba_wierszy=liczba_wierszy)
             self.write_multi(r1, r2, c1, c2, the_content, style)
 
     def zapisz_swobodne_polaczone_komorki(self, r1, r2, c1, c2, napis, style=None):
@@ -252,7 +246,7 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        r1, r2, c1, c2 = wyznacz_cztery(akt_wiersz, akt_kolumna, liczba_kolumn)
+        r1, r2, c1, c2 = to_kw.wyznacz_cztery(akt_wiersz, akt_kolumna, liczba_kolumn)
         self.zapisz_swobodne_polaczone_komorki(r1, r2, c1, c2, napis, style)
 
     def zapisz_rozmiar_14_komorki(self, akt_wiersz, akt_kolumna, napis, liczba_kolumn=8):
@@ -354,7 +348,5 @@ class TestArkuszowy(unittest.TestCase):
         '''
         TestArkuszowy:
         '''
-        self.assertEqual(wyznacz_cztery(1, 2, 3), (1, 1, 2, 4))
-        self.assertEqual(wyznacz_cztery(1, 2, liczba_wierszy=3), (1, 3, 2, 2))
         self.assertEqual(calculate_style(None), {})
         self.assertEqual(calculate_style(1), {'style':1})
