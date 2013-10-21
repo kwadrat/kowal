@@ -43,7 +43,7 @@ class MergedCoords(object):
         '''
         MergedCoords:
         '''
-        self.liczba_kolumn = liczba_kolumn
+        self.update_cols(liczba_kolumn)
         self.update_rows(liczba_wierszy)
 
     def is_one(self):
