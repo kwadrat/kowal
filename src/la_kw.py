@@ -287,11 +287,10 @@ class WriterGateway(object):
         '''
         self.write_single(akt_wiersz, akt_kolumna, liczba, self.n2_style)
 
-    def zapisz_stylowy_wzor(self, akt_wiersz, akt_kolumna, tekst_wzoru, the_style, liczba_kolumn=1):
+    def zapisz_stylowy_wzor(self, akt_wiersz, akt_kolumna, the_content, the_style, liczba_kolumn=1):
         '''
         WriterGateway:
         '''
-        the_content = self.xlwt.Formula(tekst_wzoru)
         if liczba_kolumn == 1:
             self.write_single(akt_wiersz, akt_kolumna, the_content, the_style)
         else:
@@ -304,20 +303,24 @@ class WriterGateway(object):
         '''
         if 1:
             ##############################################################################
+            gv_kw.RichFormula(liczba_kolumn=liczba_kolumn, rn_after=kl_miejsc)
             the_style = self.decimal_digits[kl_miejsc]
-            self.zapisz_stylowy_wzor(akt_wiersz, akt_kolumna, tekst_wzoru, the_style, liczba_kolumn=liczba_kolumn)
+            the_content = self.xlwt.Formula(tekst_wzoru)
+            self.zapisz_stylowy_wzor(akt_wiersz, akt_kolumna, the_content, the_style, liczba_kolumn=liczba_kolumn)
             ##############################################################################
         else:
             ##############################################################################
             the_style = self.decimal_digits[kl_miejsc]
-            self.zapisz_stylowy_wzor(akt_wiersz, akt_kolumna, tekst_wzoru, the_style, liczba_kolumn=liczba_kolumn)
+            the_content = self.xlwt.Formula(tekst_wzoru)
+            self.zapisz_stylowy_wzor(akt_wiersz, akt_kolumna, the_content, the_style, liczba_kolumn=liczba_kolumn)
             ##############################################################################
 
     def zapisz_odwrotny_czerwony_wzor(self, akt_wiersz, akt_kolumna, tekst_wzoru):
         '''
         WriterGateway:
         '''
-        self.zapisz_stylowy_wzor(akt_wiersz, akt_kolumna, tekst_wzoru, self.n4_style)
+        the_content = self.xlwt.Formula(tekst_wzoru)
+        self.zapisz_stylowy_wzor(akt_wiersz, akt_kolumna, the_content, self.n4_style)
 
     def zapisz_nazwe_miesiaca(self, akt_wiersz, nr_mies):
         '''
