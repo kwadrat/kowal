@@ -25,10 +25,16 @@ class MergedCoords(object):
         MergedCoords:
         '''
 
+    def is_one(self):
+        '''
+        MergedCoords:
+        '''
+        return 1
+
 class TestMergedCoords(unittest.TestCase):
     def test_merged_coords(self):
         '''
         TestMergedCoords:
         '''
         obk = MergedCoords()
-
+        self.assertEqual(obk.is_one(), 1)
