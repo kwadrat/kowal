@@ -20,16 +20,17 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 class MergedCoords(object):
-    def __init__(self):
+    def __init__(self, liczba_kolumn=1):
         '''
         MergedCoords:
         '''
+        self.liczba_kolumn = liczba_kolumn
 
     def is_one(self):
         '''
         MergedCoords:
         '''
-        return 1
+        return self.liczba_kolumn == 1
 
 class TestMergedCoords(unittest.TestCase):
     def test_merged_coords(self):
@@ -38,3 +39,10 @@ class TestMergedCoords(unittest.TestCase):
         '''
         obk = MergedCoords()
         self.assertEqual(obk.is_one(), 1)
+
+    def test_2_merged_coords(self):
+        '''
+        TestMergedCoords:
+        '''
+        obk = MergedCoords(liczba_kolumn=2)
+        self.assertEqual(obk.is_one(), 0)
