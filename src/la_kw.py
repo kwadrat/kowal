@@ -236,7 +236,7 @@ class WriterGateway(object):
             r1, r2, c1, c2 = to_kw.wyznacz_cztery(akt_wiersz, akt_kolumna, liczba_wierszy=liczba_wierszy)
             self.write_multi(r1, r2, c1, c2, the_content, style)
 
-    def zapisz_swobodne_polaczone_komorki(self, napis, r1, r2, c1, c2, napis, style=None):
+    def zapisz_swobodne_polaczone_komorki(self, napis, r1, r2, c1, c2, style=None):
         '''
         WriterGateway:
         '''
