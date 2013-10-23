@@ -201,6 +201,14 @@ class WriterGateway(object):
         self.wbk.save(nazwa_docelowa)
         self.wbk = None
 
+    def zapisz_surowe_polaczone_komorki(self, the_content, m_coor, style=None):
+        '''
+        WriterGateway:
+        '''
+        dc_style = calculate_style(style)
+        r1, r2, c1, c2 = m_coor.wyznacz_cztery()
+        self.sheet.write_merge(r1, r2, c1, c2, the_content, **dc_style)
+
     def write_co_single(self, the_content, m_coor, style=None):
         '''
         WriterGateway:
@@ -215,14 +223,6 @@ class WriterGateway(object):
         '''
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna)
         self.write_co_single(liczba, m_coor, style)
-
-    def zapisz_surowe_polaczone_komorki(self, the_content, m_coor, style=None):
-        '''
-        WriterGateway:
-        '''
-        dc_style = calculate_style(style)
-        r1, r2, c1, c2 = m_coor.wyznacz_cztery()
-        self.sheet.write_merge(r1, r2, c1, c2, the_content, **dc_style)
 
     def zapisz_stylowy_wzor(self, akt_wiersz, akt_kolumna, the_content, the_style, liczba_kolumn=1):
         '''
