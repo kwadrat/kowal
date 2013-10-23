@@ -244,7 +244,7 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        the_style = self.decimal_digits[kl_miejsc]
+        the_style = self.get_or_generate_style(kl_miejsc, rn_colour=None, bold=None, size=None)
         self.write_single(m_coor, the_content, the_style)
 
     def zapisz_rn_flt(self, akt_wiersz, akt_kolumna, rn_liczba):
