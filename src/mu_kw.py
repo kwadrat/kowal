@@ -58,7 +58,7 @@ def generate_hours_horizontally(xwg, all_hours):
         row = 0
         col = nr + 1
         m_coor = to_kw.MergedCoords(row, col)
-        xwg.zapisz_surowe_polaczone_komorki(m_coor, one_hour)
+        xwg.write_single(m_coor, one_hour)
 
 def locate_object_key(dfb, under_name):
     key_object = le_kw.dq_object_key(dfb, under_name)
