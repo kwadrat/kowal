@@ -230,7 +230,7 @@ class WriterGateway(object):
         WriterGateway:
         '''
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna)
-        self.write_co_single(liczba, m_coor, style)
+        self.zapisz_surowe_polaczone_komorki(liczba, m_coor, style)
 
     def zapisz_stylowy_wzor(self, akt_wiersz, akt_kolumna, the_content, the_style, liczba_kolumn=1):
         '''
