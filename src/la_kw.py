@@ -214,8 +214,8 @@ class WriterGateway(object):
         WriterGateway:
         '''
         dc_style = calculate_style(style)
-        akt_wiersz, akt_kolumna = m_coor.wyznacz_dwa()
-        self.sheet.write(akt_wiersz, akt_kolumna, the_content, **dc_style)
+        r1, c1 = m_coor.wyznacz_dwa()
+        self.sheet.write(r1, c1, the_content, **dc_style)
 
     def write_single(self, akt_wiersz, akt_kolumna, liczba, style=None):
         '''
