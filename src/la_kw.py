@@ -201,7 +201,7 @@ class WriterGateway(object):
         self.wbk.save(nazwa_docelowa)
         self.wbk = None
 
-    def zapisz_surowe_polaczone_komorki(self, the_content, m_coor, style=None):
+    def zapisz_surowe_polaczone_komorki(self, m_coor, the_content, style=None):
         '''
         WriterGateway:
         '''
@@ -218,7 +218,7 @@ class WriterGateway(object):
         WriterGateway:
         '''
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna)
-        self.zapisz_surowe_polaczone_komorki(liczba, m_coor, style)
+        self.zapisz_surowe_polaczone_komorki(m_coor, liczba, style)
 
     def zapisz_stylowy_wzor(self, akt_wiersz, akt_kolumna, the_content, the_style, liczba_kolumn=1):
         '''
@@ -228,7 +228,7 @@ class WriterGateway(object):
             self.write_single(akt_wiersz, akt_kolumna, the_content, the_style)
         else:
             m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna, liczba_kolumn)
-            self.zapisz_surowe_polaczone_komorki(the_content, m_coor, the_style)
+            self.zapisz_surowe_polaczone_komorki(m_coor, the_content, the_style)
 
     def zapisz_mi(self, akt_wiersz, akt_kolumna, napis, style=None, liczba_wierszy=1):
         '''
@@ -239,13 +239,13 @@ class WriterGateway(object):
             self.write_single(akt_wiersz, akt_kolumna, the_content, style)
         else:
             m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna, liczba_wierszy=liczba_wierszy)
-            self.zapisz_surowe_polaczone_komorki(the_content, m_coor, style)
+            self.zapisz_surowe_polaczone_komorki(m_coor, the_content, style)
 
     def zapisz_swobodne_polaczone_komorki(self, napis, m_coor, style=None):
         '''
         WriterGateway:
         '''
-        self.zapisz_surowe_polaczone_komorki(en_kw.utf_to_unicode(napis), m_coor, style=style)
+        self.zapisz_surowe_polaczone_komorki(m_coor, en_kw.utf_to_unicode(napis), style=style)
 
     def zapisz_polaczone_komorki(self, akt_wiersz, akt_kolumna, napis, style, liczba_kolumn):
         '''
