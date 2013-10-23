@@ -50,6 +50,13 @@ def calculate_style(style):
     return dc_style
 
 class WriterGateway(object):
+    '''
+    Obsługa:
+    - liczba
+    - napis
+    - wzór
+    - None - puste pole, które ma formatowanie
+    '''
     def prepare_cell(self, size=None, bold=None, num_format_str=None, wrap=None, vert=None, horz=None, colour=None, borders=None):
         '''
         WriterGateway:
