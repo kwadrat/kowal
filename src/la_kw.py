@@ -238,6 +238,13 @@ class WriterGateway(object):
             r1, r2, c1, c2 = m_coor.wyznacz_cztery()
             self.write_multi(r1, r2, c1, c2, the_content, style)
 
+    def zapisz_surowe_polaczone_komorki(self, napis, m_coor, style=None):
+        '''
+        WriterGateway:
+        '''
+        r1, r2, c1, c2 = m_coor.wyznacz_cztery()
+        self.write_multi(r1, r2, c1, c2, napis, style)
+
     def zapisz_swobodne_polaczone_komorki(self, napis, m_coor, style=None):
         '''
         WriterGateway:
