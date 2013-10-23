@@ -281,13 +281,6 @@ class WriterGateway(object):
         the_style = self.decimal_digits[kl_miejsc]
         self.zapisz_co_wzor(m_coor, tekst_wzoru, the_style)
 
-    def zapisz_odwrotny_czerwony_wzor(self, m_coor, tekst_wzoru, kl_miejsc):
-        '''
-        WriterGateway:
-        '''
-        the_style = self.decimal_digits[kl_miejsc]
-        self.zapisz_co_wzor(m_coor, tekst_wzoru, the_style)
-
     def zapisz_nazwe_miesiaca(self, akt_wiersz, nr_mies):
         '''
         WriterGateway:
