@@ -285,9 +285,9 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        the_content = self.xlwt.Formula(tekst_wzoru)
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna)
-        self.write_single(m_coor, the_content, self.n4_style)
+        the_style = self.n4_style
+        self.zapisz_co_wzor(m_coor, tekst_wzoru, the_style)
 
     def zapisz_nazwe_miesiaca(self, akt_wiersz, nr_mies):
         '''
