@@ -249,8 +249,7 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        r1, r2, c1, c2 = m_coor.wyznacz_cztery()
-        self.write_multi(r1, r2, c1, c2, en_kw.utf_to_unicode(napis), style)
+        self.zapisz_surowe_polaczone_komorki(en_kw.utf_to_unicode(napis), m_coor, style=style)
 
     def zapisz_polaczone_komorki(self, akt_wiersz, akt_kolumna, napis, style, liczba_kolumn):
         '''
