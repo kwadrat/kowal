@@ -251,9 +251,8 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        the_style = self.decimal_digits[kl_miejsc]
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna)
-        self.write_single(m_coor, liczba, the_style)
+        self.zapisz_co_flt(m_coor, liczba, kl_miejsc)
 
     def zapisz_rn_flt(self, akt_wiersz, akt_kolumna, rn_liczba):
         '''
