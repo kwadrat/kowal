@@ -228,11 +228,11 @@ class WriterGateway(object):
         '''
         self.zapisz_polaczone_komorki(akt_wiersz, akt_kolumna, napis, style=self.n6_style, liczba_kolumn=liczba_kolumn)
 
-    def zapisz_co_flt(self, m_coor, the_content, kl_miejsc=2):
+    def zapisz_co_flt(self, m_coor, the_content, kl_miejsc=2, size=None):
         '''
         WriterGateway:
         '''
-        the_style = self.get_or_generate_style(kl_miejsc, rn_colour=None, bold=None, size=None)
+        the_style = self.get_or_generate_style(kl_miejsc, rn_colour=None, bold=None, size=size)
         self.write_single(m_coor, the_content, the_style)
 
     def zapisz_rn_flt(self, akt_wiersz, akt_kolumna, rn_liczba):
@@ -259,7 +259,7 @@ class WriterGateway(object):
         WriterGateway:
         '''
         the_content = self.xlwt.Formula(tekst_wzoru)
-        self.zapisz_co_flt(m_coor, the_content, kl_miejsc)
+        self.zapisz_co_flt(m_coor, the_content, kl_miejsc, size)
 
     def zapisz_nazwe_miesiaca(self, akt_wiersz, nr_mies):
         '''
