@@ -274,11 +274,10 @@ class WriterGateway(object):
         the_content = self.xlwt.Formula(tekst_wzoru)
         self.write_single(m_coor, the_content, style)
 
-    def zapisz_wzor(self, akt_wiersz, akt_kolumna, tekst_wzoru, kl_miejsc=2, liczba_kolumn=1):
+    def zapisz_wzor(self, m_coor, tekst_wzoru, kl_miejsc=2):
         '''
         WriterGateway:
         '''
-        m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna, liczba_kolumn)
         the_style = self.decimal_digits[kl_miejsc]
         self.zapisz_co_wzor(m_coor, tekst_wzoru, the_style)
 
