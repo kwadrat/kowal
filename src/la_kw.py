@@ -205,8 +205,8 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        akt_wiersz, akt_kolumna = m_coor.wyznacz_dwa()
         dc_style = calculate_style(style)
+        akt_wiersz, akt_kolumna = m_coor.wyznacz_dwa()
         self.sheet.write(akt_wiersz, akt_kolumna, the_content, **dc_style)
 
     def write_single(self, akt_wiersz, akt_kolumna, liczba, style=None):
@@ -220,8 +220,8 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        r1, r2, c1, c2 = m_coor.wyznacz_cztery()
         dc_style = calculate_style(style)
+        r1, r2, c1, c2 = m_coor.wyznacz_cztery()
         self.sheet.write_merge(r1, r2, c1, c2, the_content, **dc_style)
 
     def zapisz_stylowy_wzor(self, akt_wiersz, akt_kolumna, the_content, the_style, liczba_kolumn=1):
