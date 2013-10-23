@@ -240,6 +240,13 @@ class WriterGateway(object):
         '''
         self.zapisz_polaczone_komorki(akt_wiersz, akt_kolumna, napis, style=self.n6_style, liczba_kolumn=liczba_kolumn)
 
+    def zapisz_co_flt(self, m_coor, liczba, kl_miejsc=2):
+        '''
+        WriterGateway:
+        '''
+        the_style = self.decimal_digits[kl_miejsc]
+        self.write_single(m_coor, liczba, the_style)
+
     def zapisz_flt(self, akt_wiersz, akt_kolumna, liczba, kl_miejsc=2):
         '''
         WriterGateway:
