@@ -214,9 +214,7 @@ class WriterGateway(object):
         WriterGateway:
         '''
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna)
-        akt_wiersz, akt_kolumna = m_coor.wyznacz_dwa()
-        dc_style = calculate_style(style)
-        self.sheet.write(akt_wiersz, akt_kolumna, liczba, **dc_style)
+        self.write_co_single(liczba, m_coor, style)
 
     def zapisz_surowe_polaczone_komorki(self, the_content, m_coor, style=None):
         '''
