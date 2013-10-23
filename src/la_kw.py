@@ -265,7 +265,8 @@ class WriterGateway(object):
         WriterGateway:
         '''
         the_style = self.decimal_digits[kl_miejsc]
-        self.write_single(akt_wiersz, akt_kolumna, liczba, the_style)
+        m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna)
+        self.zapisz_surowe_polaczone_komorki(m_coor, liczba, the_style)
 
     def zapisz_rn_flt(self, akt_wiersz, akt_kolumna, rn_liczba):
         '''
