@@ -266,6 +266,13 @@ class WriterGateway(object):
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna)
         self.write_single(m_coor, liczba, self.n2_style)
 
+    def zapisz_co_wzor(self, m_coor, tekst_wzoru, style=None):
+        '''
+        WriterGateway:
+        '''
+        the_content = self.xlwt.Formula(tekst_wzoru)
+        self.write_single(m_coor, the_content, style)
+
     def zapisz_wzor(self, akt_wiersz, akt_kolumna, tekst_wzoru, kl_miejsc=2, liczba_kolumn=1):
         '''
         WriterGateway:
