@@ -277,7 +277,8 @@ class WriterGateway(object):
         bold = 0
         size = None
         the_style = self.get_or_generate_style(kl_miejsc, rn_liczba.rn_colour, bold, size)
-        self.write_single(akt_wiersz, akt_kolumna, liczba, the_style)
+        m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna)
+        self.zapisz_surowe_polaczone_komorki(m_coor, liczba, the_style)
 
     def zapisz_date(self, akt_wiersz, akt_kolumna, liczba):
         '''
