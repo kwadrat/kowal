@@ -316,7 +316,8 @@ class WriterGateway(object):
         WriterGateway:
         '''
         akt_kolumna = 0
-        self.zapisz_mi(akt_wiersz, akt_kolumna, dn_kw.tab_miesiecy[nr_mies - 1])
+        m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna, liczba_wierszy=liczba_wierszy)
+        self.zapisz_co_mi(m_coor, dn_kw.tab_miesiecy[nr_mies - 1])
 
     def ustaw_sam_styl(self, akt_wiersz, akt_kolumna, kl_miejsc=2, rn_colour=None, bold=0, size=None, tresc_napisu=None):
         '''
