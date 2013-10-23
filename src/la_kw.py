@@ -241,8 +241,7 @@ class WriterGateway(object):
             self.write_single(akt_wiersz, akt_kolumna, the_content, style)
         else:
             m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna, liczba_wierszy=liczba_wierszy)
-            r1, r2, c1, c2 = m_coor.wyznacz_cztery()
-            self.write_multi(r1, r2, c1, c2, the_content, style)
+            self.zapisz_surowe_polaczone_komorki(the_content, m_coor, style)
 
     def zapisz_swobodne_polaczone_komorki(self, napis, m_coor, style=None):
         '''
