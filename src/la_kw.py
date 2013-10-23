@@ -86,7 +86,7 @@ class WriterGateway(object):
             the_style.num_format_str = num_format_str
         return the_style
 
-    def get_or_generate_style(self, kl_miejsc, rn_colour, bold, size):
+    def get_or_generate_style(self, kl_miejsc, rn_colour, bold, size, num_format_str=None):
         '''
         WriterGateway:
         '''
@@ -101,8 +101,9 @@ class WriterGateway(object):
                 dc_params['bold'] = bold
             if size is not None:
                 dc_params['size'] = size
+            if num_format_str is not None:
+                dc_params['num_format_str'] = num_format_str
             the_style = self.prepare_cell(
-                num_format_str=self.format_map[kl_miejsc],
                 vert=self.xlwt.Alignment.VERT_CENTER,
                 horz=self.xlwt.Alignment.HORZ_CENTER,
                 **dc_params
