@@ -220,6 +220,13 @@ class WriterGateway(object):
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna, liczba_kolumn)
         self.write_single(m_coor, the_content, the_style)
 
+    def zapisz_co_mi(self, m_coor, napis, style=None):
+        '''
+        WriterGateway:
+        '''
+        the_content = en_kw.utf_to_unicode(napis)
+        self.write_single(m_coor, the_content, style)
+
     def zapisz_mi(self, akt_wiersz, akt_kolumna, napis, style=None, liczba_wierszy=1):
         '''
         WriterGateway:
