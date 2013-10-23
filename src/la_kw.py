@@ -91,7 +91,7 @@ class WriterGateway(object):
         WriterGateway:
         '''
         the_key = (kl_miejsc, rn_colour, bold, size)
-        the_style = self.generated_style_cache.get(the_key)
+        the_style = self.generated_string_style_cache.get(the_key)
         if the_style is None:
             dc_params = {}
             if rn_colour is not None:
@@ -107,7 +107,7 @@ class WriterGateway(object):
                 horz=self.xlwt.Alignment.HORZ_CENTER,
                 **dc_params
                 )
-            self.generated_style_cache[the_key] = the_style
+            self.generated_string_style_cache[the_key] = the_style
         return the_style
 
     def get_or_generate_number_style(self, kl_miejsc, rn_colour, bold, size):
@@ -138,7 +138,7 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        self.generated_style_cache = {}
+        self.generated_string_style_cache = {}
         self.generated_number_style_cache = {}
         self.format_map = {
             0: 'General', # Liczby całkowite bez przecinka, center
