@@ -57,6 +57,14 @@ class MergedCoords(object):
         c2 = c1 + self.liczba_kolumn - 1
         return r1, r2, c1, c2
 
+    def wyznacz_dwa(self):
+        '''
+        MergedCoords:
+        '''
+        r1 = self.akt_wiersz
+        c1 = self.akt_kolumna
+        return r1, c1
+
 class TestMergedCoords(unittest.TestCase):
     def test_merged_coords(self):
         '''
@@ -91,3 +99,4 @@ class TestMergedCoords(unittest.TestCase):
         self.assertEqual(obk.wyznacz_cztery(), (1, 1, 2, 4))
         obk = MergedCoords(1, 2, liczba_wierszy=3)
         self.assertEqual(obk.wyznacz_cztery(), (1, 3, 2, 2))
+        self.assertEqual(obk.wyznacz_dwa(), (1, 2))
