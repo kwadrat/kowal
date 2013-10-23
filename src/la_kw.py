@@ -86,11 +86,11 @@ class WriterGateway(object):
             the_style.num_format_str = num_format_str
         return the_style
 
-    def get_or_generate_style(self, kl_miejsc, rn_colour, bold, size):
+    def get_or_generate_style(self, rn_colour, bold, size):
         '''
         WriterGateway:
         '''
-        the_key = (kl_miejsc, rn_colour, bold, size)
+        the_key = (rn_colour, bold, size)
         the_style = self.generated_string_style_cache.get(the_key)
         if the_style is None:
             dc_params = {}
