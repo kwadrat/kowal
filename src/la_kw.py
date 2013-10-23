@@ -324,7 +324,8 @@ class WriterGateway(object):
         WriterGateway:
         '''
         the_style = self.get_or_generate_style(kl_miejsc, rn_colour, bold, size)
-        self.write_single(akt_wiersz, akt_kolumna, tresc_napisu, style=the_style)
+        m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna)
+        self.zapisz_surowe_polaczone_komorki(m_coor, tresc_napisu, style=the_style)
 
     def wymus_szerokosci(self, lista_rozmiarow):
         '''
