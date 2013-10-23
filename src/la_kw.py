@@ -232,7 +232,7 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        the_style = self.get_or_generate_style(kl_miejsc, rn_colour=None, bold=None, size=size)
+        the_style = self.get_or_generate_style(kl_miejsc, rn_colour=None, bold=bold, size=size)
         self.write_single(m_coor, the_content, the_style)
 
     def zapisz_rn_flt(self, akt_wiersz, akt_kolumna, rn_liczba):
