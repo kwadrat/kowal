@@ -279,7 +279,8 @@ class WriterGateway(object):
         '''
         the_style = self.decimal_digits[kl_miejsc]
         the_content = self.xlwt.Formula(tekst_wzoru)
-        self.zapisz_stylowy_wzor(akt_wiersz, akt_kolumna, the_content, the_style, liczba_kolumn=liczba_kolumn)
+        m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna, liczba_kolumn)
+        self.write_single(m_coor, the_content, the_style)
 
     def zapisz_odwrotny_czerwony_wzor(self, akt_wiersz, akt_kolumna, tekst_wzoru):
         '''
