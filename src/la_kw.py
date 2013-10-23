@@ -208,13 +208,6 @@ class WriterGateway(object):
         dc_style = calculate_style(style)
         self.sheet.write(akt_wiersz, akt_kolumna, liczba, **dc_style)
 
-    def write_multi(self, r1, r2, c1, c2, napis, style=None):
-        '''
-        WriterGateway:
-        '''
-        dc_style = calculate_style(style)
-        self.sheet.write_merge(r1, r2, c1, c2, napis, **dc_style)
-
     def zapisz_surowe_polaczone_komorki(self, the_content, m_coor, style=None):
         '''
         WriterGateway:
