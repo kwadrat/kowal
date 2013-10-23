@@ -225,7 +225,7 @@ class WriterGateway(object):
             r1, r2, c1, c2 = m_coor.wyznacz_cztery()
             self.sheet.write_merge(r1, r2, c1, c2, the_content, **dc_style)
 
-    def zapisz_co_mi(self, m_coor, napis, style=None):
+    def zapisz_mi(self, m_coor, napis, style=None):
         '''
         WriterGateway:
         '''
@@ -237,7 +237,7 @@ class WriterGateway(object):
         WriterGateway:
         '''
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna, liczba_kolumn)
-        self.zapisz_co_mi(m_coor, napis, style)
+        self.zapisz_mi(m_coor, napis, style)
 
     def zapisz_rozmiar_14_komorki(self, akt_wiersz, akt_kolumna, napis, liczba_kolumn=8):
         '''
@@ -290,7 +290,7 @@ class WriterGateway(object):
         '''
         akt_kolumna = 0
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna, liczba_wierszy=liczba_wierszy)
-        self.zapisz_co_mi(m_coor, dn_kw.tab_miesiecy[nr_mies - 1])
+        self.zapisz_mi(m_coor, dn_kw.tab_miesiecy[nr_mies - 1])
 
     def ustaw_sam_styl(self, akt_wiersz, akt_kolumna, kl_miejsc=2, rn_colour=None, bold=0, size=None, tresc_napisu=None):
         '''
