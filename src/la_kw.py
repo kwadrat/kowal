@@ -231,7 +231,8 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        self.write_single(m_coor, en_kw.utf_to_unicode(napis), style=style)
+        the_content = en_kw.utf_to_unicode(napis)
+        self.write_single(m_coor, the_content, style)
 
     def zapisz_polaczone_komorki(self, akt_wiersz, akt_kolumna, napis, style, liczba_kolumn):
         '''
