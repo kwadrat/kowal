@@ -274,7 +274,7 @@ class WriterGateway(object):
         the_content = self.xlwt.Formula(tekst_wzoru)
         self.write_single(m_coor, the_content, style)
 
-    def zapisz_wzor(self, m_coor, tekst_wzoru, kl_miejsc=2):
+    def zapisz_wzor(self, m_coor, tekst_wzoru, kl_miejsc):
         '''
         WriterGateway:
         '''
