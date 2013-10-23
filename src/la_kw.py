@@ -201,6 +201,14 @@ class WriterGateway(object):
         self.wbk.save(nazwa_docelowa)
         self.wbk = None
 
+    def write_co_single(self, the_content, m_coor, style=None):
+        '''
+        WriterGateway:
+        '''
+        akt_wiersz, akt_kolumna = m_coor.wyznacz_dwa()
+        dc_style = calculate_style(style)
+        self.sheet.write(akt_wiersz, akt_kolumna, the_content, **dc_style)
+
     def write_single(self, akt_wiersz, akt_kolumna, liczba, style=None):
         '''
         WriterGateway:
