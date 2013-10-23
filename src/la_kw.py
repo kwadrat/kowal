@@ -271,8 +271,7 @@ class WriterGateway(object):
         WriterGateway:
         '''
         the_content = self.xlwt.Formula(tekst_wzoru)
-        the_style = self.decimal_digits[kl_miejsc]
-        self.write_single(m_coor, the_content, the_style)
+        self.zapisz_co_flt(m_coor, the_content, kl_miejsc)
 
     def zapisz_nazwe_miesiaca(self, akt_wiersz, nr_mies):
         '''
