@@ -238,10 +238,11 @@ class WriterGateway(object):
             r1, r2, c1, c2 = m_coor.wyznacz_cztery()
             self.write_multi(r1, r2, c1, c2, the_content, style)
 
-    def zapisz_swobodne_polaczone_komorki(self, napis, r1, r2, c1, c2, style=None):
+    def zapisz_swobodne_polaczone_komorki(self, napis, m_coor, style=None):
         '''
         WriterGateway:
         '''
+        r1, r2, c1, c2 = m_coor.wyznacz_cztery()
         self.write_multi(r1, r2, c1, c2, en_kw.utf_to_unicode(napis), style)
 
     def zapisz_polaczone_komorki(self, akt_wiersz, akt_kolumna, napis, style, liczba_kolumn):
@@ -249,8 +250,7 @@ class WriterGateway(object):
         WriterGateway:
         '''
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna, liczba_kolumn)
-        r1, r2, c1, c2 = m_coor.wyznacz_cztery()
-        self.zapisz_swobodne_polaczone_komorki(napis, r1, r2, c1, c2, style)
+        self.zapisz_swobodne_polaczone_komorki(napis, m_coor, style)
 
     def zapisz_rozmiar_14_komorki(self, akt_wiersz, akt_kolumna, napis, liczba_kolumn=8):
         '''
