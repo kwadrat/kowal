@@ -179,6 +179,7 @@ class WriterGateway(object):
             0: self.n9_style,
             2: self.n1_style,
             3: self.n8_style,
+            NMF_1_above_red: self.n4_style,
             NMF_2_percent: self.n16_style,
             }
 
