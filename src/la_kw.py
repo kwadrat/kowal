@@ -282,11 +282,10 @@ class WriterGateway(object):
         the_style = self.decimal_digits[kl_miejsc]
         self.zapisz_co_wzor(m_coor, tekst_wzoru, the_style)
 
-    def zapisz_odwrotny_czerwony_wzor(self, akt_wiersz, akt_kolumna, tekst_wzoru):
+    def zapisz_odwrotny_czerwony_wzor(self, m_coor, tekst_wzoru):
         '''
         WriterGateway:
         '''
-        m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna)
         kl_miejsc = NMF_1_above_red
         the_style = self.decimal_digits[kl_miejsc]
         self.zapisz_co_wzor(m_coor, tekst_wzoru, the_style)
