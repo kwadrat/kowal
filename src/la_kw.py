@@ -213,13 +213,6 @@ class WriterGateway(object):
             r1, r2, c1, c2 = m_coor.wyznacz_cztery()
             self.sheet.write_merge(r1, r2, c1, c2, the_content, **dc_style)
 
-    def write_single(self, akt_wiersz, akt_kolumna, liczba, style=None):
-        '''
-        WriterGateway:
-        '''
-        m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna)
-        self.zapisz_surowe_polaczone_komorki(m_coor, liczba, style)
-
     def zapisz_stylowy_wzor(self, akt_wiersz, akt_kolumna, the_content, the_style, liczba_kolumn=1):
         '''
         WriterGateway:
