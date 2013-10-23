@@ -123,7 +123,6 @@ class WriterGateway(object):
             NMF_2_percent: '0.00%',
             }
         self.xlwt = new_module_for_writing_spreadsheet()
-        self.n1_style = self.get_or_generate_style(2, rn_colour=None, bold=None, size=None)
         self.n2_style = self.prepare_cell(
             num_format_str='yyyy/mm/dd;@' # data RRRR-MM-DD
             )
@@ -133,15 +132,12 @@ class WriterGateway(object):
             wrap=1,
             ) # Zawijaj tekst, wycentruj
         # Liczby nieujemne na czerwono, użyj separatora 1000
-        self.n4_style = self.get_or_generate_style(NMF_1_above_red, rn_colour=None, bold=None, size=None)
         self.n5_style = self.prepare_cell(14) # Arial 14 pt
         self.n6_style = self.prepare_cell(12, bold=1) # Arial 12 pt, bold
         self.n7_style = self.prepare_cell(
             vert=self.xlwt.Alignment.VERT_CENTER,
             horz=self.xlwt.Alignment.HORZ_CENTER,
             ) # Center vertically, center horizontally
-        self.n8_style = self.get_or_generate_style(3, rn_colour=None, bold=None, size=None)
-        self.n9_style = self.get_or_generate_style(0, rn_colour=None, bold=None, size=None)
         self.n10_style = self.prepare_cell(
             16,
             vert=self.xlwt.Alignment.VERT_CENTER,
@@ -174,7 +170,6 @@ class WriterGateway(object):
             vert=self.xlwt.Alignment.VERT_CENTER,
             colour=self.xlwt.Style.colour_map[gv_kw.ECR_indigo],
             )
-        self.n16_style = self.get_or_generate_style(NMF_2_percent, rn_colour=None, bold=None, size=None)
 
     def workbook_create(self):
         '''
