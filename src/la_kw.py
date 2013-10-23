@@ -213,18 +213,6 @@ class WriterGateway(object):
             r1, r2, c1, c2 = m_coor.wyznacz_cztery()
             self.sheet.write_merge(r1, r2, c1, c2, the_content, **dc_style)
 
-    def write_co_single(self, the_content, m_coor, style=None):
-        '''
-        WriterGateway:
-        '''
-        dc_style = calculate_style(style)
-        if m_coor.is_one():
-            r1, c1 = m_coor.wyznacz_dwa()
-            self.sheet.write(r1, c1, the_content, **dc_style)
-        else:
-            r1, r2, c1, c2 = m_coor.wyznacz_cztery()
-            self.sheet.write_merge(r1, r2, c1, c2, the_content, **dc_style)
-
     def write_single(self, akt_wiersz, akt_kolumna, liczba, style=None):
         '''
         WriterGateway:
