@@ -239,7 +239,7 @@ class WriterGateway(object):
         WriterGateway:
         '''
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna, liczba_kolumn)
-        self.zapisz_swobodne_polaczone_komorki(m_coor, napis, style)
+        self.zapisz_co_mi(m_coor, napis, style)
 
     def zapisz_rozmiar_14_komorki(self, akt_wiersz, akt_kolumna, napis, liczba_kolumn=8):
         '''
