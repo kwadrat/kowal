@@ -224,11 +224,8 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        if liczba_kolumn == 1:
-            self.write_single(akt_wiersz, akt_kolumna, the_content, the_style)
-        else:
-            m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna, liczba_kolumn)
-            self.zapisz_surowe_polaczone_komorki(m_coor, the_content, the_style)
+        m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna, liczba_kolumn)
+        self.zapisz_surowe_polaczone_komorki(m_coor, the_content, the_style)
 
     def zapisz_mi(self, akt_wiersz, akt_kolumna, napis, style=None, liczba_wierszy=1):
         '''
