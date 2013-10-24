@@ -4,6 +4,7 @@
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lp_kw
 import lw_kw
+import tq_kw
 import mu_kw
 '''.splitlines()]
 
@@ -92,7 +93,7 @@ class PowerReader(CommonReader):
         PowerReader:
         '''
         under_name = self.detect_power_sheet_header()
-        key_object = mu_kw.locate_object_key(dfb, under_name)
+        key_object = tq_kw.locate_object_key(dfb, under_name)
         data_rows = self.detect_power_data_rows()
         self.enter_power_data(dfb, key_object, data_rows)
         self.store_rows_in_db(dfb)

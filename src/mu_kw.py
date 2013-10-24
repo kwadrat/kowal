@@ -12,9 +12,9 @@ import dn_kw
 import lr_kw
 import le_kw
 import lp_kw
-import dd_kw
 import lq_kw
 import eo_kw
+import tq_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -63,17 +63,6 @@ def generate_hours_horizontally(xwg, all_hours):
         m_coor = to_kw.MergedCoords(row, col)
         xwg.write_single(m_coor, one_hour)
 
-def locate_object_key(dfb, under_name):
-    key_object = le_kw.dq_object_key(dfb, under_name)
-    if not key_object:
-        key_object = le_kw.dq_add_new_object_key(dfb, under_name)
-    ret_size = len(key_object)
-    if ret_size == 1:
-        key_object = key_object[0][lc_kw.fq_k_object_qv];
-    else:
-        raise RuntimeError('ret_size = %d' % ret_size)
-    return key_object
-
 def unique_sorted(dane_bazy, field):
     object_names = list(set(map(lambda x: x[field], dane_bazy)))
     object_names.sort()
@@ -86,19 +75,7 @@ def normalize_value(before):
         result = before
     return result
 
-class CommonRdWr(object):
-    def __init__(self, tvk_pobor):
-        '''
-        CommonRdWr:
-        '''
-        self.krt_pobor = dd_kw.CechaEnergii(tvk_pobor)
-        self.table_of_samples = self.krt_pobor.krt_table
-
-    def set_pd_server(self, period_server):
-        '''
-        CommonRdWr:
-        '''
-        self.period_server = period_server
+CommonRdWr = tq_kw.CommonRdWr
 
 class CommonReader(CommonRdWr):
     def __init__(self, tvk_pobor):
