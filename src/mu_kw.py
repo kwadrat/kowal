@@ -8,6 +8,7 @@ import lc_kw
 import to_kw
 import fv_kw
 import rq_kw
+import dn_kw
 import lr_kw
 import le_kw
 import lp_kw
@@ -214,8 +215,12 @@ class CommonReader(object):
         '''
         if rq_kw.TymczasowoTylkoJeden:
             id_obiekt = 11 # eo_kw.BT_SP3, ale w tabeli uu_
+            my_year = 2013
+            my_month = 6
+            my_start_date, my_end_date = dn_kw.daty_skrajne_miesiaca(my_year, my_month)
         else:
             id_obiekt = None
+            my_start_date, my_end_date = None, None
         dane_bazy = le_kw.dq_load_from_db(dfb, self.table_of_samples, id_obiekt=id_obiekt)
         object_names = unique_sorted(dane_bazy, lc_kw.fq_account_qv)
         xwg.workbook_create()
