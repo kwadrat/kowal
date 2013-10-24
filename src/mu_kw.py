@@ -217,7 +217,7 @@ class CommonReader(object):
             id_obiekt = 11 # eo_kw.BT_SP3, ale w tabeli uu_
             my_year = 2013
             my_month = 6
-            my_start_date, my_end_date = dn_kw.daty_skrajne_miesiaca(my_year, my_month)
+            my_start_date, my_end_date = dn_kw.daty_skrajne_miesiaca(my_year, my_month, liczba_mies=3)
         else:
             id_obiekt = None
             my_start_date, my_end_date = None, None
