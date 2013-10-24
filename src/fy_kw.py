@@ -114,3 +114,5 @@ lxa_59_inst = """\
 SELECT m_date, m_sum FROM uu_energy WHERE f_object=19 AND m_date >= '2013-01-01' AND m_date < '2014-01-01' ORDER BY m_date;"""
 lxa_60_inst = """\
 0"""
+lxa_61_inst = """\
+SELECT uu_object.account,m_date,m_samples FROM uu_power,uu_object WHERE uu_power.f_object=uu_object.k_object AND uu_object.k_object=123;"""
