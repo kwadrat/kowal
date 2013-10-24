@@ -273,6 +273,13 @@ class CommonReader(CommonRdWr):
             my_sample_row.make_stats_of_samples(
                 dfb, self.krt_pobor, self.table_of_samples, sample_key)
 
+class CommonWriter(CommonRdWr):
+    def __init__(self, tvk_pobor):
+        '''
+        CommonWriter:
+        '''
+        CommonRdWr.__init__(self, tvk_pobor)
+
 class Test_Common_Reader(unittest.TestCase):
     def test_common_reader(self):
         '''
