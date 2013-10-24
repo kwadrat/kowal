@@ -6,6 +6,7 @@ import dn_kw
 import lp_kw
 import lw_kw
 import tq_kw
+import tt_kw
 import mu_kw
 '''.splitlines()]
 
@@ -18,7 +19,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-CommonReader = mu_kw.CommonReader
+CommonReader = tt_kw.CommonReader
 
 class EnergyReader(CommonReader):
     def __init__(self):
