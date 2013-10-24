@@ -71,7 +71,15 @@ def ptn_entry_already_inserted(table_name, id_obiekt, tvk_data):
         ]
     return obk.prepare_shape(returned_fields)
 
-def ptn_load_from_db(table_name):
+def ptn_load_from_db(table_name, id_obiekt=None):
+    if id_obiekt is None:
+        wstawka_obkt = ''
+    else:
+        wstawka_obkt = ' AND %(uu_object)s.%(k_object)s=%(id_obiekt)d' % dict(
+            uu_object=lc_kw.fq_uu_object_qv,
+            k_object=lc_kw.fq_k_object_qv,
+            id_obiekt=id_obiekt,
+            )
     return fy_kw.lxa_14_inst % dict(
         table_name=table_name,
         uu_object=lc_kw.fq_uu_object_qv,
