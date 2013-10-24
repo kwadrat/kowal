@@ -99,6 +99,6 @@ class EnergyWriter(CommonWriter):
         EnergyWriter:
         '''
         CommonWriter.__init__(self, lw_kw.Dn_Energy)
-        start_col = self.vx_letter_num('B')
+        start_col = 0
         period_server = lp_kw.HourServer(start_col)
         self.set_pd_server(period_server)
