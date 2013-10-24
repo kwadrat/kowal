@@ -13,6 +13,7 @@ import le_kw
 import lp_kw
 import dd_kw
 import lq_kw
+import eo_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
