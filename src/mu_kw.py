@@ -71,6 +71,16 @@ class CommonWriter(CommonRdWr):
         '''
         CommonRdWr.__init__(self, tvk_pobor)
 
+    def generate_for_a_day(self, xwg, all_dates, my_data):
+        '''
+        CommonWriter:
+        '''
+        for sample_index, my_sample in enumerate(my_data[lc_kw.fq_m_samples_qv]):
+            row = all_dates.index(my_data[lc_kw.fq_m_date_qv]) + 1
+            col = sample_index + 1
+            m_coor = to_kw.MergedCoords(row, col)
+            xwg.zapisz_co_flt(m_coor, my_sample)
+
     def generate_for_object(self, xwg, dane_bazy, name):
         '''
         CommonWriter:
