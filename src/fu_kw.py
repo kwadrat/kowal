@@ -90,3 +90,15 @@ class EnergyReader(CommonReader):
         data_rows = self.detect_energy_data_rows()
         self.enter_energy_data(dfb, key_object, data_rows)
         self.store_rows_in_db(dfb)
+
+CommonWriter = mu_kw.CommonWriter
+
+class EnergyWriter(CommonWriter):
+    def __init__(self):
+        '''
+        EnergyWriter:
+        '''
+        CommonWriter.__init__(self, lw_kw.Dn_Energy)
+        start_col = self.vx_letter_num('B')
+        period_server = lp_kw.HourServer(start_col)
+        self.set_pd_server(period_server)
