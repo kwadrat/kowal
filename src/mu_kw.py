@@ -222,42 +222,6 @@ class CommonReader(CommonRdWr):
         for local_key, my_sample_row in self.internal_rows.iteritems():
             my_sample_row.put_in_database(dfb, self.krt_pobor, self.table_of_samples, local_key)
 
-    def generate_one_file(self, xwg, dfb, output_file):
-        '''
-        CommonReader:
-        '''
-        if rq_kw.TymczasowoTylkoJeden:
-            id_obiekt = 11 # eo_kw.BT_SP3, ale w tabeli uu_
-            my_year = 2013
-            my_month = 6
-            my_start_date, my_end_date = dn_kw.daty_skrajne_miesiaca(my_year, my_month, liczba_mies=1)
-        else:
-            id_obiekt = None
-            my_start_date, my_end_date = None, None
-        dane_bazy = le_kw.dq_load_from_db(
-            dfb,
-            self.table_of_samples,
-            id_obiekt=id_obiekt,
-            my_start_date=my_start_date,
-            my_end_date=my_end_date,
-            )
-        object_names = unique_sorted(dane_bazy, lc_kw.fq_account_qv)
-        xwg.workbook_create()
-        for nr, name in enumerate(object_names):
-            xwg.add_a_sheet(dict_names[name])
-            selected_data = filter(lambda x: x[lc_kw.fq_account_qv] == name, dane_bazy)
-            all_dates = unique_sorted(selected_data, lc_kw.fq_m_date_qv)
-            all_hours = self.period_server.hours_for_header()
-            generate_dates_vertically(xwg, all_dates)
-            generate_hours_horizontally(xwg, all_hours)
-            for my_data in selected_data:
-                for sample_index, my_sample in enumerate(my_data[lc_kw.fq_m_samples_qv]):
-                    row = all_dates.index(my_data[lc_kw.fq_m_date_qv]) + 1
-                    col = sample_index + 1
-                    m_coor = to_kw.MergedCoords(row, col)
-                    xwg.zapisz_co_flt(m_coor, my_sample)
-        xwg.workbook_save(output_file)
-
     def recalculate_statistics(self, dfb):
         '''
         CommonReader:
