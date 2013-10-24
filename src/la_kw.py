@@ -320,11 +320,6 @@ class WriterGateway(object):
             skalowana_szerokosc = lista_rozmiarow[nr_kol]
             self.sheet.col(nr_kol).width = skalowana_szerokosc
 
-def generate_excel_files(dfb, plik_energii, plik_mocy):
-    xwg = WriterGateway()
-    fu_kw.EnergyReader().generate_one_file(xwg, dfb, plik_energii)
-    mt_kw.PowerReader().generate_one_file(xwg, dfb, plik_mocy)
-
 class TestArkuszowy(unittest.TestCase):
     def test_arkuszowy(self):
         '''
