@@ -86,6 +86,20 @@ def normalize_value(before):
         result = before
     return result
 
+class CommonRdWr(object):
+    def __init__(self, tvk_pobor):
+        '''
+        CommonRdWr:
+        '''
+        self.krt_pobor = dd_kw.CechaEnergii(tvk_pobor)
+        self.table_of_samples = self.krt_pobor.krt_table
+
+    def set_pd_server(self, period_server):
+        '''
+        CommonRdWr:
+        '''
+        self.period_server = period_server
+
 class CommonReader(object):
     def __init__(self, tvk_pobor):
         '''
