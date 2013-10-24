@@ -212,7 +212,11 @@ class CommonReader(object):
         '''
         CommonReader:
         '''
-        dane_bazy = le_kw.dq_load_from_db(dfb, self.table_of_samples)
+        if rq_kw.TymczasowoTylkoJeden:
+            id_obiekt = eo_kw.BT_SP3
+        else:
+            id_obiekt = None
+        dane_bazy = le_kw.dq_load_from_db(dfb, self.table_of_samples, id_obiekt=id_obiekt)
         object_names = unique_sorted(dane_bazy, lc_kw.fq_account_qv)
         xwg.workbook_create()
         for nr, name in enumerate(object_names):
