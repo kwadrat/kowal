@@ -105,6 +105,8 @@ def ptn_load_from_db(table_name, id_obiekt=None, my_start_date=None, my_end_date
         e_object=lc_kw.fq_f_object_qv,
         k_object=lc_kw.fq_k_object_qv,
         wstawka_obkt=wstawka_obkt,
+        wstawka_start=wstawka_start,
+        wstawka_end=wstawka_end,
         )
 
 def ptn_add_new_object_key(under_name):
