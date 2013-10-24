@@ -213,7 +213,7 @@ class CommonReader(object):
         CommonReader:
         '''
         if rq_kw.TymczasowoTylkoJeden:
-            id_obiekt = eo_kw.BT_SP3
+            id_obiekt = 11 # eo_kw.BT_SP3, ale w tabeli uu_
         else:
             id_obiekt = None
         dane_bazy = le_kw.dq_load_from_db(dfb, self.table_of_samples, id_obiekt=id_obiekt)
