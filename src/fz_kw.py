@@ -80,6 +80,22 @@ def ptn_load_from_db(table_name, id_obiekt=None, my_start_date=None, my_end_date
             k_object=lc_kw.fq_k_object_qv,
             id_obiekt=id_obiekt,
             )
+    if my_start_date is None:
+        wstawka_start = ''
+    else:
+        wstawka_start = " AND %(table_name)s.%(e_date)s >= '%(my_start_date)s'" % dict(
+            table_name=table_name,
+            e_date=lc_kw.fq_m_date_qv,
+            my_start_date=my_start_date,
+            )
+    if my_end_date is None:
+        wstawka_end = ''
+    else:
+        wstawka_end = " AND %(table_name)s.%(e_date)s < '%(my_end_date)s'" % dict(
+            table_name=table_name,
+            e_date=lc_kw.fq_m_date_qv,
+            my_end_date=my_end_date,
+            )
     return fy_kw.lxa_14_inst % dict(
         table_name=table_name,
         uu_object=lc_kw.fq_uu_object_qv,
