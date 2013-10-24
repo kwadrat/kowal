@@ -92,11 +92,7 @@ class CommonWriter(CommonRdWr):
         generate_dates_vertically(xwg, all_dates)
         generate_hours_horizontally(xwg, all_hours)
         for my_data in selected_data:
-            for sample_index, my_sample in enumerate(my_data[lc_kw.fq_m_samples_qv]):
-                row = all_dates.index(my_data[lc_kw.fq_m_date_qv]) + 1
-                col = sample_index + 1
-                m_coor = to_kw.MergedCoords(row, col)
-                xwg.zapisz_co_flt(m_coor, my_sample)
+            self.generate_for_a_day(xwg, all_dates, my_data)
 
     def generate_one_file(self, xwg, dfb, output_file):
         '''
