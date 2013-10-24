@@ -96,3 +96,14 @@ class PowerReader(CommonReader):
         data_rows = self.detect_power_data_rows()
         self.enter_power_data(dfb, key_object, data_rows)
         self.store_rows_in_db(dfb)
+
+CommonWriter = mu_kw.CommonWriter
+
+class PowerWriter(CommonWriter):
+    def __init__(self):
+        '''
+        PowerWriter:
+        '''
+        CommonWriter.__init__(self, lw_kw.Dn_Power)
+        period_server = lp_kw.QuarterServer()
+        self.set_pd_server(period_server)
