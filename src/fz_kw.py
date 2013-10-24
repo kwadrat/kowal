@@ -71,7 +71,7 @@ def ptn_entry_already_inserted(table_name, id_obiekt, tvk_data):
         ]
     return obk.prepare_shape(returned_fields)
 
-def ptn_load_from_db(table_name, id_obiekt=None):
+def ptn_load_from_db(table_name, id_obiekt=None, my_start_date=None, my_end_date=None):
     if id_obiekt is None:
         wstawka_obkt = ''
     else:

@@ -23,7 +23,12 @@ def dq_entry_already_inserted(dfb, n_table, key_object, row_date):
     return dfb.query_dct(db_statement)
 
 def dq_load_from_db(dfb, table_name, id_obiekt=None, my_start_date=None, my_end_date=None):
-    db_statement = fz_kw.ptn_load_from_db(table_name, id_obiekt=id_obiekt)
+    db_statement = fz_kw.ptn_load_from_db(
+        table_name,
+        id_obiekt=id_obiekt,
+        my_start_date=my_start_date,
+        my_end_date=my_end_date,
+        )
     return dfb.query_dct(db_statement)
 
 def dq_add_new_object_key(dfb, under_name):
