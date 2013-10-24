@@ -100,13 +100,12 @@ class CommonRdWr(object):
         '''
         self.period_server = period_server
 
-class CommonReader(object):
+class CommonReader(CommonRdWr):
     def __init__(self, tvk_pobor):
         '''
         CommonReader:
         '''
-        self.krt_pobor = dd_kw.CechaEnergii(tvk_pobor)
-        self.table_of_samples = self.krt_pobor.krt_table
+        CommonRdWr.__init__(self, tvk_pobor)
         self.vx_zero = fv_kw.vx_zero
         self.internal_rows = {}
 
