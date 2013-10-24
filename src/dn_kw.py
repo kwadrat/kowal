@@ -282,8 +282,8 @@ def ZakresMiesiaca(rok, miesiac, liczba_mies=1):
     kon = dzien_nowego_miesiaca(rok, miesiac)
     return pocz, kon
 
-def daty_skrajne_miesiaca(rok, miesiac):
-    return map(NapisDnia, ZakresMiesiaca(rok, miesiac))
+def daty_skrajne_miesiaca(rok, miesiac, liczba_mies=1):
+    return map(NapisDnia, ZakresMiesiaca(rok, miesiac, liczba_mies=liczba_mies))
 
 def rok_przestepny(rok):
     '''
@@ -509,6 +509,7 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(ZakresMiesiaca(2008, 2), (13910, 13939))
         self.assertEqual(ZakresMiesiaca(2008, 2, 4), (13910, 14031))
         self.assertEqual(daty_skrajne_miesiaca(2008, 2), ['2008-02-01', '2008-03-01'])
+        self.assertEqual(daty_skrajne_miesiaca(2008, 2, liczba_mies=3), ['2008-02-01', '2008-05-01'])
         self.assertEqual(RokMscDnia(14975), (2011, 1))
         self.assertEqual(RokMscDnia(15006), (2011, 2))
 
