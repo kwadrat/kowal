@@ -97,7 +97,7 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        the_key = (rn_colour, bold, size)
+        the_key = (rn_colour, bold, size, wrap, middle, kl_none)
         the_style = self.generated_string_style_cache.get(the_key)
         if the_style is None:
             dc_params = {}
