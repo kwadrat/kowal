@@ -73,7 +73,7 @@ class CommonWriter(CommonRdWr):
         '''
         row = all_dates.index(my_data[lc_kw.fq_m_date_qv]) + 1
         for sample_index, my_sample in enumerate(my_data[lc_kw.fq_m_samples_qv]):
-            col = sample_index + 1
+            col = self.first_sample_column + sample_index
             m_coor = to_kw.MergedCoords(row, col)
             xwg.zapisz_co_flt(m_coor, my_sample)
 
@@ -83,7 +83,7 @@ class CommonWriter(CommonRdWr):
         '''
         for nr, one_hour in enumerate(all_hours):
             row = 0
-            col = nr + 1
+            col = self.first_sample_column + nr
             m_coor = to_kw.MergedCoords(row, col)
             xwg.write_single(m_coor, one_hour)
 
