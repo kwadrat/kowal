@@ -128,8 +128,6 @@ def napis_na_numer_dnia(data):
     '''Zwraca numer dnia począwszy od 1 stycznia 1970
     Parametr:
     data - napis w formacie '2008-10-16'
-    Wartość zwracana:
-    int - numer dnia
     '''
     if type(data) is tuple:
         rok, miesiac, dzien = data
