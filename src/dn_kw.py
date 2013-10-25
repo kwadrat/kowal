@@ -91,19 +91,17 @@ def NumerDnia(rok, miesiac, dzien):
     '''Zwraca numer dnia począwszy od 1 stycznia 1970
     Parametry:
     rok, miesiac, dzien - opis interesującego nas dnia
-    Wartość zwracana:
-    int - numer dnia
     '''
     try:
         try:
-            numer = int(
+            nkd = int(
               time.mktime((rok, miesiac, dzien, 12, 0, 0, 0, 0, 0)) /
               SEC_PER_DAY)
         except OverflowError:
             raise OverflowError('Problem z: "%s"' % repr((rok, miesiac, dzien)))
     except TypeError:
         raise TypeError('Problem z: "%s"' % repr((rok, miesiac, dzien)))
-    return numer
+    return nkd
 
 def dzien_nowego_miesiaca(rok, miesiac):
     '''Zwraca numer pierwszego dnia podanego roku
