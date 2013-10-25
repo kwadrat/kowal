@@ -50,13 +50,6 @@ def generate_dates_vertically(xwg, all_dates):
         row = nr + 1
         xwg.zapisz_date(row, col, one_date)
 
-def generate_hours_horizontally(xwg, all_hours):
-    for nr, one_hour in enumerate(all_hours):
-        row = 0
-        col = nr + 1
-        m_coor = to_kw.MergedCoords(row, col)
-        xwg.write_single(m_coor, one_hour)
-
 def unique_sorted(dane_bazy, field):
     object_names = list(set(map(lambda x: x[field], dane_bazy)))
     object_names.sort()
@@ -84,6 +77,16 @@ class CommonWriter(CommonRdWr):
             m_coor = to_kw.MergedCoords(row, col)
             xwg.zapisz_co_flt(m_coor, my_sample)
 
+    def generate_hours_horizontally(self, xwg, all_hours):
+        '''
+        CommonWriter:
+        '''
+        for nr, one_hour in enumerate(all_hours):
+            row = 0
+            col = nr + 1
+            m_coor = to_kw.MergedCoords(row, col)
+            xwg.write_single(m_coor, one_hour)
+
     def generate_for_object(self, xwg, dane_bazy, name):
         '''
         CommonWriter:
@@ -93,7 +96,7 @@ class CommonWriter(CommonRdWr):
         all_dates = unique_sorted(selected_data, lc_kw.fq_m_date_qv)
         all_hours = self.period_server.hours_for_header()
         generate_dates_vertically(xwg, all_dates)
-        generate_hours_horizontally(xwg, all_hours)
+        self.generate_hours_horizontally(xwg, all_hours)
         for my_data in selected_data:
             self.generate_for_a_day(xwg, all_dates, my_data)
 
