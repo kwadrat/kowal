@@ -81,7 +81,7 @@ class KolumnowyAdresator(object):
         '''
         KolumnowyAdresator:
         '''
-        return self.get_col_letter() + str(self.wiersz_bazowy_miesiecy + fvk_miesiac + 1)
+        return self.get_col_letter() + str(self.get_ka_official_row(fvk_miesiac=fvk_miesiac))
 
     def set_next_col(self):
         '''
