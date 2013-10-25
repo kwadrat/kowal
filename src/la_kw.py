@@ -161,9 +161,6 @@ class WriterGateway(object):
             NMF_3_date: 'yyyy/mm/dd;@', # data RRRR-MM-DD
             }
         self.xlwt = new_module_for_writing_spreadsheet()
-        self.n2_style = self.prepare_cell(
-            num_format_str='yyyy/mm/dd;@' # data RRRR-MM-DD
-            )
         self.n3_style = self.prepare_cell(
             vert=self.xlwt.Alignment.VERT_CENTER,
             horz=self.xlwt.Alignment.HORZ_CENTER,
