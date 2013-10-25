@@ -218,31 +218,29 @@ def DataDnia(nkd):
     '''
     return szczegolowa_krotka(nkd)[:3]
 
-def RokDnia(x):
-    return DataDnia(x)[0]
+def RokDnia(nkd):
+    return DataDnia(nkd)[0]
 
-def MiesiacDnia(x):
-    return DataDnia(x)[1]
+def MiesiacDnia(nkd):
+    return DataDnia(nkd)[1]
 
-def RzymskiDnia(x):
-    miesiac = MiesiacDnia(x)
+def RzymskiDnia(nkd):
+    miesiac = MiesiacDnia(nkd)
     return nazwa_rzymskiego(miesiac)
 
-def DzienTygodnia(x):
-    return szczegolowa_krotka(x).tm_wday
+def DzienTygodnia(nkd):
+    return szczegolowa_krotka(nkd).tm_wday
 
-def nazwa_dnia_tygodnia(x):
-    return dni_tygodnia[DzienTygodnia(x)]
+def nazwa_dnia_tygodnia(nkd):
+    return dni_tygodnia[DzienTygodnia(nkd)]
 
-def RoboczyDnia(x):
+def RoboczyDnia(nkd):
     '''Informuje, czy podany dzień jest roboczy.
-    Parametr:
-    x - (int) numer dnia
     Wartość zwracana - liczba całkowita:
     1 - dzień roboczy
     0 - dzień wolny od pracy (sobota/niedziela)
     '''
-    return DzienTygodnia(x) < 5
+    return DzienTygodnia(nkd) < 5
 
 def get_monday(x):
     '''Na podstawie dowolnego dnia tygodnia wyznacz
