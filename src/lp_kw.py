@@ -66,6 +66,12 @@ class HourMiniServer(object):
         '''
         return 'HS(%s)' % self.header_for_hour_column
 
+class HoQuServer(object):
+    def __init__(self):
+        '''
+        HoQuServer:
+        '''
+
 class HourServer(object):
     def __init__(self):
         '''
