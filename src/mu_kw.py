@@ -91,10 +91,10 @@ class CommonWriter(CommonRdWr):
             row = base_data_line + nr
             nkd = dn_kw.napis_na_numer_dnia(str(one_date))
             weekday_name = dn_kw.nazwa_dnia_tygodnia(nkd)
-            m_coor = to_kw.MergedCoords(row, self.first_weekday_column)
-            xwg.napis_ze_stylem(m_coor, weekday_name)
+            xwg.napis_ze_wsp(row, self.first_weekday_column, weekday_name)
             xwg.zapisz_date(row, self.first_date_column, one_date)
             xwg.zapisz_date(row, self.second_date_column, one_date)
+            xwg.napis_ze_wsp(row, self.second_weekday_column, weekday_name)
 
     def generate_for_month(self, xwg, dane_bazy, nr_month, dost_wiersz):
         '''
