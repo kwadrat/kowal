@@ -84,7 +84,9 @@ class KolumnowyAdresator(object):
         '''
         KolumnowyAdresator:
         '''
-        return self.get_col_letter() + str(self.get_ka_official_row(fvk_miesiac=fvk_miesiac))
+        col_label = self.get_col_letter()
+        row_number = self.get_ka_official_row(fvk_miesiac=fvk_miesiac)
+        return combine_rc(col_label, row_number)
 
     def set_next_col(self):
         '''
