@@ -242,19 +242,17 @@ def RoboczyDnia(nkd):
     '''
     return DzienTygodnia(nkd) < 5
 
-def get_monday(x):
+def get_monday(nkd):
     '''Na podstawie dowolnego dnia tygodnia wyznacz
     początkowy poniedziałek'''
-    return 4 + divmod(x - 4, 7)[0] * 7
+    return 4 + divmod(nkd - 4, 7)[0] * 7
 
-def NapisDnia(numer):
+def NapisDnia(nkd):
     '''Zwraca napis z datą na podstawie podanego numeru dnia
-    Parametr:
-    numer - liczba całkowita (numer dnia)
     Wartość zwracana:
     napis - data w postaci RRRR-MM-DD
     '''
-    return NapisDaty( * DataDnia(numer))
+    return NapisDaty( * DataDnia(nkd))
 
 def ZakresRoku(rok):
     '''Pierwszy dzień aktualnego i następnego roku dla podanego roku'''
@@ -430,11 +428,11 @@ def wyznacz_minute_logu(czas = None):
 def gesty_moment(czas=None):
     return wyznacz_moment_wg_wzorca('%Y%m%d%H%M%S', czas)
 
-def RokMscDnia(x):
-    return szczegolowa_krotka(x)[:2]
+def RokMscDnia(nkd):
+    return szczegolowa_krotka(nkd)[:2]
 
-def rok_mies_z_napisu(x):
-    return RokMscDnia(napis_na_numer_dnia(x))
+def rok_mies_z_napisu(nkd):
+    return RokMscDnia(napis_na_numer_dnia(nkd))
 
 def one_common_date_of_energy_as_month_and_year(data_pocz, data_kon):
     spcf_pocz = rok_mies_z_napisu(data_pocz)
