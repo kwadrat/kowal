@@ -74,8 +74,8 @@ class CommonWriter(CommonRdWr):
         '''
         CommonWriter:
         '''
+        row = 0
         for nr, one_hour in enumerate(all_hours):
-            row = 0
             col = self.first_sample_column + nr
             m_coor = to_kw.MergedCoords(row, col)
             xwg.write_single(m_coor, one_hour)
