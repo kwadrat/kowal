@@ -34,9 +34,4 @@ class CommonRdWr(object):
         '''
         self.krt_pobor = dd_kw.CechaEnergii(tvk_pobor)
         self.table_of_samples = self.krt_pobor.krt_table
-
-    def set_pd_server(self, period_server):
-        '''
-        CommonRdWr:
-        '''
         self.period_server = period_server

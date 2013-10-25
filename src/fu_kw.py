@@ -29,7 +29,6 @@ class EnergyReader(CommonReader):
         period_server = lp_kw.HourServer()
         CommonReader.__init__(self, lw_kw.Dn_Energy, period_server)
         self.start_energy_col = self.vx_letter_num('B')
-        self.set_pd_server(period_server)
 
     def vx_t_date(self, my_col, my_row):
         '''
@@ -102,4 +101,3 @@ class EnergyWriter(CommonWriter):
         '''
         period_server = lp_kw.HourServer()
         CommonWriter.__init__(self, lw_kw.Dn_Energy, period_server)
-        self.set_pd_server(period_server)
