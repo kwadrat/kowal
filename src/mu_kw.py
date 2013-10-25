@@ -81,11 +81,10 @@ class CommonWriter(CommonRdWr):
             m_coor = to_kw.MergedCoords(row, col)
             xwg.napis_ze_stylem(m_coor, one_hour, middle=1)
 
-    def generate_dates_vertically(self, xwg, all_dates, base_data_line):
+    def generate_dates_vertically(self, xwg, all_dates, base_data_line, col):
         '''
         CommonWriter:
         '''
-        col = self.first_date_column
         xwg.sheet.col(col).best_fit = 1
         for nr, one_date in enumerate(all_dates):
             row = base_data_line + nr
@@ -99,7 +98,7 @@ class CommonWriter(CommonRdWr):
         all_hours = self.period_server.hours_for_header()
         first_line = dost_wiersz.zabierz_wiersze(len(all_dates) + 9)
         base_data_line = first_line + 1
-        self.generate_dates_vertically(xwg, all_dates, base_data_line)
+        self.generate_dates_vertically(xwg, all_dates, base_data_line, self.first_date_column)
         self.generate_hours_horizontally(xwg, all_hours, first_line)
         for day_nr, my_data in enumerate(dane_bazy):
             self.generate_for_a_day(xwg, all_dates, my_data, base_data_line, day_nr)
