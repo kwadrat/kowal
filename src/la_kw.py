@@ -121,11 +121,11 @@ class WriterGateway(object):
                 self.generated_string_style_cache[the_key] = the_style
         return the_style
 
-    def get_or_generate_number_style(self, kl_miejsc=2, rn_colour=None, bold=None, size=None):
+    def get_or_generate_number_style(self, kl_miejsc=2, rn_colour=None, bold=None, size=None, middle=None):
         '''
         WriterGateway:
         '''
-        the_key = (kl_miejsc, rn_colour, bold, size)
+        the_key = (kl_miejsc, rn_colour, bold, size, middle)
         the_style = self.generated_number_style_cache.get(the_key)
         if the_style is None:
             dc_params = {}
@@ -136,6 +136,9 @@ class WriterGateway(object):
                 dc_params['bold'] = bold
             if size is not None:
                 dc_params['size'] = size
+            if middle:
+                dc_params['vert'] = self.xlwt.Alignment.VERT_CENTER
+                dc_params['horz'] = self.xlwt.Alignment.HORZ_CENTER
             the_style = self.prepare_cell(
                 num_format_str=self.format_map[kl_miejsc],
                 vert=self.xlwt.Alignment.VERT_CENTER,
