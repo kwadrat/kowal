@@ -211,14 +211,12 @@ def szczegolowa_krotka(nkd):
     '''
     return time.localtime(nkd * SEC_PER_DAY + SEC_PER_DAY / 2)
 
-def DataDnia(x):
+def DataDnia(nkd):
     '''Zwraca datę na podstawie numeru dnia
-    Parametr:
-    x - (int) numer dnia
     Wartość zwracana:
     napis - krotka 3 liczb całkowitych: (rok, miesiąc, dzień)
     '''
-    return szczegolowa_krotka(x)[:3]
+    return szczegolowa_krotka(nkd)[:3]
 
 def RokDnia(x):
     return DataDnia(x)[0]
