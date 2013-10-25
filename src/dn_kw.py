@@ -235,6 +235,9 @@ def RzymskiDnia(x):
 def DzienTygodnia(x):
     return szczegolowa_krotka(x).tm_wday
 
+def nazwa_dnia_tygodnia(x):
+    return dni_tygodnia[DzienTygodnia(x)]
+
 def RoboczyDnia(x):
     '''Informuje, czy podany dzień jest roboczy.
     Parametr:
@@ -495,6 +498,7 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(MiesiacDnia(15278), 10)
         self.assertEqual(RzymskiDnia(15278), 'X')
         self.assertEqual(DzienTygodnia(16003), 4) # 2013-10-25, piątek
+        self.assertEqual(nazwa_dnia_tygodnia(16003), 'piątek') # 2013-10-25, piątek
         self.assertEqual(RoboczyDnia(0), 1) # Czwartek
         self.assertEqual(RoboczyDnia(1), 1)
         self.assertEqual(RoboczyDnia(2), 0) # Sobota
