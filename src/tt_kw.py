@@ -32,7 +32,7 @@ def normalize_value(before):
 CommonRdWr = tq_kw.CommonRdWr
 
 class CommonReader(CommonRdWr):
-    def __init__(self, tvk_pobor):
+    def __init__(self, tvk_pobor, period_server):
         '''
         CommonReader:
         '''
