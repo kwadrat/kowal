@@ -71,6 +71,12 @@ class KolumnowyAdresator(object):
         self.set_ka_number_address(the_number)
         self.set_ka_letter_address(the_letters)
 
+    def get_ka_official_row(self, fvk_miesiac=0):
+        '''
+        KolumnowyAdresator:
+        '''
+        return self.wiersz_bazowy_miesiecy + fvk_miesiac + 1
+
     def get_ka_official_address(self, fvk_miesiac=0):
         '''
         KolumnowyAdresator:
@@ -208,6 +214,7 @@ class TestKolumnowegoAdresatora(unittest.TestCase):
         nowy = obk.create_new_ka_delta(1, 2)
         self.assertEqual(nowy.get_ka_official_address(), 'F47')
         nowy.advance_col_by(6)
+        self.assertEqual(nowy.get_ka_official_row(), 47)
         self.assertEqual(nowy.get_ka_official_address(), 'L47')
 
     def test_5_kolumnowy_adresator(self):
