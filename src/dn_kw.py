@@ -512,6 +512,7 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(daty_skrajne_miesiaca(2008, 2, liczba_mies=3), ['2008-02-01', '2008-05-01'])
         self.assertEqual(RokMscDnia(14975), (2011, 1))
         self.assertEqual(RokMscDnia(15006), (2011, 2))
+        self.assertEqual(rok_mies_z_napisu('2010-01-01'), (2010, 1))
 
     def test_verify_date(self):
         '''
@@ -525,7 +526,6 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(roman_range((1, 2, 2011)), 'I-II-2011')
         self.assertEqual(len(daty_roku(2008, rok_z_rozszerzeniem=0)), rq_kw.RokZwykly + 1)
         self.assertEqual(len(daty_roku(2008, rok_z_rozszerzeniem=1)), rq_kw.RokDluzszy + 1)
-        self.assertEqual(rok_mies_z_napisu('2010-01-01'), (2010, 1))
         self.assertEqual(napis_z_rok_mies(2011, 9), '2011-09')
         self.assertEqual(NapisDaty(2013, 7, 27), '2013-07-27')
         self.assertEqual(CzasDzisiaj(data_testowa_c), (2011, 12, 13, 10, 41, 32))
