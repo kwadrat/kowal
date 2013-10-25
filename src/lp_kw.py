@@ -114,9 +114,7 @@ class QuarterServer(object):
         '''
         QuarterServer:
         '''
-        list_of_hours = self.quarter_translator.keys()
-        list_of_hours.sort()
-        return list_of_hours
+        return self.list_of_hours
 
 class TestDateQuarters(unittest.TestCase):
     def test_date_quarters(self):
