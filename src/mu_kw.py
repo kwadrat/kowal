@@ -70,6 +70,9 @@ class CommonWriter(CommonRdWr):
         CommonWriter:
         '''
         CommonRdWr.__init__(self, tvk_pobor, period_server)
+        self.first_weekday_column = 0
+        self.first_date_column = self.first_weekday_column + 1
+        self.first_sample_column = self.first_date_column + 1
 
     def generate_for_a_day(self, xwg, all_dates, my_data):
         '''
