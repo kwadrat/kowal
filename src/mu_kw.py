@@ -75,7 +75,7 @@ class CommonWriter(CommonRdWr):
         '''
         CommonWriter:
         '''
-        row = 0
+        row = first_line
         for nr, one_hour in enumerate(all_hours):
             col = self.first_sample_column + nr
             m_coor = to_kw.MergedCoords(row, col)
