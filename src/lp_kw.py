@@ -93,7 +93,7 @@ class HourServer(object):
         '''
         HourServer:
         '''
-        return map(lambda elem: elem.canonical_hour, self.all_time_columns)
+        return self.list_of_quarters
 
 class QuarterServer(object):
     def __init__(self):
