@@ -42,11 +42,11 @@ class KolumnowyAdresator(object):
         self.ustaw_ka_kolumne(kl_assigned_col)
         self.col_cnt = col_cnt
 
-    def get_col_letter(self):
+    def get_col_letter(self, col_delta=0):
         '''
         KolumnowyAdresator:
         '''
-        return fv_kw.vx_zero.vx_rev_lt(self.kl_assigned_col)
+        return fv_kw.vx_zero.vx_rev_lt(self.kl_assigned_col + col_delta)
 
     def set_ka_letter_address(self, the_letters):
         '''
