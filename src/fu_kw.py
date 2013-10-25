@@ -28,6 +28,7 @@ class EnergyReader(CommonReader):
         '''
         CommonReader.__init__(self, lw_kw.Dn_Energy)
         start_col = self.vx_letter_num('B')
+        self.start_energy_col = self.vx_letter_num('B')
         period_server = lp_kw.HourServer(start_col)
         self.set_pd_server(period_server)
 
