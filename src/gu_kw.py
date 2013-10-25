@@ -137,10 +137,9 @@ class KolumnowyAdresator(object):
         '''
         KolumnowyAdresator:
         '''
-        if self.col_cnt == 96:
-            return 'CT31'
-        else:
-            return 'Z71'
+        col_label = self.opposite_col_label()
+        row_number = self.opposite_row_nr()
+        return combine_rc(col_label, row_number)
 
 def generate_every_three(start_label, end_label):
     labels = []
