@@ -36,7 +36,7 @@ class CommonReader(CommonRdWr):
         '''
         CommonReader:
         '''
-        CommonRdWr.__init__(self, tvk_pobor)
+        CommonRdWr.__init__(self, tvk_pobor, period_server)
         self.vx_zero = fv_kw.vx_zero
         self.internal_rows = {}
 

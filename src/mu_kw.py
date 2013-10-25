@@ -69,7 +69,7 @@ class CommonWriter(CommonRdWr):
         '''
         CommonWriter:
         '''
-        CommonRdWr.__init__(self, tvk_pobor)
+        CommonRdWr.__init__(self, tvk_pobor, period_server)
 
     def generate_for_a_day(self, xwg, all_dates, my_data):
         '''

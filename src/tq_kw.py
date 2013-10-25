@@ -28,7 +28,7 @@ def locate_object_key(dfb, under_name):
     return key_object
 
 class CommonRdWr(object):
-    def __init__(self, tvk_pobor):
+    def __init__(self, tvk_pobor, period_server):
         '''
         CommonRdWr:
         '''
