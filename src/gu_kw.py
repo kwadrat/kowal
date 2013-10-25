@@ -41,6 +41,7 @@ class KolumnowyAdresator(object):
         self.ustaw_ka_wiersz(wiersz_bazowy_miesiecy)
         self.ustaw_ka_kolumne(kl_assigned_col)
         self.col_cnt = col_cnt
+        self.row_cnt = row_cnt
 
     def get_col_letter(self, col_delta=0):
         '''
@@ -119,10 +120,7 @@ class KolumnowyAdresator(object):
         '''
         KolumnowyAdresator:
         '''
-        if self.col_cnt == 96:
-            return 31
-        else:
-            return 71
+        return self.wiersz_bazowy_miesiecy + self.row_cnt
 
     def opposite_corner_label(self):
         '''
