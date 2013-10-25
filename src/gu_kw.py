@@ -113,10 +113,7 @@ class KolumnowyAdresator(object):
         '''
         KolumnowyAdresator:
         '''
-        if self.col_cnt == 96:
-            return 'CT'
-        else:
-            return 'Z'
+        return self.get_col_letter(col_delta=self.col_cnt - 1)
 
     def opposite_corner_label(self):
         '''
