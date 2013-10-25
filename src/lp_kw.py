@@ -67,7 +67,7 @@ class HourMiniServer(object):
         return 'HS(%s)' % self.header_for_hour_column
 
 class HourServer(object):
-    def __init__(self, start_col):
+    def __init__(self):
         '''
         HourServer:
         '''
