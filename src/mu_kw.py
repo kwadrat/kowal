@@ -71,7 +71,7 @@ class CommonWriter(CommonRdWr):
             m_coor = to_kw.MergedCoords(row, col)
             xwg.zapisz_co_flt(m_coor, my_sample)
 
-    def generate_hours_horizontally(self, xwg, all_hours):
+    def generate_hours_horizontally(self, xwg, all_hours, first_line):
         '''
         CommonWriter:
         '''
@@ -101,7 +101,7 @@ class CommonWriter(CommonRdWr):
             first_line = dost_wiersz.zabierz_wiersze(len(all_dates) + 9)
             base_data_line = first_line + 1
             self.generate_dates_vertically(xwg, all_dates, base_data_line)
-            self.generate_hours_horizontally(xwg, all_hours)
+            self.generate_hours_horizontally(xwg, all_hours, first_line)
             for my_data in dane_bazy:
                 self.generate_for_a_day(xwg, all_dates, my_data)
 
