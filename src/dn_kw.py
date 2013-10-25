@@ -1,6 +1,10 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+'''
+nkd - (int) numer kolejny dnia
+'''
+
 import os
 import time
 import unittest
