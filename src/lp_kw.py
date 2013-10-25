@@ -98,9 +98,11 @@ class QuarterServer(object):
         QuarterServer:
         '''
         self.quarter_translator = {}
+        self.list_of_hours = []
         for i in xrange(96):
             hh_mm = determine_quarter(i)
             self.quarter_translator[hh_mm] = i
+            self.list_of_hours.append(hh_mm)
 
     def quarter_to_number(self, hh_mm):
         '''
