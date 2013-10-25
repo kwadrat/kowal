@@ -290,7 +290,8 @@ class WriterGateway(object):
         WriterGateway:
         '''
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna)
-        self.write_single(m_coor, liczba, self.n2_style)
+        the_style = self.get_or_generate_number_style(kl_miejsc=NMF_3_date)
+        self.write_single(m_coor, liczba, the_style)
 
     def zapisz_wzor(self, m_coor, tekst_wzoru, kl_miejsc, size, bold):
         '''
