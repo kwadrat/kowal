@@ -122,7 +122,7 @@ class KolumnowyAdresator(object):
         '''
         KolumnowyAdresator:
         '''
-        return 'CU31'
+        return 'CT31'
 
 def generate_every_three(start_label, end_label):
     labels = []
@@ -209,7 +209,7 @@ class TestKolumnowegoAdresatora(unittest.TestCase):
         '''
         obk = KolumnowyAdresator(wiersz_bazowy_miesiecy=1, kl_assigned_col=2, col_cnt=96)
         self.assertEqual(obk.opposite_col_label(), 'CU')
-        self.assertEqual(obk.opposite_corner_label(), 'CU31')
+        self.assertEqual(obk.opposite_corner_label(), 'CT31')
 
     def test_6_kolumnowy_adresator(self):
         '''
