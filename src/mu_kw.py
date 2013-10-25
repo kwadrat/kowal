@@ -90,18 +90,17 @@ class CommonWriter(CommonRdWr):
             row = nr + 1
             xwg.zapisz_date(row, col, one_date)
 
-    def generate_for_month(self, xwg, dane_bazy, name):
+    def generate_for_month(self, xwg, dane_bazy, nr_month):
         '''
         CommonWriter:
         '''
-        xwg.add_a_sheet(dict_names[name])
-        selected_data = filter(lambda x: x[lc_kw.fq_account_qv] == name, dane_bazy)
-        all_dates = unique_sorted(selected_data, lc_kw.fq_m_date_qv)
-        all_hours = self.period_server.hours_for_header()
-        self.generate_dates_vertically(xwg, all_dates)
-        self.generate_hours_horizontally(xwg, all_hours)
-        for my_data in selected_data:
-            self.generate_for_a_day(xwg, all_dates, my_data)
+        if nr_month < 1:
+            all_dates = unique_sorted(dane_bazy, lc_kw.fq_m_date_qv)
+            all_hours = self.period_server.hours_for_header()
+            self.generate_dates_vertically(xwg, all_dates)
+            self.generate_hours_horizontally(xwg, all_hours)
+            for my_data in dane_bazy:
+                self.generate_for_a_day(xwg, all_dates, my_data)
 
     def generate_for_object(self, xwg, dane_bazy, name):
         '''
@@ -110,12 +109,17 @@ class CommonWriter(CommonRdWr):
         xwg.add_a_sheet(dict_names[name])
         selected_data = filter(lambda x: x[lc_kw.fq_account_qv] == name, dane_bazy)
         all_dates = unique_sorted(selected_data, lc_kw.fq_m_date_qv)
-        if all_dates:
-            all_hours = self.period_server.hours_for_header()
-            self.generate_dates_vertically(xwg, all_dates)
-            self.generate_hours_horizontally(xwg, all_hours)
-            for my_data in selected_data:
-                self.generate_for_a_day(xwg, all_dates, my_data)
+        month_dict = {}
+        for one_data in selected_data:
+            moj_rm = dn_kw.rok_mies_z_napisu(str(one_data[lc_kw.fq_m_date_qv]))
+            if moj_rm not in month_dict:
+                month_dict[moj_rm] = []
+            month_dict[moj_rm].append(one_data)
+        all_months = month_dict.keys()
+        all_months.sort()
+        for nr_month, moj_rm in enumerate(all_months):
+            my_data = month_dict[moj_rm]
+            self.generate_for_month(xwg, my_data, nr_month)
 
     def generate_one_file(self, xwg, dfb, output_file):
         '''
