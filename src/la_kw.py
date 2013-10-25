@@ -121,7 +121,7 @@ class WriterGateway(object):
                 self.generated_string_style_cache[the_key] = the_style
         return the_style
 
-    def get_or_generate_number_style(self, kl_miejsc, rn_colour, bold, size):
+    def get_or_generate_number_style(self, kl_miejsc=2, rn_colour=None, bold=None, size=None):
         '''
         WriterGateway:
         '''
