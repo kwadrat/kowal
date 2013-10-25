@@ -21,6 +21,9 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+def combine_rc(col_label, row_number):
+    return '%s%d' % (col_label, row_number)
+
 class KolumnowyAdresator(object):
     def ustaw_ka_wiersz(self, wiersz_bazowy_miesiecy):
         '''
@@ -230,6 +233,7 @@ class TestKolumnowegoAdresatora(unittest.TestCase):
         '''
         TestKolumnowegoAdresatora:
         '''
+        self.assertEqual(combine_rc('X', 7), 'X7')
         obk = KolumnowyAdresator(wiersz_bazowy_miesiecy=40, kl_assigned_col=2, col_cnt=24, row_cnt=31)
         self.assertEqual(obk.opposite_col_label(), 'Z')
         self.assertEqual(obk.opposite_row_nr(), 71)
