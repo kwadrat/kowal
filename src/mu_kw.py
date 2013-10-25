@@ -61,7 +61,7 @@ class CommonWriter(CommonRdWr):
         self.first_date_column = self.first_weekday_column + 1
         self.first_sample_column = self.first_date_column + 1
 
-    def generate_for_a_day(self, xwg, all_dates, my_data):
+    def generate_for_a_day(self, xwg, all_dates, my_data, base_data_line):
         '''
         CommonWriter:
         '''
@@ -103,7 +103,7 @@ class CommonWriter(CommonRdWr):
             self.generate_dates_vertically(xwg, all_dates, base_data_line)
             self.generate_hours_horizontally(xwg, all_hours, first_line)
             for my_data in dane_bazy:
-                self.generate_for_a_day(xwg, all_dates, my_data)
+                self.generate_for_a_day(xwg, all_dates, my_data, base_data_line)
 
     def generate_for_object(self, xwg, dane_bazy, name):
         '''
