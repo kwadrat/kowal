@@ -282,11 +282,7 @@ def ZakresMiesiaca(rok, miesiac, liczba_mies=1):
     pocz = dzien_nowego_miesiaca(rok, miesiac)
     # Przejdź na początek następnego miesiąca
     for i in xrange(liczba_mies):
-        if miesiac < 12:
-            miesiac += 1
-        else:
-            miesiac = 1
-            rok += 1
+        rok, miesiac = nast_rok_mies(rok, miesiac)
     kon = dzien_nowego_miesiaca(rok, miesiac)
     return pocz, kon
 
