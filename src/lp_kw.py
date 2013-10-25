@@ -85,7 +85,7 @@ class HourServer(object):
         HourServer:
         '''
         for sample_index, one_column in enumerate(self.all_time_columns):
-            tmp_text = energy_reader.vx_num_time(one_column.col_in_sheet, 6)
+            tmp_text = energy_reader.vx_num_time(start_energy_col + sample_index, 6)
             expected = one_column.header_for_hour_column
             verify_for_equal(tmp_text, expected)
 
