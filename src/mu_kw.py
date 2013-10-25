@@ -91,7 +91,7 @@ class CommonWriter(CommonRdWr):
             row = nr + 1
             xwg.zapisz_date(row, col, one_date)
 
-    def generate_for_month(self, xwg, dane_bazy, nr_month):
+    def generate_for_month(self, xwg, dane_bazy, nr_month, dost_wiersz):
         '''
         CommonWriter:
         '''
@@ -121,7 +121,7 @@ class CommonWriter(CommonRdWr):
         all_months.sort()
         for nr_month, moj_rm in enumerate(all_months):
             my_data = month_dict[moj_rm]
-            self.generate_for_month(xwg, my_data, nr_month)
+            self.generate_for_month(xwg, my_data, nr_month, dost_wiersz)
 
     def generate_one_file(self, xwg, dfb, output_file):
         '''
