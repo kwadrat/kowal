@@ -312,6 +312,13 @@ class WriterGateway(object):
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna)
         self.write_single(m_coor, tresc_napisu, style=the_style)
 
+    def napis_ze_stylem(self, m_coor, tresc_napisu=None, rn_colour=None, bold=0, size=None, wrap=None, middle=None, kl_none=None):
+        '''
+        WriterGateway:
+        '''
+        the_style = self.get_or_generate_style(rn_colour, bold, size, wrap, middle, kl_none)
+        self.write_single(m_coor, tresc_napisu, style=the_style)
+
     def wymus_szerokosci(self, lista_rozmiarow):
         '''
         WriterGateway:
