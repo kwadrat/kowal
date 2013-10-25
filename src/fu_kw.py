@@ -71,9 +71,9 @@ class EnergyReader(CommonReader):
         EnergyReader:
         '''
         self.prepare_local_copy_of_row(dfb, key_object, row_date)
-        value = self.vx_num_peek(single_column.col_in_sheet, single_row)
-        hour_number = single_column.column_index
-        self.store_value_in_row(key_object, row_date, hour_number, value)
+        col_in_sheet = self.start_energy_col + sample_index
+        value = self.vx_num_peek(col_in_sheet, single_row)
+        self.store_value_in_row(key_object, row_date, sample_index, value)
 
     def enter_energy_data(self, dfb, key_object, data_rows):
         '''
