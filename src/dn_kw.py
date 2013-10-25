@@ -204,14 +204,12 @@ def DzienTeraz():
     '''
     return time.strftime('%Y-%m-%d')
 
-def szczegolowa_krotka(x):
+def szczegolowa_krotka(nkd):
     '''Zwraca datę na podstawie numeru dnia
-    Parametr:
-    x - (int) numer dnia
     Wartość zwracana:
     krotka 9-elementowa z szczegółami czasu
     '''
-    return time.localtime(x * SEC_PER_DAY + SEC_PER_DAY / 2)
+    return time.localtime(nkd * SEC_PER_DAY + SEC_PER_DAY / 2)
 
 def DataDnia(x):
     '''Zwraca datę na podstawie numeru dnia
