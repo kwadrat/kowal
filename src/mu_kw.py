@@ -87,7 +87,6 @@ class CommonWriter(CommonRdWr):
         '''
         CommonWriter:
         '''
-        xwg.sheet.col(col).best_fit = 1
         for nr, one_date in enumerate(all_dates):
             row = base_data_line + nr
             xwg.zapisz_date(row, col, one_date)
@@ -106,12 +105,20 @@ class CommonWriter(CommonRdWr):
         for day_nr, my_data in enumerate(dane_bazy):
             self.generate_for_a_day(xwg, all_dates, my_data, base_data_line, day_nr)
 
+    def setup_col_widths(self, xwg):
+        '''
+        CommonWriter:
+        '''
+        for col in xrange(self.first_weekday_column, self.second_weekday_column + 1):
+            xwg.sheet.col(col).best_fit = 1
+
     def generate_for_object(self, xwg, dane_bazy, name):
         '''
         CommonWriter:
         '''
         dost_wiersz = gx_kw.Wierszownik(0)
         xwg.add_a_sheet(dict_names[name])
+        self.setup_col_widths(xwg)
         selected_data = filter(lambda x: x[lc_kw.fq_account_qv] == name, dane_bazy)
         all_dates = unique_sorted(selected_data, lc_kw.fq_m_date_qv)
         month_dict = {}
