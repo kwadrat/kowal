@@ -108,6 +108,12 @@ class KolumnowyAdresator(object):
             self.wiersz_bazowy_miesiecy + row_delta,
             self.kl_assigned_col + col_delta)
 
+    def opposite_corner_label(self):
+        '''
+        KolumnowyAdresator:
+        '''
+        return 'CU31'
+
 def generate_every_three(start_label, end_label):
     labels = []
     klm_ads = KolumnowyAdresator()
@@ -186,3 +192,10 @@ class TestKolumnowegoAdresatora(unittest.TestCase):
         self.assertEqual(nowy.get_ka_official_address(), 'F47')
         nowy.advance_col_by(6)
         self.assertEqual(nowy.get_ka_official_address(), 'L47')
+
+    def test_5_kolumnowy_adresator(self):
+        '''
+        TestKolumnowegoAdresatora:
+        '''
+        obk = KolumnowyAdresator(wiersz_bazowy_miesiecy=1, kl_assigned_col=2)
+        self.assertEqual(obk.opposite_corner_label(), 'CU31')
