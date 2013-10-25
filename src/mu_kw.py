@@ -110,11 +110,12 @@ class CommonWriter(CommonRdWr):
         xwg.add_a_sheet(dict_names[name])
         selected_data = filter(lambda x: x[lc_kw.fq_account_qv] == name, dane_bazy)
         all_dates = unique_sorted(selected_data, lc_kw.fq_m_date_qv)
-        all_hours = self.period_server.hours_for_header()
-        self.generate_dates_vertically(xwg, all_dates)
-        self.generate_hours_horizontally(xwg, all_hours)
-        for my_data in selected_data:
-            self.generate_for_a_day(xwg, all_dates, my_data)
+        if all_dates:
+            all_hours = self.period_server.hours_for_header()
+            self.generate_dates_vertically(xwg, all_dates)
+            self.generate_hours_horizontally(xwg, all_hours)
+            for my_data in selected_data:
+                self.generate_for_a_day(xwg, all_dates, my_data)
 
     def generate_one_file(self, xwg, dfb, output_file):
         '''
