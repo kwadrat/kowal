@@ -108,6 +108,12 @@ class KolumnowyAdresator(object):
             self.wiersz_bazowy_miesiecy + row_delta,
             self.kl_assigned_col + col_delta)
 
+    def opposite_col_label(self):
+        '''
+        KolumnowyAdresator:
+        '''
+        return 'CU'
+
     def opposite_corner_label(self):
         '''
         KolumnowyAdresator:
@@ -198,4 +204,5 @@ class TestKolumnowegoAdresatora(unittest.TestCase):
         TestKolumnowegoAdresatora:
         '''
         obk = KolumnowyAdresator(wiersz_bazowy_miesiecy=1, kl_assigned_col=2)
+        self.assertEqual(obk.opposite_col_label(), 'CU')
         self.assertEqual(obk.opposite_corner_label(), 'CU31')
