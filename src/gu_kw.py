@@ -126,7 +126,7 @@ class KolumnowyAdresator(object):
         '''
         KolumnowyAdresator:
         '''
-        return self.wiersz_bazowy_miesiecy + self.row_cnt
+        return self.get_ka_official_row(self.row_cnt) - 1
 
     def opposite_corner_label(self):
         '''
