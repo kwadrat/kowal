@@ -115,6 +115,12 @@ class KolumnowyAdresator(object):
         '''
         return self.get_col_letter(col_delta=self.col_cnt - 1)
 
+    def opposite_row_nr(self):
+        '''
+        KolumnowyAdresator:
+        '''
+        return 31
+
     def opposite_corner_label(self):
         '''
         KolumnowyAdresator:
@@ -209,6 +215,7 @@ class TestKolumnowegoAdresatora(unittest.TestCase):
         '''
         obk = KolumnowyAdresator(wiersz_bazowy_miesiecy=1, kl_assigned_col=2, col_cnt=96, row_cnt=30)
         self.assertEqual(obk.opposite_col_label(), 'CT')
+        self.assertEqual(obk.opposite_row_nr(), 31)
         self.assertEqual(obk.opposite_corner_label(), 'CT31')
 
     def test_6_kolumnowy_adresator(self):
