@@ -81,7 +81,7 @@ class EnergyReader(CommonReader):
         '''
         for single_row in data_rows:
             row_date = self.vx_t_date('A', single_row)
-            for single_column in self.period_server.all_time_columns:
+            for sample_index, single_column in enumerate(self.period_server.all_time_columns):
                 self.fetch_energy_field(dfb, key_object, single_row, row_date, single_column)
 
     def analyze_data_in_grid(self, dfb):
