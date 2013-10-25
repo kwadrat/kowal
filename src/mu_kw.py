@@ -107,6 +107,7 @@ class CommonWriter(CommonRdWr):
         '''
         CommonWriter:
         '''
+        dost_wiersz = gx_kw.Wierszownik(0)
         xwg.add_a_sheet(dict_names[name])
         selected_data = filter(lambda x: x[lc_kw.fq_account_qv] == name, dane_bazy)
         all_dates = unique_sorted(selected_data, lc_kw.fq_m_date_qv)
