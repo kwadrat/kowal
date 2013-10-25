@@ -101,5 +101,5 @@ class EnergyWriter(CommonWriter):
         EnergyWriter:
         '''
         period_server = lp_kw.HourServer()
-        CommonWriter.__init__(self, lw_kw.Dn_Energy)
+        CommonWriter.__init__(self, lw_kw.Dn_Energy, period_server)
         self.set_pd_server(period_server)

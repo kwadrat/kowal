@@ -65,7 +65,7 @@ def unique_sorted(dane_bazy, field):
 CommonRdWr = tq_kw.CommonRdWr
 
 class CommonWriter(CommonRdWr):
-    def __init__(self, tvk_pobor):
+    def __init__(self, tvk_pobor, period_server):
         '''
         CommonWriter:
         '''

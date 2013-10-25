@@ -107,5 +107,5 @@ class PowerWriter(CommonWriter):
         PowerWriter:
         '''
         period_server = lp_kw.QuarterServer()
-        CommonWriter.__init__(self, lw_kw.Dn_Power)
+        CommonWriter.__init__(self, lw_kw.Dn_Power, period_server)
         self.set_pd_server(period_server)
