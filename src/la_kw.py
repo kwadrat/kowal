@@ -157,6 +157,7 @@ class WriterGateway(object):
             3: '#,##0.000', # użyj separatora 1000, 3 miejsca po przecinku
             NMF_1_above_red: '[Red]#,##0.00_ ;-#,##0.00 ',
             NMF_2_percent: '0.00%',
+            NMF_3_date: 'yyyy/mm/dd;@', # data RRRR-MM-DD
             }
         self.xlwt = new_module_for_writing_spreadsheet()
         self.n2_style = self.prepare_cell(
