@@ -23,6 +23,7 @@ for i in NazwyModulow:
 
 NMF_1_above_red = -1
 NMF_2_percent = -2
+NMF_3_date = -3
 
 def new_module_for_reading_spreadsheet():
     import xlrd
