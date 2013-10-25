@@ -96,14 +96,15 @@ class CommonWriter(CommonRdWr):
         '''
         CommonWriter:
         '''
-        all_dates = unique_sorted(dane_bazy, lc_kw.fq_m_date_qv)
-        all_hours = self.period_server.hours_for_header()
-        first_line = dost_wiersz.zabierz_wiersze(len(all_dates) + 9)
-        base_data_line = first_line + 1
-        self.generate_dates_vertically(xwg, all_dates, base_data_line)
-        self.generate_hours_horizontally(xwg, all_hours, first_line)
-        for day_nr, my_data in enumerate(dane_bazy):
-            self.generate_for_a_day(xwg, all_dates, my_data, base_data_line, day_nr)
+        if nr_month < 1:
+            all_dates = unique_sorted(dane_bazy, lc_kw.fq_m_date_qv)
+            all_hours = self.period_server.hours_for_header()
+            first_line = dost_wiersz.zabierz_wiersze(len(all_dates) + 9)
+            base_data_line = first_line + 1
+            self.generate_dates_vertically(xwg, all_dates, base_data_line)
+            self.generate_hours_horizontally(xwg, all_hours, first_line)
+            for day_nr, my_data in enumerate(dane_bazy):
+                self.generate_for_a_day(xwg, all_dates, my_data, base_data_line, day_nr)
 
     def setup_col_widths(self, xwg):
         '''
