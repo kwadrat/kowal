@@ -34,7 +34,7 @@ class KolumnowyAdresator(object):
         '''
         self.kl_assigned_col = kl_assigned_col
 
-    def __init__(self, wiersz_bazowy_miesiecy=None, kl_assigned_col=None):
+    def __init__(self, wiersz_bazowy_miesiecy=None, kl_assigned_col=None, col_cnt=None):
         '''
         KolumnowyAdresator:
         '''
@@ -203,6 +203,6 @@ class TestKolumnowegoAdresatora(unittest.TestCase):
         '''
         TestKolumnowegoAdresatora:
         '''
-        obk = KolumnowyAdresator(wiersz_bazowy_miesiecy=1, kl_assigned_col=2)
+        obk = KolumnowyAdresator(wiersz_bazowy_miesiecy=1, kl_assigned_col=2, col_cnt=96)
         self.assertEqual(obk.opposite_col_label(), 'CU')
         self.assertEqual(obk.opposite_corner_label(), 'CU31')
