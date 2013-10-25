@@ -88,7 +88,7 @@ class CommonWriter(CommonRdWr):
         col = self.first_date_column
         xwg.sheet.col(col).best_fit = 1
         for nr, one_date in enumerate(all_dates):
-            row = nr + 1
+            row = base_data_line + nr
             xwg.zapisz_date(row, col, one_date)
 
     def generate_for_month(self, xwg, dane_bazy, nr_month, dost_wiersz):
