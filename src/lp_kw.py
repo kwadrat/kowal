@@ -75,7 +75,8 @@ class HourServer(object):
         '''
         self.all_time_columns = []
         for column_index in xrange(24):
-            self.all_time_columns.append(HourMiniServer(start_col, column_index))
+            elem = HourMiniServer(start_col, column_index)
+            self.all_time_columns.append(elem)
 
     def verify_hours_headers(self, energy_reader):
         '''
