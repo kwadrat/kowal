@@ -71,8 +71,9 @@ class HoQuServer(object):
         '''
         HoQuServer:
         '''
+        self.cnt_of_samples = len(self.hours_for_header())
 
-class HourServer(object):
+class HourServer(HoQuServer):
     def __init__(self):
         '''
         HourServer:
@@ -83,6 +84,7 @@ class HourServer(object):
             elem = HourMiniServer(column_index)
             self.all_time_columns.append(elem)
             self.list_of_quarters.append(elem.canonical_hour)
+        HoQuServer.__init__(self)
 
     def verify_hours_headers(self, energy_reader, start_energy_col):
         '''
@@ -99,7 +101,7 @@ class HourServer(object):
         '''
         return self.list_of_quarters
 
-class QuarterServer(object):
+class QuarterServer(HoQuServer):
     def __init__(self):
         '''
         QuarterServer:
@@ -110,6 +112,7 @@ class QuarterServer(object):
             hh_mm = determine_quarter(i)
             self.quarter_translator[hh_mm] = i
             self.list_of_hours.append(hh_mm)
+        HoQuServer.__init__(self)
 
     def quarter_to_number(self, hh_mm):
         '''
