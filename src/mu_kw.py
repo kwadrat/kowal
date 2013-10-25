@@ -61,6 +61,7 @@ class CommonWriter(CommonRdWr):
         self.first_date_column = self.first_weekday_column + 1
         self.first_sample_column = self.first_date_column + 1
         self.second_date_column = self.first_sample_column + self.period_server.cnt_of_samples
+        self.second_weekday_column = self.second_date_column + 1
 
     def generate_for_a_day(self, xwg, all_dates, my_data, base_data_line, day_nr):
         '''
