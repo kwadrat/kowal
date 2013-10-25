@@ -40,6 +40,7 @@ class KolumnowyAdresator(object):
         '''
         self.ustaw_ka_wiersz(wiersz_bazowy_miesiecy)
         self.ustaw_ka_kolumne(kl_assigned_col)
+        self.col_cnt = col_cnt
 
     def get_col_letter(self):
         '''
@@ -112,7 +113,10 @@ class KolumnowyAdresator(object):
         '''
         KolumnowyAdresator:
         '''
-        return 'CU'
+        if self.col_cnt == 96:
+            return 'CU'
+        else:
+            return 'Z'
 
     def opposite_corner_label(self):
         '''
@@ -206,3 +210,10 @@ class TestKolumnowegoAdresatora(unittest.TestCase):
         obk = KolumnowyAdresator(wiersz_bazowy_miesiecy=1, kl_assigned_col=2, col_cnt=96)
         self.assertEqual(obk.opposite_col_label(), 'CU')
         self.assertEqual(obk.opposite_corner_label(), 'CU31')
+
+    def test_6_kolumnowy_adresator(self):
+        '''
+        TestKolumnowegoAdresatora:
+        '''
+        obk = KolumnowyAdresator(wiersz_bazowy_miesiecy=1, kl_assigned_col=2, col_cnt=24)
+        self.assertEqual(obk.opposite_col_label(), 'Z')
