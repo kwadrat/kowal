@@ -121,7 +121,7 @@ def generate_every_three(start_label, end_label):
     return labels
 
 class TestKolumnowegoAdresatora(unittest.TestCase):
-    def test_kolumnowy_adresator(self):
+    def test_1_kolumnowy_adresator(self):
         '''
         TestKolumnowegoAdresatora:
         '''
@@ -158,7 +158,7 @@ class TestKolumnowegoAdresatora(unittest.TestCase):
         obk.ustaw_ka_wiersz(1)
         self.assertEqual(obk.get_ka_official_address(), 'AA2')
 
-    def test_3_kolumnowy_adresator(self):
+    def test_4_kolumnowy_adresator(self):
         '''
         TestKolumnowegoAdresatora:
         '''
