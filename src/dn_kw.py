@@ -262,6 +262,14 @@ def ZakresRoku(rok):
     kon = dzien_nowego_roku(rok + 1)
     return pocz, kon
 
+def nast_rok_mies(rok, miesiac):
+    if miesiac < 12:
+        miesiac += 1
+    else:
+        miesiac = 1
+        rok += 1
+    return rok, miesiac
+
 def ZakresMiesiaca(rok, miesiac, liczba_mies=1):
     '''Zwraca początek i koniec danego miesiąca w postaci
     skrajnych numerów dnia - pierwszego danego i następnego miesiąca,
@@ -506,6 +514,7 @@ class TestDaysDates(unittest.TestCase):
         daty_roczne = daty_lat(13149, 13879)
         self.assertEqual(daty_roczne, [13149, 13514, 13879])
         self.assertEqual(map(DataDnia, daty_roczne), [(2006, 1, 1), (2007, 1, 1), (2008, 1, 1)])
+        self.assertEqual(nast_rok_mies(2011, 12), (2012, 1))
         self.assertEqual(ZakresMiesiaca(2008, 2), (13910, 13939))
         self.assertEqual(ZakresMiesiaca(2008, 2, 4), (13910, 14031))
         self.assertEqual(daty_skrajne_miesiaca(2008, 2), ['2008-02-01', '2008-03-01'])
