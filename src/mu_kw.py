@@ -84,8 +84,8 @@ class CommonWriter(CommonRdWr):
         '''
         CommonWriter:
         '''
-        col = 0
-        xwg.sheet.col(0).best_fit = 1
+        col = self.first_date_column
+        xwg.sheet.col(col).best_fit = 1
         for nr, one_date in enumerate(all_dates):
             row = nr + 1
             xwg.zapisz_date(row, col, one_date)
