@@ -89,6 +89,10 @@ class CommonWriter(CommonRdWr):
         '''
         for nr, one_date in enumerate(all_dates):
             row = base_data_line + nr
+            nkd = dn_kw.napis_na_numer_dnia(str(one_date))
+            weekday_name = dn_kw.nazwa_dnia_tygodnia(nkd)
+            m_coor = to_kw.MergedCoords(row, self.first_weekday_column)
+            xwg.napis_ze_stylem(m_coor, weekday_name)
             xwg.zapisz_date(row, self.first_date_column, one_date)
             xwg.zapisz_date(row, self.second_date_column, one_date)
 
