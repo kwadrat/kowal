@@ -119,7 +119,10 @@ class KolumnowyAdresator(object):
         '''
         KolumnowyAdresator:
         '''
-        return 31
+        if self.col_cnt == 96:
+            return 31
+        else:
+            return 71
 
     def opposite_corner_label(self):
         '''
@@ -222,6 +225,7 @@ class TestKolumnowegoAdresatora(unittest.TestCase):
         '''
         TestKolumnowegoAdresatora:
         '''
-        obk = KolumnowyAdresator(wiersz_bazowy_miesiecy=40, kl_assigned_col=2, col_cnt=24)
+        obk = KolumnowyAdresator(wiersz_bazowy_miesiecy=40, kl_assigned_col=2, col_cnt=24, row_cnt=31)
         self.assertEqual(obk.opposite_col_label(), 'Z')
+        self.assertEqual(obk.opposite_row_nr(), 71)
         self.assertEqual(obk.opposite_corner_label(), 'Z71')
