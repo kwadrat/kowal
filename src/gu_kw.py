@@ -119,7 +119,10 @@ class KolumnowyAdresator(object):
         '''
         KolumnowyAdresator:
         '''
-        return 'CT31'
+        if self.col_cnt == 96:
+            return 'CT31'
+        else:
+            return 'Z71'
 
 def generate_every_three(start_label, end_label):
     labels = []
@@ -212,5 +215,6 @@ class TestKolumnowegoAdresatora(unittest.TestCase):
         '''
         TestKolumnowegoAdresatora:
         '''
-        obk = KolumnowyAdresator(wiersz_bazowy_miesiecy=1, kl_assigned_col=2, col_cnt=24)
+        obk = KolumnowyAdresator(wiersz_bazowy_miesiecy=40, kl_assigned_col=2, col_cnt=24)
         self.assertEqual(obk.opposite_col_label(), 'Z')
+        self.assertEqual(obk.opposite_corner_label(), 'Z71')
