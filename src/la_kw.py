@@ -318,7 +318,7 @@ class WriterGateway(object):
         WriterGateway:
         '''
         the_style = self.get_or_generate_style(rn_colour, bold, size, wrap, middle, kl_none)
-        self.write_single(m_coor, tresc_napisu, style=the_style)
+        self.zapisz_mi(m_coor, tresc_napisu, style=the_style)
 
     def wymus_szerokosci(self, lista_rozmiarow):
         '''
