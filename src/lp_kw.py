@@ -80,7 +80,7 @@ class HourServer(object):
             self.all_time_columns.append(elem)
             self.list_of_quarters.append(elem.canonical_hour)
 
-    def verify_hours_headers(self, energy_reader):
+    def verify_hours_headers(self, energy_reader, start_energy_col):
         '''
         HourServer:
         '''
