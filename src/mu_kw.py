@@ -4,6 +4,7 @@
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lc_kw
 import to_kw
+import hj_kw
 import rq_kw
 import dn_kw
 import le_kw
