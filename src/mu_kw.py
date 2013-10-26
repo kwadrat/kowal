@@ -62,7 +62,8 @@ class CommonWriter(CommonRdWr):
         self.first_weekday_column = 0
         self.first_date_column = self.first_weekday_column + 1
         self.first_sample_column = self.first_date_column + 1
-        self.second_date_column = self.first_sample_column + self.period_server.cnt_of_samples
+        self.last_sample_column = self.first_sample_column + self.period_server.cnt_of_samples - 1
+        self.second_date_column = self.last_sample_column + 1
         self.second_weekday_column = self.second_date_column + 1
 
     def generate_for_a_day(self, xwg, all_dates, my_data, base_data_line, day_nr):
@@ -107,7 +108,8 @@ class CommonWriter(CommonRdWr):
             all_hours = self.period_server.hours_for_header()
             first_line = dost_wiersz.zabierz_wiersze(len(all_dates) + 9)
             base_data_line = first_line + 1
-            bottom_max_line = base_data_line + len(all_dates)
+            last_data_line = base_data_line + len(all_dates) - 1
+            bottom_max_line = last_data_line + 1
             nmax_line = bottom_max_line + 3
             nmax_start_col = 2
             xwg.napis_ze_wsp(bottom_max_line, 1, 'MAXIMUM')
