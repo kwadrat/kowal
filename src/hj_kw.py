@@ -117,11 +117,12 @@ def rcp_pion(wiersz_bazowy_miesiecy, kl_letter_of_col):
         kl_letter_of_col=kl_letter_of_col,
         )
 
-def rcp_wspolne(command, etk_a, etk_b):
-    return '%(command)s(%(etk_a)s:%(etk_b)s)' % dict(
+def rcp_wspolne(command, etk_a, etk_b, trzeci=''):
+    return '%(command)s(%(etk_a)s:%(etk_b)s%(trzeci)s)' % dict(
         command=command,
         etk_a=etk_a,
         etk_b=etk_b,
+        trzeci=trzeci,
         )
 
 def rcp_poziom(etk_a, etk_b):
