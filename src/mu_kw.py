@@ -106,6 +106,10 @@ class CommonWriter(CommonRdWr):
             all_hours = self.period_server.hours_for_header()
             first_line = dost_wiersz.zabierz_wiersze(len(all_dates) + 9)
             base_data_line = first_line + 1
+            bottom_max_line = base_data_line + len(all_dates)
+            nmax_line = bottom_max_line + 3
+            nmax_start_col = 2
+            xwg.napis_ze_wsp(bottom_max_line, 1, 'MAXIMUM')
             self.generate_dates_vertically(xwg, all_dates, base_data_line)
             self.generate_hours_horizontally(xwg, all_hours, first_line)
             for day_nr, my_data in enumerate(dane_bazy):
