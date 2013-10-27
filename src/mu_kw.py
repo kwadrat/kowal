@@ -130,6 +130,7 @@ class CommonWriter(CommonRdWr):
             self.generate_hours_horizontally(xwg, all_hours, first_line)
             for day_nr, my_data in enumerate(dane_bazy):
                 self.generate_for_a_day(xwg, all_dates, my_data, base_data_line, day_nr)
+            self.generate_summary(xwg, base_data_line, last_data_line, nmax_line, nmax_start_col)
 
     def setup_col_widths(self, xwg):
         '''
