@@ -145,10 +145,11 @@ class KolumnowyAdresator(object):
         '''
         KolumnowyAdresator:
         '''
+        row_number = self.get_ka_official_row(fvk_miesiac=row_offset)
         if row_offset == 1:
-            return 'C3', 'CT3'
+            return 'C%d' % row_number, 'CT%d' % row_number
         else:
-            return 'C2', 'CT2'
+            return 'C%d' % row_number, 'CT%d' % row_number
 
 def generate_every_three(start_label, end_label):
     labels = []
