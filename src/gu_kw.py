@@ -141,11 +141,14 @@ class KolumnowyAdresator(object):
         row_number = self.opposite_row_nr()
         return combine_rc(col_label, row_number)
 
-    def row_start_end_labels(self):
+    def row_start_end_labels(self, row_offset=0):
         '''
         KolumnowyAdresator:
         '''
-        return 'C2', 'CT2'
+        if row_offset == 1:
+            return 'C3', 'CT3'
+        else:
+            return 'C2', 'CT2'
 
 def generate_every_three(start_label, end_label):
     labels = []
@@ -236,6 +239,7 @@ class TestKolumnowegoAdresatora(unittest.TestCase):
         self.assertEqual(obk.opposite_row_nr(), 31)
         self.assertEqual(obk.opposite_corner_label(), 'CT31')
         self.assertEqual(obk.row_start_end_labels(), ('C2', 'CT2'))
+        self.assertEqual(obk.row_start_end_labels(1), ('C3', 'CT3'))
 
     def test_6_kolumnowy_adresator(self):
         '''
