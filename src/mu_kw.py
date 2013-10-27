@@ -99,6 +99,19 @@ class CommonWriter(CommonRdWr):
             xwg.zapisz_date(row, self.second_date_column, one_date)
             xwg.napis_ze_wsp(row, self.second_weekday_column, weekday_name)
 
+    def generate_summary(self, xwg, base_data_line, last_data_line, nmax_line, nmax_start_col):
+        '''
+        CommonWriter:
+        '''
+        klm_a_ads = gu_kw.KolumnowyAdresator(base_data_line, self.first_sample_column)
+        klm_b_ads = gu_kw.KolumnowyAdresator(last_data_line, self.last_sample_column)
+        etk_a = klm_a_ads.get_ka_official_address()
+        etk_b = klm_b_ads.get_ka_official_address()
+        for i in xrange(10):
+            tekst_wzoru = hj_kw.rcp_maxk(etk_a, etk_b, i)
+            m_coor = to_kw.MergedCoords(nmax_line, nmax_start_col + i)
+            xwg.zapisz_wzor(m_coor, tekst_wzoru, kl_miejsc=2, size=None, bold=None)
+
     def generate_for_month(self, xwg, dane_bazy, nr_month, dost_wiersz):
         '''
         CommonWriter:
