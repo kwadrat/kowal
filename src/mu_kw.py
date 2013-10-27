@@ -23,6 +23,8 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+napis_max = 'MAXIMUM'
+
 dict_names = {
     'GIMNAZJUM_NR_7_RYBNIK_SZTOLNIOWA': 'G-7',
     'SZKOLA_PODST_NR_11_RYBNIK_HIBNERA': 'SP-11',
