@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+import unittest
+
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lp_kw
 import lw_kw
@@ -107,3 +109,18 @@ class PowerWriter(CommonWriter):
         '''
         period_server = lp_kw.QuarterServer()
         CommonWriter.__init__(self, lw_kw.Dn_Power, period_server)
+
+class TestWritingPower(unittest.TestCase):
+    def test_writing_power(self):
+        '''
+        TestWritingPower:
+        '''
+        obk = PowerWriter()
+        self.assertEqual(obk.first_weekday_column, 0)
+        self.assertEqual(obk.first_date_column, 1)
+        self.assertEqual(obk.first_sample_column, 2)
+        self.assertEqual(obk.last_sample_column, 97)
+        self.assertEqual(obk.horiz_max_column, 98)
+        self.assertEqual(obk.week_max_column, 99)
+        self.assertEqual(obk.second_date_column, 100)
+        self.assertEqual(obk.second_weekday_column, 101)
