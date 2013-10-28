@@ -163,6 +163,19 @@ class CommonWriter(CommonRdWr):
             m_coor = to_kw.MergedCoords(row, self.horiz_max_column)
             xwg.zapisz_wzor(m_coor, tekst_wzoru, kl_miejsc=2, size=None, bold=None)
 
+    def generate_week_max_column(self, xwg, first_line, klm_ads, all_dates):
+        '''
+        CommonWriter:
+        '''
+        pary_robocze = wyznacz_dni_robocze(all_dates)
+        xwg.napis_ze_wsp(first_line, self.week_max_column, 'Max tyg')
+        for moj_pierwszy, moj_ostatni in pary_robocze:
+            etk_a, etk_b = klm_ads.col_start_end_labels(col_offset=self.horiz_max_offset, moj_pierwszy=moj_pierwszy, moj_ostatni=moj_ostatni)
+            tekst_wzoru = hj_kw.rcp_emax(etk_a, etk_b)
+            row = klm_ads.get_only_row(row_delta=moj_ostatni)
+            m_coor = to_kw.MergedCoords(row, self.week_max_column)
+            xwg.zapisz_wzor(m_coor, tekst_wzoru, kl_miejsc=2, size=None, bold=None)
+
     def generate_for_month(self, xwg, dane_bazy, nr_month, dost_wiersz):
         '''
         CommonWriter:
@@ -189,6 +202,7 @@ class CommonWriter(CommonRdWr):
                 self.generate_for_a_day(xwg, all_dates, my_data, base_data_line, day_nr)
             self.generate_summary(xwg, base_data_line, last_data_line, nmax_line, nmax_start_col)
             self.generate_max_column(xwg, first_line, klm_ads)
+            self.generate_week_max_column(xwg, first_line, klm_ads, all_dates)
 
     def setup_col_widths(self, xwg):
         '''
