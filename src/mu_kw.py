@@ -53,6 +53,29 @@ def unique_sorted(dane_bazy, field):
     object_names.sort()
     return object_names
 
+def wyznacz_dni_robocze(all_dates):
+    oficjalne = []
+    liczba_dat = len(all_dates)
+    if all_dates:
+        one_date = all_dates[0]
+        nkd = dn_kw.napis_na_numer_dnia(str(one_date))
+        dzien_tygodnia = dn_kw.DzienTygodnia(nkd)
+        moj_poniedzialek = -dzien_tygodnia
+        while moj_poniedzialek < liczba_dat:
+            moj_piatek = moj_poniedzialek + 4
+            if moj_poniedzialek < 0:
+                moj_pierwszy = 0
+            else:
+                moj_pierwszy = moj_poniedzialek
+            if moj_piatek >= liczba_dat - 1:
+                moj_ostatni = liczba_dat - 1
+            else:
+                moj_ostatni = moj_piatek
+            if moj_pierwszy <= moj_ostatni:
+                oficjalne.append((moj_pierwszy, moj_ostatni))
+            moj_poniedzialek += 7
+    return oficjalne
+
 CommonRdWr = tq_kw.CommonRdWr
 
 class CommonWriter(CommonRdWr):
