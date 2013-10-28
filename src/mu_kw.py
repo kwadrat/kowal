@@ -136,6 +136,7 @@ class CommonWriter(CommonRdWr):
         klm_b_ads = gu_kw.KolumnowyAdresator(last_data_line, self.last_sample_column)
         etk_a = klm_a_ads.get_ka_official_address()
         etk_b = klm_b_ads.get_ka_official_address()
+        klm_c_ads = gu_kw.KolumnowyAdresator(nmax_line, nmax_start_col)
         for i in xrange(10):
             tekst_wzoru = hj_kw.rcp_maxk(etk_a, etk_b, i)
             m_coor = to_kw.MergedCoords(nmax_line, nmax_start_col + i)
