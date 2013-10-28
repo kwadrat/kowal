@@ -177,7 +177,7 @@ class CommonWriter(CommonRdWr):
         '''
         CommonWriter:
         '''
-        m_coor = to_kw.MergedCoords(first_line, self.first_date_column)
+        m_coor = self.b1_coor(first_line)
         xwg.zapisz_co_flt(m_coor, moc_umowna, kl_miejsc=0, bold=1, rn_colour=gv_kw.ECR_red)
         klm_ads = gu_kw.KolumnowyAdresator(first_line, self.first_date_column)
         tekst_wzoru = klm_ads.get_ka_official_address()
