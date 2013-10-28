@@ -152,6 +152,13 @@ class KolumnowyAdresator(object):
             combine_rc(col_a_label, row_number),
             combine_rc(col_b_label, row_number))
 
+    def col_start_end_labels(self, row_offset=0):
+        '''
+        KolumnowyAdresator:
+        '''
+        return ('C2', 'C31')
+
+
 def generate_every_three(start_label, end_label):
     labels = []
     klm_ads = KolumnowyAdresator()
@@ -242,6 +249,7 @@ class TestKolumnowegoAdresatora(unittest.TestCase):
         self.assertEqual(obk.opposite_corner_label(), 'CT31')
         self.assertEqual(obk.row_start_end_labels(), ('C2', 'CT2'))
         self.assertEqual(obk.row_start_end_labels(1), ('C3', 'CT3'))
+        self.assertEqual(obk.col_start_end_labels(), ('C2', 'C31'))
 
     def test_6_kolumnowy_adresator(self):
         '''
