@@ -263,11 +263,11 @@ class WriterGateway(object):
         '''
         self.zapisz_polaczone_komorki(akt_wiersz, akt_kolumna, napis, style=self.n6_style, liczba_kolumn=liczba_kolumn)
 
-    def zapisz_co_flt(self, m_coor, the_content, kl_miejsc=2, size=None, bold=None):
+    def zapisz_co_flt(self, m_coor, the_content, kl_miejsc=2, size=None, bold=None, rn_colour=None):
         '''
         WriterGateway:
         '''
-        the_style = self.get_or_generate_number_style(kl_miejsc=kl_miejsc, bold=bold, size=size)
+        the_style = self.get_or_generate_number_style(kl_miejsc=kl_miejsc, bold=bold, size=size, rn_colour=rn_colour)
         self.write_single(m_coor, the_content, the_style)
 
     def zapisz_rn_flt(self, akt_wiersz, akt_kolumna, rn_liczba):
