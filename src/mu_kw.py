@@ -95,6 +95,7 @@ class CommonWriter(CommonRdWr):
         self.week_max_column = self.horiz_max_column + 1
         self.second_date_column = self.week_max_column + 1
         self.second_weekday_column = self.second_date_column + 1
+        self.nmax_start_col = 2
 
     def generate_for_a_day(self, xwg, all_dates, my_data, base_data_line, day_nr):
         '''
@@ -129,7 +130,7 @@ class CommonWriter(CommonRdWr):
             xwg.zapisz_date(row, self.second_date_column, one_date)
             xwg.napis_ze_wsp(row, self.second_weekday_column, weekday_name)
 
-    def generate_summary(self, xwg, base_data_line, last_data_line, nmax_line, nmax_start_col, ndiff_line):
+    def generate_summary(self, xwg, base_data_line, last_data_line, nmax_line, ndiff_line):
         '''
         CommonWriter:
         '''
@@ -137,12 +138,12 @@ class CommonWriter(CommonRdWr):
         klm_b_ads = gu_kw.KolumnowyAdresator(last_data_line, self.last_sample_column)
         etk_a = klm_a_ads.get_ka_official_address()
         etk_b = klm_b_ads.get_ka_official_address()
-        klm_c_ads = gu_kw.KolumnowyAdresator(nmax_line, nmax_start_col)
+        klm_c_ads = gu_kw.KolumnowyAdresator(nmax_line, self.nmax_start_col)
         row_c = nmax_line
         row_d = ndiff_line
         for i in xrange(self.liczba_max):
             tekst_wzoru = hj_kw.rcp_maxk(etk_a, etk_b, i)
-            col = nmax_start_col + i
+            col = self.nmax_start_col + i
             m_coor = to_kw.MergedCoords(row_c, col)
             xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12)
             etk_c = klm_c_ads.get_ka_official_address(col_delta=i)
@@ -203,7 +204,6 @@ class CommonWriter(CommonRdWr):
             diff_label_line = nmax_line + 1
             diff_unit_line = diff_label_line + 1
             ndiff_line = diff_unit_line + 1
-            nmax_start_col = 2
             klm_ads = gu_kw.KolumnowyAdresator(
                 wiersz_bazowy_miesiecy=base_data_line,
                 kl_assigned_col=self.first_sample_column,
@@ -215,12 +215,12 @@ class CommonWriter(CommonRdWr):
             self.generate_hours_horizontally(xwg, all_hours, first_line)
             for day_nr, my_data in enumerate(dane_bazy):
                 self.generate_for_a_day(xwg, all_dates, my_data, base_data_line, day_nr)
-            self.generate_summary(xwg, base_data_line, last_data_line, nmax_line, nmax_start_col, ndiff_line)
+            self.generate_summary(xwg, base_data_line, last_data_line, nmax_line, ndiff_line)
             the_a_style = xwg.get_or_generate_style(size=12, middle=1)
-            xwg.zapisz_polaczone_komorki(summary_label_line, nmax_start_col, '%d największych poborów mocy w m-cu' % self.liczba_max, style=the_a_style, liczba_kolumn=self.liczba_max)
-            xwg.zapisz_polaczone_komorki(summary_unit_line, nmax_start_col, gb_kw.tytul_kilowatow_przekroczenia, style=the_a_style,  liczba_kolumn=self.liczba_max)
-            xwg.zapisz_polaczone_komorki(diff_label_line, nmax_start_col, 'przekroczenia mocy (jeśli liczba ujemna to 0,00)', style=the_a_style, liczba_kolumn=self.liczba_max)
-            xwg.zapisz_polaczone_komorki(diff_unit_line, nmax_start_col, gb_kw.tytul_kilowatow_przekroczenia, style=the_a_style,  liczba_kolumn=self.liczba_max)
+            xwg.zapisz_polaczone_komorki(summary_label_line, self.nmax_start_col, '%d największych poborów mocy w m-cu' % self.liczba_max, style=the_a_style, liczba_kolumn=self.liczba_max)
+            xwg.zapisz_polaczone_komorki(summary_unit_line, self.nmax_start_col, gb_kw.tytul_kilowatow_przekroczenia, style=the_a_style,  liczba_kolumn=self.liczba_max)
+            xwg.zapisz_polaczone_komorki(diff_label_line, self.nmax_start_col, 'przekroczenia mocy (jeśli liczba ujemna to 0,00)', style=the_a_style, liczba_kolumn=self.liczba_max)
+            xwg.zapisz_polaczone_komorki(diff_unit_line, self.nmax_start_col, gb_kw.tytul_kilowatow_przekroczenia, style=the_a_style,  liczba_kolumn=self.liczba_max)
             self.generate_max_column(xwg, first_line, klm_ads)
             self.generate_week_max_column(xwg, first_line, klm_ads, all_dates)
 
