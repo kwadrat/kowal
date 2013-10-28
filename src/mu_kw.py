@@ -110,11 +110,11 @@ class CommonWriter(CommonRdWr):
         row = base_data_line + day_nr
         nkd = nr_of_day(my_data[lc_kw.fq_m_date_qv])
         jestem_weekend = wyznacz_weekend(nkd)
-        dc_style = weekend_style(jestem_weekend)
+        dc_b_style = weekend_b_style(jestem_weekend)
         for sample_index, my_sample in enumerate(my_data[lc_kw.fq_m_samples_qv]):
             col = self.first_sample_column + sample_index
             m_coor = to_kw.MergedCoords(row, col)
-            xwg.zapisz_co_flt(m_coor, my_sample, **dc_style)
+            xwg.zapisz_co_flt(m_coor, my_sample, **dc_b_style)
 
     def generate_hours_horizontally(self, xwg, all_hours, first_line):
         '''
@@ -135,10 +135,11 @@ class CommonWriter(CommonRdWr):
             nkd = nr_of_day(one_date)
             jestem_weekend = wyznacz_weekend(nkd)
             dc_style = weekend_style(jestem_weekend)
+            dc_b_style = weekend_b_style(jestem_weekend)
             weekday_name = dn_kw.nazwa_dnia_tygodnia(nkd)
             xwg.napis_ze_wsp(row, self.first_weekday_column, weekday_name, **dc_style)
-            xwg.zapisz_date(row, self.first_date_column, one_date)
-            xwg.zapisz_date(row, self.second_date_column, one_date)
+            xwg.zapisz_date(row, self.first_date_column, one_date, **dc_b_style)
+            xwg.zapisz_date(row, self.second_date_column, one_date, **dc_b_style)
             xwg.napis_ze_wsp(row, self.second_weekday_column, weekday_name, **dc_style)
 
     def b1_coor(self, first_line):
