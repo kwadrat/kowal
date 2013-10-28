@@ -174,7 +174,7 @@ class CommonWriter(CommonRdWr):
             tekst_wzoru = hj_kw.rcp_emax(etk_a, etk_b)
             row = klm_ads.get_only_row(row_delta=i)
             m_coor = to_kw.MergedCoords(row, self.horiz_max_column)
-            xwg.zapisz_wzor(m_coor, tekst_wzoru, kl_miejsc=2, size=None, bold=None)
+            xwg.zapisz_wzor(m_coor, tekst_wzoru, rn_colour=gv_kw.ECR_red)
 
     def generate_week_max_column(self, xwg, first_line, klm_ads, all_dates):
         '''
