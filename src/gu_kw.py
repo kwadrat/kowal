@@ -94,6 +94,12 @@ class KolumnowyAdresator(object):
         '''
         self.kl_assigned_col += 1
 
+    def get_only_row(self, row_delta=0):
+        '''
+        KolumnowyAdresator:
+        '''
+        return self.wiersz_bazowy_miesiecy + row_delta
+
     def get_row_col(self, row_delta=0, col_delta=0):
         '''
         KolumnowyAdresator:
@@ -240,6 +246,8 @@ class TestKolumnowegoAdresatora(unittest.TestCase):
         self.assertEqual(obk.get_ka_official_address(), 'C42')
         obk.set_next_col()
         self.assertEqual(obk.get_ka_official_address(), 'D42')
+        self.assertEqual(obk.get_only_row(), 41)
+        self.assertEqual(obk.get_only_row(row_delta=1), 42)
         self.assertEqual(obk.get_row_col(), (41, 3))
         self.assertEqual(obk.get_row_col(row_delta=1), (42, 3))
         self.assertEqual(obk.get_row_col(row_delta=1, col_delta=2), (42, 5))
