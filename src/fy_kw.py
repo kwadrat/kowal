@@ -21,9 +21,9 @@ SELECT %(k_object)s FROM %(uu_object)s WHERE %(account)s='%(under_name)s';"""
 lxa_9_inst = """\
 SELECT k_sample, f_object, m_date, m_samples FROM uu_power WHERE f_object=123 AND m_date = '2013-01-31' ORDER BY m_date;"""
 lxa_13_inst = """\
-SELECT uu_object.account,m_date,m_samples FROM uu_power,uu_object WHERE uu_power.f_object=uu_object.k_object;"""
+SELECT uu_object.account,m_date,m_samples FROM uu_power,uu_object WHERE uu_power.f_object=uu_object.k_object ORDER BY uu_power.f_object, uu_power.m_date;"""
 lxa_14_inst = """\
-SELECT %(uu_object)s.%(account)s,%(e_date)s,%(e_samples)s FROM %(table_name)s,%(uu_object)s WHERE %(table_name)s.%(e_object)s=%(uu_object)s.%(k_object)s%(wstawka_obkt)s%(wstawka_start)s%(wstawka_end)s;"""
+SELECT %(uu_object)s.%(account)s,%(e_date)s,%(e_samples)s FROM %(table_name)s,%(uu_object)s WHERE %(table_name)s.%(e_object)s=%(uu_object)s.%(k_object)s%(wstawka_obkt)s%(wstawka_start)s%(wstawka_end)s ORDER BY %(table_name)s.%(e_object)s, %(table_name)s.%(e_date)s;"""
 lxa_15_inst = """\
 INSERT INTO uu_object (account) VALUES ('n') RETURNING k_object;"""
 lxa_16_inst = """\
@@ -115,6 +115,6 @@ SELECT m_date, m_sum FROM uu_energy WHERE f_object=19 AND m_date >= '2013-01-01'
 lxa_60_inst = """\
 0"""
 lxa_61_inst = """\
-SELECT uu_object.account,m_date,m_samples FROM uu_power,uu_object WHERE uu_power.f_object=uu_object.k_object AND uu_object.k_object=123;"""
+SELECT uu_object.account,m_date,m_samples FROM uu_power,uu_object WHERE uu_power.f_object=uu_object.k_object AND uu_object.k_object=123 ORDER BY uu_power.f_object, uu_power.m_date;"""
 lxa_62_inst = """\
-SELECT uu_object.account,m_date,m_samples FROM uu_power,uu_object WHERE uu_power.f_object=uu_object.k_object AND uu_object.k_object=123 AND uu_power.m_date >= '2013-01-01' AND uu_power.m_date < '2013-02-01';"""
+SELECT uu_object.account,m_date,m_samples FROM uu_power,uu_object WHERE uu_power.f_object=uu_object.k_object AND uu_object.k_object=123 AND uu_power.m_date >= '2013-01-01' AND uu_power.m_date < '2013-02-01' ORDER BY uu_power.f_object, uu_power.m_date;"""
