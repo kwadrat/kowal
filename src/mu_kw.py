@@ -239,7 +239,7 @@ class CommonWriter(CommonRdWr):
         for col in xrange(self.first_weekday_column, self.second_weekday_column + 1):
             xwg.sheet.col(col).best_fit = 1
 
-    def generate_for_object(self, xwg, dane_bazy, name, slownik_mocy):
+    def generate_for_object(self, xwg, dane_bazy, name, uu_maper):
         '''
         CommonWriter:
         '''
@@ -258,9 +258,13 @@ class CommonWriter(CommonRdWr):
         all_months.sort()
         for nr_month, moj_rm in enumerate(all_months):
             my_data = month_dict[moj_rm]
+            if uu_maper:
+                moc_umowna = uu_maper.pobierz_umowna_moc()
+            else:
+                moc_umowna = 0
             self.generate_for_month(xwg, my_data, nr_month, dost_wiersz)
 
-    def generate_one_file(self, xwg, dfb, output_file, slownik_mocy):
+    def generate_one_file(self, xwg, dfb, output_file, uu_maper):
         '''
         CommonWriter:
         '''
@@ -282,5 +286,5 @@ class CommonWriter(CommonRdWr):
         object_names = unique_sorted(dane_bazy, lc_kw.fq_account_qv)
         xwg.workbook_create()
         for nr, name in enumerate(object_names):
-            self.generate_for_object(xwg, dane_bazy, name, slownik_mocy)
+            self.generate_for_object(xwg, dane_bazy, name, uu_maper)
         xwg.workbook_save(output_file)
