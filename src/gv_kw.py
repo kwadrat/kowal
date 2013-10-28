@@ -22,6 +22,7 @@ for i in NazwyModulow:
 ECR_indigo = 'indigo'
 ECR_red = 'red'
 ECR_sea_green = 'sea_green'
+ECR_light_turquoise = 'light_turquoise'
 
 class RichCommon(object):
     def update_value(self, rn_value):
