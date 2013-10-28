@@ -146,7 +146,7 @@ class CommonWriter(CommonRdWr):
                 col_cnt=len(all_hours),
                 row_cnt=len(all_dates),
                 )
-            xwg.napis_ze_wsp(bottom_max_line, 1, 'MAXIMUM')
+            self.generate_max_row(xwg, bottom_max_line, klm_ads)
             self.generate_dates_vertically(xwg, all_dates, base_data_line)
             self.generate_hours_horizontally(xwg, all_hours, first_line)
             for day_nr, my_data in enumerate(dane_bazy):
