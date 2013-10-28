@@ -109,6 +109,13 @@ class CommonWriter(CommonRdWr):
             xwg.zapisz_date(row, self.second_date_column, one_date)
             xwg.napis_ze_wsp(row, self.second_weekday_column, weekday_name)
 
+    def b1_coor(self, first_line):
+        '''
+        CommonWriter:
+        '''
+        m_coor = to_kw.MergedCoords(first_line, self.first_date_column)
+        return m_coor
+
     def generate_summary(self, xwg, base_data_line, last_data_line, nmax_line, ndiff_line):
         '''
         CommonWriter:
@@ -165,13 +172,6 @@ class CommonWriter(CommonRdWr):
             row = klm_ads.get_only_row(row_delta=moj_ostatni)
             m_coor = to_kw.MergedCoords(row, self.week_max_column)
             xwg.zapisz_wzor(m_coor, tekst_wzoru, kl_miejsc=2, size=None, bold=None)
-
-    def b1_coor(self, first_line):
-        '''
-        CommonWriter:
-        '''
-        m_coor = to_kw.MergedCoords(first_line, self.first_date_column)
-        return m_coor
 
     def wpisz_wartosc_mocy_umownej(self, xwg, first_line, moc_umowna):
         '''
