@@ -121,6 +121,7 @@ class TestWritingPower(unittest.TestCase):
         self.assertEqual(obk.first_sample_column, 2)
         self.assertEqual(obk.last_sample_column, 97)
         self.assertEqual(obk.horiz_max_column, 98)
+        self.assertEqual(obk.horiz_max_offset, 96)
         self.assertEqual(obk.week_max_column, 99)
         self.assertEqual(obk.second_date_column, 100)
         self.assertEqual(obk.second_weekday_column, 101)

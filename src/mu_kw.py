@@ -89,6 +89,7 @@ class CommonWriter(CommonRdWr):
         self.first_sample_column = self.first_date_column + 1
         self.last_sample_column = self.first_sample_column + self.period_server.cnt_of_samples - 1
         self.horiz_max_column = self.last_sample_column + 1
+        self.horiz_max_offset = self.horiz_max_column - self.first_sample_column
         self.week_max_column = self.horiz_max_column + 1
         self.second_date_column = self.week_max_column + 1
         self.second_weekday_column = self.second_date_column + 1
