@@ -306,7 +306,7 @@ class WriterGateway(object):
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna)
         self.write_single(m_coor, liczba, the_style)
 
-    def zapisz_date(self, akt_wiersz, akt_kolumna, liczba):
+    def zapisz_date(self, akt_wiersz, akt_kolumna, liczba, italic=None, fore_colour=None):
         '''
         WriterGateway:
         '''
