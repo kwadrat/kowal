@@ -104,7 +104,7 @@ class WriterGateway(object):
         if kl_none:
             the_style = None
         else:
-            the_key = (rn_colour, bold, size, wrap, middle)
+            the_key = (rn_colour, bold, size, wrap, middle, italic)
             the_style = self.generated_string_style_cache.get(the_key)
             if the_style is None:
                 dc_params = {}
@@ -117,6 +117,8 @@ class WriterGateway(object):
                     dc_params['size'] = size
                 if wrap is not None:
                     dc_params['wrap'] = wrap
+                if italic is not None:
+                    dc_params['italic'] = italic
                 if middle:
                     dc_params['vert'] = self.xlwt.Alignment.VERT_CENTER
                     dc_params['horz'] = self.xlwt.Alignment.HORZ_CENTER
