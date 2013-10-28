@@ -239,7 +239,7 @@ class CommonWriter(CommonRdWr):
         for col in xrange(self.first_weekday_column, self.second_weekday_column + 1):
             xwg.sheet.col(col).best_fit = 1
 
-    def generate_for_object(self, xwg, dane_bazy, name):
+    def generate_for_object(self, xwg, dane_bazy, name, slownik_mocy):
         '''
         CommonWriter:
         '''
@@ -282,5 +282,5 @@ class CommonWriter(CommonRdWr):
         object_names = unique_sorted(dane_bazy, lc_kw.fq_account_qv)
         xwg.workbook_create()
         for nr, name in enumerate(object_names):
-            self.generate_for_object(xwg, dane_bazy, name)
+            self.generate_for_object(xwg, dane_bazy, name, slownik_mocy)
         xwg.workbook_save(output_file)
