@@ -55,6 +55,19 @@ def wyznacz_dni_robocze(all_dates):
             moj_poniedzialek += 7
     return oficjalne
 
+
+def weekend_style(one_date):
+    nkd = dn_kw.napis_na_numer_dnia(str(one_date))
+    jestem_weekend = not dn_kw.RoboczyDnia(nkd)
+    if jestem_weekend:
+        dc_style = dict(
+            italic=1,
+            fore_colour=gv_kw.ECR_light_turquoise,
+            )
+    else:
+        dc_style = {}
+    return dc_style
+
 CommonRdWr = tq_kw.CommonRdWr
 
 class CommonWriter(CommonRdWr):
