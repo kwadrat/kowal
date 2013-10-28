@@ -169,11 +169,11 @@ class KolumnowyAdresator(object):
         '''
         return xrange(self.col_cnt)
 
-    def row_iter(self):
+    def row_iter(self, extra=0):
         '''
         KolumnowyAdresator:
         '''
-        return xrange(self.row_cnt)
+        return xrange(self.row_cnt + extra)
 
 def generate_every_three(start_label, end_label):
     labels = []
@@ -285,3 +285,4 @@ class TestKolumnowegoAdresatora(unittest.TestCase):
         obk = KolumnowyAdresator(col_cnt=3, row_cnt=4)
         self.assertEqual(map(None, obk.col_iter()), [0, 1, 2])
         self.assertEqual(map(None, obk.row_iter()), [0, 1, 2, 3])
+        self.assertEqual(map(None, obk.row_iter(1)), [0, 1, 2, 3, 4])
