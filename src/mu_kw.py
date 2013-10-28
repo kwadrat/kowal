@@ -135,7 +135,7 @@ class CommonWriter(CommonRdWr):
             m_coor = to_kw.MergedCoords(row_c, col)
             xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12)
             etk_c = klm_c_ads.get_ka_official_address(col_delta=i)
-            tekst_wzoru = 'MAX(0,%s)' % etk_c
+            tekst_wzoru = 'MAX(0,%s-%s)' % (etk_c, etk_e)
             m_coor = to_kw.MergedCoords(row_d, col)
             xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12)
 
