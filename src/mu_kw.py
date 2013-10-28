@@ -116,6 +116,17 @@ class CommonWriter(CommonRdWr):
             m_coor = to_kw.MergedCoords(nmax_line, nmax_start_col + i)
             xwg.zapisz_wzor(m_coor, tekst_wzoru, kl_miejsc=2, size=None, bold=None)
 
+    def generate_max_row(self, xwg, bottom_max_line, klm_ads):
+        '''
+        CommonWriter:
+        '''
+        xwg.napis_ze_wsp(bottom_max_line, self.first_date_column, napis_max)
+        for i in klm_ads.col_iter():
+            etk_a, etk_b = klm_ads.col_start_end_labels(i)
+            tekst_wzoru = hj_kw.rcp_emax(etk_a, etk_b)
+            m_coor = to_kw.MergedCoords(bottom_max_line, self.first_sample_column + i)
+            xwg.zapisz_wzor(m_coor, tekst_wzoru, kl_miejsc=2, size=None, bold=None)
+
     def generate_for_month(self, xwg, dane_bazy, nr_month, dost_wiersz):
         '''
         CommonWriter:
