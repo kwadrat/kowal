@@ -98,6 +98,7 @@ class WriterGateway(object):
             pattern = self.xlwt.Pattern()
             if needed_fore_colour:
                 pattern.pattern_fore_colour = fore_colour
+            pattern.pattern = self.xlwt.Pattern.SOLID_PATTERN
             the_style.pattern = pattern
         if num_format_str is not None:
             the_style.num_format_str = num_format_str
