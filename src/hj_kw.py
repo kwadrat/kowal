@@ -134,6 +134,9 @@ def rcp_sred(etk_a, etk_b):
 def rcp_emax(etk_a, etk_b):
     return rcp_wspolne('MAX', etk_a, etk_b)
 
+def rcp_emin(etk_a, etk_b):
+    return rcp_wspolne('MIN', etk_a, etk_b)
+
 def rcp_maxk(etk_a, etk_b, the_order):
     trzeci = ',%d' % (the_order + 1)
     return rcp_wspolne('LARGE', etk_a, etk_b, trzeci)
@@ -205,6 +208,7 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(rcp_poziom('E23', 'G23'), 'SUM(E23:G23)')
         self.assertEqual(rcp_sred('E23', 'G23'), 'AVERAGE(E23:G23)')
         self.assertEqual(rcp_emax('E23', 'G23'), 'MAX(E23:G23)')
+        self.assertEqual(rcp_emin('E23', 'G23'), 'MIN(E23:G23)')
         self.assertEqual(rcp_maxk('C2', 'CT31', 0), 'LARGE(C2:CT31,1)')
         self.assertEqual(rcp_maxk('C2', 'CT31', 1), 'LARGE(C2:CT31,2)')
         a = [1, 4, 2, 3]; reverse_but_last(a)
