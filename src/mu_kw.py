@@ -107,6 +107,7 @@ class CommonWriter(CommonRdWr):
             if jestem_weekend:
                 dc_style = dict(
                     italic=1,
+                    fore_colour=gv_kw.ECR_light_turquoise,
                     )
             else:
                 dc_style = {}
