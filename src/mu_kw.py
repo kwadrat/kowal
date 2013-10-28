@@ -237,8 +237,8 @@ class CommonWriter(CommonRdWr):
             for day_nr, my_data in enumerate(dane_bazy):
                 self.generate_for_a_day(xwg, all_dates, my_data, base_data_line, day_nr)
             self.generate_summary(xwg, base_data_line, last_data_line, nmax_line, ndiff_line, first_line)
-            the_a_style = xwg.get_or_generate_style(size=12, middle=1)
-            the_b_style = xwg.get_or_generate_style(size=12, middle=1, wrap=1)
+            the_a_style = xwg.get_or_generate_style(size=12, middle=1, borders=1)
+            the_b_style = xwg.get_or_generate_style(size=12, middle=1, wrap=1, borders=1)
             xwg.zapisz_polaczone_komorki(summary_label_line, self.nmax_start_col, '%d największych poborów mocy w m-cu' % self.liczba_max, style=the_a_style, liczba_kolumn=self.liczba_max)
             xwg.zapisz_polaczone_komorki(summary_unit_line, self.nmax_start_col, gb_kw.tytul_kilowatow_przekroczenia, style=the_a_style,  liczba_kolumn=self.liczba_max)
             xwg.zapisz_polaczone_komorki(diff_label_line, self.nmax_start_col, 'przekroczenia mocy (jeśli liczba ujemna to 0,00)', style=the_a_style, liczba_kolumn=self.liczba_max)
