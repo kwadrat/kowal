@@ -157,7 +157,7 @@ class CommonWriter(CommonRdWr):
         '''
         CommonWriter:
         '''
-        xwg.napis_ze_wsp(bottom_max_line, self.first_date_column, napis_max)
+        xwg.napis_ze_wsp(bottom_max_line, self.first_date_column, napis_max, rn_colour=gv_kw.ECR_red)
         for i in klm_ads.col_iter():
             etk_a, etk_b = klm_ads.col_start_end_labels(i)
             tekst_wzoru = hj_kw.rcp_emax(etk_a, etk_b)
@@ -168,7 +168,7 @@ class CommonWriter(CommonRdWr):
         '''
         CommonWriter:
         '''
-        xwg.napis_ze_wsp(first_line, self.horiz_max_column, napis_max)
+        xwg.napis_ze_wsp(first_line, self.horiz_max_column, napis_max, rn_colour=gv_kw.ECR_red)
         for i in klm_ads.row_iter(1):
             etk_a, etk_b = klm_ads.row_start_end_labels(i)
             tekst_wzoru = hj_kw.rcp_emax(etk_a, etk_b)
