@@ -237,7 +237,7 @@ class CommonWriter(CommonRdWr):
         for nr_month, moj_rm in enumerate(all_months):
             my_data = month_dict[moj_rm]
             if uu_maper:
-                moc_umowna = uu_maper.pobierz_umowna_moc()
+                moc_umowna = uu_maper.pobierz_umowna_moc(nr_uu, moj_rm)
             else:
                 moc_umowna = 0
             self.generate_for_month(xwg, my_data, nr_month, dost_wiersz)
