@@ -332,7 +332,7 @@ class WriterGateway(object):
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna)
         self.write_single(m_coor, tresc_napisu, style=the_style)
 
-    def napis_ze_stylem(self, m_coor, tresc_napisu=None, rn_colour=None, bold=0, size=None, wrap=None, middle=None, kl_none=None, italic=None):
+    def napis_ze_stylem(self, m_coor, tresc_napisu=None, rn_colour=None, bold=0, size=None, wrap=None, middle=None, kl_none=None, italic=None, fore_colour=None):
         '''
         WriterGateway:
         '''
@@ -344,7 +344,7 @@ class WriterGateway(object):
         WriterGateway:
         '''
         m_coor = to_kw.MergedCoords(row, col)
-        self.napis_ze_stylem(m_coor, tresc_napisu, bold=bold, rn_colour=rn_colour, italic=italic)
+        self.napis_ze_stylem(m_coor, tresc_napisu, bold=bold, rn_colour=rn_colour, italic=italic, fore_colour=fore_colour)
 
     def wymus_szerokosci(self, lista_rozmiarow):
         '''
