@@ -103,11 +103,18 @@ class CommonWriter(CommonRdWr):
         for nr, one_date in enumerate(all_dates):
             row = base_data_line + nr
             nkd = dn_kw.napis_na_numer_dnia(str(one_date))
+            jestem_weekend = not dn_kw.RoboczyDnia(nkd)
+            if jestem_weekend:
+                dc_style = dict(
+                    italic=1,
+                    )
+            else:
+                dc_style = {}
             weekday_name = dn_kw.nazwa_dnia_tygodnia(nkd)
-            xwg.napis_ze_wsp(row, self.first_weekday_column, weekday_name)
+            xwg.napis_ze_wsp(row, self.first_weekday_column, weekday_name, **dc_style)
             xwg.zapisz_date(row, self.first_date_column, one_date)
             xwg.zapisz_date(row, self.second_date_column, one_date)
-            xwg.napis_ze_wsp(row, self.second_weekday_column, weekday_name)
+            xwg.napis_ze_wsp(row, self.second_weekday_column, weekday_name, **dc_style)
 
     def b1_coor(self, first_line):
         '''
