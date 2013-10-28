@@ -59,6 +59,10 @@ def nr_of_day(one_date):
     nkd = dn_kw.napis_na_numer_dnia(str(one_date))
     return nkd
 
+def wyznacz_weekend(nkd):
+    jestem_weekend = not dn_kw.RoboczyDnia(nkd)
+    return jestem_weekend
+
 def weekend_style(nkd):
     jestem_weekend = not dn_kw.RoboczyDnia(nkd)
     if jestem_weekend:
