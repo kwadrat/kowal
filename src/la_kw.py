@@ -58,7 +58,7 @@ class WriterGateway(object):
     - wzór
     - None - puste pole, które ma formatowanie
     '''
-    def prepare_cell(self, size=None, bold=None, num_format_str=None, wrap=None, vert=None, horz=None, colour=None, borders=None):
+    def prepare_cell(self, size=None, bold=None, num_format_str=None, wrap=None, vert=None, horz=None, colour=None, borders=None, italic=None):
         '''
         WriterGateway:
         '''
@@ -81,12 +81,15 @@ class WriterGateway(object):
         needed_size = size is not None
         needed_bold = bold is not None
         needed_colour = colour is not None
-        if needed_size or needed_bold or needed_colour:
+        needed_italic = italic is not None
+        if needed_size or needed_bold or needed_colour or needed_italic:
             the_font = self.xlwt.Font()
             if needed_size:
                 the_font.height = size * 20 # Arial "size" pt
             if needed_bold:
                 the_font.bold = bold
+            if needed_italic:
+                the_font.italic = italic
             if needed_colour:
                 the_font.colour_index = colour
             the_style.font = the_font
