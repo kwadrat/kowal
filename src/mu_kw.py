@@ -260,7 +260,7 @@ class CommonWriter(CommonRdWr):
             my_data = month_dict[moj_rm]
             self.generate_for_month(xwg, my_data, nr_month, dost_wiersz)
 
-    def generate_one_file(self, xwg, dfb, output_file):
+    def generate_one_file(self, xwg, dfb, output_file, slownik_mocy):
         '''
         CommonWriter:
         '''

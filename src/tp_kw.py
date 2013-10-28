@@ -18,5 +18,5 @@ for i in NazwyModulow:
 
 def generate_excel_files(dfb, plik_energii, plik_mocy, slownik_mocy):
     xwg = la_kw.WriterGateway()
-    fu_kw.EnergyWriter().generate_one_file(xwg, dfb, plik_energii)
-    mt_kw.PowerWriter().generate_one_file(xwg, dfb, plik_mocy)
+    fu_kw.EnergyWriter().generate_one_file(xwg, dfb, plik_energii, {})
+    mt_kw.PowerWriter().generate_one_file(xwg, dfb, plik_mocy, slownik_mocy)
