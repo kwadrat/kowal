@@ -82,6 +82,7 @@ class WriterGateway(object):
         needed_bold = bold is not None
         needed_colour = colour is not None
         needed_italic = italic is not None
+        needed_fore_colour = fore_colour is not None
         if needed_size or needed_bold or needed_colour or needed_italic:
             the_font = self.xlwt.Font()
             if needed_size:
@@ -93,6 +94,11 @@ class WriterGateway(object):
             if needed_colour:
                 the_font.colour_index = colour
             the_style.font = the_font
+        if needed_fore_colour:
+            pattern = self.xlwt.Pattern()
+            if needed_fore_colour:
+                pattern.pattern_fore_colour = fore_colour
+            the_style.pattern = pattern
         if num_format_str is not None:
             the_style.num_format_str = num_format_str
         return the_style
