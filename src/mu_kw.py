@@ -137,9 +137,16 @@ class CommonWriter(CommonRdWr):
         etk_a = klm_a_ads.get_ka_official_address()
         etk_b = klm_b_ads.get_ka_official_address()
         klm_c_ads = gu_kw.KolumnowyAdresator(nmax_line, nmax_start_col)
+        row_c = nmax_line
+        row_d = ndiff_line
         for i in xrange(10):
             tekst_wzoru = hj_kw.rcp_maxk(etk_a, etk_b, i)
-            m_coor = to_kw.MergedCoords(nmax_line, nmax_start_col + i)
+            col = nmax_start_col + i
+            m_coor = to_kw.MergedCoords(row_c, col)
+            xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12)
+            etk_c = klm_c_ads.get_ka_official_address(col_delta=i)
+            tekst_wzoru = 'MAX(0,%s)' % etk_c
+            m_coor = to_kw.MergedCoords(row_d, col)
             xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12)
 
     def generate_max_row(self, xwg, bottom_max_line, klm_ads):
