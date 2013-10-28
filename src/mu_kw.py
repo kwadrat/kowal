@@ -221,6 +221,7 @@ class CommonWriter(CommonRdWr):
             xwg.zapisz_polaczone_komorki(summary_label_line, self.nmax_start_col, '%d największych poborów mocy w m-cu' % self.liczba_max, style=the_a_style, liczba_kolumn=self.liczba_max)
             xwg.zapisz_polaczone_komorki(summary_unit_line, self.nmax_start_col, gb_kw.tytul_kilowatow_przekroczenia, style=the_a_style,  liczba_kolumn=self.liczba_max)
             xwg.zapisz_polaczone_komorki(diff_label_line, self.nmax_start_col, 'przekroczenia mocy (jeśli liczba ujemna to 0,00)', style=the_a_style, liczba_kolumn=self.liczba_max)
+            xwg.zapisz_polaczone_komorki(diff_label_line, self.col_for_moc_max, 'Suma przekr', style=the_b_style)
             xwg.zapisz_polaczone_komorki(diff_unit_line, self.nmax_start_col, gb_kw.tytul_kilowatow_przekroczenia, style=the_a_style,  liczba_kolumn=self.liczba_max)
             xwg.zapisz_polaczone_komorki(summary_label_line, self.col_for_moc_max, 'Moc max', style=the_b_style)
             xwg.zapisz_polaczone_komorki(summary_label_line, self.col_for_moc_max + 1, 'Moc śred', style=the_b_style)
