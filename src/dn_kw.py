@@ -242,6 +242,9 @@ def RoboczyDnia(nkd):
     '''
     return DzienTygodnia(nkd) < 5
 
+def is_friday(nkd):
+    return DzienTygodnia(nkd) == 4
+
 def get_monday(nkd):
     '''Na podstawie dowolnego dnia tygodnia wyznacz
     początkowy poniedziałek'''
@@ -498,6 +501,8 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(RoboczyDnia(4), 1)
         self.assertEqual(RoboczyDnia(5), 1)
         self.assertEqual(RoboczyDnia(6), 1) # Środa
+        self.assertEqual(is_friday(0), 0) # Czwartek
+        self.assertEqual(is_friday(1), 1) # Piątek
         self.assertEqual(get_monday(4), 4)
         self.assertEqual(get_monday(5), 4)
         self.assertEqual(get_monday(6), 4)
