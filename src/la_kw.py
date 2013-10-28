@@ -132,7 +132,7 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        the_key = (kl_miejsc, rn_colour, bold, size, middle)
+        the_key = (kl_miejsc, rn_colour, bold, size, middle, borders)
         the_style = self.generated_number_style_cache.get(the_key)
         if the_style is None:
             dc_params = {}
@@ -143,6 +143,8 @@ class WriterGateway(object):
                 dc_params['bold'] = bold
             if size is not None:
                 dc_params['size'] = size
+            if borders is not None:
+                dc_params['borders'] = borders
             if middle:
                 dc_params['vert'] = self.xlwt.Alignment.VERT_CENTER
                 dc_params['horz'] = self.xlwt.Alignment.HORZ_CENTER
