@@ -198,6 +198,7 @@ class CommonWriter(CommonRdWr):
             self.generate_max_row(xwg, bottom_max_line, klm_ads)
             self.generate_dates_vertically(xwg, all_dates, base_data_line)
             self.generate_hours_horizontally(xwg, all_hours, first_line)
+            self.wpisz_wartosc_mocy_umownej(xwg, first_line, moc_umowna)
             for day_nr, my_data in enumerate(dane_bazy):
                 self.generate_for_a_day(xwg, all_dates, my_data, base_data_line, day_nr)
             self.generate_summary(xwg, base_data_line, last_data_line, nmax_line, ndiff_line)
