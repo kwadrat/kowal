@@ -128,7 +128,7 @@ class WriterGateway(object):
                 self.generated_string_style_cache[the_key] = the_style
         return the_style
 
-    def get_or_generate_number_style(self, kl_miejsc=2, rn_colour=None, bold=None, size=None, middle=1):
+    def get_or_generate_number_style(self, kl_miejsc=2, rn_colour=None, bold=None, size=None, middle=1, borders=None):
         '''
         WriterGateway:
         '''
@@ -274,7 +274,7 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        the_style = self.get_or_generate_number_style(kl_miejsc=kl_miejsc, bold=bold, size=size, rn_colour=rn_colour)
+        the_style = self.get_or_generate_number_style(kl_miejsc=kl_miejsc, bold=bold, size=size, rn_colour=rn_colour, borders=borders)
         self.write_single(m_coor, the_content, the_style)
 
     def zapisz_rn_flt(self, akt_wiersz, akt_kolumna, rn_liczba):
