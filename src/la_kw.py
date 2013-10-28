@@ -311,7 +311,7 @@ class WriterGateway(object):
         WriterGateway:
         '''
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna)
-        the_style = self.get_or_generate_number_style(kl_miejsc=NMF_3_date)
+        the_style = self.get_or_generate_number_style(kl_miejsc=NMF_3_date, italic=italic, fore_colour=fore_colour)
         self.write_single(m_coor, liczba, the_style)
 
     def zapisz_wzor(self, m_coor, tekst_wzoru, kl_miejsc=2, size=None, bold=None, rn_colour=None, borders=None):
