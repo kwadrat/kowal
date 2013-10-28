@@ -74,6 +74,15 @@ def weekend_style(nkd):
         dc_style = {}
     return dc_style
 
+def weekend_b_style(jestem_weekend):
+    if jestem_weekend:
+        dc_style = dict(
+            fore_colour=gv_kw.ECR_light_turquoise,
+            )
+    else:
+        dc_style = {}
+    return dc_style
+
 CommonRdWr = tq_kw.CommonRdWr
 
 class CommonWriter(CommonRdWr):
