@@ -124,7 +124,7 @@ class CommonWriter(CommonRdWr):
         klm_b_ads = gu_kw.KolumnowyAdresator(last_data_line, self.last_sample_column)
         etk_a = klm_a_ads.get_ka_official_address()
         etk_b = klm_b_ads.get_ka_official_address()
-        klm_c_ads = gu_kw.KolumnowyAdresator(nmax_line, self.nmax_start_col)
+        klm_c_ads = gu_kw.KolumnowyAdresator(nmax_line, self.nmax_start_col, col_cnt=self.liczba_max)
         row_c = nmax_line
         row_d = ndiff_line
         m_coor = self.b1_coor(first_line)
