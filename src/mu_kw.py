@@ -139,7 +139,7 @@ class CommonWriter(CommonRdWr):
         for i in xrange(10):
             tekst_wzoru = hj_kw.rcp_maxk(etk_a, etk_b, i)
             m_coor = to_kw.MergedCoords(nmax_line, nmax_start_col + i)
-            xwg.zapisz_wzor(m_coor, tekst_wzoru, kl_miejsc=2, size=None, bold=None)
+            xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12)
 
     def generate_max_row(self, xwg, bottom_max_line, klm_ads):
         '''
@@ -150,7 +150,7 @@ class CommonWriter(CommonRdWr):
             etk_a, etk_b = klm_ads.col_start_end_labels(i)
             tekst_wzoru = hj_kw.rcp_emax(etk_a, etk_b)
             m_coor = to_kw.MergedCoords(bottom_max_line, self.first_sample_column + i)
-            xwg.zapisz_wzor(m_coor, tekst_wzoru, kl_miejsc=2, size=None, bold=None)
+            xwg.zapisz_wzor(m_coor, tekst_wzoru)
 
     def generate_max_column(self, xwg, first_line, klm_ads):
         '''
