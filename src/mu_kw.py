@@ -63,8 +63,7 @@ def wyznacz_weekend(nkd):
     jestem_weekend = not dn_kw.RoboczyDnia(nkd)
     return jestem_weekend
 
-def weekend_style(nkd):
-    jestem_weekend = not dn_kw.RoboczyDnia(nkd)
+def weekend_style(jestem_weekend):
     if jestem_weekend:
         dc_style = dict(
             italic=1,
@@ -110,7 +109,8 @@ class CommonWriter(CommonRdWr):
         '''
         row = base_data_line + day_nr
         nkd = nr_of_day(my_data[lc_kw.fq_m_date_qv])
-        dc_style = weekend_style(nkd)
+        jestem_weekend = wyznacz_weekend(nkd)
+        dc_style = weekend_style(jestem_weekend)
         for sample_index, my_sample in enumerate(my_data[lc_kw.fq_m_samples_qv]):
             col = self.first_sample_column + sample_index
             m_coor = to_kw.MergedCoords(row, col)
@@ -133,7 +133,8 @@ class CommonWriter(CommonRdWr):
         for nr, one_date in enumerate(all_dates):
             row = base_data_line + nr
             nkd = nr_of_day(one_date)
-            dc_style = weekend_style(nkd)
+            jestem_weekend = wyznacz_weekend(nkd)
+            dc_style = weekend_style(jestem_weekend)
             weekday_name = dn_kw.nazwa_dnia_tygodnia(nkd)
             xwg.napis_ze_wsp(row, self.first_weekday_column, weekday_name, **dc_style)
             xwg.zapisz_date(row, self.first_date_column, one_date)
