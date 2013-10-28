@@ -187,7 +187,9 @@ class CommonWriter(CommonRdWr):
             base_data_line = first_line + 1
             last_data_line = base_data_line + len(all_dates) - 1
             bottom_max_line = last_data_line + 1
-            nmax_line = bottom_max_line + 3
+            summary_label_line = bottom_max_line + 1
+            summary_unit_line = summary_label_line + 1
+            nmax_line = summary_unit_line + 1
             nmax_start_col = 2
             klm_ads = gu_kw.KolumnowyAdresator(
                 wiersz_bazowy_miesiecy=base_data_line,
