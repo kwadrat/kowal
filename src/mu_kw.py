@@ -55,6 +55,9 @@ def wyznacz_dni_robocze(all_dates):
             moj_poniedzialek += 7
     return oficjalne
 
+def nr_of_day(one_date):
+    nkd = dn_kw.napis_na_numer_dnia(str(one_date))
+    return nkd
 
 def weekend_style(one_date):
     nkd = dn_kw.napis_na_numer_dnia(str(one_date))
