@@ -127,6 +127,18 @@ class CommonWriter(CommonRdWr):
             m_coor = to_kw.MergedCoords(bottom_max_line, self.first_sample_column + i)
             xwg.zapisz_wzor(m_coor, tekst_wzoru, kl_miejsc=2, size=None, bold=None)
 
+    def generate_max_column(self, xwg, first_line, klm_ads):
+        '''
+        CommonWriter:
+        '''
+        xwg.napis_ze_wsp(first_line, self.horiz_max_column, napis_max)
+        for i in klm_ads.row_iter(1):
+            etk_a, etk_b = klm_ads.row_start_end_labels(i)
+            tekst_wzoru = hj_kw.rcp_emax(etk_a, etk_b)
+            row = klm_ads.get_only_row(row_delta=i)
+            m_coor = to_kw.MergedCoords(row, self.horiz_max_column)
+            xwg.zapisz_wzor(m_coor, tekst_wzoru, kl_miejsc=2, size=None, bold=None)
+
     def generate_for_month(self, xwg, dane_bazy, nr_month, dost_wiersz):
         '''
         CommonWriter:
@@ -152,6 +164,7 @@ class CommonWriter(CommonRdWr):
             for day_nr, my_data in enumerate(dane_bazy):
                 self.generate_for_a_day(xwg, all_dates, my_data, base_data_line, day_nr)
             self.generate_summary(xwg, base_data_line, last_data_line, nmax_line, nmax_start_col)
+            self.generate_max_column(xwg, first_line, klm_ads)
 
     def setup_col_widths(self, xwg):
         '''
