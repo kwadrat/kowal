@@ -96,6 +96,7 @@ class CommonWriter(CommonRdWr):
         self.second_date_column = self.week_max_column + 1
         self.second_weekday_column = self.second_date_column + 1
         self.nmax_start_col = 2
+        self.col_for_moc_max = self.nmax_start_col + self.liczba_max
 
     def generate_for_a_day(self, xwg, all_dates, my_data, base_data_line, day_nr):
         '''
