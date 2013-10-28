@@ -127,6 +127,8 @@ class CommonWriter(CommonRdWr):
         klm_c_ads = gu_kw.KolumnowyAdresator(nmax_line, self.nmax_start_col)
         row_c = nmax_line
         row_d = ndiff_line
+        m_coor = self.b1_coor(first_line)
+        etk_e = gu_kw.KolumnowyAdresator(*m_coor.wyznacz_dwa()).get_ka_official_address()
         for i in xrange(self.liczba_max):
             tekst_wzoru = hj_kw.rcp_maxk(etk_a, etk_b, i)
             col = self.nmax_start_col + i
