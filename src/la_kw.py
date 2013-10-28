@@ -94,7 +94,7 @@ class WriterGateway(object):
             the_style.num_format_str = num_format_str
         return the_style
 
-    def get_or_generate_style(self, rn_colour=None, bold=None, size=None, wrap=None, middle=None, kl_none=None):
+    def get_or_generate_style(self, rn_colour=None, bold=None, size=None, wrap=None, middle=None, kl_none=None, italic=None):
         '''
         WriterGateway:
         '''
@@ -317,7 +317,7 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        the_style = self.get_or_generate_style(rn_colour, bold, size, wrap, middle, kl_none)
+        the_style = self.get_or_generate_style(rn_colour, bold, size, wrap, middle, kl_none, italic=italic)
         self.zapisz_mi(m_coor, tresc_napisu, style=the_style)
 
     def napis_ze_wsp(self, row, col, tresc_napisu=None, bold=None, rn_colour=None, italic=None):
