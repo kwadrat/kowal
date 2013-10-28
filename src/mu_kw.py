@@ -148,17 +148,17 @@ class CommonWriter(CommonRdWr):
         etk_f, etk_g = klm_c_ads.row_start_end_labels()
         tekst_wzoru = hj_kw.rcp_emax(etk_f, etk_g)
         m_coor = to_kw.MergedCoords(row_c, self.col_for_moc_max)
-        xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12, bold=1)
+        xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12, bold=1, borders=1)
         tekst_wzoru = hj_kw.rcp_sred(etk_f, etk_g)
         m_coor = to_kw.MergedCoords(row_c, self.col_for_moc_max + 1)
-        xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12)
+        xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12, borders=1)
         tekst_wzoru = hj_kw.rcp_emin(etk_f, etk_g)
         m_coor = to_kw.MergedCoords(row_c, self.col_for_moc_max + 2)
-        xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12)
+        xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12, borders=1)
         etk_h, etk_i = klm_c_ads.row_start_end_labels(ndiff_line - nmax_line)
         tekst_wzoru = hj_kw.rcp_poziom(etk_h, etk_i)
         m_coor = to_kw.MergedCoords(ndiff_line, self.col_for_moc_max)
-        xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12)
+        xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12, borders=1)
 
     def generate_max_row(self, xwg, bottom_max_line, klm_ads):
         '''
