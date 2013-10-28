@@ -163,6 +163,11 @@ class KolumnowyAdresator(object):
             combine_rc(col_label, row_a_number),
             combine_rc(col_label, row_b_number))
 
+    def col_iter(self):
+        '''
+        KolumnowyAdresator:
+        '''
+        return xrange(self.col_cnt)
 
 def generate_every_three(start_label, end_label):
     labels = []
@@ -266,3 +271,10 @@ class TestKolumnowegoAdresatora(unittest.TestCase):
         self.assertEqual(obk.opposite_col_label(), 'Z')
         self.assertEqual(obk.opposite_row_nr(), 71)
         self.assertEqual(obk.opposite_corner_label(), 'Z71')
+
+    def test_7_kolumnowy_adresator(self):
+        '''
+        TestKolumnowegoAdresatora:
+        '''
+        obk = KolumnowyAdresator(col_cnt=3)
+        self.assertEqual(map(None, obk.col_iter()), [0, 1, 2])
