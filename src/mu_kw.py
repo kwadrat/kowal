@@ -140,11 +140,11 @@ class CommonWriter(CommonRdWr):
             tekst_wzoru = hj_kw.rcp_maxk(etk_a, etk_b, i)
             col = self.nmax_start_col + i
             m_coor = to_kw.MergedCoords(row_c, col)
-            xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12)
+            xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12, borders=1)
             etk_c = klm_c_ads.get_ka_official_address(col_delta=i)
             tekst_wzoru = 'MAX(0,%s-%s)' % (etk_c, etk_e)
             m_coor = to_kw.MergedCoords(row_d, col)
-            xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12)
+            xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12, borders=1)
         etk_f, etk_g = klm_c_ads.row_start_end_labels()
         tekst_wzoru = hj_kw.rcp_emax(etk_f, etk_g)
         m_coor = to_kw.MergedCoords(row_c, self.col_for_moc_max)
