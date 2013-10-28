@@ -223,6 +223,12 @@ class CommonWriter(CommonRdWr):
             xwg.zapisz_polaczone_komorki(summary_unit_line, self.nmax_start_col, gb_kw.tytul_kilowatow_przekroczenia, style=the_a_style,  liczba_kolumn=self.liczba_max)
             xwg.zapisz_polaczone_komorki(diff_label_line, self.nmax_start_col, 'przekroczenia mocy (jeśli liczba ujemna to 0,00)', style=the_a_style, liczba_kolumn=self.liczba_max)
             xwg.zapisz_polaczone_komorki(diff_unit_line, self.nmax_start_col, gb_kw.tytul_kilowatow_przekroczenia, style=the_a_style,  liczba_kolumn=self.liczba_max)
+            xwg.zapisz_polaczone_komorki(summary_label_line, self.col_for_moc_max, 'Moc max', style=the_b_style)
+            xwg.zapisz_polaczone_komorki(summary_label_line, self.col_for_moc_max + 1, 'Moc śred', style=the_b_style)
+            xwg.zapisz_polaczone_komorki(summary_label_line, self.col_for_moc_max + 2, 'Moc min', style=the_b_style)
+            xwg.zapisz_polaczone_komorki(summary_unit_line, self.col_for_moc_max, gb_kw.tytul_kilowatow_przekroczenia, style=the_b_style)
+            xwg.zapisz_polaczone_komorki(summary_unit_line, self.col_for_moc_max + 1, gb_kw.tytul_kilowatow_przekroczenia, style=the_b_style)
+            xwg.zapisz_polaczone_komorki(summary_unit_line, self.col_for_moc_max + 2, gb_kw.tytul_kilowatow_przekroczenia, style=the_b_style)
             self.generate_max_column(xwg, first_line, klm_ads)
             self.generate_week_max_column(xwg, first_line, klm_ads, all_dates)
 
