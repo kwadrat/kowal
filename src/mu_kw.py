@@ -221,6 +221,7 @@ class CommonWriter(CommonRdWr):
         CommonWriter:
         '''
         dost_wiersz = gx_kw.Wierszownik(0)
+        nr_uu = uu_maper.get_my_nr(name)
         xwg.add_a_sheet(uu_maper.get_short_name(name))
         self.setup_col_widths(xwg)
         selected_data = filter(lambda x: x[lc_kw.fq_account_qv] == name, dane_bazy)
