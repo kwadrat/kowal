@@ -165,6 +165,13 @@ class CommonWriter(CommonRdWr):
             m_coor = to_kw.MergedCoords(row, self.week_max_column)
             xwg.zapisz_wzor(m_coor, tekst_wzoru, kl_miejsc=2, size=None, bold=None)
 
+    def wpisz_wartosc_mocy_umownej(self, xwg, first_line, moc_umowna):
+        '''
+        CommonWriter:
+        '''
+        m_coor = to_kw.MergedCoords(first_line, self.first_date_column)
+        xwg.zapisz_co_flt(m_coor, moc_umowna, kl_miejsc=0, bold=1)
+
     def generate_for_month(self, xwg, dane_bazy, nr_month, dost_wiersz):
         '''
         CommonWriter:
