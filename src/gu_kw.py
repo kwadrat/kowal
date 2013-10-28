@@ -158,7 +158,7 @@ class KolumnowyAdresator(object):
             combine_rc(col_a_label, row_number),
             combine_rc(col_b_label, row_number))
 
-    def col_start_end_labels(self, col_offset=0):
+    def col_start_end_labels(self, col_offset=0, moj_pierwszy=None, moj_ostatni=None):
         '''
         KolumnowyAdresator:
         '''
@@ -275,6 +275,7 @@ class TestKolumnowegoAdresatora(unittest.TestCase):
         self.assertEqual(obk.row_start_end_labels(1), ('C3', 'CT3'))
         self.assertEqual(obk.col_start_end_labels(), ('C2', 'C31'))
         self.assertEqual(obk.col_start_end_labels(1), ('D2', 'D31'))
+        self.assertEqual(obk.col_start_end_labels(moj_pierwszy=2, moj_ostatni=6), ('C2', 'C31'))
 
     def test_6_kolumnowy_adresator(self):
         '''
