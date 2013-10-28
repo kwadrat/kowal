@@ -85,6 +85,7 @@ class CommonWriter(CommonRdWr):
         CommonWriter:
         '''
         CommonRdWr.__init__(self, tvk_pobor, period_server)
+        self.liczba_max = 10
         self.first_weekday_column = 0
         self.first_date_column = self.first_weekday_column + 1
         self.first_sample_column = self.first_date_column + 1
@@ -139,7 +140,7 @@ class CommonWriter(CommonRdWr):
         klm_c_ads = gu_kw.KolumnowyAdresator(nmax_line, nmax_start_col)
         row_c = nmax_line
         row_d = ndiff_line
-        for i in xrange(10):
+        for i in xrange(self.liczba_max):
             tekst_wzoru = hj_kw.rcp_maxk(etk_a, etk_b, i)
             col = nmax_start_col + i
             m_coor = to_kw.MergedCoords(row_c, col)
@@ -216,10 +217,10 @@ class CommonWriter(CommonRdWr):
                 self.generate_for_a_day(xwg, all_dates, my_data, base_data_line, day_nr)
             self.generate_summary(xwg, base_data_line, last_data_line, nmax_line, nmax_start_col, ndiff_line)
             the_a_style = xwg.get_or_generate_style(size=12, middle=1)
-            xwg.zapisz_polaczone_komorki(summary_label_line, nmax_start_col, '10 największych poborów mocy w m-cu', style=the_a_style, liczba_kolumn=10)
-            xwg.zapisz_polaczone_komorki(summary_unit_line, nmax_start_col, gb_kw.tytul_kilowatow_przekroczenia, style=the_a_style,  liczba_kolumn=10)
-            xwg.zapisz_polaczone_komorki(diff_label_line, nmax_start_col, 'przekroczenia mocy (jeśli liczba ujemna to 0,00)', style=the_a_style, liczba_kolumn=10)
-            xwg.zapisz_polaczone_komorki(diff_unit_line, nmax_start_col, gb_kw.tytul_kilowatow_przekroczenia, style=the_a_style,  liczba_kolumn=10)
+            xwg.zapisz_polaczone_komorki(summary_label_line, nmax_start_col, '%d największych poborów mocy w m-cu' % self.liczba_max, style=the_a_style, liczba_kolumn=self.liczba_max)
+            xwg.zapisz_polaczone_komorki(summary_unit_line, nmax_start_col, gb_kw.tytul_kilowatow_przekroczenia, style=the_a_style,  liczba_kolumn=self.liczba_max)
+            xwg.zapisz_polaczone_komorki(diff_label_line, nmax_start_col, 'przekroczenia mocy (jeśli liczba ujemna to 0,00)', style=the_a_style, liczba_kolumn=self.liczba_max)
+            xwg.zapisz_polaczone_komorki(diff_unit_line, nmax_start_col, gb_kw.tytul_kilowatow_przekroczenia, style=the_a_style,  liczba_kolumn=self.liczba_max)
             self.generate_max_column(xwg, first_line, klm_ads)
             self.generate_week_max_column(xwg, first_line, klm_ads, all_dates)
 
