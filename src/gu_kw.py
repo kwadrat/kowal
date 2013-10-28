@@ -169,6 +169,12 @@ class KolumnowyAdresator(object):
         '''
         return xrange(self.col_cnt)
 
+    def row_iter(self):
+        '''
+        KolumnowyAdresator:
+        '''
+        return xrange(self.row_cnt)
+
 def generate_every_three(start_label, end_label):
     labels = []
     klm_ads = KolumnowyAdresator()
@@ -276,5 +282,6 @@ class TestKolumnowegoAdresatora(unittest.TestCase):
         '''
         TestKolumnowegoAdresatora:
         '''
-        obk = KolumnowyAdresator(col_cnt=3)
+        obk = KolumnowyAdresator(col_cnt=3, row_cnt=4)
         self.assertEqual(map(None, obk.col_iter()), [0, 1, 2])
+        self.assertEqual(map(None, obk.row_iter()), [0, 1, 2, 3])
