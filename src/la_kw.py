@@ -124,6 +124,9 @@ class WriterGateway(object):
                 if middle:
                     dc_params['vert'] = self.xlwt.Alignment.VERT_CENTER
                     dc_params['horz'] = self.xlwt.Alignment.HORZ_CENTER
+                if fore_colour is not None:
+                    colour = self.xlwt.Style.colour_map[rn_colour]
+                    dc_params['fore_colour'] = colour
                 the_style = self.prepare_cell(**dc_params)
                 self.generated_string_style_cache[the_key] = the_style
         return the_style
