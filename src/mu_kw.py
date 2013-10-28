@@ -4,6 +4,7 @@
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lc_kw
 import to_kw
+import gv_kw
 import hj_kw
 import gu_kw
 import rq_kw
@@ -170,7 +171,7 @@ class CommonWriter(CommonRdWr):
         CommonWriter:
         '''
         m_coor = to_kw.MergedCoords(first_line, self.first_date_column)
-        xwg.zapisz_co_flt(m_coor, moc_umowna, kl_miejsc=0, bold=1)
+        xwg.zapisz_co_flt(m_coor, moc_umowna, kl_miejsc=0, bold=1, rn_colour=gv_kw.ECR_red)
 
     def generate_for_month(self, xwg, dane_bazy, nr_month, dost_wiersz, moc_umowna):
         '''
