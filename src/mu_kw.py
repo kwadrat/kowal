@@ -128,7 +128,7 @@ class CommonWriter(CommonRdWr):
             xwg.zapisz_date(row, self.second_date_column, one_date)
             xwg.napis_ze_wsp(row, self.second_weekday_column, weekday_name)
 
-    def generate_summary(self, xwg, base_data_line, last_data_line, nmax_line, nmax_start_col):
+    def generate_summary(self, xwg, base_data_line, last_data_line, nmax_line, nmax_start_col, ndiff_line):
         '''
         CommonWriter:
         '''
@@ -206,7 +206,7 @@ class CommonWriter(CommonRdWr):
             self.generate_hours_horizontally(xwg, all_hours, first_line)
             for day_nr, my_data in enumerate(dane_bazy):
                 self.generate_for_a_day(xwg, all_dates, my_data, base_data_line, day_nr)
-            self.generate_summary(xwg, base_data_line, last_data_line, nmax_line, nmax_start_col)
+            self.generate_summary(xwg, base_data_line, last_data_line, nmax_line, nmax_start_col, ndiff_line)
             the_a_style = xwg.get_or_generate_style(size=12, middle=1)
             xwg.zapisz_polaczone_komorki(summary_label_line, nmax_start_col, '10 największych poborów mocy w m-cu', style=the_a_style, liczba_kolumn=10)
             xwg.zapisz_polaczone_komorki(summary_unit_line, nmax_start_col, gb_kw.tytul_kilowatow_przekroczenia, style=the_a_style,  liczba_kolumn=10)
