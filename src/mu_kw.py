@@ -59,8 +59,7 @@ def nr_of_day(one_date):
     nkd = dn_kw.napis_na_numer_dnia(str(one_date))
     return nkd
 
-def weekend_style(one_date):
-    nkd = dn_kw.napis_na_numer_dnia(str(one_date))
+def weekend_style(nkd):
     jestem_weekend = not dn_kw.RoboczyDnia(nkd)
     if jestem_weekend:
         dc_style = dict(
@@ -118,15 +117,8 @@ class CommonWriter(CommonRdWr):
         '''
         for nr, one_date in enumerate(all_dates):
             row = base_data_line + nr
-            nkd = dn_kw.napis_na_numer_dnia(str(one_date))
-            jestem_weekend = not dn_kw.RoboczyDnia(nkd)
-            if jestem_weekend:
-                dc_style = dict(
-                    italic=1,
-                    fore_colour=gv_kw.ECR_light_turquoise,
-                    )
-            else:
-                dc_style = {}
+            nkd = nr_of_day(one_date)
+            dc_style = weekend_style(nkd)
             weekday_name = dn_kw.nazwa_dnia_tygodnia(nkd)
             xwg.napis_ze_wsp(row, self.first_weekday_column, weekday_name, **dc_style)
             xwg.zapisz_date(row, self.first_date_column, one_date)
