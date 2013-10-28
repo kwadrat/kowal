@@ -162,7 +162,7 @@ class CommonWriter(CommonRdWr):
             etk_a, etk_b = klm_ads.col_start_end_labels(i)
             tekst_wzoru = hj_kw.rcp_emax(etk_a, etk_b)
             m_coor = to_kw.MergedCoords(bottom_max_line, self.first_sample_column + i)
-            xwg.zapisz_wzor(m_coor, tekst_wzoru)
+            xwg.zapisz_wzor(m_coor, tekst_wzoru, rn_colour=gv_kw.ECR_red)
 
     def generate_max_column(self, xwg, first_line, klm_ads):
         '''
