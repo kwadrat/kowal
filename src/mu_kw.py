@@ -138,6 +138,10 @@ class CommonWriter(CommonRdWr):
             tekst_wzoru = 'MAX(0,%s-%s)' % (etk_c, etk_e)
             m_coor = to_kw.MergedCoords(row_d, col)
             xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12)
+        etk_f, etk_g = klm_c_ads.row_start_end_labels()
+        tekst_wzoru = hj_kw.rcp_emax(etk_f, etk_g)
+        m_coor = to_kw.MergedCoords(row_c, self.col_for_moc_max)
+        xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12)
 
     def generate_max_row(self, xwg, bottom_max_line, klm_ads):
         '''
