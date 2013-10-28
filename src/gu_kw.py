@@ -104,7 +104,7 @@ class KolumnowyAdresator(object):
         '''
         KolumnowyAdresator:
         '''
-        return (self.wiersz_bazowy_miesiecy + row_delta,
+        return (self.get_only_row(row_delta),
             self.kl_assigned_col + col_delta)
 
     def advance_row_by(self, row_delta=1):
