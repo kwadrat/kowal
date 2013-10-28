@@ -157,6 +157,9 @@ class WriterGateway(object):
                 dc_params['borders'] = borders
             if italic is not None:
                 dc_params['italic'] = italic
+            if fore_colour is not None:
+                colour = self.xlwt.Style.colour_map[fore_colour]
+                dc_params['fore_colour'] = colour
             if middle:
                 dc_params['vert'] = self.xlwt.Alignment.VERT_CENTER
                 dc_params['horz'] = self.xlwt.Alignment.HORZ_CENTER
