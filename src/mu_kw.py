@@ -206,9 +206,9 @@ class CommonWriter(CommonRdWr):
             for day_nr, my_data in enumerate(dane_bazy):
                 self.generate_for_a_day(xwg, all_dates, my_data, base_data_line, day_nr)
             self.generate_summary(xwg, base_data_line, last_data_line, nmax_line, nmax_start_col)
-            style = xwg.get_or_generate_style(size=12, middle=1)
-            xwg.zapisz_polaczone_komorki(summary_label_line, nmax_start_col, '10 największych poborów mocy w m-cu', style=style, liczba_kolumn=10)
-            xwg.zapisz_polaczone_komorki(summary_unit_line, nmax_start_col, gb_kw.tytul_kilowatow_przekroczenia, style=style,  liczba_kolumn=10)
+            the_a_style = xwg.get_or_generate_style(size=12, middle=1)
+            xwg.zapisz_polaczone_komorki(summary_label_line, nmax_start_col, '10 największych poborów mocy w m-cu', style=the_a_style, liczba_kolumn=10)
+            xwg.zapisz_polaczone_komorki(summary_unit_line, nmax_start_col, gb_kw.tytul_kilowatow_przekroczenia, style=the_a_style,  liczba_kolumn=10)
             self.generate_max_column(xwg, first_line, klm_ads)
             self.generate_week_max_column(xwg, first_line, klm_ads, all_dates)
 
