@@ -290,12 +290,12 @@ class WriterGateway(object):
         the_style = self.get_or_generate_number_style(kl_miejsc=NMF_3_date)
         self.write_single(m_coor, liczba, the_style)
 
-    def zapisz_wzor(self, m_coor, tekst_wzoru, kl_miejsc=2, size=None, bold=None):
+    def zapisz_wzor(self, m_coor, tekst_wzoru, kl_miejsc=2, size=None, bold=None, rn_colour=None):
         '''
         WriterGateway:
         '''
         the_content = self.xlwt.Formula(tekst_wzoru)
-        self.zapisz_co_flt(m_coor, the_content, kl_miejsc, size, bold)
+        self.zapisz_co_flt(m_coor, the_content, kl_miejsc, size, bold, rn_colour=rn_colour)
 
     def zapisz_nazwe_miesiaca(self, akt_wiersz, nr_mies):
         '''
