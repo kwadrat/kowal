@@ -163,8 +163,14 @@ class KolumnowyAdresator(object):
         KolumnowyAdresator:
         '''
         col_label = self.get_col_letter(col_delta=col_offset)
-        row_a_number = self.get_ka_official_row()
-        row_b_number = self.opposite_row_nr()
+        if moj_pierwszy is None:
+            row_a_number = self.get_ka_official_row()
+        else:
+            row_a_number = self.get_ka_official_row(moj_pierwszy)
+        if moj_ostatni is None:
+            row_b_number = self.opposite_row_nr()
+        else:
+            row_b_number = self.get_ka_official_row(moj_ostatni)
         return (
             combine_rc(col_label, row_a_number),
             combine_rc(col_label, row_b_number))
@@ -275,7 +281,7 @@ class TestKolumnowegoAdresatora(unittest.TestCase):
         self.assertEqual(obk.row_start_end_labels(1), ('C3', 'CT3'))
         self.assertEqual(obk.col_start_end_labels(), ('C2', 'C31'))
         self.assertEqual(obk.col_start_end_labels(1), ('D2', 'D31'))
-        self.assertEqual(obk.col_start_end_labels(moj_pierwszy=2, moj_ostatni=6), ('C2', 'C31'))
+        self.assertEqual(obk.col_start_end_labels(col_offset=96, moj_pierwszy=2, moj_ostatni=6), ('CU4', 'CU8'))
 
     def test_6_kolumnowy_adresator(self):
         '''
