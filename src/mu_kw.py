@@ -172,6 +172,10 @@ class CommonWriter(CommonRdWr):
         '''
         m_coor = to_kw.MergedCoords(first_line, self.first_date_column)
         xwg.zapisz_co_flt(m_coor, moc_umowna, kl_miejsc=0, bold=1, rn_colour=gv_kw.ECR_red)
+        klm_ads = gu_kw.KolumnowyAdresator(first_line, self.first_date_column)
+        tekst_wzoru = klm_ads.get_ka_official_address()
+        m_coor = to_kw.MergedCoords(first_line, self.second_date_column)
+        xwg.zapisz_wzor(m_coor, tekst_wzoru, kl_miejsc=0, size=None, bold=1, rn_colour=gv_kw.ECR_red)
 
     def generate_for_month(self, xwg, dane_bazy, nr_month, dost_wiersz, moc_umowna):
         '''
