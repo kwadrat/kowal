@@ -129,6 +129,12 @@ class CommonWriter(CommonRdWr):
             bottom_max_line = last_data_line + 1
             nmax_line = bottom_max_line + 3
             nmax_start_col = 2
+            klm_ads = gu_kw.KolumnowyAdresator(
+                wiersz_bazowy_miesiecy=base_data_line,
+                kl_assigned_col=self.first_sample_column,
+                col_cnt=len(all_hours),
+                row_cnt=len(all_dates),
+                )
             xwg.napis_ze_wsp(bottom_max_line, 1, 'MAXIMUM')
             self.generate_dates_vertically(xwg, all_dates, base_data_line)
             self.generate_hours_horizontally(xwg, all_hours, first_line)
