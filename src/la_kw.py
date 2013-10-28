@@ -282,7 +282,7 @@ class WriterGateway(object):
         '''
         self.zapisz_polaczone_komorki(akt_wiersz, akt_kolumna, napis, style=self.n6_style, liczba_kolumn=liczba_kolumn)
 
-    def zapisz_co_flt(self, m_coor, the_content, kl_miejsc=2, size=None, bold=None, rn_colour=None, borders=None):
+    def zapisz_co_flt(self, m_coor, the_content, kl_miejsc=2, size=None, bold=None, rn_colour=None, borders=None, italic=None, fore_colour=None):
         '''
         WriterGateway:
         '''
