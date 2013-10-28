@@ -116,7 +116,7 @@ class CommonWriter(CommonRdWr):
         m_coor = to_kw.MergedCoords(first_line, self.first_date_column)
         return m_coor
 
-    def generate_summary(self, xwg, base_data_line, last_data_line, nmax_line, ndiff_line):
+    def generate_summary(self, xwg, base_data_line, last_data_line, nmax_line, ndiff_line, first_line):
         '''
         CommonWriter:
         '''
@@ -213,7 +213,7 @@ class CommonWriter(CommonRdWr):
             self.wpisz_wartosc_mocy_umownej(xwg, first_line, moc_umowna)
             for day_nr, my_data in enumerate(dane_bazy):
                 self.generate_for_a_day(xwg, all_dates, my_data, base_data_line, day_nr)
-            self.generate_summary(xwg, base_data_line, last_data_line, nmax_line, ndiff_line)
+            self.generate_summary(xwg, base_data_line, last_data_line, nmax_line, ndiff_line, first_line)
             the_a_style = xwg.get_or_generate_style(size=12, middle=1)
             the_b_style = xwg.get_or_generate_style(size=12, middle=1, wrap=1)
             xwg.zapisz_polaczone_komorki(summary_label_line, self.nmax_start_col, '%d największych poborów mocy w m-cu' % self.liczba_max, style=the_a_style, liczba_kolumn=self.liczba_max)
