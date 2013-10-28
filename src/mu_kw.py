@@ -172,7 +172,7 @@ class CommonWriter(CommonRdWr):
         m_coor = to_kw.MergedCoords(first_line, self.first_date_column)
         xwg.zapisz_co_flt(m_coor, moc_umowna, kl_miejsc=0, bold=1)
 
-    def generate_for_month(self, xwg, dane_bazy, nr_month, dost_wiersz):
+    def generate_for_month(self, xwg, dane_bazy, nr_month, dost_wiersz, moc_umowna):
         '''
         CommonWriter:
         '''
@@ -247,7 +247,7 @@ class CommonWriter(CommonRdWr):
                 moc_umowna = uu_maper.pobierz_umowna_moc(nr_uu, moj_rm)
             else:
                 moc_umowna = 0
-            self.generate_for_month(xwg, my_data, nr_month, dost_wiersz)
+            self.generate_for_month(xwg, my_data, nr_month, dost_wiersz, moc_umowna)
 
     def generate_one_file(self, xwg, dfb, output_file, uu_maper):
         '''
