@@ -338,7 +338,7 @@ class WriterGateway(object):
         the_style = self.get_or_generate_style(rn_colour, bold, size, wrap, middle, kl_none, italic=italic)
         self.zapisz_mi(m_coor, tresc_napisu, style=the_style)
 
-    def napis_ze_wsp(self, row, col, tresc_napisu=None, bold=None, rn_colour=None, italic=None):
+    def napis_ze_wsp(self, row, col, tresc_napisu=None, bold=None, rn_colour=None, italic=None, fore_colour=None):
         '''
         WriterGateway:
         '''
