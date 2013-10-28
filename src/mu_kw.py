@@ -192,6 +192,7 @@ class CommonWriter(CommonRdWr):
             summary_unit_line = summary_label_line + 1
             nmax_line = summary_unit_line + 1
             diff_label_line = nmax_line + 1
+            diff_unit_line = diff_label_line + 1
             nmax_start_col = 2
             klm_ads = gu_kw.KolumnowyAdresator(
                 wiersz_bazowy_miesiecy=base_data_line,
