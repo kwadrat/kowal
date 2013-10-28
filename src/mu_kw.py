@@ -141,7 +141,7 @@ class CommonWriter(CommonRdWr):
         etk_f, etk_g = klm_c_ads.row_start_end_labels()
         tekst_wzoru = hj_kw.rcp_emax(etk_f, etk_g)
         m_coor = to_kw.MergedCoords(row_c, self.col_for_moc_max)
-        xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12)
+        xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12, bold=1)
         tekst_wzoru = hj_kw.rcp_sred(etk_f, etk_g)
         m_coor = to_kw.MergedCoords(row_c, self.col_for_moc_max + 1)
         xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12)
