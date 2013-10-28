@@ -209,6 +209,8 @@ class CommonWriter(CommonRdWr):
             the_a_style = xwg.get_or_generate_style(size=12, middle=1)
             xwg.zapisz_polaczone_komorki(summary_label_line, nmax_start_col, '10 największych poborów mocy w m-cu', style=the_a_style, liczba_kolumn=10)
             xwg.zapisz_polaczone_komorki(summary_unit_line, nmax_start_col, gb_kw.tytul_kilowatow_przekroczenia, style=the_a_style,  liczba_kolumn=10)
+            xwg.zapisz_polaczone_komorki(diff_label_line, nmax_start_col, 'przekroczenia mocy (jeśli liczba ujemna to 0,00)', style=the_a_style, liczba_kolumn=10)
+            xwg.zapisz_polaczone_komorki(diff_unit_line, nmax_start_col, gb_kw.tytul_kilowatow_przekroczenia, style=the_a_style,  liczba_kolumn=10)
             self.generate_max_column(xwg, first_line, klm_ads)
             self.generate_week_max_column(xwg, first_line, klm_ads, all_dates)
 
