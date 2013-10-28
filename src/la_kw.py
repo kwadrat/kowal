@@ -94,7 +94,7 @@ class WriterGateway(object):
             the_style.num_format_str = num_format_str
         return the_style
 
-    def get_or_generate_style(self, rn_colour, bold, size, wrap, middle, kl_none):
+    def get_or_generate_style(self, rn_colour=None, bold=None, size=None, wrap=None, middle=None, kl_none=None):
         '''
         WriterGateway:
         '''
