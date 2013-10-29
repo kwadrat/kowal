@@ -89,7 +89,11 @@ def dodaj_z_pomijaniem_pustych(elems):
         if elem is not None:
             e_sum += elem
             e_cnt += 1
-    return e_sum / e_cnt
+    if e_cnt:
+        value = e_sum / e_cnt
+    else:
+        value = None
+    return value
 
 CommonRdWr = tq_kw.CommonRdWr
 
