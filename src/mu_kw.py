@@ -278,7 +278,7 @@ class CommonWriter(CommonRdWr):
             if moc_umowna is None:
                 moc_um_dec = lm_kw.wartosc_zero_globalna
             else:
-                moc_um_dec = lm_kw.rzeczywista_na_napis(moc_umowna)
+                moc_um_dec = lm_kw.a2d(lm_kw.rzeczywista_na_napis(moc_umowna))
             for day_nr, my_data in enumerate(dane_bazy):
                 self.generate_for_a_day(xwg, my_data, base_data_line, day_nr, moc_um_dec)
             self.generate_summary(xwg, base_data_line, last_data_line, nmax_line, ndiff_line, first_line)
