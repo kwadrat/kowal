@@ -83,6 +83,10 @@ def weekend_b_style(jestem_weekend):
         dc_style = {}
     return dc_style
 
+dc_d_style = dict(fore_colour=gv_kw.ECR_red)
+dc_e_style = dict(fore_colour=gv_kw.ECR_yellow)
+dc_f_style = dict(fore_colour=gv_kw.ECR_light_turquoise)
+
 CommonRdWr = tq_kw.CommonRdWr
 
 class CommonWriter(CommonRdWr):
