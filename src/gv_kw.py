@@ -21,6 +21,7 @@ for i in NazwyModulow:
 
 ECR_indigo = 'indigo'
 ECR_red = 'red'
+ECR_yellow = 'yellow'
 ECR_sea_green = 'sea_green'
 ECR_light_turquoise = 'light_turquoise'
 
