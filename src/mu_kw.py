@@ -116,6 +116,9 @@ class CommonWriter(CommonRdWr):
         nkd = nr_of_day(my_data[lc_kw.fq_m_date_qv])
         jestem_weekend = wyznacz_weekend(nkd)
         dc_b_style = weekend_b_style(jestem_weekend)
+        samples_in_order = my_data[lc_kw.fq_m_samples_qv][:]
+        samples_in_order.sort()
+        ten_treshold = samples_in_order[-10]
         for sample_index, my_sample in enumerate(my_data[lc_kw.fq_m_samples_qv]):
             col = self.first_sample_column + sample_index
             m_coor = to_kw.MergedCoords(row, col)
