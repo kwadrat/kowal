@@ -82,19 +82,6 @@ def weekend_b_style(jestem_weekend):
         dc_style = {}
     return dc_style
 
-def dodaj_z_pomijaniem_pustych(elems):
-    e_sum = 0
-    e_cnt = 0
-    for elem in elems:
-        if elem is not None:
-            e_sum += elem
-            e_cnt += 1
-    if e_cnt:
-        value = e_sum / e_cnt
-    else:
-        value = None
-    return value
-
 CommonRdWr = tq_kw.CommonRdWr
 
 class CommonWriter(CommonRdWr):
