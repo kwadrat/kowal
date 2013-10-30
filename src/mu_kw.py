@@ -268,7 +268,10 @@ class CommonWriter(CommonRdWr):
             self.generate_dates_vertically(xwg, all_dates, base_data_line)
             self.generate_hours_horizontally(xwg, all_hours, first_line)
             self.wpisz_wartosc_mocy_umownej(xwg, first_line, moc_umowna)
-            moc_um_dec = lm_kw.rzeczywista_na_napis(moc_umowna)
+            if moc_umowna is None:
+                moc_um_dec = lm_kw.wartosc_zero_globalna
+            else:
+                moc_um_dec = lm_kw.rzeczywista_na_napis(moc_umowna)
             for day_nr, my_data in enumerate(dane_bazy):
                 self.generate_for_a_day(xwg, my_data, base_data_line, day_nr, moc_um_dec)
             self.generate_summary(xwg, base_data_line, last_data_line, nmax_line, ndiff_line, first_line)
