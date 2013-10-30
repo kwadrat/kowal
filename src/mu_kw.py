@@ -137,7 +137,7 @@ class CommonWriter(CommonRdWr):
         for nr, one_hour in enumerate(all_hours):
             col = self.first_sample_column + nr
             m_coor = to_kw.MergedCoords(row, col)
-            xwg.napis_ze_stylem(m_coor, one_hour, middle=1)
+            xwg.napis_ze_stylem(m_coor, one_hour, middle=1, bold=1)
 
     def generate_dates_vertically(self, xwg, all_dates, base_data_line):
         '''
