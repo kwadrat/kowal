@@ -115,13 +115,20 @@ class CommonWriter(CommonRdWr):
         row = base_data_line + day_nr
         nkd = nr_of_day(my_data[lc_kw.fq_m_date_qv])
         jestem_weekend = wyznacz_weekend(nkd)
-        dc_b_style = weekend_b_style(jestem_weekend)
         samples_in_order = my_data[lc_kw.fq_m_samples_qv][:]
         samples_in_order.sort()
         ten_treshold = samples_in_order[-10]
         for sample_index, my_sample in enumerate(my_data[lc_kw.fq_m_samples_qv]):
             col = self.first_sample_column + sample_index
             m_coor = to_kw.MergedCoords(row, col)
+            if my_sample > moc_um_dec:
+                dc_b_style = dc_d_style
+            elif my_sample > ten_treshold:
+                dc_b_style = dc_e_style
+            elif jestem_weekend:
+                dc_b_style = dc_f_style
+            else:
+                dc_b_style = {}
             xwg.zapisz_co_flt(m_coor, my_sample, **dc_b_style)
 
     def generate_hours_horizontally(self, xwg, all_hours, first_line):
