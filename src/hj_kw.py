@@ -51,6 +51,9 @@ def Pokoniuguj(lista):
 def make_alternatives(lista):
     return ' OR '.join(lista)
 
+def make_conjunction(lista):
+    return ' AND '.join(lista)
+
 def condition_kv(key, value):
     if value is None:
         status = "%(key)s is null" % dict(key=key)
@@ -183,6 +186,7 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(condition_kv('b', 45), "b = '45'")
         self.assertEqual(condition_kv('c', None), "c is null")
         self.assertEqual(make_alternatives(['a', 'b', 'c']), "a OR b OR c")
+        self.assertEqual(make_conjunction(['a', 'b', 'c']), "a AND b AND c")
         self.assertEqual(ladnie_przecinkami(['a', 'b', 'c']), "a, b, c")
         self.assertEqual(ls_przec('a', 'b', 'c'), 'a, b, c')
         self.assertEqual(with_spaces('a', 'b', 'c'), 'a b c')
