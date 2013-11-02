@@ -49,8 +49,8 @@ def nazwa_rzymskiego(numer):
 
 def roman_range(krotka):
     return '%s-%s-%s' % (
-        tab_rzymskich[krotka[0] - 1],
-        tab_rzymskich[krotka[1] - 1],
+        nazwa_rzymskiego(krotka[0]),
+        nazwa_rzymskiego(krotka[1]),
         krotka[2],
         )
 
