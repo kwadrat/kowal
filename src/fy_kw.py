@@ -66,8 +66,7 @@ SELECT m_date, m_none, m_zero, m_sum FROM uu_energy WHERE f_object=7 ORDER BY m_
 lxa_39_inst = """\
 SELECT %(part_my_fields)s FROM %(my_table_name)s%(part_my_limits)s ORDER BY %(e_date)s;"""
 lxa_40_inst = "tabelkowiec"
-lxa_43_inst = """\
-formularz"""
+lxa_43_inst = 'formularz'
 lxa_44_inst = '''\
 selwyborca'''
 lxa_45_inst = '''\
