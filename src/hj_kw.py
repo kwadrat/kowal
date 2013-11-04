@@ -169,6 +169,9 @@ def rc_rozszczep(the_label):
     the_number = int(the_label[the_index:])
     return the_letters, the_number
 
+def md_fn(modul, funkcja):
+    return '%s.%s' % (modul, funkcja)
+
 class TestProcessingSQL(unittest.TestCase):
     def test_processing_sql(self):
         '''
@@ -227,3 +230,4 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(rc_rozszczep('B2'), ('B', 2))
         self.assertEqual(rc_rozszczep('AB234'), ('AB', 234))
         self.assertRaises(RuntimeError, rc_rozszczep, 'A')
+        self.assertEqual(md_fn('a', 'b'), 'a.b')
