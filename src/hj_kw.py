@@ -172,6 +172,9 @@ def rc_rozszczep(the_label):
 def md_fn(modul, funkcja):
     return '%s.%s' % (modul, funkcja)
 
+def md_vt(value):
+    return value + '*1.23'
+
 class TestProcessingSQL(unittest.TestCase):
     def test_processing_sql(self):
         '''
@@ -231,3 +234,4 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(rc_rozszczep('AB234'), ('AB', 234))
         self.assertRaises(RuntimeError, rc_rozszczep, 'A')
         self.assertEqual(md_fn('a', 'b'), 'a.b')
+        self.assertEqual(md_vt('a'), 'a*1.23')
