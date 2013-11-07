@@ -36,6 +36,7 @@ energy_chooser = {
         gb_kw.Jedn_kWh,
         fy_kw.lxa_56_inst,
         sum,
+        'e',
         ],
     lw_kw.Dn_Power: [
         96,
@@ -43,6 +44,7 @@ energy_chooser = {
         gb_kw.Jedn_kWtow,
         fy_kw.lxa_57_inst,
         protected_max,
+        'p',
         ],
     }
 
@@ -58,6 +60,7 @@ class CechaEnergii(object):
             self.krt_jedn,
             self.krt_etykieta,
             self.krt_vl_fnctn,
+            self.krt_letter,
             ) = energy_chooser[self.tvk_pobor]
 
     def cumulative_init(self):
@@ -86,6 +89,7 @@ class TestEnergyFeatures(unittest.TestCase):
         self.assertEqual(obk.krt_jedn, gb_kw.Jedn_kWh)
         self.assertEqual(obk.krt_etykieta, fy_kw.lxa_56_inst)
         self.assertEqual(obk.krt_vl_fnctn, sum)
+        self.assertEqual(obk.krt_letter, 'e')
 
     def test_2_energy_features(self):
         '''
@@ -97,6 +101,7 @@ class TestEnergyFeatures(unittest.TestCase):
         self.assertEqual(obk.krt_jedn, gb_kw.Jedn_kWtow)
         self.assertEqual(obk.krt_etykieta, fy_kw.lxa_57_inst)
         self.assertEqual(obk.krt_vl_fnctn, protected_max)
+        self.assertEqual(obk.krt_letter, 'p')
 
     def test_sum_of_energy(self):
         '''
