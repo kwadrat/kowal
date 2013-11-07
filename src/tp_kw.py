@@ -25,8 +25,3 @@ def generate_raport_file(dfb, nazwa_pliku, uu_maper, krt_pobor, id_obiekt):
         assert krt_pobor.tvk_pobor == lw_kw.Dn_Power
         obk = mt_kw.PowerWriter()
     obk.generate_one_file(xwg, dfb, nazwa_pliku, uu_maper, id_obiekt=id_obiekt)
-
-def generate_excel_files(dfb, plik_energii, plik_mocy, uu_maper):
-    xwg = la_kw.WriterGateway()
-    fu_kw.EnergyWriter().generate_one_file(xwg, dfb, plik_energii, uu_maper)
-    mt_kw.PowerWriter().generate_one_file(xwg, dfb, plik_mocy, uu_maper)
