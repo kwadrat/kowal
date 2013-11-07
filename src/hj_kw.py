@@ -175,6 +175,9 @@ def md_fn(modul, funkcja):
 def md_vt(value):
     return value + '*1.23'
 
+def remove_nones(elements):
+    return filter(lambda x: x is not None, elements)
+
 def jeden_z_pomijaniem_pustych(elems, prog_wartosci):
     e_cnt = 0
     for elem in elems:

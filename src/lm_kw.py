@@ -5,6 +5,7 @@ import unittest
 import decimal
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import hj_kw
 import rq_kw
 '''.splitlines()]
 
@@ -105,6 +106,21 @@ class TestPointNumbers(unittest.TestCase):
         self.assertEqual(readjust_number(3, 1.5555), decimal.Decimal('1.556'))
         self.assertEqual(rzeczywista_na_napis(589.56 * 100), '58956')
         self.assertEqual(rzeczywista_na_napis(589.56), '589.56')
+        self.assertEqual(hj_kw.remove_nones(
+            [
+            wartosc_zero_globalna,
+            None,
+            1,
+            2,
+            3,
+            ]),
+            [
+            wartosc_zero_globalna,
+            1,
+            2,
+            3,
+            ],
+            )
 
     def test_generate_yscale(self):
         '''

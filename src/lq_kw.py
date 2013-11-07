@@ -4,6 +4,7 @@
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import hj_kw
 import lm_kw
 import le_kw
 '''.splitlines()]
@@ -39,11 +40,8 @@ def cnt_none(elements):
 def cnt_zero(elements):
     return len(filter(lambda x: x in (0.0, lm_kw.wartosc_zero_globalna), elements))
 
-def remove_nones(elements):
-    return filter(lambda x: x is not None, elements)
-
 def sum_of_not_nones(krt_vl_fnctn, elements):
-    return krt_vl_fnctn(remove_nones(elements))
+    return krt_vl_fnctn(hj_kw.remove_nones(elements))
 
 def obtain_stats(krt_vl_fnctn, list_of_samples):
     v_none = cnt_none(list_of_samples)
@@ -133,18 +131,3 @@ class TestRowChanges(unittest.TestCase):
             3,
             ]),
             lm_kw.a2d('6'))
-        self.assertEqual(remove_nones(
-            [
-            lm_kw.wartosc_zero_globalna,
-            None,
-            1,
-            2,
-            3,
-            ]),
-            [
-            lm_kw.wartosc_zero_globalna,
-            1,
-            2,
-            3,
-            ],
-            )
