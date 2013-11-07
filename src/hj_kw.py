@@ -178,7 +178,7 @@ def md_vt(value):
 def remove_nones(elements):
     return filter(lambda x: x is not None, elements)
 
-def jeden_z_pomijaniem_pustych(elems, prog_wartosci):
+def wybierz_najwiekszy(elems):
     value = None
     selected_elements = remove_nones(elems)
     if selected_elements:
@@ -245,6 +245,6 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertRaises(RuntimeError, rc_rozszczep, 'A')
         self.assertEqual(md_fn('a', 'b'), 'a.b')
         self.assertEqual(md_vt('a'), 'a*1.23')
-        self.assertEqual(jeden_z_pomijaniem_pustych([], 0), None)
-        self.assertEqual(jeden_z_pomijaniem_pustych([1], 0), 1)
-        self.assertEqual(jeden_z_pomijaniem_pustych([2, 1], 0), 2)
+        self.assertEqual(wybierz_najwiekszy([]), None)
+        self.assertEqual(wybierz_najwiekszy([1]), 1)
+        self.assertEqual(wybierz_najwiekszy([2, 1]), 2)
