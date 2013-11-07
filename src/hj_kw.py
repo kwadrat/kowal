@@ -186,7 +186,7 @@ def wybierz_najwiekszy(elems):
     return value
 
 def wybierz_powyzej_progu(local_maximum, local_treshold):
-    pass
+    return local_maximum
 
 class TestProcessingSQL(unittest.TestCase):
     def test_processing_sql(self):
@@ -252,3 +252,4 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(wybierz_najwiekszy([1]), 1)
         self.assertEqual(wybierz_najwiekszy([2, 1]), 2)
         self.assertEqual(wybierz_powyzej_progu(None, 0), None)
+        self.assertEqual(wybierz_powyzej_progu(1, 0), 1)
