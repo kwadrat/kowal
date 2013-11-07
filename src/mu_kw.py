@@ -332,7 +332,7 @@ class CommonWriter(CommonRdWr):
                 moc_umowna = 0
             self.generate_for_month(xwg, my_data, nr_month, dost_wiersz, moc_umowna)
 
-    def generate_one_file(self, xwg, dfb, output_file, uu_maper):
+    def generate_one_file(self, xwg, dfb, output_file, uu_maper, id_obiekt=None):
         '''
         CommonWriter:
         '''
@@ -342,7 +342,6 @@ class CommonWriter(CommonRdWr):
             my_month = 6
             my_start_date, my_end_date = dn_kw.daty_skrajne_miesiaca(my_year, my_month, liczba_mies=2)
         else:
-            id_obiekt = None
             my_start_date, my_end_date = None, None
         dane_bazy = le_kw.dq_load_from_db(
             dfb,
