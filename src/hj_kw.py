@@ -179,14 +179,10 @@ def remove_nones(elements):
     return filter(lambda x: x is not None, elements)
 
 def jeden_z_pomijaniem_pustych(elems, prog_wartosci):
-    e_cnt = 0
-    for elem in elems:
-        if elem is not None:
-            e_cnt += 1
-    if e_cnt:
-        value = max(elems)
-    else:
-        value = None
+    value = None
+    selected_elements = remove_nones(elems)
+    if selected_elements:
+        value = max(selected_elements)
     return value
 
 class TestProcessingSQL(unittest.TestCase):
