@@ -175,6 +175,17 @@ def md_fn(modul, funkcja):
 def md_vt(value):
     return value + '*1.23'
 
+def jeden_z_pomijaniem_pustych(elems, prog_wartosci):
+    e_cnt = 0
+    for elem in elems:
+        if elem is not None:
+            e_cnt += 1
+    if e_cnt:
+        value = max(elems)
+    else:
+        value = None
+    return value
+
 class TestProcessingSQL(unittest.TestCase):
     def test_processing_sql(self):
         '''
@@ -235,3 +246,6 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertRaises(RuntimeError, rc_rozszczep, 'A')
         self.assertEqual(md_fn('a', 'b'), 'a.b')
         self.assertEqual(md_vt('a'), 'a*1.23')
+        self.assertEqual(jeden_z_pomijaniem_pustych([], 0), None)
+        self.assertEqual(jeden_z_pomijaniem_pustych([1], 0), 1)
+        self.assertEqual(jeden_z_pomijaniem_pustych([2, 1], 0), 2)
