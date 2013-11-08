@@ -344,12 +344,12 @@ class WriterGateway(object):
         the_style = self.get_or_generate_style(rn_colour, bold, size, wrap, middle, kl_none, italic=italic, fore_colour=fore_colour)
         self.zapisz_mi(m_coor, tresc_napisu, style=the_style)
 
-    def napis_ze_wsp(self, row, col, tresc_napisu=None, bold=None, rn_colour=None, italic=None, fore_colour=None):
+    def napis_ze_wsp(self, row, col, tresc_napisu=None, bold=None, rn_colour=None, italic=None, fore_colour=None, middle=None):
         '''
         WriterGateway:
         '''
         m_coor = to_kw.MergedCoords(row, col)
-        self.napis_ze_stylem(m_coor, tresc_napisu, bold=bold, rn_colour=rn_colour, italic=italic, fore_colour=fore_colour)
+        self.napis_ze_stylem(m_coor, tresc_napisu, bold=bold, rn_colour=rn_colour, italic=italic, fore_colour=fore_colour, middle=middle)
 
     def wymus_szerokosci(self, lista_rozmiarow):
         '''
