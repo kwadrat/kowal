@@ -26,6 +26,12 @@ class MonthSummary(object):
         '''
         MonthSummary:
         '''
+        the_samples = my_data[lc_kw.fq_m_samples_qv]
+        for full_hour in range(24):
+            start_offset = 4 * full_hour
+            hour_samples = the_samples[start_offset:start_offset + 4]
+            if hour_samples:
+                pass
 
 class TestMonthStatistics(unittest.TestCase):
     def test_month_statistics(self):
@@ -33,9 +39,10 @@ class TestMonthStatistics(unittest.TestCase):
         TestMonthStatistics:
         '''
         obk = MonthSummary()
+        my_samples = [None, None, None, None]
         my_data = {
             lc_kw.fq_m_date_qv: None,
-            lc_kw.fq_m_samples_qv: None,
+            lc_kw.fq_m_samples_qv: my_samples,
             }
         my_data[lc_kw.fq_m_date_qv]
         my_data[lc_kw.fq_m_samples_qv]
