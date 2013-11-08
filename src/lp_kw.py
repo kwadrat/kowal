@@ -11,6 +11,10 @@ def verify_for_equal(tmp_value, expected):
     if tmp_value != expected:
         raise RuntimeError('tmp_value = %s' % repr(tmp_value))
 
+def verify_for_2_equal(tmp_value, ls_expected):
+    if tmp_value not in ls_expected:
+        raise RuntimeError('tmp_value = %s' % repr(tmp_value))
+
 def rj_na_godzine(dttm):
     return dttm.strftime('%H:%M')
 
