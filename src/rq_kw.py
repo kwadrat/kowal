@@ -185,6 +185,5 @@ DocelowoOdwrotnieOproczOstatniego = 1
 TymczasowoPozwolNaUzupelnienieBorki = 1
 TymczasowoWygenerujSztywne = 0
 
-KumulujKwadransyDoGodziny = 0
 TymczasowoTylkoJeden = 0
 DocelowoNoweSumowanieKwadransow = 1
