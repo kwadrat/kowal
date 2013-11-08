@@ -62,6 +62,7 @@ class CommonReader(CommonRdWr):
         CommonReader:
         '''
         local_key = (key_object, row_date)
+        dst_allow = self.period_server.dst_double_hour(row_date, sample_index)
         adjusted = normalize_value(value)
         self.internal_rows[local_key].update_for_index(sample_index, adjusted)
 
