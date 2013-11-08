@@ -52,6 +52,7 @@ class MonthSummary(object):
         '''
         MonthSummary:
         '''
+        self.interesting_hours = []
 
     def add_day_samples(self, my_data):
         '''
@@ -59,10 +60,14 @@ class MonthSummary(object):
         '''
         the_samples = my_data[lc_kw.fq_m_samples_qv]
         for full_hour in range(24):
+            hour_est = HourEstimate(full_hour)
             start_offset = 4 * full_hour
             hour_samples = the_samples[start_offset:start_offset + 4]
             if hour_samples:
-                pass
+                for quarter_index, one_sample in enumerate(hour_samples):
+                    hour_est.consult_value(quarter_index, one_sample)
+            if hour_est.has_interesting_data():
+                self.interesting_hours.append(hour_est)
 
 class TestMonthStatistics(unittest.TestCase):
     def test_hour_estimate(self):
