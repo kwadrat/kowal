@@ -100,11 +100,23 @@ class TestMonthStatistics(unittest.TestCase):
         TestMonthStatistics:
         '''
         obk = MonthSummary()
-        my_samples = [None, None, None, None]
+        my_samples = [None, 5, 10, None]
         my_data = {
             lc_kw.fq_m_date_qv: None,
             lc_kw.fq_m_samples_qv: my_samples,
             }
-        my_data[lc_kw.fq_m_date_qv]
-        my_data[lc_kw.fq_m_samples_qv]
         obk.add_day_samples(my_data)
+        my_samples = [None, None, None, 7]
+        my_data = {
+            lc_kw.fq_m_date_qv: None,
+            lc_kw.fq_m_samples_qv: my_samples,
+            }
+        obk.add_day_samples(my_data)
+        my_samples = [9, None, None, None]
+        my_data = {
+            lc_kw.fq_m_date_qv: None,
+            lc_kw.fq_m_samples_qv: my_samples,
+            }
+        obk.add_day_samples(my_data)
+        self.assertEqual(len(obk.interesting_hours), 3)
+        obk.prepare_top_values(2)
