@@ -56,7 +56,7 @@ class PowerReader(CommonReader):
         self.check_for_constant_string('B', 6, u'Start Time')
         self.check_for_constant_string('B', 7, u'End Time ')
         self.check_for_constant_string('B', 8, u'Report Time')
-        self.check_for_constant_string('C', 12, u'kW')
+        self.check_for_constant_string('C', 12, u'kW', exp_second=u'unknown')
         under_name = self.vx_peek('C', 10)
         return under_name
 
