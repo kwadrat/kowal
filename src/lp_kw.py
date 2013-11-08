@@ -71,7 +71,7 @@ class HoQuServer(object):
         '''
         HoQuServer:
         '''
-        self.cnt_of_samples = len(self.hours_for_header())
+        self.cnt_of_samples = len(self.time_for_header())
 
 class HourServer(HoQuServer):
     def __init__(self):
@@ -95,7 +95,7 @@ class HourServer(HoQuServer):
             expected = one_column.header_for_hour_column
             verify_for_equal(tmp_text, expected)
 
-    def hours_for_header(self):
+    def time_for_header(self):
         '''
         HourServer:
         '''
@@ -120,7 +120,7 @@ class QuarterServer(HoQuServer):
         '''
         return self.quarter_translator[hh_mm]
 
-    def hours_for_header(self):
+    def time_for_header(self):
         '''
         QuarterServer:
         '''
