@@ -176,13 +176,18 @@ class CommonWriter(CommonRdWr):
         klm_c_ads = gu_kw.KolumnowyAdresator(nmax_line, self.nmax_start_col, col_cnt=self.liczba_max)
         row_c = nmax_line
         row_d = ndiff_line
+        row_e = row_d + 1
+        row_f = row_e + 1
         m_coor = self.b1_coor(first_line)
         etk_e = gu_kw.KolumnowyAdresator(*m_coor.wyznacz_dwa()).get_ka_official_address()
         for i in xrange(self.liczba_max):
+            hour_est = month_aggr.ordered_limited[i]
             col = self.nmax_start_col + i
             if rq_kw.DocelowoNoweSumowanieKwadransow:
                 ##############################################################################
-                pass
+                my_value = hour_est.one_sample
+                m_coor = to_kw.MergedCoords(row_c, col)
+                xwg.zapisz_co_flt(m_coor, my_value, size=12, borders=1)
                 ##############################################################################
             else:
                 ##############################################################################
