@@ -64,15 +64,19 @@ class SampleRow(object):
         self.sample_key = None
         self.list_of_samples = [None] * cnt_per_day
 
-    def update_for_index(self, sample_index, value):
+    def update_for_index(self, sample_index, value, dst_allow, row_date):
         '''
         SampleRow:
         '''
         old_value = self.list_of_samples[sample_index]
-        if allowed_replacement(old_value, value):
+        if allowed_replacement(old_value, value) or dst_allow:
             self.list_of_samples[sample_index] = value
         else:
-            raise RuntimeError('old_value: %s value: %s' % (repr(old_value), repr(value)))
+            raise RuntimeError('row_date: %s, old_value: %s value: %s' % (
+            repr(row_date),
+            repr(old_value),
+            repr(value),
+            ))
 
     def fill_from_data(self, sample_key, sample_data):
         '''
