@@ -2,6 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import ja_kw
 import lc_kw
 import to_kw
 import gv_kw
@@ -286,8 +287,10 @@ class CommonWriter(CommonRdWr):
                 moc_um_dec = lm_kw.wartosc_zero_globalna
             else:
                 moc_um_dec = lm_kw.a2d(lm_kw.rzeczywista_na_napis(moc_umowna))
+            month_aggr = ja_kw.MonthSummary()
             for day_nr, my_data in enumerate(dane_bazy):
                 self.generate_for_a_day(xwg, my_data, base_data_line, day_nr, moc_um_dec)
+                month_aggr.add_day_samples(my_data)
             self.generate_summary(xwg, base_data_line, last_data_line, nmax_line, ndiff_line, first_line)
             the_a_style = xwg.get_or_generate_style(size=12, middle=1, borders=1)
             the_b_style = xwg.get_or_generate_style(size=12, middle=1, wrap=1, borders=1)
