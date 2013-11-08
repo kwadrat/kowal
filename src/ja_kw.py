@@ -2,6 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 import unittest
+import heapq
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lc_kw
@@ -68,6 +69,16 @@ class MonthSummary(object):
                     hour_est.consult_value(quarter_index, one_sample)
             if hour_est.has_interesting_data():
                 self.interesting_hours.append(hour_est)
+
+    def prepare_top_values(self, liczba_max):
+        '''
+        MonthSummary:
+        '''
+        self.ordered_limited = heapq.nlargest(
+            liczba_max,
+            self.interesting_hours,
+            lambda obk: obk.one_sample,
+            )
 
 class TestMonthStatistics(unittest.TestCase):
     def test_hour_estimate(self):
