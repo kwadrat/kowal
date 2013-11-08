@@ -127,12 +127,21 @@ class CommonReader(CommonRdWr):
         time_tuple = self.xlrd.xldate_as_tuple(value, self.book.datemode)
         return lp_kw.process_hour_headers(time_tuple)
 
-    def check_for_constant_string(self, my_col, my_row, expected):
+    def check_for_constant_string(
+            self,
+            my_col,
+            my_row,
+            expected,
+            exp_second=None,
+            ):
         '''
         CommonReader:
         '''
         tmp_text = self.vx_peek(my_col, my_row)
-        lp_kw.verify_for_equal(tmp_text, expected)
+        if exp_second is None:
+            lp_kw.verify_for_equal(tmp_text, expected)
+        else:
+            lp_kw.verify_for_2_equal(tmp_text, [expected, exp_second])
 
     def analyze_this_file(self, dfb, xlrd, single_file):
         '''
