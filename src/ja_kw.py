@@ -4,6 +4,7 @@
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import lc_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -32,5 +33,10 @@ class TestMonthStatistics(unittest.TestCase):
         TestMonthStatistics:
         '''
         obk = MonthSummary()
-        my_data = None
+        my_data = {
+            lc_kw.fq_m_date_qv: None,
+            lc_kw.fq_m_samples_qv: None,
+            }
+        my_data[lc_kw.fq_m_date_qv]
+        my_data[lc_kw.fq_m_samples_qv]
         obk.add_day_samples(my_data)
