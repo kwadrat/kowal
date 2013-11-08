@@ -21,9 +21,16 @@ class MonthSummary(object):
         MonthSummary:
         '''
 
+    def add_day_samples(self, my_data):
+        '''
+        MonthSummary:
+        '''
+
 class TestMonthStatistics(unittest.TestCase):
     def test_month_statistics(self):
         '''
         TestMonthStatistics:
         '''
         obk = MonthSummary()
+        my_data = None
+        obk.add_day_samples(my_data)
