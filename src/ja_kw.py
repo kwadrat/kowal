@@ -6,6 +6,7 @@ import heapq
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lc_kw
+import lp_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -48,6 +49,12 @@ class HourEstimate(object):
         HourEstimate:
         '''
         return self.quarter_index is not None
+
+    def get_hhmm(self):
+        '''
+        HourEstimate:
+        '''
+        return lp_kw.part_of_day_hs(self.full_hour, 15 * self.quarter_index, 0)
 
 class MonthSummary(object):
     def __init__(self):
@@ -122,3 +129,4 @@ class TestMonthStatistics(unittest.TestCase):
         obk.add_day_samples(my_data)
         self.assertEqual(len(obk.interesting_hours), 3)
         obk.prepare_top_values(2)
+        self.assertEqual(obk.interesting_hours[1].get_hhmm(), '00:45')
