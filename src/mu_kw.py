@@ -179,9 +179,16 @@ class CommonWriter(CommonRdWr):
         etk_e = gu_kw.KolumnowyAdresator(*m_coor.wyznacz_dwa()).get_ka_official_address()
         for i in xrange(self.liczba_max):
             col = self.nmax_start_col + i
-            tekst_wzoru = hj_kw.rcp_maxk(etk_a, etk_b, i)
-            m_coor = to_kw.MergedCoords(row_c, col)
-            xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12, borders=1)
+            if rq_kw.DocelowoNoweSumowanieKwadransow:
+                ##############################################################################
+                pass
+                ##############################################################################
+            else:
+                ##############################################################################
+                tekst_wzoru = hj_kw.rcp_maxk(etk_a, etk_b, i)
+                m_coor = to_kw.MergedCoords(row_c, col)
+                xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12, borders=1)
+                ##############################################################################
             etk_c = klm_c_ads.get_ka_official_address(col_delta=i)
             tekst_wzoru = 'MAX(0,%s-%s)' % (etk_c, etk_e)
             m_coor = to_kw.MergedCoords(row_d, col)
