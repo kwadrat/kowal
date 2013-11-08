@@ -25,10 +25,11 @@ class HourEstimate(object):
         self.quarter_index = quarter_index
         self.one_sample = one_sample
 
-    def __init__(self, full_hour):
+    def __init__(self, one_date, full_hour):
         '''
         HourEstimate:
         '''
+        self.one_date = one_date
         self.full_hour = full_hour
         self.store_value(None, None)
 
@@ -60,8 +61,9 @@ class MonthSummary(object):
         MonthSummary:
         '''
         the_samples = my_data[lc_kw.fq_m_samples_qv]
+        one_date = my_data[lc_kw.fq_m_date_qv]
         for full_hour in range(24):
-            hour_est = HourEstimate(full_hour)
+            hour_est = HourEstimate(one_date, full_hour)
             start_offset = 4 * full_hour
             hour_samples = the_samples[start_offset:start_offset + 4]
             if hour_samples:
@@ -85,7 +87,7 @@ class TestMonthStatistics(unittest.TestCase):
         '''
         TestMonthStatistics:
         '''
-        obk = HourEstimate(full_hour=23)
+        obk = HourEstimate(one_date='2013-11-08', full_hour=23)
         quarter_index = 0
         one_sample = None
         obk.consult_value(quarter_index, one_sample)
