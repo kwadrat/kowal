@@ -199,6 +199,13 @@ class CommonWriter(CommonRdWr):
             tekst_wzoru = 'MAX(0,%s-%s)' % (etk_c, etk_e)
             m_coor = to_kw.MergedCoords(row_d, col)
             xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12, borders=1)
+            ##############################################################################
+            one_date = hour_est.one_date
+            xwg.zapisz_date(row_e, col, one_date)
+            ##############################################################################
+            my_hhmm = hour_est.get_hhmm()
+            xwg.napis_ze_wsp(row_f, col, my_hhmm, middle=1)
+            ##############################################################################
         etk_f, etk_g = klm_c_ads.row_start_end_labels()
         tekst_wzoru = hj_kw.rcp_emax(etk_f, etk_g)
         m_coor = to_kw.MergedCoords(row_c, self.col_for_moc_max)
