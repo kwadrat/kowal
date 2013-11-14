@@ -37,6 +37,15 @@ def unique_sorted(dane_bazy, field):
 def dla_podanej_nazwy(dane_bazy, name):
     return filter(lambda x: x[lc_kw.fq_account_qv] == name, dane_bazy)
 
+def wyznacz_slownik_miesiaca(selected_data):
+    month_dict = {}
+    for one_data in selected_data:
+        moj_rm = dn_kw.rok_mies_z_napisu(str(one_data[lc_kw.fq_m_date_qv]))
+        if moj_rm not in month_dict:
+            month_dict[moj_rm] = []
+        month_dict[moj_rm].append(one_data)
+    return month_dict
+
 def wyznacz_dni_robocze(all_dates):
     oficjalne = []
     liczba_dat = len(all_dates)
@@ -341,12 +350,7 @@ class CommonWriter(CommonRdWr):
         xwg.add_a_sheet(uu_maper.get_short_name(name))
         self.setup_col_widths(xwg)
         selected_data = dla_podanej_nazwy(dane_bazy, name)
-        month_dict = {}
-        for one_data in selected_data:
-            moj_rm = dn_kw.rok_mies_z_napisu(str(one_data[lc_kw.fq_m_date_qv]))
-            if moj_rm not in month_dict:
-                month_dict[moj_rm] = []
-            month_dict[moj_rm].append(one_data)
+        month_dict = wyznacz_slownik_miesiaca(selected_data)
         all_months = month_dict.keys()
         all_months.sort()
         for nr_month, moj_rm in enumerate(all_months):
