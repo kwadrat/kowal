@@ -44,7 +44,9 @@ def wyznacz_slownik_miesiaca(selected_data):
         if moj_rm not in month_dict:
             month_dict[moj_rm] = []
         month_dict[moj_rm].append(one_data)
-    return month_dict
+    all_months = month_dict.keys()
+    all_months.sort()
+    return month_dict, all_months
 
 def wyznacz_dni_robocze(all_dates):
     oficjalne = []
@@ -350,9 +352,7 @@ class CommonWriter(CommonRdWr):
         xwg.add_a_sheet(uu_maper.get_short_name(name))
         self.setup_col_widths(xwg)
         selected_data = dla_podanej_nazwy(dane_bazy, name)
-        month_dict = wyznacz_slownik_miesiaca(selected_data)
-        all_months = month_dict.keys()
-        all_months.sort()
+        month_dict, all_months = wyznacz_slownik_miesiaca(selected_data)
         for nr_month, moj_rm in enumerate(all_months):
             my_data = month_dict[moj_rm]
             if uu_maper:
