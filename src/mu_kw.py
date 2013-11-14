@@ -34,6 +34,9 @@ def unique_sorted(dane_bazy, field):
     object_names.sort()
     return object_names
 
+def dla_podanej_nazwy(dane_bazy, name):
+    return filter(lambda x: x[lc_kw.fq_account_qv] == name, dane_bazy)
+
 def wyznacz_dni_robocze(all_dates):
     oficjalne = []
     liczba_dat = len(all_dates)
