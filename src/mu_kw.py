@@ -340,7 +340,7 @@ class CommonWriter(CommonRdWr):
         nr_uu = uu_maper.get_my_nr(name)
         xwg.add_a_sheet(uu_maper.get_short_name(name))
         self.setup_col_widths(xwg)
-        selected_data = filter(lambda x: x[lc_kw.fq_account_qv] == name, dane_bazy)
+        selected_data = dla_podanej_nazwy(dane_bazy, name)
         month_dict = {}
         for one_data in selected_data:
             moj_rm = dn_kw.rok_mies_z_napisu(str(one_data[lc_kw.fq_m_date_qv]))
