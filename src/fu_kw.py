@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+import unittest
+
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lc_kw
 import rq_kw
@@ -103,3 +105,9 @@ class EnergyWriter(CommonWriter):
         '''
         period_server = lp_kw.HourServer()
         CommonWriter.__init__(self, lw_kw.Dn_Energy, period_server)
+
+class TestEnergyParts(unittest.TestCase):
+    def test_energy_parts(self):
+        '''
+        TestEnergyParts:
+        '''
