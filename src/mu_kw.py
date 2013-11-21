@@ -29,6 +29,9 @@ for i in NazwyModulow:
 
 napis_max = 'MAXIMUM'
 
+def month_enabled(nr_month):
+    return not rq_kw.TymczasowoTylkoJeden or nr_month < 1
+
 def unique_sorted(dane_bazy, field):
     object_names = list(set(map(lambda x: x[field], dane_bazy)))
     object_names.sort()
