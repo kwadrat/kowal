@@ -289,7 +289,7 @@ class CommonWriter(CommonRdWr):
         '''
         CommonWriter:
         '''
-        if not rq_kw.TymczasowoTylkoJeden or nr_month < 1:
+        if month_enabled(nr_month):
             all_dates = unique_sorted(dane_bazy, lc_kw.fq_m_date_qv)
             all_hours = self.period_server.time_for_header()
             first_line = dost_wiersz.zabierz_wiersze(len(all_dates) + 11)
