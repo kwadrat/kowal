@@ -150,14 +150,7 @@ class CommonWriter(CommonRdWr):
         for sample_index, my_sample in enumerate(my_data[lc_kw.fq_m_samples_qv]):
             col = self.first_sample_column + sample_index
             m_coor = to_kw.MergedCoords(row, col)
-            if my_sample > moc_um_dec:
-                dc_b_style = dc_d_style
-            elif my_sample >= ten_treshold:
-                dc_b_style = dc_e_style
-            elif jestem_weekend:
-                dc_b_style = dc_f_style
-            else:
-                dc_b_style = {}
+            dc_b_style = obtain_cell_color(moc_um_dec, ten_treshold, jestem_weekend, my_sample)
             xwg.zapisz_co_flt(m_coor, my_sample, **dc_b_style)
 
     def generate_hours_horizontally(self, xwg, all_hours, first_line):
