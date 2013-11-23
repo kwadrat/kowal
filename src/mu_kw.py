@@ -105,6 +105,17 @@ dc_d_style = dict(fore_colour=gv_kw.ECR_red)
 dc_e_style = dict(fore_colour=gv_kw.ECR_yellow)
 dc_f_style = dict(fore_colour=gv_kw.ECR_light_turquoise)
 
+def obtain_cell_color(moc_um_dec, ten_treshold, jestem_weekend, my_sample):
+    if my_sample > moc_um_dec:
+        dc_b_style = dc_d_style
+    elif my_sample >= ten_treshold:
+        dc_b_style = dc_e_style
+    elif jestem_weekend:
+        dc_b_style = dc_f_style
+    else:
+        dc_b_style = {}
+    return dc_b_style
+
 CommonRdWr = tq_kw.CommonRdWr
 
 class CommonWriter(CommonRdWr):
