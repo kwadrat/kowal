@@ -16,6 +16,7 @@ import ja_kw
 import eo_kw
 import tq_kw
 import gx_kw
+import jc_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -101,21 +102,6 @@ def weekend_b_style(jestem_weekend):
         dc_style = {}
     return dc_style
 
-dc_d_style = dict(fore_colour=gv_kw.ECR_red)
-dc_e_style = dict(fore_colour=gv_kw.ECR_yellow)
-dc_f_style = dict(fore_colour=gv_kw.ECR_light_turquoise)
-
-def obtain_cell_color(moc_um_dec, ten_treshold, jestem_weekend, my_sample):
-    if my_sample > moc_um_dec:
-        dc_b_style = dc_d_style
-    elif my_sample >= ten_treshold:
-        dc_b_style = dc_e_style
-    elif jestem_weekend:
-        dc_b_style = dc_f_style
-    else:
-        dc_b_style = {}
-    return dc_b_style
-
 CommonRdWr = tq_kw.CommonRdWr
 
 class CommonWriter(CommonRdWr):
@@ -150,7 +136,7 @@ class CommonWriter(CommonRdWr):
         for sample_index, my_sample in enumerate(my_data[lc_kw.fq_m_samples_qv]):
             col = self.first_sample_column + sample_index
             m_coor = to_kw.MergedCoords(row, col)
-            dc_b_style = obtain_cell_color(moc_um_dec, ten_treshold, jestem_weekend, my_sample)
+            dc_b_style = jc_kw.obtain_cell_color(moc_um_dec, ten_treshold, jestem_weekend, my_sample)
             xwg.zapisz_co_flt(m_coor, my_sample, **dc_b_style)
 
     def generate_hours_horizontally(self, xwg, all_hours, first_line):
