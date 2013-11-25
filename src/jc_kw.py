@@ -3,6 +3,7 @@
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import gv_kw
+import dn_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -17,6 +18,10 @@ for i in NazwyModulow:
 dc_d_style = dict(fore_colour=gv_kw.ECR_red)
 dc_e_style = dict(fore_colour=gv_kw.ECR_yellow)
 dc_f_style = dict(fore_colour=gv_kw.ECR_light_turquoise)
+
+def wyznacz_weekend(nkd):
+    jestem_weekend = not dn_kw.RoboczyDnia(nkd)
+    return jestem_weekend
 
 def obtain_cell_color(moc_um_dec, ten_treshold, jestem_weekend, my_sample):
     if my_sample > moc_um_dec:

@@ -79,10 +79,6 @@ def nr_of_day(one_date):
     nkd = dn_kw.napis_na_numer_dnia(str(one_date))
     return nkd
 
-def wyznacz_weekend(nkd):
-    jestem_weekend = not dn_kw.RoboczyDnia(nkd)
-    return jestem_weekend
-
 def weekend_style(jestem_weekend):
     if jestem_weekend:
         dc_style = dict(
@@ -129,7 +125,7 @@ class CommonWriter(CommonRdWr):
         '''
         row = base_data_line + day_nr
         nkd = nr_of_day(my_data[lc_kw.fq_m_date_qv])
-        jestem_weekend = wyznacz_weekend(nkd)
+        jestem_weekend = jc_kw.wyznacz_weekend(nkd)
         samples_in_order = my_data[lc_kw.fq_m_samples_qv][:]
         samples_in_order.sort()
         ten_treshold = samples_in_order[-10]
@@ -156,7 +152,7 @@ class CommonWriter(CommonRdWr):
         for nr, one_date in enumerate(all_dates):
             row = base_data_line + nr
             nkd = nr_of_day(one_date)
-            jestem_weekend = wyznacz_weekend(nkd)
+            jestem_weekend = jc_kw.wyznacz_weekend(nkd)
             dc_style = weekend_style(jestem_weekend)
             dc_b_style = weekend_b_style(jestem_weekend)
             weekday_name = dn_kw.nazwa_dnia_tygodnia(nkd)
