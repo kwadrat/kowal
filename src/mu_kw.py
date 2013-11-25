@@ -8,14 +8,10 @@ import gv_kw
 import hj_kw
 import gu_kw
 import rq_kw
-import lm_kw
-import gb_kw
 import dn_kw
 import le_kw
-import ja_kw
 import eo_kw
 import tq_kw
-import gx_kw
 import jc_kw
 '''.splitlines()]
 
