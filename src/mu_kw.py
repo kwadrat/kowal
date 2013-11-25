@@ -275,60 +275,6 @@ class CommonWriter(CommonRdWr):
         m_coor = to_kw.MergedCoords(first_line, self.second_date_column)
         xwg.zapisz_wzor(m_coor, tekst_wzoru, kl_miejsc=0, size=None, bold=1, rn_colour=gv_kw.ECR_red)
 
-    def generate_for_month(self, xwg, dane_bazy, nr_month, dost_wiersz, moc_umowna):
-        '''
-        CommonWriter:
-        '''
-        if month_enabled(nr_month):
-            all_dates = unique_sorted(dane_bazy, lc_kw.fq_m_date_qv)
-            all_hours = self.period_server.time_for_header()
-            first_line = dost_wiersz.zabierz_wiersze(len(all_dates) + 11)
-            base_data_line = first_line + 1
-            last_data_line = base_data_line + len(all_dates) - 1
-            bottom_max_line = last_data_line + 1
-            summary_label_line = bottom_max_line + 1
-            summary_unit_line = summary_label_line + 1
-            nmax_line = summary_unit_line + 1
-            diff_label_line = nmax_line + 1
-            diff_unit_line = diff_label_line + 1
-            ndiff_line = diff_unit_line + 1
-            klm_ads = gu_kw.KolumnowyAdresator(
-                wiersz_bazowy_miesiecy=base_data_line,
-                kl_assigned_col=self.first_sample_column,
-                col_cnt=len(all_hours),
-                row_cnt=len(all_dates),
-                )
-            self.generate_max_row(xwg, bottom_max_line, klm_ads)
-            self.generate_dates_vertically(xwg, all_dates, base_data_line)
-            self.generate_hours_horizontally(xwg, all_hours, first_line)
-            self.wpisz_wartosc_mocy_umownej(xwg, first_line, moc_umowna)
-            if moc_umowna is None:
-                moc_um_dec = lm_kw.wartosc_zero_globalna
-            else:
-                moc_um_dec = lm_kw.a2d(lm_kw.rzeczywista_na_napis(moc_umowna))
-            month_aggr = ja_kw.MonthSummary()
-            for day_nr, my_data in enumerate(dane_bazy):
-                self.generate_for_a_day(xwg, my_data, base_data_line, day_nr, moc_um_dec)
-                month_aggr.add_day_samples(my_data)
-            month_aggr.prepare_top_values(self.liczba_max)
-            self.generate_summary(xwg, base_data_line, last_data_line, nmax_line, ndiff_line, first_line, month_aggr)
-            the_a_style = xwg.get_or_generate_style(size=12, middle=1, borders=1)
-            the_b_style = xwg.get_or_generate_style(size=12, middle=1, wrap=1, borders=1)
-            xwg.zapisz_polaczone_komorki(summary_label_line, self.nmax_start_col, '%d największych poborów mocy w m-cu' % self.liczba_max, style=the_a_style, liczba_kolumn=self.liczba_max)
-            xwg.zapisz_polaczone_komorki(summary_unit_line, self.nmax_start_col, gb_kw.tytul_kilowatow_przekroczenia, style=the_a_style,  liczba_kolumn=self.liczba_max)
-            xwg.zapisz_polaczone_komorki(diff_label_line, self.nmax_start_col, 'przekroczenia mocy (jeśli liczba ujemna to 0,00)', style=the_a_style, liczba_kolumn=self.liczba_max)
-            xwg.zapisz_polaczone_komorki(diff_label_line, self.col_for_moc_max, 'Suma przekr', style=the_b_style)
-            xwg.zapisz_polaczone_komorki(diff_unit_line, self.col_for_moc_max, gb_kw.tytul_kilowatow_przekroczenia, style=the_b_style)
-            xwg.zapisz_polaczone_komorki(diff_unit_line, self.nmax_start_col, gb_kw.tytul_kilowatow_przekroczenia, style=the_a_style,  liczba_kolumn=self.liczba_max)
-            xwg.zapisz_polaczone_komorki(summary_label_line, self.col_for_moc_max, 'Moc max', style=the_b_style)
-            xwg.zapisz_polaczone_komorki(summary_label_line, self.col_for_moc_max + 1, 'Moc śred', style=the_b_style)
-            xwg.zapisz_polaczone_komorki(summary_label_line, self.col_for_moc_max + 2, 'Moc min', style=the_b_style)
-            xwg.zapisz_polaczone_komorki(summary_unit_line, self.col_for_moc_max, gb_kw.tytul_kilowatow_przekroczenia, style=the_b_style)
-            xwg.zapisz_polaczone_komorki(summary_unit_line, self.col_for_moc_max + 1, gb_kw.tytul_kilowatow_przekroczenia, style=the_b_style)
-            xwg.zapisz_polaczone_komorki(summary_unit_line, self.col_for_moc_max + 2, gb_kw.tytul_kilowatow_przekroczenia, style=the_b_style)
-            self.generate_max_column(xwg, first_line, klm_ads)
-            self.generate_week_max_column(xwg, first_line, klm_ads, all_dates)
-
     def setup_col_widths(self, xwg):
         '''
         CommonWriter:
