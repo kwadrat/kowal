@@ -23,6 +23,10 @@ def wyznacz_weekend(nkd):
     jestem_weekend = not dn_kw.RoboczyDnia(nkd)
     return jestem_weekend
 
+def nr_of_day(one_date):
+    nkd = dn_kw.napis_na_numer_dnia(str(one_date))
+    return nkd
+
 def obtain_cell_color(moc_um_dec, ten_treshold, jestem_weekend, my_sample):
     if my_sample > moc_um_dec:
         dc_b_style = dc_d_style
