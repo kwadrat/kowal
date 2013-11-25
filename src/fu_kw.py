@@ -108,6 +108,16 @@ class EnergyWriter(CommonWriter):
         period_server = lp_kw.HourServer()
         CommonWriter.__init__(self, lw_kw.Dn_Energy, period_server)
 
+    def generate_for_a_day(self, xwg, my_data, base_data_line, day_nr):
+        '''
+        EnergyWriter:
+        '''
+        row = base_data_line + day_nr
+        for sample_index, my_sample in enumerate(my_data[lc_kw.fq_m_samples_qv]):
+            col = self.first_sample_column + sample_index
+            m_coor = to_kw.MergedCoords(row, col)
+            xwg.zapisz_co_flt(m_coor, my_sample)
+
 class TestEnergyParts(unittest.TestCase):
     def test_energy_parts(self):
         '''
