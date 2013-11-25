@@ -115,22 +115,6 @@ class CommonWriter(CommonRdWr):
         self.nmax_start_col = 2
         self.col_for_moc_max = self.nmax_start_col + self.liczba_max
 
-    def generate_for_a_day(self, xwg, my_data, base_data_line, day_nr, moc_um_dec):
-        '''
-        CommonWriter:
-        '''
-        row = base_data_line + day_nr
-        nkd = jc_kw.nr_of_day(my_data[lc_kw.fq_m_date_qv])
-        jestem_weekend = jc_kw.wyznacz_weekend(nkd)
-        samples_in_order = my_data[lc_kw.fq_m_samples_qv][:]
-        samples_in_order.sort()
-        ten_treshold = samples_in_order[-10]
-        for sample_index, my_sample in enumerate(my_data[lc_kw.fq_m_samples_qv]):
-            col = self.first_sample_column + sample_index
-            m_coor = to_kw.MergedCoords(row, col)
-            dc_b_style = jc_kw.obtain_cell_color(moc_um_dec, ten_treshold, jestem_weekend, my_sample)
-            xwg.zapisz_co_flt(m_coor, my_sample, **dc_b_style)
-
     def generate_hours_horizontally(self, xwg, all_hours, first_line):
         '''
         CommonWriter:
