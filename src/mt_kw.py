@@ -8,6 +8,7 @@ import lc_kw
 import gu_kw
 import lm_kw
 import lp_kw
+import ja_kw
 import lw_kw
 import tq_kw
 import tt_kw
