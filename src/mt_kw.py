@@ -111,6 +111,24 @@ class PowerWriter(CommonWriter):
         period_server = lp_kw.QuarterServer()
         CommonWriter.__init__(self, lw_kw.Dn_Power, period_server)
 
+    def generate_for_object(self, xwg, dane_bazy, name, uu_maper):
+        '''
+        PowerWriter:
+        '''
+        dost_wiersz = gx_kw.Wierszownik(0)
+        nr_uu = uu_maper.get_my_nr(name)
+        xwg.add_a_sheet(uu_maper.get_short_name(name))
+        self.setup_col_widths(xwg)
+        selected_data = mu_kw.dla_podanej_nazwy(dane_bazy, name)
+        month_dict, all_months = mu_kw.wyznacz_slownik_miesiaca(selected_data)
+        for nr_month, moj_rm in enumerate(all_months):
+            my_data = month_dict[moj_rm]
+            if uu_maper:
+                moc_umowna = uu_maper.pobierz_umowna_moc(nr_uu, moj_rm)
+            else:
+                moc_umowna = 0
+            self.generate_for_month(xwg, my_data, nr_month, dost_wiersz, moc_umowna)
+
 class TestWritingPower(unittest.TestCase):
     def test_writing_power(self):
         '''
