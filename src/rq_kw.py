@@ -186,3 +186,4 @@ TymczasowoPozwolNaUzupelnienieBorki = 1
 TymczasowoWygenerujSztywne = 0
 
 TymczasowoTylkoJeden = 1
+DocelowoPosrednikDokladnejLiczby = 0
