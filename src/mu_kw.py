@@ -148,8 +148,6 @@ class CommonWriter(CommonRdWr):
         '''
         CommonWriter:
         '''
-        klm_a_ads = gu_kw.KolumnowyAdresator(base_data_line, self.first_sample_column)
-        etk_a = klm_a_ads.get_ka_official_address()
         klm_c_ads = gu_kw.KolumnowyAdresator(nmax_line, self.nmax_start_col, col_cnt=self.liczba_max)
         row_c = nmax_line
         row_d = ndiff_line
