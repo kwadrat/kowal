@@ -1,8 +1,11 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+import unittest
+
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import gv_kw
+import lm_kw
 import dn_kw
 '''.splitlines()]
 
@@ -46,3 +49,13 @@ class CellDesc(object):
         self.moc_um_dec = moc_um_dec
         self.ten_treshold = ten_treshold
         self.jestem_weekend = jestem_weekend
+
+class TestDecType(unittest.TestCase):
+    def test_dec_type(self):
+        '''
+        TestDecType:
+        '''
+        moc_um_dec = lm_kw.a2d('30')
+        ten_treshold = lm_kw.a2d('3.1104')
+        jestem_weekend = True
+        obk = CellDesc(moc_um_dec, ten_treshold, jestem_weekend)
