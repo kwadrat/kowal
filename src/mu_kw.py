@@ -162,18 +162,9 @@ class CommonWriter(CommonRdWr):
         for i in xrange(self.liczba_max):
             hour_est = month_aggr.ordered_limited[i]
             col = self.nmax_start_col + i
-            if rq_kw.DocelowoNoweSumowanieKwadransow:
-                ##############################################################################
-                my_value = hour_est.one_sample
-                m_coor = to_kw.MergedCoords(row_c, col)
-                xwg.zapisz_co_flt(m_coor, my_value, size=12, borders=1)
-                ##############################################################################
-            else:
-                ##############################################################################
-                tekst_wzoru = hj_kw.rcp_maxk(etk_a, etk_b, i)
-                m_coor = to_kw.MergedCoords(row_c, col)
-                xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12, borders=1)
-                ##############################################################################
+            my_value = hour_est.one_sample
+            m_coor = to_kw.MergedCoords(row_c, col)
+            xwg.zapisz_co_flt(m_coor, my_value, size=12, borders=1)
             etk_c = klm_c_ads.get_ka_official_address(col_delta=i)
             tekst_wzoru = 'MAX(0,%s-%s)' % (etk_c, etk_e)
             m_coor = to_kw.MergedCoords(row_d, col)

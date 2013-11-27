@@ -185,5 +185,4 @@ DocelowoOdwrotnieOproczOstatniego = 1
 TymczasowoPozwolNaUzupelnienieBorki = 1
 TymczasowoWygenerujSztywne = 0
 
-TymczasowoTylkoJeden = 0
-DocelowoNoweSumowanieKwadransow = 1
+TymczasowoTylkoJeden = 1
