@@ -144,7 +144,7 @@ class CommonWriter(CommonRdWr):
         m_coor = to_kw.MergedCoords(first_line, self.first_date_column)
         return m_coor
 
-    def generate_summary(self, xwg, base_data_line, nmax_line, ndiff_line, first_line, month_aggr):
+    def generate_summary(self, xwg, nmax_line, ndiff_line, first_line, month_aggr):
         '''
         CommonWriter:
         '''
