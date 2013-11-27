@@ -170,7 +170,7 @@ class PowerWriter(CommonWriter):
                 self.generate_for_a_day(xwg, my_data, base_data_line, day_nr, moc_um_dec)
                 month_aggr.add_day_samples(my_data)
             month_aggr.prepare_top_values(self.liczba_max)
-            self.generate_summary(xwg, base_data_line, last_data_line, nmax_line, ndiff_line, first_line, month_aggr)
+            self.generate_summary(xwg, base_data_line, nmax_line, ndiff_line, first_line, month_aggr)
             the_a_style = xwg.get_or_generate_style(size=12, middle=1, borders=1)
             the_b_style = xwg.get_or_generate_style(size=12, middle=1, wrap=1, borders=1)
             xwg.zapisz_polaczone_komorki(summary_label_line, self.nmax_start_col, '%d największych poborów mocy w m-cu' % self.liczba_max, style=the_a_style, liczba_kolumn=self.liczba_max)
