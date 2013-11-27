@@ -37,3 +37,12 @@ def obtain_cell_color(moc_um_dec, ten_treshold, jestem_weekend, my_sample):
     else:
         dc_b_style = {}
     return dc_b_style
+
+class CellDesc(object):
+    def __init__(self, moc_um_dec, ten_treshold, jestem_weekend):
+        '''
+        CellDesc:
+        '''
+        self.moc_um_dec = moc_um_dec
+        self.ten_treshold = ten_treshold
+        self.jestem_weekend = jestem_weekend
