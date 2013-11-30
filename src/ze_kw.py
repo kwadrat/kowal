@@ -107,8 +107,9 @@ def op_tr(id=None, nzw_wrsz=None):
     wstawka_id = wyznacz_wstawke('id', id)
     wstawka_nzw = wyznacz_wstawke('name', nzw_wrsz)
     return '<tr%(wstawka_id)s%(wstawka_nzw)s>\n' % dict(
-        wstawka_id = wstawka_id,
-        wstawka_nzw = wstawka_nzw)
+        wstawka_id=wstawka_id,
+        wstawka_nzw=wstawka_nzw,
+        )
 
 formularz_67c_pocz_wiersza = op_tr()
 
