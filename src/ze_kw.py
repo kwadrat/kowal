@@ -62,6 +62,13 @@ def wstawka_liczba(nazwa, liczba):
 def wstawka_sql_liczba(nazwa, liczba):
     return wstawka_common_liczba(nazwa, liczba, '%s=%d')
 
+def wyznacz_tekst(fragment):
+    if fragment is not None:
+        value = fragment
+    else:
+        value = ''
+    return value
+
 def wyznacz_wstawke(nazwa, wartosc):
     if wartosc is None:
         napis = ''
@@ -282,6 +289,8 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(op_td(class_ = 'klasa_css', colspan=2, rowspan=3, title='abc'), '<td class="klasa_css" colspan="2" rowspan="3" title="abc">')
         self.assertEqual(wyznacz_wstawke('e1', None), '')
         self.assertEqual(wyznacz_wstawke('e2', 'napis'), ' e2="napis"')
+        self.assertEqual(wyznacz_tekst(None), '')
+        self.assertEqual(wyznacz_tekst('a'), 'a')
         self.assertEqual(wyznacz_klasawa_wstawke(None), '')
         self.assertEqual(wyznacz_klasawa_wstawke('abc'), ' class="abc"')
         self.assertEqual(op_tr(id = 'abc'), '<tr id="abc">\n')
