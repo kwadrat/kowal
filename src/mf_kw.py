@@ -79,7 +79,7 @@ def ZrobTabHTML(on_mouse, lista):
                 on_tmp_mouse = on_mouse[tmp_liczba]
             wynik.append('<tr id="%s" name="%s"%s>\n' % (nazwa, nazwa, on_tmp_mouse))
         else: # Tylko dla pierwszego wiersza z nagłówkami opisującymi zawartość kolumn
-            wynik.append('<tr>\n')
+            wynik.append(ze_kw.formularz_67c_pocz_wiersza)
         for kolumna in wiersz:
             hd_kw.dolacz_pole(wynik, kolumna)
         wynik.append(ze_kw.formularz_67c_kon_wiersza)
