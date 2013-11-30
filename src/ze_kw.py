@@ -103,12 +103,14 @@ def op_td(class_ = None, colspan=None, rowspan=None, title=None):
         wstawka_tytulu=wstawka_tytulu,
         )
 
-def op_tr(id=None, nzw_wrsz=None):
+def op_tr(id=None, nzw_wrsz=None, rest=None):
     wstawka_id = wyznacz_wstawke('id', id)
     wstawka_nzw = wyznacz_wstawke('name', nzw_wrsz)
-    return '<tr%(wstawka_id)s%(wstawka_nzw)s>\n' % dict(
+    wstawka_rst = wyznacz_tekst(rest)
+    return '<tr%(wstawka_id)s%(wstawka_nzw)s%(wstawka_rst)s>\n' % dict(
         wstawka_id=wstawka_id,
         wstawka_nzw=wstawka_nzw,
+        wstawka_rst=wstawka_rst,
         )
 
 formularz_67c_pocz_wiersza = op_tr()
@@ -296,6 +298,7 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(wyznacz_klasawa_wstawke('abc'), ' class="abc"')
         self.assertEqual(op_tr(id = 'abc'), '<tr id="abc">\n')
         self.assertEqual(op_tr(id='abc', nzw_wrsz='def'), '<tr id="abc" name="def">\n')
+        self.assertEqual(op_tr(id='abc', nzw_wrsz='def', rest='ghi'), '<tr id="abc" name="def"ghi>\n')
         self.assertEqual(op_tbl(), '<table>\n')
         self.assertEqual(op_tbl(cellspacing=1, cellpadding=0), '<table cellspacing="1" cellpadding="0">\n')
         self.assertEqual(op_tbl(cellspacing=1, cellpadding=2), '<table cellspacing="1" cellpadding="2">\n')
