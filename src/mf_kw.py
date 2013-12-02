@@ -65,6 +65,14 @@ def UsunDuplikaty(lista):
             Poprz = elem
     return wynik
 
+def numer_wiersza(etyk):
+    '''
+    Odcinamy dodatkową literkę, aby uzyskać czysty numer faktury.
+    Literka została dodana tylko po to, aby identyfikator nie był
+    samym numerem.
+    '''
+    return int(etyk[1:])
+
 def ZrobTabHTML(on_mouse, lista):
     wynik = []
     wynik.append(ze_kw.op_32_sbf())
@@ -126,4 +134,5 @@ class TestListyNagTabeli(unittest.TestCase):
         self.assertEqual(plik_grafiki('t123p45', lk_kw.LITERA_SLUPEK, 1, (2,)), 'plik_t123p45_s1_2.png')
         self.assertEqual(quote_html(''''"<>&'''), '&prime;&quot;&lt;&gt;&amp;')
         self.assertEqual(nazwa_wiersza(7), 'w7')
+        self.assertEqual(numer_wiersza('w7'), 7)
         self.assertEqual(nazwa_mapy('s', 1), 'mapa_s1')
