@@ -350,8 +350,8 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(formularz_1c_nw_wrsz, '\n')
         self.assertEqual(formularz_1c_horizontal_rule, '<hr />\n')
         self.assertEqual(
-            pokoloruj('yellow', 'napis'),
-            '<span style="background-color: napis;">yellow</span>')
+            pokoloruj('napis', 'yellow'),
+            '<span style="background-color: yellow;">napis</span>')
         self.assertEqual(fy_kw.lxa_56_inst, 'suma narastająco')
         self.assertEqual(fy_kw.lxa_57_inst, 'moc maksymalna')
         self.assertEqual(op_prgph(''), '<p></p>\n')
