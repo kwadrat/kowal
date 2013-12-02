@@ -79,10 +79,7 @@ def ZrobTabHTML(on_mouse, lista):
     for nazwa, wiersz in lista:
         if nazwa: # Nazwa określa numer faktury
             on_tmp_mouse = ''
-            # Odcinamy dodatkową literkę, aby uzyskać czysty numer faktury.
-            # Literka została dodana tylko po to, aby identyfikator nie był
-            # samym numerem.
-            tmp_liczba = int(nazwa[1:])
+            tmp_liczba = numer_wiersza(nazwa)
             if tmp_liczba in on_mouse:
                 on_tmp_mouse = on_mouse[tmp_liczba]
             wynik.append(ze_kw.op_tr(id=nazwa, nzw_wrsz=nazwa, rest=on_tmp_mouse))
