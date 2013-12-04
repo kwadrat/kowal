@@ -117,3 +117,5 @@ lxa_61_inst = """\
 SELECT uu_object.account,m_date,m_samples FROM uu_power,uu_object WHERE uu_power.f_object=uu_object.k_object AND uu_object.k_object=123 ORDER BY uu_power.f_object, uu_power.m_date;"""
 lxa_62_inst = """\
 SELECT uu_object.account,m_date,m_samples FROM uu_power,uu_object WHERE uu_power.f_object=uu_object.k_object AND uu_object.k_object=123 AND uu_power.m_date >= '2013-01-01' AND uu_power.m_date < '2013-02-01' ORDER BY uu_power.f_object, uu_power.m_date;"""
+lxa_63_inst = """\
+SELECT k_sample, m_samples FROM uu_power ORDER BY m_date;"""
