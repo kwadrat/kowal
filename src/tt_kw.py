@@ -6,7 +6,6 @@ import unittest
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lc_kw
 import fv_kw
-import lr_kw
 import le_kw
 import lp_kw
 import lq_kw
@@ -167,9 +166,7 @@ class CommonReader(CommonRdWr):
         '''
         CommonReader:
         '''
-        obk = lr_kw.GeneratorUU(self.table_of_samples)
-        db_statement = obk.samples_for_recalculating()
-        self.all_results = dfb.query_dct(db_statement)
+        self.all_results = le_kw.dq_for_statistics(dfb, self.table_of_samples)
         for one_result in self.all_results:
             sample_key = one_result[lc_kw.fq_k_sample_qv]
             tmp_samples = one_result[lc_kw.fq_m_samples_qv]
