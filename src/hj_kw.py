@@ -54,6 +54,9 @@ def make_alternatives(lista):
 def make_conjunction(lista):
     return ' AND '.join(lista)
 
+def fx_jn(*elements):
+    return ''.join(elements)
+
 def condition_kv(key, value):
     if value is None:
         status = "%(key)s is null" % dict(key=key)
@@ -253,3 +256,4 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(wybierz_najwiekszy([2, 1]), 2)
         self.assertEqual(wybierz_powyzej_progu(None, 0), None)
         self.assertEqual(wybierz_powyzej_progu(1, 0), 1)
+        self.assertEqual(fx_jn('a', 'b', 'cd'), 'abcd')
