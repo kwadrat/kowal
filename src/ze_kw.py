@@ -88,7 +88,7 @@ def op_option(napis, wartosc=None, zaznaczenie=0, id=None):
     kod_zazn = op_sel_lgc(zaznaczenie)
     return '<option%s%s%s>%s</option>\n' % (kod_wart, kod_zazn, kod_idntf, napis)
 
-def op_td(class_ = None, colspan=None, rowspan=None, title=None):
+def op_td(class_=None, colspan=None, rowspan=None, title=None):
     kawalek_klasy = wyznacz_klasawa_wstawke(class_)
     if colspan is None:
         kawalek_csp = ''
@@ -97,9 +97,9 @@ def op_td(class_ = None, colspan=None, rowspan=None, title=None):
     kawalek_rws = wstawka_liczba('rowspan', rowspan)
     wstawka_tytulu = qh_ttl(title)
     return '<td%(kawalek_klasy)s%(kawalek_csp)s%(kawalek_rws)s%(wstawka_tytulu)s>' % dict(
-        kawalek_klasy = kawalek_klasy,
-        kawalek_csp = kawalek_csp,
-        kawalek_rws = kawalek_rws,
+        kawalek_klasy=kawalek_klasy,
+        kawalek_csp=kawalek_csp,
+        kawalek_rws=kawalek_rws,
         wstawka_tytulu=wstawka_tytulu,
         )
 
@@ -145,27 +145,27 @@ def op_select(nzw_sel, brak_idnt=0, class_=None, onchange=None, style=None, to_i
     if brak_idnt:
         kawalek_idnt = ''
     else:
-        kawalek_idnt = ' id="%(moje_id)s"' % dict(moje_id = moje_id)
+        kawalek_idnt = ' id="%(moje_id)s"' % dict(moje_id=moje_id)
     kawalek_klasy = wyznacz_klasawa_wstawke(class_)
     if onchange is None:
         kawalek_zmiany = ''
     else:
-        kawalek_zmiany = ' onchange="%(onchange)s"' % dict(onchange = onchange)
+        kawalek_zmiany = ' onchange="%(onchange)s"' % dict(onchange=onchange)
     if style is None:
         kawalek_stylu = ''
     else:
-        kawalek_stylu = ' style="%(style)s"' % dict(style = style)
+        kawalek_stylu = ' style="%(style)s"' % dict(style=style)
     if multiple:
         kawalek_mltp = ' multiple="multiple"'
     else:
         kawalek_mltp = ''
     return '<select%(kawalek_idnt)s name="%(nzw_sel)s"%(kawalek_klasy)s%(kawalek_mltp)s%(kawalek_stylu)s%(kawalek_zmiany)s>\n' % dict(
-        nzw_sel = nzw_sel,
-        kawalek_idnt = kawalek_idnt,
-        kawalek_klasy = kawalek_klasy,
-        kawalek_mltp = kawalek_mltp,
-        kawalek_stylu = kawalek_stylu,
-        kawalek_zmiany = kawalek_zmiany,
+        nzw_sel=nzw_sel,
+        kawalek_idnt=kawalek_idnt,
+        kawalek_klasy=kawalek_klasy,
+        kawalek_mltp=kawalek_mltp,
+        kawalek_stylu=kawalek_stylu,
+        kawalek_zmiany=kawalek_zmiany,
         )
 
 def op_30_sbf(nzw_sel):
@@ -235,7 +235,7 @@ def sp_stl(etykieta_wartosci, liczba_tekstowo, jednostka):
 def pokoloruj(napis, kolor):
     '''Podkreślenie podanego napisu'''
     middle_a = 'background-color: %(kolor)s;' % dict(
-        kolor = kolor,
+        kolor=kolor,
         )
     polaczony = sp_a_stl(middle_a, napis)
     return polaczony
@@ -281,22 +281,22 @@ class TestTytuluHtml(unittest.TestCase):
         '''
         self.assertEqual(frm_mt_gt, 'get')
         self.assertEqual(frm_mt_pst, 'post')
-        self.assertEqual(op_fmd(id='id_form', name = 'nazwa_form', adres='https://maszyna/strona.py'), '<form action="https://maszyna/strona.py" id="id_form" name="nazwa_form" method="post">\n')
+        self.assertEqual(op_fmd(id='id_form', name='nazwa_form', adres='https://maszyna/strona.py'), '<form action="https://maszyna/strona.py" id="id_form" name="nazwa_form" method="post">\n')
         self.assertEqual(qh_ttl('abc'), ' title="abc"')
         self.assertEqual(qh_ttl(None), '')
         self.assertEqual(wstawka_liczba('abc', 7), ' abc="7"')
         self.assertEqual(wstawka_sql_liczba('abc', 7), 'abc=7')
         self.assertEqual(op_td(), '<td>')
-        self.assertEqual(op_td(class_ = 'klasa_css'), '<td class="klasa_css">')
-        self.assertEqual(op_td(class_ = 'klasa_css', colspan=2, rowspan=3), '<td class="klasa_css" colspan="2" rowspan="3">')
-        self.assertEqual(op_td(class_ = 'klasa_css', colspan=2, rowspan=3, title='abc'), '<td class="klasa_css" colspan="2" rowspan="3" title="abc">')
+        self.assertEqual(op_td(class_='klasa_css'), '<td class="klasa_css">')
+        self.assertEqual(op_td(class_='klasa_css', colspan=2, rowspan=3), '<td class="klasa_css" colspan="2" rowspan="3">')
+        self.assertEqual(op_td(class_='klasa_css', colspan=2, rowspan=3, title='abc'), '<td class="klasa_css" colspan="2" rowspan="3" title="abc">')
         self.assertEqual(wyznacz_wstawke('e1', None), '')
         self.assertEqual(wyznacz_wstawke('e2', 'napis'), ' e2="napis"')
         self.assertEqual(wyznacz_tekst(None), '')
         self.assertEqual(wyznacz_tekst('a'), 'a')
         self.assertEqual(wyznacz_klasawa_wstawke(None), '')
         self.assertEqual(wyznacz_klasawa_wstawke('abc'), ' class="abc"')
-        self.assertEqual(op_tr(id = 'abc'), '<tr id="abc">\n')
+        self.assertEqual(op_tr(id='abc'), '<tr id="abc">\n')
         self.assertEqual(op_tr(id='abc', nzw_wrsz='def'), '<tr id="abc" name="def">\n')
         self.assertEqual(op_tr(id='abc', nzw_wrsz='def', rest='ghi'), '<tr id="abc" name="def"ghi>\n')
         self.assertEqual(op_tbl(), '<table>\n')
@@ -321,11 +321,11 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(op_option('abc', 'a', 1), '<option value="a" selected="selected">abc</option>\n')
         self.assertEqual(op_option('abc', 'a', 0), '<option value="a">abc</option>\n')
         self.assertEqual(op_option('abc', 'b', id='identyf'), '<option value="b" id="identyf">abc</option>\n')
-        self.assertEqual(op_select('abc', brak_idnt = 1), '<select name="abc">\n')
+        self.assertEqual(op_select('abc', brak_idnt=1), '<select name="abc">\n')
         self.assertEqual(op_select('abc'), '<select id="abc" name="abc">\n')
-        self.assertEqual(op_select('abc', class_ = 'klasa_css'), '<select id="abc" name="abc" class="klasa_css">\n')
-        self.assertEqual(op_select('abc', class_ = 'klasa_css', onchange = 'def'), '<select id="abc" name="abc" class="klasa_css" onchange="def">\n')
-        self.assertEqual(op_select('abc', class_ = 'klasa_css', onchange = 'def', style ='ghi'),
+        self.assertEqual(op_select('abc', class_='klasa_css'), '<select id="abc" name="abc" class="klasa_css">\n')
+        self.assertEqual(op_select('abc', class_='klasa_css', onchange='def'), '<select id="abc" name="abc" class="klasa_css" onchange="def">\n')
+        self.assertEqual(op_select('abc', class_='klasa_css', onchange='def', style='ghi'),
             '<select id="abc" name="abc" class="klasa_css" style="ghi" onchange="def">\n')
         self.assertEqual(op_30_sbf('abc'), '<select name="abc" class="selwyborca" onchange="this.form.submit();">\n')
         self.assertEqual(op_dh(id='abc'), '<div id="abc">\n')
