@@ -99,7 +99,7 @@ def domknij_zapisany_plik(nazwa, fd, verbose, mode):
     if verbose:
         print "Zapisano do pliku '%s'." % nazwa
 
-def zapisz_plik(nazwa, dane, verbose = 0, mode = None):
+def zapisz_plik(nazwa, dane, verbose=0, mode=None):
     fd = otworz_do_zapisu(nazwa)
     fd.write(dane)
     domknij_zapisany_plik(nazwa, fd, verbose, mode)

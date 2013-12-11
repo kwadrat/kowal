@@ -211,7 +211,7 @@ class WyznaczanieSlownie(object):
         else:
             return odmiana['dopełniacz']
 
-    def jako_nps(self, wartosc, jestem_opcjonalny_jeden, odmiana, ile_tysiecy = 0):
+    def jako_nps(self, wartosc, jestem_opcjonalny_jeden, odmiana, ile_tysiecy=0):
         '''
         WyznaczanieSlownie:
         '''

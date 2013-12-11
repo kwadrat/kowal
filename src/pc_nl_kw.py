@@ -20,7 +20,7 @@ Miejsc_dla_ilosci = 3
 Miejsc_dla_kwoty = 2
 
 class LiczbaPrecyzyjna(object):
-    def __init__(self, wartosc, precyzja = None):
+    def __init__(self, wartosc, precyzja=None):
         '''
         LiczbaPrecyzyjna:
         '''

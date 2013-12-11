@@ -39,7 +39,7 @@ class ZuzycieLicznika(object):
             tmp_format = 'zuzycie'; print 'Eval:', tmp_format, eval(tmp_format)
             raise RuntimeError('Rozne zuzycia')
 
-    def wyczytaj_jednego(self, wskazowka_kiedy, opcjonalnie = 0):
+    def wyczytaj_jednego(self, wskazowka_kiedy, opcjonalnie=0):
         '''
         ZuzycieLicznika:
         '''

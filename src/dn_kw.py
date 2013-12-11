@@ -54,27 +54,27 @@ def roman_range(krotka):
         krotka[2],
         )
 
-def rok_liczba(czas = None):
+def rok_liczba(czas=None):
     return time.localtime(czas).tm_year
 
-def miesiac_liczba(czas = None):
+def miesiac_liczba(czas=None):
     return time.localtime(czas).tm_mon
 
-def dzien_liczba(czas = None):
+def dzien_liczba(czas=None):
     return time.localtime(czas).tm_mday
 
-def rok_sekundy(czas = None):
+def rok_sekundy(czas=None):
     rok = rok_liczba(czas)
     return str(rok)
 
-def data_rmd(czas = None):
+def data_rmd(czas=None):
     krotka_daty = time.localtime(czas)
     rok = krotka_daty.tm_year
     miesiac = krotka_daty.tm_mon
     dzien = krotka_daty.tm_mday
     return (rok, miesiac, dzien)
 
-def wyznacz_dzisiejsza_date(czas = None):
+def wyznacz_dzisiejsza_date(czas=None):
     krotka_daty = time.localtime(czas)
     rok = krotka_daty.tm_year
     miesiac = krotka_daty.tm_mon
@@ -416,16 +416,16 @@ def wyznacz_moment_wg_wzorca(wzorzec, czas):
     krotka = time.localtime(czas)
     return time.strftime(wzorzec, krotka)
 
-def wyznacz_date_logu(czas = None):
+def wyznacz_date_logu(czas=None):
     return wyznacz_moment_wg_wzorca('%Y-%m-%d %H:%M:%S', czas)
 
-def wyznacz_dzien_logu(czas = None):
+def wyznacz_dzien_logu(czas=None):
     return wyznacz_moment_wg_wzorca('%Y-%m-%d', czas)
 
-def wyznacz_sekunde_logu(czas = None):
+def wyznacz_sekunde_logu(czas=None):
     return wyznacz_moment_wg_wzorca('%H:%M:%S', czas)
 
-def wyznacz_minute_logu(czas = None):
+def wyznacz_minute_logu(czas=None):
     return wyznacz_moment_wg_wzorca('%H:%M', czas)
 
 def gesty_moment(czas=None):

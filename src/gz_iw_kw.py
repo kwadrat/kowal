@@ -13,7 +13,7 @@ class GlebiaZagniezdzenia(object):
         '''
         self.poziom_glebokosci_zagn = poziom
 
-    def glebokosc_zagn(self, dodatek = None):
+    def glebokosc_zagn(self, dodatek=None):
         '''
         GlebiaZagniezdzenia:
         '''

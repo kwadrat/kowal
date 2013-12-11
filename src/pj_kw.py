@@ -23,7 +23,7 @@ class ArkuszExcel(object):
         '''
         self.sh = sh
 
-    def vx_odczyt(self, kolumna, wiersz, ksztalt = None):
+    def vx_odczyt(self, kolumna, wiersz, ksztalt=None):
         '''
         ArkuszExcel:
         '''

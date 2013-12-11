@@ -21,7 +21,7 @@ licznik_inst_slownikow = lin_iw_kw.LicznikInstancji('slownik')
 ListaLubSlownikOgolnie = llso_iw_kw.ListaLubSlownikOgolnie
 
 class PozycjeOgolne(ListaLubSlownikOgolnie):
-    def __init__(self, etykieta, slownik_poczatkowy = None):
+    def __init__(self, etykieta, slownik_poczatkowy=None):
         '''
         PozycjeOgolne:
         '''

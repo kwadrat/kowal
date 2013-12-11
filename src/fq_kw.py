@@ -31,7 +31,7 @@ def nazwa_pliku_faktury_bazowej():
 def dolacz_katalog(plik_dokumentu):
     return Katalog_dokumentow + plik_dokumentu
 
-def zrob_kopie_pliku(nazwa_programu, przedrostek, prawie_rowne = 0):
+def zrob_kopie_pliku(nazwa_programu, przedrostek, prawie_rowne=0):
     if dg_nl_kw.TymczasowoF:
         tmp_format = "nazwa_programu"; print 'Eval:', tmp_format, repr(eval(tmp_format))
     koncowka_pliku = 'bz2'

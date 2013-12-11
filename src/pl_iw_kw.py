@@ -17,7 +17,7 @@ for i in NazwyModulow:
 PozycjeOgolne = po_iw_kw.PozycjeOgolne
 
 class PozycjeLicznikowe(PozycjeOgolne):
-    def __init__(self, etykieta, slownik_poczatkowy = None):
+    def __init__(self, etykieta, slownik_poczatkowy=None):
         '''
         PozycjeLicznikowe:
         '''

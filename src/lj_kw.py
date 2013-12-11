@@ -37,7 +37,7 @@ class LogujWiadomosci(object):
             self.fd = open(self.nazwa_usr_pliku, 'ab')
         return self.fd
 
-    def lqg_write(self, napis, enter = 1):
+    def lqg_write(self, napis, enter=1):
         '''
         LogujWiadomosci:
         Zapisuje do pliku podany napis.
@@ -65,5 +65,5 @@ class LogujWiadomosci(object):
 
 lqg_ob = LogujWiadomosci()
 
-def diag(napis, enter = 1):
+def diag(napis, enter=1):
     lqg_ob.lqg_razem(napis, enter)
