@@ -140,6 +140,9 @@ def rcp_sred(etk_a, etk_b):
 def rcp_emax(etk_a, etk_b):
     return rcp_wspolne('MAX', etk_a, etk_b)
 
+def rcp_diff_max(etk_a, etk_b):
+    return 'MAX(0,%s-%s)' % (etk_a, etk_b)
+
 def rcp_emin(etk_a, etk_b):
     return rcp_wspolne('MIN', etk_a, etk_b)
 
@@ -237,6 +240,7 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(rcp_emin('E23', 'G23'), 'MIN(E23:G23)')
         self.assertEqual(rcp_maxk('C2', 'CT31', 0), 'LARGE(C2:CT31,1)')
         self.assertEqual(rcp_maxk('C2', 'CT31', 1), 'LARGE(C2:CT31,2)')
+        self.assertEqual(rcp_diff_max('E23', 'G23'), 'MAX(0,E23-G23)')
         a = [1, 4, 2, 3]; reverse_but_last(a)
         self.assertEqual(a, [3, 2, 1, 4])
         self.assertEqual(ogranicz_wartosci_umowne([0.0, 0.0, 36.0]), [36.0])
