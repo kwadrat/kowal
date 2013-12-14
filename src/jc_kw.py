@@ -50,10 +50,10 @@ class CellDesc(object):
         self.ten_treshold = ten_treshold
         self.jestem_weekend = jestem_weekend
 
-class TestDecType(unittest.TestCase):
+class TestCellFeatures(unittest.TestCase):
     def test_dec_type(self):
         '''
-        TestDecType:
+        TestCellFeatures:
         '''
         moc_um_dec = lm_kw.a2d('30')
         ten_treshold = lm_kw.a2d('3.1104')
