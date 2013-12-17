@@ -16,15 +16,18 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 def elementy_sas(lista, element):
-    try:
-        pozycja = lista.index(element)
-        if pozycja == 0:
-            wynik = [None, lista[pozycja + 1]]
-        elif pozycja == len(lista) - 1:
-            wynik = [lista[pozycja - 1], None]
-        else:
-            wynik = [lista[pozycja - 1], lista[pozycja + 1]]
-    except ValueError:
+    if len(lista) > 1:
+        try:
+            pozycja = lista.index(element)
+            if pozycja == 0:
+                wynik = [None, lista[pozycja + 1]]
+            elif pozycja == len(lista) - 1:
+                wynik = [lista[pozycja - 1], None]
+            else:
+                wynik = [lista[pozycja - 1], lista[pozycja + 1]]
+        except ValueError:
+            wynik = None
+    else:
         wynik = None
     return wynik
 
@@ -38,3 +41,4 @@ class TestZnajdowaniaSasiadow(unittest.TestCase):
         self.assertEqual(elementy_sas([680, 647, 618, 570, 569], 680), [None, 647])
         self.assertEqual(elementy_sas([680, 647, 618, 570, 569], 569), [570, None])
         self.assertEqual(elementy_sas([680, 647, 618, 570, 569], 123), None)
+        self.assertEqual(elementy_sas([647], 647), None)
