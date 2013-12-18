@@ -73,7 +73,7 @@ def numer_wiersza(etyk):
     '''
     return int(etyk[1:])
 
-def ZrobTabHTML(on_mouse, ls_wr_tab):
+def zrob_tab_html(on_mouse, ls_wr_tab):
     wynik = []
     wynik.append(ze_kw.op_32_sbf())
     for dane_wiersza in ls_wr_tab:
