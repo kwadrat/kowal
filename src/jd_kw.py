@@ -23,6 +23,7 @@ class DecProxy(object):
         '''
         self.dec_value = dec_value
         self.int_multiplier = 4
+        self.int_scaler = 10 ** self.int_multiplier
         self.int_value = int(10000 * self.dec_value)
 
 class TestDecType(unittest.TestCase):
@@ -34,3 +35,4 @@ class TestDecType(unittest.TestCase):
         obk = DecProxy(dec_value)
         self.assertEqual(obk.int_value, 382902)
         self.assertEqual(obk.int_multiplier, 4)
+        self.assertEqual(obk.int_scaler, 10000)
