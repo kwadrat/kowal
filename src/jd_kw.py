@@ -24,7 +24,7 @@ class DecProxy(object):
         self.dec_value = dec_value
         self.int_multiplier = 4
         self.int_scaler = 10 ** self.int_multiplier
-        self.int_value = int(10000 * self.dec_value)
+        self.int_value = int(self.int_scaler * self.dec_value)
 
 class TestDecType(unittest.TestCase):
     def test_dec_type(self):
