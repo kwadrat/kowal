@@ -22,6 +22,7 @@ class DecProxy(object):
         DecProxy:
         '''
         self.dec_value = dec_value
+        self.int_multiplier = 4
         self.int_value = int(10000 * self.dec_value)
 
 class TestDecType(unittest.TestCase):
@@ -32,3 +33,4 @@ class TestDecType(unittest.TestCase):
         dec_value = lm_kw.a2d('38.2902')
         obk = DecProxy(dec_value)
         self.assertEqual(obk.int_value, 382902)
+        self.assertEqual(obk.int_multiplier, 4)
