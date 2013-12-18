@@ -6,6 +6,7 @@ import unittest
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lk_kw
 import dv_kw
+import rq_kw
 import oc_kw
 import ze_kw
 import hd_kw
@@ -77,7 +78,14 @@ def ZrobTabHTML(on_mouse, ls_wr_tab):
     wynik = []
     wynik.append(ze_kw.op_32_sbf())
     for dane_wiersza in ls_wr_tab:
-        nazwa, wiersz = dane_wiersza
+        if rq_kw.DocelowoObiektowyWiersz:
+            ##############################################################################
+            nazwa, wiersz = dane_wiersza.get_pair()
+            ##############################################################################
+        else:
+            ##############################################################################
+            nazwa, wiersz = dane_wiersza
+            ##############################################################################
         if nazwa: # Nazwa określa numer faktury
             on_tmp_mouse = ''
             tmp_liczba = numer_wiersza(nazwa)
