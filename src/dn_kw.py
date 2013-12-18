@@ -406,11 +406,16 @@ def sprawdz_numery_dnia():
     else:
         print 'Daty sprawdzone: %d <= rok < %d' % (rok_pocz, rok)
 
-def zn_unik():
+def zn_unik(frozen=0):
     '''Zwraca unikalny identyfikator (proces, sekunda), aby
     dało się rozróżnić pliki z jednej sesji danego klienta
     '''
-    return 't%sp%s' % (time.time(), os.getpid())
+    if frozen:
+        zn_time = zn_pid = 'F'
+    else:
+        zn_time = time.time()
+        zn_pid = os.getpid()
+    return 't%sp%s' % (zn_time, zn_pid)
 
 def wyznacz_moment_wg_wzorca(wzorzec, czas):
     krotka = time.localtime(czas)
@@ -545,3 +550,4 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(surowy_czas(data_testowa_c), 1323769292)
         self.assertEqual(roman_map['I'], 1)
         self.assertEqual(roman_map['XII'], 12)
+        self.assertEqual(zn_unik(frozen=1), 'tFpF')
