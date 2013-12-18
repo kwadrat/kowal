@@ -187,4 +187,3 @@ TymczasowoWygenerujSztywne = 0
 
 TymczasowoTylkoJeden = 1
 DocelowoPosrednikDokladnejLiczby = 0
-DocelowoObiektowyWiersz = 1
