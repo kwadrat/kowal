@@ -76,8 +76,8 @@ def numer_wiersza(etyk):
 def zrob_tab_html(on_mouse, ls_wr_tab):
     wynik = []
     wynik.append(ze_kw.op_32_sbf())
-    for dane_wiersza in ls_wr_tab:
-        nazwa, wiersz = dane_wiersza.get_pair()
+    for jn_wr_tab in ls_wr_tab:
+        nazwa, wiersz = jn_wr_tab.get_pair()
         if nazwa: # Nazwa określa numer faktury
             on_tmp_mouse = ''
             tmp_liczba = numer_wiersza(nazwa)
