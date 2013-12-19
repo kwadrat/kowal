@@ -63,7 +63,6 @@ class EnergyWriter(CommonWriter):
         xwg.add_a_sheet(uu_maper.get_short_name(name))
         selected_data = mu_kw.dla_podanej_nazwy(dane_bazy, name)
         month_dict, all_months = mu_kw.wyznacz_slownik_miesiaca(selected_data)
-        all_hours = self.period_server.time_for_header()
         for nr_month, moj_rm in enumerate(all_months):
             my_data = month_dict[moj_rm]
             self.generate_for_month(xwg, my_data, nr_month, dost_wiersz)
