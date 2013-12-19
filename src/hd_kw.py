@@ -10,7 +10,6 @@ Testy operacji na napisach (zamiana liter na małe, obliczanie sumy MD5)
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lm_kw
-import ze_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -37,7 +36,7 @@ def kropka_przecinek(a):
 def odwrotny_zwykly(napis):
     return napis.replace('\\', '/')
 
-def dolacz_pole(wynik, kolumna):
+def przecinkowane_pole(kolumna):
     if lm_kw.have_dec_type(kolumna):
         value_as_text = lm_kw.d2a(kolumna)
         value_as_text = kropka_przecinek(value_as_text)
@@ -45,7 +44,7 @@ def dolacz_pole(wynik, kolumna):
         value_as_text = str(kolumna)
         if type(kolumna) is float:
             value_as_text = kropka_przecinek(value_as_text)
-    wynik.append(ze_kw.op_ptd(value_as_text))
+    return value_as_text
 
 class TestNapisow(unittest.TestCase):
     def test_operacji_na_napisach(self):

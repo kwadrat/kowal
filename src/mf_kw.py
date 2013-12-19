@@ -87,7 +87,8 @@ def zrob_tab_html(on_mouse, ls_wr_tab):
         else: # Tylko dla pierwszego wiersza z nagłówkami opisującymi zawartość kolumn
             wynik.append(ze_kw.formularz_67c_pocz_wiersza)
         for kolumna in wiersz:
-            hd_kw.dolacz_pole(wynik, kolumna)
+            value_as_text = hd_kw.przecinkowane_pole(kolumna)
+            wynik.append(ze_kw.op_ptd(value_as_text))
         wynik.append(ze_kw.formularz_67c_kon_wiersza)
     wynik.append(ze_kw.formularz_1c_kon_tabeli)
     return ''.join(wynik)
