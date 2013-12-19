@@ -6,6 +6,7 @@ import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lp_kw
+import jn_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -17,7 +18,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-HoQuServer = lp_kw.HoQuServer
+HoQuServer = jn_kw.HoQuServer
 
 class QuarterServer(HoQuServer):
     def __init__(self):
