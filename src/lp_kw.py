@@ -119,37 +119,11 @@ class HourServer(HoQuServer):
         '''
         return self.list_of_quarters
 
-class QuarterServer(HoQuServer):
-    def __init__(self):
-        '''
-        QuarterServer:
-        '''
-        self.quarter_translator = {}
-        self.list_of_hours = []
-        for i in xrange(96):
-            hh_mm = determine_quarter(i)
-            self.quarter_translator[hh_mm] = i
-            self.list_of_hours.append(hh_mm)
-        HoQuServer.__init__(self, 4)
-
-    def quarter_to_number(self, hh_mm):
-        '''
-        QuarterServer:
-        '''
-        return self.quarter_translator[hh_mm]
-
-    def time_for_header(self):
-        '''
-        QuarterServer:
-        '''
-        return self.list_of_hours
-
 class TestDateQuarters(unittest.TestCase):
     def test_date_quarters(self):
         '''
         TestDateQuarters:
         '''
-        obk = QuarterServer()
         self.assertEqual(rj_na_godzine(datetime.time(2, 45, 00)), '02:45')
         self.assertEqual(part_of_day_hs(2, 45, 00), '02:45')
         self.assertEqual(rj_na_date(datetime.datetime(2013, 1, 31, 0, 0, 0)), '2013-01-31')
@@ -158,9 +132,6 @@ class TestDateQuarters(unittest.TestCase):
         self.assertEqual(determine_quarter(0), '00:00')
         self.assertEqual(determine_quarter(1), '00:15')
         self.assertEqual(determine_quarter(95), '23:45')
-        self.assertEqual(obk.quarter_to_number('00:00'), 0)
-        self.assertEqual(obk.quarter_to_number('00:15'), 1)
-        self.assertEqual(obk.quarter_to_number('23:45'), 95)
 
     def test_hour_patterns(self):
         '''

@@ -9,7 +9,7 @@ import to_kw
 import gu_kw
 import lm_kw
 import gb_kw
-import lp_kw
+import jj_kw
 import ja_kw
 import lw_kw
 import gx_kw
@@ -33,7 +33,7 @@ class PowerWriter(CommonWriter):
         '''
         PowerWriter:
         '''
-        period_server = lp_kw.QuarterServer()
+        period_server = jj_kw.QuarterServer()
         CommonWriter.__init__(self, lw_kw.Dn_Power, period_server)
 
     def generate_for_a_day(self, xwg, my_data, base_data_line, day_nr, moc_um_dec):
