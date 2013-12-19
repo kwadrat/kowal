@@ -6,7 +6,7 @@ import unittest
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lc_kw
 import to_kw
-import lp_kw
+import jl_kw
 import lw_kw
 import gx_kw
 import mu_kw
@@ -28,7 +28,7 @@ class EnergyWriter(CommonWriter):
         '''
         EnergyWriter:
         '''
-        period_server = lp_kw.HourServer()
+        period_server = jl_kw.HourServer()
         CommonWriter.__init__(self, lw_kw.Dn_Energy, period_server)
 
     def generate_for_a_day(self, xwg, my_data, base_data_line, day_nr):

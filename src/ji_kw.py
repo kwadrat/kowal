@@ -3,7 +3,7 @@
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import dn_kw
-import lp_kw
+import jl_kw
 import lw_kw
 import tq_kw
 import tt_kw
@@ -25,7 +25,7 @@ class EnergyReader(CommonReader):
         '''
         EnergyReader:
         '''
-        period_server = lp_kw.HourServer()
+        period_server = jl_kw.HourServer()
         CommonReader.__init__(self, lw_kw.Dn_Energy, period_server)
         self.start_energy_col = self.vx_letter_num('B')
 
