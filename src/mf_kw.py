@@ -86,6 +86,7 @@ def zrob_tab_html(on_mouse, ls_wr_tab):
         else: # Tylko dla pierwszego wiersza z nagłówkami opisującymi zawartość kolumn
             wynik.append(ze_kw.formularz_67c_pocz_wiersza)
         jn_wr_tab.to_comma()
+        jn_wr_tab.use_color()
         wiersz = jn_wr_tab.get_line_row()
         for kolumna in wiersz:
             wynik.append(ze_kw.op_ptd(kolumna))
