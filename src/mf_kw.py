@@ -8,7 +8,6 @@ import lk_kw
 import dv_kw
 import oc_kw
 import ze_kw
-import hd_kw
 import ga_kw
 '''.splitlines()]
 
@@ -77,7 +76,6 @@ def zrob_tab_html(on_mouse, ls_wr_tab):
     wynik = []
     wynik.append(ze_kw.op_32_sbf())
     for jn_wr_tab in ls_wr_tab:
-        _, wiersz = jn_wr_tab.get_pair()
         nazwa = jn_wr_tab.get_line_name()
         if nazwa: # Nazwa określa numer faktury
             on_tmp_mouse = ''
@@ -87,9 +85,10 @@ def zrob_tab_html(on_mouse, ls_wr_tab):
             wynik.append(ze_kw.op_tr(id=nazwa, nzw_wrsz=nazwa, rest=on_tmp_mouse))
         else: # Tylko dla pierwszego wiersza z nagłówkami opisującymi zawartość kolumn
             wynik.append(ze_kw.formularz_67c_pocz_wiersza)
+        jn_wr_tab.to_comma()
+        wiersz = jn_wr_tab.get_line_row()
         for kolumna in wiersz:
-            value_as_text = hd_kw.przecinkowane_pole(kolumna)
-            wynik.append(ze_kw.op_ptd(value_as_text))
+            wynik.append(ze_kw.op_ptd(kolumna))
         wynik.append(ze_kw.formularz_67c_kon_wiersza)
     wynik.append(ze_kw.formularz_1c_kon_tabeli)
     return ''.join(wynik)
