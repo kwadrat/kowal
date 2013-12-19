@@ -5,17 +5,12 @@ Analiza poboru - pomiarowy szereg list
 '''
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
-import fy_kw
 import lc_kw
 import lm_kw
-import ze_kw
 import le_kw
 import lw_kw
 import lh_kw
-import jb_kw
 import ey_kw
-import wn_kw
-import gc_kw
 import lt_kw
 '''.splitlines()]
 
