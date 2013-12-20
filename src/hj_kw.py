@@ -178,7 +178,7 @@ def rc_rozszczep(the_label):
 def md_fn(modul, funkcja):
     return '%s.%s' % (modul, funkcja)
 
-def md_vt(value, year=2011):
+def md_vt(value, year):
     if year > 2010:
         multiplier = '1.23'
     else:
@@ -259,7 +259,7 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(rc_rozszczep('AB234'), ('AB', 234))
         self.assertRaises(RuntimeError, rc_rozszczep, 'A')
         self.assertEqual(md_fn('a', 'b'), 'a.b')
-        self.assertEqual(md_vt('a'), 'a*1.23')
+        self.assertEqual(md_vt('a', year=2011), 'a*1.23')
         self.assertEqual(md_vt('a', year=2010), 'a*1.22')
         self.assertEqual(wybierz_najwiekszy([]), None)
         self.assertEqual(wybierz_najwiekszy([1]), 1)
