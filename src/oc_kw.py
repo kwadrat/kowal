@@ -90,27 +90,6 @@ def fn_a_in_dwa(wersja_produkcyjna):
         wynik = rjb_tld_kw_f_apl
     return wynik
 
-class KalejdoskopStron(object):
-    def __init__(self, numer_strony):
-        '''
-        KalejdoskopStron:
-        '''
-        self.rj_sam_rdzen = 'l%d' % numer_strony
-        self.rj_py_wersja = dodaj_py(self.rj_sam_rdzen)
-
-rjb_strona_pierwsza = KalejdoskopStron(1)
-rjb_strona_druga = KalejdoskopStron(2)
-rjb_strona_trzecia = KalejdoskopStron(3)
-rjb_strona_czwarta = KalejdoskopStron(4)
-rjb_strona_piata = KalejdoskopStron(5)
-rjb_strona_szosta = KalejdoskopStron(6)
-rjb_strona_siodma = KalejdoskopStron(7)
-rjb_strona_osma = KalejdoskopStron(8)
-rjb_strona_dziewiata = KalejdoskopStron(9)
-rjb_strona_dziesiata = KalejdoskopStron(10)
-rjb_strona_jedenasta = KalejdoskopStron(11)
-rjb_strona_dwunasta = KalejdoskopStron(12)
-
 class TestConstantStrings(unittest.TestCase):
     def test_constant_strings(self):
         '''
@@ -149,43 +128,8 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(LogDir, '/home/kwadrat/kowal/log')
         self.assertEqual(rjb_tld_kw_g_apl, '.py')
         self.assertEqual(dodaj_py('a'), 'a.py')
-        self.assertEqual(rjb_strona_pierwsza.rj_sam_rdzen, 'l1')
-        self.assertEqual(rjb_strona_pierwsza.rj_py_wersja, 'l1.py')
-        self.assertEqual(rjb_strona_druga.rj_sam_rdzen, 'l2')
-        self.assertEqual(rjb_strona_piata.rj_sam_rdzen, 'l5')
-        self.assertEqual(rjb_strona_piata.rj_py_wersja, 'l5.py')
-        self.assertEqual(rjb_strona_szosta.rj_sam_rdzen, 'l6')
-        self.assertEqual(rjb_strona_szosta.rj_py_wersja, 'l6.py')
-        self.assertEqual(rjb_strona_siodma.rj_sam_rdzen, 'l7')
-        self.assertEqual(rjb_strona_siodma.rj_py_wersja, 'l7.py')
-        self.assertEqual(rjb_strona_osma.rj_sam_rdzen, 'l8')
-        self.assertEqual(rjb_strona_osma.rj_py_wersja, 'l8.py')
-        self.assertEqual(rjb_strona_dziewiata.rj_sam_rdzen, 'l9')
-        self.assertEqual(rjb_strona_dziewiata.rj_py_wersja, 'l9.py')
-        self.assertEqual(rjb_strona_dziesiata.rj_sam_rdzen, 'l10')
-        self.assertEqual(rjb_strona_dziesiata.rj_py_wersja, 'l10.py')
-        self.assertEqual(rjb_strona_jedenasta.rj_sam_rdzen, 'l11')
-        self.assertEqual(rjb_strona_jedenasta.rj_py_wersja, 'l11.py')
-        self.assertEqual(rjb_strona_dwunasta.rj_sam_rdzen, 'l12')
-        self.assertEqual(rjb_strona_dwunasta.rj_py_wersja, 'l12.py')
         self.assertEqual(fn_a_in_dwa(0), 'inne2')
         self.assertEqual(fn_a_in_dwa(1), 'inne')
         self.assertEqual(rjb_tld_kw_d_apl, 'inne')
         self.assertEqual(rjb_tld_kw_e_apl, '2')
         self.assertEqual(rjb_tld_kw_f_apl, 'inne2')
-
-    def test_kalejdoskopu_stron(self):
-        '''
-        TestConstantStrings:
-        '''
-        obk = KalejdoskopStron(1)
-        self.assertEqual(obk.rj_sam_rdzen, 'l1')
-        self.assertEqual(obk.rj_py_wersja, 'l1.py')
-
-    def test_2_kalejdoskopu_stron(self):
-        '''
-        TestConstantStrings:
-        '''
-        obk = KalejdoskopStron(2)
-        self.assertEqual(obk.rj_sam_rdzen, 'l2')
-        self.assertEqual(obk.rj_py_wersja, 'l2.py')
