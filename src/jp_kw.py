@@ -5,6 +5,7 @@ import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lk_kw
+import hj_kw
 import oc_kw
 '''.splitlines()]
 
@@ -39,7 +40,12 @@ rjb_strona_jedenasta = KalejdoskopStron(11)
 rjb_strona_dwunasta = KalejdoskopStron(12)
 
 def fn_adres_post(wersja_produkcyjna):
-    return lk_kw.rjb_sam_slsh + oc_kw.fn_a_in_dwa(wersja_produkcyjna) + lk_kw.rjb_sam_slsh + oc_kw.dodaj_py(rjb_strona_druga.rj_sam_rdzen)
+    return hj_kw.fx_jn(
+        lk_kw.rjb_sam_slsh,
+        oc_kw.fn_a_in_dwa(wersja_produkcyjna),
+        lk_kw.rjb_sam_slsh,
+        oc_kw.dodaj_py(rjb_strona_druga.rj_sam_rdzen),
+        )
 
 class TestCaleidPages(unittest.TestCase):
     def test_caleid_pages(self):
