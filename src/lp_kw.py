@@ -61,7 +61,6 @@ class HourMiniServer(object):
         '''
         HourMiniServer:
         '''
-        self.canonical_hour = change_to_full_hour(column_index)
         self.header_for_hour_column = describe_column(column_index)
 
     def __repr__(self):
