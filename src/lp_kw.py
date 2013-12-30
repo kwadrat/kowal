@@ -23,7 +23,7 @@ def determine_quarter(qrt_number):
     result = (rj_na_godzine(datetime.datetime(2013, 1, 31, 0, 0, 0) + datetime.timedelta(seconds=15 * 60 * qrt_number)))
     return result
 
-def change_to_full_hour(hour_number):
+def determine_hour(hour_number):
     return '%02d:00' % hour_number
 
 def rj_na_date(dttm):
@@ -47,7 +47,7 @@ def process_quarter_headers(value):
 def describe_hour_column(column_index):
     one_number = column_index + 1
     one_number = midnight_hour_wrap.get(one_number, one_number)
-    return change_to_full_hour(one_number)
+    return determine_hour(one_number)
 
 def describe_quarter_column(column_index):
     one_number = column_index + 1
@@ -84,7 +84,7 @@ class TestDateQuarters(unittest.TestCase):
         self.assertEqual(part_of_day_hs(2, 45, 00), '02:45')
         self.assertEqual(rj_na_date(datetime.datetime(2013, 1, 31, 0, 0, 0)), '2013-01-31')
         self.assertEqual(process_quarter_headers([2013, 1, 31, 23, 59, 00]), ('2013-01-31', '23:44'))
-        self.assertEqual(change_to_full_hour(7), '07:00')
+        self.assertEqual(determine_hour(7), '07:00')
         self.assertEqual(determine_quarter(0), '00:00')
         self.assertEqual(determine_quarter(1), '00:15')
         self.assertEqual(determine_quarter(95), '23:45')
