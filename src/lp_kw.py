@@ -6,6 +6,7 @@ import unittest
 
 day_zero = (0, 0, 0)
 midnight_hour_wrap = {24: 0}
+midnight_quarter_wrap = {96: 0}
 
 def verify_for_equal(tmp_value, expected):
     if tmp_value != expected:
@@ -43,13 +44,15 @@ def process_quarter_headers(value):
     my_time = my_point.strftime('%H:%M')
     return my_date, my_time
 
-def describe_column(midnight_wrap, column_index):
+def describe_hour_column(column_index):
     one_number = column_index + 1
-    one_number = midnight_wrap.get(one_number, one_number)
+    one_number = midnight_hour_wrap.get(one_number, one_number)
     return change_to_full_hour(one_number)
 
-def describe_hour_column(column_index):
-    return describe_column(midnight_hour_wrap, column_index)
+def describe_quarter_column(column_index):
+    one_number = column_index + 1
+    one_number = midnight_quarter_wrap.get(one_number, one_number)
+    return determine_quarter(one_number)
 
 def has_date_from_dt(prm_date):
     return isinstance(prm_date, datetime.date)
@@ -103,3 +106,11 @@ class TestDateQuarters(unittest.TestCase):
         self.assertEqual(rj_na_date(datetime.date(2013, 3, 1)), '2013-03-01')
         self.assertEqual(has_date_from_dt(datetime.date(2013, 3, 1)), 1)
         self.assertEqual(has_date_from_dt('2013-03-01'), 0)
+
+    def test_time_headers(self):
+        '''
+        TestDateQuarters:
+        '''
+        self.assertEqual(describe_quarter_column(0), '00:15')
+        self.assertEqual(describe_quarter_column(94), '23:45')
+        self.assertEqual(describe_quarter_column(95), '00:00')
