@@ -43,10 +43,13 @@ def process_quarter_headers(value):
     my_time = my_point.strftime('%H:%M')
     return my_date, my_time
 
-def describe_column(column_index):
-    hour_number = column_index + 1
-    hour_number = midnight_hour_wrap.get(hour_number, hour_number)
-    return change_to_full_hour(hour_number)
+def describe_column(midnight_wrap, column_index):
+    one_number = column_index + 1
+    one_number = midnight_wrap.get(one_number, one_number)
+    return change_to_full_hour(one_number)
+
+def describe_hour_column(column_index):
+    return describe_column(midnight_hour_wrap, column_index)
 
 def has_date_from_dt(prm_date):
     return isinstance(prm_date, datetime.date)
@@ -61,7 +64,7 @@ class HourMiniServer(object):
         '''
         HourMiniServer:
         '''
-        self.header_for_hour_column = describe_column(column_index)
+        self.header_for_hour_column = describe_hour_column(column_index)
 
     def __repr__(self):
         '''
@@ -87,10 +90,10 @@ class TestDateQuarters(unittest.TestCase):
         '''
         TestDateQuarters:
         '''
-        self.assertEqual(describe_column(0), '01:00')
-        self.assertEqual(describe_column(1), '02:00')
-        self.assertEqual(describe_column(22), '23:00')
-        self.assertEqual(describe_column(23), '00:00')
+        self.assertEqual(describe_hour_column(0), '01:00')
+        self.assertEqual(describe_hour_column(1), '02:00')
+        self.assertEqual(describe_hour_column(22), '23:00')
+        self.assertEqual(describe_hour_column(23), '00:00')
 
     def test_date_converter(self):
         '''
