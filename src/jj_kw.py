@@ -30,7 +30,7 @@ class QuarterServer(HoQuServer):
         for i in xrange(96):
             hh_mm = lp_kw.determine_quarter(i)
             self.quarter_translator[hh_mm] = i
-            self.time_for_header.append(hh_mm)
+            self.time_for_header.append(lp_kw.describe_quarter_column(i))
         HoQuServer.__init__(self, 4)
 
     def quarter_to_number(self, hh_mm):
