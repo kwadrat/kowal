@@ -23,11 +23,11 @@ class HourServer(HoQuServer):
         HourServer:
         '''
         self.all_time_columns = []
-        self.list_of_quarters = []
+        self.list_of_hours = []
         for column_index in xrange(24):
             elem = lp_kw.HourMiniServer(column_index)
             self.all_time_columns.append(elem)
-            self.list_of_quarters.append(elem.canonical_hour)
+            self.list_of_hours.append(elem.canonical_hour)
         HoQuServer.__init__(self, 1)
 
     def verify_hours_headers(self, energy_reader, start_energy_col):
@@ -43,4 +43,4 @@ class HourServer(HoQuServer):
         '''
         HourServer:
         '''
-        return self.list_of_quarters
+        return self.list_of_hours

@@ -26,11 +26,11 @@ class QuarterServer(HoQuServer):
         QuarterServer:
         '''
         self.quarter_translator = {}
-        self.list_of_hours = []
+        self.list_of_quarters = []
         for i in xrange(96):
             hh_mm = lp_kw.determine_quarter(i)
             self.quarter_translator[hh_mm] = i
-            self.list_of_hours.append(hh_mm)
+            self.list_of_quarters.append(hh_mm)
         HoQuServer.__init__(self, 4)
 
     def quarter_to_number(self, hh_mm):
@@ -43,7 +43,7 @@ class QuarterServer(HoQuServer):
         '''
         QuarterServer:
         '''
-        return self.list_of_hours
+        return self.list_of_quarters
 
 class TestPeriodQuarters(unittest.TestCase):
     def test_period_quarters(self):
