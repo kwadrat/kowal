@@ -7,7 +7,7 @@ class HoQuServer(object):
         HoQuServer:
         '''
         self.smpl_per_hour = smpl_per_hour
-        self.cnt_of_samples = len(self.time_for_header())
+        self.cnt_of_samples = len(self.time_for_header)
 
     def dst_double_hour(self, row_date, sample_index):
         '''
