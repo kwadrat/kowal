@@ -359,6 +359,17 @@ class WriterGateway(object):
             skalowana_szerokosc = lista_rozmiarow[nr_kol]
             self.sheet.col(nr_kol).width = skalowana_szerokosc
 
+    def ustaw_szerokosci_pierwszych_kolumn(self):
+        '''
+        WriterGateway:
+        '''
+        lista_rozmiarow = (
+            [2740 # 10
+            ] + 3 * [2902 # 10,57
+            ] + 11 * [3255 # 12
+            ]) # Rozmiary podawane przez MS Excel
+        self.wymus_szerokosci(lista_rozmiarow)
+
 class TestArkuszowy(unittest.TestCase):
     def test_arkuszowy(self):
         '''
