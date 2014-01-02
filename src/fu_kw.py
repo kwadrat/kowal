@@ -62,6 +62,7 @@ class EnergyWriter(CommonWriter):
         dost_wiersz = gx_kw.Wierszownik(0)
         xwg.add_a_sheet(uu_maper.get_short_name(name))
         selected_data = mu_kw.dla_podanej_nazwy(dane_bazy, name)
+        self.setup_col_widths(xwg)
         month_dict, all_months = mu_kw.wyznacz_slownik_miesiaca(selected_data)
         for nr_month, moj_rm in enumerate(all_months):
             my_data = month_dict[moj_rm]
