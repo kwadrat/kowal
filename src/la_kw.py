@@ -359,7 +359,7 @@ class WriterGateway(object):
             skalowana_szerokosc = lista_rozmiarow[nr_kol]
             self.sheet.col(nr_kol).width = skalowana_szerokosc
 
-    def ustaw_szerokosci_pierwszych_kolumn(self):
+    def szerokosc_kolumn_kosztow_energii(self):
         '''
         WriterGateway:
         '''
