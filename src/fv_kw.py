@@ -38,18 +38,18 @@ class ColCalc(object):
         else:
             raise RuntimeError('Poza zakresem?: %s' % repr(liczba))
 
-    def vx_lt(self, napis):
+    def vx_lt(self, lb_col):
         '''
         ColCalc:
         Numer kolejny litery, aby łatwiej wpisywać adresy w Excelu
         '''
-        ile = len(napis)
+        ile = len(lb_col)
         if ile == 1:
-            wynik = self.vx_porz(napis)
+            wynik = self.vx_porz(lb_col)
         elif ile == 2:
-            wynik = (self.vx_porz(napis[0]) + 1 - self.my_offset) * 26 + self.vx_porz(napis[1])
+            wynik = (self.vx_porz(lb_col[0]) + 1 - self.my_offset) * 26 + self.vx_porz(lb_col[1])
         else:
-            raise RuntimeError('Nieobslugiwany napis kolumny: %s' % repr(napis))
+            raise RuntimeError('Nieobslugiwany napis kolumny: %s' % repr(lb_col))
         return wynik
 
     def vx_rev_lt(self, liczba):
