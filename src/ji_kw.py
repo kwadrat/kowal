@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+import unittest
+
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import dn_kw
 import jl_kw
@@ -90,3 +92,10 @@ class EnergyReader(CommonReader):
         data_rows = self.detect_energy_data_rows()
         self.enter_energy_data(dfb, key_object, data_rows)
         self.store_rows_in_db(dfb)
+
+class Test_Reader_of_Energy(unittest.TestCase):
+    def test_energy_1_reader(self):
+        '''
+        Test_Reader_of_Energy:
+        '''
+        obk = EnergyReader()
