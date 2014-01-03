@@ -128,7 +128,7 @@ class CommonReader(CommonRdWr):
 
     def check_for_constant_string(
             self,
-            my_col,
+            lb_col,
             my_row,
             expected,
             exp_second=None,
@@ -136,7 +136,7 @@ class CommonReader(CommonRdWr):
         '''
         CommonReader:
         '''
-        tmp_text = self.vx_peek(my_col, my_row)
+        tmp_text = self.vx_peek(lb_col, my_row)
         if exp_second is None:
             lp_kw.verify_for_equal(tmp_text, expected)
         else:
