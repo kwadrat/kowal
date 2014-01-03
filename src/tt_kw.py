@@ -111,11 +111,11 @@ class CommonReader(CommonRdWr):
         header_col = self.vx_letter_num(lb_col)
         return self.vx_num_peek(header_col, my_row)
 
-    def vx_date(self, my_col, my_row):
+    def vx_date(self, lb_col, my_row):
         '''
         CommonReader:
         '''
-        value = self.vx_peek(my_col, my_row)
+        value = self.vx_peek(lb_col, my_row)
         return self.xlrd.xldate_as_tuple(value, self.book.datemode)
 
     def vx_num_time(self, my_col, my_row):
