@@ -150,11 +150,11 @@ class AugmentedEnReader(EnergyReader):
         '''
         self.sheet.cell_set_value(my_row - 1, my_col, my_value)
 
-    def vx_poke(self, my_col, my_row, my_value):
+    def vx_poke(self, lb_col, my_row, my_value):
         '''
         AugmentedEnReader:
         '''
-        header_col = self.vx_letter_num(my_col)
+        header_col = self.vx_letter_num(lb_col)
         self.vx_num_poke(header_col, my_row, my_value)
 
     def __init__(self):
