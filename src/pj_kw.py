@@ -45,9 +45,3 @@ class ArkuszExcel(object):
             else:
                 raise RuntimeError("Nieznany ksztalt: %s" % repr(ksztalt))
         return wynik
-
-    def zapis(self, kolumna, wiersz, wartosc):
-        '''
-        ArkuszExcel:
-        '''
-        self.sh.Cells(wiersz, fv_kw.vx_one.vx_lt(kolumna)).Value = wartosc
