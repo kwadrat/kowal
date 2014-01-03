@@ -104,11 +104,11 @@ class CommonReader(CommonRdWr):
         '''
         return self.vx_zero.vx_lt(my_col)
 
-    def vx_peek(self, my_col, my_row):
+    def vx_peek(self, lb_col, my_row):
         '''
         CommonReader:
         '''
-        header_col = self.vx_letter_num(my_col)
+        header_col = self.vx_letter_num(lb_col)
         return self.vx_num_peek(header_col, my_row)
 
     def vx_date(self, my_col, my_row):
