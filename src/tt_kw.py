@@ -151,7 +151,6 @@ class CommonReader(CommonRdWr):
         numer_of_sheets = self.book.nsheets
         if numer_of_sheets == 1:
             self.sheet = self.book.sheet_by_name(u'Report')
-            self.analyze_data_in_grid(dfb)
         else:
             raise RuntimeError('numer_of_sheets = %d' % numer_of_sheets)
 

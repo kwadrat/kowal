@@ -43,6 +43,7 @@ def analyze_excel_files(dfb, worker_class, filenames):
         print single_file
         obk = worker_class()
         obk.analyze_this_file(dfb, xlrd, single_file)
+        obk.analyze_data_in_grid(dfb)
 
 def calculate_style(style):
     dc_style = {}
