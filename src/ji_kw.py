@@ -31,11 +31,11 @@ class EnergyReader(CommonReader):
         CommonReader.__init__(self, lw_kw.Dn_Energy, period_server)
         self.start_energy_col = self.vx_letter_num('B')
 
-    def vx_t_date(self, my_col, my_row):
+    def vx_t_date(self, lb_col, my_row):
         '''
         EnergyReader:
         '''
-        value = self.vx_date(my_col, my_row)
+        value = self.vx_date(lb_col, my_row)
         return dn_kw.NapisDaty( * value[:3])
 
     def detect_energy_sheet_header(self):
