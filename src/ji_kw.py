@@ -154,8 +154,8 @@ class AugmentedEnReader(EnergyReader):
         '''
         AugmentedEnReader:
         '''
-        header_col = self.vx_letter_num(lb_col)
-        self.vx_num_poke(header_col, my_row, my_value)
+        my_col = self.vx_letter_num(lb_col)
+        self.vx_num_poke(my_col, my_row, my_value)
 
     def __init__(self):
         '''
