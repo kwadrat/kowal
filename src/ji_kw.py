@@ -124,6 +124,25 @@ class Pseudo_XLRD(object):
         Pseudo_XLRD:
         '''
 
+class Pseudo_Sheet(object):
+    def __init__(self):
+        '''
+        Pseudo_Sheet:
+        '''
+        self.grid = {}
+
+    def cell_value(self, row, col):
+        '''
+        Pseudo_Sheet:
+        '''
+        return self.grid[(row, col)]
+
+    def cell_set_value(self, row, col, value):
+        '''
+        Pseudo_Sheet:
+        '''
+        self.grid[(row, col)] = value
+
 class Test_Reader_of_Energy(unittest.TestCase):
     def test_energy_1_reader(self):
         '''
