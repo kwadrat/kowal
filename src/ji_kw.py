@@ -107,6 +107,23 @@ class Pseudo_Book(object):
         '''
         return Pseudo_Sheet()
 
+class Pseudo_XLRD(object):
+    def __init__(self):
+        '''
+        Pseudo_XLRD:
+        '''
+
+    def open_workbook(self, single_file):
+        '''
+        Pseudo_XLRD:
+        '''
+        return Pseudo_Book()
+
+    def xldate_as_tuple(self, value, datemode):
+        '''
+        Pseudo_XLRD:
+        '''
+
 class Test_Reader_of_Energy(unittest.TestCase):
     def test_energy_1_reader(self):
         '''
