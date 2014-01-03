@@ -45,11 +45,11 @@ class ZeszytOgolny(object):
         self.vx_ss = None
         self.ustaw_bufor(None)
 
-    def vx_buf_rd(self, kolumna, wiersz, ksztalt=None):
+    def vx_buf_rd(self, lb_col, wiersz, ksztalt=None):
         '''
         ZeszytOgolny:
         '''
         if self.vx_buforowane is None:
-            return self.ae.vx_odczyt(kolumna, wiersz, ksztalt=ksztalt)
+            return self.ae.vx_odczyt(lb_col, wiersz, ksztalt=ksztalt)
         else:
-            return self.vx_buforowane[(kolumna, wiersz)]
+            return self.vx_buforowane[(lb_col, wiersz)]
