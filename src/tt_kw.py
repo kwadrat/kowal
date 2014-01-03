@@ -98,11 +98,11 @@ class CommonReader(CommonRdWr):
         '''
         return self.sheet.cell_value(my_row - 1, my_col)
 
-    def vx_letter_num(self, my_col):
+    def vx_letter_num(self, lb_col):
         '''
         CommonReader:
         '''
-        return self.vx_zero.vx_lt(my_col)
+        return self.vx_zero.vx_lt(lb_col)
 
     def vx_peek(self, lb_col, my_row):
         '''
