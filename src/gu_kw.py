@@ -70,9 +70,9 @@ class KolumnowyAdresator(object):
         '''
         KolumnowyAdresator:
         '''
-        the_letters, the_number = hj_kw.rc_rozszczep(the_label)
+        lb_col, the_number = hj_kw.rc_rozszczep(the_label)
         self.set_ka_number_address(the_number)
-        self.set_ka_letter_address(the_letters)
+        self.set_ka_letter_address(lb_col)
 
     def get_ka_official_row(self, fvk_miesiac=0):
         '''
