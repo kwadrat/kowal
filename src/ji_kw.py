@@ -93,6 +93,20 @@ class EnergyReader(CommonReader):
         self.enter_energy_data(dfb, key_object, data_rows)
         self.store_rows_in_db(dfb)
 
+class Pseudo_Book(object):
+    def __init__(self):
+        '''
+        Pseudo_Book:
+        '''
+        self.nsheets = 1
+        self.datemode = None
+
+    def sheet_by_name(self, name):
+        '''
+        Pseudo_Book:
+        '''
+        return Pseudo_Sheet()
+
 class Test_Reader_of_Energy(unittest.TestCase):
     def test_energy_1_reader(self):
         '''
