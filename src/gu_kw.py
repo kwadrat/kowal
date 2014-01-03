@@ -52,11 +52,11 @@ class KolumnowyAdresator(object):
         '''
         return fv_kw.vx_zero.vx_rev_lt(self.kl_assigned_col + col_delta)
 
-    def set_ka_letter_address(self, the_letters):
+    def set_ka_letter_address(self, lb_col):
         '''
         KolumnowyAdresator:
         '''
-        kl_assigned_col = fv_kw.vx_zero.vx_lt(the_letters)
+        kl_assigned_col = fv_kw.vx_zero.vx_lt(lb_col)
         self.ustaw_ka_kolumne(kl_assigned_col)
 
     def set_ka_number_address(self, the_number):
