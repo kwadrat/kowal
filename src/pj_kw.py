@@ -23,21 +23,21 @@ class ArkuszExcel(object):
         '''
         self.sh = sh
 
-    def vx_odczyt(self, kolumna, wiersz, ksztalt=None):
+    def vx_odczyt(self, lb_col, wiersz, ksztalt=None):
         '''
         ArkuszExcel:
         '''
-        wynik = self.sh.Cells(wiersz, fv_kw.vx_one.vx_lt(kolumna)).Value
+        wynik = self.sh.Cells(wiersz, fv_kw.vx_one.vx_lt(lb_col)).Value
         if ksztalt is not None:
             if ksztalt == KSZ_Zmiennoprzecinkowa:
                 if type(wynik) is not float:
                     if type(wynik) in (unicode, str) and '.' in wynik:
-                        print 'W kolumnie "%s" i wierszu "%s" zamiast kropki wpisz przecinek:' % (kolumna, wiersz)
+                        print 'W kolumnie "%s" i wierszu "%s" zamiast kropki wpisz przecinek:' % (lb_col, wiersz)
                         print 'Niepoprawnie jest: "%s"' % (wynik)
                         print 'Powinno byc:       "%s"' % (wynik.replace('.', ','))
                     else:
                         print 'Nierozpoznany blad:'
-                        tmp_format = "kolumna"; print 'Eval:', tmp_format, repr(eval(tmp_format))
+                        tmp_format = "lb_col"; print 'Eval:', tmp_format, repr(eval(tmp_format))
                         tmp_format = "wiersz"; print 'Eval:', tmp_format, repr(eval(tmp_format))
                         tmp_format = "type(wynik)"; print 'Eval:', tmp_format, repr(eval(tmp_format))
                         tmp_format = "wynik"; print 'Eval:', tmp_format, repr(eval(tmp_format))
