@@ -143,6 +143,40 @@ class Pseudo_Sheet(object):
         '''
         self.grid[(row, col)] = value
 
+class AugmentedEnReader(EnergyReader):
+    def vx_num_poke(self, my_col, my_row, my_value):
+        '''
+        AugmentedEnReader:
+        '''
+        self.sheet.cell_set_value(my_row - 1, my_col, my_value)
+
+    def vx_poke(self, my_col, my_row, my_value):
+        '''
+        AugmentedEnReader:
+        '''
+        header_col = self.vx_letter_num(my_col)
+        self.vx_num_poke(header_col, my_row, my_value)
+
+    def __init__(self):
+        '''
+        AugmentedEnReader:
+        '''
+        EnergyReader.__init__(self)
+
+    def fill_a_case(self):
+        '''
+        AugmentedEnReader:
+        '''
+        self.vx_poke('B', 2, u'Raport energii godzinowej dla ')
+        self.vx_poke('E', 2, None)
+        self.vx_poke('E', 3, None)
+        self.vx_poke('H', 3, None)
+        self.vx_poke('M', 2, u'kWh')
+        self.vx_poke('B', 3, u'Za okres')
+        self.vx_poke('D', 3, u'od')
+        self.vx_poke('G', 3, u'do ')
+        self.vx_poke('B', 5, u'Godziny')
+
 class Test_Reader_of_Energy(unittest.TestCase):
     def test_energy_1_reader(self):
         '''
