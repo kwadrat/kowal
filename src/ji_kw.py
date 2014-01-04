@@ -206,6 +206,45 @@ class AugmentedEnReader(EnergyReader):
         self.vx_poke('X', 6, (23, 0))
         self.vx_poke('Y', 6, (0, 0))
 
+    def fill_b_case(self):
+        '''
+        AugmentedEnReader:
+        '''
+        self.vx_poke('B', 2, u'Raport energii godzinowej dla ')
+        self.vx_poke('N', 2, u'kWh')
+        self.vx_poke('B', 3, u'Za okres')
+        self.vx_poke('E', 3, u'od')
+        self.vx_poke('H', 3, u'do ')
+        self.vx_poke('B', 5, u'Godziny')
+        self.vx_poke('F', 2, None)
+        self.vx_poke('F', 3, (2013, 12, 1))
+        self.vx_poke('I', 3, (2014, 1, 1))
+        self.vx_poke('B', 6, (1, 0))
+        self.vx_poke('C', 6, (2, 0))
+        self.vx_poke('D', 6, (2, 0))
+        self.vx_poke('E', 6, (3, 0))
+        self.vx_poke('F', 6, (4, 0))
+        self.vx_poke('G', 6, (5, 0))
+        self.vx_poke('H', 6, (6, 0))
+        self.vx_poke('I', 6, (7, 0))
+        self.vx_poke('J', 6, (8, 0))
+        self.vx_poke('K', 6, (9, 0))
+        self.vx_poke('L', 6, (10, 0))
+        self.vx_poke('M', 6, (11, 0))
+        self.vx_poke('N', 6, (12, 0))
+        self.vx_poke('O', 6, (13, 0))
+        self.vx_poke('P', 6, (14, 0))
+        self.vx_poke('Q', 6, (15, 0))
+        self.vx_poke('R', 6, (16, 0))
+        self.vx_poke('S', 6, (17, 0))
+        self.vx_poke('T', 6, (18, 0))
+        self.vx_poke('U', 6, (19, 0))
+        self.vx_poke('V', 6, (20, 0))
+        self.vx_poke('W', 6, (21, 0))
+        self.vx_poke('X', 6, (22, 0))
+        self.vx_poke('Y', 6, (23, 0))
+        self.vx_poke('Z', 6, (0, 0))
+
 class Test_Reader_of_Energy(unittest.TestCase):
     def test_energy_1_reader(self):
         '''
