@@ -96,7 +96,11 @@ class CommonReader(CommonRdWr):
         '''
         CommonReader:
         '''
-        return self.sheet.cell_value(my_row - 1, my_col)
+        try:
+            result = self.sheet.cell_value(my_row - 1, my_col)
+        except KeyError:
+            raise RuntimeError('Pole: %s%d' % (self.vx_zero.vx_rev_lt(my_col), my_row))
+        return result
 
     def vx_letter_num(self, lb_col):
         '''
