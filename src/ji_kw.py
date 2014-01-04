@@ -43,14 +43,14 @@ class EnergyReader(CommonReader):
         EnergyReader:
         '''
         self.check_for_constant_string('B', 2, u'Raport energii godzinowej dla ')
-        under_name = self.vx_peek('E', 2)
-        period_start = self.vx_date('E', 3)
-        period_end = self.vx_date('H', 3)
         self.check_for_constant_string('M', 2, u'kWh')
         self.check_for_constant_string('B', 3, u'Za okres')
         self.check_for_constant_string('D', 3, u'od')
         self.check_for_constant_string('G', 3, u'do ')
         self.check_for_constant_string('B', 5, u'Godziny')
+        under_name = self.vx_peek('E', 2)
+        period_start = self.vx_date('E', 3)
+        period_end = self.vx_date('H', 3)
         self.period_server.verify_hours_headers(self, self.start_energy_col)
         return under_name
 
@@ -173,14 +173,14 @@ class AugmentedEnReader(EnergyReader):
         AugmentedEnReader:
         '''
         self.vx_poke('B', 2, u'Raport energii godzinowej dla ')
-        self.vx_poke('E', 2, None)
-        self.vx_poke('E', 3, (2013, 12, 1))
-        self.vx_poke('H', 3, (2014, 1, 1))
         self.vx_poke('M', 2, u'kWh')
         self.vx_poke('B', 3, u'Za okres')
         self.vx_poke('D', 3, u'od')
         self.vx_poke('G', 3, u'do ')
         self.vx_poke('B', 5, u'Godziny')
+        self.vx_poke('E', 2, None)
+        self.vx_poke('E', 3, (2013, 12, 1))
+        self.vx_poke('H', 3, (2014, 1, 1))
         self.vx_poke('B', 6, (1, 0))
         self.vx_poke('C', 6, (2, 0))
         self.vx_poke('D', 6, (3, 0))
