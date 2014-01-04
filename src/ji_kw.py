@@ -123,6 +123,11 @@ class Pseudo_XLRD(object):
         '''
         Pseudo_XLRD:
         '''
+        if len(value) == 3:
+            result = value + (0, 0, 0)
+        else:
+            result = (0, 0, 0) + value + (0,)
+        return result
 
 class Pseudo_Sheet(object):
     def __init__(self):
@@ -183,3 +188,22 @@ class Test_Reader_of_Energy(unittest.TestCase):
         Test_Reader_of_Energy:
         '''
         obk = EnergyReader()
+
+class Test_XLRD(unittest.TestCase):
+    def test_1_xlrd(self):
+        '''
+        Test_XLRD:
+        '''
+        xlrd = Pseudo_XLRD()
+        value = (1, 2)
+        odp = xlrd.xldate_as_tuple(value, None)
+        self.assertEqual(odp, (0, 0, 0, 1, 2, 0))
+
+    def test_2_xlrd(self):
+        '''
+        Test_XLRD:
+        '''
+        xlrd = Pseudo_XLRD()
+        value = (2014, 1, 4)
+        odp = xlrd.xldate_as_tuple(value, None)
+        self.assertEqual(odp, (2014, 1, 4, 0, 0, 0))
