@@ -43,6 +43,7 @@ class EnergyReader(CommonReader):
         EnergyReader:
         '''
         self.check_for_constant_string('B', 2, u'Raport energii godzinowej dla ')
+        self.period_server.verify_hours_headers(self, self.start_energy_col)
         self.check_for_constant_string('M', 2, u'kWh')
         self.check_for_constant_string('B', 3, u'Za okres')
         self.check_for_constant_string('D', 3, u'od')
@@ -51,7 +52,6 @@ class EnergyReader(CommonReader):
         under_name = self.vx_peek('E', 2)
         period_start = self.vx_date('E', 3)
         period_end = self.vx_date('H', 3)
-        self.period_server.verify_hours_headers(self, self.start_energy_col)
         return under_name
 
     def detect_energy_data_rows(self):
