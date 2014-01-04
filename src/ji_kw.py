@@ -211,7 +211,12 @@ class Test_Reader_of_Energy(unittest.TestCase):
         '''
         Test_Reader_of_Energy:
         '''
-        obk = EnergyReader()
+        obk = AugmentedEnReader()
+        xlrd = Pseudo_XLRD()
+        single_file = None
+        obk.analyze_this_file(xlrd, single_file)
+        obk.fill_a_case()
+        under_name = obk.detect_energy_sheet_header()
 
 class Test_XLRD(unittest.TestCase):
     def test_1_xlrd(self):
