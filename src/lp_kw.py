@@ -10,7 +10,7 @@ midnight_quarter_wrap = {96: 0}
 
 def verify_for_equal(tmp_value, expected):
     if tmp_value != expected:
-        raise RuntimeError('tmp_value = %s' % repr(tmp_value))
+        raise RuntimeError('tmp_value = %s expected = %s' % (repr(tmp_value), repr(expected)))
 
 def verify_for_2_equal(tmp_value, ls_expected):
     if tmp_value not in ls_expected:
