@@ -33,7 +33,4 @@ class HourServer(HoQuServer):
         HoQuServer.__init__(self, 1)
 
 class TestHour_t_Server(unittest.TestCase):
-    def test_server_of_hours(self):
-        '''
-        TestHour_t_Server:
-        '''
+    pass
