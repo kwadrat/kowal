@@ -29,9 +29,16 @@ class EnergyReader(CommonReader):
         '''
         EnergyReader:
         '''
+        self.extra_dst_column = 0
         period_server = jl_kw.HourServer()
         CommonReader.__init__(self, lw_kw.Dn_Energy, period_server)
         self.start_energy_col = self.vx_letter_num('B')
+
+    def set_dst_column(self):
+        '''
+        EnergyReader:
+        '''
+        self.extra_dst_column = 1
 
     def vx_t_date(self, lb_col, my_row):
         '''
@@ -48,13 +55,13 @@ class EnergyReader(CommonReader):
             tmp_text = self.vx_num_time(
                 self.start_energy_col +
                 sample_index +
-                self.period_server.extra_dst_column, 6)
+                self.extra_dst_column, 6)
             expected = one_column.header_for_hour_column
             if (
                     tmp_text == '02:00' and
                     expected == '03:00' and
                     sample_index == 2):
-                self.period_server.set_dst_column()
+                self.set_dst_column()
                 continue
             lp_kw.verify_for_equal(tmp_text, expected)
 
@@ -97,7 +104,7 @@ class EnergyReader(CommonReader):
         '''
         EnergyReader:
         '''
-        if self.period_server.extra_dst_column:
+        if self.extra_dst_column:
             if autumn_dst_date and sample_index == 1:
                 value = self.simple_energy_read(single_row, sample_index)
                 value += self.simple_energy_read(single_row, sample_index + 1)
@@ -274,3 +281,12 @@ class Test_Reader_of_Energy(unittest.TestCase):
         obk.analyze_this_file(xlrd, single_file)
         obk.fill_b_case()
         under_name = obk.detect_energy_sheet_header()
+
+    def test_energy_4_reader(self):
+        '''
+        Test_Reader_of_Energy:
+        '''
+        obk = EnergyReader()
+        self.assertEqual(obk.extra_dst_column, 0)
+        obk.set_dst_column()
+        self.assertEqual(obk.extra_dst_column, 1)

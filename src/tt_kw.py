@@ -126,7 +126,7 @@ class CommonReader(CommonRdWr):
         CommonReader:
         '''
         return self.vx_peek(
-            lb_col, my_row, col_delta=self.period_server.extra_dst_column)
+            lb_col, my_row, col_delta=self.extra_dst_column)
 
     def vx_date(self, lb_col, my_row, col_delta=0):
         '''
@@ -140,7 +140,7 @@ class CommonReader(CommonRdWr):
         CommonReader:
         '''
         return self.vx_date(
-            lb_col, my_row, col_delta=self.period_server.extra_dst_column)
+            lb_col, my_row, col_delta=self.extra_dst_column)
 
     def vx_num_time(self, my_col, my_row):
         '''
@@ -180,7 +180,7 @@ class CommonReader(CommonRdWr):
         '''
         self.check_for_constant_string(
             lb_col, my_row, expected, exp_second=exp_second,
-            col_delta=self.period_server.extra_dst_column)
+            col_delta=self.extra_dst_column)
 
     def analyze_this_file(self, xlrd, single_file):
         '''
