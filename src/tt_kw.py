@@ -153,21 +153,6 @@ class CommonReader(CommonRdWr):
         else:
             lp_kw.verify_for_2_equal(tmp_text, [expected, exp_second])
 
-    def check_for_delta_string(
-            self,
-            lb_col,
-            my_row,
-            expected,
-            exp_second=None,
-            col_delta=0,
-            ):
-        '''
-        CommonReader:
-        '''
-        self.check_for_constant_string(
-            lb_col, my_row, expected, exp_second=exp_second,
-            col_delta=self.extra_dst_column)
-
     def analyze_this_file(self, xlrd, single_file):
         '''
         CommonReader:

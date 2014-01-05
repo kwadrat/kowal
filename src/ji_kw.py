@@ -79,6 +79,21 @@ class EnergyReader(CommonReader):
         return self.vx_date(
             lb_col, my_row, col_delta=self.extra_dst_column)
 
+    def check_for_delta_string(
+            self,
+            lb_col,
+            my_row,
+            expected,
+            exp_second=None,
+            col_delta=0,
+            ):
+        '''
+        EnergyReader:
+        '''
+        self.check_for_constant_string(
+            lb_col, my_row, expected, exp_second=exp_second,
+            col_delta=self.extra_dst_column)
+
     def detect_energy_sheet_header(self):
         '''
         EnergyReader:
