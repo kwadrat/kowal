@@ -85,6 +85,14 @@ class EnergyReader(CommonReader):
         self.check_for_constant_string('A', nrows, u'Suma')
         return xrange(7, nrows - 2)
 
+    def simple_energy_read(self, single_row, sample_index):
+        '''
+        EnergyReader:
+        '''
+        col_in_sheet = self.start_energy_col + sample_index
+        value = self.vx_num_peek(col_in_sheet, single_row)
+        return value
+
     def energy_using_dst(self, single_row, sample_index, autumn_dst_date):
         '''
         EnergyReader:
