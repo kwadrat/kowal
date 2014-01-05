@@ -78,7 +78,7 @@ class PowerReader(CommonReader):
         self.prepare_local_copy_of_row(dfb, key_object, row_date)
         value = self.vx_peek('C', single_row)
         quarter_number = self.period_server.quarter_to_number(my_hour)
-        self.store_value_in_row(key_object, row_date, quarter_number, value)
+        self.store_quarter_value_in_row(key_object, row_date, quarter_number, value)
 
     def enter_power_data(self, dfb, key_object, data_rows):
         '''
