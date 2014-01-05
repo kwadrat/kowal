@@ -122,11 +122,11 @@ class CommonReader(CommonRdWr):
         return self.vx_peek(
             lb_col, my_row, col_delta=self.period_server.extra_dst_column)
 
-    def vx_date(self, lb_col, my_row):
+    def vx_date(self, lb_col, my_row, col_delta=0):
         '''
         CommonReader:
         '''
-        value = self.vx_peek(lb_col, my_row)
+        value = self.vx_peek(lb_col, my_row, col_delta=col_delta)
         return self.xlrd.xldate_as_tuple(value, self.book.datemode)
 
     def vx_num_time(self, my_col, my_row):
