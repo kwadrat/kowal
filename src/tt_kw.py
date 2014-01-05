@@ -65,7 +65,7 @@ class CommonReader(CommonRdWr):
         adjusted = normalize_value(value)
         self.internal_rows[local_key].update_for_index(sample_index, adjusted, dst_allow, row_date)
 
-    def store_value_in_row(self, key_object, row_date, sample_index, value):
+    def store_hour_value_in_row(self, key_object, row_date, sample_index, value):
         '''
         CommonReader:
         '''
