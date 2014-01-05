@@ -5,6 +5,7 @@ import datetime
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import dn_kw
 import lp_kw
 import jn_kw
 '''.splitlines()]
@@ -38,6 +39,15 @@ class QuarterServer(HoQuServer):
         QuarterServer:
         '''
         return self.quarter_translator[hh_mm]
+
+    def dst_double_hour(self, row_date, sample_index):
+        '''
+        QuarterServer:
+        '''
+        result = 0
+        if dn_kw.autumn_dst_day(row_date):
+            result = 7 <= sample_index <= 10
+        return result
 
 class TestPeriodQuarters(unittest.TestCase):
     def test_period_quarters(self):

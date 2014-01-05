@@ -2,7 +2,6 @@
 # -*- coding: UTF-8 -*-
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
-import dn_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -21,16 +20,3 @@ class HoQuServer(object):
         '''
         self.smpl_per_hour = smpl_per_hour
         self.cnt_of_samples = len(self.time_for_header)
-
-    def dst_double_hour(self, row_date, sample_index):
-        '''
-        HoQuServer:
-        '''
-        result = 0
-        if dn_kw.autumn_dst_day(row_date):
-            if self.smpl_per_hour == 4:
-                result = 7 <= sample_index <= 10
-            else:
-                assert self.smpl_per_hour == 1
-                result = sample_index == 1
-        return result
