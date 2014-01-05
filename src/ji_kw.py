@@ -65,6 +65,13 @@ class EnergyReader(CommonReader):
                 continue
             lp_kw.verify_for_equal(tmp_text, expected)
 
+    def vx_delta_peek(self, lb_col, my_row):
+        '''
+        EnergyReader:
+        '''
+        return self.vx_peek(
+            lb_col, my_row, col_delta=self.extra_dst_column)
+
     def detect_energy_sheet_header(self):
         '''
         EnergyReader:
