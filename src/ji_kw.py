@@ -85,20 +85,20 @@ class EnergyReader(CommonReader):
         self.check_for_constant_string('A', nrows, u'Suma')
         return xrange(7, nrows - 2)
 
-    def col_using_dst(self, sample_index):
+    def energy_using_dst(self, single_row, sample_index):
         '''
         EnergyReader:
         '''
         col_in_sheet = self.start_energy_col + sample_index
-        return col_in_sheet
+        value = self.vx_num_peek(col_in_sheet, single_row)
+        return value
 
     def fetch_energy_field(self, dfb, key_object, single_row, row_date, single_column, sample_index):
         '''
         EnergyReader:
         '''
         self.prepare_local_copy_of_row(dfb, key_object, row_date)
-        col_in_sheet = self.col_using_dst(sample_index)
-        value = self.vx_num_peek(col_in_sheet, single_row)
+        value = self.energy_using_dst(single_row, sample_index)
         self.store_hour_value_in_row(key_object, row_date, sample_index, value)
 
     def enter_energy_data(self, dfb, key_object, data_rows):
