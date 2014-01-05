@@ -97,7 +97,7 @@ class EnergyReader(CommonReader):
         EnergyReader:
         '''
         self.prepare_local_copy_of_row(dfb, key_object, row_date)
-        col_in_sheet = self.start_energy_col + sample_index
+        col_in_sheet = self.col_using_dst(sample_index)
         value = self.vx_num_peek(col_in_sheet, single_row)
         self.store_hour_value_in_row(key_object, row_date, sample_index, value)
 
