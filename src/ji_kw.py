@@ -97,8 +97,18 @@ class EnergyReader(CommonReader):
         '''
         EnergyReader:
         '''
-        col_in_sheet = self.start_energy_col + sample_index
-        value = self.vx_num_peek(col_in_sheet, single_row)
+        if self.period_server.extra_dst_column:
+            if autumn_dst_date and sample_index == 1:
+                value = self.simple_energy_read(single_row, sample_index)
+                value += self.simple_energy_read(single_row, sample_index + 1)
+            else:
+                if sample_index > 1:
+                    col_delta = 1
+                else:
+                    col_delta = 0
+                value = self.simple_energy_read(single_row, sample_index + col_delta)
+        else:
+            value = self.simple_energy_read(single_row, sample_index)
         return value
 
     def fetch_energy_field(self, dfb, key_object, single_row, row_date, autumn_dst_date, single_column, sample_index):
