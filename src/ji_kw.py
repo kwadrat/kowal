@@ -64,14 +64,14 @@ class EnergyReader(CommonReader):
         '''
         self.check_for_constant_string('B', 2, u'Raport energii godzinowej dla ')
         self.verify_hours_headers()
-        self.check_for_constant_string('M', 2, u'kWh')
+        self.check_for_delta_string('M', 2, u'kWh')
         self.check_for_constant_string('B', 3, u'Za okres')
-        self.check_for_constant_string('D', 3, u'od')
-        self.check_for_constant_string('G', 3, u'do ')
+        self.check_for_delta_string('D', 3, u'od')
+        self.check_for_delta_string('G', 3, u'do ')
         self.check_for_constant_string('B', 5, u'Godziny')
-        under_name = self.vx_peek('E', 2)
-        period_start = self.vx_date('E', 3)
-        period_end = self.vx_date('H', 3)
+        under_name = self.vx_delta_peek('E', 2)
+        period_start = self.vx_delta_date('E', 3)
+        period_end = self.vx_delta_date('H', 3)
         return under_name
 
     def detect_energy_data_rows(self):
@@ -234,3 +234,14 @@ class Test_Reader_of_Energy(unittest.TestCase):
         obk.vx_poke('N', 2, wzor)
         self.assertEqual(obk.vx_peek('N', 2), wzor)
         self.assertEqual(obk.vx_peek('M', 2, col_delta=1), wzor)
+
+    def test_energy_3_reader(self):
+        '''
+        Test_Reader_of_Energy:
+        '''
+        obk = AugmentedEnReader()
+        xlrd = jq_kw.Pseudo_XLRD()
+        single_file = None
+        obk.analyze_this_file(xlrd, single_file)
+        obk.fill_b_case()
+        under_name = obk.detect_energy_sheet_header()
