@@ -72,6 +72,13 @@ class EnergyReader(CommonReader):
         return self.vx_peek(
             lb_col, my_row, col_delta=self.extra_dst_column)
 
+    def vx_delta_date(self, lb_col, my_row):
+        '''
+        EnergyReader:
+        '''
+        return self.vx_date(
+            lb_col, my_row, col_delta=self.extra_dst_column)
+
     def detect_energy_sheet_header(self):
         '''
         EnergyReader:

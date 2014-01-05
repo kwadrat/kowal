@@ -128,13 +128,6 @@ class CommonReader(CommonRdWr):
         value = self.vx_peek(lb_col, my_row, col_delta=col_delta)
         return self.xlrd.xldate_as_tuple(value, self.book.datemode)
 
-    def vx_delta_date(self, lb_col, my_row):
-        '''
-        CommonReader:
-        '''
-        return self.vx_date(
-            lb_col, my_row, col_delta=self.extra_dst_column)
-
     def vx_num_time(self, my_col, my_row):
         '''
         CommonReader:
