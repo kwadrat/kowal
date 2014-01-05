@@ -136,11 +136,12 @@ class CommonReader(CommonRdWr):
             my_row,
             expected,
             exp_second=None,
+            col_delta=0,
             ):
         '''
         CommonReader:
         '''
-        tmp_text = self.vx_peek(lb_col, my_row)
+        tmp_text = self.vx_peek(lb_col, my_row, col_delta=col_delta)
         if exp_second is None:
             lp_kw.verify_for_equal(tmp_text, expected)
         else:
