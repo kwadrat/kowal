@@ -70,6 +70,13 @@ class PowerReader(CommonReader):
         self.check_for_constant_string('B', nrows, u'Time Max')
         return xrange(13, nrows - 2)
 
+    def store_quarter_value_in_row(self, key_object, row_date, sample_index, value):
+        '''
+        PowerReader:
+        '''
+        dst_allow = self.period_server.dst_double_hour(row_date, sample_index)
+        self.store_value_in_row(key_object, row_date, sample_index, value, dst_allow)
+
     def fetch_power_field(self, dfb, key_object, single_row, duo_date):
         '''
         PowerReader:

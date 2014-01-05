@@ -64,13 +64,6 @@ class CommonReader(CommonRdWr):
         adjusted = normalize_value(value)
         self.internal_rows[local_key].update_for_index(sample_index, adjusted, dst_allow, row_date)
 
-    def store_quarter_value_in_row(self, key_object, row_date, sample_index, value):
-        '''
-        CommonReader:
-        '''
-        dst_allow = self.period_server.dst_double_hour(row_date, sample_index)
-        self.store_value_in_row(key_object, row_date, sample_index, value, dst_allow)
-
     def store_hour_value_in_row(self, key_object, row_date, sample_index, value):
         '''
         CommonReader:
