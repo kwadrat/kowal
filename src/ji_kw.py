@@ -85,7 +85,7 @@ class EnergyReader(CommonReader):
         self.check_for_constant_string('A', nrows, u'Suma')
         return xrange(7, nrows - 2)
 
-    def energy_using_dst(self, single_row, sample_index):
+    def energy_using_dst(self, single_row, sample_index, autumn_dst_date):
         '''
         EnergyReader:
         '''
@@ -98,7 +98,7 @@ class EnergyReader(CommonReader):
         EnergyReader:
         '''
         self.prepare_local_copy_of_row(dfb, key_object, row_date)
-        value = self.energy_using_dst(single_row, sample_index)
+        value = self.energy_using_dst(single_row, sample_index, autumn_dst_date)
         self.store_hour_value_in_row(key_object, row_date, sample_index, value)
 
     def enter_energy_data(self, dfb, key_object, data_rows):
