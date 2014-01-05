@@ -121,11 +121,10 @@ class EnergyReader(CommonReader):
             value = self.simple_energy_read(single_row, sample_index)
         return value
 
-    def fetch_energy_field(self, dfb, key_object, single_row, row_date, autumn_dst_date, sample_index):
+    def fetch_energy_field(self, key_object, single_row, row_date, autumn_dst_date, sample_index):
         '''
         EnergyReader:
         '''
-        self.prepare_local_copy_of_row(dfb, key_object, row_date)
         value = self.energy_using_dst(single_row, sample_index, autumn_dst_date)
         self.store_hour_value_in_row(key_object, row_date, sample_index, value)
 
@@ -136,8 +135,9 @@ class EnergyReader(CommonReader):
         for single_row in data_rows:
             row_date = self.vx_t_date('A', single_row)
             autumn_dst_date = dn_kw.autumn_dst_day(row_date)
+            self.prepare_local_copy_of_row(dfb, key_object, row_date)
             for sample_index in xrange(24):
-                self.fetch_energy_field(dfb, key_object, single_row, row_date, autumn_dst_date, sample_index)
+                self.fetch_energy_field(key_object, single_row, row_date, autumn_dst_date, sample_index)
 
     def analyze_data_in_grid(self, dfb):
         '''
