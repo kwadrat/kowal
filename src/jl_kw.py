@@ -33,6 +33,12 @@ class HourServer(HoQuServer):
             self.time_for_header.append(elem.header_for_hour_column)
         HoQuServer.__init__(self, 1)
 
+    def set_dst_column(self):
+        '''
+        HourServer:
+        '''
+        self.extra_dst_column = 1
+
 class TestHour_t_Server(unittest.TestCase):
     def test_server_of_hours(self):
         '''
@@ -40,3 +46,5 @@ class TestHour_t_Server(unittest.TestCase):
         '''
         obk = HourServer()
         self.assertEqual(obk.extra_dst_column, 0)
+        obk.set_dst_column()
+        self.assertEqual(obk.extra_dst_column, 1)
