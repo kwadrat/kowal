@@ -45,8 +45,17 @@ class EnergyReader(CommonReader):
         EnergyReader:
         '''
         for sample_index, one_column in enumerate(self.period_server.all_time_columns):
-            tmp_text = self.vx_num_time(self.start_energy_col + sample_index, 6)
+            tmp_text = self.vx_num_time(
+                self.start_energy_col +
+                sample_index +
+                self.period_server.extra_dst_column, 6)
             expected = one_column.header_for_hour_column
+            if (
+                    tmp_text == '02:00' and
+                    expected == '03:00' and
+                    sample_index == 2):
+                self.period_server.set_dst_column()
+                continue
             lp_kw.verify_for_equal(tmp_text, expected)
 
     def detect_energy_sheet_header(self):
