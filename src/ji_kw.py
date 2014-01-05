@@ -9,6 +9,7 @@ import jl_kw
 import lw_kw
 import tq_kw
 import tt_kw
+import jq_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -92,61 +93,6 @@ class EnergyReader(CommonReader):
         data_rows = self.detect_energy_data_rows()
         self.enter_energy_data(dfb, key_object, data_rows)
         self.store_rows_in_db(dfb)
-
-class Pseudo_Book(object):
-    def __init__(self):
-        '''
-        Pseudo_Book:
-        '''
-        self.nsheets = 1
-        self.datemode = None
-
-    def sheet_by_name(self, name):
-        '''
-        Pseudo_Book:
-        '''
-        return Pseudo_Sheet()
-
-class Pseudo_XLRD(object):
-    def __init__(self):
-        '''
-        Pseudo_XLRD:
-        '''
-
-    def open_workbook(self, single_file):
-        '''
-        Pseudo_XLRD:
-        '''
-        return Pseudo_Book()
-
-    def xldate_as_tuple(self, value, datemode):
-        '''
-        Pseudo_XLRD:
-        '''
-        if len(value) == 3:
-            result = value + (0, 0, 0)
-        else:
-            result = (0, 0, 0) + value + (0,)
-        return result
-
-class Pseudo_Sheet(object):
-    def __init__(self):
-        '''
-        Pseudo_Sheet:
-        '''
-        self.grid = {}
-
-    def cell_value(self, row, col):
-        '''
-        Pseudo_Sheet:
-        '''
-        return self.grid[(row, col)]
-
-    def cell_set_value(self, row, col, value):
-        '''
-        Pseudo_Sheet:
-        '''
-        self.grid[(row, col)] = value
 
 class AugmentedEnReader(EnergyReader):
     def vx_num_poke(self, my_col, my_row, my_value):
@@ -251,27 +197,8 @@ class Test_Reader_of_Energy(unittest.TestCase):
         Test_Reader_of_Energy:
         '''
         obk = AugmentedEnReader()
-        xlrd = Pseudo_XLRD()
+        xlrd = jq_kw.Pseudo_XLRD()
         single_file = None
         obk.analyze_this_file(xlrd, single_file)
         obk.fill_a_case()
         under_name = obk.detect_energy_sheet_header()
-
-class Test_XLRD(unittest.TestCase):
-    def test_1_xlrd(self):
-        '''
-        Test_XLRD:
-        '''
-        xlrd = Pseudo_XLRD()
-        value = (1, 2)
-        odp = xlrd.xldate_as_tuple(value, None)
-        self.assertEqual(odp, (0, 0, 0, 1, 2, 0))
-
-    def test_2_xlrd(self):
-        '''
-        Test_XLRD:
-        '''
-        xlrd = Pseudo_XLRD()
-        value = (2014, 1, 4)
-        odp = xlrd.xldate_as_tuple(value, None)
-        self.assertEqual(odp, (2014, 1, 4, 0, 0, 0))
