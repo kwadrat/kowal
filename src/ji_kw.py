@@ -212,3 +212,16 @@ class Test_Reader_of_Energy(unittest.TestCase):
         obk.analyze_this_file(xlrd, single_file)
         obk.fill_a_case()
         under_name = obk.detect_energy_sheet_header()
+
+    def test_energy_2_reader(self):
+        '''
+        Test_Reader_of_Energy:
+        '''
+        obk = AugmentedEnReader()
+        xlrd = jq_kw.Pseudo_XLRD()
+        single_file = None
+        obk.analyze_this_file(xlrd, single_file)
+        wzor = 'abc'
+        obk.vx_poke('N', 2, wzor)
+        self.assertEqual(obk.vx_peek('N', 2), wzor)
+        self.assertEqual(obk.vx_peek('M', 2, col_delta=1), wzor)
