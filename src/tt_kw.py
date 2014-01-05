@@ -115,6 +115,13 @@ class CommonReader(CommonRdWr):
         header_col = self.vx_letter_num(lb_col) + col_delta
         return self.vx_num_peek(header_col, my_row)
 
+    def vx_delta_peek(self, lb_col, my_row):
+        '''
+        CommonReader:
+        '''
+        return self.vx_peek(
+            lb_col, my_row, col_delta=self.period_server.extra_dst_column)
+
     def vx_date(self, lb_col, my_row):
         '''
         CommonReader:
