@@ -24,6 +24,7 @@ class HourServer(HoQuServer):
         '''
         HourServer:
         '''
+        self.extra_dst_column = 0
         self.all_time_columns = []
         self.time_for_header = []
         for column_index in xrange(24):
@@ -47,3 +48,4 @@ class TestHour_t_Server(unittest.TestCase):
         TestHour_t_Server:
         '''
         obk = HourServer()
+        self.assertEqual(obk.extra_dst_column, 0)
