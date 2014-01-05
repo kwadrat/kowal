@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+import unittest
+
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lp_kw
 import jn_kw
@@ -38,3 +40,10 @@ class HourServer(HoQuServer):
             tmp_text = energy_reader.vx_num_time(start_energy_col + sample_index, 6)
             expected = one_column.header_for_hour_column
             lp_kw.verify_for_equal(tmp_text, expected)
+
+class Test_Server_of_Hours(unittest.TestCase):
+    def test_server_of_hours(self):
+        '''
+        Test_Server_of_Hours:
+        '''
+        obk = HourServer()
