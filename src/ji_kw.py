@@ -102,6 +102,9 @@ class EnergyReader(CommonReader):
                 value = self.simple_energy_read(single_row, sample_index)
                 value += self.simple_energy_read(single_row, sample_index + 1)
             else:
+                if sample_index == 1:
+                    empty_value = self.simple_energy_read(single_row, sample_index + 1)
+                    lp_kw.verify_for_equal(empty_value, '')
                 if sample_index > 1:
                     col_delta = 1
                 else:
