@@ -40,6 +40,15 @@ class EnergyReader(CommonReader):
         value = self.vx_date(lb_col, my_row)
         return dn_kw.NapisDaty( * value[:3])
 
+    def verify_hours_headers(self):
+        '''
+        EnergyReader:
+        '''
+        for sample_index, one_column in enumerate(self.period_server.all_time_columns):
+            tmp_text = self.vx_num_time(self.start_energy_col + sample_index, 6)
+            expected = one_column.header_for_hour_column
+            lp_kw.verify_for_equal(tmp_text, expected)
+
     def detect_energy_sheet_header(self):
         '''
         EnergyReader:
