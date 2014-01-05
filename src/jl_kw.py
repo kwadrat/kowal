@@ -41,9 +41,9 @@ class HourServer(HoQuServer):
             expected = one_column.header_for_hour_column
             lp_kw.verify_for_equal(tmp_text, expected)
 
-class Test_Server_of_Hours(unittest.TestCase):
+class TestHour_t_Server(unittest.TestCase):
     def test_server_of_hours(self):
         '''
-        Test_Server_of_Hours:
+        TestHour_t_Server:
         '''
         obk = HourServer()
