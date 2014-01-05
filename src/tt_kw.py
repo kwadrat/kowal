@@ -56,6 +56,13 @@ class CommonReader(CommonRdWr):
         my_sample_row.new_and_empty(self.krt_pobor.krt_wymiar)
         self.internal_rows[local_key] = my_sample_row
 
+    def store_value_in_row(self, row_date, sample_index, value, local_key, dst_allow):
+        '''
+        CommonReader:
+        '''
+        adjusted = normalize_value(value)
+        self.internal_rows[local_key].update_for_index(sample_index, adjusted, dst_allow, row_date)
+
     def store_quarter_value_in_row(self, key_object, row_date, sample_index, value):
         '''
         CommonReader:
