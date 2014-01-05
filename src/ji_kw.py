@@ -107,6 +107,7 @@ class EnergyReader(CommonReader):
         '''
         for single_row in data_rows:
             row_date = self.vx_t_date('A', single_row)
+            autumn_dst_date = dn_kw.autumn_dst_day(row_date)
             for sample_index, single_column in enumerate(self.period_server.all_time_columns):
                 self.fetch_energy_field(dfb, key_object, single_row, row_date, single_column, sample_index)
 
