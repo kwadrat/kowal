@@ -69,8 +69,7 @@ class CommonReader(CommonRdWr):
         '''
         local_key = (key_object, row_date)
         dst_allow = self.period_server.dst_double_hour(row_date, sample_index)
-        adjusted = normalize_value(value)
-        self.internal_rows[local_key].update_for_index(sample_index, adjusted, dst_allow, row_date)
+        self.store_value_in_row(row_date, sample_index, value, local_key, dst_allow)
 
     def store_hour_value_in_row(self, key_object, row_date, sample_index, value):
         '''
@@ -78,8 +77,7 @@ class CommonReader(CommonRdWr):
         '''
         local_key = (key_object, row_date)
         dst_allow = 0
-        adjusted = normalize_value(value)
-        self.internal_rows[local_key].update_for_index(sample_index, adjusted, dst_allow, row_date)
+        self.store_value_in_row(row_date, sample_index, value, local_key, dst_allow)
 
     def fetch_data_from_database(self, key_object, row_date, sample_data):
         '''
