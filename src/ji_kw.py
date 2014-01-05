@@ -54,7 +54,7 @@ class EnergyReader(CommonReader):
         EnergyReader:
         '''
         self.check_for_constant_string('B', 2, u'Raport energii godzinowej dla ')
-        self.period_server.verify_hours_headers(self, self.start_energy_col)
+        self.verify_hours_headers()
         self.check_for_constant_string('M', 2, u'kWh')
         self.check_for_constant_string('B', 3, u'Za okres')
         self.check_for_constant_string('D', 3, u'od')
