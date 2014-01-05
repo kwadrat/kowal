@@ -458,6 +458,15 @@ def surowy_czas(czas=None):
     else:
         return czas
 
+def autumn_dst_day(napis):
+    result = 0
+    rok, miesiac, dzien = data_z_napisu(napis)
+    if miesiac == 10 and dzien > 31 - 7:
+        nkd = NumerDnia(rok, miesiac, dzien)
+        if is_sunday(nkd):
+            result = 1
+    return result
+
 class TestDaysDates(unittest.TestCase):
     def test_stalych_datownika(self):
         '''
@@ -556,3 +565,6 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(zn_unik(frozen=1), 'tFpF')
         self.assertEqual(is_sunday(2), 0)
         self.assertEqual(is_sunday(3), 1)
+        self.assertEqual(autumn_dst_day(du_kw.rjb_dzien_przkl), 0)
+        self.assertEqual(autumn_dst_day('2013-10-27'), 1)
+        self.assertEqual(autumn_dst_day('2012-10-28'), 1)
