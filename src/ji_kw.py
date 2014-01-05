@@ -85,6 +85,13 @@ class EnergyReader(CommonReader):
         self.check_for_constant_string('A', nrows, u'Suma')
         return xrange(7, nrows - 2)
 
+    def col_using_dst(self, sample_index):
+        '''
+        EnergyReader:
+        '''
+        col_in_sheet = self.start_energy_col + sample_index
+        return col_in_sheet
+
     def fetch_energy_field(self, dfb, key_object, single_row, row_date, single_column, sample_index):
         '''
         EnergyReader:
