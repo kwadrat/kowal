@@ -116,6 +116,9 @@ def dzien_nowego_roku(rok):
 def data_z_napisu(napis):
     return time.strptime(napis, '%Y-%m-%d')[:3]
 
+def dwojka_z_napisu(napis):
+    return time.strptime(napis, '%Y-%m')[:2]
+
 def checkdate(napis):
     poprawna = True
     try:
@@ -549,6 +552,7 @@ class TestDaysDates(unittest.TestCase):
         self.assertFalse(checkdate('2012-02-31'))
         self.assertTrue(checkdate('2012-2-1'))
         self.assertEqual(data_z_napisu(du_kw.rjb_dzien_przkl), (2011, 12, 13))
+        self.assertEqual(dwojka_z_napisu('2011-12'), (2011, 12))
         self.assertEqual(nazwa_rzymskiego(4), 'IV')
         self.assertEqual(roman_range((1, 2, 2011)), 'I-II-2011')
         self.assertEqual(len(daty_roku(2008, rok_z_rozszerzeniem=0)), rq_kw.RokZwykly + 1)
