@@ -93,9 +93,23 @@ def wykonaj_analize_danych(result):
         przemysl_wiersz_poborow(slownik_wpisow, single_row)
     return slownik_wpisow
 
+def uzupelnij_brakujace(slownik_wpisow):
+    all_keys = slownik_wpisow.keys()
+    if all_keys:
+        all_keys.sort()
+        one_key = all_keys[0]
+        last_key = all_keys[-1]
+        while one_key < last_key:
+            if one_key not in slownik_wpisow:
+                slownik_wpisow[one_key] = {}
+            one_krotka = dn_kw.dwojka_z_napisu(one_key)
+            one_krotka = dn_kw.nast_rok_mies(*one_krotka)
+            one_key = dn_kw.napis_z_rok_mies(*one_krotka)
+
 def zrob_tabele_poborow(lst_h, result):
     lst_h.ddj(ze_kw.formularz_1c_zlm_wrsz)
     slownik_wpisow = wykonaj_analize_danych(result)
+    uzupelnij_brakujace(slownik_wpisow)
     wygeneruj_tabelke_poborow(lst_h, slownik_wpisow)
 
 OgolnaListaPoborow = lt_kw.OgolnaListaPoborow
