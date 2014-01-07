@@ -185,5 +185,5 @@ DocelowoOdwrotnieOproczOstatniego = 1
 TymczasowoPozwolNaUzupelnienieBorki = 1
 TymczasowoWygenerujSztywne = 0
 
-TymczasowoTylkoJeden = 1
+TymczasowoTylkoJeden = 0
 DocelowoPosrednikDokladnejLiczby = 0
