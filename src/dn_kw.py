@@ -470,6 +470,10 @@ def autumn_dst_day(napis):
             result = 1
     return result
 
+def detect_day_ranges(napis):
+    result = None
+    return result
+
 class TestDaysDates(unittest.TestCase):
     def test_stalych_datownika(self):
         '''
@@ -572,3 +576,36 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(autumn_dst_day(du_kw.rjb_dzien_przkl), 0)
         self.assertEqual(autumn_dst_day('2013-10-27'), 1)
         self.assertEqual(autumn_dst_day('2012-10-28'), 1)
+
+    def test_verify_day_ranges(self):
+        '''
+        TestDaysDates:
+        '''
+        self.assertEqual(detect_day_ranges('01-06-I-2010'), None)
+        self.assertEqual(detect_day_ranges('01.I-06.I-2010'), None)
+        self.assertEqual(detect_day_ranges('07.I-31.I-2010'), None)
+        self.assertEqual(detect_day_ranges('07-I-XII-2010'), None)
+        self.assertEqual(detect_day_ranges('24-IV-XII-2013'), None)
+        self.assertEqual(detect_day_ranges('I - III-2013'), None)
+        self.assertEqual(detect_day_ranges('I - IX-2012'), None)
+        self.assertEqual(detect_day_ranges('I - XII-2010'), None)
+        self.assertEqual(detect_day_ranges('I - XII-2011'), None)
+        self.assertEqual(detect_day_ranges('I-23-IV-2013'), None)
+        self.assertEqual(detect_day_ranges('I-II-2011'), None)
+        self.assertEqual(detect_day_ranges('I-III-2012'), None)
+        self.assertEqual(detect_day_ranges('I-III-2013'), None)
+        self.assertEqual(detect_day_ranges('III-XII-2011'), None)
+        self.assertEqual(detect_day_ranges('I-IV-2012'), None)
+        self.assertEqual(detect_day_ranges('I-IX-2012'), None)
+        self.assertEqual(detect_day_ranges('II-XII-2010'), None)
+        self.assertEqual(detect_day_ranges('IV - XII-2013'), None)
+        self.assertEqual(detect_day_ranges('I-VI-2012'), None)
+        self.assertEqual(detect_day_ranges('IV-XII-2012'), None)
+        self.assertEqual(detect_day_ranges('IV-XII-2013'), None)
+        self.assertEqual(detect_day_ranges('I-XII-2011'), None)
+        self.assertEqual(detect_day_ranges('I-XII-2012'), None)
+        self.assertEqual(detect_day_ranges('I-XII-2013'), None)
+        self.assertEqual(detect_day_ranges('VIII-XII-2011'), None)
+        self.assertEqual(detect_day_ranges('VII-XII-2012'), None)
+        self.assertEqual(detect_day_ranges('V-XII-2012'), None)
+        self.assertEqual(detect_day_ranges('X-XII-2012'), None)
