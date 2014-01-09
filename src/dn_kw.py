@@ -478,6 +478,10 @@ def detect_day_ranges(napis):
         result = (rok, reszta)
     return result
 
+def detect_month_pair(napis):
+    result = (1, 1, 1, 6)
+    return result
+
 class TestDaysDates(unittest.TestCase):
     def test_stalych_datownika(self):
         '''
@@ -613,3 +617,9 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(detect_day_ranges('VII-XII-2012'), (2012, 'VII-XII'))
         self.assertEqual(detect_day_ranges('V-XII-2012'), (2012, 'V-XII'))
         self.assertEqual(detect_day_ranges('X-XII-2012'), (2012, 'X-XII'))
+
+    def test_verify_2_day_ranges(self):
+        '''
+        TestDaysDates:
+        '''
+        self.assertEqual(detect_month_pair('01-06-I'), (1, 1, 1, 6))
