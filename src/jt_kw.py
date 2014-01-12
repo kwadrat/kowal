@@ -42,7 +42,9 @@ class RomanPeriod(object):
         elem_ls = elem_ls[1:]
         if elem_ls:
             self.the_day_first = elem_ls[0]
-        elem_ls = elem_ls[1:]
+            elem_ls = elem_ls[1:]
+        else:
+            self.the_day_first = None
         return elem_ls
 
     def take_second(self, elem_ls):
@@ -147,6 +149,7 @@ class TestDaysRanges(unittest.TestCase):
         obk = RomanPeriod()
         rest = obk.take_first(['XII'])
         self.assertEqual(obk.the_first, 12)
+        self.assertEqual(obk.the_day_first, None)
         self.assertEqual(rest, [])
 
     def test_days_7_ranges(self):
