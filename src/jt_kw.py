@@ -19,6 +19,12 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+class RomanPeriod(object):
+    def __init__(self):
+        '''
+        RomanPeriod:
+        '''
+
 def detect_day_ranges(napis):
     result = None
     if napis[-5] == '-':
@@ -70,3 +76,9 @@ class TestDaysRanges(unittest.TestCase):
         TestDaysRanges:
         '''
         self.assertEqual(detect_month_pair('01-06-I'), (1, 1, 1, 6))
+
+    def test_days_3_ranges(self):
+        '''
+        TestDaysRanges:
+        '''
+        obk = RomanPeriod()
