@@ -25,6 +25,11 @@ class RomanPeriod(object):
         RomanPeriod:
         '''
 
+    def take_year(self, elem_ls):
+        '''
+        RomanPeriod:
+        '''
+
 def detect_day_ranges(napis):
     result = None
     if napis[-5] == '-':
@@ -82,3 +87,4 @@ class TestDaysRanges(unittest.TestCase):
         TestDaysRanges:
         '''
         obk = RomanPeriod()
+        obk.take_year(['2013'])
