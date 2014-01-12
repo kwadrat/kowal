@@ -65,6 +65,8 @@ class RomanPeriod(object):
         elem_ls = self.take_year(elem_ls)
         elem_ls = self.take_second(elem_ls)
         elem_ls = self.take_first(elem_ls)
+        if self.the_first is None:
+            self.the_first = self.the_second
         return elem_ls
 
     def __init__(self, the_date=None):
@@ -222,3 +224,15 @@ class TestDaysRanges(unittest.TestCase):
         self.assertEqual(obk.the_first, None)
         self.assertEqual(obk.the_day_first, 2)
         self.assertEqual(rest, [])
+
+    def test_days_12_ranges(self):
+        '''
+        TestDaysRanges:
+        '''
+        obk = RomanPeriod('02-06-I-2010')
+        self.assertEqual(obk.the_year, 2010)
+        self.assertEqual(obk.the_second, 1)
+        self.assertEqual(obk.the_day_second, 6)
+        self.assertEqual(obk.the_first, 1)
+        self.assertEqual(obk.the_day_first, 2)
+        self.assertEqual(obk.the_rest, [])
