@@ -31,7 +31,8 @@ class RomanPeriod(object):
         RomanPeriod:
         '''
         self.the_year = int(elem_ls[0])
-        return elem_ls[1:]
+        elem_ls = elem_ls[1:]
+        return elem_ls
 
     def take_first(self, elem_ls):
         '''
@@ -41,7 +42,8 @@ class RomanPeriod(object):
         elem_ls = elem_ls[1:]
         if elem_ls:
             self.the_day_first = elem_ls[0]
-        return elem_ls[1:]
+        elem_ls = elem_ls[1:]
+        return elem_ls
 
     def take_second(self, elem_ls):
         '''
