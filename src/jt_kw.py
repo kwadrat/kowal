@@ -38,6 +38,9 @@ class RomanPeriod(object):
         RomanPeriod:
         '''
         self.the_first = dn_kw.roman_map[elem_ls[0]]
+        elem_ls = elem_ls[1:]
+        if elem_ls:
+            self.the_day_first = elem_ls[0]
         return elem_ls[1:]
 
     def take_second(self, elem_ls):
@@ -137,4 +140,14 @@ class TestDaysRanges(unittest.TestCase):
         obk = RomanPeriod()
         rest = obk.take_first(['XII'])
         self.assertEqual(obk.the_first, 12)
+        self.assertEqual(rest, [])
+
+    def test_days_7_ranges(self):
+        '''
+        TestDaysRanges:
+        '''
+        obk = RomanPeriod()
+        rest = obk.take_first(['VI', 12])
+        self.assertEqual(obk.the_first, 6)
+        self.assertEqual(obk.the_day_first, 12)
         self.assertEqual(rest, [])
