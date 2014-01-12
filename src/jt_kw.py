@@ -80,6 +80,18 @@ class RomanPeriod(object):
             elem_ls.reverse()
             self.the_rest = self.take_all(elem_ls)
 
+    def get_tuple(self):
+        '''
+        RomanPeriod:
+        '''
+        return (
+            self.the_year,
+            self.the_first,
+            self.the_day_first,
+            self.the_second,
+            self.the_day_second,
+            )
+
 def detect_day_ranges(napis):
     result = None
     if napis[-5] == '-':
@@ -236,3 +248,4 @@ class TestDaysRanges(unittest.TestCase):
         self.assertEqual(obk.the_first, 1)
         self.assertEqual(obk.the_day_first, 2)
         self.assertEqual(obk.the_rest, [])
+        self.assertEqual(obk.get_tuple(), (2010, 1, 2, 1, 6))
