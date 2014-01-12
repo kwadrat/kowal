@@ -21,11 +21,6 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 class RomanPeriod(object):
-    def __init__(self):
-        '''
-        RomanPeriod:
-        '''
-
     def take_year(self, elem_ls):
         '''
         RomanPeriod:
@@ -70,6 +65,17 @@ class RomanPeriod(object):
         elem_ls = self.take_second(elem_ls)
         elem_ls = self.take_first(elem_ls)
         return elem_ls
+
+    def __init__(self, the_date=None):
+        '''
+        RomanPeriod:
+        '''
+        if the_date is not None:
+            elem_ls = the_date.replace('-', ' ')
+            elem_ls = elem_ls.replace('.', ' ')
+            elem_ls = elem_ls.split()
+            elem_ls.reverse()
+            self.the_rest = self.take_all(elem_ls)
 
 def detect_day_ranges(napis):
     result = None
@@ -193,3 +199,15 @@ class TestDaysRanges(unittest.TestCase):
         self.assertEqual(obk.the_first, 4)
         self.assertEqual(obk.the_day_first, None)
         self.assertEqual(rest, [])
+
+    def test_days_10_ranges(self):
+        '''
+        TestDaysRanges:
+        '''
+        obk = RomanPeriod('IV-XII-2012')
+        self.assertEqual(obk.the_year, 2012)
+        self.assertEqual(obk.the_second, 12)
+        self.assertEqual(obk.the_day_second, None)
+        self.assertEqual(obk.the_first, 4)
+        self.assertEqual(obk.the_day_first, None)
+        self.assertEqual(obk.the_rest, [])
