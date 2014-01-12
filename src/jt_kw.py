@@ -29,6 +29,8 @@ class RomanPeriod(object):
         '''
         RomanPeriod:
         '''
+        self.the_year = int(elem_ls[0])
+        return elem_ls[1:]
 
 def detect_day_ranges(napis):
     result = None
@@ -87,4 +89,6 @@ class TestDaysRanges(unittest.TestCase):
         TestDaysRanges:
         '''
         obk = RomanPeriod()
-        obk.take_year(['2013'])
+        rest = obk.take_year(['2013'])
+        self.assertEqual(obk.the_year, 2013)
+        self.assertEqual(rest, [])
