@@ -62,6 +62,15 @@ class RomanPeriod(object):
                 elem_ls = elem_ls[1:]
         return elem_ls
 
+    def take_all(self, elem_ls):
+        '''
+        RomanPeriod:
+        '''
+        elem_ls = self.take_year(elem_ls)
+        elem_ls = self.take_second(elem_ls)
+        elem_ls = self.take_first(elem_ls)
+        return elem_ls
+
 def detect_day_ranges(napis):
     result = None
     if napis[-5] == '-':
@@ -171,3 +180,16 @@ class TestDaysRanges(unittest.TestCase):
         self.assertEqual(obk.the_second, 9)
         self.assertEqual(obk.the_day_second, None)
         self.assertEqual(rest, ['VI'])
+
+    def test_days_9_ranges(self):
+        '''
+        TestDaysRanges:
+        '''
+        obk = RomanPeriod()
+        rest = obk.take_all(['2012', 'XII', 'IV'])
+        self.assertEqual(obk.the_year, 2012)
+        self.assertEqual(obk.the_second, 12)
+        self.assertEqual(obk.the_day_second, None)
+        self.assertEqual(obk.the_first, 4)
+        self.assertEqual(obk.the_day_first, None)
+        self.assertEqual(rest, [])
