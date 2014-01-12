@@ -33,10 +33,11 @@ class RomanPeriod(object):
         '''
         RomanPeriod:
         '''
-        self.the_first = dn_kw.roman_map[elem_ls[0]]
-        elem_ls = elem_ls[1:]
+        self.the_first = dn_kw.roman_map.get(elem_ls[0])
+        if self.the_first is not None:
+            elem_ls = elem_ls[1:]
         if elem_ls:
-            self.the_day_first = elem_ls[0]
+            self.the_day_first = int(elem_ls[0])
             elem_ls = elem_ls[1:]
         else:
             self.the_day_first = None
@@ -211,3 +212,13 @@ class TestDaysRanges(unittest.TestCase):
         self.assertEqual(obk.the_first, 4)
         self.assertEqual(obk.the_day_first, None)
         self.assertEqual(obk.the_rest, [])
+
+    def test_days_11_ranges(self):
+        '''
+        TestDaysRanges:
+        '''
+        obk = RomanPeriod()
+        rest = obk.take_first(['02'])
+        self.assertEqual(obk.the_first, None)
+        self.assertEqual(obk.the_day_first, 2)
+        self.assertEqual(rest, [])
