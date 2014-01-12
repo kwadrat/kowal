@@ -8,6 +8,7 @@ Rozpoznawanie zakresu dni w ramach jednego roku
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import dn_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -30,6 +31,13 @@ class RomanPeriod(object):
         RomanPeriod:
         '''
         self.the_year = int(elem_ls[0])
+        return elem_ls[1:]
+
+    def take_second(self, elem_ls):
+        '''
+        RomanPeriod:
+        '''
+        self.the_second = dn_kw.roman_map[elem_ls[0]]
         return elem_ls[1:]
 
 def detect_day_ranges(napis):
@@ -91,4 +99,13 @@ class TestDaysRanges(unittest.TestCase):
         obk = RomanPeriod()
         rest = obk.take_year(['2013'])
         self.assertEqual(obk.the_year, 2013)
+        self.assertEqual(rest, [])
+
+    def test_days_4_ranges(self):
+        '''
+        TestDaysRanges:
+        '''
+        obk = RomanPeriod()
+        rest = obk.take_second(['I'])
+        self.assertEqual(obk.the_second, 1)
         self.assertEqual(rest, [])
