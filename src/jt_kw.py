@@ -20,6 +20,8 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+NewImplementation = 0
+
 class RomanPeriod(object):
     def take_year(self, elem_ls):
         '''
@@ -93,11 +95,19 @@ class RomanPeriod(object):
             )
 
 def detect_day_ranges(napis):
-    result = None
-    if napis[-5] == '-':
-        rok = int(napis[-4:])
-        reszta = napis[:-5]
-        result = (rok, reszta)
+    if NewImplementation:
+        ##############################################################################
+        obk = RomanPeriod(napis)
+        result = obk.get_tuple()
+        ##############################################################################
+    else:
+        ##############################################################################
+        result = None
+        if napis[-5] == '-':
+            rok = int(napis[-4:])
+            reszta = napis[:-5]
+            result = (rok, reszta)
+        ##############################################################################
     return result
 
 def detect_month_pair(napis):
@@ -109,34 +119,68 @@ class TestDaysRanges(unittest.TestCase):
         '''
         TestDaysRanges:
         '''
-        self.assertEqual(detect_day_ranges('01-06-I-2010'), (2010, '01-06-I'))
-        self.assertEqual(detect_day_ranges('01.I-06.I-2010'), (2010, '01.I-06.I'))
-        self.assertEqual(detect_day_ranges('07.I-31.I-2010'), (2010, '07.I-31.I'))
-        self.assertEqual(detect_day_ranges('07-I-XII-2010'), (2010, '07-I-XII'))
-        self.assertEqual(detect_day_ranges('24-IV-XII-2013'), (2013, '24-IV-XII'))
-        self.assertEqual(detect_day_ranges('I - III-2013'), (2013, 'I - III'))
-        self.assertEqual(detect_day_ranges('I - IX-2012'), (2012, 'I - IX'))
-        self.assertEqual(detect_day_ranges('I - XII-2010'), (2010, 'I - XII'))
-        self.assertEqual(detect_day_ranges('I - XII-2011'), (2011, 'I - XII'))
-        self.assertEqual(detect_day_ranges('I-23-IV-2013'), (2013, 'I-23-IV'))
-        self.assertEqual(detect_day_ranges('I-II-2011'), (2011, 'I-II'))
-        self.assertEqual(detect_day_ranges('I-III-2012'), (2012, 'I-III'))
-        self.assertEqual(detect_day_ranges('I-III-2013'), (2013, 'I-III'))
-        self.assertEqual(detect_day_ranges('III-XII-2011'), (2011, 'III-XII'))
-        self.assertEqual(detect_day_ranges('I-IV-2012'), (2012, 'I-IV'))
-        self.assertEqual(detect_day_ranges('I-IX-2012'), (2012, 'I-IX'))
-        self.assertEqual(detect_day_ranges('II-XII-2010'), (2010, 'II-XII'))
-        self.assertEqual(detect_day_ranges('IV - XII-2013'), (2013, 'IV - XII'))
-        self.assertEqual(detect_day_ranges('I-VI-2012'), (2012, 'I-VI'))
-        self.assertEqual(detect_day_ranges('IV-XII-2012'), (2012, 'IV-XII'))
-        self.assertEqual(detect_day_ranges('IV-XII-2013'), (2013, 'IV-XII'))
-        self.assertEqual(detect_day_ranges('I-XII-2011'), (2011, 'I-XII'))
-        self.assertEqual(detect_day_ranges('I-XII-2012'), (2012, 'I-XII'))
-        self.assertEqual(detect_day_ranges('I-XII-2013'), (2013, 'I-XII'))
-        self.assertEqual(detect_day_ranges('VIII-XII-2011'), (2011, 'VIII-XII'))
-        self.assertEqual(detect_day_ranges('VII-XII-2012'), (2012, 'VII-XII'))
-        self.assertEqual(detect_day_ranges('V-XII-2012'), (2012, 'V-XII'))
-        self.assertEqual(detect_day_ranges('X-XII-2012'), (2012, 'X-XII'))
+        if NewImplementation:
+            ##############################################################################
+            self.assertEqual(detect_day_ranges('01-06-I-2010'), (2010, '01-06-I'))
+            self.assertEqual(detect_day_ranges('01.I-06.I-2010'), (2010, '01.I-06.I'))
+            self.assertEqual(detect_day_ranges('07.I-31.I-2010'), (2010, '07.I-31.I'))
+            self.assertEqual(detect_day_ranges('07-I-XII-2010'), (2010, '07-I-XII'))
+            self.assertEqual(detect_day_ranges('24-IV-XII-2013'), (2013, '24-IV-XII'))
+            self.assertEqual(detect_day_ranges('I - III-2013'), (2013, 'I - III'))
+            self.assertEqual(detect_day_ranges('I - IX-2012'), (2012, 'I - IX'))
+            self.assertEqual(detect_day_ranges('I - XII-2010'), (2010, 'I - XII'))
+            self.assertEqual(detect_day_ranges('I - XII-2011'), (2011, 'I - XII'))
+            self.assertEqual(detect_day_ranges('I-23-IV-2013'), (2013, 'I-23-IV'))
+            self.assertEqual(detect_day_ranges('I-II-2011'), (2011, 'I-II'))
+            self.assertEqual(detect_day_ranges('I-III-2012'), (2012, 'I-III'))
+            self.assertEqual(detect_day_ranges('I-III-2013'), (2013, 'I-III'))
+            self.assertEqual(detect_day_ranges('III-XII-2011'), (2011, 'III-XII'))
+            self.assertEqual(detect_day_ranges('I-IV-2012'), (2012, 'I-IV'))
+            self.assertEqual(detect_day_ranges('I-IX-2012'), (2012, 'I-IX'))
+            self.assertEqual(detect_day_ranges('II-XII-2010'), (2010, 'II-XII'))
+            self.assertEqual(detect_day_ranges('IV - XII-2013'), (2013, 'IV - XII'))
+            self.assertEqual(detect_day_ranges('I-VI-2012'), (2012, 'I-VI'))
+            self.assertEqual(detect_day_ranges('IV-XII-2012'), (2012, 'IV-XII'))
+            self.assertEqual(detect_day_ranges('IV-XII-2013'), (2013, 'IV-XII'))
+            self.assertEqual(detect_day_ranges('I-XII-2011'), (2011, 'I-XII'))
+            self.assertEqual(detect_day_ranges('I-XII-2012'), (2012, 'I-XII'))
+            self.assertEqual(detect_day_ranges('I-XII-2013'), (2013, 'I-XII'))
+            self.assertEqual(detect_day_ranges('VIII-XII-2011'), (2011, 'VIII-XII'))
+            self.assertEqual(detect_day_ranges('VII-XII-2012'), (2012, 'VII-XII'))
+            self.assertEqual(detect_day_ranges('V-XII-2012'), (2012, 'V-XII'))
+            self.assertEqual(detect_day_ranges('X-XII-2012'), (2012, 'X-XII'))
+            ##############################################################################
+        else:
+            ##############################################################################
+            self.assertEqual(detect_day_ranges('01-06-I-2010'), (2010, '01-06-I'))
+            self.assertEqual(detect_day_ranges('01.I-06.I-2010'), (2010, '01.I-06.I'))
+            self.assertEqual(detect_day_ranges('07.I-31.I-2010'), (2010, '07.I-31.I'))
+            self.assertEqual(detect_day_ranges('07-I-XII-2010'), (2010, '07-I-XII'))
+            self.assertEqual(detect_day_ranges('24-IV-XII-2013'), (2013, '24-IV-XII'))
+            self.assertEqual(detect_day_ranges('I - III-2013'), (2013, 'I - III'))
+            self.assertEqual(detect_day_ranges('I - IX-2012'), (2012, 'I - IX'))
+            self.assertEqual(detect_day_ranges('I - XII-2010'), (2010, 'I - XII'))
+            self.assertEqual(detect_day_ranges('I - XII-2011'), (2011, 'I - XII'))
+            self.assertEqual(detect_day_ranges('I-23-IV-2013'), (2013, 'I-23-IV'))
+            self.assertEqual(detect_day_ranges('I-II-2011'), (2011, 'I-II'))
+            self.assertEqual(detect_day_ranges('I-III-2012'), (2012, 'I-III'))
+            self.assertEqual(detect_day_ranges('I-III-2013'), (2013, 'I-III'))
+            self.assertEqual(detect_day_ranges('III-XII-2011'), (2011, 'III-XII'))
+            self.assertEqual(detect_day_ranges('I-IV-2012'), (2012, 'I-IV'))
+            self.assertEqual(detect_day_ranges('I-IX-2012'), (2012, 'I-IX'))
+            self.assertEqual(detect_day_ranges('II-XII-2010'), (2010, 'II-XII'))
+            self.assertEqual(detect_day_ranges('IV - XII-2013'), (2013, 'IV - XII'))
+            self.assertEqual(detect_day_ranges('I-VI-2012'), (2012, 'I-VI'))
+            self.assertEqual(detect_day_ranges('IV-XII-2012'), (2012, 'IV-XII'))
+            self.assertEqual(detect_day_ranges('IV-XII-2013'), (2013, 'IV-XII'))
+            self.assertEqual(detect_day_ranges('I-XII-2011'), (2011, 'I-XII'))
+            self.assertEqual(detect_day_ranges('I-XII-2012'), (2012, 'I-XII'))
+            self.assertEqual(detect_day_ranges('I-XII-2013'), (2013, 'I-XII'))
+            self.assertEqual(detect_day_ranges('VIII-XII-2011'), (2011, 'VIII-XII'))
+            self.assertEqual(detect_day_ranges('VII-XII-2012'), (2012, 'VII-XII'))
+            self.assertEqual(detect_day_ranges('V-XII-2012'), (2012, 'V-XII'))
+            self.assertEqual(detect_day_ranges('X-XII-2012'), (2012, 'X-XII'))
+            ##############################################################################
 
     def test_days_2_ranges(self):
         '''
