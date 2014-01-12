@@ -54,7 +54,7 @@ class RomanPeriod(object):
             if the_elem in dn_kw.roman_map:
                 self.the_day_second = None
             else:
-                self.the_day_second = the_elem
+                self.the_day_second = int(the_elem)
                 elem_ls = elem_ls[1:]
         return elem_ls
 
@@ -153,7 +153,7 @@ class TestDaysRanges(unittest.TestCase):
         TestDaysRanges:
         '''
         obk = RomanPeriod()
-        rest = obk.take_second(['I', 5])
+        rest = obk.take_second(['I', '05'])
         self.assertEqual(obk.the_second, 1)
         self.assertEqual(obk.the_day_second, 5)
         self.assertEqual(rest, [])
@@ -173,7 +173,7 @@ class TestDaysRanges(unittest.TestCase):
         TestDaysRanges:
         '''
         obk = RomanPeriod()
-        rest = obk.take_first(['VI', 12])
+        rest = obk.take_first(['VI', '12'])
         self.assertEqual(obk.the_first, 6)
         self.assertEqual(obk.the_day_first, 12)
         self.assertEqual(rest, [])
