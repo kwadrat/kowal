@@ -38,6 +38,9 @@ class RomanPeriod(object):
         RomanPeriod:
         '''
         self.the_second = dn_kw.roman_map[elem_ls[0]]
+        elem_ls = elem_ls[1:]
+        if elem_ls:
+            self.the_day_second = elem_ls[0]
         return elem_ls[1:]
 
 def detect_day_ranges(napis):
@@ -108,4 +111,14 @@ class TestDaysRanges(unittest.TestCase):
         obk = RomanPeriod()
         rest = obk.take_second(['I'])
         self.assertEqual(obk.the_second, 1)
+        self.assertEqual(rest, [])
+
+    def test_days_5_ranges(self):
+        '''
+        TestDaysRanges:
+        '''
+        obk = RomanPeriod()
+        rest = obk.take_second(['I', 5])
+        self.assertEqual(obk.the_second, 1)
+        self.assertEqual(obk.the_day_second, 5)
         self.assertEqual(rest, [])
