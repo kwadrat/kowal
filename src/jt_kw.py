@@ -20,7 +20,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-NewImplementation = 0
+NewImplementation = 1
 
 class RomanPeriod(object):
     def take_year(self, elem_ls):
