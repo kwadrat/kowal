@@ -36,7 +36,7 @@ class FormularzBazowySkrawkow(object):
         w.append(ze_kw.formularz_1c_kon_formularza)
         return w
 
-    def get_fr(self, tgk, klucz):
+    def get_from_form(self, tgk, klucz):
         '''
         FormularzBazowySkrawkow:
         '''
