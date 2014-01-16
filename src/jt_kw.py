@@ -97,10 +97,6 @@ def detect_day_ranges(napis):
     result = obk.get_tuple()
     return result
 
-def detect_month_pair(napis):
-    result = (1, 1, 1, 6)
-    return result
-
 class TestDaysRanges(unittest.TestCase):
     def test_days_ranges(self):
         '''
@@ -134,12 +130,6 @@ class TestDaysRanges(unittest.TestCase):
         self.assertEqual(detect_day_ranges('VII-XII-2012'), (2012, 7, None, 12, None))
         self.assertEqual(detect_day_ranges('V-XII-2012'), (2012, 5, None, 12, None))
         self.assertEqual(detect_day_ranges('X-XII-2012'), (2012, 10, None, 12, None))
-
-    def test_days_2_ranges(self):
-        '''
-        TestDaysRanges:
-        '''
-        self.assertEqual(detect_month_pair('01-06-I'), (1, 1, 1, 6))
 
     def test_days_3_ranges(self):
         '''
