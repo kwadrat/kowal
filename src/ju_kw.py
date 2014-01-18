@@ -21,3 +21,9 @@ rh_ozncz_jdo_a = 'JDO'
 rh_ozncz_cki_a = 'CKI'
 rh_kol_data_dla_plyw_judo = ['AG', 'AH', 'AG']
 rh_etk_daty_plyw_judo = u'Data Noty Księgowej         dla           Kryta Pływalnia i Pawilon Judo'
+
+legalne_wzory_sumy_brutto = frozenset([
+    u'Wartość brutto          [zł]',
+    u'Koszt brutto z faktury Vattenfall S/D [zł]',
+    u'Wartość brutto z faktury S/D [zł]',
+    ])
