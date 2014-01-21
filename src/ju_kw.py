@@ -27,3 +27,12 @@ legalne_wzory_sumy_brutto = frozenset([
     u'Koszt brutto z faktury Vattenfall S/D [zł]',
     u'Wartość brutto z faktury S/D [zł]',
     ])
+
+def sprawdz_ogolnie_zgodnosc(elem, zbior, dodatkowy=None):
+    if elem not in zbior:
+        tmp_format = 'elem'; print 'Eval:', tmp_format, eval(tmp_format)
+        tmp_format = 'repr(elem)'; print 'Eval:', tmp_format, eval(tmp_format)
+        tmp_format = 'zbior'; print 'Eval:', tmp_format, eval(tmp_format)
+        if dodatkowy is not None:
+            tmp_format = 'dodatkowy'; print 'Eval:', tmp_format, eval(tmp_format)
+        raise RuntimeError('Nieznany')
