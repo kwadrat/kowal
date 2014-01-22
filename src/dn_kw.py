@@ -470,6 +470,9 @@ def autumn_dst_day(napis):
             result = 1
     return result
 
+def mozliwy_py_time(rh_dt):
+    return hasattr(rh_dt, 'year')
+
 class TestDaysDates(unittest.TestCase):
     def test_stalych_datownika(self):
         '''
