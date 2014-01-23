@@ -4,6 +4,8 @@
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import dn_kw
+import dz_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -36,3 +38,26 @@ def sprawdz_ogolnie_zgodnosc(elem, zbior, dodatkowy=None):
         if dodatkowy is not None:
             tmp_format = 'dodatkowy'; print 'Eval:', tmp_format, eval(tmp_format)
         raise RuntimeError('Nieznany')
+
+def doszlifuj_date(rh_dt):
+    if dn_kw.mozliwy_py_time(rh_dt):
+        krotka = (rh_dt.year, rh_dt.month, rh_dt.day)
+        rh_dt = dn_kw.NapisDaty( * krotka)
+    elif dz_kw.rozpoznaj_dzisiejszy_dzien(rh_dt) == 10:
+        pass # Data już w dobrym formacie
+    else:
+        if rh_dt == u'16-06-200':
+            rh_dt = rh_dt + '5'
+        elif rh_dt == u'31-11-2006':
+            rh_dt = u'30-11-2006'
+        krotka = dz_kw.wyciagnij_date_z_formatu_dmr(rh_dt)
+        rh_dt = dn_kw.NapisDaty( * krotka)
+    return rh_dt
+
+class TestObiektuZespolu(unittest.TestCase):
+    def test_szlifowania_daty(self):
+        '''
+        TestObiektuZespolu:
+        '''
+        self.assertEqual(doszlifuj_date(u'16-06-200'), '2005-06-16')
+        self.assertEqual(doszlifuj_date(u'31-11-2006'), '2006-11-30')
