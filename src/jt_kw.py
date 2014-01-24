@@ -8,6 +8,7 @@ Rozpoznawanie zakresu dni w ramach jednego roku
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import hj_kw
 import dn_kw
 '''.splitlines()]
 
@@ -96,6 +97,9 @@ def detect_day_ranges(napis):
     obk = RomanPeriod(napis)
     result = obk.get_tuple()
     return result
+
+def valid_date_format(value):
+    return hj_kw.zamien_na_logiczne(value)
 
 class TestDaysRanges(unittest.TestCase):
     def test_days_ranges(self):
@@ -236,3 +240,11 @@ class TestDaysRanges(unittest.TestCase):
         self.assertEqual(obk.the_day_first, 2)
         self.assertEqual(obk.the_rest, [])
         self.assertEqual(obk.get_tuple(), (2010, 1, 2, 1, 6))
+
+    def test_days_13_ranges(self):
+        '''
+        TestDaysRanges:
+        '''
+        self.assertEqual(valid_date_format(None), 0)
+        self.assertEqual(valid_date_format('02-06-I-2010'), 1)
+        self.assertEqual(valid_date_format(''), 0)
