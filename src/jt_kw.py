@@ -21,6 +21,8 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+roman_map = dict((k, v) for k, v in zip(dn_kw.tab_rzymskich, dn_kw.numery_miesiecy))
+
 class RomanPeriod(object):
     def take_year(self, elem_ls):
         '''
@@ -34,7 +36,7 @@ class RomanPeriod(object):
         '''
         RomanPeriod:
         '''
-        self.the_first = dn_kw.roman_map.get(elem_ls[0])
+        self.the_first = roman_map.get(elem_ls[0])
         if self.the_first is not None:
             elem_ls = elem_ls[1:]
         if elem_ls:
@@ -48,11 +50,11 @@ class RomanPeriod(object):
         '''
         RomanPeriod:
         '''
-        self.the_second = dn_kw.roman_map[elem_ls[0]]
+        self.the_second = roman_map[elem_ls[0]]
         elem_ls = elem_ls[1:]
         if elem_ls:
             the_elem = elem_ls[0]
-            if the_elem in dn_kw.roman_map:
+            if the_elem in roman_map:
                 self.the_day_second = None
             else:
                 self.the_day_second = int(the_elem)
@@ -248,3 +250,10 @@ class TestDaysRanges(unittest.TestCase):
         self.assertEqual(valid_date_format(None), 0)
         self.assertEqual(valid_date_format('02-06-I-2010'), 1)
         self.assertEqual(valid_date_format(''), 0)
+
+    def test_days_14_ranges(self):
+        '''
+        TestDaysRanges:
+        '''
+        self.assertEqual(roman_map['I'], 1)
+        self.assertEqual(roman_map['XII'], 12)
