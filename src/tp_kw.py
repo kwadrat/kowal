@@ -4,7 +4,7 @@
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lw_kw
 import mt_kw
-import fu_kw
+import ne_kw
 import la_kw
 '''.splitlines()]
 
@@ -20,7 +20,7 @@ for i in NazwyModulow:
 def generate_raport_file(dfb, nazwa_pliku, uu_maper, krt_pobor, id_obiekt):
     xwg = la_kw.WriterGateway()
     if krt_pobor.tvk_pobor == lw_kw.Dn_Energy:
-        obk = fu_kw.EnergyWriter()
+        obk = ne_kw.EnergyWriter()
     else:
         assert krt_pobor.tvk_pobor == lw_kw.Dn_Power
         obk = mt_kw.PowerWriter()

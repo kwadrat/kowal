@@ -9,7 +9,7 @@ import gv_kw
 import dn_kw
 import en_kw
 import mt_kw
-import fu_kw
+import ne_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
