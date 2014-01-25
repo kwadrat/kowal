@@ -37,6 +37,8 @@ class EnergyWriter(CommonWriter):
         EnergyWriter:
         '''
         row = base_data_line + day_nr
+        nkd = jc_kw.nr_of_day(my_data[lc_kw.fq_m_date_qv])
+        jestem_weekend = jc_kw.wyznacz_weekend(nkd)
         for sample_index, my_sample in enumerate(my_data[lc_kw.fq_m_samples_qv]):
             col = self.first_sample_column + sample_index
             m_coor = to_kw.MergedCoords(row, col)
