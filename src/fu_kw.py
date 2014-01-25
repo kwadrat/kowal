@@ -10,7 +10,7 @@ import jl_kw
 import lw_kw
 import gx_kw
 import jc_kw
-import mu_kw
+import nc_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -22,7 +22,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-CommonWriter = mu_kw.CommonWriter
+CommonWriter = nc_kw.CommonWriter
 
 class EnergyWriter(CommonWriter):
     def __init__(self):
@@ -48,8 +48,8 @@ class EnergyWriter(CommonWriter):
         '''
         EnergyWriter:
         '''
-        if mu_kw.month_enabled(nr_month):
-            all_dates = mu_kw.unique_sorted(dane_bazy, lc_kw.fq_m_date_qv)
+        if nc_kw.month_enabled(nr_month):
+            all_dates = nc_kw.unique_sorted(dane_bazy, lc_kw.fq_m_date_qv)
             all_hours = self.period_server.time_for_header
             first_line = dost_wiersz.zabierz_wiersze(len(all_dates) + 2)
             base_data_line = first_line + 1
@@ -64,9 +64,9 @@ class EnergyWriter(CommonWriter):
         '''
         dost_wiersz = gx_kw.Wierszownik(0)
         xwg.add_a_sheet(uu_maper.get_short_name(name))
-        selected_data = mu_kw.dla_podanej_nazwy(dane_bazy, name)
+        selected_data = nc_kw.dla_podanej_nazwy(dane_bazy, name)
         self.setup_col_widths(xwg)
-        month_dict, all_months = mu_kw.wyznacz_slownik_miesiaca(selected_data)
+        month_dict, all_months = nc_kw.wyznacz_slownik_miesiaca(selected_data)
         for nr_month, moj_rm in enumerate(all_months):
             my_data = month_dict[moj_rm]
             self.generate_for_month(xwg, my_data, nr_month, dost_wiersz)
