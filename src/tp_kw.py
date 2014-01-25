@@ -3,7 +3,7 @@
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lw_kw
-import mt_kw
+import np_kw
 import ne_kw
 import la_kw
 '''.splitlines()]
@@ -23,5 +23,5 @@ def generate_raport_file(dfb, nazwa_pliku, uu_maper, krt_pobor, id_obiekt):
         obk = ne_kw.EnergyWriter()
     else:
         assert krt_pobor.tvk_pobor == lw_kw.Dn_Power
-        obk = mt_kw.PowerWriter()
+        obk = np_kw.PowerWriter()
     obk.generate_one_file(xwg, dfb, nazwa_pliku, uu_maper, id_obiekt=id_obiekt)
