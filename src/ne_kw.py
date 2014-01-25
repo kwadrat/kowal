@@ -39,10 +39,11 @@ class EnergyWriter(CommonWriter):
         row = base_data_line + day_nr
         nkd = jc_kw.nr_of_day(my_data[lc_kw.fq_m_date_qv])
         jestem_weekend = jc_kw.wyznacz_weekend(nkd)
+        dc_b_style = nc_kw.weekend_b_style(jestem_weekend)
         for sample_index, my_sample in enumerate(my_data[lc_kw.fq_m_samples_qv]):
             col = self.first_sample_column + sample_index
             m_coor = to_kw.MergedCoords(row, col)
-            xwg.zapisz_co_flt(m_coor, my_sample)
+            xwg.zapisz_co_flt(m_coor, my_sample, **dc_b_style)
 
     def generate_for_month(self, xwg, dane_bazy, nr_month, dost_wiersz):
         '''
