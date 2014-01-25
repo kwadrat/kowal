@@ -1,10 +1,6 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
-'''
-Raport opłat stałych, zmiennych za gaz W-5
-'''
-
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
