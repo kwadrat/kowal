@@ -11,7 +11,7 @@ NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lc_kw
 import rq_kw
 import oc_kw
-import dn_kw
+import jt_kw
 import ls_kw
 import oa_kw
 import dq_kw
@@ -122,7 +122,7 @@ class KlasaObrazu(object):
         '''
         KlasaObrazu:
         '''
-        NapisMiesiaca = dn_kw.RzymskiDnia(akt)
+        NapisMiesiaca = jt_kw.RzymskiDnia(akt)
         wsp_x_napisu = self.aqr.poziomo_tego_dnia((nast + akt) // 2, self.szerokosc_dx_skali, self.szerokosc_obrazu)
         self.my_texts.append(
           (wsp_x_napisu,
