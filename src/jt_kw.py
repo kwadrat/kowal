@@ -103,14 +103,17 @@ def detect_day_ranges(napis):
 def valid_date_format(value):
     return hj_kw.zamien_na_logiczne(value)
 
+def nazwa_rzymskiego(numer):
+    return dn_kw.tab_rzymskich[numer - 1]
+
 def RzymskiDnia(nkd):
     miesiac = dn_kw.MiesiacDnia(nkd)
-    return dn_kw.nazwa_rzymskiego(miesiac)
+    return nazwa_rzymskiego(miesiac)
 
 def roman_range(krotka):
     return '%s-%s-%s' % (
-        dn_kw.nazwa_rzymskiego(krotka[0]),
-        dn_kw.nazwa_rzymskiego(krotka[1]),
+        nazwa_rzymskiego(krotka[0]),
+        nazwa_rzymskiego(krotka[1]),
         krotka[2],
         )
 
@@ -270,3 +273,4 @@ class TestDaysRanges(unittest.TestCase):
         self.assertEqual(roman_map['XII'], 12)
         self.assertEqual(RzymskiDnia(15278), 'X')
         self.assertEqual(roman_range((1, 2, 2011)), 'I-II-2011')
+        self.assertEqual(nazwa_rzymskiego(4), 'IV')

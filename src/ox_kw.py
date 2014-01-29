@@ -4,7 +4,7 @@
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
-import dn_kw
+import jt_kw
 import lw_kw
 import dd_kw
 import dq_kw
@@ -39,7 +39,7 @@ class SzkieletMiesiecznyDlaPoborow(KlasaOgolnaSzkieletuDat):
         '''
         SzkieletMiesiecznyDlaPoborow:
         '''
-        return dn_kw.nazwa_rzymskiego(1 + akt / 2)
+        return jt_kw.nazwa_rzymskiego(1 + akt / 2)
 
 class TestMiesiecznegoSzkieletu(unittest.TestCase):
     def test_energii_szkieletowego_miesiecznie_datownika(self):

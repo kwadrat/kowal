@@ -42,9 +42,6 @@ data_testowa_a = 1314612000 # 2011.08.29_12.00.00
 data_testowa_b = 1288346400 # 2010.10.29_12.00.00
 data_testowa_c = 1323769292 # 2011.12.13_10.41.32
 
-def nazwa_rzymskiego(numer):
-    return tab_rzymskich[numer - 1]
-
 def rok_liczba(czas=None):
     return time.localtime(czas).tm_year
 
@@ -542,7 +539,6 @@ class TestDaysDates(unittest.TestCase):
         self.assertTrue(checkdate('2012-2-1'))
         self.assertEqual(data_z_napisu(du_kw.rjb_dzien_przkl), (2011, 12, 13))
         self.assertEqual(dwojka_z_napisu('2011-12'), (2011, 12))
-        self.assertEqual(nazwa_rzymskiego(4), 'IV')
         self.assertEqual(len(daty_roku(2008, rok_z_rozszerzeniem=0)), rq_kw.RokZwykly + 1)
         self.assertEqual(len(daty_roku(2008, rok_z_rozszerzeniem=1)), rq_kw.RokDluzszy + 1)
         self.assertEqual(napis_z_rok_mies(2011, 9), '2011-09')
