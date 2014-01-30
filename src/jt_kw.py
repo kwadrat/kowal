@@ -117,6 +117,13 @@ def roman_range(krotka):
         krotka[2],
         )
 
+def miesiace_i_rok(zakres_miesiecy):
+    mies_pocz = roman_map[zakres_miesiecy[0]]
+    mies_kon = roman_map[zakres_miesiecy[1]]
+    rok_zakresu = int(zakres_miesiecy[2])
+    result = (mies_pocz, mies_kon, rok_zakresu)
+    return result
+
 class TestDaysRanges(unittest.TestCase):
     def test_days_ranges(self):
         '''
@@ -274,3 +281,5 @@ class TestDaysRanges(unittest.TestCase):
         self.assertEqual(RzymskiDnia(15278), 'X')
         self.assertEqual(roman_range((1, 2, 2011)), 'I-II-2011')
         self.assertEqual(nazwa_rzymskiego(4), 'IV')
+        self.assertEqual(miesiace_i_rok(['I', 'II', '2011']), (1, 2, 2011))
+        self.assertEqual(miesiace_i_rok(['IV', 'VIII', '2013']), (4, 8, 2013))
