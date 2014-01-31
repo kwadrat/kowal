@@ -21,9 +21,16 @@ class FenceMaker(object):
         FenceMaker:
         '''
 
+    def force_borders(self, the_style):
+        '''
+        FenceMaker:
+        '''
+
 class TestFenceShape(unittest.TestCase):
     def test_fence_shape(self):
         '''
         TestFenceShape:
         '''
         obk = FenceMaker()
+        the_style = None
+        obk.force_borders(the_style)
