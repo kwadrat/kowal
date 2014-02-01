@@ -47,6 +47,8 @@ class FenceMaker(object):
         the_borders = the_style.borders
         the_borders.left = the_borders.right = the_borders.top = the_borders.bottom = the_borders.THIN
 
+brd_1_obk = FenceMaker()
+
 class TestFenceShape(unittest.TestCase):
     def test_fence_shape(self):
         '''
