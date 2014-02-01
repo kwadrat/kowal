@@ -39,6 +39,8 @@ class FenceMaker(object):
         '''
         FenceMaker:
         '''
+        the_borders = the_style.borders
+        the_borders.left = the_borders.right = the_borders.top = the_borders.bottom = the_borders.THIN
 
 class TestFenceShape(unittest.TestCase):
     def test_fence_shape(self):
@@ -46,5 +48,5 @@ class TestFenceShape(unittest.TestCase):
         TestFenceShape:
         '''
         obk = FenceMaker()
-        the_style = None
+        the_style = PseudoStyle()
         obk.force_borders(the_style)
