@@ -4,6 +4,7 @@
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import nf_kw
 import to_kw
 import gv_kw
 import dn_kw
@@ -197,6 +198,11 @@ class WriterGateway(object):
             vert=self.xlwt.Alignment.VERT_CENTER,
             horz=self.xlwt.Alignment.HORZ_CENTER,
             ) # Center vertically, center horizontally
+        self.n8_style = self.prepare_cell(
+            vert=self.xlwt.Alignment.VERT_CENTER,
+            horz=self.xlwt.Alignment.HORZ_CENTER,
+            borders=nf_kw.brd_1_obk,
+            ) # Center vertically, center horizontally, simple borders
         self.n10_style = self.prepare_cell(
             16,
             vert=self.xlwt.Alignment.VERT_CENTER,
