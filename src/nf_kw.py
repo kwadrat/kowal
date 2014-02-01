@@ -23,7 +23,7 @@ for i in NazwyModulow:
 class PseudoBorders(object):
     def __init__(self):
         '''
-        PseudoStyle:
+        PseudoBorders:
         '''
         self.THIN = None
 
