@@ -65,8 +65,7 @@ class WriterGateway(object):
         '''
         the_style = self.xlwt.XFStyle()
         if borders is not None:
-            the_borders = the_style.borders
-            the_borders.left = the_borders.right = the_borders.top = the_borders.bottom = the_borders.THIN
+            borders.force_borders(the_style)
         needed_wrap = wrap is not None
         needed_vert = vert is not None
         needed_horz = horz is not None

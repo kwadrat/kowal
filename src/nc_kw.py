@@ -2,6 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import nf_kw
 import lc_kw
 import to_kw
 import gv_kw
@@ -160,11 +161,11 @@ class CommonWriter(CommonRdWr):
             col = self.nmax_start_col + i
             my_value = hour_est.one_sample
             m_coor = to_kw.MergedCoords(row_c, col)
-            xwg.zapisz_co_flt(m_coor, my_value, size=12, borders=1)
+            xwg.zapisz_co_flt(m_coor, my_value, size=12, borders=nf_kw.brd_1_obk)
             etk_c = klm_c_ads.get_ka_official_address(col_delta=i)
             tekst_wzoru = 'MAX(0,%s-%s)' % (etk_c, etk_e)
             m_coor = to_kw.MergedCoords(row_d, col)
-            xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12, borders=1)
+            xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12, borders=nf_kw.brd_1_obk)
             ##############################################################################
             one_date = hour_est.one_date
             xwg.zapisz_date(row_e, col, one_date)
@@ -175,17 +176,17 @@ class CommonWriter(CommonRdWr):
         etk_f, etk_g = klm_c_ads.row_start_end_labels()
         tekst_wzoru = hj_kw.rcp_emax(etk_f, etk_g)
         m_coor = to_kw.MergedCoords(row_c, self.col_for_moc_max)
-        xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12, bold=1, borders=1)
+        xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12, bold=1, borders=nf_kw.brd_1_obk)
         tekst_wzoru = hj_kw.rcp_sred(etk_f, etk_g)
         m_coor = to_kw.MergedCoords(row_c, self.col_for_moc_max + 1)
-        xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12, borders=1)
+        xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12, borders=nf_kw.brd_1_obk)
         tekst_wzoru = hj_kw.rcp_emin(etk_f, etk_g)
         m_coor = to_kw.MergedCoords(row_c, self.col_for_moc_max + 2)
-        xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12, borders=1)
+        xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12, borders=nf_kw.brd_1_obk)
         etk_h, etk_i = klm_c_ads.row_start_end_labels(ndiff_line - nmax_line)
         tekst_wzoru = hj_kw.rcp_poziom(etk_h, etk_i)
         m_coor = to_kw.MergedCoords(ndiff_line, self.col_for_moc_max)
-        xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12, borders=1)
+        xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12, borders=nf_kw.brd_1_obk)
 
     def generate_max_row(self, xwg, bottom_max_line, klm_ads):
         '''
