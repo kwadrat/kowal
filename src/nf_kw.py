@@ -15,6 +15,11 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+(
+    BRD_SINGLE,
+    BRD_DOUBLE,
+    ) = range(2)
+
 class PseudoBorders(object):
     def __init__(self):
         '''
