@@ -15,6 +15,20 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+class PseudoBorders(object):
+    def __init__(self):
+        '''
+        PseudoStyle:
+        '''
+        self.THIN = None
+
+class PseudoStyle(object):
+    def __init__(self):
+        '''
+        PseudoStyle:
+        '''
+        self.borders = PseudoBorders()
+
 class FenceMaker(object):
     def __init__(self):
         '''
