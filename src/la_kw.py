@@ -255,7 +255,7 @@ class WriterGateway(object):
         self.wbk.save(nazwa_docelowa)
         self.wbk = None
 
-    def write_single(self, m_coor, the_content, style=None):
+    def write_unicode(self, m_coor, the_content, style=None):
         '''
         WriterGateway:
         '''
@@ -272,7 +272,7 @@ class WriterGateway(object):
         WriterGateway:
         '''
         the_content = en_kw.utf_to_unicode(napis)
-        self.write_single(m_coor, the_content, style)
+        self.write_unicode(m_coor, the_content, style)
 
     def zapisz_polaczone_komorki(self, akt_wiersz, akt_kolumna, napis, style, liczba_kolumn=1):
         '''
@@ -298,7 +298,7 @@ class WriterGateway(object):
         WriterGateway:
         '''
         the_style = self.get_or_generate_number_style(kl_miejsc=kl_miejsc, bold=bold, size=size, rn_colour=rn_colour, borders=borders, italic=italic, fore_colour=fore_colour)
-        self.write_single(m_coor, the_content, the_style)
+        self.write_unicode(m_coor, the_content, the_style)
 
     def zapisz_rn_flt(self, akt_wiersz, akt_kolumna, rn_liczba):
         '''
@@ -310,7 +310,7 @@ class WriterGateway(object):
         size = None
         the_style = self.get_or_generate_number_style(kl_miejsc=kl_miejsc, rn_colour=rn_liczba.rn_colour, bold=bold, size=size)
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna)
-        self.write_single(m_coor, liczba, the_style)
+        self.write_unicode(m_coor, liczba, the_style)
 
     def zapisz_date(self, akt_wiersz, akt_kolumna, liczba, italic=None, fore_colour=None):
         '''
@@ -318,7 +318,7 @@ class WriterGateway(object):
         '''
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna)
         the_style = self.get_or_generate_number_style(kl_miejsc=NMF_3_date, italic=italic, fore_colour=fore_colour)
-        self.write_single(m_coor, liczba, the_style)
+        self.write_unicode(m_coor, liczba, the_style)
 
     def zapisz_wzor(self, m_coor, tekst_wzoru, kl_miejsc=2, size=None, bold=None, rn_colour=None, borders=None):
         '''
@@ -341,7 +341,7 @@ class WriterGateway(object):
         '''
         the_style = self.get_or_generate_number_style(kl_miejsc=kl_miejsc, rn_colour=rn_colour, bold=bold, size=size)
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna)
-        self.write_single(m_coor, tresc_napisu, style=the_style)
+        self.write_unicode(m_coor, tresc_napisu, style=the_style)
 
     def napis_ze_stylem(self, m_coor, tresc_napisu=None, rn_colour=None, bold=0, size=None, wrap=None, middle=None, kl_none=None, italic=None, fore_colour=None):
         '''
