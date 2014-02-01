@@ -267,7 +267,7 @@ class WriterGateway(object):
             r1, r2, c1, c2 = m_coor.wyznacz_cztery()
             self.sheet.write_merge(r1, r2, c1, c2, the_content, **dc_style)
 
-    def zapisz_utf(self, m_coor, napis, style=None):
+    def write_utf(self, m_coor, napis, style=None):
         '''
         WriterGateway:
         '''
@@ -279,7 +279,7 @@ class WriterGateway(object):
         WriterGateway:
         '''
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna, liczba_kolumn)
-        self.zapisz_utf(m_coor, napis, style)
+        self.write_utf(m_coor, napis, style)
 
     def zapisz_rozmiar_14_komorki(self, akt_wiersz, akt_kolumna, napis, liczba_kolumn=8):
         '''
@@ -333,7 +333,7 @@ class WriterGateway(object):
         '''
         akt_kolumna = 0
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna, liczba_wierszy=liczba_wierszy)
-        self.zapisz_utf(m_coor, dn_kw.tab_miesiecy[nr_mies - 1])
+        self.write_utf(m_coor, dn_kw.tab_miesiecy[nr_mies - 1])
 
     def ustaw_sam_styl(self, akt_wiersz, akt_kolumna, kl_miejsc=2, rn_colour=None, bold=0, size=None, tresc_napisu=None):
         '''
@@ -348,7 +348,7 @@ class WriterGateway(object):
         WriterGateway:
         '''
         the_style = self.get_or_generate_style(rn_colour, bold, size, wrap, middle, kl_none, italic=italic, fore_colour=fore_colour)
-        self.zapisz_utf(m_coor, tresc_napisu, style=the_style)
+        self.write_utf(m_coor, tresc_napisu, style=the_style)
 
     def napis_ze_wsp(self, row, col, tresc_napisu=None, bold=None, rn_colour=None, italic=None, fore_colour=None, middle=None):
         '''
