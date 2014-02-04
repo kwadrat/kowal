@@ -28,8 +28,6 @@ SEC_PER_DAY = 24 * 60 * 60
 tab_miesiecy = ['styczeń', 'luty', 'marzec', 'kwiecień', 'maj', 'czerwiec',
 'lipiec', 'sierpień', 'wrzesień', 'październik', 'listopad', 'grudzień',]
 
-numery_miesiecy = range(1, 12 + 1)
-
 dni_tygodnia = ['poniedziałek', 'wtorek', 'środa', 'czwartek', 'piątek', 'sobota', 'niedziela',]
 
 dm_rk_baz = 2005 # Domyślny rok bazowy

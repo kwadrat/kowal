@@ -24,7 +24,9 @@ for i in NazwyModulow:
 tab_rzymskich = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X',
   'XI', 'XII']
 
-roman_map = dict((k, v) for k, v in zip(tab_rzymskich, dn_kw.numery_miesiecy))
+numery_miesiecy = range(1, 12 + 1)
+
+roman_map = dict((k, v) for k, v in zip(tab_rzymskich, numery_miesiecy))
 
 class RomanPeriod(object):
     def take_year(self, elem_ls):
