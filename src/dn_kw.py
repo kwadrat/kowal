@@ -28,9 +28,6 @@ SEC_PER_DAY = 24 * 60 * 60
 tab_miesiecy = ['styczeń', 'luty', 'marzec', 'kwiecień', 'maj', 'czerwiec',
 'lipiec', 'sierpień', 'wrzesień', 'październik', 'listopad', 'grudzień',]
 
-tab_rzymskich = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X',
-  'XI', 'XII']
-
 numery_miesiecy = range(1, 12 + 1)
 
 dni_tygodnia = ['poniedziałek', 'wtorek', 'środa', 'czwartek', 'piątek', 'sobota', 'niedziela',]

@@ -21,7 +21,10 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-roman_map = dict((k, v) for k, v in zip(dn_kw.tab_rzymskich, dn_kw.numery_miesiecy))
+tab_rzymskich = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X',
+  'XI', 'XII']
+
+roman_map = dict((k, v) for k, v in zip(tab_rzymskich, dn_kw.numery_miesiecy))
 
 class RomanPeriod(object):
     def take_year(self, elem_ls):
@@ -104,7 +107,7 @@ def valid_date_format(value):
     return hj_kw.zamien_na_logiczne(value)
 
 def nazwa_rzymskiego(numer):
-    return dn_kw.tab_rzymskich[numer - 1]
+    return tab_rzymskich[numer - 1]
 
 def RzymskiDnia(nkd):
     miesiac = dn_kw.MiesiacDnia(nkd)
