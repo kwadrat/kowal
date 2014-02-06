@@ -4,6 +4,7 @@
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import ng_kw
 import nf_kw
 import to_kw
 import gv_kw
@@ -235,6 +236,9 @@ class WriterGateway(object):
             vert=self.xlwt.Alignment.VERT_CENTER,
             colour=self.xlwt.Style.colour_map[gv_kw.ECR_indigo],
             )
+        self.style_map = {
+            ng_kw.NVB_3_STYLE: self.n3_style,
+            }
 
     def workbook_create(self):
         '''
