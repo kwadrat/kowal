@@ -273,6 +273,12 @@ class WriterGateway(object):
             r1, r2, c1, c2 = m_coor.wyznacz_cztery()
             self.sheet.write_merge(r1, r2, c1, c2, the_content, **dc_style)
 
+    def convert_from_sel(self, style_sel):
+        '''
+        WriterGateway:
+        '''
+        return self.style_map[style_sel]
+
     def write_l_unicode(self, m_coor, the_content, style_sel):
         '''
         WriterGateway:
