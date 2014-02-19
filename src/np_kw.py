@@ -4,7 +4,6 @@
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
-import nf_kw
 import lc_kw
 import to_kw
 import gu_kw
@@ -90,8 +89,6 @@ class PowerWriter(CommonWriter):
                 month_aggr.add_day_samples(my_data)
             month_aggr.prepare_top_values(self.liczba_max)
             self.generate_summary(xwg, nmax_line, ndiff_line, first_line, month_aggr)
-            the_a_style = xwg.get_or_generate_style(size=12, middle=1, borders=nf_kw.brd_1_obk)
-            the_b_style = xwg.get_or_generate_style(size=12, middle=1, wrap=1, borders=nf_kw.brd_1_obk)
             xwg.zapisz_l_polaczone_komorki(summary_label_line, self.nmax_start_col, '%d największych poborów mocy w m-cu' % self.liczba_max, style_sel=ng_kw.NVB_16_STYLE, liczba_kolumn=self.liczba_max)
             xwg.zapisz_l_polaczone_komorki(summary_unit_line, self.nmax_start_col, gb_kw.tytul_kilowatow_przekroczenia, style_sel=ng_kw.NVB_16_STYLE, liczba_kolumn=self.liczba_max)
             xwg.zapisz_l_polaczone_komorki(diff_label_line, self.nmax_start_col, 'przekroczenia mocy (jeśli liczba ujemna to 0,00)', style_sel=ng_kw.NVB_16_STYLE, liczba_kolumn=self.liczba_max)
