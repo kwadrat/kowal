@@ -236,6 +236,12 @@ class WriterGateway(object):
             vert=self.xlwt.Alignment.VERT_CENTER,
             colour=self.xlwt.Style.colour_map[gv_kw.ECR_indigo],
             )
+        self.n16_style = self.prepare_cell(
+            12,
+            vert=self.xlwt.Alignment.VERT_CENTER,
+            horz=self.xlwt.Alignment.HORZ_CENTER,
+            borders=nf_kw.brd_1_obk,
+            )
         self.style_map = {
             ng_kw.NVB_3_STYLE: self.n3_style,
             ng_kw.NVB_5_STYLE: self.n5_style,
@@ -248,6 +254,7 @@ class WriterGateway(object):
             ng_kw.NVB_13_STYLE: self.n13_style,
             ng_kw.NVB_14_STYLE: self.n14_style,
             ng_kw.NVB_15_STYLE: self.n15_style,
+            ng_kw.NVB_16_STYLE: self.n16_style,
             }
 
     def workbook_create(self):
