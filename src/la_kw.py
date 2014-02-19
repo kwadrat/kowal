@@ -238,6 +238,7 @@ class WriterGateway(object):
             )
         self.style_map = {
             ng_kw.NVB_3_STYLE: self.n3_style,
+            ng_kw.NVB_5_STYLE: self.n5_style,
             ng_kw.NVB_6_STYLE: self.n6_style,
             ng_kw.NVB_7_STYLE: self.n7_style,
             ng_kw.NVB_8_STYLE: self.n8_style,
@@ -320,7 +321,7 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        self.zapisz_polaczone_komorki(akt_wiersz, akt_kolumna, napis, style=self.n5_style, liczba_kolumn=liczba_kolumn)
+        self.zapisz_l_polaczone_komorki(akt_wiersz, akt_kolumna, napis, style_sel=ng_kw.NVB_5_STYLE, liczba_kolumn=liczba_kolumn)
 
     def zapisz_bold_rozmiar_12_komorki(self, akt_wiersz, akt_kolumna, napis, liczba_kolumn=1):
         '''
