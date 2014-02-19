@@ -323,13 +323,6 @@ class WriterGateway(object):
         style = self.convert_from_sel(style_sel)
         self.write_utf(m_coor, napis, style)
 
-    def zapisz_polaczone_komorki(self, akt_wiersz, akt_kolumna, napis, style, liczba_kolumn=1):
-        '''
-        WriterGateway:
-        '''
-        m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna, liczba_kolumn)
-        self.write_utf(m_coor, napis, style)
-
     def zapisz_l_polaczone_komorki(self, akt_wiersz, akt_kolumna, napis, style_sel, liczba_kolumn=1):
         '''
         WriterGateway:
