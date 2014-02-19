@@ -244,6 +244,7 @@ class WriterGateway(object):
             ng_kw.NVB_8_STYLE: self.n8_style,
             ng_kw.NVB_10_STYLE: self.n10_style,
             ng_kw.NVB_11_STYLE: self.n11_style,
+            ng_kw.NVB_13_STYLE: self.n13_style,
             }
 
     def workbook_create(self):
