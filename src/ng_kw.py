@@ -23,6 +23,7 @@ NVB_3_STYLE
 NVB_6_STYLE
 NVB_7_STYLE
 NVB_8_STYLE
+NVB_10_STYLE
 '''
 for single_name in code_strings.split():
     exec '%(single_name)s = "%(single_name)s"' % dict(
