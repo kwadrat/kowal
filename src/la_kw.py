@@ -394,8 +394,8 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        the_style = self.get_or_generate_number_style(kl_miejsc=kl_miejsc, rn_colour=rn_colour, bold=bold, size=size)
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna)
+        the_style = self.get_or_generate_number_style(kl_miejsc=kl_miejsc, rn_colour=rn_colour, bold=bold, size=size)
         self.write_unicode(m_coor, tresc_napisu, style=the_style)
 
     def napis_ze_stylem(self, m_coor, tresc_napisu=None, rn_colour=None, bold=0, size=None, wrap=None, middle=None, kl_none=None, italic=None, fore_colour=None):
