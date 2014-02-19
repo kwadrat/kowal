@@ -431,3 +431,9 @@ class TestArkuszowy(unittest.TestCase):
         '''
         self.assertEqual(calculate_style(None), {})
         self.assertEqual(calculate_style(1), {'style':1})
+
+    def test_gateway(self):
+        '''
+        TestArkuszowy:
+        '''
+        xwg = WriterGateway()
