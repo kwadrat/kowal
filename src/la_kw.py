@@ -257,6 +257,7 @@ class WriterGateway(object):
             wrap=1,
             )
         self.style_map = {
+            None: None,
             ng_kw.NVB_3_STYLE: self.n3_style,
             ng_kw.NVB_5_STYLE: self.n5_style,
             ng_kw.NVB_6_STYLE: self.n6_style,
