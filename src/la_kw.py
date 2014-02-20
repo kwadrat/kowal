@@ -434,6 +434,21 @@ class WriterGateway(object):
             ]) # Rozmiary podawane przez MS Excel
         self.wymus_szerokosci(lista_rozmiarow)
 
+    def tytul_miesiac(self, akt_wiersz, liczba_wierszy):
+        '''
+        WriterGateway:
+        '''
+        akt_kolumna = 0
+        liczba_kolumn = 1
+        self.zapisz_l_polaczone_komorki(
+            akt_wiersz,
+            akt_kolumna,
+            'Miesiąc',
+            style_sel=ng_kw.NVB_8_STYLE,
+            liczba_kolumn=liczba_kolumn,
+            liczba_wierszy=liczba_wierszy,
+            )
+
 class TestArkuszowy(unittest.TestCase):
     def test_arkuszowy(self):
         '''
