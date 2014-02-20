@@ -4,6 +4,7 @@
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import ng_kw
 import lc_kw
 import to_kw
 import gu_kw
