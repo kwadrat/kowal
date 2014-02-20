@@ -138,13 +138,6 @@ class CommonWriter(CommonRdWr):
             xwg.zapisz_date(row, self.second_date_column, one_date, **dc_b_style)
             xwg.napis_ze_wsp(row, self.second_weekday_column, weekday_name, **dc_style)
 
-    def b1_coor(self, first_line):
-        '''
-        CommonWriter:
-        '''
-        m_coor = to_kw.MergedCoords(first_line, self.first_date_column)
-        return m_coor
-
     def generate_summary(self, xwg, nmax_line, ndiff_line, first_line, month_aggr):
         '''
         CommonWriter:
@@ -154,7 +147,7 @@ class CommonWriter(CommonRdWr):
         row_d = ndiff_line
         row_e = row_d + 1
         row_f = row_e + 1
-        m_coor = self.b1_coor(first_line)
+        m_coor = to_kw.MergedCoords(first_line, self.first_date_column)
         etk_e = gu_kw.KolumnowyAdresator(*m_coor.wyznacz_dwa()).get_ka_official_address()
         for i in xrange(self.liczba_max):
             hour_est = month_aggr.ordered_limited[i]
@@ -228,7 +221,7 @@ class CommonWriter(CommonRdWr):
         '''
         CommonWriter:
         '''
-        m_coor = self.b1_coor(first_line)
+        m_coor = to_kw.MergedCoords(first_line, self.first_date_column)
         xwg.zapisz_co_flt(m_coor, moc_umowna, kl_miejsc=0, bold=1, rn_colour=gv_kw.ECR_red)
         klm_ads = gu_kw.KolumnowyAdresator(first_line, self.first_date_column)
         tekst_wzoru = klm_ads.get_ka_official_address()
