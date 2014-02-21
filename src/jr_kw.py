@@ -26,6 +26,13 @@ for i in NazwyModulow:
 ManipulateSheet = jv_kw.ManipulateSheet
 
 class EnergyMonthUnitCosts(ManipulateSheet):
+    def col_details(self, wiersz, kolumna):
+        '''
+        EnergyMonthUnitCosts:
+        '''
+        for i in [2, 3, 4, 5, 7, 8]:
+            print self.read_cell(wiersz + i, kolumna)
+
     def __init__(self, wbk):
         '''
         EnergyMonthUnitCosts:
