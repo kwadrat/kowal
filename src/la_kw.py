@@ -315,13 +315,6 @@ class WriterGateway(object):
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna, liczba_kolumn, liczba_wierszy)
         self.write_l_unicode(m_coor, napis, style_sel)
 
-    def write_utf(self, m_coor, napis, style=None):
-        '''
-        WriterGateway:
-        '''
-        the_content = en_kw.utf_to_unicode(napis)
-        self.write_unicode(m_coor, the_content, style)
-
     def write_l_utf(self, m_coor, napis, style_sel):
         '''
         WriterGateway:
