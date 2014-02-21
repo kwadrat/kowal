@@ -347,6 +347,18 @@ class WriterGateway(object):
             liczba_wierszy=liczba_wierszy,
             )
 
+    def zapisz_duzy_zielony_tytul(self, akt_wiersz, akt_kolumna, napis, liczba_kolumn):
+        '''
+        WriterGateway:
+        '''
+        self.zapisz_l_polaczone_komorki(
+            akt_wiersz,
+            akt_kolumna,
+            napis,
+            style_sel=ng_kw.NVB_10_STYLE,
+            liczba_kolumn=liczba_kolumn,
+            )
+
     def zapisz_niezawijana_ramka(self, akt_wiersz, akt_kolumna, napis, liczba_kolumn=1):
         '''
         WriterGateway:
