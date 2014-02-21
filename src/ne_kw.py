@@ -5,7 +5,6 @@ import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lc_kw
-import to_kw
 import jl_kw
 import lw_kw
 import gx_kw
@@ -42,8 +41,7 @@ class EnergyWriter(CommonWriter):
         dc_b_style = nc_kw.weekend_b_style(jestem_weekend)
         for sample_index, my_sample in enumerate(my_data[lc_kw.fq_m_samples_qv]):
             col = self.first_sample_column + sample_index
-            m_coor = to_kw.MergedCoords(row, col)
-            xwg.zapisz_co_flt(m_coor, my_sample, **dc_b_style)
+            xwg.zapisz_flt(row, col, my_sample, **dc_b_style)
 
     def generate_for_month(self, xwg, dane_bazy, nr_month, dost_wiersz):
         '''
