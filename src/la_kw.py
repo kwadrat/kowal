@@ -315,20 +315,13 @@ class WriterGateway(object):
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna, liczba_kolumn, liczba_wierszy)
         self.write_l_unicode(m_coor, napis, style_sel)
 
-    def write_l_utf(self, m_coor, the_content, style_sel):
-        '''
-        WriterGateway:
-        '''
-        style = self.convert_from_sel(style_sel)
-        self.write_unicode(m_coor, the_content, style)
-
     def zapisz_l_polaczone_komorki(self, akt_wiersz, akt_kolumna, napis, style_sel, liczba_kolumn=1, liczba_wierszy=1):
         '''
         WriterGateway:
         '''
         the_content = en_kw.utf_to_unicode(napis)
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna, liczba_kolumn, liczba_wierszy)
-        self.write_l_utf(m_coor, the_content, style_sel)
+        self.write_l_unicode(m_coor, the_content, style_sel)
 
     def zapisz_rozmiar_14_komorki(self, akt_wiersz, akt_kolumna, napis, liczba_kolumn=8):
         '''
