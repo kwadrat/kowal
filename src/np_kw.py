@@ -6,7 +6,6 @@ import unittest
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import ng_kw
 import lc_kw
-import to_kw
 import gu_kw
 import lm_kw
 import gb_kw
@@ -50,8 +49,7 @@ class PowerWriter(CommonWriter):
         for sample_index, my_sample in enumerate(my_data[lc_kw.fq_m_samples_qv]):
             col = self.first_sample_column + sample_index
             dc_b_style = jc_kw.obtain_cell_color(moc_um_dec, ten_treshold, jestem_weekend, my_sample)
-            m_coor = to_kw.MergedCoords(row, col)
-            xwg.zapisz_co_flt(m_coor, my_sample, **dc_b_style)
+            xwg.zapisz_flt(row, col, my_sample, **dc_b_style)
 
     def generate_for_month(self, xwg, dane_bazy, nr_month, dost_wiersz, moc_umowna):
         '''
