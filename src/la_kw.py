@@ -187,11 +187,6 @@ class WriterGateway(object):
             NMF_3_date: 'yyyy/mm/dd;@', # data RRRR-MM-DD
             }
         self.xlwt = new_module_for_writing_spreadsheet()
-        self.n8_style = self.prepare_cell(
-            vert=self.xlwt.Alignment.VERT_CENTER,
-            horz=self.xlwt.Alignment.HORZ_CENTER,
-            borders=nf_kw.brd_1_obk,
-            ) # Center vertically, center horizontally, simple borders
         self.n10_style = self.prepare_cell(
             16,
             vert=self.xlwt.Alignment.VERT_CENTER,
@@ -257,7 +252,11 @@ class WriterGateway(object):
                 vert=self.xlwt.Alignment.VERT_CENTER,
                 horz=self.xlwt.Alignment.HORZ_CENTER,
                 ), # Center vertically, center horizontally
-            ng_kw.NVB_8_STYLE: self.n8_style,
+            ng_kw.NVB_8_STYLE: self.prepare_cell(
+                vert=self.xlwt.Alignment.VERT_CENTER,
+                horz=self.xlwt.Alignment.HORZ_CENTER,
+                borders=nf_kw.brd_1_obk,
+                ), # Center vertically, center horizontally, simple borders
             ng_kw.NVB_10_STYLE: self.n10_style,
             ng_kw.NVB_11_STYLE: self.n11_style,
             ng_kw.NVB_12_STYLE: self.n12_style,
