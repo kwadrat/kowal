@@ -350,6 +350,22 @@ class WriterGateway(object):
         the_style = self.get_or_generate_number_style(kl_miejsc=kl_miejsc, bold=bold, size=size, rn_colour=rn_colour, borders=borders, italic=italic, fore_colour=fore_colour)
         self.write_unicode(m_coor, the_content, the_style)
 
+    def zapisz_flt(self, akt_wiersz, akt_kolumna, the_content, liczba_kolumn=1, liczba_wierszy=1, kl_miejsc=2, size=None, bold=None, rn_colour=None, borders=None, italic=None, fore_colour=None):
+        '''
+        WriterGateway:
+        '''
+        m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna, liczba_kolumn, liczba_wierszy)
+        self.zapisz_co_flt(m_coor,
+            the_content,
+            kl_miejsc=kl_miejsc,
+            size=size,
+            bold=bold,
+            rn_colour=rn_colour,
+            borders=borders,
+            italic=italic,
+            fore_colour=fore_colour,
+            )
+
     def zapisz_rn_flt(self, akt_wiersz, akt_kolumna, rn_liczba):
         '''
         WriterGateway:
