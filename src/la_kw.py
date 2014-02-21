@@ -188,7 +188,6 @@ class WriterGateway(object):
             }
         self.xlwt = new_module_for_writing_spreadsheet()
         # Liczby nieujemne na czerwono, użyj separatora 1000
-        self.n6_style = self.prepare_cell(12, bold=1) # Arial 12 pt, bold
         self.n7_style = self.prepare_cell(
             vert=self.xlwt.Alignment.VERT_CENTER,
             horz=self.xlwt.Alignment.HORZ_CENTER,
@@ -258,7 +257,7 @@ class WriterGateway(object):
                 wrap=1,
                 ), # Zawijaj tekst, wycentruj
             ng_kw.NVB_5_STYLE: self.prepare_cell(14), # Arial 14 pt
-            ng_kw.NVB_6_STYLE: self.n6_style,
+            ng_kw.NVB_6_STYLE: self.prepare_cell(12, bold=1), # Arial 12 pt, bold
             ng_kw.NVB_7_STYLE: self.n7_style,
             ng_kw.NVB_8_STYLE: self.n8_style,
             ng_kw.NVB_10_STYLE: self.n10_style,
