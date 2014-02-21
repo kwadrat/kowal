@@ -153,8 +153,7 @@ class CommonWriter(CommonRdWr):
             hour_est = month_aggr.ordered_limited[i]
             col = self.nmax_start_col + i
             my_value = hour_est.one_sample
-            m_coor = to_kw.MergedCoords(row_c, col)
-            xwg.zapisz_co_flt(m_coor, my_value, size=12, borders=nf_kw.brd_1_obk)
+            xwg.zapisz_flt(row_c, col, my_value, size=12, borders=nf_kw.brd_1_obk)
             etk_c = klm_c_ads.get_ka_official_address(col_delta=i)
             tekst_wzoru = 'MAX(0,%s-%s)' % (etk_c, etk_e)
             m_coor = to_kw.MergedCoords(row_d, col)
@@ -221,8 +220,7 @@ class CommonWriter(CommonRdWr):
         '''
         CommonWriter:
         '''
-        m_coor = to_kw.MergedCoords(first_line, self.first_date_column)
-        xwg.zapisz_co_flt(m_coor, moc_umowna, kl_miejsc=0, bold=1, rn_colour=gv_kw.ECR_red)
+        xwg.zapisz_flt(first_line, self.first_date_column, moc_umowna, kl_miejsc=0, bold=1, rn_colour=gv_kw.ECR_red)
         klm_ads = gu_kw.KolumnowyAdresator(first_line, self.first_date_column)
         tekst_wzoru = klm_ads.get_ka_official_address()
         m_coor = to_kw.MergedCoords(first_line, self.second_date_column)
