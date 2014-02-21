@@ -419,7 +419,9 @@ class WriterGateway(object):
         '''
         akt_kolumna = 0
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna, liczba_wierszy=1)
-        self.write_utf(m_coor, dn_kw.tab_miesiecy[nr_mies - 1])
+        napis = dn_kw.tab_miesiecy[nr_mies - 1]
+        the_content = en_kw.utf_to_unicode(napis)
+        self.write_unicode(m_coor, the_content)
 
     def ustaw_sam_styl(self, akt_wiersz, akt_kolumna, kl_miejsc=2, rn_colour=None, bold=0, size=None, tresc_napisu=None):
         '''
