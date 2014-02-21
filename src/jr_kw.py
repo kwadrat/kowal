@@ -53,12 +53,13 @@ class EnergyTable(object):
 ManipulateSheet = jv_kw.ManipulateSheet
 
 class EnergyMonthUnitCosts(ManipulateSheet):
-    def col_details(self, wiersz, kolumna):
+    def col_details(self, en_tb, d_col, wiersz, kolumna):
         '''
         EnergyMonthUnitCosts:
         '''
-        for i in [2, 3, 4, 5, 7, 8]:
-            print self.read_cell(wiersz + i, kolumna)
+        for i in [0, 2, 3, 4, 5, 7, 8]:
+            kawalek = '%14s' % self.read_cell(wiersz + i, kolumna)
+            en_tb.set_elem(i, d_col, kawalek)
 
     def __init__(self, wbk):
         '''
@@ -68,8 +69,8 @@ class EnergyMonthUnitCosts(ManipulateSheet):
         self.wbk = wbk
         klm_a_ads = gu_kw.KolumnowyAdresator()
         for self.sheet in self.wbk.sheets()[:17]:
-            if 0:
-                print self.sheet.name
+            en_tb = EnergyTable()
+            en_tb.set_elem(-1, 0, self.sheet.name)
             klm_a_ads.set_ka_base_address('E8')
             pracuj = 1
             d_col = 0
@@ -77,10 +78,11 @@ class EnergyMonthUnitCosts(ManipulateSheet):
                 wiersz, kolumna = klm_a_ads.get_row_col(col_delta=d_col)
                 wartosc_parametru = self.read_cell(wiersz, kolumna)
                 if jt_kw.valid_date_format(wartosc_parametru):
-                    print wartosc_parametru
+                    self.col_details(en_tb, d_col, wiersz, kolumna)
                     d_col += 1
                 else:
                     break
+            en_tb.show_bag()
 
 def generate_unit_2_cost_data(dfb, filename):
     xlrd = la_kw.new_module_for_reading_spreadsheet()
