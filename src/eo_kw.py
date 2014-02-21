@@ -46,4 +46,3 @@ przykladowa_fktr_p21_wegiel = 409
 przykladowa_fktr_d_sosw = 364
 przykladowa_fktr_p_zst = 115
 przykladowa_fktr_u_p20_x = 83
-przykladowa_fktr_v_sp22_x = 3054
