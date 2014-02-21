@@ -187,13 +187,6 @@ class WriterGateway(object):
             NMF_3_date: 'yyyy/mm/dd;@', # data RRRR-MM-DD
             }
         self.xlwt = new_module_for_writing_spreadsheet()
-        self.n19_style = self.prepare_cell(
-            12,
-            bold=1,
-            vert=self.xlwt.Alignment.VERT_CENTER,
-            horz=self.xlwt.Alignment.HORZ_CENTER,
-            wrap=1,
-            )
         self.style_map = {
             None: None,
             ng_kw.NVB_3_STYLE: self.prepare_cell(
@@ -257,7 +250,13 @@ class WriterGateway(object):
                 borders=nf_kw.brd_1_obk,
                 wrap=1,
                 ),
-            ng_kw.NVB_19_STYLE: self.n19_style,
+            ng_kw.NVB_19_STYLE: self.prepare_cell(
+                12,
+                bold=1,
+                vert=self.xlwt.Alignment.VERT_CENTER,
+                horz=self.xlwt.Alignment.HORZ_CENTER,
+                wrap=1,
+                ),
             }
 
     def workbook_create(self):
