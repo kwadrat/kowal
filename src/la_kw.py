@@ -334,6 +334,19 @@ class WriterGateway(object):
         '''
         self.zapisz_l_polaczone_komorki(akt_wiersz, akt_kolumna, napis, style_sel=ng_kw.NVB_6_STYLE, liczba_kolumn=liczba_kolumn)
 
+    def zapisz_zawijany_center(self, akt_wiersz, akt_kolumna, napis, liczba_kolumn=1, liczba_wierszy=1):
+        '''
+        WriterGateway:
+        '''
+        self.zapisz_l_polaczone_komorki(
+            akt_wiersz,
+            akt_kolumna,
+            napis,
+            style_sel=ng_kw.NVB_3_STYLE,
+            liczba_kolumn=liczba_kolumn,
+            liczba_wierszy=liczba_wierszy,
+            )
+
     def zapisz_niezawijana_ramka(self, akt_wiersz, akt_kolumna, napis, liczba_kolumn=1):
         '''
         WriterGateway:
