@@ -4,10 +4,10 @@
 Etykiety dla styli generowanych plików Excel
 '''
 
+import unittest
+
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 '''.splitlines()]
-
-import unittest
 
 for i in NazwyModulow:
     if i == __name__.split('.')[-1]:
