@@ -5,7 +5,6 @@ NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import ng_kw
 import nf_kw
 import lc_kw
-import to_kw
 import gv_kw
 import hj_kw
 import gu_kw
@@ -152,8 +151,7 @@ class CommonWriter(CommonRdWr):
         row_d = ndiff_line
         row_e = row_d + 1
         row_f = row_e + 1
-        m_coor = to_kw.MergedCoords(first_line, self.first_date_column)
-        etk_e = gu_kw.KolumnowyAdresator(*m_coor.wyznacz_dwa()).get_ka_official_address()
+        etk_e = gu_kw.KolumnowyAdresator(first_line, self.first_date_column).get_ka_official_address()
         for i in xrange(self.liczba_max):
             hour_est = month_aggr.ordered_limited[i]
             col = self.nmax_start_col + i
