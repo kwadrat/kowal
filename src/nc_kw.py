@@ -156,8 +156,7 @@ class CommonWriter(CommonRdWr):
             xwg.zapisz_flt(row_c, col, my_value, size=12, borders=nf_kw.brd_1_obk)
             etk_c = klm_c_ads.get_ka_official_address(col_delta=i)
             tekst_wzoru = 'MAX(0,%s-%s)' % (etk_c, etk_e)
-            m_coor = to_kw.MergedCoords(row_d, col)
-            xwg.zapisz_wzor(m_coor, tekst_wzoru, size=12, borders=nf_kw.brd_1_obk)
+            xwg.zapisz_co_wzor(row_d, col, tekst_wzoru, size=12, borders=nf_kw.brd_1_obk)
             ##############################################################################
             one_date = hour_est.one_date
             xwg.zapisz_date(row_e, col, one_date)
