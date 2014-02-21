@@ -327,7 +327,8 @@ class WriterGateway(object):
         WriterGateway:
         '''
         style = self.convert_from_sel(style_sel)
-        self.write_utf(m_coor, napis, style)
+        the_content = en_kw.utf_to_unicode(napis)
+        self.write_unicode(m_coor, the_content, style)
 
     def zapisz_l_polaczone_komorki(self, akt_wiersz, akt_kolumna, napis, style_sel, liczba_kolumn=1, liczba_wierszy=1):
         '''
