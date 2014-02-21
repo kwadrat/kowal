@@ -436,7 +436,8 @@ class WriterGateway(object):
         WriterGateway:
         '''
         the_style = self.get_or_generate_style(rn_colour, bold, size, wrap, middle, kl_none, italic=italic, fore_colour=fore_colour)
-        self.write_utf(m_coor, tresc_napisu, style=the_style)
+        the_content = en_kw.utf_to_unicode(tresc_napisu)
+        self.write_unicode(m_coor, the_content, the_style)
 
     def napis_ze_wsp(self, row, col, tresc_napisu, bold=None, rn_colour=None, italic=None, fore_colour=None, middle=None):
         '''
