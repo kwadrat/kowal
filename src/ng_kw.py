@@ -19,6 +19,7 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 code_strings = '''
+NVB_2_STYLE
 NVB_3_STYLE
 NVB_5_STYLE
 NVB_6_STYLE

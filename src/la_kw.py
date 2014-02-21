@@ -189,6 +189,11 @@ class WriterGateway(object):
         self.xlwt = new_module_for_writing_spreadsheet()
         self.style_map = {
             None: None,
+            ng_kw.NVB_2_STYLE: self.prepare_cell(
+                bold=1,
+                vert=self.xlwt.Alignment.VERT_CENTER,
+                horz=self.xlwt.Alignment.HORZ_CENTER,
+                ),
             ng_kw.NVB_3_STYLE: self.prepare_cell(
                 vert=self.xlwt.Alignment.VERT_CENTER,
                 horz=self.xlwt.Alignment.HORZ_CENTER,
