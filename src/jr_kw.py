@@ -23,6 +23,33 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+class EnergyTable(object):
+    def __init__(self):
+        '''
+        EnergyTable:
+        '''
+        self.rows = {}
+
+    def set_elem(self, row, col, name):
+        '''
+        EnergyTable:
+        '''
+        if row not in self.rows:
+            self.rows[row] = {}
+        self.rows[row][col] = name
+
+    def show_bag(self):
+        '''
+        EnergyTable:
+        '''
+        rnums = self.rows.keys()
+        rnums.sort()
+        for r_num in rnums:
+            r_cols = self.rows[r_num]
+            c_nums = r_cols.keys()
+            c_nums.sort()
+            print ' '.join(map(lambda x: r_cols[x], c_nums))
+
 ManipulateSheet = jv_kw.ManipulateSheet
 
 class EnergyMonthUnitCosts(ManipulateSheet):
