@@ -2,6 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import ng_kw
 import nf_kw
 import lc_kw
 import to_kw
@@ -119,8 +120,12 @@ class CommonWriter(CommonRdWr):
         row = first_line
         for nr, one_hour in enumerate(all_hours):
             col = self.first_sample_column + nr
-            m_coor = to_kw.MergedCoords(row, col)
-            xwg.napis_ze_stylem(m_coor, one_hour, None, middle=1, bold=1)
+            xwg.zapisz_l_polaczone_komorki(
+                row,
+                col,
+                one_hour,
+                style_sel=ng_kw.NVB_2_STYLE,
+                )
 
     def generate_dates_vertically(self, xwg, all_dates, base_data_line):
         '''
