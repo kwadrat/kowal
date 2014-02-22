@@ -34,7 +34,7 @@ class EnergyTable(object):
         '''
         EnergyTable:
         '''
-        self.rows = {}
+        self.init_dict()
         self.ls_lines = []
 
     def set_elem(self, row, col, name):
