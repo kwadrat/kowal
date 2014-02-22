@@ -24,6 +24,12 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 class EnergyTable(object):
+    def init_dict(self):
+        '''
+        EnergyTable:
+        '''
+        self.rows = {}
+
     def __init__(self):
         '''
         EnergyTable:
