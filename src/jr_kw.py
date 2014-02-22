@@ -39,7 +39,7 @@ class EnergyTable(object):
             self.rows[row] = {}
         self.rows[row][col] = name
 
-    def show_bag(self):
+    def end_object(self):
         '''
         EnergyTable:
         '''
@@ -49,7 +49,8 @@ class EnergyTable(object):
             r_cols = self.rows[r_num]
             c_nums = r_cols.keys()
             c_nums.sort()
-            print ' '.join(map(lambda x: r_cols[x], c_nums))
+            elem = ' '.join(map(lambda x: r_cols[x], c_nums))
+            self.ls_lines.append(elem)
 
 ManipulateSheet = jv_kw.ManipulateSheet
 
@@ -83,7 +84,7 @@ class EnergyMonthUnitCosts(ManipulateSheet):
                     d_col += 1
                 else:
                     break
-            en_tb.show_bag()
+            en_tb.end_object()
 
 def generate_unit_2_cost_data(dfb, filename):
     xlrd = la_kw.new_module_for_reading_spreadsheet()
