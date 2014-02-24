@@ -113,7 +113,7 @@ class WriterGateway(object):
         if kl_none:
             the_style = None
         else:
-            the_key = (kl_miejsc, rn_colour, bold, size, wrap, middle, italic, borders)
+            the_key = (kl_miejsc, rn_colour, bold, size, wrap, middle, italic, borders, fore_colour)
             the_style = self.generated_string_style_cache.get(the_key)
             if the_style is None:
                 dc_params = {}
