@@ -427,13 +427,13 @@ class WriterGateway(object):
         the_style = self.get_or_generate_style(rn_colour=rn_colour, bold=bold, size=size, wrap=wrap, middle=middle, kl_none=kl_none, italic=italic, fore_colour=fore_colour)
         self.write_unicode(m_coor, the_content, the_style)
 
-    def ustaw_sam_styl(self, akt_wiersz, akt_kolumna, kl_miejsc=2, rn_colour=None, bold=0, size=None, tresc_napisu=None):
+    def ustaw_sam_styl(self, akt_wiersz, akt_kolumna, kl_miejsc=2, rn_colour=None, bold=0, size=None, the_content=None):
         '''
         WriterGateway:
         '''
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna)
         the_style = self.get_or_generate_style(kl_miejsc=kl_miejsc, rn_colour=rn_colour, bold=bold, size=size, middle=1)
-        self.write_unicode(m_coor, tresc_napisu, style=the_style)
+        self.write_unicode(m_coor, the_content, style=the_style)
 
     def napis_ze_wsp(self, row, col, tresc_napisu, bold=None, rn_colour=None, italic=None, fore_colour=None, middle=None):
         '''
