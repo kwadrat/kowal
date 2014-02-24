@@ -86,8 +86,8 @@ class EnergyMonthUnitCosts(ManipulateSheet):
         ManipulateSheet.__init__(self)
         self.wbk = wbk
         klm_a_ads = gu_kw.KolumnowyAdresator()
+        en_tb = EnergyTable()
         for self.sheet in self.wbk.sheets()[:17]:
-            en_tb = EnergyTable()
             en_tb.set_elem(-1, 0, self.sheet.name)
             klm_a_ads.set_ka_base_address('E8')
             pracuj = 1
@@ -101,6 +101,7 @@ class EnergyMonthUnitCosts(ManipulateSheet):
                 else:
                     break
             en_tb.end_object()
+        en_tb.show_summary()
 
 def generate_unit_2_cost_data(dfb, filename):
     xlrd = la_kw.new_module_for_reading_spreadsheet()
