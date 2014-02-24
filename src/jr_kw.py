@@ -25,6 +25,9 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+def non_wrapped_lines():
+    return '# ' 'v' 'i' 'm' ': nowrap'
+
 def constant_width(max_len):
     return '%-' + str(max_len) + 's'
 
