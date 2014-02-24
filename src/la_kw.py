@@ -282,8 +282,7 @@ class WriterGateway(object):
         WriterGateway:
         '''
         the_style = self.convert_from_sel(style_sel)
-        m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna, liczba_kolumn, liczba_wierszy)
-        self.write_unicode(m_coor, the_content, the_style)
+        self.zapisz_s_polaczone_komorki(akt_wiersz, akt_kolumna, the_content, the_style, liczba_kolumn=liczba_kolumn, liczba_wierszy=liczba_wierszy)
 
     def zapisz_l_polaczone_komorki(self, akt_wiersz, akt_kolumna, napis, style_sel, liczba_kolumn=1, liczba_wierszy=1):
         '''
