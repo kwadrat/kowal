@@ -352,7 +352,7 @@ class WriterGateway(object):
         '''
         self.zapisz_l_polaczone_komorki(akt_wiersz, akt_kolumna, napis, style_sel=ng_kw.NVB_17_STYLE)
 
-    def zapisz_co_flt(self, akt_wiersz, akt_kolumna, the_content, kl_miejsc=2, size=None, bold=None, rn_colour=None, borders=None, italic=None, fore_colour=None, liczba_kolumn=1, liczba_wierszy=1):
+    def zapisz_co_flt(self, akt_wiersz, akt_kolumna, the_content, kl_miejsc=2, bold=None, size=None, rn_colour=None, borders=None, italic=None, fore_colour=None, liczba_kolumn=1, liczba_wierszy=1):
         '''
         WriterGateway:
         '''
@@ -368,8 +368,8 @@ class WriterGateway(object):
             akt_kolumna,
             the_content,
             kl_miejsc=kl_miejsc,
-            size=size,
             bold=bold,
+            size=size,
             rn_colour=rn_colour,
             borders=borders,
             italic=italic,
@@ -406,8 +406,8 @@ class WriterGateway(object):
             akt_kolumna,
             the_content,
             kl_miejsc=kl_miejsc,
-            size=size,
             bold=bold,
+            size=size,
             rn_colour=rn_colour,
             borders=borders,
             liczba_kolumn=liczba_kolumn,
