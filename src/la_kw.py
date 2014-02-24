@@ -440,7 +440,7 @@ class WriterGateway(object):
         '''
         the_content = en_kw.utf_to_unicode(tresc_napisu)
         m_coor = to_kw.MergedCoords(row, col)
-        self.napis_ze_stylem(m_coor, the_content, bold=bold, rn_colour=rn_colour, italic=italic, fore_colour=fore_colour, middle=middle)
+        self.napis_ze_stylem(m_coor, the_content, bold=bold, rn_colour=rn_colour, italic=italic, middle=middle, fore_colour=fore_colour)
 
     def wymus_szerokosci(self, lista_rozmiarow):
         '''
