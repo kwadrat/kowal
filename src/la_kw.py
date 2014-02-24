@@ -429,8 +429,7 @@ class WriterGateway(object):
         WriterGateway:
         '''
         the_style = self.get_or_generate_style(kl_miejsc=kl_miejsc, rn_colour=rn_colour, bold=bold, size=size, wrap=wrap, middle=middle, kl_none=kl_none, italic=italic, fore_colour=fore_colour)
-        m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna)
-        self.write_unicode(m_coor, the_content, the_style)
+        self.zapisz_s_polaczone_komorki(akt_wiersz, akt_kolumna, the_content, the_style)
 
     def napis_ze_wsp(self, row, col, tresc_napisu, rn_colour=None, bold=None, middle=None, italic=None, fore_colour=None):
         '''
