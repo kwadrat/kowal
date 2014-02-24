@@ -352,19 +352,21 @@ class WriterGateway(object):
         '''
         self.zapisz_l_polaczone_komorki(akt_wiersz, akt_kolumna, napis, style_sel=ng_kw.NVB_17_STYLE)
 
-    def zapisz_co_flt(self, m_coor, the_content, kl_miejsc=2, size=None, bold=None, rn_colour=None, borders=None, italic=None, fore_colour=None):
+    def zapisz_co_flt(self, akt_wiersz, akt_kolumna, the_content, kl_miejsc=2, size=None, bold=None, rn_colour=None, borders=None, italic=None, fore_colour=None, liczba_kolumn=1, liczba_wierszy=1):
         '''
         WriterGateway:
         '''
         the_style = self.get_or_generate_style(kl_miejsc=kl_miejsc, rn_colour=rn_colour, bold=bold, size=size, middle=1, italic=italic, borders=borders, fore_colour=fore_colour)
+        m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna, liczba_kolumn, liczba_wierszy)
         self.write_unicode(m_coor, the_content, the_style)
 
     def zapisz_flt(self, akt_wiersz, akt_kolumna, the_content, liczba_kolumn=1, liczba_wierszy=1, kl_miejsc=2, size=None, bold=None, rn_colour=None, borders=None, italic=None, fore_colour=None):
         '''
         WriterGateway:
         '''
-        m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna, liczba_kolumn, liczba_wierszy)
-        self.zapisz_co_flt(m_coor,
+        self.zapisz_co_flt(
+            akt_wiersz,
+            akt_kolumna,
             the_content,
             kl_miejsc=kl_miejsc,
             size=size,
@@ -373,6 +375,8 @@ class WriterGateway(object):
             borders=borders,
             italic=italic,
             fore_colour=fore_colour,
+            liczba_kolumn=liczba_kolumn,
+            liczba_wierszy=liczba_wierszy,
             )
 
     def zapisz_rn_flt(self, akt_wiersz, akt_kolumna, rn_liczba):
@@ -398,8 +402,18 @@ class WriterGateway(object):
         WriterGateway:
         '''
         the_content = self.xlwt.Formula(tekst_wzoru)
-        m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna, liczba_kolumn, liczba_wierszy)
-        self.zapisz_co_flt(m_coor, the_content, kl_miejsc, size, bold, rn_colour=rn_colour, borders=borders)
+        self.zapisz_co_flt(
+            akt_wiersz,
+            akt_kolumna,
+            the_content,
+            kl_miejsc=kl_miejsc,
+            size=size,
+            bold=bold,
+            rn_colour=rn_colour,
+            borders=borders,
+            liczba_kolumn=liczba_kolumn,
+            liczba_wierszy=liczba_wierszy,
+            )
 
     def zapisz_nazwe_miesiaca(self, akt_wiersz, nr_mies):
         '''
