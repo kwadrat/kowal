@@ -57,6 +57,7 @@ class EnergyTable(object):
             c_nums.sort()
             elem = ' '.join(map(lambda x: r_cols[x], c_nums))
             self.ls_lines.append(elem)
+        self.init_dict()
 
 ManipulateSheet = jv_kw.ManipulateSheet
 
