@@ -459,12 +459,11 @@ class WriterGateway(object):
         the_style = self.get_or_generate_number_style(kl_miejsc=kl_miejsc, rn_colour=rn_colour, bold=bold, size=size)
         self.write_unicode(m_coor, tresc_napisu, style=the_style)
 
-    def napis_ze_stylem(self, m_coor, tresc_napisu, rn_colour=None, bold=0, size=None, wrap=None, middle=None, kl_none=None, italic=None, fore_colour=None):
+    def napis_ze_stylem(self, m_coor, the_content, rn_colour=None, bold=0, size=None, wrap=None, middle=None, kl_none=None, italic=None, fore_colour=None):
         '''
         WriterGateway:
         '''
         the_style = self.get_or_generate_style(rn_colour, bold, size, wrap, middle, kl_none, italic=italic, fore_colour=fore_colour)
-        the_content = en_kw.utf_to_unicode(tresc_napisu)
         self.write_unicode(m_coor, the_content, the_style)
 
     def napis_ze_wsp(self, row, col, tresc_napisu, bold=None, rn_colour=None, italic=None, fore_colour=None, middle=None):
@@ -472,7 +471,8 @@ class WriterGateway(object):
         WriterGateway:
         '''
         m_coor = to_kw.MergedCoords(row, col)
-        self.napis_ze_stylem(m_coor, tresc_napisu, bold=bold, rn_colour=rn_colour, italic=italic, fore_colour=fore_colour, middle=middle)
+        the_content = en_kw.utf_to_unicode(tresc_napisu)
+        self.napis_ze_stylem(m_coor, the_content, bold=bold, rn_colour=rn_colour, italic=italic, fore_colour=fore_colour, middle=middle)
 
     def wymus_szerokosci(self, lista_rozmiarow):
         '''
