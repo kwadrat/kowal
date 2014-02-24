@@ -7,6 +7,8 @@ z arkusza Excel, dla roku 2010, gdzie zmiany taryfy były
 z dokładnością do dnia (a nie do miesiąca)
 '''
 
+import unittest
+
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import jv_kw
 import gu_kw
@@ -107,3 +109,9 @@ def generate_unit_2_cost_data(dfb, filename):
     xlrd = la_kw.new_module_for_reading_spreadsheet()
     wbk = xlrd.open_workbook(filename)
     energy_unit_costs = EnergyMonthUnitCosts(wbk)
+
+class TestSkomplikowanegoRoku(unittest.TestCase):
+    def test_skomplikowanego_roku(self):
+        '''
+        TestSkomplikowanegoRoku:
+        '''
