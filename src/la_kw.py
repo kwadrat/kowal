@@ -373,13 +373,13 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        liczba = rn_liczba.rn_value
+        the_content = rn_liczba.rn_value
         kl_miejsc = rn_liczba.rn_after
         bold = 0
         size = None
         the_style = self.get_or_generate_style(kl_miejsc=kl_miejsc, rn_colour=rn_liczba.rn_colour, bold=bold, size=size, middle=1)
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna)
-        self.write_unicode(m_coor, liczba, the_style)
+        self.write_unicode(m_coor, the_content, the_style)
 
     def zapisz_date(self, akt_wiersz, akt_kolumna, liczba, italic=None, fore_colour=None):
         '''
