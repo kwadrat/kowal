@@ -468,7 +468,7 @@ class WriterGateway(object):
         WriterGateway:
         '''
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna)
-        the_style = self.get_or_generate_number_style(kl_miejsc=kl_miejsc, rn_colour=rn_colour, bold=bold, size=size)
+        the_style = self.get_or_generate_number_style(kl_miejsc=kl_miejsc, rn_colour=rn_colour, bold=bold, size=size, middle=1)
         self.write_unicode(m_coor, tresc_napisu, style=the_style)
 
     def napis_ze_wsp(self, row, col, tresc_napisu, bold=None, rn_colour=None, italic=None, fore_colour=None, middle=None):
