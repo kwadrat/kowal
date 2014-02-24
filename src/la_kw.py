@@ -168,10 +168,8 @@ class WriterGateway(object):
                 if middle:
                     dc_params['vert'] = self.xlwt.Alignment.VERT_CENTER
                     dc_params['horz'] = self.xlwt.Alignment.HORZ_CENTER
-                the_style = self.prepare_cell(
-                    num_format_str=self.format_map[kl_miejsc],
-                    **dc_params
-                    )
+                dc_params['num_format_str'] = self.format_map[kl_miejsc]
+                the_style = self.prepare_cell(**dc_params)
                 self.generated_number_style_cache[the_key] = the_style
         return the_style
 
