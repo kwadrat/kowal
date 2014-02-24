@@ -106,14 +106,14 @@ class WriterGateway(object):
             the_style.num_format_str = num_format_str
         return the_style
 
-    def get_or_generate_style(self, rn_colour=None, bold=None, size=None, wrap=None, middle=None, kl_none=None, italic=None, borders=None, fore_colour=None):
+    def get_or_generate_style(self, kl_miejsc=None, rn_colour=None, bold=None, size=None, wrap=None, middle=None, kl_none=None, italic=None, borders=None, fore_colour=None):
         '''
         WriterGateway:
         '''
         if kl_none:
             the_style = None
         else:
-            the_key = (rn_colour, bold, size, wrap, middle, italic, borders)
+            the_key = (kl_miejsc, rn_colour, bold, size, wrap, middle, italic, borders)
             the_style = self.generated_string_style_cache.get(the_key)
             if the_style is None:
                 dc_params = {}
@@ -136,6 +136,8 @@ class WriterGateway(object):
                 if fore_colour is not None:
                     colour = self.xlwt.Style.colour_map[fore_colour]
                     dc_params['fore_colour'] = colour
+                if kl_miejsc is not None:
+                    dc_params['num_format_str'] = self.format_map[kl_miejsc]
                 the_style = self.prepare_cell(**dc_params)
                 self.generated_string_style_cache[the_key] = the_style
         return the_style
