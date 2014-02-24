@@ -401,23 +401,6 @@ class WriterGateway(object):
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna, liczba_kolumn, liczba_wierszy)
         self.zapisz_co_flt(m_coor, the_content, kl_miejsc, size, bold, rn_colour=rn_colour, borders=borders)
 
-    def zapisz_co_wzor(self, akt_wiersz, akt_kolumna, tekst_wzoru, kl_miejsc=2, size=None, bold=None, rn_colour=None, borders=None, liczba_kolumn=1, liczba_wierszy=1):
-        '''
-        WriterGateway:
-        '''
-        self.zapisz_wzor(
-            akt_wiersz,
-            akt_kolumna,
-            tekst_wzoru,
-            kl_miejsc=kl_miejsc,
-            size=size,
-            bold=bold,
-            rn_colour=rn_colour,
-            borders=borders,
-            liczba_kolumn=liczba_kolumn,
-            liczba_wierszy=liczba_wierszy,
-            )
-
     def zapisz_nazwe_miesiaca(self, akt_wiersz, nr_mies):
         '''
         WriterGateway:
