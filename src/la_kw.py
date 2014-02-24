@@ -392,8 +392,7 @@ class WriterGateway(object):
         WriterGateway:
         '''
         the_style = self.get_or_generate_style(kl_miejsc=NMF_3_date, middle=1, italic=italic, fore_colour=fore_colour)
-        m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna)
-        self.write_unicode(m_coor, the_content, the_style)
+        self.zapisz_s_polaczone_komorki(akt_wiersz, akt_kolumna, the_content, the_style)
 
     def zapisz_wzor(self, m_coor, tekst_wzoru, kl_miejsc=2, size=None, bold=None, rn_colour=None, borders=None):
         '''
