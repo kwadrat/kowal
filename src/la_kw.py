@@ -149,7 +149,7 @@ class WriterGateway(object):
         if kl_none:
             the_style = None
         else:
-            the_key = (kl_miejsc, rn_colour, bold, size, wrap, middle, borders, italic, fore_colour)
+            the_key = (kl_miejsc, rn_colour, bold, size, wrap, middle, italic, borders, fore_colour)
             the_style = self.generated_number_style_cache.get(the_key)
             if the_style is None:
                 dc_params = {}
