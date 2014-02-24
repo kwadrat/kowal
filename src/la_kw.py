@@ -142,14 +142,14 @@ class WriterGateway(object):
                 self.generated_string_style_cache[the_key] = the_style
         return the_style
 
-    def get_or_generate_number_style(self, kl_miejsc=None, rn_colour=None, bold=None, size=None, middle=1, kl_none=None, borders=None, italic=None, fore_colour=None):
+    def get_or_generate_number_style(self, kl_miejsc=None, rn_colour=None, bold=None, size=None, wrap=None, middle=1, kl_none=None, borders=None, italic=None, fore_colour=None):
         '''
         WriterGateway:
         '''
         if kl_none:
             the_style = None
         else:
-            the_key = (kl_miejsc, rn_colour, bold, size, middle, borders, italic, fore_colour)
+            the_key = (kl_miejsc, rn_colour, bold, size, wrap, middle, borders, italic, fore_colour)
             the_style = self.generated_number_style_cache.get(the_key)
             if the_style is None:
                 dc_params = {}
@@ -160,6 +160,8 @@ class WriterGateway(object):
                     dc_params['bold'] = bold
                 if size is not None:
                     dc_params['size'] = size
+                if wrap is not None:
+                    dc_params['wrap'] = wrap
                 if borders is not None:
                     dc_params['borders'] = borders
                 if italic is not None:
