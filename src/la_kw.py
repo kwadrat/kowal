@@ -451,6 +451,13 @@ class WriterGateway(object):
         the_content = en_kw.utf_to_unicode(napis)
         self.write_unicode(m_coor, the_content)
 
+    def napis_ze_stylem(self, m_coor, the_content, rn_colour=None, bold=0, size=None, wrap=None, middle=None, kl_none=None, italic=None, fore_colour=None):
+        '''
+        WriterGateway:
+        '''
+        the_style = self.get_or_generate_style(rn_colour, bold, size, wrap, middle, kl_none, italic=italic, fore_colour=fore_colour)
+        self.write_unicode(m_coor, the_content, the_style)
+
     def ustaw_sam_styl(self, akt_wiersz, akt_kolumna, kl_miejsc=2, rn_colour=None, bold=0, size=None, tresc_napisu=None):
         '''
         WriterGateway:
@@ -458,13 +465,6 @@ class WriterGateway(object):
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna)
         the_style = self.get_or_generate_number_style(kl_miejsc=kl_miejsc, rn_colour=rn_colour, bold=bold, size=size)
         self.write_unicode(m_coor, tresc_napisu, style=the_style)
-
-    def napis_ze_stylem(self, m_coor, the_content, rn_colour=None, bold=0, size=None, wrap=None, middle=None, kl_none=None, italic=None, fore_colour=None):
-        '''
-        WriterGateway:
-        '''
-        the_style = self.get_or_generate_style(rn_colour, bold, size, wrap, middle, kl_none, italic=italic, fore_colour=fore_colour)
-        self.write_unicode(m_coor, the_content, the_style)
 
     def napis_ze_wsp(self, row, col, tresc_napisu, bold=None, rn_colour=None, italic=None, fore_colour=None, middle=None):
         '''
