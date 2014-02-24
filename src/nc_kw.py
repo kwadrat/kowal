@@ -156,7 +156,7 @@ class CommonWriter(CommonRdWr):
             hour_est = month_aggr.ordered_limited[i]
             col = self.nmax_start_col + i
             my_value = hour_est.one_sample
-            xwg.zapisz_flt(row_c, col, my_value, size=12, borders=nf_kw.brd_1_obk)
+            xwg.zapisz_flt(row_c, col, my_value, kl_miejsc=2, size=12, borders=nf_kw.brd_1_obk)
             etk_c = klm_c_ads.get_ka_official_address(col_delta=i)
             tekst_wzoru = 'MAX(0,%s-%s)' % (etk_c, etk_e)
             xwg.zapisz_wzor(row_d, col, tekst_wzoru, size=12, borders=nf_kw.brd_1_obk)

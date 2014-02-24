@@ -41,7 +41,7 @@ class EnergyWriter(CommonWriter):
         dc_b_style = nc_kw.weekend_b_style(jestem_weekend)
         for sample_index, my_sample in enumerate(my_data[lc_kw.fq_m_samples_qv]):
             col = self.first_sample_column + sample_index
-            xwg.zapisz_flt(row, col, my_sample, **dc_b_style)
+            xwg.zapisz_flt(row, col, my_sample, kl_miejsc=2, **dc_b_style)
 
     def generate_for_month(self, xwg, dane_bazy, nr_month, dost_wiersz):
         '''
