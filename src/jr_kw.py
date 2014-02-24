@@ -69,7 +69,7 @@ class EnergyTable(object):
         EnergyTable:
         '''
         max_len = max(map(len, self.ls_lines))
-        common_frmt = '%-' + str(max_len) + 's'
+        common_frmt = constant_width(max_len)
         self.ls_lines = map(lambda x: common_frmt % x, self.ls_lines)
         print '\n'.join(self.ls_lines)
 
@@ -119,4 +119,3 @@ class TestSkomplikowanegoRoku(unittest.TestCase):
         TestSkomplikowanegoRoku:
         '''
         self.assertEqual(constant_width(140), '%-140s')
-
