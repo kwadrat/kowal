@@ -352,11 +352,11 @@ class WriterGateway(object):
         '''
         self.zapisz_l_polaczone_komorki(akt_wiersz, akt_kolumna, napis, style_sel=ng_kw.NVB_17_STYLE)
 
-    def zapisz_co_flt(self, akt_wiersz, akt_kolumna, the_content, kl_miejsc=2, rn_colour=None, bold=None, size=None, italic=None, borders=None, fore_colour=None, liczba_kolumn=1, liczba_wierszy=1):
+    def zapisz_co_flt(self, akt_wiersz, akt_kolumna, the_content, kl_miejsc=2, rn_colour=None, bold=None, size=None, middle=1, italic=None, borders=None, fore_colour=None, liczba_kolumn=1, liczba_wierszy=1):
         '''
         WriterGateway:
         '''
-        the_style = self.get_or_generate_style(kl_miejsc=kl_miejsc, rn_colour=rn_colour, bold=bold, size=size, middle=1, italic=italic, borders=borders, fore_colour=fore_colour)
+        the_style = self.get_or_generate_style(kl_miejsc=kl_miejsc, rn_colour=rn_colour, bold=bold, size=size, middle=middle, italic=italic, borders=borders, fore_colour=fore_colour)
         self.zapisz_s_polaczone_komorki(akt_wiersz, akt_kolumna, the_content, the_style, liczba_kolumn=liczba_kolumn, liczba_wierszy=liczba_wierszy)
 
     def zapisz_flt(self, akt_wiersz, akt_kolumna, the_content, liczba_kolumn=1, liczba_wierszy=1, kl_miejsc=2, size=None, bold=None, rn_colour=None, borders=None, italic=None, fore_colour=None):
