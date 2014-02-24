@@ -150,7 +150,7 @@ class WriterGateway(object):
             the_style = None
         else:
             the_key = (kl_miejsc, rn_colour, bold, size, wrap, middle, italic, borders, fore_colour)
-            the_style = self.generated_number_style_cache.get(the_key)
+            the_style = self.generated_string_style_cache.get(the_key)
             if the_style is None:
                 dc_params = {}
                 if rn_colour is not None:
@@ -175,7 +175,7 @@ class WriterGateway(object):
                 if kl_miejsc is not None:
                     dc_params['num_format_str'] = self.format_map[kl_miejsc]
                 the_style = self.prepare_cell(**dc_params)
-                self.generated_number_style_cache[the_key] = the_style
+                self.generated_string_style_cache[the_key] = the_style
         return the_style
 
     def __init__(self):
@@ -183,7 +183,6 @@ class WriterGateway(object):
         WriterGateway:
         '''
         self.generated_string_style_cache = {}
-        self.generated_number_style_cache = {}
         self.format_map = {
             0: 'General', # Liczby całkowite bez przecinka, center
             2: '#,##0.00', # użyj separatora 1000, 2 miejsca po przecinku
