@@ -420,7 +420,7 @@ class WriterGateway(object):
         the_content = en_kw.utf_to_unicode(napis)
         self.write_unicode(m_coor, the_content)
 
-    def napis_ze_stylem(self, m_coor, the_content, kl_miejsc=None, rn_colour=None, bold=0, size=None, wrap=None, middle=None, kl_none=None, italic=None, fore_colour=None):
+    def napis_ze_stylem(self, m_coor, the_content=None, kl_miejsc=None, rn_colour=None, bold=0, size=None, wrap=None, middle=None, kl_none=None, italic=None, fore_colour=None):
         '''
         WriterGateway:
         '''
