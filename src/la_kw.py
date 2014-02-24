@@ -301,13 +301,6 @@ class WriterGateway(object):
         '''
         return self.style_map[style_sel]
 
-    def write_l_unicode(self, m_coor, the_content, style_sel):
-        '''
-        WriterGateway:
-        '''
-        style = self.convert_from_sel(style_sel)
-        self.write_unicode(m_coor, the_content, style)
-
     def zapisz_lu_polaczone_komorki(self, akt_wiersz, akt_kolumna, the_content, style_sel, liczba_kolumn=1, liczba_wierszy=1):
         '''
         WriterGateway:
