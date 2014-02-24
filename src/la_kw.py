@@ -357,8 +357,7 @@ class WriterGateway(object):
         WriterGateway:
         '''
         the_style = self.get_or_generate_style(kl_miejsc=kl_miejsc, rn_colour=rn_colour, bold=bold, size=size, middle=1, italic=italic, borders=borders, fore_colour=fore_colour)
-        m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna, liczba_kolumn, liczba_wierszy)
-        self.write_unicode(m_coor, the_content, the_style)
+        self.zapisz_s_polaczone_komorki(akt_wiersz, akt_kolumna, the_content, the_style, liczba_kolumn=liczba_kolumn, liczba_wierszy=liczba_wierszy)
 
     def zapisz_flt(self, akt_wiersz, akt_kolumna, the_content, liczba_kolumn=1, liczba_wierszy=1, kl_miejsc=2, size=None, bold=None, rn_colour=None, borders=None, italic=None, fore_colour=None):
         '''
