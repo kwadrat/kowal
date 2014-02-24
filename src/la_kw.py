@@ -432,12 +432,6 @@ class WriterGateway(object):
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna)
         self.write_unicode(m_coor, the_content, the_style)
 
-    def ustaw_sam_styl(self, akt_wiersz, akt_kolumna, the_content=None, kl_miejsc=None, rn_colour=None, bold=0, size=None, middle=None, italic=None, fore_colour=None):
-        '''
-        WriterGateway:
-        '''
-        self.napis_ze_stylem(akt_wiersz, akt_kolumna, the_content, kl_miejsc=kl_miejsc, rn_colour=rn_colour, bold=bold, size=size, middle=middle, italic=italic, fore_colour=fore_colour)
-
     def napis_ze_wsp(self, row, col, tresc_napisu, rn_colour=None, bold=None, middle=None, italic=None, fore_colour=None):
         '''
         WriterGateway:
