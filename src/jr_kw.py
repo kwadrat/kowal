@@ -59,6 +59,15 @@ class EnergyTable(object):
             self.ls_lines.append(elem)
         self.init_dict()
 
+    def show_summary(self):
+        '''
+        EnergyTable:
+        '''
+        max_len = max(map(len, self.ls_lines))
+        common_frmt = '%' + str(max_len) + 's'
+        self.ls_lines = map(lambda x: common_frmt % x, self.ls_lines)
+        print '\n'.join(self.ls_lines)
+
 ManipulateSheet = jv_kw.ManipulateSheet
 
 class EnergyMonthUnitCosts(ManipulateSheet):
