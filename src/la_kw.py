@@ -140,36 +140,39 @@ class WriterGateway(object):
                 self.generated_string_style_cache[the_key] = the_style
         return the_style
 
-    def get_or_generate_number_style(self, kl_miejsc=2, rn_colour=None, bold=None, size=None, middle=1, borders=None, italic=None, fore_colour=None):
+    def get_or_generate_number_style(self, kl_miejsc=2, rn_colour=None, bold=None, size=None, middle=1, kl_none=None, borders=None, italic=None, fore_colour=None):
         '''
         WriterGateway:
         '''
-        the_key = (kl_miejsc, rn_colour, bold, size, middle, borders, italic, fore_colour)
-        the_style = self.generated_number_style_cache.get(the_key)
-        if the_style is None:
-            dc_params = {}
-            if rn_colour is not None:
-                colour = self.xlwt.Style.colour_map[rn_colour]
-                dc_params['colour'] = colour
-            if bold is not None:
-                dc_params['bold'] = bold
-            if size is not None:
-                dc_params['size'] = size
-            if borders is not None:
-                dc_params['borders'] = borders
-            if italic is not None:
-                dc_params['italic'] = italic
-            if fore_colour is not None:
-                colour = self.xlwt.Style.colour_map[fore_colour]
-                dc_params['fore_colour'] = colour
-            if middle:
-                dc_params['vert'] = self.xlwt.Alignment.VERT_CENTER
-                dc_params['horz'] = self.xlwt.Alignment.HORZ_CENTER
-            the_style = self.prepare_cell(
-                num_format_str=self.format_map[kl_miejsc],
-                **dc_params
-                )
-            self.generated_number_style_cache[the_key] = the_style
+        if kl_none:
+            the_style = None
+        else:
+            the_key = (kl_miejsc, rn_colour, bold, size, middle, borders, italic, fore_colour)
+            the_style = self.generated_number_style_cache.get(the_key)
+            if the_style is None:
+                dc_params = {}
+                if rn_colour is not None:
+                    colour = self.xlwt.Style.colour_map[rn_colour]
+                    dc_params['colour'] = colour
+                if bold is not None:
+                    dc_params['bold'] = bold
+                if size is not None:
+                    dc_params['size'] = size
+                if borders is not None:
+                    dc_params['borders'] = borders
+                if italic is not None:
+                    dc_params['italic'] = italic
+                if fore_colour is not None:
+                    colour = self.xlwt.Style.colour_map[fore_colour]
+                    dc_params['fore_colour'] = colour
+                if middle:
+                    dc_params['vert'] = self.xlwt.Alignment.VERT_CENTER
+                    dc_params['horz'] = self.xlwt.Alignment.HORZ_CENTER
+                the_style = self.prepare_cell(
+                    num_format_str=self.format_map[kl_miejsc],
+                    **dc_params
+                    )
+                self.generated_number_style_cache[the_key] = the_style
         return the_style
 
     def __init__(self):
