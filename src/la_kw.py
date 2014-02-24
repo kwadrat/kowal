@@ -418,7 +418,8 @@ class WriterGateway(object):
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna, liczba_wierszy=1)
         napis = dn_kw.tab_miesiecy[nr_mies - 1]
         the_content = en_kw.utf_to_unicode(napis)
-        self.write_unicode(m_coor, the_content)
+        the_style = None
+        self.write_unicode(m_coor, the_content, the_style)
 
     def napis_ze_stylem(self, m_coor, the_content=None, kl_miejsc=None, rn_colour=None, bold=0, size=None, wrap=None, middle=None, kl_none=None, italic=None, fore_colour=None):
         '''
