@@ -159,7 +159,7 @@ class CommonWriter(CommonRdWr):
             xwg.zapisz_flt(row_c, col, my_value, size=12, borders=nf_kw.brd_1_obk)
             etk_c = klm_c_ads.get_ka_official_address(col_delta=i)
             tekst_wzoru = 'MAX(0,%s-%s)' % (etk_c, etk_e)
-            xwg.zapisz_co_wzor(row_d, col, tekst_wzoru, size=12, borders=nf_kw.brd_1_obk)
+            xwg.zapisz_wzor(row_d, col, tekst_wzoru, size=12, borders=nf_kw.brd_1_obk)
             ##############################################################################
             one_date = hour_est.one_date
             xwg.zapisz_date(row_e, col, one_date)
@@ -169,14 +169,14 @@ class CommonWriter(CommonRdWr):
             ##############################################################################
         etk_f, etk_g = klm_c_ads.row_start_end_labels()
         tekst_wzoru = hj_kw.rcp_emax(etk_f, etk_g)
-        xwg.zapisz_co_wzor(row_c, self.col_for_moc_max, tekst_wzoru, size=12, bold=1, borders=nf_kw.brd_1_obk)
+        xwg.zapisz_wzor(row_c, self.col_for_moc_max, tekst_wzoru, size=12, bold=1, borders=nf_kw.brd_1_obk)
         tekst_wzoru = hj_kw.rcp_sred(etk_f, etk_g)
-        xwg.zapisz_co_wzor(row_c, self.col_for_moc_max + 1, tekst_wzoru, size=12, borders=nf_kw.brd_1_obk)
+        xwg.zapisz_wzor(row_c, self.col_for_moc_max + 1, tekst_wzoru, size=12, borders=nf_kw.brd_1_obk)
         tekst_wzoru = hj_kw.rcp_emin(etk_f, etk_g)
-        xwg.zapisz_co_wzor(row_c, self.col_for_moc_max + 2, tekst_wzoru, size=12, borders=nf_kw.brd_1_obk)
+        xwg.zapisz_wzor(row_c, self.col_for_moc_max + 2, tekst_wzoru, size=12, borders=nf_kw.brd_1_obk)
         etk_h, etk_i = klm_c_ads.row_start_end_labels(ndiff_line - nmax_line)
         tekst_wzoru = hj_kw.rcp_poziom(etk_h, etk_i)
-        xwg.zapisz_co_wzor(ndiff_line, self.col_for_moc_max, tekst_wzoru, size=12, borders=nf_kw.brd_1_obk)
+        xwg.zapisz_wzor(ndiff_line, self.col_for_moc_max, tekst_wzoru, size=12, borders=nf_kw.brd_1_obk)
 
     def generate_max_row(self, xwg, bottom_max_line, klm_ads):
         '''
@@ -186,7 +186,7 @@ class CommonWriter(CommonRdWr):
         for i in klm_ads.col_iter():
             etk_a, etk_b = klm_ads.col_start_end_labels(i)
             tekst_wzoru = hj_kw.rcp_emax(etk_a, etk_b)
-            xwg.zapisz_co_wzor(bottom_max_line, self.first_sample_column + i, tekst_wzoru, rn_colour=gv_kw.ECR_red)
+            xwg.zapisz_wzor(bottom_max_line, self.first_sample_column + i, tekst_wzoru, rn_colour=gv_kw.ECR_red)
 
     def generate_max_column(self, xwg, first_line, klm_ads):
         '''
@@ -197,7 +197,7 @@ class CommonWriter(CommonRdWr):
             etk_a, etk_b = klm_ads.row_start_end_labels(i)
             tekst_wzoru = hj_kw.rcp_emax(etk_a, etk_b)
             row = klm_ads.get_only_row(row_delta=i)
-            xwg.zapisz_co_wzor(row, self.horiz_max_column, tekst_wzoru, rn_colour=gv_kw.ECR_red)
+            xwg.zapisz_wzor(row, self.horiz_max_column, tekst_wzoru, rn_colour=gv_kw.ECR_red)
 
     def generate_week_max_column(self, xwg, first_line, klm_ads, all_dates):
         '''
@@ -209,7 +209,7 @@ class CommonWriter(CommonRdWr):
             etk_a, etk_b = klm_ads.col_start_end_labels(col_offset=self.horiz_max_offset, moj_pierwszy=moj_pierwszy, moj_ostatni=moj_ostatni)
             tekst_wzoru = hj_kw.rcp_emax(etk_a, etk_b)
             row = klm_ads.get_only_row(row_delta=moj_ostatni)
-            xwg.zapisz_co_wzor(row, self.week_max_column, tekst_wzoru, kl_miejsc=2, size=None, bold=None)
+            xwg.zapisz_wzor(row, self.week_max_column, tekst_wzoru, kl_miejsc=2, size=None, bold=None)
 
     def wpisz_wartosc_mocy_umownej(self, xwg, first_line, moc_umowna):
         '''
@@ -218,7 +218,7 @@ class CommonWriter(CommonRdWr):
         xwg.zapisz_flt(first_line, self.first_date_column, moc_umowna, kl_miejsc=0, bold=1, rn_colour=gv_kw.ECR_red)
         klm_ads = gu_kw.KolumnowyAdresator(first_line, self.first_date_column)
         tekst_wzoru = klm_ads.get_ka_official_address()
-        xwg.zapisz_co_wzor(first_line, self.second_date_column, tekst_wzoru, kl_miejsc=0, size=None, bold=1, rn_colour=gv_kw.ECR_red)
+        xwg.zapisz_wzor(first_line, self.second_date_column, tekst_wzoru, kl_miejsc=0, size=None, bold=1, rn_colour=gv_kw.ECR_red)
 
     def setup_col_widths(self, xwg):
         '''
