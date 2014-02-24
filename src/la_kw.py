@@ -384,8 +384,7 @@ class WriterGateway(object):
         bold = 0
         size = None
         the_style = self.get_or_generate_style(kl_miejsc=kl_miejsc, rn_colour=rn_liczba.rn_colour, bold=bold, size=size, middle=1)
-        m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna)
-        self.write_unicode(m_coor, the_content, the_style)
+        self.zapisz_s_polaczone_komorki(akt_wiersz, akt_kolumna, the_content, the_style)
 
     def zapisz_date(self, akt_wiersz, akt_kolumna, the_content, italic=None, fore_colour=None):
         '''
