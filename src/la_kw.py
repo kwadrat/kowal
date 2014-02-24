@@ -443,7 +443,7 @@ class WriterGateway(object):
         WriterGateway:
         '''
         the_content = en_kw.utf_to_unicode(tresc_napisu)
-        self.ustaw_sam_styl(row, col, the_content=the_content, kl_miejsc=None, rn_colour=rn_colour, bold=bold, middle=middle, italic=italic, fore_colour=fore_colour)
+        self.napis_ze_stylem(row, col, the_content=the_content, kl_miejsc=None, rn_colour=rn_colour, bold=bold, middle=middle, italic=italic, fore_colour=fore_colour)
 
     def wymus_szerokosci(self, lista_rozmiarow):
         '''
