@@ -25,6 +25,9 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+def constant_width(max_len):
+    return '%-' + str(max_len) + 's'
+
 class EnergyTable(object):
     def init_dict(self):
         '''
@@ -115,3 +118,5 @@ class TestSkomplikowanegoRoku(unittest.TestCase):
         '''
         TestSkomplikowanegoRoku:
         '''
+        self.assertEqual(constant_width(140), '%-140s')
+
