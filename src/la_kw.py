@@ -142,7 +142,7 @@ class WriterGateway(object):
                 self.generated_string_style_cache[the_key] = the_style
         return the_style
 
-    def get_or_generate_number_style(self, kl_miejsc=None, rn_colour=None, bold=None, size=None, wrap=None, middle=1, kl_none=None, italic=None, borders=None, fore_colour=None):
+    def get_or_generate_number_style(self, kl_miejsc=None, rn_colour=None, bold=None, size=None, wrap=None, middle=None, kl_none=None, italic=None, borders=None, fore_colour=None):
         '''
         WriterGateway:
         '''
