@@ -434,13 +434,13 @@ class WriterGateway(object):
         m_coor = to_kw.MergedCoords(akt_wiersz, akt_kolumna)
         self.napis_ze_stylem(m_coor, the_content, kl_miejsc=kl_miejsc, rn_colour=rn_colour, bold=bold, size=size, middle=middle, italic=italic, fore_colour=fore_colour)
 
-    def napis_ze_wsp(self, row, col, tresc_napisu, rn_colour=None, bold=None, italic=None, fore_colour=None, middle=None):
+    def napis_ze_wsp(self, row, col, tresc_napisu, rn_colour=None, bold=None, middle=None, italic=None, fore_colour=None):
         '''
         WriterGateway:
         '''
         the_content = en_kw.utf_to_unicode(tresc_napisu)
         m_coor = to_kw.MergedCoords(row, col)
-        self.napis_ze_stylem(m_coor, the_content, rn_colour=rn_colour, bold=bold, italic=italic, middle=middle, fore_colour=fore_colour)
+        self.napis_ze_stylem(m_coor, the_content, rn_colour=rn_colour, bold=bold, middle=middle, italic=italic, fore_colour=fore_colour)
 
     def wymus_szerokosci(self, lista_rozmiarow):
         '''
