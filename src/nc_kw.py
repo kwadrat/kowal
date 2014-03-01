@@ -215,7 +215,7 @@ class CommonWriter(CommonRdWr):
         '''
         CommonWriter:
         '''
-        xwg.zapisz_flt(first_line, self.first_date_column, moc_umowna, kl_miejsc=0, bold=1, rn_colour=gv_kw.ECR_red)
+        xwg.zapisz_flt(first_line, self.first_date_column, moc_umowna, kl_miejsc=0, rn_colour=gv_kw.ECR_red, bold=1)
         klm_ads = gu_kw.KolumnowyAdresator(first_line, self.first_date_column)
         tekst_wzoru = klm_ads.get_ka_official_address()
         xwg.zapisz_wzor(first_line, self.second_date_column, tekst_wzoru, kl_miejsc=0, rn_colour=gv_kw.ECR_red, bold=1, size=None)
