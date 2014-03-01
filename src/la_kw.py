@@ -358,26 +358,6 @@ class WriterGateway(object):
         the_style = self.get_or_generate_style(kl_miejsc=kl_miejsc, rn_colour=rn_colour, bold=bold, size=size, middle=middle, italic=italic, borders=borders, fore_colour=fore_colour)
         self.zapisz_s_polaczone_komorki(akt_wiersz, akt_kolumna, the_content, the_style, liczba_kolumn=liczba_kolumn, liczba_wierszy=liczba_wierszy)
 
-    def zapisz_flt(self, akt_wiersz, akt_kolumna, the_content, kl_miejsc=None, rn_colour=None, bold=None, size=None, middle=1, italic=None, borders=None, fore_colour=None, liczba_kolumn=1, liczba_wierszy=1):
-        '''
-        WriterGateway:
-        '''
-        self.zapisz_co_flt(
-            akt_wiersz,
-            akt_kolumna,
-            the_content,
-            kl_miejsc=kl_miejsc,
-            rn_colour=rn_colour,
-            bold=bold,
-            size=size,
-            middle=middle,
-            italic=italic,
-            borders=borders,
-            fore_colour=fore_colour,
-            liczba_kolumn=liczba_kolumn,
-            liczba_wierszy=liczba_wierszy,
-            )
-
     def zapisz_rn_flt(self, akt_wiersz, akt_kolumna, rn_liczba):
         '''
         WriterGateway:
