@@ -395,7 +395,7 @@ class WriterGateway(object):
         the_style = self.get_or_generate_style(kl_miejsc=NMF_3_date, middle=1, italic=italic, fore_colour=fore_colour)
         self.zapisz_s_polaczone_komorki(akt_wiersz, akt_kolumna, the_content, the_style)
 
-    def zapisz_wzor(self, akt_wiersz, akt_kolumna, tekst_wzoru, kl_miejsc=None, size=None, bold=None, rn_colour=None, italic=None, borders=None, fore_colour=None, liczba_kolumn=1, liczba_wierszy=1):
+    def zapisz_wzor(self, akt_wiersz, akt_kolumna, tekst_wzoru, kl_miejsc=None, rn_colour=None, bold=None, size=None, italic=None, borders=None, fore_colour=None, liczba_kolumn=1, liczba_wierszy=1):
         '''
         WriterGateway:
         '''
