@@ -49,7 +49,7 @@ class PowerWriter(CommonWriter):
         for sample_index, my_sample in enumerate(my_data[lc_kw.fq_m_samples_qv]):
             col = self.first_sample_column + sample_index
             dc_b_style = jc_kw.obtain_cell_color(moc_um_dec, ten_treshold, jestem_weekend, my_sample)
-            xwg.zapisz_co_flt(row, col, my_sample, kl_miejsc=2, **dc_b_style)
+            xwg.zapisz_flt(row, col, my_sample, kl_miejsc=2, **dc_b_style)
 
     def generate_for_month(self, xwg, dane_bazy, nr_month, dost_wiersz, moc_umowna):
         '''

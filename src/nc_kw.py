@@ -156,7 +156,7 @@ class CommonWriter(CommonRdWr):
             hour_est = month_aggr.ordered_limited[i]
             col = self.nmax_start_col + i
             my_value = hour_est.one_sample
-            xwg.zapisz_co_flt(row_c, col, my_value, kl_miejsc=2, size=12, borders=nf_kw.brd_1_obk)
+            xwg.zapisz_flt(row_c, col, my_value, kl_miejsc=2, size=12, borders=nf_kw.brd_1_obk)
             etk_c = klm_c_ads.get_ka_official_address(col_delta=i)
             tekst_wzoru = 'MAX(0,%s-%s)' % (etk_c, etk_e)
             xwg.zapisz_wzor(row_d, col, tekst_wzoru, kl_miejsc=2, size=12, borders=nf_kw.brd_1_obk)
@@ -215,7 +215,7 @@ class CommonWriter(CommonRdWr):
         '''
         CommonWriter:
         '''
-        xwg.zapisz_co_flt(first_line, self.first_date_column, moc_umowna, kl_miejsc=0, rn_colour=gv_kw.ECR_red, bold=1)
+        xwg.zapisz_flt(first_line, self.first_date_column, moc_umowna, kl_miejsc=0, rn_colour=gv_kw.ECR_red, bold=1)
         klm_ads = gu_kw.KolumnowyAdresator(first_line, self.first_date_column)
         tekst_wzoru = klm_ads.get_ka_official_address()
         xwg.zapisz_wzor(first_line, self.second_date_column, tekst_wzoru, kl_miejsc=0, rn_colour=gv_kw.ECR_red, bold=1, size=None)
