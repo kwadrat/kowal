@@ -77,6 +77,11 @@ class RomanPeriod(object):
             self.the_first = self.the_second
         return elem_ls
 
+    def set_pack(self, five_pack):
+        '''
+        RomanPeriod:
+        '''
+
     def __init__(self, the_date=None, five_pack=None):
         '''
         RomanPeriod:
@@ -316,3 +321,4 @@ class TestDaysRanges(unittest.TestCase):
         '''
         obk = RomanPeriod(five_pack=(2010, 2, None, 12, None))
         self.assertEqual(obk.text_way(), 'II-XII-2010')
+        obk.set_pack((2011, 2, None, 12, None))
