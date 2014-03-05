@@ -207,9 +207,6 @@ def DataDnia(nkd):
 def RokDnia(nkd):
     return DataDnia(nkd)[0]
 
-def MiesiacDnia(nkd):
-    return DataDnia(nkd)[1]
-
 def DzienTygodnia(nkd):
     return szczegolowa_krotka(nkd).tm_wday
 
@@ -492,7 +489,6 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(DataDnia(0), (1970, 1, 1))
         self.assertEqual(DataDnia(15278), (2011, 10, 31))
         self.assertEqual(RokDnia(15278), 2011)
-        self.assertEqual(MiesiacDnia(15278), 10)
         self.assertEqual(DzienTygodnia(16003), 4) # 2013-10-25, piątek
         self.assertEqual(nazwa_dnia_tygodnia(16003), 'piątek') # 2013-10-25, piątek
         self.assertEqual(RoboczyDnia(0), 1) # Czwartek

@@ -111,8 +111,11 @@ def valid_date_format(value):
 def nazwa_rzymskiego(numer):
     return tab_rzymskich[numer - 1]
 
+def MiesiacDnia(nkd):
+    return dn_kw.DataDnia(nkd)[1]
+
 def RzymskiDnia(nkd):
-    miesiac = dn_kw.MiesiacDnia(nkd)
+    miesiac = MiesiacDnia(nkd)
     return nazwa_rzymskiego(miesiac)
 
 def roman_range(krotka):
@@ -288,3 +291,4 @@ class TestDaysRanges(unittest.TestCase):
         self.assertEqual(nazwa_rzymskiego(4), 'IV')
         self.assertEqual(miesiace_i_rok(['I', 'II', '2011']), (1, 2, 2011))
         self.assertEqual(miesiace_i_rok(['IV', 'VIII', '2013']), (4, 8, 2013))
+        self.assertEqual(MiesiacDnia(15278), 10)
