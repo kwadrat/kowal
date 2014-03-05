@@ -77,7 +77,7 @@ class RomanPeriod(object):
             self.the_first = self.the_second
         return elem_ls
 
-    def __init__(self, the_date=None):
+    def __init__(self, the_date=None, five_pack=None):
         '''
         RomanPeriod:
         '''
@@ -301,3 +301,9 @@ class TestDaysRanges(unittest.TestCase):
         self.assertEqual(miesiace_i_rok(['I', 'II', '2011']), (1, 2, 2011))
         self.assertEqual(miesiace_i_rok(['IV', 'VIII', '2013']), (4, 8, 2013))
         self.assertEqual(MiesiacDnia(15278), 10)
+
+    def test_days_15_ranges(self):
+        '''
+        TestDaysRanges:
+        '''
+        obk = RomanPeriod(five_pack=(2010, 2, None, 12, None))
