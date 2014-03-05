@@ -121,9 +121,10 @@ class RomanPeriod(object):
         the_first=nazwa_rzymskiego(self.the_first)
         if self.the_day_first is not None:
             the_first = '%02d.%s' % (self.the_day_first, the_first)
+        the_second=nazwa_rzymskiego(self.the_second)
         return '%(the_first)s-%(the_second)s-%(the_year)04d' % dict(
             the_first=the_first,
-            the_second=nazwa_rzymskiego(self.the_second),
+            the_second=the_second,
             the_year=self.the_year,
             )
 
