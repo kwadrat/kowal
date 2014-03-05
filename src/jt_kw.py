@@ -124,7 +124,7 @@ class RomanPeriod(object):
         RomanPeriod:
         '''
         the_first = add_day_to_month(nazwa_rzymskiego(self.the_first), self.the_day_first)
-        the_second = nazwa_rzymskiego(self.the_second)
+        the_second = add_day_to_month(nazwa_rzymskiego(self.the_second), self.the_day_second)
         return '%(the_first)s-%(the_second)s-%(the_year)04d' % dict(
             the_first=the_first,
             the_second=the_second,
