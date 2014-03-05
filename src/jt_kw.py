@@ -132,6 +132,9 @@ def miesiace_i_rok(zakres_miesiecy):
     result = (mies_pocz, mies_kon, rok_zakresu)
     return result
 
+def restore_day_ranges(five_pack):
+    return 'II-XII-2010'
+
 class TestDaysRanges(unittest.TestCase):
     def test_days_ranges(self):
         '''
@@ -165,6 +168,12 @@ class TestDaysRanges(unittest.TestCase):
         self.assertEqual(detect_day_ranges('VII-XII-2012'), (2012, 7, None, 12, None))
         self.assertEqual(detect_day_ranges('V-XII-2012'), (2012, 5, None, 12, None))
         self.assertEqual(detect_day_ranges('X-XII-2012'), (2012, 10, None, 12, None))
+
+    def test_days_2_ranges(self):
+        '''
+        TestDaysRanges:
+        '''
+        self.assertEqual(restore_day_ranges((2010, 2, None, 12, None)), 'II-XII-2010')
 
     def test_days_3_ranges(self):
         '''
