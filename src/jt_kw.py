@@ -29,6 +29,8 @@ numery_miesiecy = range(1, 12 + 1)
 roman_map = dict((k, v) for k, v in zip(tab_rzymskich, numery_miesiecy))
 
 def add_day_to_month(month, day):
+    if day is not None:
+        month = '%02d.%s' % (day, month)
     return month
 
 class RomanPeriod(object):
@@ -352,3 +354,4 @@ class TestDaysRanges(unittest.TestCase):
         TestDaysRanges:
         '''
         self.assertEqual(add_day_to_month('MM', None), 'MM')
+        self.assertEqual(add_day_to_month('MM', 1), '01.MM')
