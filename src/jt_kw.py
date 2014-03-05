@@ -100,6 +100,12 @@ class RomanPeriod(object):
             self.the_day_second,
             )
 
+    def text_way(self):
+        '''
+        RomanPeriod:
+        '''
+        return 'II-XII-2010'
+
 def detect_day_ranges(napis):
     obk = RomanPeriod(napis)
     result = obk.get_tuple()
@@ -307,3 +313,4 @@ class TestDaysRanges(unittest.TestCase):
         TestDaysRanges:
         '''
         obk = RomanPeriod(five_pack=(2010, 2, None, 12, None))
+        self.assertEqual(obk.text_way(), 'II-XII-2010')
