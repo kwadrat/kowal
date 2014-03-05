@@ -139,7 +139,9 @@ def miesiace_i_rok(zakres_miesiecy):
     return result
 
 def restore_day_ranges(five_pack):
-    return 'II-XII-2010'
+    obk = RomanPeriod(five_pack=five_pack)
+    napis = obk.text_way()
+    return napis
 
 class TestDaysRanges(unittest.TestCase):
     def test_days_ranges(self):
