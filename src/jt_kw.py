@@ -92,6 +92,8 @@ class RomanPeriod(object):
             elem_ls = elem_ls.split()
             elem_ls.reverse()
             self.the_rest = self.take_all(elem_ls)
+        elif five_pack is not None:
+            self.set_pack(five_pack)
 
     def get_tuple(self):
         '''
