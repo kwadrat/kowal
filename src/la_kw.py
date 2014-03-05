@@ -8,6 +8,7 @@ import ng_kw
 import nf_kw
 import to_kw
 import gv_kw
+import rq_kw
 import dn_kw
 import en_kw
 import np_kw
@@ -381,6 +382,10 @@ class WriterGateway(object):
         WriterGateway:
         '''
         the_content = self.xlwt.Formula(tekst_wzoru)
+        if rq_kw.TymczasowoPokazWzory:
+            the_content = tekst_wzoru
+        else:
+            the_content = self.xlwt.Formula(tekst_wzoru)
         self.zapisz_flt(
             akt_wiersz,
             akt_kolumna,
