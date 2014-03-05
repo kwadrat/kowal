@@ -118,8 +118,11 @@ class RomanPeriod(object):
         '''
         RomanPeriod:
         '''
+        the_first=nazwa_rzymskiego(self.the_first)
+        if self.the_day_first is not None:
+            the_first = '%02d.%s' % (self.the_day_first, the_first)
         return '%(the_first)s-%(the_second)s-%(the_year)04d' % dict(
-            the_first=nazwa_rzymskiego(self.the_first),
+            the_first=the_first,
             the_second=nazwa_rzymskiego(self.the_second),
             the_year=self.the_year,
             )
@@ -202,6 +205,7 @@ class TestDaysRanges(unittest.TestCase):
         self.assertEqual(restore_day_ranges((2010, 2, None, 12, None)), 'II-XII-2010')
         self.assertEqual(restore_day_ranges((2010, 1, None, 12, None)), 'I-XII-2010')
         self.assertEqual(restore_day_ranges((2013, 1, None, 3, None)), 'I-III-2013')
+        self.assertEqual(restore_day_ranges((2013, 4, 24, 12, None)), '24.IV-XII-2013')
 
     def test_days_3_ranges(self):
         '''
