@@ -28,6 +28,9 @@ numery_miesiecy = range(1, 12 + 1)
 
 roman_map = dict((k, v) for k, v in zip(tab_rzymskich, numery_miesiecy))
 
+def add_day_to_month(month, day):
+    return month
+
 class RomanPeriod(object):
     def take_year(self, elem_ls):
         '''
@@ -343,3 +346,9 @@ class TestDaysRanges(unittest.TestCase):
         self.assertEqual(obk.text_way(), 'II-XII-2010')
         obk.set_pack((2011, 2, None, 12, None))
         self.assertEqual(obk.text_way(), 'II-XII-2011')
+
+    def test_days_16_ranges(self):
+        '''
+        TestDaysRanges:
+        '''
+        self.assertEqual(add_day_to_month('MM', None), 'MM')
