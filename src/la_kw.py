@@ -381,7 +381,6 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        the_content = self.xlwt.Formula(tekst_wzoru)
         if rq_kw.TymczasowoPokazWzory:
             the_content = tekst_wzoru
         else:
