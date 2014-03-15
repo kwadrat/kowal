@@ -38,6 +38,7 @@ rjb_strona_dziewiata = KalejdoskopStron(9)
 rjb_strona_dziesiata = KalejdoskopStron(10)
 rjb_strona_jedenasta = KalejdoskopStron(11)
 rjb_strona_dwunasta = KalejdoskopStron(12)
+rjb_strona_trzynasta = KalejdoskopStron(13)
 
 def fn_adres_post(wersja_produkcyjna):
     return hj_kw.fx_jn(
@@ -73,6 +74,8 @@ class TestCaleidPages(unittest.TestCase):
         self.assertEqual(rjb_strona_jedenasta.rj_py_wersja, 'l11.py')
         self.assertEqual(rjb_strona_dwunasta.rj_sam_rdzen, 'l12')
         self.assertEqual(rjb_strona_dwunasta.rj_py_wersja, 'l12.py')
+        self.assertEqual(rjb_strona_trzynasta.rj_sam_rdzen, 'l13')
+        self.assertEqual(rjb_strona_trzynasta.rj_py_wersja, 'l13.py')
 
     def test_kalejdoskopu_stron(self):
         '''
