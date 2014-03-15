@@ -182,7 +182,7 @@ Tymczasowo_pokaz_etykiety_pol_faktury = 0
 Niebezpieczne_testowa_aplikacja_produkcyjna_baza = 0
 
 DocelowoOdwrotnieOproczOstatniego = 1
-TymczasowoPozwolNaUzupelnienieBorki = 1
+TymczasowoPozwolNaUzupelnienieBorki = 0
 TymczasowoWygenerujSztywne = 0
 DocelowoObiektoweKosztyJednostkowe = 0
 
