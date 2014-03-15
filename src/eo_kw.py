@@ -32,12 +32,15 @@ CKI_Pwst = 120
 ZST_Pwst = 83
 CKI_LabInf = 108
 BT_ZSzP3 = 62 # Zespół Szkolno-Przedszkolny nr 3
+BT_ZSzP4 = 63 # Zespół Szkolno-Przedszkolny nr 4
 BT_ZSzP7 = 122 # Zespół Szkolno-Przedszkolny nr 7
+BT_G4_x = 67 # Gimnazjum nr 4
 BT_G11 = 71 # Gimnazjum nr 11
 BT_G13 = 73 # Gimnazjum nr 13
 BT_ZSB = 80 # Zespół Szkół Budowlanych
 BT_ZSEU = 81 # Zespół Szkół Ekonomiczno-Usługowych
 BT_ZS_1_Powst = 77 # Zespół Szkół nr 1 im. Powstańców Śląskich
+BT_ZSS_x = 87 # Zespół Szkół Specjalnych
 DGN_PrzedNr7 = (str(Przedszkole7), 'Przedszkole nr 7')
 
 Podlegle_pod_ZST = (PlywalniaPwst, JudoPwst, CKI_Pwst)
