@@ -2,7 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
-import sf_iw_kw
+import sf_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -15,12 +15,12 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 def zapisz_dla_diagnostyki(odp, wzor):
-    sf_iw_kw.zapisz_plik('a', odp)
-    sf_iw_kw.zapisz_plik('b', wzor)
+    sf_kw.zapisz_plik('a', odp)
+    sf_kw.zapisz_plik('b', wzor)
 
 def zapisz_ladnie_diagnostyke(odp, wzor):
-    sf_iw_kw.zapisz_ladnie('a', odp)
-    sf_iw_kw.zapisz_ladnie('b', wzor)
+    sf_kw.zapisz_ladnie('a', odp)
+    sf_kw.zapisz_ladnie('b', wzor)
 
 def vassertEqual(self, odp, wzor):
     if odp != wzor:

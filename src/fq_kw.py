@@ -6,7 +6,7 @@ import re
 import bz2
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
-import sf_iw_kw
+import sf_kw
 import dn_kw
 import dg_nl_kw
 '''.splitlines()]
@@ -40,12 +40,12 @@ def zrob_kopie_pliku(nazwa_programu, przedrostek, prawie_rowne=0):
     wzor_nazwy = re.compile(poskladany_wzor)
     lista_nazw = os.listdir(katalog_logu)
     zrob_kopie = 0
-    dane_programu = sf_iw_kw.wczytaj_plik(nazwa_programu)
+    dane_programu = sf_kw.wczytaj_plik(nazwa_programu)
     lista_nazw = filter(lambda x: wzor_nazwy.search(x), lista_nazw)
     if dg_nl_kw.TymczasowoF:
         tmp_format = "lista_nazw"; print 'Eval:', tmp_format, repr(eval(tmp_format))
     if lista_nazw:
-        dane_na_dysku = sf_iw_kw.wczytaj_plik(katalog_logu + u'\\' + lista_nazw[-1])
+        dane_na_dysku = sf_kw.wczytaj_plik(katalog_logu + u'\\' + lista_nazw[-1])
         dane_rozpakowane = bz2.decompress(dane_na_dysku)
         if prawie_rowne:
             czy_rozne = dg_nl_kw.porownaj_wielkosc_i_kilkubajtowe_roznice(dane_programu, dane_rozpakowane)
@@ -63,9 +63,9 @@ def zrob_kopie_pliku(nazwa_programu, przedrostek, prawie_rowne=0):
         dane_spakowane = bz2.compress(dane_programu)
         elementy_nazwy = [u'\\', przedrostek, dn_kw.SekTeraz(), u'.', koncowka_pliku]
         nazwa_pliku = u''.join(elementy_nazwy)
-        sf_iw_kw.zapisz_plik(katalog_logu + nazwa_pliku, dane_spakowane)
+        sf_kw.zapisz_plik(katalog_logu + nazwa_pliku, dane_spakowane)
 
 def wykonaj_kopie_plikow():
-    sf_iw_kw.sprawdz_lub_utworz_katalog_logu(katalog_logu)
+    sf_kw.sprawdz_lub_utworz_katalog_logu(katalog_logu)
     zrob_kopie_pliku(nazwa_pliku_faktury_bazowej(), 'kopia_szablon_', prawie_rowne = 1)
     zrob_kopie_pliku(dolacz_katalog(zeszyt_pomiarow), 'kopia_pomiary_', prawie_rowne = 1)

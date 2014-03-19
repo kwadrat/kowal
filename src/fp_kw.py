@@ -2,7 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
-import sf_iw_kw
+import sf_kw
 import dn_kw
 '''.splitlines()]
 
@@ -21,7 +21,7 @@ ZablokujLogowanie = 1
 
 def loguj(* lista):
     if not ZablokujLogowanie:
-        plik = sf_iw_kw.otworz_do_logowania(plik_logu)
+        plik = sf_kw.otworz_do_logowania(plik_logu)
         for element_do_zapisu in lista:
             plik.write(element_do_zapisu)
             plik.write('\n')

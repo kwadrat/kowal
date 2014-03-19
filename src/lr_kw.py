@@ -6,7 +6,7 @@ import unittest
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import fy_kw
 import lc_kw
-import sf_iw_kw
+import sf_kw
 import dv_kw
 import hj_kw
 import dn_kw
@@ -168,7 +168,7 @@ def generate_gnuplot_drawing(dfb):
                 obk.set_week_day(week_day)
                 pytanie = obk.final_shape()
                 together = generate_specific_drawing(dfb, pytanie, multiplier)
-                sf_iw_kw.zapisz_jawnie('%s_%d_%d.gen' % (my_domain[3], my_object, week_day), together)
+                sf_kw.zapisz_jawnie('%s_%d_%d.gen' % (my_domain[3], my_object, week_day), together)
 
 class TestUUQueries(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual
