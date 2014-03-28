@@ -53,8 +53,8 @@ url_kotw_a_ica = url_ameryka_http + adres_maszyny
 rjb_hs_pcztk_sam = rjb_hs_pocz + adres_maszyny
 url_kotw_b_ica = url_kotw_a_ica + lk_kw.rjb_sam_slsh
 rjb_fg_tld_d_apl = 'inne'
-rjb_tld_kw_e_apl = '2'
-rjb_tld_kw_f_apl = rjb_fg_tld_d_apl + rjb_tld_kw_e_apl
+rjb_fg_tld_e_apl = '2'
+rjb_tld_kw_f_apl = rjb_fg_tld_d_apl + rjb_fg_tld_e_apl
 konto_uzytkownika = 'kwadrat'
 rjb_tld_kw_a_apl = rjb_sama_tylda + konto_uzytkownika
 rjb_tld_kw_b_apl = lk_kw.rjb_sam_slsh + rjb_sama_tylda + konto_uzytkownika
@@ -133,5 +133,5 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(fn_a_in_dwa(0), 'inne2')
         self.assertEqual(fn_a_in_dwa(1), 'inne')
         self.assertEqual(rjb_fg_tld_d_apl, 'inne')
-        self.assertEqual(rjb_tld_kw_e_apl, '2')
+        self.assertEqual(rjb_fg_tld_e_apl, '2')
         self.assertEqual(rjb_tld_kw_f_apl, 'inne2')
