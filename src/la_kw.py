@@ -284,7 +284,7 @@ class WriterGateway(object):
         the_style = self.convert_from_sel(style_sel)
         self.zapisz_s_polaczone_komorki(akt_wiersz, akt_kolumna, the_content, the_style, liczba_kolumn=liczba_kolumn, liczba_wierszy=liczba_wierszy)
 
-    def zapisz_l_polaczone_komorki(self, akt_wiersz, akt_kolumna, napis, style_sel, liczba_kolumn=1, liczba_wierszy=1):
+    def zapisz_l_polaczone_komorki(self, akt_wiersz, akt_kolumna, napis, style_sel=None, liczba_kolumn=1, liczba_wierszy=1):
         '''
         WriterGateway:
         '''
