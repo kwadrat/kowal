@@ -57,7 +57,7 @@ rjb_fg_tld_e_apl = '2'
 rjb_fg_tld_f_apl = rjb_fg_tld_d_apl + rjb_fg_tld_e_apl
 konto_uzytkownika = 'kwadrat'
 rjb_fg_tld_a_apl = rjb_sama_tylda + konto_uzytkownika
-rjb_tld_kw_b_apl = lk_kw.rjb_sam_slsh + rjb_sama_tylda + konto_uzytkownika
+rjb_fg_tld_b_apl = lk_kw.rjb_sam_slsh + rjb_sama_tylda + konto_uzytkownika
 rjb_sciezka_kw = url_kotw_b_ica + rjb_fg_tld_a_apl
 rjb_kt_dom_uzt = rjb_pocz_hm_dir + konto_uzytkownika
 rjb_wsp_cr_md = rjb_kt_dom_uzt + '/ciri/media/'
@@ -113,7 +113,7 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(url_kotw_b_ica, 'http://media.ciri.pl/')
         self.assertEqual(konto_uzytkownika, 'kwadrat')
         self.assertEqual(rjb_fg_tld_a_apl, '~kwadrat')
-        self.assertEqual(rjb_tld_kw_b_apl, '/~kwadrat')
+        self.assertEqual(rjb_fg_tld_b_apl, '/~kwadrat')
         self.assertEqual(rjb_kt_dom_uzt, '/home/kwadrat')
         self.assertEqual(rjb_wsp_cr_md, '/home/kwadrat/ciri/media/')
         self.assertEqual(rjb_ph_uztk, '/home/kwadrat/public_html/')
