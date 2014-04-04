@@ -70,7 +70,7 @@ EYK_lporz_fktr = 'lp_faktury'
 rjb_kwl_sam = 'kowal'
 rjb_sczk_do_kwl = rjb_kt_dom_uzt + lk_kw.rjb_sam_slsh + rjb_kwl_sam
 LogDir = rjb_sczk_do_kwl + '/log'
-rjb_tld_kw_g_apl = '.py'
+rjb_fg_tld_g_apl = '.py'
 fq_kx_qv = 'kx'
 fq_ky_qv = 'ky'
 fq_px_qv = 'px'
@@ -82,7 +82,7 @@ def pelna_generowana_nazwa(nazwa):
     return poczatek_gen + nazwa
 
 def dodaj_py(nazwa):
-    return nazwa + rjb_tld_kw_g_apl
+    return nazwa + rjb_fg_tld_g_apl
 
 def fn_a_in_dwa(wersja_produkcyjna):
     if wersja_produkcyjna:
@@ -128,7 +128,7 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(rjb_kwl_sam, 'kowal')
         self.assertEqual(rjb_sczk_do_kwl, '/home/kwadrat/kowal')
         self.assertEqual(LogDir, '/home/kwadrat/kowal/log')
-        self.assertEqual(rjb_tld_kw_g_apl, '.py')
+        self.assertEqual(rjb_fg_tld_g_apl, '.py')
         self.assertEqual(dodaj_py('a'), 'a.py')
         self.assertEqual(fn_a_in_dwa(0), 'inne2')
         self.assertEqual(fn_a_in_dwa(1), 'inne')
