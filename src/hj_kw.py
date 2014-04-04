@@ -199,6 +199,9 @@ def wybierz_najwiekszy(elems):
 def wybierz_powyzej_progu(local_maximum, local_treshold):
     return local_maximum
 
+def tekstowe_indeksy(lista):
+    return map(lambda x: (str(x[0]), x[1]), lista)
+
 class TestProcessingSQL(unittest.TestCase):
     def test_processing_sql(self):
         '''
@@ -267,3 +270,4 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(wybierz_powyzej_progu(None, 0), None)
         self.assertEqual(wybierz_powyzej_progu(1, 0), 1)
         self.assertEqual(fx_jn('a', 'b', 'cd'), 'abcd')
+        self.assertEqual(tekstowe_indeksy([(1, 'a', 'b')]), [('1', 'a')])
