@@ -17,3 +17,4 @@ for i in NazwyModulow:
 
 EYK_klcz = 'kl_zast'
 EYK_wrtsc = 'nz_zast'
+OBK_go = 'go' # Pole wyznaczające porządek (goto) obiektów
