@@ -18,3 +18,11 @@ for i in NazwyModulow:
 EYK_klcz = 'kl_zast'
 EYK_wrtsc = 'nz_zast'
 OBK_go = 'go' # Pole wyznaczające porządek (goto) obiektów
+WDM_wszystkie_pola = '*'
+
+class TestStalychNapisow(unittest.TestCase):
+    def test_stalych_napisow(self):
+        '''
+        TestStalychNapisow:
+        '''
+        self.assertEqual(WDM_wszystkie_pola, '*')
