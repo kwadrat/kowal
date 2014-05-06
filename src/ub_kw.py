@@ -20,6 +20,7 @@ EYK_wrtsc = 'nz_zast'
 OBK_go = 'go' # Pole wyznaczające porządek (goto) obiektów
 WDM_wszystkie_pola = '*'
 OBK_aktywny = 'aktywny'
+FLG_aktywny = 't'
 
 class TestStalychNapisow(unittest.TestCase):
     def test_stalych_napisow(self):
