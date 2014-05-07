@@ -11,6 +11,7 @@ import gu_kw
 import rq_kw
 import dn_kw
 import le_kw
+import la_kw
 import eo_kw
 import tq_kw
 import jc_kw
@@ -227,7 +228,7 @@ class CommonWriter(CommonRdWr):
         for col in xrange(self.first_weekday_column, self.second_weekday_column + 1):
             xwg.sheet.col(col).best_fit = 1
 
-    def generate_one_file(self, xwg, dfb, output_file, uu_maper, id_obiekt=None):
+    def generate_one_file(self, dfb, output_file, uu_maper, id_obiekt=None):
         '''
         CommonWriter:
         '''
@@ -246,6 +247,7 @@ class CommonWriter(CommonRdWr):
             my_end_date=my_end_date,
             )
         object_names = unique_sorted(dane_bazy, lc_kw.fq_account_qv)
+        xwg = la_kw.WriterGateway()
         xwg.workbook_create()
         for nr, name in enumerate(object_names):
             self.generate_for_object(xwg, dane_bazy, name, uu_maper)
