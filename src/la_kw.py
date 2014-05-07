@@ -457,6 +457,11 @@ class WriterGateway(object):
             liczba_wierszy=liczba_wierszy,
             )
 
+def workbook_a_create():
+    xwg = WriterGateway()
+    xwg.workbook_create()
+    return xwg
+
 class TestArkuszowy(unittest.TestCase):
     def test_arkuszowy(self):
         '''
