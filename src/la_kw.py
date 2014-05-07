@@ -11,8 +11,6 @@ import gv_kw
 import rq_kw
 import dn_kw
 import en_kw
-import np_kw
-import ne_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
