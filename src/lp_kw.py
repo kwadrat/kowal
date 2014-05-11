@@ -62,6 +62,9 @@ def psycopg2_convert_date_format_to_text(slownik, pole):
     if has_date_from_dt(data):
         slownik[slownik._index[pole]] = rj_na_date(data)
 
+def build_date(rok, miesiac, dzien):
+    return datetime.date(rok, miesiac, dzien)
+
 class HourMiniServer(object):
     def __init__(self, column_index):
         '''
@@ -106,6 +109,7 @@ class TestDateQuarters(unittest.TestCase):
         self.assertEqual(rj_na_date(datetime.date(2013, 3, 1)), '2013-03-01')
         self.assertEqual(has_date_from_dt(datetime.date(2013, 3, 1)), 1)
         self.assertEqual(has_date_from_dt('2013-03-01'), 0)
+        self.assertEqual(build_date(2012, 1, 2), datetime.date(2012, 1, 2))
 
     def test_time_headers(self):
         '''
