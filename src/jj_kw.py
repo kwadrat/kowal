@@ -1,7 +1,6 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
-import datetime
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
