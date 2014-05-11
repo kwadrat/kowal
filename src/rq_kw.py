@@ -189,3 +189,4 @@ DocelowoObiektoweKosztyJednostkowe = 0
 TymczasowoTylkoJeden = 0
 DocelowoPosrednikDokladnejLiczby = 0
 TymczasowoPokazWzory = 0
+TymczasowoTylkoWybranyArkusz = 0
