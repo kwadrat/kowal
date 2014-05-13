@@ -16,11 +16,14 @@ def verify_for_2_equal(tmp_value, ls_expected):
     if tmp_value not in ls_expected:
         raise RuntimeError('tmp_value = %s' % repr(tmp_value))
 
+def prepare_s_date(year, month, day, hour, minute, second):
+    return datetime.datetime(year, month, day, hour, minute, second)
+
 def rj_na_godzine(dttm):
     return dttm.strftime('%H:%M')
 
 def determine_quarter(qrt_number):
-    result = (rj_na_godzine(datetime.datetime(2013, 1, 31, 0, 0, 0) + datetime.timedelta(seconds=15 * 60 * qrt_number)))
+    result = (rj_na_godzine(prepare_s_date(2013, 1, 31, 0, 0, 0) + datetime.timedelta(seconds=15 * 60 * qrt_number)))
     return result
 
 def determine_hour(hour_number):
@@ -39,7 +42,7 @@ def process_hour_headers(time_tuple):
     return part_of_day_hs(*time_part)
 
 def process_quarter_headers(value):
-    my_point = datetime.datetime(*value) - datetime.timedelta(seconds=15*60)
+    my_point = prepare_s_date(*value) - datetime.timedelta(seconds=15*60)
     my_date = rj_na_date(my_point)
     my_time = my_point.strftime('%H:%M')
     return my_date, my_time
@@ -85,7 +88,7 @@ class TestDateQuarters(unittest.TestCase):
         '''
         self.assertEqual(rj_na_godzine(datetime.time(2, 45, 00)), '02:45')
         self.assertEqual(part_of_day_hs(2, 45, 00), '02:45')
-        self.assertEqual(rj_na_date(datetime.datetime(2013, 1, 31, 0, 0, 0)), '2013-01-31')
+        self.assertEqual(rj_na_date(prepare_s_date(2013, 1, 31, 0, 0, 0)), '2013-01-31')
         self.assertEqual(process_quarter_headers([2013, 1, 31, 23, 59, 00]), ('2013-01-31', '23:44'))
         self.assertEqual(determine_hour(7), '07:00')
         self.assertEqual(determine_quarter(0), '00:00')
