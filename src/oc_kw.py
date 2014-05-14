@@ -31,6 +31,7 @@ PoczObrazka = 'plik_'
 RozszerzenieObrazka = '.png'
 url_ameryka_http = 'http://'
 rjb_hs_pocz = 'https://'
+kj_beaker_dot_session = 'beaker.session'
 
 class CoreResolver(object):
     def __init__(self, adres_maszyny):
