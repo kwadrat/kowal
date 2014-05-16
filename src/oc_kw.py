@@ -32,6 +32,7 @@ RozszerzenieObrazka = '.png'
 url_ameryka_http = 'http://'
 rjb_hs_pocz = 'https://'
 kj_beaker_dot_session = 'beaker.session'
+kj_wsgi_dot_input = 'wsgi.input'
 
 class CoreResolver(object):
     def __init__(self, adres_maszyny):
