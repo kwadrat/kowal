@@ -28,3 +28,6 @@ slownik_wyznacz_spinacz = {
     AMP_HTML: MHG_LAMP,
     AMP_NONE: '',
     }
+
+def rj_wyznacz_spinacz(dla_js):
+    return slownik_wyznacz_spinacz[dla_js]
