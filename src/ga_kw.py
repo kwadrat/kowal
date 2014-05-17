@@ -22,3 +22,9 @@ AMP_NONE = 2
 
 MHG_LAMP = '&amp;' # Łączący ampersand, zakodowany
 MHG_SAMP = '&' # Łączący ampersand, jako pojedynczy znak
+
+slownik_wyznacz_spinacz = {
+    AMP_JS: MHG_SAMP,
+    AMP_HTML: MHG_LAMP,
+    AMP_NONE: '',
+    }
