@@ -60,7 +60,6 @@ LTR_FORM_PLIK_DO_ZALADOWANIA = 'nazwa_pliku1'
 LTR_FORM_NAZWA_NOWEGO_KATALOGU = 'nazwa_katalogu1'
 LTR_KLUCZ_WLACZONY = '1' # Do kasowania danych
 LTR_KLUCZ_ZABLOKOWANY = '0' # Do kasowania danych
-ZOT_ZNAK_ZAPYTANIA = '?'
 
 wyznacz_wielkosc = {
     CHC_PIC_ORYG: lc_kw.fq_oryg_qv,
@@ -114,4 +113,3 @@ class TestSomeConstants(unittest.TestCase):
         self.assertEqual(LTR_GLR_X_STAMP, 150)
         self.assertEqual(ladny_rozmiar(2047), '2047 B')
         self.assertEqual(ladny_rozmiar(2097151), '2047 KB')
-        self.assertEqual(ZOT_ZNAK_ZAPYTANIA, '?')
