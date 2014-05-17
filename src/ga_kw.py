@@ -15,5 +15,10 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+# JavaScript potrzebuje krótkiego, jednoznakowego ampersanda
+AMP_JS = 0
+AMP_HTML = 1
+AMP_NONE = 2
+
 MHG_LAMP = '&amp;' # Łączący ampersand, zakodowany
 MHG_SAMP = '&' # Łączący ampersand, jako pojedynczy znak
