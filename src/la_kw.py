@@ -107,7 +107,7 @@ class WriterGateway(object):
             the_style.num_format_str = num_format_str
         return the_style
 
-    def get_or_generate_style(self, kl_miejsc=None, rn_colour=None, bold=None, size=None, wrap=None, middle=None, kl_none=None, italic=None, borders=None, fore_colour=None):
+    def get_or_generate_style(self, kl_miejsc=None, rn_colour=None, bold=None, size=None, wrap=None, middle=None, kl_none=None, italic=None, underline=None, borders=None, fore_colour=None):
         '''
         WriterGateway:
         '''
@@ -131,6 +131,8 @@ class WriterGateway(object):
                     dc_params['borders'] = borders
                 if italic is not None:
                     dc_params['italic'] = italic
+                if underline is not None:
+                    dc_params['underline'] = underline
                 if middle:
                     dc_params['vert'] = self.xlwt.Alignment.VERT_CENTER
                     dc_params['horz'] = self.xlwt.Alignment.HORZ_CENTER
