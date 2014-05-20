@@ -68,6 +68,12 @@ def psycopg2_convert_date_format_to_text(slownik, pole):
 def build_date(rok, miesiac, dzien):
     return datetime.date(rok, miesiac, dzien)
 
+def heating_period(my_point):
+    year = my_point.year
+    if my_point.month <= 7:
+        year -= 1
+    return year
+
 class HourMiniServer(object):
     def __init__(self, column_index):
         '''
@@ -113,6 +119,8 @@ class TestDateQuarters(unittest.TestCase):
         self.assertEqual(has_date_from_dt(datetime.date(2013, 3, 1)), 1)
         self.assertEqual(has_date_from_dt('2013-03-01'), 0)
         self.assertEqual(build_date(2012, 1, 2), datetime.date(2012, 1, 2))
+        self.assertEqual(heating_period(build_date(2012, 7, 2)), 2011)
+        self.assertEqual(heating_period(build_date(2012, 8, 2)), 2012)
 
     def test_time_headers(self):
         '''
