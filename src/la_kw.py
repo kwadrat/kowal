@@ -227,6 +227,12 @@ class WriterGateway(object):
                 borders=nf_kw.brd_1_obk,
                 wrap=1,
                 ),
+            ng_kw.NVB_18_STYLE: self.prepare_cell(
+                vert=self.xlwt.Alignment.VERT_CENTER,
+                horz=self.xlwt.Alignment.HORZ_CENTER,
+                fore_colour=self.xlwt.Style.colour_map[gv_kw.ECR_yellow],
+                borders=nf_kw.brd_1_obk,
+                ),
             ng_kw.NVB_19_STYLE: self.prepare_cell(
                 12,
                 bold=1,
