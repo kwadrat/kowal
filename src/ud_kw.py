@@ -21,9 +21,16 @@ class LpFakturyRoku(object):
         LpFakturyRoku:
         '''
 
+    def ordinal_number(self, year):
+        '''
+        LpFakturyRoku:
+        '''
+        return 1
+
 class TestLpFaktury(unittest.TestCase):
     def test_inserting_all(self):
         '''
         TestLpFaktury:
         '''
         obk = LpFakturyRoku()
+        self.assertEqual(obk.ordinal_number(2010), 1)
