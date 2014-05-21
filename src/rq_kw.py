@@ -184,7 +184,6 @@ Niebezpieczne_testowa_aplikacja_produkcyjna_baza = 0
 DocelowoOdwrotnieOproczOstatniego = 1
 TymczasowoPozwolNaUzupelnienieBorki = 0
 TymczasowoWygenerujSztywne = 0
-DocelowoObiektoweKosztyJednostkowe = 0
 
 TymczasowoTylkoJeden = 0
 DocelowoPosrednikDokladnejLiczby = 0
