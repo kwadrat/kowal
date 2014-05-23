@@ -159,7 +159,7 @@ class CommonWriter(CommonRdWr):
             my_value = hour_est.one_sample
             xwg.zapisz_flt(row_c, col, my_value, kl_miejsc=2, size=12, borders=nf_kw.brd_1_obk)
             etk_c = klm_c_ads.get_ka_official_address(col_delta=i)
-            tekst_wzoru = 'MAX(0,%s-%s)' % (etk_c, etk_e)
+            tekst_wzoru = hj_kw.rcp_diff_max(etk_c, etk_e)
             xwg.zapisz_wzor(row_d, col, tekst_wzoru, kl_miejsc=2, size=12, borders=nf_kw.brd_1_obk)
             ##############################################################################
             one_date = hour_est.one_date
