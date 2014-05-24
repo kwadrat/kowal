@@ -84,6 +84,7 @@ class WriterGateway(object):
         needed_colour = colour is not None
         needed_italic = italic is not None
         needed_underline = underline is not None
+        # Background pattern fore colour
         needed_fore_colour = fore_colour is not None
         if needed_size or needed_bold or needed_colour or needed_italic or needed_underline:
             the_font = self.xlwt.Font()
