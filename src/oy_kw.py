@@ -18,6 +18,7 @@ for i in NazwyModulow:
 
 index_zero_number = 0
 index_zero_text = str(index_zero_number)
+WBR_WSZYSTKIE = '-' # Wybór wszystkich (np. obiektów)
 element_wszystkich = [{ub_kw.EYK_klcz: index_zero_number, ub_kw.EYK_wrtsc: '-'}]
 element_surowy_wszystkich = [(index_zero_number, '-')]
 
@@ -38,6 +39,7 @@ class TestInsertingAll(unittest.TestCase):
         '''
         self.assertEqual(index_zero_number, 0)
         self.assertEqual(index_zero_text, '0')
+        self.assertEqual(WBR_WSZYSTKIE, '-')
         self.assertEqual(element_wszystkich, [{'kl_zast': 0, 'nz_zast': '-'}])
         self.assertEqual(element_surowy_wszystkich, [(0, '-')])
         self.assertEqual(rj_wstaw_kreske_jako_pierwsze([], 0), [])
