@@ -441,11 +441,8 @@ def is_ymd_sunday(year, month, day):
     nkd = NumerDnia(year, month, day)
     return is_sunday(nkd)
 
-def day_in_last_week_of_long_month(rok, miesiac, dzien):
-    result = 0
-    if dzien > 31 - 7:
-        result = 1
-    return result
+def day_in_last_week_of_long_month(dzien):
+    return dzien > 31 - 7
 
 def autumn_dst_day(napis):
     result = 0
@@ -563,8 +560,8 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(spring_dst_day(du_kw.rjb_dzien_przkl), 0)
         self.assertEqual(spring_dst_day('2014-03-30'), 1)
         self.assertEqual(spring_dst_day('2013-03-31'), 1)
-        self.assertEqual(day_in_last_week_of_long_month(2010, 1, 1), 0)
-        self.assertEqual(day_in_last_week_of_long_month(2010, 1, 25), 1)
-        self.assertEqual(day_in_last_week_of_long_month(2010, 1, 26), 1)
+        self.assertEqual(day_in_last_week_of_long_month(1), 0)
+        self.assertEqual(day_in_last_week_of_long_month(25), 1)
+        self.assertEqual(day_in_last_week_of_long_month(26), 1)
         self.assertEqual(is_ymd_sunday(2010, 1, 26), 0)
         self.assertEqual(is_ymd_sunday(2010, 1, 24), 1)
