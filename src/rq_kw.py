@@ -43,7 +43,7 @@ PoprawneLiczbyPaskowDlaOkresuMiesiecznego = (
   )
 
 DaneOkresu = (
-Dn_Miesiac,
+Dt_Miesiac,
 Dn_Rok,
 Dn_RapPierwszy,
 Dn_RapDrugi,
@@ -110,34 +110,34 @@ JP_ChcePolaczone = (DR_Polaczone, PoleNN)
 # pewne pola są pokazywane, a inne ukrywane
 PR_Brak = None
 
-PR_PotrzebujeRoku = (Dn_Miesiac, PR_Brak, )
+PR_PotrzebujeRoku = (Dt_Miesiac, PR_Brak, )
 PR_NiePotrzebujeRoku = (Dn_Rok, Dn_RapPierwszy, Dn_RapDrugi, )
 
 # Dla grupy (pojedyncze obiekty, przedszkola)
-PR_PotrzebujeGrupy = (Dn_Miesiac, Dn_Rok, Dn_RapPierwszy, Dn_RapDrugi, PR_Brak, )
+PR_PotrzebujeGrupy = (Dt_Miesiac, Dn_Rok, Dn_RapPierwszy, Dn_RapDrugi, PR_Brak, )
 PR_NiePotrzebujeGrupy = ()
 
 # Dla prezentacji (tabela, wykres)
 PR_PotrzebujePrezent = (Dn_RapPierwszy, Dn_RapDrugi, )
-PR_NiePotrzebujePrezent = (Dn_Miesiac, Dn_Rok, PR_Brak, )
+PR_NiePotrzebujePrezent = (Dt_Miesiac, Dn_Rok, PR_Brak, )
 
 # Dla medium (np. ciepło, gaz)
-PR_PotrzebujeMedium = (Dn_Miesiac, Dn_Rok, PR_Brak, )
+PR_PotrzebujeMedium = (Dt_Miesiac, Dn_Rok, PR_Brak, )
 PR_NiePotrzebujeMedium = (Dn_RapPierwszy, Dn_RapDrugi, )
 
 # Dla domeny (złotówki, ilość towaru)
-PR_PotrzebujeDomena = (Dn_Miesiac, Dn_Rok, PR_Brak, )
+PR_PotrzebujeDomena = (Dt_Miesiac, Dn_Rok, PR_Brak, )
 PR_NiePotrzebujeDomena = (Dn_RapDrugi, )
 PR_MozeDomena = (Dn_RapPierwszy, )
 
 # Dla razem/osobno
 PR_PotrzebujeRazem = (Dn_RapPierwszy,)
-PR_NiePotrzebujeRazem = (PR_Brak, Dn_Miesiac, Dn_Rok, Dn_RapDrugi)
+PR_NiePotrzebujeRazem = (PR_Brak, Dt_Miesiac, Dn_Rok, Dn_RapDrugi)
 
 # Dla roku A
 PR_PotrzebujeARok = (Dn_RapPierwszy, )
-PR_NiePotrzebujeARok = (Dn_Miesiac, Dn_Rok, Dn_RapDrugi, PR_Brak, )
-PR_OkresDlaKwot = (Dn_Miesiac, Dn_Rok, Dn_RapDrugi, PR_Brak, )
+PR_NiePotrzebujeARok = (Dt_Miesiac, Dn_Rok, Dn_RapDrugi, PR_Brak, )
+PR_OkresDlaKwot = (Dt_Miesiac, Dn_Rok, Dn_RapDrugi, PR_Brak, )
 PR_OkresBycMozeDlaKwot = (Dn_RapPierwszy, )
 
 
