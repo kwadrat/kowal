@@ -67,7 +67,15 @@ PoleWszystko = 'Wszystko'
 PoleNN = 'None'
 NiePtrzBRok = (PoleWszystko, None, )
 BezKonkretnychRocznikow = (PoleWszystko, PoleNN, None)
-DaneDomeny = Dn_Kwota, Dn_Towar, Dn_Moc = ('Koszty', 'Ilość', 'Moc')
+DaneDomeny = (
+    Dn_Kwota,
+    Dn_Towar,
+    Dn_Moc,
+    ) = (
+    'Koszty',
+    'Ilość',
+    'Moc',
+    )
 
 DP_PotrzebujeDomene = (DP_Wykres, PoleNN)
 DP_NiePotrzebujeDomeny = (DP_Tabela, )
