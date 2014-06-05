@@ -34,7 +34,7 @@ class PowerWriter(CommonWriter):
         PowerWriter:
         '''
         period_server = jj_kw.QuarterServer()
-        CommonWriter.__init__(self, lw_kw.Dn_Power, period_server)
+        CommonWriter.__init__(self, lw_kw.Dm_Power, period_server)
 
     def generate_for_a_day(self, xwg, my_data, base_data_line, day_nr, moc_um_dec):
         '''

@@ -38,7 +38,7 @@ energy_chooser = {
         sum,
         'e',
         ],
-    lw_kw.Dn_Power: [
+    lw_kw.Dm_Power: [
         96,
         lc_kw.fq_uu_power_qv,
         gb_kw.Jedn_kWtow,
@@ -95,7 +95,7 @@ class TestEnergyFeatures(unittest.TestCase):
         '''
         TestEnergyFeatures:
         '''
-        obk = CechaEnergii(lw_kw.Dn_Power)
+        obk = CechaEnergii(lw_kw.Dm_Power)
         self.assertEqual(obk.krt_wymiar, 96)
         self.assertEqual(obk.krt_table, lc_kw.fq_uu_power_qv)
         self.assertEqual(obk.krt_jedn, gb_kw.Jedn_kWtow)
@@ -121,7 +121,7 @@ class TestEnergyFeatures(unittest.TestCase):
         '''
         TestEnergyFeatures:
         '''
-        obk = CechaEnergii(lw_kw.Dn_Power)
+        obk = CechaEnergii(lw_kw.Dm_Power)
         obk.cumulative_init()
         self.assertEqual(obk.cumulative_value, 0.0)
         obk.cumulative_update(1)

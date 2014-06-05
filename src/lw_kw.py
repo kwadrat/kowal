@@ -3,7 +3,7 @@
 
 DanePoboru = (
 Dm_Energy,
-Dn_Power,
+Dm_Power,
 ) = (
 'Energia',
 'Moc',

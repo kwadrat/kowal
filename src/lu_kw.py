@@ -92,7 +92,7 @@ class TestCalculateAmount(unittest.TestCase):
         '''
         TestCalculateAmount:
         '''
-        krt_pobor = dd_kw.CechaEnergii(lw_kw.Dn_Power)
+        krt_pobor = dd_kw.CechaEnergii(lw_kw.Dm_Power)
         single_key = 'a'
         zbiornik_przedzialow = {single_key:[]}
         kwota = wyznacz_kwote(krt_pobor, zbiornik_przedzialow, single_key)
