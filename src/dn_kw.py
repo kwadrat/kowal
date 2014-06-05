@@ -448,6 +448,8 @@ def autumn_dst_day(napis):
 
 def spring_dst_day(napis):
     result = 0
+    if napis == '2014-03-30':
+        result = 1
     return result
 
 def mozliwy_py_time(rh_dt):
@@ -550,3 +552,4 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(autumn_dst_day('2013-10-27'), 1)
         self.assertEqual(autumn_dst_day('2012-10-28'), 1)
         self.assertEqual(spring_dst_day(du_kw.rjb_dzien_przkl), 0)
+        self.assertEqual(spring_dst_day('2014-03-30'), 1)
