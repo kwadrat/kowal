@@ -95,7 +95,7 @@ class TestDomena(unittest.TestCase):
         moj_elem.skh_prez(None)
         self.assertEqual(moj_elem.skh_widzialny(rq_kw.PR_Brak), True)
         self.assertEqual(moj_elem.skh_widzialny(rq_kw.Dt_Miesiac), True)
-        self.assertEqual(moj_elem.skh_widzialny(rq_kw.Dn_Rok), True)
+        self.assertEqual(moj_elem.skh_widzialny(rq_kw.Dt_Rok), True)
         self.assertEqual(moj_elem.skh_widzialny(rq_kw.Dn_RapPierwszy), None)
         self.assertEqual(moj_elem.skh_widzialny(rq_kw.Dn_RapDrugi), False)
         self.assertTrue(moj_elem.skh_pr_widzialny(rq_kw.DP_Wykres))

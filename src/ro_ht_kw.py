@@ -84,7 +84,7 @@ class TestRok(unittest.TestCase):
         moj_elem = SkrRok()
         moj_elem.skh_okres(None)
         self.assertTrue(moj_elem.skh_widzialny(rq_kw.Dt_Miesiac))
-        self.assertFalse(moj_elem.skh_widzialny(rq_kw.Dn_Rok))
+        self.assertFalse(moj_elem.skh_widzialny(rq_kw.Dt_Rok))
         self.assertTrue(moj_elem.skh_widzialny(rq_kw.PR_Brak))
         self.assertFalse(moj_elem.skh_widzialny(rq_kw.Dn_RapPierwszy))
         self.assertFalse(moj_elem.skh_widzialny(rq_kw.Dn_RapDrugi))
