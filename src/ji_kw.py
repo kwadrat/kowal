@@ -31,7 +31,7 @@ class EnergyReader(CommonReader):
         '''
         self.extra_dst_column = 0
         period_server = jl_kw.HourServer()
-        CommonReader.__init__(self, lw_kw.Dn_Energy, period_server)
+        CommonReader.__init__(self, lw_kw.Dm_Energy, period_server)
         self.start_energy_col = self.vx_letter_num('B')
 
     def set_dst_column(self):

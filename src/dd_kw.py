@@ -30,7 +30,7 @@ def protected_max(values):
     return result
 
 energy_chooser = {
-    lw_kw.Dn_Energy: [
+    lw_kw.Dm_Energy: [
         24,
         lc_kw.fq_uu_energy_qv,
         gb_kw.Jedn_kWh,
@@ -73,7 +73,7 @@ class CechaEnergii(object):
         '''
         TestEnergyFeatures:
         '''
-        if self.tvk_pobor == lw_kw.Dn_Energy:
+        if self.tvk_pobor == lw_kw.Dm_Energy:
             self.cumulative_value += new_value
         else:
             self.cumulative_value = max(self.cumulative_value, new_value)
@@ -83,7 +83,7 @@ class TestEnergyFeatures(unittest.TestCase):
         '''
         TestEnergyFeatures:
         '''
-        obk = CechaEnergii(lw_kw.Dn_Energy)
+        obk = CechaEnergii(lw_kw.Dm_Energy)
         self.assertEqual(obk.krt_wymiar, 24)
         self.assertEqual(obk.krt_table, lc_kw.fq_uu_energy_qv)
         self.assertEqual(obk.krt_jedn, gb_kw.Jedn_kWh)
@@ -107,7 +107,7 @@ class TestEnergyFeatures(unittest.TestCase):
         '''
         TestEnergyFeatures:
         '''
-        obk = CechaEnergii(lw_kw.Dn_Energy)
+        obk = CechaEnergii(lw_kw.Dm_Energy)
         obk.cumulative_init()
         self.assertEqual(obk.cumulative_value, 0.0)
         obk.cumulative_update(1)

@@ -51,7 +51,7 @@ class TestSzkieletowegoDatownika(unittest.TestCase):
         '''
         TestSzkieletowegoDatownika:
         '''
-        krt_pobor = dd_kw.CechaEnergii(lw_kw.Dn_Energy)
+        krt_pobor = dd_kw.CechaEnergii(lw_kw.Dm_Energy)
         obk = SzkieletDatDlaPoborow(krt_pobor)
         self.assertEqual(obk.szkielet_dat, dq_kw.generator_szkieletu(24))
 

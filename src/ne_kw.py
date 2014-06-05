@@ -29,7 +29,7 @@ class EnergyWriter(CommonWriter):
         EnergyWriter:
         '''
         period_server = jl_kw.HourServer()
-        CommonWriter.__init__(self, lw_kw.Dn_Energy, period_server)
+        CommonWriter.__init__(self, lw_kw.Dm_Energy, period_server)
 
     def generate_for_a_day(self, xwg, my_data, base_data_line, day_nr):
         '''

@@ -17,7 +17,7 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 def generate_raport_file(dfb, nazwa_pliku, uu_maper, krt_pobor, id_obiekt):
-    if krt_pobor.tvk_pobor == lw_kw.Dn_Energy:
+    if krt_pobor.tvk_pobor == lw_kw.Dm_Energy:
         obk = ne_kw.EnergyWriter()
     else:
         assert krt_pobor.tvk_pobor == lw_kw.Dn_Power

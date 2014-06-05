@@ -2,7 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 DanePoboru = (
-Dn_Energy,
+Dm_Energy,
 Dn_Power,
 ) = (
 'Energia',

@@ -46,6 +46,6 @@ class TestMiesiecznegoSzkieletu(unittest.TestCase):
         '''
         TestMiesiecznegoSzkieletu:
         '''
-        krt_pobor = dd_kw.CechaEnergii(lw_kw.Dn_Energy)
+        krt_pobor = dd_kw.CechaEnergii(lw_kw.Dm_Energy)
         obk = SzkieletMiesiecznyDlaPoborow(krt_pobor)
         self.assertEqual(obk.tekst_pelnej_godziny(10), 'VI')
