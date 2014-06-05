@@ -448,8 +448,11 @@ def autumn_dst_day(napis):
 
 def spring_dst_day(napis):
     result = 0
-    if napis == '2014-03-30':
-        result = 1
+    rok, miesiac, dzien = data_z_napisu(napis)
+    if miesiac == 3 and dzien > 31 - 7:
+        nkd = NumerDnia(rok, miesiac, dzien)
+        if is_sunday(nkd):
+            result = 1
     return result
 
 def mozliwy_py_time(rh_dt):
@@ -553,3 +556,4 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(autumn_dst_day('2012-10-28'), 1)
         self.assertEqual(spring_dst_day(du_kw.rjb_dzien_przkl), 0)
         self.assertEqual(spring_dst_day('2014-03-30'), 1)
+        self.assertEqual(spring_dst_day('2013-03-31'), 1)
