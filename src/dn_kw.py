@@ -437,6 +437,10 @@ def surowy_czas(czas=None):
     else:
         return czas
 
+def day_in_last_week_of_long_month(rok, miesiac, dzien):
+    result = 0
+    return result
+
 def autumn_dst_day(napis):
     result = 0
     rok, miesiac, dzien = data_z_napisu(napis)
@@ -557,3 +561,4 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(spring_dst_day(du_kw.rjb_dzien_przkl), 0)
         self.assertEqual(spring_dst_day('2014-03-30'), 1)
         self.assertEqual(spring_dst_day('2013-03-31'), 1)
+        self.assertEqual(day_in_last_week_of_long_month(2010, 1, 1), 0)
