@@ -437,6 +437,9 @@ def surowy_czas(czas=None):
     else:
         return czas
 
+def is_ymd_sunday(year, month, day):
+    return 0
+
 def day_in_last_week_of_long_month(rok, miesiac, dzien):
     result = 0
     if dzien > 31 - 7:
@@ -566,3 +569,4 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(day_in_last_week_of_long_month(2010, 1, 1), 0)
         self.assertEqual(day_in_last_week_of_long_month(2010, 1, 25), 1)
         self.assertEqual(day_in_last_week_of_long_month(2010, 1, 26), 1)
+        self.assertEqual(is_ymd_sunday(2010, 1, 26), 0)
