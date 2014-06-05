@@ -45,7 +45,7 @@ PoprawneLiczbyPaskowDlaOkresuMiesiecznego = (
 DaneOkresu = (
 Dt_Miesiac,
 Dt_Rok,
-Dn_RapPierwszy,
+Dt_RapPierwszy,
 Dn_RapDrugi,
 ) = (
 'W danym roku',
@@ -111,34 +111,34 @@ JP_ChcePolaczone = (DR_Polaczone, PoleNN)
 PR_Brak = None
 
 PR_PotrzebujeRoku = (Dt_Miesiac, PR_Brak, )
-PR_NiePotrzebujeRoku = (Dt_Rok, Dn_RapPierwszy, Dn_RapDrugi, )
+PR_NiePotrzebujeRoku = (Dt_Rok, Dt_RapPierwszy, Dn_RapDrugi, )
 
 # Dla grupy (pojedyncze obiekty, przedszkola)
-PR_PotrzebujeGrupy = (Dt_Miesiac, Dt_Rok, Dn_RapPierwszy, Dn_RapDrugi, PR_Brak, )
+PR_PotrzebujeGrupy = (Dt_Miesiac, Dt_Rok, Dt_RapPierwszy, Dn_RapDrugi, PR_Brak, )
 PR_NiePotrzebujeGrupy = ()
 
 # Dla prezentacji (tabela, wykres)
-PR_PotrzebujePrezent = (Dn_RapPierwszy, Dn_RapDrugi, )
+PR_PotrzebujePrezent = (Dt_RapPierwszy, Dn_RapDrugi, )
 PR_NiePotrzebujePrezent = (Dt_Miesiac, Dt_Rok, PR_Brak, )
 
 # Dla medium (np. ciepło, gaz)
 PR_PotrzebujeMedium = (Dt_Miesiac, Dt_Rok, PR_Brak, )
-PR_NiePotrzebujeMedium = (Dn_RapPierwszy, Dn_RapDrugi, )
+PR_NiePotrzebujeMedium = (Dt_RapPierwszy, Dn_RapDrugi, )
 
 # Dla domeny (złotówki, ilość towaru)
 PR_PotrzebujeDomena = (Dt_Miesiac, Dt_Rok, PR_Brak, )
 PR_NiePotrzebujeDomena = (Dn_RapDrugi, )
-PR_MozeDomena = (Dn_RapPierwszy, )
+PR_MozeDomena = (Dt_RapPierwszy, )
 
 # Dla razem/osobno
-PR_PotrzebujeRazem = (Dn_RapPierwszy,)
+PR_PotrzebujeRazem = (Dt_RapPierwszy,)
 PR_NiePotrzebujeRazem = (PR_Brak, Dt_Miesiac, Dt_Rok, Dn_RapDrugi)
 
 # Dla roku A
-PR_PotrzebujeARok = (Dn_RapPierwszy, )
+PR_PotrzebujeARok = (Dt_RapPierwszy, )
 PR_NiePotrzebujeARok = (Dt_Miesiac, Dt_Rok, Dn_RapDrugi, PR_Brak, )
 PR_OkresDlaKwot = (Dt_Miesiac, Dt_Rok, Dn_RapDrugi, PR_Brak, )
-PR_OkresBycMozeDlaKwot = (Dn_RapPierwszy, )
+PR_OkresBycMozeDlaKwot = (Dt_RapPierwszy, )
 
 
 # Wybrano pojedyncze obiekty, a nie konkretną grupę
@@ -148,7 +148,7 @@ DG_Obiekty = (DG_BrakGrupowania, DG_BrakGrupowania)
 
 niekonkretny_obiekt = (None, )
 
-Dla_Dwoch_Raportow = (Dn_RapPierwszy, Dn_RapDrugi, )
+Dla_Dwoch_Raportow = (Dt_RapPierwszy, Dn_RapDrugi, )
 
 # Ograniczanie wyświetlania odcinków bazowych, nakładek albo zbitek
 TymczasowoOgrWysw = 1
