@@ -444,6 +444,13 @@ def is_ymd_sunday(year, month, day):
 def day_in_last_week_of_long_month(dzien):
     return dzien > 31 - 7
 
+def month_dst_day(napis, dst_month):
+    result = 0
+    rok, miesiac, dzien = data_z_napisu(napis)
+    if miesiac == dst_month and day_in_last_week_of_long_month(dzien):
+        result = is_ymd_sunday(rok, miesiac, dzien)
+    return result
+
 def autumn_dst_day(napis):
     result = 0
     rok, miesiac, dzien = data_z_napisu(napis)
