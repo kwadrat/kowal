@@ -452,18 +452,10 @@ def month_dst_day(napis, dst_month):
     return result
 
 def autumn_dst_day(napis):
-    result = 0
-    rok, miesiac, dzien = data_z_napisu(napis)
-    if miesiac == 10 and day_in_last_week_of_long_month(dzien):
-        result = is_ymd_sunday(rok, miesiac, dzien)
-    return result
+    return month_dst_day(napis, 10)
 
 def spring_dst_day(napis):
-    result = 0
-    rok, miesiac, dzien = data_z_napisu(napis)
-    if miesiac == 3 and day_in_last_week_of_long_month(dzien):
-        result = is_ymd_sunday(rok, miesiac, dzien)
-    return result
+    return month_dst_day(napis, 3)
 
 def mozliwy_py_time(rh_dt):
     return hasattr(rh_dt, 'year')
