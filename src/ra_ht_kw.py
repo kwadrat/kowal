@@ -62,4 +62,4 @@ class TestARok(unittest.TestCase):
         self.assertFalse(moj_elem.skh_widzialny(rq_kw.Dt_Miesiac))
         self.assertFalse(moj_elem.skh_widzialny(rq_kw.Dt_Rok))
         self.assertTrue(moj_elem.skh_widzialny(rq_kw.Dt_RapPierwszy))
-        self.assertFalse(moj_elem.skh_widzialny(rq_kw.Dn_RapDrugi))
+        self.assertFalse(moj_elem.skh_widzialny(rq_kw.Dt_RapDrugi))
