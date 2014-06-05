@@ -451,18 +451,14 @@ def autumn_dst_day(napis):
     result = 0
     rok, miesiac, dzien = data_z_napisu(napis)
     if miesiac == 10 and dzien > 31 - 7:
-        nkd = NumerDnia(rok, miesiac, dzien)
-        if is_sunday(nkd):
-            result = 1
+        result = is_ymd_sunday(rok, miesiac, dzien)
     return result
 
 def spring_dst_day(napis):
     result = 0
     rok, miesiac, dzien = data_z_napisu(napis)
     if miesiac == 3 and dzien > 31 - 7:
-        nkd = NumerDnia(rok, miesiac, dzien)
-        if is_sunday(nkd):
-            result = 1
+        result = is_ymd_sunday(rok, miesiac, dzien)
     return result
 
 def mozliwy_py_time(rh_dt):
