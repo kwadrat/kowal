@@ -185,6 +185,12 @@ class CommonReader(CommonRdWr):
             my_sample_row.make_stats_of_samples(
                 dfb, self.krt_pobor, self.table_of_samples, sample_key)
 
+    def report_missing_days(self, dfb):
+        '''
+        CommonReader:
+        '''
+        print 'Missing days'
+
 class Test_Common_Reader(unittest.TestCase):
     def test_common_reader(self):
         '''
