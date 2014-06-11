@@ -121,3 +121,5 @@ lxa_63_inst = """\
 SELECT k_sample, m_samples FROM uu_power ORDER BY m_date;"""
 lxa_64_inst = """\
 SELECT k_object, account FROM uu_object ORDER BY k_object;"""
+lxa_65_inst = """\
+SELECT %(k_object)s, %(account)s FROM %(uu_object)s ORDER BY %(k_object)s;"""
