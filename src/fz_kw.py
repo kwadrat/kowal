@@ -196,6 +196,13 @@ def ptn_for_statistics(table_name):
     obk = lr_kw.GeneratorUU(table_name)
     return obk.samples_for_recalculating()
 
+def ptn_get_ordered_objects():
+    return fy_kw.lxa_65_inst % dict(
+        k_object=lc_kw.fq_k_object_qv,
+        account=lc_kw.fq_account_qv,
+        uu_object=lc_kw.fq_uu_object_qv,
+        )
+
 class TestVariousPatterns(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual
     def test_various_patterns(self):
@@ -228,3 +235,4 @@ class TestVariousPatterns(unittest.TestCase):
         self.assertEqual(ptn_liczniki_poboru_w_miesiacu(lc_kw.fq_uu_energy_qv, 19, '2013-02-01', '2013-03-01'), fy_kw.lxa_58_inst)
         self.assertEqual(ptn_liczniki_poboru_w_roku(lc_kw.fq_uu_energy_qv, 19, 2013), fy_kw.lxa_59_inst)
         self.assertEqual(ptn_for_statistics(lc_kw.fq_uu_power_qv), fy_kw.lxa_63_inst)
+        self.assertEqual(ptn_get_ordered_objects(), fy_kw.lxa_64_inst)
