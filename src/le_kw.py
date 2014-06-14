@@ -66,3 +66,7 @@ def dq_liczniki_poboru_w_roku(dfb, table_name, id_obiekt, my_start_year):
 def dq_for_statistics(dfb, table_name):
     db_statement = fz_kw.ptn_for_statistics(table_name)
     return dfb.query_dct(db_statement)
+
+def dq_get_ordered_objects(dfb):
+    db_statement = fz_kw.ptn_get_ordered_objects()
+    return dfb.query_dct(db_statement)
