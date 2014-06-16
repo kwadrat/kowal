@@ -19,10 +19,11 @@ import unittest
     cx_nic_float,
     cx_req_liczba,
     cx_req_int,
+    cx_nic_int,
     cx_req_data,
     cx_nic_data,
     cx_ogolne_tekstowe,
-    ) = range(14)
+    ) = range(15)
 
 (
     cx_ext_trojcyfrowe,
@@ -59,7 +60,7 @@ class KlasaStalowejWiedzy(object):
                 return 'numeric(1000,5)'
             else:
                 return 'numeric(1000,2)'
-        elif stalowe_cx in (cx_req_int, ):
+        elif stalowe_cx in (cx_req_int, cx_nic_int):
             return 'integer'
         else:
             raise RuntimeError('Nieznane stalowe_cx: %s' % repr(stalowe_cx))
@@ -84,6 +85,7 @@ class TestStalowych(unittest.TestCase):
         self.assertEqual(obk.cx_jaki_typ(cx_nic_float), 'numeric(1000,2)')
         self.assertEqual(obk.cx_jaki_typ(cx_req_liczba), 'numeric(1000,2)')
         self.assertEqual(obk.cx_jaki_typ(cx_req_int), 'integer')
+        self.assertEqual(obk.cx_jaki_typ(cx_nic_int), 'integer')
         self.assertEqual(obk.cx_jaki_typ(cx_req_data), 'date')
         self.assertEqual(obk.cx_jaki_typ(cx_nic_data), 'date')
         self.assertEqual(obk.cx_jaki_typ(cx_licznikowy_numer), 'text')
