@@ -191,6 +191,7 @@ class CommonReader(CommonRdWr):
         CommonReader:
         '''
         print 'Missing days'
+        table_name = self.krt_pobor.krt_table
 
 class Test_Common_Reader(unittest.TestCase):
     def test_common_reader(self):
