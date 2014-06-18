@@ -192,6 +192,11 @@ class CommonReader(CommonRdWr):
         '''
         print 'Missing days'
         table_name = self.krt_pobor.krt_table
+        id_obiekt = eo_kw.Przedszkole14
+        result = le_kw.dq_dane_jednego_obiektu(dfb, table_name, id_obiekt)
+        tmp_format = 'len(result)'; print 'Eval:', tmp_format, eval(tmp_format)
+        ls_objects = le_kw.dq_get_ordered_objects(dfb)
+        tmp_format = 'len(ls_objects)'; print 'Eval:', tmp_format, eval(tmp_format)
 
 class Test_Common_Reader(unittest.TestCase):
     def test_common_reader(self):
