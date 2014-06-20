@@ -4,11 +4,6 @@
 TymczasowoM0 = 0
 TymczasowoM1 = 1
 
-# Tymczasowa zmienna, docelowo ma być zmieniona na 1,
-# gdy zostanie dopracowana weryfikacja faktur G-3
-# na kwotę 804.04 zł: 00/03836/2010, K80/00055/2010
-DocelowoNowyKodDlaKorekt = 1
-
 # Czy chcemy widzieć wizualizację faktury
 TymczasowoSzczegolowaWizualizacja = 0
 
@@ -17,7 +12,7 @@ LokalnaDiagnostykaKlas = 0 and TymczasowoSzczegolowaWizualizacja
 # Wizualizacja działania nadliczników
 TymczasowoWizualizacjaNadlicznikow = 0 and TymczasowoSzczegolowaWizualizacja
 
-DocelowoZmieniajPochodneFaktury = 1 and DocelowoNowyKodDlaKorekt
+DocelowoZmieniajPochodneFaktury = 1
 
 # Wizualizacja działania słowników zapalających licznikowane,
 # czyli dopasowania wody i ścieków
