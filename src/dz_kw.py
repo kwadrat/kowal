@@ -74,7 +74,7 @@ wzor_data_dzien_miesiac_rok = re.compile(r'''
 -
 (?P<year>\d{4})
 $
-''', re.VERBOSE + re.IGNORECASE)
+''', re.VERBOSE)
 
 def wyciagnij_date_z_formatu_dmr(napis):
     res = wzor_data_dzien_miesiac_rok.search(napis)
