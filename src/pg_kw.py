@@ -4,7 +4,7 @@
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import dg_nl_kw
 import sw_kw
-import we_nl_kw
+import we_kw
 import fq_kw
 '''.splitlines()]
 
@@ -67,9 +67,9 @@ class PosrednikAplikacjiExcela(object):
         '''
         PosrednikAplikacjiExcela:
         '''
-        self.xl.ActiveWindow.View = we_nl_kw.WartosciExcel.xlPageBreakPreview
-        self.xl.ActiveSheet.VPageBreaks(1).DragOff(Direction = we_nl_kw.WartosciExcel.xlToRight, RegionIndex = 1)
-        self.xl.ActiveWindow.View = we_nl_kw.WartosciExcel.xlNormalView
+        self.xl.ActiveWindow.View = we_kw.WartosciExcel.xlPageBreakPreview
+        self.xl.ActiveSheet.VPageBreaks(1).DragOff(Direction = we_kw.WartosciExcel.xlToRight, RegionIndex = 1)
+        self.xl.ActiveWindow.View = we_kw.WartosciExcel.xlNormalView
 
     def zakoncz_excela(self):
         '''
