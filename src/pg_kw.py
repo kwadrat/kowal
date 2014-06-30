@@ -2,7 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
-import dg_nl_kw
+import dg_kw
 import sw_kw
 import we_kw
 import fq_kw
@@ -23,7 +23,7 @@ class PosrednikAplikacjiExcela(object):
         '''
         PosrednikAplikacjiExcela:
         '''
-        self.xl = dg_nl_kw.NowyXL()
+        self.xl = dg_kw.NowyXL()
 
     def __init__(self):
         '''

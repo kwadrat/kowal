@@ -8,7 +8,7 @@ import bz2
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import sf_kw
 import dn_kw
-import dg_nl_kw
+import dg_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -32,7 +32,7 @@ def dolacz_katalog(plik_dokumentu):
     return Katalog_dokumentow + plik_dokumentu
 
 def zrob_kopie_pliku(nazwa_programu, przedrostek, prawie_rowne=0):
-    if dg_nl_kw.TymczasowoF:
+    if dg_kw.TymczasowoF:
         tmp_format = "nazwa_programu"; print 'Eval:', tmp_format, repr(eval(tmp_format))
     koncowka_pliku = 'bz2'
     kawalki_wzoru = [r'^', przedrostek, r'.+\.', koncowka_pliku, r'$']
@@ -42,21 +42,21 @@ def zrob_kopie_pliku(nazwa_programu, przedrostek, prawie_rowne=0):
     zrob_kopie = 0
     dane_programu = sf_kw.wczytaj_plik(nazwa_programu)
     lista_nazw = filter(lambda x: wzor_nazwy.search(x), lista_nazw)
-    if dg_nl_kw.TymczasowoF:
+    if dg_kw.TymczasowoF:
         tmp_format = "lista_nazw"; print 'Eval:', tmp_format, repr(eval(tmp_format))
     if lista_nazw:
         dane_na_dysku = sf_kw.wczytaj_plik(katalog_logu + u'\\' + lista_nazw[-1])
         dane_rozpakowane = bz2.decompress(dane_na_dysku)
         if prawie_rowne:
-            czy_rozne = dg_nl_kw.porownaj_wielkosc_i_kilkubajtowe_roznice(dane_programu, dane_rozpakowane)
+            czy_rozne = dg_kw.porownaj_wielkosc_i_kilkubajtowe_roznice(dane_programu, dane_rozpakowane)
         else:
             czy_rozne = (dane_programu != dane_rozpakowane)
         if czy_rozne:
-            if dg_nl_kw.TymczasowoF:
+            if dg_kw.TymczasowoF:
                 print 'Robie kopie, bo dane sa rozne.'
             zrob_kopie = 1
     else:
-        if dg_nl_kw.TymczasowoF:
+        if dg_kw.TymczasowoF:
             print 'Robie kopie, bo jej jeszcze nie ma.'
         zrob_kopie = 1
     if zrob_kopie:
