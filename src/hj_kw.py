@@ -217,7 +217,7 @@ def zrob_wersje_posrednia(nazwa):
     return 'gen_%s.txt' % nazwa
 
 def nazwa_filtrowanego(indeks_testu):
-    return 'gen_filtered_%d.csv' % indeks_testu
+    return 'gen_filtered_%d%s' % (indeks_testu, suffix_comma_separated)
 
 class TestProcessingSQL(unittest.TestCase):
     def test_processing_sql(self):
