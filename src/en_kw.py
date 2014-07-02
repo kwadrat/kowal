@@ -14,6 +14,10 @@ def utf_to_unicode(napis_utf):
 def unicode_to_utf(napis_uncd):
     return napis_uncd.encode('utf-8')
 
+def win_cp_to_utf(napis_win):
+    napis_uncd = napis_win.decode('cp1250')
+    return unicode_to_utf(napis_uncd)
+
 def pobierz_z_napisu(napis):
     return pickle.loads(napis)
 
@@ -41,3 +45,4 @@ class TestEncoding(unittest.TestCase):
         '''
         self.assertEqual(utf_to_unicode('ąćęłńóśżźĄĆĘŁŃÓŚŻŹ'), u'ąćęłńóśżźĄĆĘŁŃÓŚŻŹ')
         self.assertEqual(unicode_to_utf(u'ąćęłńóśżźĄĆĘŁŃÓŚŻŹ'), 'ąćęłńóśżźĄĆĘŁŃÓŚŻŹ')
+        self.assertEqual(win_cp_to_utf('\xb9\x9c\x9f'), 'ąśź')
