@@ -212,6 +212,9 @@ def hlp_assume_one(id_obkt, wynik, etykieta):
     assert len(wynik) == 1, id_obkt
     return wynik[0][etykieta]
 
+def zrob_wersje_posrednia(nazwa):
+    return 'gen_%s.txt' % nazwa
+
 class TestProcessingSQL(unittest.TestCase):
     def test_processing_sql(self):
         '''
@@ -285,3 +288,4 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertRaises(AssertionError, hlp_assume_one, None, [], None)
         self.assertRaises(AssertionError, hlp_assume_one, None, [1, 2], None)
         self.assertEqual(hlp_assume_one(1, [{'e': 'value'}], 'e'), 'value')
+        self.assertEqual(zrob_wersje_posrednia('a'), 'gen_a.txt')
