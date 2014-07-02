@@ -17,6 +17,7 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 zerowe_pole = '0 AS '
+suffix_comma_separated = '.csv'
 
 def zeruj_dla_tabeli(tabela_wzorcowa, tabela_aktualna, nazwa_pola):
     if tabela_wzorcowa == tabela_aktualna:
@@ -292,4 +293,5 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertRaises(AssertionError, hlp_assume_one, None, [1, 2], None)
         self.assertEqual(hlp_assume_one(1, [{'e': 'value'}], 'e'), 'value')
         self.assertEqual(zrob_wersje_posrednia('a'), 'gen_a.txt')
+        self.assertEqual(suffix_comma_separated, '.csv')
         self.assertEqual(nazwa_filtrowanego(4), 'gen_filtered_4.csv')
