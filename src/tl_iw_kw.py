@@ -3,7 +3,7 @@
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import ust_iw_kw
-import lin_iw_kw
+import li_kw
 import llso_iw_kw
 '''.splitlines()]
 
@@ -16,7 +16,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-licznik_inst_list = lin_iw_kw.LicznikInstancji('lista')
+licznik_inst_list = li_kw.LicznikInstancji('lista')
 
 ListaLubSlownikOgolnie = llso_iw_kw.ListaLubSlownikOgolnie
 
