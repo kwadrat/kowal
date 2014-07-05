@@ -4,7 +4,7 @@
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import ust_iw_kw
 import li_kw
-import llso_iw_kw
+import ll_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -18,7 +18,7 @@ for i in NazwyModulow:
 
 licznik_inst_list = li_kw.LicznikInstancji('lista')
 
-ListaLubSlownikOgolnie = llso_iw_kw.ListaLubSlownikOgolnie
+ListaLubSlownikOgolnie = ll_kw.ListaLubSlownikOgolnie
 
 class TypowaLista(ListaLubSlownikOgolnie):
     def __init__(self, etykieta):
