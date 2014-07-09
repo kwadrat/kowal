@@ -21,7 +21,7 @@ class DomenowaKlasaKwoty(object):
         '''
         DomenowaKlasaKwoty:
         '''
-        return grupa_kolumn.rh_kolumny + grupa_kolumn.kol_kwt
+        return grupa_kolumn.rh_kolumny + grupa_kolumn.kwota_kol
 
     def zmien_ilosc_dla_brylantu(self, bnh):
         '''
