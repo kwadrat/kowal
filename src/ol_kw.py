@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+import unittest
+
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import hj_kw
 '''.splitlines()]
@@ -38,3 +40,11 @@ class ObiektLiterujacy(object):
         koncowka = '/' + hj_kw.wyznacz_litere_faktury(self.biezacy_indeks_litery)
         self.biezacy_indeks_litery += 1
         return koncowka
+
+class TestObiektuLiterujacego(unittest.TestCase):
+    def test_obiektu_literujacego(self):
+        '''
+        TestObiektuLiterujacego:
+        '''
+        obk = ObiektLiterujacy(1)
+        self.assertEqual(obk.chcemy_numerowac(), 0)
