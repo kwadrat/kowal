@@ -48,3 +48,4 @@ class TestObiektuLiterujacego(unittest.TestCase):
         '''
         obk = ObiektLiterujacy(1)
         self.assertEqual(obk.chcemy_numerowac(), 0)
+        self.assertEqual(obk.daj_koncowke_literowa(), '/A')
