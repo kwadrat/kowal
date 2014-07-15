@@ -7,7 +7,7 @@ NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import dn_kw
 import sk_ht_kw
 import ei_kw
-import ro_ht_kw
+import ro_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -46,7 +46,7 @@ class SkrZuzRok(Skrawek):
         '''
         SkrZuzRok:
         '''
-        return ro_ht_kw.ListaWyboruRoku(tgk)
+        return ro_kw.ListaWyboruRoku(tgk)
 
 class TestZuzRok(unittest.TestCase):
     def test_1_a(self):
