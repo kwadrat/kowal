@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+import unittest
+
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import ust_iw_kw
 '''.splitlines()]
@@ -55,3 +57,11 @@ class KonstrukcjaSpinki(object):
         KonstrukcjaSpinki:
         '''
         return self.spinkowe_miejsce
+
+class TestSpinki(unittest.TestCase):
+    def test_spinki(self):
+        '''
+        TestSpinki:
+        '''
+        krotka = ('62437-001', '2014-04-28')
+        obk = KonstrukcjaSpinki(krotka)
