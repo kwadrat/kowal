@@ -4,7 +4,7 @@
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
-import ust_iw_kw
+import us_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -34,7 +34,7 @@ class KonstrukcjaSpinki(object):
         KonstrukcjaSpinki:
         '''
         wynik = self.odspinkuj() == other.odspinkuj()
-        if ust_iw_kw.TymczasowoWizualizacjaZestawuFaktur:
+        if us_kw.TymczasowoWizualizacjaZestawuFaktur:
             tmp_format = 'self.odspinkuj()'; print tmp_format, eval(tmp_format)
             tmp_format = 'other.odspinkuj()'; print tmp_format, eval(tmp_format)
             tmp_format = 'wynik'; print tmp_format, eval(tmp_format)

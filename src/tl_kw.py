@@ -2,7 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
-import ust_iw_kw
+import us_kw
 import li_kw
 import ll_kw
 '''.splitlines()]
@@ -46,7 +46,7 @@ class TypowaLista(ListaLubSlownikOgolnie):
         TypowaLista:
         '''
         wynik = self.poz_lista == other.poz_lista
-        if ust_iw_kw.TymczasowoWizualizacjaZestawuFaktur:
+        if us_kw.TymczasowoWizualizacjaZestawuFaktur:
             tmp_format = 'self.poz_lista'; print tmp_format, eval(tmp_format)
             tmp_format = 'other.poz_lista'; print tmp_format, eval(tmp_format)
             tmp_format = 'wynik'; print tmp_format, eval(tmp_format)
@@ -81,7 +81,7 @@ class TypowaLista(ListaLubSlownikOgolnie):
         '''
         TypowaLista:
         '''
-        if ust_iw_kw.LokalnaDiagnostykaKlas:
+        if us_kw.LokalnaDiagnostykaKlas:
             print 'Do %s:\n%s\ndołączamy element\n%s' % (self.moja_etykieta_instancji, repr(self.poz_lista), repr(element))
         assert self.lista_indeksow is None, 'Zakładamy, że jeszcze nie ustawiano listy indeksów, bo nie wiemy, co z tym zrobić.'
         self.poz_lista.append(element)

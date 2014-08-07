@@ -2,7 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
-import ust_iw_kw
+import us_kw
 import li_kw
 import ll_kw
 '''.splitlines()]
@@ -185,7 +185,7 @@ class PozycjeOgolne(ListaLubSlownikOgolnie):
         PozycjeOgolne:
         '''
         wynik = self.poz_slownik == other.poz_slownik
-        if ust_iw_kw.TymczasowoWizualizacjaZestawuFaktur:
+        if us_kw.TymczasowoWizualizacjaZestawuFaktur:
             tmp_format = 'self.poz_slownik'; print tmp_format, eval(tmp_format)
             tmp_format = 'other.poz_slownik'; print tmp_format, eval(tmp_format)
             tmp_format = 'wynik'; print tmp_format, eval(tmp_format)
