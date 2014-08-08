@@ -32,6 +32,13 @@ class PozycjeOgolne(ListaLubSlownikOgolnie):
         if slownik_poczatkowy != None:
             self.aktualizuj_pary(slownik_poczatkowy)
 
+    def sprawdz_zmienianie(self):
+        '''
+        PozycjeOgolne:
+        '''
+        if not self.moge_zmieniac_sie:
+            raise RuntimeError("Zmiana niedozwolona")
+
     def aktualizuj_pary(self, slownik_poczatkowy):
         '''
         PozycjeOgolne:
@@ -160,13 +167,6 @@ class PozycjeOgolne(ListaLubSlownikOgolnie):
         PozycjeOgolne:
         '''
         return set(self.poz_slownik.keys())
-
-    def sprawdz_zmienianie(self):
-        '''
-        PozycjeOgolne:
-        '''
-        if not self.moge_zmieniac_sie:
-            raise RuntimeError("Zmiana niedozwolona")
 
     def zablokuj_zmienianie(self):
         '''
