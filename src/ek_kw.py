@@ -17,3 +17,6 @@ ETK_unikalne_nadlicznika = 'unikalne_nadlicznika'
 ETK_scieki_dla_wody = 'etk_scieki_dla_wody'
 ETK_lista_znajdz_lub_przygotuj = 'lista_znajdz_lub_przygotuj'
 ETK_lista_indeksow_wagonikow = 'lista_indeksow_wagonikow'
+
+# Zbiór linii pozycji, które pojawiły się w zestawieniu
+zbr_licznik_linii = 'lil' # Tyle razy linia była powtórzona w pliku XML (lub CSV)
