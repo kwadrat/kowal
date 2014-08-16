@@ -21,3 +21,4 @@ ETK_lista_indeksow_wagonikow = 'lista_indeksow_wagonikow'
 # Zbiór linii pozycji, które pojawiły się w zestawieniu
 zbr_licznik_linii = 'lil' # Tyle razy linia była powtórzona w pliku XML (lub CSV)
 zbr_podlaczeni_klienci = 'pdk' # Tacy klienci wzięli od nas zużycie
+zbr_realny_wyplyw = 'rwp' # Ile wypłynęło z nadlicznika po odjęciu zużycia w podlicznikach
