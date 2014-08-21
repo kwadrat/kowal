@@ -66,3 +66,4 @@ class TestSpinki(unittest.TestCase):
         krotka = ('62437-001', '2014-04-28')
         obk = KonstrukcjaSpinki(krotka)
         self.assertEqual(obk.spinkowe_gdzie(), '62437-001')
+        self.assertEqual(obk.spinkowe_kiedy(), '2014-04-28')
