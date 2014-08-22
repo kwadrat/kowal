@@ -5,7 +5,7 @@ import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import dn_kw
-import sk_ht_kw
+import sk_kw
 import ei_kw
 import ro_kw
 '''.splitlines()]
@@ -19,7 +19,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-Skrawek = sk_ht_kw.Skrawek
+Skrawek = sk_kw.Skrawek
 
 class SkrZuzRok(Skrawek):
     '''Wybór roku dla analizy zużyć.

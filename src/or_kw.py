@@ -3,7 +3,7 @@
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lw_kw
-import sk_ht_kw
+import sk_kw
 import ei_kw
 '''.splitlines()]
 
@@ -16,7 +16,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-Skrawek = sk_ht_kw.Skrawek
+Skrawek = sk_kw.Skrawek
 
 class SkrPoborowegoCzasu(Skrawek):
     '''
@@ -36,4 +36,4 @@ class SkrPoborowegoCzasu(Skrawek):
         '''
         SkrPoborowegoCzasu:
         '''
-        return sk_ht_kw.ListWyboruOgolna(tgk, self.moje_pole, lw_kw.DanePoborowegoCzasu)
+        return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, lw_kw.DanePoborowegoCzasu)

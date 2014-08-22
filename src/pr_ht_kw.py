@@ -5,7 +5,7 @@ import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import rq_kw
-import sk_ht_kw
+import sk_kw
 import ei_kw
 '''.splitlines()]
 
@@ -18,7 +18,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-Skrawek = sk_ht_kw.Skrawek
+Skrawek = sk_kw.Skrawek
 
 class SkrPrezentacja(Skrawek):
     '''Wybór sposobu prezentacji wyników: tabela, tabela/wykres, wykres
@@ -68,7 +68,7 @@ class SkrPrezentacja(Skrawek):
         SkrPrezentacja:
         '''
         if self.skh_widzialny(self.prm_okres.wartosc):
-            return sk_ht_kw.ListWyboruOgolna(tgk, self.moje_pole, rq_kw.DanePrezentacji)
+            return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, rq_kw.DanePrezentacji)
         else:
             return self.wartosc_ukryta()
 

@@ -6,7 +6,7 @@ import unittest
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import rq_kw
 import dn_kw
-import sk_ht_kw
+import sk_kw
 import ei_kw
 '''.splitlines()]
 
@@ -19,7 +19,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-Skrawek = sk_ht_kw.Skrawek
+Skrawek = sk_kw.Skrawek
 
 class SkrARok(Skrawek):
     '''Wybór początkowego roku
@@ -47,7 +47,7 @@ class SkrARok(Skrawek):
         SkrARok:
         '''
         if self.skh_widzialny(self.prm_okres.wartosc):
-            return sk_ht_kw.ListWyboruOgolna(tgk, self.moje_pole, dn_kw.MozliweLataDlaARok)
+            return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, dn_kw.MozliweLataDlaARok)
         else:
             return self.wartosc_ukryta()
 
