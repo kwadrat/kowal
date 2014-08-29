@@ -79,3 +79,4 @@ class TestRozbijaniaCSV(unittest.TestCase):
         '''
         self.assertEqual(JednaLiniaCSV(''), [''])
         self.assertEqual(JednaLiniaCSV('a'), ['a'])
+        self.assertEqual(JednaLiniaCSV('a;b'), ['a', 'b'])
