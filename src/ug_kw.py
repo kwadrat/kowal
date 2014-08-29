@@ -69,7 +69,7 @@ def linia_csv(linia):
                 wsk += 1
     return t
 
-def JednaLiniaCSV(linia):
+def rozbij_na_pola(linia):
     return linia_csv(linia)
 
 class TestRozbijaniaCSV(unittest.TestCase):
@@ -77,6 +77,6 @@ class TestRozbijaniaCSV(unittest.TestCase):
         '''
         TestRozbijaniaCSV:
         '''
-        self.assertEqual(JednaLiniaCSV(''), [''])
-        self.assertEqual(JednaLiniaCSV('a'), ['a'])
-        self.assertEqual(JednaLiniaCSV('a;b'), ['a', 'b'])
+        self.assertEqual(rozbij_na_pola(''), [''])
+        self.assertEqual(rozbij_na_pola('a'), ['a'])
+        self.assertEqual(rozbij_na_pola('a;b'), ['a', 'b'])
