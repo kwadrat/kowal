@@ -80,3 +80,4 @@ class TestRozbijaniaCSV(unittest.TestCase):
         self.assertEqual(rozbij_na_pola(''), [''])
         self.assertEqual(rozbij_na_pola('a'), ['a'])
         self.assertEqual(rozbij_na_pola('a;b'), ['a', 'b'])
+        self.assertEqual(rozbij_na_pola('"a"'), ['"a"'])
