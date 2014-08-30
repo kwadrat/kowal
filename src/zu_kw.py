@@ -26,17 +26,17 @@ class ZuzycieLicznika(object):
         if WlaczDiagnostykeZuzycia:
             print '%s: rozpoczecie' % self.moj_napis
 
-    def licz_przypisz_zuzycie(self, wskazowka_kiedy, zuzycie):
+    def licz_przypisz_zuzycie(self, wskazowka_kiedy, jakie_zuzycie):
         '''
         ZuzycieLicznika:
         '''
         if WlaczDiagnostykeZuzycia:
-            print '%s: przypisanie, %s, %s' % (self.moj_napis, wskazowka_kiedy, zuzycie)
+            print '%s: przypisanie, %s, %s' % (self.moj_napis, wskazowka_kiedy, jakie_zuzycie)
         if wskazowka_kiedy not in self.slownik_zuzycia:
-            self.slownik_zuzycia[wskazowka_kiedy] = zuzycie
-        elif self.slownik_zuzycia[wskazowka_kiedy] != zuzycie:
+            self.slownik_zuzycia[wskazowka_kiedy] = jakie_zuzycie
+        elif self.slownik_zuzycia[wskazowka_kiedy] != jakie_zuzycie:
             tmp_format = 'self.slownik_zuzycia[wskazowka_kiedy]'; print 'Eval:', tmp_format, eval(tmp_format)
-            tmp_format = 'zuzycie'; print 'Eval:', tmp_format, eval(tmp_format)
+            tmp_format = 'jakie_zuzycie'; print 'Eval:', tmp_format, eval(tmp_format)
             raise RuntimeError('Rozne zuzycia')
 
     def wyczytaj_jednego(self, wskazowka_kiedy, opcjonalnie=0):
