@@ -219,6 +219,9 @@ def zrob_wersje_posrednia(nazwa):
 def nazwa_filtrowanego(indeks_testu):
     return 'gen_filtered_%d%s' % (indeks_testu, suffix_comma_separated)
 
+def space_two(first, second):
+    return '%s %s' % (first, second)
+
 class TestProcessingSQL(unittest.TestCase):
     def test_processing_sql(self):
         '''
@@ -295,3 +298,4 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(zrob_wersje_posrednia('a'), 'gen_a.txt')
         self.assertEqual(suffix_comma_separated, '.csv')
         self.assertEqual(nazwa_filtrowanego(4), 'gen_filtered_4.csv')
+        self.assertEqual(space_two('a', 'b'), 'a b')
