@@ -37,9 +37,15 @@ class TxtSheet(object):
         TxtSheet:
         '''
 
+    def cell_value(self, my_col, my_row):
+        '''
+        TxtSheet:
+        '''
+
 class TestSheetInText(unittest.TestCase):
     def test_sheet_in_text(self):
         '''
         TestSheetInText:
         '''
         obk = TxtSheet()
+        obk.cell_value(my_col=0, my_row=0)
