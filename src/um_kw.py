@@ -37,11 +37,22 @@ class TxtSheet(object):
         TxtSheet:
         '''
         self.single_file = single_file
+        if self.single_file is None:
+            self.full_matrix = [[None]]
+        else:
+            file_text = open(self.single_file, 'rb').read()
+            with_first_row = '\n' + file_text
+            all_rows = with_first_row.splitlines()
+            self.full_matrix = map(lambda x: x.split('\t'), all_rows)
 
-    def cell_value(self, my_col, my_row):
+    def cell_value(self, my_row, my_col):
         '''
         TxtSheet:
         '''
+        if 0:
+            from IPython.ipapi import make_session; make_session()
+            from IPython.Debugger import Pdb; Pdb().set_trace()
+        return self.full_matrix[my_row][my_col]
 
 class TestSheetInText(unittest.TestCase):
     def test_sheet_in_text(self):
