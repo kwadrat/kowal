@@ -32,10 +32,11 @@ def normalize_value(before):
 CommonRdWr = tq_kw.CommonRdWr
 
 class TxtSheet(object):
-    def __init__(self):
+    def __init__(self, single_file=None):
         '''
         TxtSheet:
         '''
+        self.single_file = single_file
 
     def cell_value(self, my_col, my_row):
         '''
