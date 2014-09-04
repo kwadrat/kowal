@@ -11,6 +11,7 @@ import lp_kw
 import lq_kw
 import eo_kw
 import tq_kw
+import um_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -158,13 +159,16 @@ class CommonReader(CommonRdWr):
         '''
         CommonReader:
         '''
-        self.xlrd = xlrd
-        self.book = self.xlrd.open_workbook(single_file)
-        numer_of_sheets = self.book.nsheets
-        if numer_of_sheets == 1:
-            self.sheet = self.book.sheet_by_name(u'Report')
+        if single_file is not None and single_file.endswith('.txt'):
+            self.sheet = um_kw.TxtSheet(single_file)
         else:
-            raise RuntimeError('numer_of_sheets = %d' % numer_of_sheets)
+            self.xlrd = xlrd
+            self.book = self.xlrd.open_workbook(single_file)
+            numer_of_sheets = self.book.nsheets
+            if numer_of_sheets == 1:
+                self.sheet = self.book.sheet_by_name(u'Report')
+            else:
+                raise RuntimeError('numer_of_sheets = %d' % numer_of_sheets)
 
     def store_rows_in_db(self, dfb):
         '''
