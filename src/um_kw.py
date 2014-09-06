@@ -49,9 +49,6 @@ class TxtSheet(object):
         '''
         TxtSheet:
         '''
-        if 0:
-            from IPython.ipapi import make_session; make_session()
-            from IPython.Debugger import Pdb; Pdb().set_trace()
         return self.full_matrix[my_row][my_col]
 
 class TestSheetInText(unittest.TestCase):
