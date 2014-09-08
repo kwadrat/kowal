@@ -18,8 +18,6 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-JednAsciiM3 = 'm3'
-
 class NaglowekKolumny(object):
     '''Nagłówek kolumny, opcjonalnie z jednostką, być może
     ze złamanym wierszem dla jednostki

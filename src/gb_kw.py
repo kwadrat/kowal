@@ -48,6 +48,7 @@ Jedn_kW_MWh = 'kWh/MWh'
 JednGJ = 'GJ'
 # Ton
 JednTon = 'ton'
+JednAsciiM3 = 'm3'
 
 class TestUnitNames(unittest.TestCase):
     def test_unit_names(self):
@@ -71,3 +72,4 @@ class TestUnitNames(unittest.TestCase):
         self.assertEqual(JednMW, 'MW')
         self.assertEqual(Jedn_MWh, 'MWh')
         self.assertEqual(JednTon, 'ton')
+        self.assertEqual(JednAsciiM3, 'm3')
