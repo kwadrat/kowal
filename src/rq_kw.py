@@ -197,3 +197,4 @@ TymczasowoTylkoJeden = 0
 DocelowoPosrednikDokladnejLiczby = 0
 TymczasowoPokazWzory = 0
 TymczasowoTylkoWybranyArkusz = 1
+RozszczepionePole = 0
