@@ -22,8 +22,8 @@ for i in NazwyModulow:
 JednHour = 'h'
 Jedn_sztuki = 'szt'
 # Kilowatogodzin
-Jedn_kWh = 'kWh'
 Jedn_kWtow = 'kW'
+Jedn_kWh = Jedn_kWtow + JednHour
 Jedn_zlotowki = 'zł'
 Jedn_procent = '%'
 
