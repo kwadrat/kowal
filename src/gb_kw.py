@@ -43,7 +43,7 @@ JednMW = 'MW'
 Jedn_MWh = JednMW + JednHour
 # Kilowatogodzin/Megawatogodzin? Ludzie różnie wpisują, na razie nie
 # szukałem sposobu na rozróżnienie, którą jednostkę podają.
-Jedn_kW_MWh = 'kWh/MWh'
+Jedn_kW_MWh = hj_kw.rcp_dziel(Jedn_kWh, Jedn_MWh)
 # Gigadżuli
 JednGJ = 'GJ'
 # Ton
