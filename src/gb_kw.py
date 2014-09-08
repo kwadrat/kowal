@@ -49,6 +49,7 @@ JednGJ = 'GJ'
 # Ton
 JednTon = 'ton'
 JednAsciiM3 = 'm3'
+Jedn_wsp_kWh_M3 = hj_kw.rcp_dziel(Jedn_kWh, JednM3)
 
 class TestUnitNames(unittest.TestCase):
     def test_unit_names(self):
@@ -73,3 +74,4 @@ class TestUnitNames(unittest.TestCase):
         self.assertEqual(Jedn_MWh, 'MWh')
         self.assertEqual(JednTon, 'ton')
         self.assertEqual(JednAsciiM3, 'm3')
+        self.assertEqual(Jedn_wsp_kWh_M3, 'kWh/m<sup>3</sup>')
