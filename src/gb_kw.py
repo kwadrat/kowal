@@ -33,7 +33,7 @@ def nawiasy_kwadratowe(jednostka):
 Jedn_k_zlotowki = nawiasy_kwadratowe(Jedn_zlotowki)
 Jedn_jy_sztuki = nawiasy_kwadratowe(Jedn_sztuki)
 Jedn_k_procenty = nawiasy_kwadratowe(Jedn_procent)
-Jedn_k_zl_na_kWh = nawiasy_kwadratowe('%s/%s' % (Jedn_zlotowki, Jedn_kWh))
+Jedn_k_zl_na_kWh = nawiasy_kwadratowe(hj_kw.rcp_dziel(Jedn_zlotowki, Jedn_kWh))
 tytul_kilowatow_przekroczenia = nawiasy_kwadratowe(Jedn_kWtow)
 # Metrów sześciennych
 JednM3 = 'm<sup>3</sup>'
