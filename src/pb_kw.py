@@ -18,8 +18,6 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-# Ton
-JednTon = 'ton'
 JednAsciiM3 = 'm3'
 
 class NaglowekKolumny(object):
