@@ -22,9 +22,6 @@ for i in NazwyModulow:
 JednGJ = 'GJ'
 # Megawatów
 JednMW = 'MW'
-# Kilowatogodzin/Megawatogodzin? Ludzie różnie wpisują, na razie nie
-# szukałem sposobu na rozróżnienie, którą jednostkę podają.
-Jedn_kW_MWh = 'kWh/MWh'
 Jedn_MWh = 'MWh'
 # Ton
 JednTon = 'ton'
@@ -61,7 +58,7 @@ ux_5_a = NaglowekKolumny('Moc umowna', jednostka=gb_kw.JednMet3h, separator=ze_k
 ux_6_a = NaglowekKolumny('Moc - umowna', jednostka=gb_kw.Jedn_kWtow, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
 ux_7_a = NaglowekKolumny('Moc - pobrana', jednostka=gb_kw.Jedn_kWtow, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
 ux_8_a = NaglowekKolumny('Razem Brutto', jednostka=gb_kw.Jedn_zlotowki, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
-ux_9_a = NaglowekKolumny('Zużycie', jednostka=Jedn_kW_MWh, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
+ux_9_a = NaglowekKolumny('Zużycie', jednostka=gb_kw.Jedn_kW_MWh, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
 ux_10_a = NaglowekKolumny('Zużycie', jednostka=gb_kw.Jedn_kWh, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
 ux_11_a = NaglowekKolumny('Zużycie', jednostka=Jedn_MWh, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
 ux_12_a = NaglowekKolumny('Zużycie', jednostka=JednGJ, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()

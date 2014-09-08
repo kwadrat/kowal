@@ -38,6 +38,9 @@ JednHour = 'h'
 # Metrów sześciennych
 JednM3 = 'm<sup>3</sup>'
 JednMet3h = hj_kw.rcp_dziel(JednM3, JednHour)
+# Kilowatogodzin/Megawatogodzin? Ludzie różnie wpisują, na razie nie
+# szukałem sposobu na rozróżnienie, którą jednostkę podają.
+Jedn_kW_MWh = 'kWh/MWh'
 
 class TestUnitNames(unittest.TestCase):
     def test_unit_names(self):
@@ -56,3 +59,4 @@ class TestUnitNames(unittest.TestCase):
         self.assertEqual(JednHour, 'h')
         self.assertEqual(JednM3, 'm<sup>3</sup>')
         self.assertEqual(JednMet3h, 'm<sup>3</sup>/h')
+        self.assertEqual(Jedn_kW_MWh, 'kWh/MWh')
