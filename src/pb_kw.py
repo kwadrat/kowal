@@ -26,8 +26,6 @@ JednMW = 'MW'
 # szukałem sposobu na rozróżnienie, którą jednostkę podają.
 Jedn_kW_MWh = 'kWh/MWh'
 Jedn_MWh = 'MWh'
-# Metrów sześciennych
-JednM3 = 'm<sup>3</sup>'
 # Ton
 JednTon = 'ton'
 JednAsciiM3 = 'm3'
@@ -57,7 +55,7 @@ class NaglowekKolumny(object):
 
 ux_1_a = NaglowekKolumny('Moc wykonana', jednostka=gb_kw.JednMet3h).nx_pelny()
 ux_2_a = NaglowekKolumny('Moc umowna', jednostka=gb_kw.JednMet3h).nx_pelny()
-ux_3_a = NaglowekKolumny('Zużycie', jednostka=JednM3, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
+ux_3_a = NaglowekKolumny('Zużycie', jednostka=gb_kw.JednM3, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
 ux_4_a = NaglowekKolumny('Moc wykonana', jednostka=gb_kw.JednMet3h, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
 ux_5_a = NaglowekKolumny('Moc umowna', jednostka=gb_kw.JednMet3h, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
 ux_6_a = NaglowekKolumny('Moc - umowna', jednostka=gb_kw.Jedn_kWtow, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
