@@ -71,10 +71,12 @@ DaneDomeny = (
     Dn_Kwota,
     Dn_Towar,
     Dn_Moc,
+    Dn_Energia,
     ) = (
     'Koszty',
     'Ilość',
     'Moc',
+    'Energia',
     )
 
 DP_PotrzebujeDomene = (DP_Wykres, PoleNN)
