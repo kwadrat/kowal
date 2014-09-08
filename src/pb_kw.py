@@ -31,7 +31,6 @@ JednM3 = 'm<sup>3</sup>'
 # Ton
 JednTon = 'ton'
 JednAsciiM3 = 'm3'
-JednMet3h = 'm<sup>3</sup>/h'
 
 class NaglowekKolumny(object):
     '''Nagłówek kolumny, opcjonalnie z jednostką, być może
@@ -56,11 +55,11 @@ class NaglowekKolumny(object):
             lista.append('[%s]' % self.jednostka)
         return ''.join(lista)
 
-ux_1_a = NaglowekKolumny('Moc wykonana', jednostka=JednMet3h).nx_pelny()
-ux_2_a = NaglowekKolumny('Moc umowna', jednostka=JednMet3h).nx_pelny()
+ux_1_a = NaglowekKolumny('Moc wykonana', jednostka=gb_kw.JednMet3h).nx_pelny()
+ux_2_a = NaglowekKolumny('Moc umowna', jednostka=gb_kw.JednMet3h).nx_pelny()
 ux_3_a = NaglowekKolumny('Zużycie', jednostka=JednM3, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
-ux_4_a = NaglowekKolumny('Moc wykonana', jednostka=JednMet3h, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
-ux_5_a = NaglowekKolumny('Moc umowna', jednostka=JednMet3h, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
+ux_4_a = NaglowekKolumny('Moc wykonana', jednostka=gb_kw.JednMet3h, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
+ux_5_a = NaglowekKolumny('Moc umowna', jednostka=gb_kw.JednMet3h, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
 ux_6_a = NaglowekKolumny('Moc - umowna', jednostka=gb_kw.Jedn_kWtow, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
 ux_7_a = NaglowekKolumny('Moc - pobrana', jednostka=gb_kw.Jedn_kWtow, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
 ux_8_a = NaglowekKolumny('Razem Brutto', jednostka=gb_kw.Jedn_zlotowki, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
