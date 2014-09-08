@@ -3,7 +3,6 @@
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lc_kw
-import pb_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -14,9 +13,6 @@ for i in NazwyModulow:
             exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
         else:
             exec 'import %(modul)s' % dict(modul = i)
-
-BrakMiJednostki = '???'
-BrakMiJednostki = pb_kw.JednMet3h # Tymczasowo, błędne dla energii, ale jako szybkie dla gazu W-5
 
 class DomenowaKlasaMocy(object):
     def wyznacz_mi_pola(self, grupa_kolumn):
