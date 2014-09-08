@@ -19,6 +19,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+JednHour = 'h'
 Jedn_sztuki = 'szt'
 # Kilowatogodzin
 Jedn_kWh = 'kWh'
@@ -34,7 +35,6 @@ Jedn_jy_sztuki = nawiasy_kwadratowe(Jedn_sztuki)
 Jedn_k_procenty = nawiasy_kwadratowe(Jedn_procent)
 Jedn_k_zl_na_kWh = nawiasy_kwadratowe('%s/%s' % (Jedn_zlotowki, Jedn_kWh))
 tytul_kilowatow_przekroczenia = nawiasy_kwadratowe(Jedn_kWtow)
-JednHour = 'h'
 # Metrów sześciennych
 JednM3 = 'm<sup>3</sup>'
 JednMet3h = hj_kw.rcp_dziel(JednM3, JednHour)
