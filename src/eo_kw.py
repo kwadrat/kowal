@@ -46,6 +46,7 @@ DGN_PrzedNr7 = (str(Przedszkole7), 'Przedszkole nr 7')
 Podlegle_pod_ZST = (PlywalniaPwst, JudoPwst, CKI_Pwst)
 przykladowa_fktr_p7_gj = 3133
 przykladowa_fktr_p21_wegiel = 409
+przykladowa_fktr_k_gaz = 1
 przykladowa_fktr_d_sosw = 364
 przykladowa_fktr_p_zst = 115
 przykladowa_fktr_u_p20_x = 83
