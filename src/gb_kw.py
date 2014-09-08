@@ -7,6 +7,7 @@ Nazwy jednostek
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import hj_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -36,7 +37,7 @@ tytul_kilowatow_przekroczenia = nawiasy_kwadratowe(Jedn_kWtow)
 JednHour = 'h'
 # Metrów sześciennych
 JednM3 = 'm<sup>3</sup>'
-JednMet3h = 'm<sup>3</sup>/h'
+JednMet3h = hj_kw.rcp_dziel(JednM3, JednHour)
 
 class TestUnitNames(unittest.TestCase):
     def test_unit_names(self):
