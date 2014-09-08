@@ -18,8 +18,6 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-# Megawatów
-JednMW = 'MW'
 Jedn_MWh = 'MWh'
 # Ton
 JednTon = 'ton'
@@ -60,7 +58,7 @@ ux_9_a = NaglowekKolumny('Zużycie', jednostka=gb_kw.Jedn_kW_MWh, separator=ze_k
 ux_10_a = NaglowekKolumny('Zużycie', jednostka=gb_kw.Jedn_kWh, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
 ux_11_a = NaglowekKolumny('Zużycie', jednostka=Jedn_MWh, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
 ux_12_a = NaglowekKolumny('Zużycie', jednostka=gb_kw.JednGJ, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
-ux_13_a = NaglowekKolumny('Moc - umowna', jednostka=JednMW, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
+ux_13_a = NaglowekKolumny('Moc - umowna', jednostka=gb_kw.JednMW, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
 
 class TestNagKol(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual
