@@ -33,11 +33,11 @@ class DomenowaKlasaKwoty(object):
         '''
         return gb_kw.Jedn_zlotowki, 'koszty'
 
-    def przedstaw_pole_sumy(self, pole_dla_ilosci, pole_dla_kwoty, pole_dla_mocy):
+    def przedstaw_pole_sumy(self, bfs, pole_dla_mocy):
         '''
         DomenowaKlasaKwoty:
         '''
-        return pole_dla_kwoty
+        return bfs.pole_dla_kwoty
 
     def zawsze_moge_dodac_mr(self):
         '''
