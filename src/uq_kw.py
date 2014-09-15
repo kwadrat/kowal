@@ -16,18 +16,28 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 class BagFieldSet(object):
-    def __init__(self, pole_dla_ilosci, pole_dla_kwoty):
+    def __init__(self,
+            pole_dla_ilosci,
+            pole_dla_kwoty,
+            pole_dla_mocy,
+            ):
         '''
         BagFieldSet:
         '''
         self.pole_dla_ilosci = pole_dla_ilosci
         self.pole_dla_kwoty = pole_dla_kwoty
+        self.pole_dla_mocy = pole_dla_mocy
 
 class TestBagFieldData(unittest.TestCase):
     def test_bag_field_data(self):
         '''
         TestBagFieldData:
         '''
-        obk = BagFieldSet(pole_dla_ilosci='i', pole_dla_kwoty='k')
+        obk = BagFieldSet(
+            pole_dla_ilosci='i',
+            pole_dla_kwoty='k',
+            pole_dla_mocy='m',
+            )
         self.assertEqual(obk.pole_dla_ilosci, 'i')
         self.assertEqual(obk.pole_dla_kwoty, 'k')
+        self.assertEqual(obk.pole_dla_mocy, 'm')

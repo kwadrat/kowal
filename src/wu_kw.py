@@ -20,7 +20,7 @@ class DomenowaKlasaIlosci(object):
         '''
         return tmp_wkrs.pole_jedn, 'ilość'
 
-    def przedstaw_pole_sumy(self, bfs, pole_dla_mocy):
+    def przedstaw_pole_sumy(self, bfs):
         '''
         DomenowaKlasaIlosci:
         '''

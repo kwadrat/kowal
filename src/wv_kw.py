@@ -32,11 +32,11 @@ class DomenowaKlasaMocy(object):
         '''
         return jedn_mocy, lc_kw.fq_moc_qv
 
-    def przedstaw_pole_sumy(self, bfs, pole_dla_mocy):
+    def przedstaw_pole_sumy(self, bfs):
         '''
         DomenowaKlasaMocy:
         '''
-        return pole_dla_mocy
+        return bfs.pole_dla_mocy
 
     def zawsze_moge_dodac_mr(self):
         '''
