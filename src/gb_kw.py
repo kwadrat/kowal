@@ -52,6 +52,7 @@ Jedn_kW_MWh = hj_kw.rcp_dziel(Jedn_kWh, Jedn_MWh)
 # Gigadżuli
 JednGJ = 'GJ'
 JednMJ = 'MJ'
+Jedn_k_MJ_Met3 = nawiasy_kwadratowe(hj_kw.rcp_dziel(JednMJ, JednM3))
 # Ton
 JednTon = 'ton'
 JednAsciiM3 = 'm3'
@@ -83,6 +84,7 @@ class TestUnitNames(unittest.TestCase):
         self.assertEqual(Jedn_kW_MWh, 'kWh/MWh')
         self.assertEqual(JednGJ, 'GJ')
         self.assertEqual(JednMJ, 'MJ')
+        self.assertEqual(Jedn_k_MJ_Met3, '[MJ/m<sup>3</sup>]')
         self.assertEqual(JednMW, 'MW')
         self.assertEqual(Jedn_MWh, 'MWh')
         self.assertEqual(JednTon, 'ton')
