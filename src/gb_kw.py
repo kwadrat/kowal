@@ -25,6 +25,7 @@ Jedn_sztuki = 'szt'
 Jedn_kWtow = 'kW'
 Jedn_kWh = Jedn_kWtow + JednHour
 Jedn_a_kWh_h = hj_kw.rcp_dziel(Jedn_kWh, JednHour)
+Jedn_b_kWh_h_za_h = ''.join([Jedn_a_kWh_h, ' za ', JednHour])
 Jedn_zlotowki = 'zł'
 Jedn_procent = '%'
 
@@ -66,6 +67,7 @@ class TestUnitNames(unittest.TestCase):
         self.assertEqual(Jedn_kWh, 'kWh')
         self.assertEqual(Jedn_k_kWh, '[kWh]')
         self.assertEqual(Jedn_a_kWh_h, 'kWh/h')
+        self.assertEqual(Jedn_b_kWh_h_za_h, 'kWh/h za h')
         self.assertEqual(Jedn_k_a_kWh_h, '[kWh/h]')
         self.assertEqual(Jedn_kWtow, 'kW')
         self.assertEqual(Jedn_zlotowki, 'zł')
