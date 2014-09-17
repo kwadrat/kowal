@@ -56,6 +56,8 @@ ux_12_a = NaglowekKolumny('Zużycie', jednostka=gb_kw.JednGJ, separator=ze_kw.fo
 ux_13_a = NaglowekKolumny('Moc - umowna', jednostka=gb_kw.JednMW, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
 ux_14_a = NaglowekKolumny('Moc wykonana', jednostka=gb_kw.Jedn_a_kWh_h).nx_pelny()
 ux_15_a = NaglowekKolumny('Moc zamówiona', jednostka=gb_kw.Jedn_a_kWh_h).nx_pelny()
+ux_16_a = NaglowekKolumny('Moc wykonana', jednostka=gb_kw.Jedn_a_kWh_h, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
+ux_17_a = NaglowekKolumny('Moc zamówiona', jednostka=gb_kw.Jedn_a_kWh_h, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
 
 class TestNagKol(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual
@@ -74,3 +76,5 @@ class TestNagKol(unittest.TestCase):
         self.assertEqual(ux_10_a, 'Zużycie<br />\n[kWh]')
         self.assertEqual(ux_14_a, 'Moc wykonana [kWh/h]')
         self.assertEqual(ux_15_a, 'Moc zamówiona [kWh/h]')
+        self.assertEqual(ux_16_a, 'Moc wykonana<br />\n[kWh/h]')
+        self.assertEqual(ux_17_a, 'Moc zamówiona<br />\n[kWh/h]')
