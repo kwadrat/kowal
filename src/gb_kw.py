@@ -36,6 +36,7 @@ Jedn_k_zlotowki = nawiasy_kwadratowe(Jedn_zlotowki)
 Jedn_jy_sztuki = nawiasy_kwadratowe(Jedn_sztuki)
 Jedn_k_procenty = nawiasy_kwadratowe(Jedn_procent)
 Jedn_k_zl_na_kWh = nawiasy_kwadratowe(hj_kw.rcp_dziel(Jedn_zlotowki, Jedn_kWh))
+Jedn_k_a_kWh_h = nawiasy_kwadratowe(Jedn_a_kWh_h)
 tytul_kilowatow_przekroczenia = nawiasy_kwadratowe(Jedn_kWtow)
 # Metrów sześciennych
 JednM3 = 'm<sup>3</sup>'
@@ -64,6 +65,7 @@ class TestUnitNames(unittest.TestCase):
         self.assertEqual(Jedn_kWh, 'kWh')
         self.assertEqual(Jedn_k_kWh, '[kWh]')
         self.assertEqual(Jedn_a_kWh_h, 'kWh/h')
+        self.assertEqual(Jedn_k_a_kWh_h, '[kWh/h]')
         self.assertEqual(Jedn_kWtow, 'kW')
         self.assertEqual(Jedn_zlotowki, 'zł')
         self.assertEqual(Jedn_k_zlotowki, '[zł]')
