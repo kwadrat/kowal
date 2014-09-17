@@ -41,6 +41,7 @@ tytul_kilowatow_przekroczenia = nawiasy_kwadratowe(Jedn_kWtow)
 # Metrów sześciennych
 JednM3 = 'm<sup>3</sup>'
 JednMet3h = hj_kw.rcp_dziel(JednM3, JednHour)
+Jedn_a_Met3_n = JednM3 + '<sub>n</sub>'
 # Megawatów
 JednMW = 'MW'
 Jedn_MWh = JednMW + JednHour
@@ -75,6 +76,7 @@ class TestUnitNames(unittest.TestCase):
         self.assertEqual(JednHour, 'h')
         self.assertEqual(JednM3, 'm<sup>3</sup>')
         self.assertEqual(JednMet3h, 'm<sup>3</sup>/h')
+        self.assertEqual(Jedn_a_Met3_n, 'm<sup>3</sup><sub>n</sub>')
         self.assertEqual(Jedn_kW_MWh, 'kWh/MWh')
         self.assertEqual(JednGJ, 'GJ')
         self.assertEqual(JednMW, 'MW')
