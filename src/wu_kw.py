@@ -31,3 +31,9 @@ class DomenowaKlasaIlosci(object):
         DomenowaKlasaIlosci:
         '''
         return 1
+
+    def moge_dodac_prog_mocy(self):
+        '''
+        DomenowaKlasaIlosci:
+        '''
+        return 0

@@ -43,3 +43,9 @@ class DomenowaKlasaEnergii(object):
         DomenowaKlasaEnergii:
         '''
         return 0
+
+    def moge_dodac_prog_mocy(self):
+        '''
+        DomenowaKlasaEnergii:
+        '''
+        return 0

@@ -43,3 +43,9 @@ class DomenowaKlasaMocy(object):
         DomenowaKlasaMocy:
         '''
         return 0
+
+    def moge_dodac_prog_mocy(self):
+        '''
+        DomenowaKlasaMocy:
+        '''
+        return 1

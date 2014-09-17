@@ -44,3 +44,9 @@ class DomenowaKlasaKwoty(object):
         DomenowaKlasaKwoty:
         '''
         return 1
+
+    def moge_dodac_prog_mocy(self):
+        '''
+        DomenowaKlasaKwoty:
+        '''
+        return 0
