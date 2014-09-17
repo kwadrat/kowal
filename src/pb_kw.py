@@ -70,4 +70,5 @@ class TestNagKol(unittest.TestCase):
         self.assertEqual(ux_3_a, 'Zużycie<br />\n[m<sup>3</sup>]')
         self.assertEqual(ux_4_a, 'Moc wykonana<br />\n[m<sup>3</sup>/h]')
         self.assertEqual(ux_5_a, 'Moc umowna<br />\n[m<sup>3</sup>/h]')
+        self.assertEqual(ux_10_a, 'Zużycie<br />\n[kWh]')
         self.assertEqual(ux_14_a, 'Moc wykonana [kWh/h]')
