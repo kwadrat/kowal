@@ -38,7 +38,7 @@ class NaglowekKolumny(object):
         lista.append(self.nazwa)
         if self.jednostka is not None:
             lista.append(self.separator)
-            lista.append('[%s]' % self.jednostka)
+            lista.append(gb_kw.nawiasy_kwadratowe(self.jednostka))
         return ''.join(lista)
 
 ux_1_a = NaglowekKolumny('Moc wykonana', jednostka=gb_kw.JednMet3h).nx_pelny()
