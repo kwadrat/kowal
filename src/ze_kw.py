@@ -328,6 +328,7 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(op_select('abc', class_='klasa_css', onchange='def', style='ghi'),
             '<select id="abc" name="abc" class="klasa_css" style="ghi" onchange="def">\n')
         self.assertEqual(op_30_sbf('abc'), '<select name="abc" class="selwyborca" onchange="this.form.submit();">\n')
+        self.assertEqual(op_dh(), '<div>\n')
         self.assertEqual(op_dh(id='abc'), '<div id="abc">\n')
         self.assertEqual(op_dh(class_='klasa_css'), '<div class="klasa_css">\n')
         self.assertRaises(RuntimeError, op_dh, 'abc')
