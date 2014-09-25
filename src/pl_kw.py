@@ -2,7 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
-import po_iw_kw
+import po_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -14,7 +14,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-PozycjeOgolne = po_iw_kw.PozycjeOgolne
+PozycjeOgolne = po_kw.PozycjeOgolne
 
 class PozycjeLicznikowe(PozycjeOgolne):
     def __init__(self, etykieta, slownik_poczatkowy=None):
