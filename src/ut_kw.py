@@ -4,6 +4,7 @@
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import um_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -21,6 +22,14 @@ class TxtBook(object):
         TxtBook:
         '''
         self.single_file = single_file
+        self.datemode = None
+
+    def text_sheet(self):
+        '''
+        TxtBook:
+        '''
+        sheet = um_kw.TxtSheet(self.single_file)
+        return sheet
 
 class TestTextBook(unittest.TestCase):
     def test_text_book(self):
@@ -28,3 +37,5 @@ class TestTextBook(unittest.TestCase):
         TestTextBook:
         '''
         obk = TxtBook(single_file=None)
+        obk.text_sheet()
+        self.assertEqual(obk.datemode, None)
