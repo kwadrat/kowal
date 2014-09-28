@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+import unittest
+
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lp_kw
 import jj_kw
@@ -27,6 +29,14 @@ class PowerReader(CommonReader):
         '''
         period_server = jj_kw.QuarterServer()
         CommonReader.__init__(self, lw_kw.Dm_Power, period_server)
+
+    def delta_for_csv(self):
+        '''
+        PowerReader:
+        Tu nic nie robimy. Tylko dla energii była różnica,
+        że plik XLS miał dodatkowy pierwszy pusty wiersz (tel_delta=1),
+        a plik CSV nie miał tego wiersza (tel_delta=0).
+        '''
 
     def vx_th_date(self, lb_col, my_row):
         '''
@@ -104,3 +114,11 @@ class PowerReader(CommonReader):
         data_rows = self.detect_power_data_rows()
         self.enter_power_data(dfb, key_object, data_rows)
         self.store_rows_in_db(dfb)
+
+class Test_Reader_of_Power(unittest.TestCase):
+    def test_energy_1_power(self):
+        '''
+        Test_Reader_of_Power:
+        '''
+        obk = PowerReader()
+        obk.delta_for_csv()
