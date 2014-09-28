@@ -38,6 +38,7 @@ class TxtSheet(object):
             with_first_row = '\n' + file_text
             all_rows = with_first_row.splitlines()
             self.full_matrix = map(lambda x: x.split('\t'), all_rows)
+        self.nrows = len(self.full_matrix)
 
     def cell_value(self, my_row, my_col):
         '''
