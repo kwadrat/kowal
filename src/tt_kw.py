@@ -12,6 +12,7 @@ import lq_kw
 import eo_kw
 import tq_kw
 import um_kw
+import ur_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -160,7 +161,9 @@ class CommonReader(CommonRdWr):
         CommonReader:
         '''
         if single_file is not None and single_file.endswith('.txt'):
-            self.sheet = um_kw.TxtSheet(single_file)
+            self.xlrd = ur_kw.TxtXlrd()
+            self.book = self.xlrd.open_workbook(single_file)
+            self.sheet = self.book.text_sheet()
         else:
             self.xlrd = xlrd
             self.book = self.xlrd.open_workbook(single_file)
