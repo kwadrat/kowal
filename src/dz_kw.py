@@ -82,7 +82,7 @@ wzor_hour_csv = re.compile(r'''
 :
 (?P<minute>\d{2})
 $
-''', re.VERBOSE + re.IGNORECASE)
+''', re.VERBOSE)
 
 def wyciagnij_date_z_formatu_dmr(napis):
     res = wzor_data_dzien_miesiac_rok.search(napis)
