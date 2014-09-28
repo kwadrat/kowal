@@ -76,12 +76,28 @@ wzor_data_dzien_miesiac_rok = re.compile(r'''
 $
 ''', re.VERBOSE)
 
+wzor_hour_csv = re.compile(r'''
+^
+(?P<hour>\d{1,2})
+:
+(?P<minute>\d{2})
+$
+''', re.VERBOSE + re.IGNORECASE)
+
 def wyciagnij_date_z_formatu_dmr(napis):
     res = wzor_data_dzien_miesiac_rok.search(napis)
     if res:
         wynik = map(int, (res.group('year', 'month', 'day')))
     else:
         raise RuntimeError('Nierozpoznana data?: %s' % repr(napis))
+    return wynik
+
+def extract_csv_hour(napis):
+    res = wzor_hour_csv.search(napis)
+    if res:
+        wynik = map(int, (res.group('hour', 'minute')))
+    else:
+        wynik = None
     return wynik
 
 def rozpoznaj_wedlug_wyr_regul(wzorzec_reg, napis):
@@ -153,3 +169,9 @@ class TestRozpoznawania(unittest.TestCase):
         '''
         self.assertRaises(RuntimeError, wyciagnij_date_z_formatu_dmr, '2006-04-24')
         self.assertEqual(wyciagnij_date_z_formatu_dmr(u'24-04-2006'), [2006, 4, 24])
+
+    def test_czasowy_txt_csv(self):
+        '''
+        TestRozpoznawania:
+        '''
+        self.assertEqual(extract_csv_hour('1:00'), [1, 0])
