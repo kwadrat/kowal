@@ -97,6 +97,8 @@ class CloseToValue(object):
         '''
         CloseToValue:
         '''
+        if isinstance(new_value, float):
+            new_value = str(new_value)
         return abs(old_value - a2d(new_value)) <= self.epsilon
 
 point_three = CloseToValue(places=3)
