@@ -164,6 +164,7 @@ class CommonReader(CommonRdWr):
             self.xlrd = ur_kw.TxtXlrd()
             self.book = self.xlrd.open_workbook(single_file)
             self.sheet = self.book.text_sheet()
+            self.delta_for_csv()
         else:
             self.xlrd = xlrd
             self.book = self.xlrd.open_workbook(single_file)

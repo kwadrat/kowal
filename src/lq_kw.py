@@ -28,7 +28,7 @@ def allowed_replacement(old_value, new_value):
     elif (
             lm_kw.have_dec_type(old_value) and
             new_value is not None and
-            old_value == lm_kw.readjust_number(4, new_value)):
+            lm_kw.point_three.rough_replacement(old_value, new_value)):
         result = 1
     else:
         result = 0

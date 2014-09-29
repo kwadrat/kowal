@@ -66,7 +66,7 @@ class EnergyReader(CommonReader):
             tmp_text = self.vx_num_time(
                 self.start_energy_col +
                 sample_index +
-                self.extra_dst_column, 6)
+                self.extra_dst_column, 5 + self.tel_delta)
             expected = one_column.header_for_hour_column
             if (
                     tmp_text == '02:00' and
@@ -109,16 +109,16 @@ class EnergyReader(CommonReader):
         '''
         EnergyReader:
         '''
-        self.check_for_constant_string('B', 2, u'Raport energii godzinowej dla ')
+        self.check_for_constant_string('B', 1 + self.tel_delta, u'Raport energii godzinowej dla ')
         self.verify_hours_headers()
-        self.check_for_delta_string('M', 2, u'kWh')
-        self.check_for_constant_string('B', 3, u'Za okres')
-        self.check_for_delta_string('D', 3, u'od')
-        self.check_for_delta_string('G', 3, u'do ')
-        self.check_for_constant_string('B', 5, u'Godziny')
-        under_name = self.vx_delta_peek('E', 2)
-        period_start = self.vx_delta_date('E', 3)
-        period_end = self.vx_delta_date('H', 3)
+        self.check_for_delta_string('M', 1 + self.tel_delta, u'kWh')
+        self.check_for_constant_string('B', 2 + self.tel_delta, u'Za okres')
+        self.check_for_delta_string('D', 2 + self.tel_delta, u'od')
+        self.check_for_delta_string('G', 2 + self.tel_delta, u'do ')
+        self.check_for_constant_string('B', 4 + self.tel_delta, u'Godziny')
+        under_name = self.vx_delta_peek('E', 1 + self.tel_delta)
+        period_start = self.vx_delta_date('E', 2 + self.tel_delta)
+        period_end = self.vx_delta_date('H', 2 + self.tel_delta)
         return under_name
 
     def detect_energy_data_rows(self):
@@ -126,11 +126,11 @@ class EnergyReader(CommonReader):
         EnergyReader:
         '''
         nrows = self.sheet.nrows
-        self.check_for_constant_string('A', 6, u'Data')
+        self.check_for_constant_string('A', 5 + self.tel_delta, u'Data')
         self.check_for_constant_string('A', nrows - 2, u'Maksimum')
         self.check_for_constant_string('A', nrows - 1, u'Data')
         self.check_for_constant_string('A', nrows, u'Suma')
-        return uu_kw.vx_wiersze(7, nrows - 3)
+        return uu_kw.vx_wiersze(6 + self.tel_delta, nrows - 3)
 
     def simple_energy_read(self, single_row, sample_index):
         '''
@@ -166,6 +166,9 @@ class EnergyReader(CommonReader):
         EnergyReader:
         '''
         value = self.energy_using_dst(single_row, sample_index, autumn_dst_date)
+        if self.is_csv:
+            value = lm_kw.adjust_for_csv(value)
+
         self.store_hour_value_in_row(key_object, row_date, sample_index, value)
 
     def enter_energy_data(self, dfb, key_object, data_rows):
@@ -330,3 +333,14 @@ class Test_Reader_of_Energy(unittest.TestCase):
         self.assertEqual(obk.extra_dst_column, 0)
         obk.set_dst_column()
         self.assertEqual(obk.extra_dst_column, 1)
+
+    def test_energy_4_reader(self):
+        '''
+        Test_Reader_of_Energy:
+        '''
+        obk = EnergyReader()
+        self.assertEqual(obk.is_csv, 0)
+        self.assertEqual(obk.tel_delta, 1)
+        obk.delta_for_csv()
+        self.assertEqual(obk.is_csv, 1)
+        self.assertEqual(obk.tel_delta, 0)

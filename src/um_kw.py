@@ -35,8 +35,7 @@ class TxtSheet(object):
             self.full_matrix = [[None]]
         else:
             file_text = open(self.single_file, 'rb').read()
-            with_first_row = '\n' + file_text
-            all_rows = with_first_row.splitlines()
+            all_rows = file_text.splitlines()
             self.full_matrix = map(lambda x: x.split('\t'), all_rows)
         self.nrows = len(self.full_matrix)
 
