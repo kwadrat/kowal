@@ -90,6 +90,19 @@ def decimal_suma_wybranych_wpisow_slownika(slownik, klucze):
         decimal_suma_wartosci += moja_wartosc
     return decimal_suma_wartosci
 
+class CloseToValue(object):
+    def __init__(self, places):
+        '''
+        CloseToValue:
+        '''
+        self.epsilon = calculate_rounding(places)
+
+    def rough_replacement(self, old_value, new_value):
+        '''
+        CloseToValue:
+        '''
+        return abs(old_value - a2d(new_value)) <= self.epsilon
+
 class TestPointNumbers(unittest.TestCase):
     def test_point_numbers(self):
         '''
@@ -146,3 +159,15 @@ class TestPointNumbers(unittest.TestCase):
             ##############################################################################
             self.assertEqual(wartosc_zero_z_bazy, 0.0)
             ##############################################################################
+
+    def test_close_to_value(self):
+        '''
+        TestPointNumbers:
+        '''
+        obk = CloseToValue(places=3)
+        self.assertEqual(obk.epsilon, a2d('0.001'))
+        self.assertEqual(obk.rough_replacement(a2d('7.0408'), '7.041'), 1)
+        self.assertEqual(obk.rough_replacement(a2d('7.041') + a2d('0.002'), '7.041'), 0)
+        self.assertEqual(obk.rough_replacement(a2d('7.041') - a2d('0.002'), '7.041'), 0)
+        self.assertEqual(obk.rough_replacement(a2d('7.041') + a2d('0.001'), '7.041'), 1)
+        self.assertEqual(obk.rough_replacement(a2d('7.041') - a2d('0.001'), '7.041'), 1)
