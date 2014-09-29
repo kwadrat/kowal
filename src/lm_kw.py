@@ -55,6 +55,10 @@ def for_storing(value):
 def calculate_rounding(places):
     return value_ten_const ** (- places)
 
+def readjust_decimal(places, value):
+    rounding = calculate_rounding(places)
+    return value.quantize(rounding)
+
 def readjust_number(places, value):
     napis = '%.*f' % (places, value)
     rounding = calculate_rounding(places)
@@ -103,6 +107,7 @@ class TestPointNumbers(unittest.TestCase):
         self.assertEqual(have_dec_type(a2d('0')), 1)
         self.assertEqual(have_dec_type(0), 0)
         self.assertEqual(calculate_rounding(3), decimal.Decimal('0.001'))
+        self.assertEqual(readjust_decimal(3, a2d('7.0408')), a2d('7.041'))
         self.assertEqual(readjust_number(3, 1.5555), decimal.Decimal('1.556'))
         self.assertEqual(rzeczywista_na_napis(589.56 * 100), '58956')
         self.assertEqual(rzeczywista_na_napis(589.56), '589.56')
