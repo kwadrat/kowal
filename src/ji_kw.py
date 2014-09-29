@@ -4,6 +4,7 @@
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import uu_kw
 import dn_kw
 import lp_kw
 import jl_kw
@@ -119,7 +120,7 @@ class EnergyReader(CommonReader):
         self.check_for_constant_string('A', nrows - 2, u'Maksimum')
         self.check_for_constant_string('A', nrows - 1, u'Data')
         self.check_for_constant_string('A', nrows, u'Suma')
-        return xrange(7, nrows - 2)
+        return uu_kw.vx_wiersze(7, nrows - 3)
 
     def simple_energy_read(self, single_row, sample_index):
         '''
