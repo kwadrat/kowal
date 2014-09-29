@@ -86,6 +86,13 @@ def decimal_suma_wybranych_wpisow_slownika(slownik, klucze):
         decimal_suma_wartosci += moja_wartosc
     return decimal_suma_wartosci
 
+def adjust_for_csv(value):
+    if value == '':
+        result = None
+    else:
+        result = float(value)
+    return result
+
 class CloseToValue(object):
     def __init__(self, places):
         '''
@@ -170,3 +177,10 @@ class TestPointNumbers(unittest.TestCase):
         self.assertEqual(obk.rough_replacement(a2d('7.041') - a2d('0.002'), '7.041'), 0)
         self.assertEqual(obk.rough_replacement(a2d('7.041') + a2d('0.001'), '7.041'), 1)
         self.assertEqual(obk.rough_replacement(a2d('7.041') - a2d('0.001'), '7.041'), 1)
+
+    def test_csv_helpers(self):
+        '''
+        TestPointNumbers:
+        '''
+        self.assertEqual(adjust_for_csv('1.2'), 1.2)
+        self.assertEqual(adjust_for_csv(''), None)
