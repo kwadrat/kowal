@@ -480,6 +480,8 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(wyznacz_sekunde_logu(data_testowa_c), du_kw.rjb_godzina_przkl)
         self.assertEqual(wyznacz_minute_logu(data_testowa_c), du_kw.rjb_minuta_przkl)
         self.assertEqual(NumerDnia(1970, 1, 1), 0)
+        self.assertEqual(NumerDnia(1970, 1, 2), 1)
+        self.assertEqual(NumerDnia(2038, 1, 1), 68 * 365 + 17)
         self.assertEqual(dzien_nowego_miesiaca(1970, 1), 0)
         self.assertEqual(dzien_nowego_miesiaca(1970, 2), 31)
         self.assertEqual(dzien_nowego_miesiaca(1970, 3), 31 + 28)
