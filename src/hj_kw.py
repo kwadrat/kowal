@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+import sys
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
@@ -222,6 +223,18 @@ def nazwa_filtrowanego(indeks_testu):
 def space_two(first, second):
     return '%s %s' % (first, second)
 
+if sys.version.split()[0] == '2.5.1':
+    def enum_one(text):
+        all_lines = text.splitlines()
+        nr = 1
+        for one_line in all_lines:
+            yield nr, one_line
+            nr += 1
+else:
+    def enum_one(text):
+        all_lines = text.splitlines()
+        return enumerate(all_lines, start=1)
+
 class TestProcessingSQL(unittest.TestCase):
     def test_processing_sql(self):
         '''
@@ -299,3 +312,5 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(suffix_comma_separated, '.csv')
         self.assertEqual(nazwa_filtrowanego(4), 'gen_filtered_4.csv')
         self.assertEqual(space_two('a', 'b'), 'a b')
+        self.assertEqual(list(enum_one('a\nb')), [(1, 'a'), (2, 'b')])
+        self.assertEqual(list(enum_one('a\nb\nc')), [(1, 'a'), (2, 'b'), (3, 'c')])
