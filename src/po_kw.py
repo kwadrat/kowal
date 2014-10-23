@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+import unittest
+
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import us_kw
 import li_kw
@@ -202,3 +204,10 @@ class PozycjeOgolne(ListaLubSlownikOgolnie):
             sl_poprz = poprz_pozycje.pobierz_element(klucz)
             sl_akt = self.pobierz_element(klucz)
             sl_akt.przetwarzaj_slownik(sl_poprz, wrnt_typowy)
+
+class TestPozycjiOgolnych(unittest.TestCase):
+    def test_pozycji_ogolnych(self):
+        '''
+        TestPozycjiOgolnych:
+        '''
+        obk = PozycjeOgolne('abc')
