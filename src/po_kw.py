@@ -4,6 +4,8 @@
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import hj_kw
+import ek_kw
 import us_kw
 import li_kw
 import ll_kw
@@ -211,6 +213,10 @@ def znajdz_lub_przygotuj_nowy_element(klucz, slownik, wytworca):
     else:
         element = slownik.ustaw_i_zwroc_element(klucz, wytworca())
     return element
+
+def znajdz_lub_przygotuj_nowy_slownik(klucz, slownik, klasa_slownika):
+    return znajdz_lub_przygotuj_nowy_element(klucz, slownik,
+        lambda: klasa_slownika(hj_kw.space_two(ek_kw.ETK_maly_licznik_znajdz_lub_przygotuj, klucz)))
 
 class TestPozycjiOgolnych(unittest.TestCase):
     def test_pozycji_ogolnych(self):
