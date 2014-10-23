@@ -24,9 +24,42 @@ class MojPodnajemca(object):
         self.data_pocz = data_pocz
         self.data_kon = data_kon
 
+    def date_in_range(self, akt_data):
+        '''
+        MojPodnajemca:
+        '''
+        result = 0
+        if self.data_pocz is None or self.data_pocz <= akt_data:
+            if self.data_kon is None or akt_data <= self.data_kon:
+                result = 1
+        return result
+
 class TestJednegoPodnajemcy(unittest.TestCase):
     def test_jednego_podnajemcy(self):
         '''
         TestJednegoPodnajemcy:
         '''
         obk = MojPodnajemca('KOWALSKI JAN', '2014-02-25', None)
+
+    def test_no_time_limits(self):
+        '''
+        TestJednegoPodnajemcy:
+        '''
+        obk = MojPodnajemca('KOWALSKI JAN', None, None)
+        self.assertEqual(obk.date_in_range('2014-02-25'), 1)
+
+    def test_only_begin(self):
+        '''
+        TestJednegoPodnajemcy:
+        '''
+        obk = MojPodnajemca('KOWALSKI JAN', '2014-02-25', None)
+        self.assertEqual(obk.date_in_range('2014-02-24'), 0)
+        self.assertEqual(obk.date_in_range('2014-02-25'), 1)
+
+    def test_only_end(self):
+        '''
+        TestJednegoPodnajemcy:
+        '''
+        obk = MojPodnajemca('KOWALSKI JAN', None, '2014-02-27')
+        self.assertEqual(obk.date_in_range('2014-02-27'), 1)
+        self.assertEqual(obk.date_in_range('2014-02-28'), 0)
