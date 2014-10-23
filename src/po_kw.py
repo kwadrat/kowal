@@ -205,9 +205,26 @@ class PozycjeOgolne(ListaLubSlownikOgolnie):
             sl_akt = self.pobierz_element(klucz)
             sl_akt.przetwarzaj_slownik(sl_poprz, wrnt_typowy)
 
+def znajdz_lub_przygotuj_nowy_element(klucz, slownik, wytworca):
+    if slownik.posiadam_klucz(klucz):
+        element = slownik.pobierz_element(klucz)
+    else:
+        element = slownik.ustaw_i_zwroc_element(klucz, wytworca())
+    return element
+
 class TestPozycjiOgolnych(unittest.TestCase):
     def test_pozycji_ogolnych(self):
         '''
         TestPozycjiOgolnych:
         '''
         obk = PozycjeOgolne('abc')
+        class PseudoWytworca:
+            pass
+        self.assertEqual(obk.posiadam_klucz('a'), 0)
+        first = znajdz_lub_przygotuj_nowy_element('a', obk, PseudoWytworca)
+        self.assertEqual(obk.posiadam_klucz('a'), 1)
+        self.assertTrue(first is not None)
+        second = znajdz_lub_przygotuj_nowy_element('a', obk, PseudoWytworca)
+        self.assertTrue(first is second)
+        third = znajdz_lub_przygotuj_nowy_element('b', obk, PseudoWytworca)
+        self.assertTrue(first is not third)
