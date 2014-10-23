@@ -5,6 +5,7 @@ import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import sn_kw
+import uv_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -16,19 +17,10 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-class MojPodnajemca(object):
-    def __init__(self, dane_osoby, data_pocz, data_kon):
-        '''
-        MojPodnajemca:
-        '''
-        self.dane_osoby = dane_osoby
-        self.data_pocz = data_pocz
-        self.data_kon = data_kon
-
 def przygotuj_podnajemcow(lista_podnajemcow):
     wykaz_podnajemcow = {}
     for moj_punkt_poboru, data_pocz, data_kon, dane_osoby in lista_podnajemcow:
-        wykaz_podnajemcow[moj_punkt_poboru] = MojPodnajemca(dane_osoby, data_pocz, data_kon)
+        wykaz_podnajemcow[moj_punkt_poboru] = uv_kw.MojPodnajemca(dane_osoby, data_pocz, data_kon)
     return wykaz_podnajemcow
 
 class DanePodnajemcow(object):
@@ -69,12 +61,6 @@ lista_testowa_podnajemcow = [
     ]
 
 class TestPodnajemcy(unittest.TestCase):
-    def test_podnajemcy(self):
-        '''
-        TestPodnajemcy:
-        '''
-        obk = MojPodnajemca('KOWALSKI JAN', '2014-02-25', None)
-
     def test_klasy_podnajemcy(self):
         '''
         TestPodnajemcy:
