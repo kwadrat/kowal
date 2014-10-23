@@ -36,7 +36,7 @@ class NaszaAnkieta(object):
         else:
             self.jestem_czarny += 1 # Dostaliśmy informację o obcym kliencie
 
-    def sprawdz_poprawnosc(self):
+    def sprawdz_poprawnosc_ankiety(self):
         '''
         NaszaAnkieta:
         '''
