@@ -2,9 +2,12 @@
 # -*- coding: UTF-8 -*-
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import hj_kw
+import ek_kw
 import us_kw
 import li_kw
 import ll_kw
+import po_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -142,3 +145,7 @@ class TypowaLista(ListaLubSlownikOgolnie):
         poprz_slownik = lst_poprz.wskazany_element(0)
         akt_slownik = self.wskazany_element(0)
         akt_slownik.wrnt_wsp(poprz_slownik, wrnt_typowy)
+
+def znajdz_lub_przygotuj_nowa_liste(klucz, slownik):
+    return po_kw.znajdz_lub_przygotuj_nowy_element(klucz, slownik,
+      lambda: TypowaLista(hj_kw.space_two(ek_kw.ETK_lista_znajdz_lub_przygotuj, klucz)))
