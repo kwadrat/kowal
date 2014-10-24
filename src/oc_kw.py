@@ -48,7 +48,7 @@ if rq_kw.WersjaUbuntuRun:
     ##############################################################################
 else:
     ##############################################################################
-    core_resolver = CoreResolver('media.ciri.pl', 'havn.ciri.pl')
+    core_resolver = CoreResolver('havn.ciri.pl', 'havn.ciri.pl')
     ##############################################################################
 adres_maszyny = core_resolver.adres_maszyny
 adres_przystani = core_resolver.adres_przystani
