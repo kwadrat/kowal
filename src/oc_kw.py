@@ -35,23 +35,25 @@ kj_beaker_dot_session = 'beaker.session'
 kj_wsgi_dot_input = 'wsgi.input'
 
 class CoreResolver(object):
-    def __init__(self, adres_maszyny):
+    def __init__(self, adres_maszyny, adres_przystani):
         '''
         CoreResolver:
         '''
         self.adres_maszyny = adres_maszyny
+        self.adres_przystani = adres_przystani
 
 if rq_kw.WersjaUbuntuRun:
     ##############################################################################
-    core_resolver = CoreResolver('192.168.56.102')
+    core_resolver = CoreResolver('192.168.56.102', '192.168.56.102')
     ##############################################################################
 else:
     ##############################################################################
-    core_resolver = CoreResolver('media.ciri.pl')
+    core_resolver = CoreResolver('media.ciri.pl', 'havn.ciri.pl')
     ##############################################################################
 adres_maszyny = core_resolver.adres_maszyny
+adres_przystani = core_resolver.adres_przystani
 url_kotw_a_ica = url_ameryka_http + adres_maszyny
-rjb_hs_pcztk_sam = rjb_hs_pocz + adres_maszyny
+rjb_hs_pcztk_sam = rjb_hs_pocz + adres_przystani
 url_kotw_b_ica = url_kotw_a_ica + lk_kw.rjb_sam_slsh
 rjb_fg_tld_d_apl = 'inne'
 rjb_fg_tld_e_apl = '2'
@@ -97,7 +99,7 @@ class TestConstantStrings(unittest.TestCase):
         '''
         TestConstantStrings:
         '''
-        obk = CoreResolver('media.ciri.pl')
+        obk = CoreResolver('media.ciri.pl', 'havn.ciri.pl')
         self.assertEqual(mthd_get, 'GET')
         self.assertEqual(mthd_post, 'POST')
         self.assertEqual(rjb_dla_drukowania, 'print')
@@ -109,8 +111,9 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(url_ameryka_http, 'http://')
         self.assertEqual(rjb_hs_pocz, 'https://')
         self.assertEqual(obk.adres_maszyny, 'media.ciri.pl')
+        self.assertEqual(obk.adres_przystani, 'havn.ciri.pl')
         self.assertEqual(url_kotw_a_ica, 'http://media.ciri.pl')
-        self.assertEqual(rjb_hs_pcztk_sam, 'https://media.ciri.pl')
+        self.assertEqual(rjb_hs_pcztk_sam, 'https://havn.ciri.pl')
         self.assertEqual(url_kotw_b_ica, 'http://media.ciri.pl/')
         self.assertEqual(konto_uzytkownika, 'kwadrat')
         self.assertEqual(rjb_fg_tld_a_apl, '~kwadrat')
