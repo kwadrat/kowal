@@ -44,13 +44,12 @@ class CoreResolver(object):
 if rq_kw.WersjaUbuntuRun:
     ##############################################################################
     core_resolver = CoreResolver('192.168.56.102')
-    adres_maszyny = core_resolver.adres_maszyny
     ##############################################################################
 else:
     ##############################################################################
     core_resolver = CoreResolver('media.ciri.pl')
-    adres_maszyny = core_resolver.adres_maszyny
     ##############################################################################
+adres_maszyny = core_resolver.adres_maszyny
 url_kotw_a_ica = url_ameryka_http + adres_maszyny
 rjb_hs_pcztk_sam = rjb_hs_pocz + adres_maszyny
 url_kotw_b_ica = url_kotw_a_ica + lk_kw.rjb_sam_slsh
