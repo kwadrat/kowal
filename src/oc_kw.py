@@ -35,7 +35,7 @@ kj_beaker_dot_session = 'beaker.session'
 kj_wsgi_dot_input = 'wsgi.input'
 
 class CoreResolver(object):
-    def __init__(self, adres_maszyny, adres_przystani):
+    def __init__(self, adres_maszyny, adres_przystani=None):
         '''
         CoreResolver:
         '''
