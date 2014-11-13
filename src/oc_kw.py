@@ -122,11 +122,11 @@ class TestConstantStrings(unittest.TestCase):
         '''
         if rq_kw.DocelowoElastycznyHostname:
             ##############################################################################
-            obk = CoreResolver('media.ciri.pl', 'havn.ciri.pl', 'havn.ciri.pl')
+            obk = CoreResolver('media.ciri.pl', 'havn.ciri.pl', 'auth.ciri.pl')
             ##############################################################################
         else:
             ##############################################################################
-            obk = CoreResolver('media.ciri.pl', 'media.ciri.pl', 'havn.ciri.pl')
+            obk = CoreResolver('media.ciri.pl', 'media.ciri.pl', 'auth.ciri.pl')
             ##############################################################################
         self.assertEqual(mthd_get, 'GET')
         self.assertEqual(mthd_post, 'POST')
@@ -139,7 +139,7 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(url_ameryka_http, 'http://')
         self.assertEqual(rjb_hs_pocz, 'https://')
         self.assertEqual(obk.adres_maszyny, 'media.ciri.pl')
-        self.assertEqual(obk.adres_auth, 'havn.ciri.pl')
+        self.assertEqual(obk.adres_auth, 'auth.ciri.pl')
         if rq_kw.DocelowoElastycznyHostname:
             ##############################################################################
             self.assertEqual(obk.adres_przystani, 'havn.ciri.pl')
