@@ -125,7 +125,7 @@ class TestConstantStrings(unittest.TestCase):
         '''
         if rq_kw.DocelowoElastycznyHostname:
             ##############################################################################
-            obk = CoreResolver('media.ciri.pl', 'havn.ciri.pl', 'auth.ciri.pl')
+            obk = CoreResolver('work.ciri.pl', 'havn.ciri.pl', 'auth.ciri.pl')
             ##############################################################################
         else:
             ##############################################################################
