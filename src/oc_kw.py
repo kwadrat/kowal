@@ -44,7 +44,7 @@ class CoreResolver(object):
         self.adres_auth = adres_auth
         if rq_kw.DocelowoElastycznyHostname:
             ##############################################################################
-            self.rjb_hs_pcztk_sam = rjb_hs_pocz + self.adres_przystani
+            self.rjb_hs_pcztk_sam = rjb_hs_pocz + self.adres_auth
             ##############################################################################
         else:
             ##############################################################################
