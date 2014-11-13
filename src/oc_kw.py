@@ -34,6 +34,7 @@ rjb_hs_pocz = 'https://'
 kj_beaker_dot_session = 'beaker.session'
 kj_wsgi_dot_input = 'wsgi.input'
 konto_uzytkownika = 'kwadrat'
+rjb_fg_tld_a_apl = rjb_sama_tylda + konto_uzytkownika
 
 class CoreResolver(object):
     def __init__(self, adres_maszyny, adres_przystani, adres_auth):
@@ -80,7 +81,6 @@ else:
 rjb_fg_tld_d_apl = 'inne'
 rjb_fg_tld_e_apl = '2'
 rjb_fg_tld_f_apl = rjb_fg_tld_d_apl + rjb_fg_tld_e_apl
-rjb_fg_tld_a_apl = rjb_sama_tylda + konto_uzytkownika
 rjb_fg_tld_b_apl = lk_kw.rjb_sam_slsh + rjb_sama_tylda + konto_uzytkownika
 rjb_sciezka_kw = core_resolver.url_kotw_b_ica + rjb_fg_tld_a_apl
 rjb_kt_dom_uzt = rjb_pocz_hm_dir + konto_uzytkownika
