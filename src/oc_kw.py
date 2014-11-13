@@ -65,7 +65,6 @@ else:
         core_resolver = CoreResolver('media.ciri.pl', 'media.ciri.pl', 'havn.ciri.pl')
         ##############################################################################
     ##############################################################################
-adres_maszyny = core_resolver.adres_maszyny
 if rq_kw.DocelowoElastycznyHostname:
     ##############################################################################
     adres_przystani = core_resolver.adres_przystani
@@ -74,14 +73,14 @@ else:
     ##############################################################################
     pass
     ##############################################################################
-url_kotw_a_ica = url_ameryka_http + adres_maszyny
+url_kotw_a_ica = url_ameryka_http + core_resolver.adres_maszyny
 if rq_kw.DocelowoElastycznyHostname:
     ##############################################################################
     rjb_hs_pcztk_sam = rjb_hs_pocz + adres_przystani
     ##############################################################################
 else:
     ##############################################################################
-    rjb_hs_pcztk_sam = rjb_hs_pocz + adres_maszyny
+    rjb_hs_pcztk_sam = rjb_hs_pocz + core_resolver.adres_maszyny
     ##############################################################################
 url_kotw_b_ica = url_kotw_a_ica + lk_kw.rjb_sam_slsh
 rjb_fg_tld_d_apl = 'inne'
