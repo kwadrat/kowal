@@ -153,7 +153,7 @@ class TestConstantStrings(unittest.TestCase):
             ##############################################################################
         if rq_kw.DocelowoElastycznyHostname:
             ##############################################################################
-            self.assertEqual(obk.url_kotw_a_ica, 'http://media.ciri.pl')
+            self.assertEqual(obk.url_kotw_a_ica, 'http://work.ciri.pl')
             ##############################################################################
         else:
             ##############################################################################
