@@ -129,7 +129,7 @@ class TestConstantStrings(unittest.TestCase):
             ##############################################################################
         else:
             ##############################################################################
-            obk = CoreResolver('media.ciri.pl', 'media.ciri.pl', 'auth.ciri.pl')
+            obk = CoreResolver('work.ciri.pl', 'media.ciri.pl', 'auth.ciri.pl')
             ##############################################################################
         self.assertEqual(mthd_get, 'GET')
         self.assertEqual(mthd_post, 'POST')
@@ -141,7 +141,7 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(RozszerzenieObrazka, '.png')
         self.assertEqual(url_ameryka_http, 'http://')
         self.assertEqual(rjb_hs_pocz, 'https://')
-        self.assertEqual(obk.adres_maszyny, 'media.ciri.pl')
+        self.assertEqual(obk.adres_maszyny, 'work.ciri.pl')
         self.assertEqual(obk.adres_auth, 'auth.ciri.pl')
         if rq_kw.DocelowoElastycznyHostname:
             ##############################################################################
@@ -157,7 +157,7 @@ class TestConstantStrings(unittest.TestCase):
             ##############################################################################
         else:
             ##############################################################################
-            self.assertEqual(obk.url_kotw_a_ica, 'http://media.ciri.pl')
+            self.assertEqual(obk.url_kotw_a_ica, 'http://work.ciri.pl')
             ##############################################################################
         if rq_kw.DocelowoElastycznyHostname:
             ##############################################################################
@@ -175,7 +175,7 @@ class TestConstantStrings(unittest.TestCase):
             ##############################################################################
             self.assertEqual(obk.rjb_hs_pcztk_slsh, 'https://auth.ciri.pl/')
             ##############################################################################
-        self.assertEqual(obk.url_kotw_b_ica, 'http://media.ciri.pl/')
+        self.assertEqual(obk.url_kotw_b_ica, 'http://work.ciri.pl/')
         self.assertEqual(konto_uzytkownika, 'kwadrat')
         self.assertEqual(rjb_fg_tld_a_apl, '~kwadrat')
         self.assertEqual(rjb_fg_tld_b_apl, '/~kwadrat')
