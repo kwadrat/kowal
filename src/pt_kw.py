@@ -98,7 +98,7 @@ class KlasaObrazu(object):
         zasadniczy_odsylacz = mf_kw.link_obrazu % dict(
             x = self.szerokosc_obrazu,
             y = self.wysokosc_obrazu,
-            nazwa = oc_kw.pelna_generowana_nazwa(self.moja_nazwa),
+            nazwa = oc_kw.core_resolver.pelna_generowana_nazwa(self.moja_nazwa),
             rozkaz_mapy = self.rozkaz_mapy,
             html_tmp_name = self.html_name)
         lista.append(zasadniczy_odsylacz)

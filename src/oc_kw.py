@@ -60,6 +60,12 @@ class CoreResolver(object):
         self.rjb_sciezka_a_kw = self.rjb_sciezka_kw + lk_kw.rjb_sam_slsh
         self.poczatek_gen = self.rjb_sciezka_a_kw + GenPicDir
 
+    def pelna_generowana_nazwa(self, nazwa):
+        '''
+        CoreResolver:
+        '''
+        return self.poczatek_gen + nazwa
+
 if rq_kw.WersjaUbuntuRun:
     ##############################################################################
     if rq_kw.DocelowoElastycznyHostname:
@@ -101,9 +107,6 @@ fq_px_qv = 'px'
 fq_py_qv = 'py'
 fq_nowy_this_qv = 'nowy_this'
 rjb_dla_drukowania = 'print'
-
-def pelna_generowana_nazwa(nazwa):
-    return core_resolver.poczatek_gen + nazwa
 
 def dodaj_py(nazwa):
     return nazwa + rjb_fg_tld_g_apl
@@ -187,8 +190,8 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(GenPicDir, 'gen_kowal/')
         self.assertEqual(core_resolver.poczatek_gen, 'http://media.ciri.pl/~kwadrat/gen_kowal/')
         self.assertEqual(SciezkaPlikow, '/home/kwadrat/public_html/gen_kowal/')
-        self.assertEqual(pelna_generowana_nazwa('tmp.png'), 'http://media.ciri.pl/~kwadrat/gen_kowal/tmp.png')
-        self.assertEqual(pelna_generowana_nazwa('inny.jpg'), 'http://media.ciri.pl/~kwadrat/gen_kowal/inny.jpg')
+        self.assertEqual(core_resolver.pelna_generowana_nazwa('tmp.png'), 'http://media.ciri.pl/~kwadrat/gen_kowal/tmp.png')
+        self.assertEqual(core_resolver.pelna_generowana_nazwa('inny.jpg'), 'http://media.ciri.pl/~kwadrat/gen_kowal/inny.jpg')
         self.assertEqual(rjb_klnt_ip, '87.101.66.154')
         self.assertEqual(rjb_kwl_sam, 'kowal')
         self.assertEqual(rjb_sczk_do_kwl, '/home/kwadrat/kowal')
