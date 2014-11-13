@@ -112,7 +112,7 @@ class TestConstantStrings(unittest.TestCase):
         '''
         TestConstantStrings:
         '''
-        obk = CoreResolver('work.ciri.pl', 'middle.ciri.pl', 'auth.ciri.pl')
+        obk = core_for_testing()
         self.assertEqual(mthd_get, 'GET')
         self.assertEqual(mthd_post, 'POST')
         self.assertEqual(rjb_dla_drukowania, 'print')
