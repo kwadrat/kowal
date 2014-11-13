@@ -58,6 +58,7 @@ class CoreResolver(object):
         self.url_kotw_b_ica = self.url_kotw_a_ica + lk_kw.rjb_sam_slsh
         self.rjb_sciezka_kw = self.url_kotw_b_ica + rjb_fg_tld_a_apl
         self.rjb_sciezka_a_kw = self.rjb_sciezka_kw + lk_kw.rjb_sam_slsh
+        self.poczatek_gen = self.rjb_sciezka_a_kw + GenPicDir
 
 if rq_kw.WersjaUbuntuRun:
     ##############################################################################
@@ -88,7 +89,6 @@ rjb_fg_tld_b_apl = lk_kw.rjb_sam_slsh + rjb_sama_tylda + konto_uzytkownika
 rjb_kt_dom_uzt = rjb_pocz_hm_dir + konto_uzytkownika
 rjb_wsp_cr_md = rjb_kt_dom_uzt + '/ciri/media/'
 rjb_ph_uztk = rjb_kt_dom_uzt + rjb_do_pbl_ht + lk_kw.rjb_sam_slsh
-poczatek_gen = core_resolver.rjb_sciezka_a_kw + GenPicDir
 SciezkaPlikow = rjb_ph_uztk + GenPicDir
 EYK_lporz_fktr = 'lp_faktury'
 rjb_kwl_sam = 'kowal'
@@ -103,7 +103,7 @@ fq_nowy_this_qv = 'nowy_this'
 rjb_dla_drukowania = 'print'
 
 def pelna_generowana_nazwa(nazwa):
-    return poczatek_gen + nazwa
+    return core_resolver.poczatek_gen + nazwa
 
 def dodaj_py(nazwa):
     return nazwa + rjb_fg_tld_g_apl
@@ -185,7 +185,7 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(obk.rjb_sciezka_kw, 'http://work.ciri.pl/~kwadrat')
         self.assertEqual(obk.rjb_sciezka_a_kw, 'http://work.ciri.pl/~kwadrat/')
         self.assertEqual(GenPicDir, 'gen_kowal/')
-        self.assertEqual(poczatek_gen, 'http://media.ciri.pl/~kwadrat/gen_kowal/')
+        self.assertEqual(core_resolver.poczatek_gen, 'http://media.ciri.pl/~kwadrat/gen_kowal/')
         self.assertEqual(SciezkaPlikow, '/home/kwadrat/public_html/gen_kowal/')
         self.assertEqual(pelna_generowana_nazwa('tmp.png'), 'http://media.ciri.pl/~kwadrat/gen_kowal/tmp.png')
         self.assertEqual(pelna_generowana_nazwa('inny.jpg'), 'http://media.ciri.pl/~kwadrat/gen_kowal/inny.jpg')
