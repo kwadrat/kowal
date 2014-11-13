@@ -115,6 +115,9 @@ def fn_a_in_dwa(wersja_produkcyjna):
         wynik = rjb_fg_tld_f_apl
     return wynik
 
+def core_for_testing():
+    return CoreResolver('work.ciri.pl', 'undecided1.ciri.pl', 'auth.ciri.pl')
+
 class TestConstantStrings(unittest.TestCase):
     def test_constant_strings(self):
         '''
