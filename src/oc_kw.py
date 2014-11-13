@@ -114,11 +114,11 @@ class TestConstantStrings(unittest.TestCase):
         '''
         if rq_kw.DocelowoElastycznyHostname:
             ##############################################################################
-            obk = CoreResolver('work.ciri.pl', 'havn.ciri.pl', 'auth.ciri.pl')
+            obk = CoreResolver('work.ciri.pl', 'middle.ciri.pl', 'auth.ciri.pl')
             ##############################################################################
         else:
             ##############################################################################
-            obk = CoreResolver('work.ciri.pl', 'media.ciri.pl', 'auth.ciri.pl')
+            obk = CoreResolver('work.ciri.pl', 'middle.ciri.pl', 'auth.ciri.pl')
             ##############################################################################
         self.assertEqual(mthd_get, 'GET')
         self.assertEqual(mthd_post, 'POST')
@@ -132,14 +132,7 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(rjb_hs_pocz, 'https://')
         self.assertEqual(obk.adres_maszyny, 'work.ciri.pl')
         self.assertEqual(obk.adres_auth, 'auth.ciri.pl')
-        if rq_kw.DocelowoElastycznyHostname:
-            ##############################################################################
-            self.assertEqual(obk.adres_przystani, 'havn.ciri.pl')
-            ##############################################################################
-        else:
-            ##############################################################################
-            pass
-            ##############################################################################
+        self.assertEqual(obk.adres_przystani, 'middle.ciri.pl')
         self.assertEqual(obk.url_kotw_a_ica, 'http://work.ciri.pl')
         self.assertEqual(obk.rjb_hs_pcztk_sam, 'https://auth.ciri.pl')
         self.assertEqual(obk.rjb_hs_pcztk_slsh, 'https://auth.ciri.pl/')
