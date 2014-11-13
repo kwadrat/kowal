@@ -52,6 +52,7 @@ class CoreResolver(object):
             ##############################################################################
         self.rjb_hs_pcztk_slsh = self.rjb_hs_pcztk_sam + lk_kw.rjb_sam_slsh
         self.url_kotw_a_ica = url_ameryka_http + self.adres_maszyny
+        self.url_kotw_b_ica = self.url_kotw_a_ica + lk_kw.rjb_sam_slsh
 
 if rq_kw.WersjaUbuntuRun:
     ##############################################################################
@@ -75,14 +76,13 @@ else:
         core_resolver = CoreResolver('media.ciri.pl', 'media.ciri.pl', 'havn.ciri.pl')
         ##############################################################################
     ##############################################################################
-url_kotw_b_ica = core_resolver.url_kotw_a_ica + lk_kw.rjb_sam_slsh
 rjb_fg_tld_d_apl = 'inne'
 rjb_fg_tld_e_apl = '2'
 rjb_fg_tld_f_apl = rjb_fg_tld_d_apl + rjb_fg_tld_e_apl
 konto_uzytkownika = 'kwadrat'
 rjb_fg_tld_a_apl = rjb_sama_tylda + konto_uzytkownika
 rjb_fg_tld_b_apl = lk_kw.rjb_sam_slsh + rjb_sama_tylda + konto_uzytkownika
-rjb_sciezka_kw = url_kotw_b_ica + rjb_fg_tld_a_apl
+rjb_sciezka_kw = core_resolver.url_kotw_b_ica + rjb_fg_tld_a_apl
 rjb_kt_dom_uzt = rjb_pocz_hm_dir + konto_uzytkownika
 rjb_wsp_cr_md = rjb_kt_dom_uzt + '/ciri/media/'
 rjb_ph_uztk = rjb_kt_dom_uzt + rjb_do_pbl_ht + lk_kw.rjb_sam_slsh
@@ -168,7 +168,7 @@ class TestConstantStrings(unittest.TestCase):
             ##############################################################################
             self.assertEqual(obk.rjb_hs_pcztk_slsh, 'https://media.ciri.pl/')
             ##############################################################################
-        self.assertEqual(url_kotw_b_ica, 'http://media.ciri.pl/')
+        self.assertEqual(obk.url_kotw_b_ica, 'http://media.ciri.pl/')
         self.assertEqual(konto_uzytkownika, 'kwadrat')
         self.assertEqual(rjb_fg_tld_a_apl, '~kwadrat')
         self.assertEqual(rjb_fg_tld_b_apl, '/~kwadrat')
