@@ -44,13 +44,14 @@ class CoreResolver(object):
         self.adres_auth = adres_auth
         if rq_kw.DocelowoElastycznyHostname:
             ##############################################################################
-            self.rjb_hs_pcztk_sam = rjb_hs_pocz + self.adres_przystani
+            self.rjb_hs_pcztk_sam = rjb_hs_pocz + self.adres_auth
             ##############################################################################
         else:
             ##############################################################################
-            self.rjb_hs_pcztk_sam = rjb_hs_pocz + self.adres_maszyny
+            self.rjb_hs_pcztk_sam = rjb_hs_pocz + self.adres_auth
             ##############################################################################
         self.rjb_hs_pcztk_slsh = self.rjb_hs_pcztk_sam + lk_kw.rjb_sam_slsh
+        self.url_kotw_a_ica = url_ameryka_http + self.adres_maszyny
 
 if rq_kw.WersjaUbuntuRun:
     ##############################################################################
@@ -74,8 +75,7 @@ else:
         core_resolver = CoreResolver('media.ciri.pl', 'media.ciri.pl', 'havn.ciri.pl')
         ##############################################################################
     ##############################################################################
-url_kotw_a_ica = url_ameryka_http + core_resolver.adres_maszyny
-url_kotw_b_ica = url_kotw_a_ica + lk_kw.rjb_sam_slsh
+url_kotw_b_ica = core_resolver.url_kotw_a_ica + lk_kw.rjb_sam_slsh
 rjb_fg_tld_d_apl = 'inne'
 rjb_fg_tld_e_apl = '2'
 rjb_fg_tld_f_apl = rjb_fg_tld_d_apl + rjb_fg_tld_e_apl
@@ -151,22 +151,29 @@ class TestConstantStrings(unittest.TestCase):
             ##############################################################################
             pass
             ##############################################################################
-        self.assertEqual(url_kotw_a_ica, 'http://media.ciri.pl')
         if rq_kw.DocelowoElastycznyHostname:
             ##############################################################################
-            self.assertEqual(obk.rjb_hs_pcztk_sam, 'https://havn.ciri.pl')
+            self.assertEqual(obk.url_kotw_a_ica, 'http://media.ciri.pl')
             ##############################################################################
         else:
             ##############################################################################
-            self.assertEqual(obk.rjb_hs_pcztk_sam, 'https://media.ciri.pl')
+            self.assertEqual(obk.url_kotw_a_ica, 'http://media.ciri.pl')
             ##############################################################################
         if rq_kw.DocelowoElastycznyHostname:
             ##############################################################################
-            self.assertEqual(obk.rjb_hs_pcztk_slsh, 'https://havn.ciri.pl/')
+            self.assertEqual(obk.rjb_hs_pcztk_sam, 'https://auth.ciri.pl')
             ##############################################################################
         else:
             ##############################################################################
-            self.assertEqual(obk.rjb_hs_pcztk_slsh, 'https://media.ciri.pl/')
+            self.assertEqual(obk.rjb_hs_pcztk_sam, 'https://auth.ciri.pl')
+            ##############################################################################
+        if rq_kw.DocelowoElastycznyHostname:
+            ##############################################################################
+            self.assertEqual(obk.rjb_hs_pcztk_slsh, 'https://auth.ciri.pl/')
+            ##############################################################################
+        else:
+            ##############################################################################
+            self.assertEqual(obk.rjb_hs_pcztk_slsh, 'https://auth.ciri.pl/')
             ##############################################################################
         self.assertEqual(url_kotw_b_ica, 'http://media.ciri.pl/')
         self.assertEqual(konto_uzytkownika, 'kwadrat')
