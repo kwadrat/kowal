@@ -112,14 +112,7 @@ class TestConstantStrings(unittest.TestCase):
         '''
         TestConstantStrings:
         '''
-        if rq_kw.DocelowoElastycznyHostname:
-            ##############################################################################
-            obk = CoreResolver('work.ciri.pl', 'middle.ciri.pl', 'auth.ciri.pl')
-            ##############################################################################
-        else:
-            ##############################################################################
-            obk = CoreResolver('work.ciri.pl', 'middle.ciri.pl', 'auth.ciri.pl')
-            ##############################################################################
+        obk = CoreResolver('work.ciri.pl', 'middle.ciri.pl', 'auth.ciri.pl')
         self.assertEqual(mthd_get, 'GET')
         self.assertEqual(mthd_post, 'POST')
         self.assertEqual(rjb_dla_drukowania, 'print')
