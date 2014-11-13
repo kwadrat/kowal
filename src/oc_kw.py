@@ -35,33 +35,34 @@ kj_beaker_dot_session = 'beaker.session'
 kj_wsgi_dot_input = 'wsgi.input'
 
 class CoreResolver(object):
-    def __init__(self, adres_maszyny, adres_przystani):
+    def __init__(self, adres_maszyny, adres_przystani, adres_auth):
         '''
         CoreResolver:
         '''
         self.adres_maszyny = adres_maszyny
         self.adres_przystani = adres_przystani
+        self.adres_auth = adres_auth
 
 if rq_kw.WersjaUbuntuRun:
     ##############################################################################
     if rq_kw.DocelowoElastycznyHostname:
         ##############################################################################
-        core_resolver = CoreResolver('192.168.56.102', '192.168.56.102')
+        core_resolver = CoreResolver('192.168.56.102', '192.168.56.102', 'havn.ciri.pl')
         ##############################################################################
     else:
         ##############################################################################
-        core_resolver = CoreResolver('192.168.56.102', '192.168.56.102')
+        core_resolver = CoreResolver('192.168.56.102', '192.168.56.102', 'havn.ciri.pl')
         ##############################################################################
     ##############################################################################
 else:
     ##############################################################################
     if rq_kw.DocelowoElastycznyHostname:
         ##############################################################################
-        core_resolver = CoreResolver('havn.ciri.pl', 'havn.ciri.pl')
+        core_resolver = CoreResolver('havn.ciri.pl', 'havn.ciri.pl', 'havn.ciri.pl')
         ##############################################################################
     else:
         ##############################################################################
-        core_resolver = CoreResolver('media.ciri.pl', 'media.ciri.pl')
+        core_resolver = CoreResolver('media.ciri.pl', 'media.ciri.pl', 'havn.ciri.pl')
         ##############################################################################
     ##############################################################################
 adres_maszyny = core_resolver.adres_maszyny
@@ -129,11 +130,11 @@ class TestConstantStrings(unittest.TestCase):
         '''
         if rq_kw.DocelowoElastycznyHostname:
             ##############################################################################
-            obk = CoreResolver('media.ciri.pl', 'havn.ciri.pl')
+            obk = CoreResolver('media.ciri.pl', 'havn.ciri.pl', 'havn.ciri.pl')
             ##############################################################################
         else:
             ##############################################################################
-            obk = CoreResolver('media.ciri.pl', 'media.ciri.pl')
+            obk = CoreResolver('media.ciri.pl', 'media.ciri.pl', 'havn.ciri.pl')
             ##############################################################################
         self.assertEqual(mthd_get, 'GET')
         self.assertEqual(mthd_post, 'POST')
@@ -146,6 +147,7 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(url_ameryka_http, 'http://')
         self.assertEqual(rjb_hs_pocz, 'https://')
         self.assertEqual(obk.adres_maszyny, 'media.ciri.pl')
+        self.assertEqual(obk.adres_auth, 'havn.ciri.pl')
         if rq_kw.DocelowoElastycznyHostname:
             ##############################################################################
             self.assertEqual(obk.adres_przystani, 'havn.ciri.pl')
