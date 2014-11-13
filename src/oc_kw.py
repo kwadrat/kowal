@@ -188,7 +188,7 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(obk.rjb_sciezka_kw, 'http://work.ciri.pl/~kwadrat')
         self.assertEqual(obk.rjb_sciezka_a_kw, 'http://work.ciri.pl/~kwadrat/')
         self.assertEqual(GenPicDir, 'gen_kowal/')
-        self.assertEqual(core_resolver.poczatek_gen, 'http://media.ciri.pl/~kwadrat/gen_kowal/')
+        self.assertEqual(obk.poczatek_gen, 'http://work.ciri.pl/~kwadrat/gen_kowal/')
         self.assertEqual(SciezkaPlikow, '/home/kwadrat/public_html/gen_kowal/')
         self.assertEqual(obk.pelna_generowana_nazwa('tmp.png'), 'http://work.ciri.pl/~kwadrat/gen_kowal/tmp.png')
         self.assertEqual(obk.pelna_generowana_nazwa('inny.jpg'), 'http://work.ciri.pl/~kwadrat/gen_kowal/inny.jpg')
