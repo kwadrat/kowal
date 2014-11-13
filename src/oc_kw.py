@@ -45,14 +45,7 @@ class CoreResolver(object):
         self.adres_maszyny = adres_maszyny
         self.adres_przystani = adres_przystani
         self.adres_auth = adres_auth
-        if rq_kw.DocelowoElastycznyHostname:
-            ##############################################################################
-            self.rjb_hs_pcztk_sam = rjb_hs_pocz + self.adres_auth
-            ##############################################################################
-        else:
-            ##############################################################################
-            self.rjb_hs_pcztk_sam = rjb_hs_pocz + self.adres_auth
-            ##############################################################################
+        self.rjb_hs_pcztk_sam = rjb_hs_pocz + self.adres_auth
         self.rjb_hs_pcztk_slsh = self.rjb_hs_pcztk_sam + lk_kw.rjb_sam_slsh
         self.url_kotw_a_ica = url_ameryka_http + self.adres_maszyny
         self.url_kotw_b_ica = self.url_kotw_a_ica + lk_kw.rjb_sam_slsh
