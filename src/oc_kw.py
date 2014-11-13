@@ -125,7 +125,7 @@ class TestConstantStrings(unittest.TestCase):
         '''
         if rq_kw.DocelowoElastycznyHostname:
             ##############################################################################
-            obk = CoreResolver('media.ciri.pl', 'havn.ciri.pl', 'auth.ciri.pl')
+            obk = CoreResolver('work.ciri.pl', 'havn.ciri.pl', 'auth.ciri.pl')
             ##############################################################################
         else:
             ##############################################################################
@@ -153,7 +153,7 @@ class TestConstantStrings(unittest.TestCase):
             ##############################################################################
         if rq_kw.DocelowoElastycznyHostname:
             ##############################################################################
-            self.assertEqual(obk.url_kotw_a_ica, 'http://media.ciri.pl')
+            self.assertEqual(obk.url_kotw_a_ica, 'http://work.ciri.pl')
             ##############################################################################
         else:
             ##############################################################################
