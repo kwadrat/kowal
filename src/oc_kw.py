@@ -35,6 +35,7 @@ kj_beaker_dot_session = 'beaker.session'
 kj_wsgi_dot_input = 'wsgi.input'
 konto_uzytkownika = 'kwadrat'
 rjb_fg_tld_a_apl = rjb_sama_tylda + konto_uzytkownika
+GenPicDir = 'gen_kowal/'
 
 class CoreResolver(object):
     def __init__(self, adres_maszyny, adres_przystani, adres_auth):
@@ -87,7 +88,6 @@ rjb_fg_tld_b_apl = lk_kw.rjb_sam_slsh + rjb_sama_tylda + konto_uzytkownika
 rjb_kt_dom_uzt = rjb_pocz_hm_dir + konto_uzytkownika
 rjb_wsp_cr_md = rjb_kt_dom_uzt + '/ciri/media/'
 rjb_ph_uztk = rjb_kt_dom_uzt + rjb_do_pbl_ht + lk_kw.rjb_sam_slsh
-GenPicDir = 'gen_kowal/'
 poczatek_gen = core_resolver.rjb_sciezka_a_kw + GenPicDir
 SciezkaPlikow = rjb_ph_uztk + GenPicDir
 EYK_lporz_fktr = 'lp_faktury'
