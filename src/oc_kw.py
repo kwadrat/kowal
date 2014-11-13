@@ -35,7 +35,7 @@ kj_beaker_dot_session = 'beaker.session'
 kj_wsgi_dot_input = 'wsgi.input'
 
 class CoreResolver(object):
-    def __init__(self, adres_maszyny, adres_przystani=None):
+    def __init__(self, adres_maszyny, adres_przystani):
         '''
         CoreResolver:
         '''
@@ -50,7 +50,7 @@ if rq_kw.WersjaUbuntuRun:
         ##############################################################################
     else:
         ##############################################################################
-        core_resolver = CoreResolver('192.168.56.102')
+        core_resolver = CoreResolver('192.168.56.102', '192.168.56.102')
         ##############################################################################
     ##############################################################################
 else:
@@ -61,7 +61,7 @@ else:
         ##############################################################################
     else:
         ##############################################################################
-        core_resolver = CoreResolver('media.ciri.pl')
+        core_resolver = CoreResolver('media.ciri.pl', 'media.ciri.pl')
         ##############################################################################
     ##############################################################################
 adres_maszyny = core_resolver.adres_maszyny
@@ -133,7 +133,7 @@ class TestConstantStrings(unittest.TestCase):
             ##############################################################################
         else:
             ##############################################################################
-            obk = CoreResolver('media.ciri.pl')
+            obk = CoreResolver('media.ciri.pl', 'media.ciri.pl')
             ##############################################################################
         self.assertEqual(mthd_get, 'GET')
         self.assertEqual(mthd_post, 'POST')
