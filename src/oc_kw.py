@@ -151,7 +151,14 @@ class TestConstantStrings(unittest.TestCase):
             ##############################################################################
             pass
             ##############################################################################
-        self.assertEqual(obk.url_kotw_a_ica, 'http://media.ciri.pl')
+        if rq_kw.DocelowoElastycznyHostname:
+            ##############################################################################
+            self.assertEqual(obk.url_kotw_a_ica, 'http://media.ciri.pl')
+            ##############################################################################
+        else:
+            ##############################################################################
+            self.assertEqual(obk.url_kotw_a_ica, 'http://media.ciri.pl')
+            ##############################################################################
         if rq_kw.DocelowoElastycznyHostname:
             ##############################################################################
             self.assertEqual(obk.rjb_hs_pcztk_sam, 'https://havn.ciri.pl')
