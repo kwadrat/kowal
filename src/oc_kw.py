@@ -50,6 +50,7 @@ class CoreResolver(object):
             ##############################################################################
             self.rjb_hs_pcztk_sam = rjb_hs_pocz + self.adres_maszyny
             ##############################################################################
+        self.rjb_hs_pcztk_slsh = self.rjb_hs_pcztk_sam + lk_kw.rjb_sam_slsh
 
 if rq_kw.WersjaUbuntuRun:
     ##############################################################################
@@ -155,6 +156,14 @@ class TestConstantStrings(unittest.TestCase):
         else:
             ##############################################################################
             self.assertEqual(obk.rjb_hs_pcztk_sam, 'https://media.ciri.pl')
+            ##############################################################################
+        if rq_kw.DocelowoElastycznyHostname:
+            ##############################################################################
+            self.assertEqual(obk.rjb_hs_pcztk_slsh, 'https://havn.ciri.pl/')
+            ##############################################################################
+        else:
+            ##############################################################################
+            self.assertEqual(obk.rjb_hs_pcztk_slsh, 'https://media.ciri.pl/')
             ##############################################################################
         self.assertEqual(url_kotw_b_ica, 'http://media.ciri.pl/')
         self.assertEqual(konto_uzytkownika, 'kwadrat')
