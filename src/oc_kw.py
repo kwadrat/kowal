@@ -48,7 +48,7 @@ class CoreResolver(object):
             ##############################################################################
         else:
             ##############################################################################
-            self.rjb_hs_pcztk_sam = rjb_hs_pocz + self.adres_maszyny
+            self.rjb_hs_pcztk_sam = rjb_hs_pocz + self.adres_auth
             ##############################################################################
         self.rjb_hs_pcztk_slsh = self.rjb_hs_pcztk_sam + lk_kw.rjb_sam_slsh
         self.url_kotw_a_ica = url_ameryka_http + self.adres_maszyny
@@ -158,7 +158,7 @@ class TestConstantStrings(unittest.TestCase):
             ##############################################################################
         else:
             ##############################################################################
-            self.assertEqual(obk.rjb_hs_pcztk_sam, 'https://media.ciri.pl')
+            self.assertEqual(obk.rjb_hs_pcztk_sam, 'https://auth.ciri.pl')
             ##############################################################################
         if rq_kw.DocelowoElastycznyHostname:
             ##############################################################################
@@ -166,7 +166,7 @@ class TestConstantStrings(unittest.TestCase):
             ##############################################################################
         else:
             ##############################################################################
-            self.assertEqual(obk.rjb_hs_pcztk_slsh, 'https://media.ciri.pl/')
+            self.assertEqual(obk.rjb_hs_pcztk_slsh, 'https://auth.ciri.pl/')
             ##############################################################################
         self.assertEqual(obk.url_kotw_b_ica, 'http://media.ciri.pl/')
         self.assertEqual(konto_uzytkownika, 'kwadrat')
