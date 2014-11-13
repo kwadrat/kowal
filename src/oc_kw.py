@@ -142,14 +142,7 @@ class TestConstantStrings(unittest.TestCase):
             ##############################################################################
         self.assertEqual(obk.url_kotw_a_ica, 'http://work.ciri.pl')
         self.assertEqual(obk.rjb_hs_pcztk_sam, 'https://auth.ciri.pl')
-        if rq_kw.DocelowoElastycznyHostname:
-            ##############################################################################
-            self.assertEqual(obk.rjb_hs_pcztk_slsh, 'https://auth.ciri.pl/')
-            ##############################################################################
-        else:
-            ##############################################################################
-            self.assertEqual(obk.rjb_hs_pcztk_slsh, 'https://auth.ciri.pl/')
-            ##############################################################################
+        self.assertEqual(obk.rjb_hs_pcztk_slsh, 'https://auth.ciri.pl/')
         self.assertEqual(obk.url_kotw_b_ica, 'http://work.ciri.pl/')
         self.assertEqual(konto_uzytkownika, 'kwadrat')
         self.assertEqual(rjb_fg_tld_a_apl, '~kwadrat')
