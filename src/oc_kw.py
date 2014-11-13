@@ -56,6 +56,7 @@ class CoreResolver(object):
         self.url_kotw_a_ica = url_ameryka_http + self.adres_maszyny
         self.url_kotw_b_ica = self.url_kotw_a_ica + lk_kw.rjb_sam_slsh
         self.rjb_sciezka_kw = self.url_kotw_b_ica + rjb_fg_tld_a_apl
+        self.rjb_sciezka_a_kw = self.rjb_sciezka_kw + lk_kw.rjb_sam_slsh
 
 if rq_kw.WersjaUbuntuRun:
     ##############################################################################
@@ -86,9 +87,8 @@ rjb_fg_tld_b_apl = lk_kw.rjb_sam_slsh + rjb_sama_tylda + konto_uzytkownika
 rjb_kt_dom_uzt = rjb_pocz_hm_dir + konto_uzytkownika
 rjb_wsp_cr_md = rjb_kt_dom_uzt + '/ciri/media/'
 rjb_ph_uztk = rjb_kt_dom_uzt + rjb_do_pbl_ht + lk_kw.rjb_sam_slsh
-rjb_sciezka_a_kw = core_resolver.rjb_sciezka_kw + lk_kw.rjb_sam_slsh
 GenPicDir = 'gen_kowal/'
-poczatek_gen = rjb_sciezka_a_kw + GenPicDir
+poczatek_gen = core_resolver.rjb_sciezka_a_kw + GenPicDir
 SciezkaPlikow = rjb_ph_uztk + GenPicDir
 EYK_lporz_fktr = 'lp_faktury'
 rjb_kwl_sam = 'kowal'
@@ -183,7 +183,7 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(rjb_wsp_cr_md, '/home/kwadrat/ciri/media/')
         self.assertEqual(rjb_ph_uztk, '/home/kwadrat/public_html/')
         self.assertEqual(core_resolver.rjb_sciezka_kw, 'http://media.ciri.pl/~kwadrat')
-        self.assertEqual(rjb_sciezka_a_kw, 'http://media.ciri.pl/~kwadrat/')
+        self.assertEqual(core_resolver.rjb_sciezka_a_kw, 'http://media.ciri.pl/~kwadrat/')
         self.assertEqual(GenPicDir, 'gen_kowal/')
         self.assertEqual(poczatek_gen, 'http://media.ciri.pl/~kwadrat/gen_kowal/')
         self.assertEqual(SciezkaPlikow, '/home/kwadrat/public_html/gen_kowal/')
