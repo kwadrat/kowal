@@ -161,7 +161,7 @@ class TestConstantStrings(unittest.TestCase):
             ##############################################################################
         if rq_kw.DocelowoElastycznyHostname:
             ##############################################################################
-            self.assertEqual(obk.rjb_hs_pcztk_sam, 'https://havn.ciri.pl')
+            self.assertEqual(obk.rjb_hs_pcztk_sam, 'https://auth.ciri.pl')
             ##############################################################################
         else:
             ##############################################################################
@@ -169,7 +169,7 @@ class TestConstantStrings(unittest.TestCase):
             ##############################################################################
         if rq_kw.DocelowoElastycznyHostname:
             ##############################################################################
-            self.assertEqual(obk.rjb_hs_pcztk_slsh, 'https://havn.ciri.pl/')
+            self.assertEqual(obk.rjb_hs_pcztk_slsh, 'https://auth.ciri.pl/')
             ##############################################################################
         else:
             ##############################################################################
