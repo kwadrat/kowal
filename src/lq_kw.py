@@ -18,22 +18,6 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-def allowed_replacement(old_value, new_value):
-    if old_value is None:
-        result = 1
-    elif old_value == new_value:
-        result = 1
-    elif old_value == lm_kw.wartosc_zero_globalna:
-        result = 1
-    elif (
-            lm_kw.have_dec_type(old_value) and
-            new_value is not None and
-            lm_kw.point_three.rough_replacement(old_value, new_value)):
-        result = 1
-    else:
-        result = 0
-    return result
-
 def cnt_none(elements):
     return len(filter(lambda x: x is None, elements))
 
@@ -64,12 +48,31 @@ class SampleRow(object):
         self.sample_key = None
         self.list_of_samples = [None] * cnt_per_day
 
+    def allowed_replacement(self, old_value, new_value):
+        '''
+        SampleRow:
+        '''
+        if old_value is None:
+            result = 1
+        elif old_value == new_value:
+            result = 1
+        elif old_value == lm_kw.wartosc_zero_globalna:
+            result = 1
+        elif (
+                lm_kw.have_dec_type(old_value) and
+                new_value is not None and
+                lm_kw.point_three.rough_replacement(old_value, new_value)):
+            result = 1
+        else:
+            result = 0
+        return result
+
     def update_for_index(self, sample_index, value, dst_allow, row_date):
         '''
         SampleRow:
         '''
         old_value = self.list_of_samples[sample_index]
-        if allowed_replacement(old_value, value) or dst_allow:
+        if self.allowed_replacement(old_value, value) or dst_allow:
             self.list_of_samples[sample_index] = value
         else:
             raise RuntimeError('row_date: %s, old_value: %s value: %s' % (
@@ -108,13 +111,14 @@ class TestRowChanges(unittest.TestCase):
         '''
         TestRowChanges:
         '''
-        self.assertEqual(allowed_replacement(None, None), 1)
-        self.assertEqual(allowed_replacement(7, None), 0)
-        self.assertEqual(allowed_replacement(7, 7), 1)
-        self.assertEqual(allowed_replacement(lm_kw.a2d('5.4200'), 5.42), 1)
-        self.assertEqual(allowed_replacement(lm_kw.a2d('5.4568'), 5.456799999952317), 1)
-        self.assertEqual(allowed_replacement(lm_kw.a2d('5.4200'), None), 0)
-        self.assertEqual(allowed_replacement(lm_kw.a2d('0.0000'), 5.42), 1)
+        obk = SampleRow()
+        self.assertEqual(obk.allowed_replacement(None, None), 1)
+        self.assertEqual(obk.allowed_replacement(7, None), 0)
+        self.assertEqual(obk.allowed_replacement(7, 7), 1)
+        self.assertEqual(obk.allowed_replacement(lm_kw.a2d('5.4200'), 5.42), 1)
+        self.assertEqual(obk.allowed_replacement(lm_kw.a2d('5.4568'), 5.456799999952317), 1)
+        self.assertEqual(obk.allowed_replacement(lm_kw.a2d('5.4200'), None), 0)
+        self.assertEqual(obk.allowed_replacement(lm_kw.a2d('0.0000'), 5.42), 1)
         self.assertEqual(cnt_none([]), 0)
         self.assertEqual(cnt_none([None]), 1)
         self.assertEqual(cnt_none([1]), 0)
