@@ -112,7 +112,8 @@ class TestRowChanges(unittest.TestCase):
         '''
         TestRowChanges:
         '''
-        obk = SampleRow(None)
+        point_three = lm_kw.CloseToValue(places=3)
+        obk = SampleRow(point_three)
         self.assertEqual(obk.allowed_replacement(None, None), 1)
         self.assertEqual(obk.allowed_replacement(7, None), 0)
         self.assertEqual(obk.allowed_replacement(7, 7), 1)
