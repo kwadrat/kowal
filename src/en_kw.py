@@ -37,6 +37,11 @@ def odkoduj_z_napisu(napis):
     slownik = pobierz_z_napisu(a)
     return slownik
 
+def upgrade_to_u8(value):
+    if text_not_unicode(value):
+        value = utf_to_unicode(value)
+    return value
+
 class TestEncoding(unittest.TestCase):
     '''
     Testowanie funkcji zmieniających kodowanie napisów
@@ -52,3 +57,5 @@ class TestEncoding(unittest.TestCase):
         self.assertEqual(text_not_unicode(1), 0)
         self.assertEqual(text_not_unicode('a'), 1)
         self.assertEqual(text_not_unicode(u'a'), 0)
+        self.assertEqual(upgrade_to_u8('ć'), u'ć')
+        self.assertEqual(upgrade_to_u8(u'ą'), u'ą')
