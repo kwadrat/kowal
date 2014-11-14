@@ -40,7 +40,7 @@ def odkoduj_z_napisu(napis):
     slownik = pobierz_z_napisu(a)
     return slownik
 
-def upgrade_to_u8(value):
+def upgrade_to_unicode(value):
     if text_not_unicode(value):
         value = win_cp_to_unicode(value)
     return value
@@ -61,5 +61,5 @@ class TestEncoding(unittest.TestCase):
         self.assertEqual(text_not_unicode(1), 0)
         self.assertEqual(text_not_unicode('a'), 1)
         self.assertEqual(text_not_unicode(u'a'), 0)
-        self.assertEqual(upgrade_to_u8('\xb9\x9c\x9f'), u'ąśź')
-        self.assertEqual(upgrade_to_u8(u'ą'), u'ą')
+        self.assertEqual(upgrade_to_unicode('\xb9\x9c\x9f'), u'ąśź')
+        self.assertEqual(upgrade_to_unicode(u'ą'), u'ą')
