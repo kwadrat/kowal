@@ -4,6 +4,19 @@
 import datetime
 import unittest
 
+NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import en_kw
+'''.splitlines()]
+
+for i in NazwyModulow:
+    if i == __name__.split('.')[-1]:
+        raise RuntimeError('Modul laduje sam siebie?: %s' % repr(i))
+    else:
+        if i in globals():
+            exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
+        else:
+            exec 'import %(modul)s' % dict(modul = i)
+
 day_zero = (0, 0, 0)
 midnight_hour_wrap = {24: 0}
 midnight_quarter_wrap = {96: 0}
@@ -11,6 +24,10 @@ midnight_quarter_wrap = {96: 0}
 def verify_for_equal(tmp_value, expected):
     if tmp_value != expected:
         raise RuntimeError('tmp_value = %s expected = %s' % (repr(tmp_value), repr(expected)))
+
+def verify_for_u8_equal(tmp_value, expected):
+    tmp_value = en_kw.upgrade_to_unicode(tmp_value)
+    verify_for_equal(tmp_value, expected)
 
 def verify_for_2_equal(tmp_value, ls_expected):
     if tmp_value not in ls_expected:
