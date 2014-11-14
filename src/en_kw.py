@@ -8,6 +8,9 @@ import pickle
 import binascii
 import unittest
 
+def text_not_unicode(value):
+    return isinstance(value, str)
+
 def utf_to_unicode(napis_utf):
     return napis_utf.decode('utf-8')
 
@@ -46,3 +49,6 @@ class TestEncoding(unittest.TestCase):
         self.assertEqual(utf_to_unicode('ąćęłńóśżźĄĆĘŁŃÓŚŻŹ'), u'ąćęłńóśżźĄĆĘŁŃÓŚŻŹ')
         self.assertEqual(unicode_to_utf(u'ąćęłńóśżźĄĆĘŁŃÓŚŻŹ'), 'ąćęłńóśżźĄĆĘŁŃÓŚŻŹ')
         self.assertEqual(win_cp_to_utf('\xb9\x9c\x9f'), 'ąśź')
+        self.assertEqual(text_not_unicode(1), 0)
+        self.assertEqual(text_not_unicode('a'), 1)
+        self.assertEqual(text_not_unicode(u'a'), 0)
