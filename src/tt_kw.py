@@ -49,6 +49,12 @@ class CommonReader(CommonRdWr):
         result = self.internal_rows.get(local_key)
         return result
 
+    def new_row(self):
+        '''
+        CommonReader:
+        '''
+        return lq_kw.SampleRow()
+
     def prepare_new_empty_row(self, key_object, row_date):
         '''
         CommonReader:
