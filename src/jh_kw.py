@@ -29,8 +29,8 @@ class PowerReader(CommonReader):
         PowerReader:
         '''
         period_server = jj_kw.QuarterServer()
-        rough_point = lm_kw.CloseToValue(places=1)
-        CommonReader.__init__(self, lw_kw.Dm_Power, period_server, rough_point)
+        point_one = lm_kw.CloseToValue(places=1)
+        CommonReader.__init__(self, lw_kw.Dm_Power, period_server, point_one)
 
     def delta_for_csv(self):
         '''
