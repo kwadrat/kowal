@@ -3,7 +3,7 @@
 
 '''
 Prostokąt do narysowania na wykresie słupkowym, z możliwością zaznaczenia
-przekroczenie mocy (moc pobrana jest większa niż moc zamówiona)
+przekroczenia mocy (moc pobrana jest większa niż moc zamówiona)
 '''
 
 class ProstokatDoRysowania(object):
