@@ -42,7 +42,7 @@ def odkoduj_z_napisu(napis):
 
 def upgrade_to_u8(value):
     if text_not_unicode(value):
-        value = utf_to_unicode(value)
+        value = win_cp_to_unicode(value)
     return value
 
 class TestEncoding(unittest.TestCase):
@@ -61,5 +61,5 @@ class TestEncoding(unittest.TestCase):
         self.assertEqual(text_not_unicode(1), 0)
         self.assertEqual(text_not_unicode('a'), 1)
         self.assertEqual(text_not_unicode(u'a'), 0)
-        self.assertEqual(upgrade_to_u8('ć'), u'ć')
+        self.assertEqual(upgrade_to_u8('\xb9\x9c\x9f'), u'ąśź')
         self.assertEqual(upgrade_to_u8(u'ą'), u'ą')
