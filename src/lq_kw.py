@@ -34,12 +34,13 @@ def obtain_stats(krt_vl_fnctn, list_of_samples):
     return v_none, v_zero, v_sum
 
 class SampleRow(object):
-    def __init__(self):
+    def __init__(self, rough_point):
         '''
         SampleRow:
         '''
         self.sample_key = None
         self.list_of_samples = None
+        self.rough_point = rough_point
 
     def new_and_empty(self, cnt_per_day):
         '''
@@ -111,7 +112,7 @@ class TestRowChanges(unittest.TestCase):
         '''
         TestRowChanges:
         '''
-        obk = SampleRow()
+        obk = SampleRow(None)
         self.assertEqual(obk.allowed_replacement(None, None), 1)
         self.assertEqual(obk.allowed_replacement(7, None), 0)
         self.assertEqual(obk.allowed_replacement(7, 7), 1)

@@ -54,7 +54,7 @@ class CommonReader(CommonRdWr):
         '''
         CommonReader:
         '''
-        return lq_kw.SampleRow()
+        return lq_kw.SampleRow(self.rough_point)
 
     def prepare_new_empty_row(self, key_object, row_date):
         '''
