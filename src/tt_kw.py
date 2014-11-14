@@ -151,7 +151,7 @@ class CommonReader(CommonRdWr):
         '''
         tmp_text = self.vx_peek(lb_col, my_row, col_delta=col_delta)
         if exp_second is None:
-            lp_kw.verify_for_equal(tmp_text, expected)
+            lp_kw.verify_for_u8_equal(tmp_text, expected)
         else:
             lp_kw.verify_for_2_equal(tmp_text, [expected, exp_second])
 
