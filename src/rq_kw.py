@@ -20,7 +20,6 @@ zst_wysyla_energie_na_prod = 0
 
 WersjaUbuntuTest = 0
 WersjaUbuntuRun = WersjaUbuntuTest and 0
-DocelowoElastycznyHostname = 1
 
 RokBazowyRaportuEnergii = 2010
 RokPocz2 = 2004
