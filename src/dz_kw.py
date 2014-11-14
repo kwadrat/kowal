@@ -94,6 +94,20 @@ wzor_day_csv = re.compile(r'''
 $
 ''', re.VERBOSE)
 
+wzor_day_full = re.compile(r'''
+^
+(?P<month>\d{1,2})
+/
+(?P<day>\d{1,2})
+/
+(?P<year>\d{4})
+\s
+(?P<hour>\d{1,2})
+:
+(?P<minute>\d{2})
+$
+''', re.VERBOSE)
+
 def wyciagnij_date_z_formatu_dmr(napis):
     res = wzor_data_dzien_miesiac_rok.search(napis)
     if res:
@@ -114,6 +128,14 @@ def extract_csv_day(napis):
     res = wzor_day_csv.search(napis)
     if res:
         wynik = map(int, (res.group('year', 'month', 'day')))
+    else:
+        wynik = None
+    return wynik
+
+def extract_csv_full(napis):
+    res = wzor_day_full.search(napis)
+    if res:
+        wynik = map(int, (res.group('year', 'month', 'day', 'hour', 'minute')))
     else:
         wynik = None
     return wynik
@@ -194,3 +216,4 @@ class TestRozpoznawania(unittest.TestCase):
         '''
         self.assertEqual(extract_csv_hour('1:00'), [1, 0])
         self.assertEqual(extract_csv_day('2006-04-24'), [2006, 4, 24])
+        self.assertEqual(extract_csv_full('7/31/2013 22:16'), [2013, 7, 31, 22, 16])
