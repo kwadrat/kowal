@@ -62,7 +62,7 @@ class SampleRow(object):
         elif (
                 lm_kw.have_dec_type(old_value) and
                 new_value is not None and
-                lm_kw.point_three.rough_replacement(old_value, new_value)):
+                self.rough_point.rough_replacement(old_value, new_value)):
             result = 1
         else:
             result = 0

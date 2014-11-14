@@ -108,8 +108,6 @@ class CloseToValue(object):
             new_value = str(new_value)
         return abs(old_value - a2d(new_value)) <= self.epsilon
 
-point_three = CloseToValue(places=3)
-
 class TestPointNumbers(unittest.TestCase):
     def test_point_numbers(self):
         '''
