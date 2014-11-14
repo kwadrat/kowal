@@ -33,6 +33,12 @@ def obtain_stats(krt_vl_fnctn, list_of_samples):
     v_sum = sum_of_not_nones(krt_vl_fnctn, list_of_samples)
     return v_none, v_zero, v_sum
 
+def update_mismatch(statement):
+    if 1:
+        raise RuntimeError(statement)
+    else:
+        print statement
+
 class SampleRow(object):
     def __init__(self, rough_point):
         '''
@@ -76,11 +82,12 @@ class SampleRow(object):
         if self.allowed_replacement(old_value, value) or dst_allow:
             self.list_of_samples[sample_index] = value
         else:
-            raise RuntimeError('row_date: %s, old_value: %s value: %s' % (
-            repr(row_date),
-            repr(old_value),
-            repr(value),
-            ))
+            statement = ('row_date: %s, old_value: %s value: %s' % (
+                repr(row_date),
+                repr(old_value),
+                repr(value),
+                ))
+            update_mismatch(statement)
 
     def fill_from_data(self, sample_key, sample_data):
         '''
