@@ -28,13 +28,17 @@ class TxtXlrd(object):
         TxtXlrd:
         '''
         result = None
-        date_ymr = dz_kw.extract_csv_day(value)
-        if date_ymr is not None:
-            result = tuple(date_ymr + [0, 0, 0])
+        date_full = dz_kw.extract_csv_full(value)
+        if date_full is not None:
+            result = tuple(date_full + [0])
         else:
-            hour_minute = dz_kw.extract_csv_hour(value)
-            if hour_minute is not None:
-                result = tuple([0, 0, 0] + hour_minute + [0])
+            date_ymr = dz_kw.extract_csv_day(value)
+            if date_ymr is not None:
+                result = tuple(date_ymr + [0, 0, 0])
+            else:
+                hour_minute = dz_kw.extract_csv_hour(value)
+                if hour_minute is not None:
+                    result = tuple([0, 0, 0] + hour_minute + [0])
         return result
 
     def open_workbook(self, single_file):
@@ -58,3 +62,6 @@ class TestXlrdInText(unittest.TestCase):
         value = '2014-06-01'
         odp = obk.xldate_as_tuple(value, None)
         self.assertEqual(odp, (2014, 6, 1, 0, 0, 0))
+        value = '6/30/2014 23:45'
+        odp = obk.xldate_as_tuple(value, None)
+        self.assertEqual(odp, (2014, 6, 30, 23, 45, 0))
