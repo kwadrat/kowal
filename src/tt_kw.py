@@ -60,7 +60,7 @@ class CommonReader(CommonRdWr):
         CommonReader:
         '''
         local_key = (key_object, row_date)
-        my_sample_row = lq_kw.SampleRow()
+        my_sample_row = self.new_row()
         my_sample_row.new_and_empty(self.krt_pobor.krt_wymiar)
         self.internal_rows[local_key] = my_sample_row
 
@@ -88,7 +88,7 @@ class CommonReader(CommonRdWr):
         tmp_date = lp_kw.rj_na_date(tmp_date)
         lp_kw.verify_for_equal(tmp_object, key_object)
         lp_kw.verify_for_equal(tmp_date, row_date)
-        my_sample_row = lq_kw.SampleRow()
+        my_sample_row = self.new_row()
         my_sample_row.fill_from_data(sample_key, tmp_samples)
         self.internal_rows[local_key] = my_sample_row
 
@@ -194,7 +194,7 @@ class CommonReader(CommonRdWr):
         for one_result in self.all_results:
             sample_key = one_result[lc_kw.fq_k_sample_qv]
             tmp_samples = one_result[lc_kw.fq_m_samples_qv]
-            my_sample_row = lq_kw.SampleRow()
+            my_sample_row = self.new_row()
             my_sample_row.fill_from_data(sample_key, tmp_samples)
             my_sample_row.make_stats_of_samples(
                 dfb, self.krt_pobor, self.table_of_samples, sample_key)
