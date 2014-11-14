@@ -33,13 +33,14 @@ def normalize_value(before):
 CommonRdWr = tq_kw.CommonRdWr
 
 class CommonReader(CommonRdWr):
-    def __init__(self, tvk_pobor, period_server):
+    def __init__(self, tvk_pobor, period_server, rough_point):
         '''
         CommonReader:
         '''
         CommonRdWr.__init__(self, tvk_pobor, period_server)
         self.vx_zero = fv_kw.vx_zero
         self.internal_rows = {}
+        self.rough_point = rough_point
 
     def locate_this_row(self, key_object, row_date):
         '''

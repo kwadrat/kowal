@@ -4,6 +4,7 @@
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import lm_kw
 import lp_kw
 import jj_kw
 import lw_kw
@@ -28,7 +29,8 @@ class PowerReader(CommonReader):
         PowerReader:
         '''
         period_server = jj_kw.QuarterServer()
-        CommonReader.__init__(self, lw_kw.Dm_Power, period_server)
+        rough_point = lm_kw.CloseToValue(places=3)
+        CommonReader.__init__(self, lw_kw.Dm_Power, period_server, rough_point)
 
     def delta_for_csv(self):
         '''

@@ -35,7 +35,8 @@ class EnergyReader(CommonReader):
         self.tel_delta = 1 # Jest jedna pusta linia na początku XLS
         self.extra_dst_column = 0
         period_server = jl_kw.HourServer()
-        CommonReader.__init__(self, lw_kw.Dm_Energy, period_server)
+        rough_point = lm_kw.CloseToValue(places=1)
+        CommonReader.__init__(self, lw_kw.Dm_Energy, period_server, rough_point)
         self.start_energy_col = self.vx_letter_num('B')
 
     def delta_for_csv(self):
