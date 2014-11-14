@@ -159,13 +159,7 @@ class EnergyReader(CommonReader):
             if autumn_dst_date and sample_index == 1:
                 value_a = self.simple_energy_read(single_row, sample_index)
                 value_b = self.simple_energy_read(single_row, sample_index + 1)
-                if isinstance(value_a, str) and isinstance(value_b, str):
-                    txt_a = float(value_a)
-                    txt_b = float(value_b)
-                    flt_together = txt_a + txt_b
-                    value = str(flt_together)
-                else:
-                    value = value_a + value_b
+                value = txt_sumator(value_a, value_b)
             else:
                 if sample_index == 1:
                     empty_value = self.simple_energy_read(single_row, sample_index + 1)
