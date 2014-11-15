@@ -46,6 +46,13 @@ def analyze_excel_files(dfb, worker_class, filenames):
         obk.analyze_this_file(xlrd, single_file)
         obk.analyze_data_in_grid(dfb)
 
+def info_excel_files(dfb, worker_class, filenames):
+    xlrd = new_module_for_reading_spreadsheet()
+    for single_file in filenames:
+        print single_file
+        obk = worker_class()
+        print 'Nothing yet'
+
 def calculate_style(style):
     dc_style = {}
     if style is not None:
