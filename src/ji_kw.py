@@ -309,7 +309,7 @@ class Test_Reader_of_Energy(unittest.TestCase):
         obk = AugmentedEnReader()
         xlrd = jq_kw.Pseudo_XLRD()
         single_file = None
-        obk.analyze_this_file(xlrd, single_file)
+        obk.attach_to_file(xlrd, single_file)
         obk.fill_a_case()
         under_name = obk.detect_energy_sheet_header()
 
@@ -320,7 +320,7 @@ class Test_Reader_of_Energy(unittest.TestCase):
         obk = AugmentedEnReader()
         xlrd = jq_kw.Pseudo_XLRD()
         single_file = None
-        obk.analyze_this_file(xlrd, single_file)
+        obk.attach_to_file(xlrd, single_file)
         wzor = 'abc'
         obk.vx_poke('N', 2, wzor)
         self.assertEqual(obk.vx_peek('N', 2), wzor)
@@ -333,7 +333,7 @@ class Test_Reader_of_Energy(unittest.TestCase):
         obk = AugmentedEnReader()
         xlrd = jq_kw.Pseudo_XLRD()
         single_file = None
-        obk.analyze_this_file(xlrd, single_file)
+        obk.attach_to_file(xlrd, single_file)
         obk.fill_b_case()
         under_name = obk.detect_energy_sheet_header()
 

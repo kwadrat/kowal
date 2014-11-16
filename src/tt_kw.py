@@ -162,7 +162,7 @@ class CommonReader(CommonRdWr):
         else:
             lp_kw.verify_for_2_equal(tmp_text, [expected, exp_second])
 
-    def analyze_this_file(self, xlrd, single_file):
+    def attach_to_file(self, xlrd, single_file):
         '''
         CommonReader:
         '''
