@@ -117,7 +117,7 @@ class PowerReader(CommonReader):
             duo_date = self.vx_th_date('B', single_row)
             self.fetch_power_field(dfb, key_object, single_row, duo_date)
 
-    def analyze_data_in_grid(self, dfb):
+    def analyze_data_in_grid(self, dfb, single_file):
         '''
         PowerReader:
         '''

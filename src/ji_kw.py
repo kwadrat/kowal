@@ -199,7 +199,7 @@ class EnergyReader(CommonReader):
             for sample_index in xrange(24):
                 self.fetch_energy_field(key_object, single_row, row_date, autumn_dst_date, sample_index)
 
-    def analyze_data_in_grid(self, dfb):
+    def analyze_data_in_grid(self, dfb, single_file):
         '''
         EnergyReader:
         '''
