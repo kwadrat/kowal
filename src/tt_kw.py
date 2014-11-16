@@ -189,6 +189,14 @@ class CommonReader(CommonRdWr):
             else:
                 raise RuntimeError('numer_of_sheets = %d' % numer_of_sheets)
 
+    def display_info_file(self, under_name, my_rows, single_file):
+        '''
+        CommonReader:
+        '''
+        date_first = self.date_from_row(my_rows[0])
+        date_last = self.date_from_row(my_rows[-1])
+        print under_name, date_first, date_last, single_file
+
     def info_this_file(self, single_file):
         '''
         CommonReader:
