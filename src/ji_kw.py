@@ -206,6 +206,7 @@ class EnergyReader(CommonReader):
         under_name = self.detect_sheet_header()
         key_object = tq_kw.locate_object_key(dfb, under_name)
         data_rows = self.detect_data_rows()
+        self.display_info_file(under_name, data_rows, single_file)
         self.enter_energy_data(dfb, key_object, data_rows)
         self.store_rows_in_db(dfb)
 

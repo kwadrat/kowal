@@ -41,7 +41,6 @@ def check_module_dependencies_linux():
 def analyze_excel_files(dfb, worker_class, filenames):
     xlrd = new_module_for_reading_spreadsheet()
     for single_file in filenames:
-        print single_file
         obk = worker_class()
         obk.attach_to_file(xlrd, single_file)
         obk.analyze_data_in_grid(dfb, single_file)
