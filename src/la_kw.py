@@ -50,7 +50,8 @@ def info_excel_files(dfb, worker_class, filenames):
     xlrd = new_module_for_reading_spreadsheet()
     for single_file in filenames:
         obk = worker_class()
-        obk.info_this_file(xlrd, single_file)
+        obk.attach_to_file(xlrd, single_file)
+        obk.info_this_file(single_file)
 
 def calculate_style(style):
     dc_style = {}

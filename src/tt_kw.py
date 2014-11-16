@@ -180,7 +180,7 @@ class CommonReader(CommonRdWr):
             else:
                 raise RuntimeError('numer_of_sheets = %d' % numer_of_sheets)
 
-    def info_this_file(self, xlrd, single_file):
+    def info_this_file(self, single_file):
         '''
         CommonReader:
         '''
