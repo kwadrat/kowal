@@ -150,17 +150,8 @@ class EnergyReader(CommonReader):
         '''
         if self.extra_dst_column:
             if autumn_dst_date and sample_index == 1:
-                if 0:
-                    ##############################################################################
-                    value = self.simple_energy_read(single_row, sample_index)
-                    value += self.simple_energy_read(single_row, sample_index + 1)
-                    ##############################################################################
-                else:
-                    ##############################################################################
-                    value_a = self.simple_energy_read(single_row, sample_index)
-                    value_b = self.simple_energy_read(single_row, sample_index + 1)
-                    value = txt_sumator(value_a, value_b)
-                    ##############################################################################
+                value = self.simple_energy_read(single_row, sample_index)
+                value += self.simple_energy_read(single_row, sample_index + 1)
             else:
                 if sample_index == 1:
                     empty_value = self.simple_energy_read(single_row, sample_index + 1)
