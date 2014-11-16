@@ -180,6 +180,12 @@ class CommonReader(CommonRdWr):
             else:
                 raise RuntimeError('numer_of_sheets = %d' % numer_of_sheets)
 
+    def info_this_file(self, xlrd, single_file):
+        '''
+        CommonReader:
+        '''
+        print 'Nothing yet', single_file
+
     def store_rows_in_db(self, dfb):
         '''
         CommonReader:

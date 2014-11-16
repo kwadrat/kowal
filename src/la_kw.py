@@ -49,9 +49,8 @@ def analyze_excel_files(dfb, worker_class, filenames):
 def info_excel_files(dfb, worker_class, filenames):
     xlrd = new_module_for_reading_spreadsheet()
     for single_file in filenames:
-        print single_file
         obk = worker_class()
-        print 'Nothing yet'
+        obk.info_this_file(xlrd, single_file)
 
 def calculate_style(style):
     dc_style = {}
