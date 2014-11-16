@@ -37,10 +37,19 @@ class CommonReader(CommonRdWr):
         '''
         CommonReader:
         '''
+        self.is_csv = 0 # Dla pliku XLS
+        self.tel_delta = 1 # Jest jedna pusta linia na początku XLS
         CommonRdWr.__init__(self, tvk_pobor, period_server)
         self.vx_zero = fv_kw.vx_zero
         self.internal_rows = {}
         self.rough_point = rough_point
+
+    def delta_for_csv(self):
+        '''
+        CommonReader:
+        '''
+        self.is_csv = 1 # Dla pliku CSV/TXT
+        self.tel_delta = 0 # Nie ma pustych linii na początku
 
     def locate_this_row(self, key_object, row_date):
         '''
