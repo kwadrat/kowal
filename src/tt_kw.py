@@ -185,7 +185,10 @@ class CommonReader(CommonRdWr):
         CommonReader:
         '''
         under_name = self.detect_sheet_header()
-        print under_name, 'Nothing yet', single_file
+        my_rows = self.detect_data_rows()
+        date_first = self.date_from_row(my_rows[0])
+        date_last = self.date_from_row(my_rows[-1])
+        print under_name, date_first, date_last, single_file
 
     def store_rows_in_db(self, dfb):
         '''
