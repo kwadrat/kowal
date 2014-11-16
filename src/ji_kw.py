@@ -116,7 +116,7 @@ class EnergyReader(CommonReader):
             lb_col, my_row, expected, exp_second=exp_second,
             col_delta=self.extra_dst_column)
 
-    def detect_energy_sheet_header(self):
+    def detect_sheet_header(self):
         '''
         EnergyReader:
         '''
@@ -198,7 +198,7 @@ class EnergyReader(CommonReader):
         '''
         EnergyReader:
         '''
-        under_name = self.detect_energy_sheet_header()
+        under_name = self.detect_sheet_header()
         key_object = tq_kw.locate_object_key(dfb, under_name)
         data_rows = self.detect_energy_data_rows()
         self.enter_energy_data(dfb, key_object, data_rows)
@@ -311,7 +311,7 @@ class Test_Reader_of_Energy(unittest.TestCase):
         single_file = None
         obk.attach_to_file(xlrd, single_file)
         obk.fill_a_case()
-        under_name = obk.detect_energy_sheet_header()
+        under_name = obk.detect_sheet_header()
 
     def test_energy_2_reader(self):
         '''
@@ -335,7 +335,7 @@ class Test_Reader_of_Energy(unittest.TestCase):
         single_file = None
         obk.attach_to_file(xlrd, single_file)
         obk.fill_b_case()
-        under_name = obk.detect_energy_sheet_header()
+        under_name = obk.detect_sheet_header()
 
     def test_energy_4_reader(self):
         '''

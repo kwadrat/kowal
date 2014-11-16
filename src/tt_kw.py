@@ -184,7 +184,8 @@ class CommonReader(CommonRdWr):
         '''
         CommonReader:
         '''
-        print 'Nothing yet', single_file
+        under_name = self.detect_sheet_header()
+        print under_name, 'Nothing yet', single_file
 
     def store_rows_in_db(self, dfb):
         '''

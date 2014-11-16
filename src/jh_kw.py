@@ -55,7 +55,7 @@ class PowerReader(CommonReader):
         else:
             raise RuntimeError('size = %d' % size)
 
-    def detect_power_sheet_header(self):
+    def detect_sheet_header(self):
         '''
         PowerReader:
         '''
@@ -111,7 +111,7 @@ class PowerReader(CommonReader):
         '''
         PowerReader:
         '''
-        under_name = self.detect_power_sheet_header()
+        under_name = self.detect_sheet_header()
         key_object = tq_kw.locate_object_key(dfb, under_name)
         data_rows = self.detect_power_data_rows()
         self.enter_power_data(dfb, key_object, data_rows)
