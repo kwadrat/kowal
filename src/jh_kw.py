@@ -104,6 +104,8 @@ class PowerReader(CommonReader):
         row_date, my_hour = duo_date
         self.prepare_local_copy_of_row(dfb, key_object, row_date)
         value = self.vx_peek('C', single_row)
+        if self.is_csv:
+            value = lm_kw.adjust_for_csv(value)
         quarter_number = self.period_server.quarter_to_number(my_hour)
         self.store_quarter_value_in_row(key_object, row_date, quarter_number, value)
 
