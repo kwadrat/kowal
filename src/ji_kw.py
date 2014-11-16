@@ -183,6 +183,13 @@ class EnergyReader(CommonReader):
 
         self.store_hour_value_in_row(key_object, row_date, sample_index, value)
 
+    def date_from_row(self, single_row):
+        '''
+        EnergyReader:
+        '''
+        row_date = self.vx_t_date('A', single_row)
+        return row_date
+
     def enter_energy_data(self, dfb, key_object, data_rows):
         '''
         EnergyReader:

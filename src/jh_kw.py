@@ -89,6 +89,14 @@ class PowerReader(CommonReader):
         dst_allow = self.period_server.dst_double_hour(row_date, sample_index)
         self.store_value_in_row(key_object, row_date, sample_index, value, dst_allow)
 
+    def date_from_row(self, single_row):
+        '''
+        PowerReader:
+        '''
+        duo_date = self.vx_th_date('B', single_row)
+        row_date, my_hour = duo_date
+        return row_date
+
     def fetch_power_field(self, dfb, key_object, single_row, duo_date):
         '''
         PowerReader:
