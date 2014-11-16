@@ -32,14 +32,6 @@ class PowerReader(CommonReader):
         point_one = lm_kw.CloseToValue(places=1)
         CommonReader.__init__(self, lw_kw.Dm_Power, period_server, point_one)
 
-    def delta_for_csv(self):
-        '''
-        PowerReader:
-        Tu nic nie robimy. Tylko dla energii była różnica,
-        że plik XLS miał dodatkowy pierwszy pusty wiersz (tel_delta=1),
-        a plik CSV nie miał tego wiersza (tel_delta=0).
-        '''
-
     def vx_th_date(self, lb_col, my_row):
         '''
         PowerReader:
