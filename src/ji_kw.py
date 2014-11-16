@@ -149,6 +149,8 @@ class EnergyReader(CommonReader):
         '''
         col_in_sheet = self.start_energy_col + sample_index
         value = self.vx_num_peek(col_in_sheet, single_row)
+        if self.is_csv:
+            value = lm_kw.adjust_for_csv(value)
         return value
 
     def energy_using_dst(self, single_row, sample_index, autumn_dst_date):
@@ -178,9 +180,6 @@ class EnergyReader(CommonReader):
         EnergyReader:
         '''
         value = self.energy_using_dst(single_row, sample_index, autumn_dst_date)
-        if self.is_csv:
-            value = lm_kw.adjust_for_csv(value)
-
         self.store_hour_value_in_row(key_object, row_date, sample_index, value)
 
     def date_from_row(self, single_row):
