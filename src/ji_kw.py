@@ -24,16 +24,6 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-def txt_sumator(value_a, value_b):
-    if isinstance(value_a, str) and isinstance(value_b, str):
-        txt_a = float(value_a)
-        txt_b = float(value_b)
-        flt_together = txt_a + txt_b
-        value = str(flt_together)
-    else:
-        value = value_a + value_b
-    return value
-
 CommonReader = tt_kw.CommonReader
 
 class EnergyReader(CommonReader):
@@ -353,10 +343,3 @@ class Test_Reader_of_Energy(unittest.TestCase):
         obk.delta_for_csv()
         self.assertEqual(obk.is_csv, 1)
         self.assertEqual(obk.tel_delta, 0)
-
-    def test_energy_5_reader(self):
-        '''
-        Test_Reader_of_Energy:
-        '''
-        self.assertEqual(txt_sumator(1.5, 2.5), 4.0)
-        self.assertEqual(txt_sumator('1.5', '2.5'), '4.0')
