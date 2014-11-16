@@ -39,6 +39,9 @@ def update_mismatch(statement):
     else:
         print statement
 
+def ignored_zero(value):
+    return value == 0.0
+
 class SampleRow(object):
     def __init__(self, rough_point):
         '''
@@ -81,6 +84,8 @@ class SampleRow(object):
         old_value = self.list_of_samples[sample_index]
         if self.allowed_replacement(old_value, value) or dst_allow:
             self.list_of_samples[sample_index] = value
+        elif ignored_zero(value):
+            pass
         else:
             statement = ('row_date: %s, old_value: %s value: %s' % (
                 repr(row_date),
