@@ -132,7 +132,7 @@ class EnergyReader(CommonReader):
         period_end = self.vx_delta_date('H', 2 + self.tel_delta)
         return under_name
 
-    def detect_energy_data_rows(self):
+    def detect_data_rows(self):
         '''
         EnergyReader:
         '''
@@ -200,7 +200,7 @@ class EnergyReader(CommonReader):
         '''
         under_name = self.detect_sheet_header()
         key_object = tq_kw.locate_object_key(dfb, under_name)
-        data_rows = self.detect_energy_data_rows()
+        data_rows = self.detect_data_rows()
         self.enter_energy_data(dfb, key_object, data_rows)
         self.store_rows_in_db(dfb)
 
