@@ -38,7 +38,7 @@ class CommonReader(CommonRdWr):
         CommonReader:
         '''
         self.is_csv = 0 # Dla pliku XLS
-        self.tel_delta = 1 # Jest jedna pusta linia na początku XLS
+        self.tel_delta = 1 # Jest jedna pusta linia na początku XLS dla energii
         CommonRdWr.__init__(self, tvk_pobor, period_server)
         self.vx_zero = fv_kw.vx_zero
         self.internal_rows = {}
