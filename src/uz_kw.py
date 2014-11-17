@@ -11,3 +11,8 @@ ldp_2_inst = """\
 <option value="12">a</option>
 </select>
 """
+ldp_3_inst = """\
+<select name="bc" class="selwyborca" onchange="this.form.submit();">
+<option value="45">de</option>
+</select>
+"""
