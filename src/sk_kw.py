@@ -117,3 +117,9 @@ class TestPodstSkrawka(unittest.TestCase):
         '''
         self.assertEqual(mam_pojedyn_wartosci([('a', 'opis A'), ('b', 'opis B')]), 0)
         self.assertEqual(mam_pojedyn_wartosci(('a', 'b')), 1)
+
+    def test_listy_wyboru(self):
+        '''
+        TestPodstSkrawka:
+        '''
+        self.assertEqual(ListWyboruOgolna(None, None, []), '')
