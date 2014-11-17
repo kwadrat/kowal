@@ -7,7 +7,10 @@ Klasa bazowa skrawka HTML
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import uz_kw
 import ze_kw
+import uy_kw
+import od_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -111,6 +114,7 @@ class Skrawek(object):
         return napis % (self.moje_pole, self.wartosc)
 
 class TestPodstSkrawka(unittest.TestCase):
+    tassertEqual = uy_kw.tassertEqual
     def test_podstawowego_skrawka(self):
         '''
         TestPodstSkrawka:
@@ -123,3 +127,5 @@ class TestPodstSkrawka(unittest.TestCase):
         TestPodstSkrawka:
         '''
         self.assertEqual(ListWyboruOgolna(None, None, []), '')
+        tgk = od_kw.PseudoTGK()
+        self.tassertEqual(ListWyboruOgolna(tgk, None, ['a']), uz_kw.ldp_1_inst)
