@@ -132,5 +132,6 @@ class TestPodstSkrawka(unittest.TestCase):
         self.tassertEqual(ListWyboruOgolna(tgk, None, [(12, 'a')]), uz_kw.ldp_2_inst)
         self.tassertEqual(ListWyboruOgolna(tgk, 'bc', [(45, 'de')]), uz_kw.ldp_3_inst)
         nazwa = 'efg'
-        tgk.qparam[nazwa] = 678
-        self.tassertEqual(ListWyboruOgolna(tgk, nazwa, [(678, 'hi')]), uz_kw.ldp_4_inst)
+        opcja = 678
+        tgk.qparam[nazwa] = opcja
+        self.tassertEqual(ListWyboruOgolna(tgk, nazwa, [(opcja, 'hi')]), uz_kw.ldp_4_inst)
