@@ -129,3 +129,4 @@ class TestPodstSkrawka(unittest.TestCase):
         self.assertEqual(ListWyboruOgolna(None, None, []), '')
         tgk = od_kw.PseudoTGK()
         self.tassertEqual(ListWyboruOgolna(tgk, None, ['a']), uz_kw.ldp_1_inst)
+        self.tassertEqual(ListWyboruOgolna(tgk, None, [(12, 'a')]), uz_kw.ldp_2_inst)
