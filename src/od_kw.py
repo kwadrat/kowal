@@ -22,3 +22,4 @@ class PseudoTGK(CommonTGK):
         PseudoTGK:
         '''
         CommonTGK.__init__(self)
+        self.qparam = {}
