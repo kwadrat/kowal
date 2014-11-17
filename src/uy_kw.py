@@ -15,6 +15,11 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+def tassertEqual(self, odp, wzor):
+    if odp != wzor:
+        dv_kw.zapisz_dla_diagnostyki(odp, wzor)
+    self.assertTrue(odp == wzor)
+
 def jdn_ogol_ltra(fnc_x, *args, **kwargs):
     lnc_x = ux_kw.LancOgolOgniw()
     fnc_x(lnc_x, *args, **kwargs)
