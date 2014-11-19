@@ -198,3 +198,4 @@ DocelowoPosrednikDokladnejLiczby = 0
 TymczasowoPokazWzory = 0
 TymczasowoTylkoWybranyArkusz = 1
 ProdukcyjnieDodajNaglowekMenu = 1
+DocelowoDualnyKanal = 0
