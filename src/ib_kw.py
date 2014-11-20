@@ -19,16 +19,16 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 class FieldDesc(object):
-    def __init__(self, moje_pole, fs_prefix):
+    def __init__(self, fs_core, fs_prefix):
         '''
         FieldDesc:
         '''
-        self.moje_pole = moje_pole
+        self.fs_core = fs_core
         self.fs_prefix = fs_prefix
         if self.fs_prefix is None:
-            self.official_name = self.moje_pole
+            self.official_name = self.fs_core
         else:
-            self.official_name = self.fs_prefix + self.moje_pole
+            self.official_name = self.fs_prefix + self.fs_core
 
 class TestMojegoPola(unittest.TestCase):
     def test_mojego_pola(self):
@@ -36,7 +36,7 @@ class TestMojegoPola(unittest.TestCase):
         TestMojegoPola:
         '''
         obk = FieldDesc('pole', 'przed_')
-        self.assertEqual(obk.moje_pole, 'pole')
+        self.assertEqual(obk.fs_core, 'pole')
         self.assertEqual(obk.fs_prefix, 'przed_')
         self.assertEqual(obk.official_name, 'przed_pole')
 
@@ -45,6 +45,6 @@ class TestMojegoPola(unittest.TestCase):
         TestMojegoPola:
         '''
         obk = FieldDesc('proste', None)
-        self.assertEqual(obk.moje_pole, 'proste')
+        self.assertEqual(obk.fs_core, 'proste')
         self.assertEqual(obk.fs_prefix, None)
         self.assertEqual(obk.official_name, 'proste')
