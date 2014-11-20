@@ -48,15 +48,12 @@ def ListWyboruOgolna(tgk, nazwa, lista):
     return ''.join(w)
 
 class Skrawek(object):
-    '''Klasa opisująca skrawek formularza:
-    wartosc - przechowywana wartość wyboru lub None (nic nie wybrano)
-    moje_pole - nazwa interesującego nas pola
+    '''Klasa opisująca skrawek formularza
     '''
 
     def __init__(self, fs_prefix=None):
         '''
         Skrawek:
-        Na początku nie mamy żadnej wartości
         '''
         self.fs_prefix = fs_prefix
         self.wartosc = None
