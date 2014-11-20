@@ -18,6 +18,8 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+AimToObjectFieldName = 0
+
 class FieldDesc(object):
     def __init__(self, fs_core, fs_prefix):
         '''
