@@ -2,6 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import ib_kw
 import rq_kw
 import sk_kw
 import ei_kw
