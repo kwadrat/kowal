@@ -44,7 +44,7 @@ class TestMojegoPola(unittest.TestCase):
         '''
         TestMojegoPola:
         '''
-        obk = FieldDesc('pole', None)
-        self.assertEqual(obk.moje_pole, 'pole')
+        obk = FieldDesc('proste', None)
+        self.assertEqual(obk.moje_pole, 'proste')
         self.assertEqual(obk.fs_prefix, None)
-        self.assertEqual(obk.official_name, 'pole')
+        self.assertEqual(obk.official_name, 'proste')
