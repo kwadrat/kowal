@@ -32,7 +32,14 @@ class SkrPrezentacja(Skrawek):
         SkrPrezentacja:
         '''
         Skrawek.__init__(self)
-        self.moje_pole = ei_kw.NazwaPrezentacja
+        if ib_kw.AimToObjectFieldName:
+            ##############################################################################
+            self.moje_pole = ei_kw.NazwaPrezentacja
+            ##############################################################################
+        else:
+            ##############################################################################
+            self.moje_pole = ei_kw.NazwaPrezentacja
+            ##############################################################################
 
     def skh_widzialny(self, skp_okres):
         '''
@@ -55,7 +62,14 @@ class SkrPrezentacja(Skrawek):
         '''
         SkrPrezentacja:
         '''
-        self.wartosc = tgk.qparam.get(self.moje_pole, None)
+        if ib_kw.AimToObjectFieldName:
+            ##############################################################################
+            self.wartosc = tgk.qparam.get(self.moje_pole, None)
+            ##############################################################################
+        else:
+            ##############################################################################
+            self.wartosc = tgk.qparam.get(self.moje_pole, None)
+            ##############################################################################
         if self.wartosc == None:
             # Domyślnie pokazujmy same tabelki
             self.wartosc = rq_kw.DP_Tabela
@@ -69,7 +83,14 @@ class SkrPrezentacja(Skrawek):
         SkrPrezentacja:
         '''
         if self.skh_widzialny(self.prm_okres.wartosc):
-            return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, rq_kw.DanePrezentacji)
+            if ib_kw.AimToObjectFieldName:
+                ##############################################################################
+                return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, rq_kw.DanePrezentacji)
+                ##############################################################################
+            else:
+                ##############################################################################
+                return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, rq_kw.DanePrezentacji)
+                ##############################################################################
         else:
             return self.wartosc_ukryta()
 

@@ -37,7 +37,14 @@ class SkrBRok(Skrawek):
         SkrBRok:
         '''
         Skrawek.__init__(self)
-        self.moje_pole = ei_kw.NazwaBRok
+        if ib_kw.AimToObjectFieldName:
+            ##############################################################################
+            self.moje_pole = ei_kw.NazwaBRok
+            ##############################################################################
+        else:
+            ##############################################################################
+            self.moje_pole = ei_kw.NazwaBRok
+            ##############################################################################
 
     def skh_a_widzialny(self, prm_arok):
         '''
@@ -61,7 +68,14 @@ class SkrBRok(Skrawek):
         mam_arok = self.elem_arok.skh_widzialny(self.prm_okres.wartosc)
         chce_brok = self.skh_a_widzialny(self.elem_arok.wartosc)
         if self.skh_widzialny(mam_arok, chce_brok):
-            return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, dn_kw.MozliweLataDlaBRok)
+            if ib_kw.AimToObjectFieldName:
+                ##############################################################################
+                return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, dn_kw.MozliweLataDlaBRok)
+                ##############################################################################
+            else:
+                ##############################################################################
+                return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, dn_kw.MozliweLataDlaBRok)
+                ##############################################################################
         else:
             return self.wartosc_ukryta()
 

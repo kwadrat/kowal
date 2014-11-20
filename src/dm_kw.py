@@ -31,7 +31,14 @@ class SkrDomena(Skrawek):
         SkrDomena:
         '''
         Skrawek.__init__(self)
-        self.moje_pole = ei_kw.NazwaDomena
+        if ib_kw.AimToObjectFieldName:
+            ##############################################################################
+            self.moje_pole = ei_kw.NazwaDomena
+            ##############################################################################
+        else:
+            ##############################################################################
+            self.moje_pole = ei_kw.NazwaDomena
+            ##############################################################################
 
     def skh_pr_widzialny(self, prm_prez):
         '''
@@ -82,7 +89,14 @@ class SkrDomena(Skrawek):
         SkrDomena:
         '''
         if self.dm_potrzebna_domena():
-            return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, rq_kw.DaneDomeny)
+            if ib_kw.AimToObjectFieldName:
+                ##############################################################################
+                return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, rq_kw.DaneDomeny)
+                ##############################################################################
+            else:
+                ##############################################################################
+                return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, rq_kw.DaneDomeny)
+                ##############################################################################
         else:
             return self.wartosc_ukryta()
 

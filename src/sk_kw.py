@@ -96,7 +96,14 @@ class Skrawek(object):
         - False - nie znaleźliśmy danych w formularzu, nie
         można go w całości poprawnie przeanalizować
         '''
-        self.wartosc = tgk.qparam.get(self.moje_pole, None)
+        if ib_kw.AimToObjectFieldName:
+            ##############################################################################
+            self.wartosc = tgk.qparam.get(self.moje_pole, None)
+            ##############################################################################
+        else:
+            ##############################################################################
+            self.wartosc = tgk.qparam.get(self.moje_pole, None)
+            ##############################################################################
         return self.wartosc != None
 
     def pobierz_wartosc(self, tgk):
@@ -110,7 +117,14 @@ class Skrawek(object):
         Skrawek:
         '''
         napis = '''<input name="%s" type="hidden" value="%s">\n'''
-        return napis % (self.moje_pole, self.wartosc)
+        if ib_kw.AimToObjectFieldName:
+            ##############################################################################
+            return napis % (self.moje_pole, self.wartosc)
+            ##############################################################################
+        else:
+            ##############################################################################
+            return napis % (self.moje_pole, self.wartosc)
+            ##############################################################################
 
 class TestPodstSkrawka(unittest.TestCase):
     tassertEqual = uy_kw.tassertEqual

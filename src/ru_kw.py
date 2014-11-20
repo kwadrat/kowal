@@ -31,13 +31,27 @@ class SkrZuzRok(Skrawek):
         SkrZuzRok:
         '''
         Skrawek.__init__(self)
-        self.moje_pole = ei_kw.NazwaRok
+        if ib_kw.AimToObjectFieldName:
+            ##############################################################################
+            self.moje_pole = ei_kw.NazwaRok
+            ##############################################################################
+        else:
+            ##############################################################################
+            self.moje_pole = ei_kw.NazwaRok
+            ##############################################################################
 
     def analiza_parametrow(self, tgk, dfb):
         '''
         SkrZuzRok:
         '''
-        self.wartosc = tgk.qparam.get(self.moje_pole, None)
+        if ib_kw.AimToObjectFieldName:
+            ##############################################################################
+            self.wartosc = tgk.qparam.get(self.moje_pole, None)
+            ##############################################################################
+        else:
+            ##############################################################################
+            self.wartosc = tgk.qparam.get(self.moje_pole, None)
+            ##############################################################################
         if self.wartosc == None:
             # Domyślnie pokazujemy aktualny rok
             self.wartosc = dn_kw.RokTeraz()

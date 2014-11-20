@@ -30,7 +30,14 @@ class SkrARok(Skrawek):
         SkrARok:
         '''
         Skrawek.__init__(self)
-        self.moje_pole = ei_kw.NazwaARok
+        if ib_kw.AimToObjectFieldName:
+            ##############################################################################
+            self.moje_pole = ei_kw.NazwaARok
+            ##############################################################################
+        else:
+            ##############################################################################
+            self.moje_pole = ei_kw.NazwaARok
+            ##############################################################################
 
     def skh_widzialny(self, skp_okres):
         '''
@@ -48,7 +55,14 @@ class SkrARok(Skrawek):
         SkrARok:
         '''
         if self.skh_widzialny(self.prm_okres.wartosc):
-            return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, dn_kw.MozliweLataDlaARok)
+            if ib_kw.AimToObjectFieldName:
+                ##############################################################################
+                return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, dn_kw.MozliweLataDlaARok)
+                ##############################################################################
+            else:
+                ##############################################################################
+                return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, dn_kw.MozliweLataDlaARok)
+                ##############################################################################
         else:
             return self.wartosc_ukryta()
 

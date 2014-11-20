@@ -30,13 +30,27 @@ class SkrAktWsz(Skrawek):
         SkrAktWsz:
         '''
         Skrawek.__init__(self)
-        self.moje_pole = ei_kw.NazwaAktWsz
+        if ib_kw.AimToObjectFieldName:
+            ##############################################################################
+            self.moje_pole = ei_kw.NazwaAktWsz
+            ##############################################################################
+        else:
+            ##############################################################################
+            self.moje_pole = ei_kw.NazwaAktWsz
+            ##############################################################################
 
     def zbierz_html(self, tgk, dfb):
         '''
         SkrAktWsz:
         '''
-        return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, rq_kw.DaneAktWsz)
+        if ib_kw.AimToObjectFieldName:
+            ##############################################################################
+            return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, rq_kw.DaneAktWsz)
+            ##############################################################################
+        else:
+            ##############################################################################
+            return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, rq_kw.DaneAktWsz)
+            ##############################################################################
 
 class TestAktWsz(unittest.TestCase):
     def test_1_a(self):

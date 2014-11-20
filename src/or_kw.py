@@ -31,10 +31,24 @@ class SkrPoborowegoCzasu(Skrawek):
         SkrPoborowegoCzasu:
         '''
         Skrawek.__init__(self, fs_prefix)
-        self.moje_pole = ei_kw.NazwaPobCzas
+        if ib_kw.AimToObjectFieldName:
+            ##############################################################################
+            self.moje_pole = ei_kw.NazwaPobCzas
+            ##############################################################################
+        else:
+            ##############################################################################
+            self.moje_pole = ei_kw.NazwaPobCzas
+            ##############################################################################
 
     def zbierz_html(self, tgk, dfb):
         '''
         SkrPoborowegoCzasu:
         '''
-        return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, lw_kw.DanePoborowegoCzasu)
+        if ib_kw.AimToObjectFieldName:
+            ##############################################################################
+            return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, lw_kw.DanePoborowegoCzasu)
+            ##############################################################################
+        else:
+            ##############################################################################
+            return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, lw_kw.DanePoborowegoCzasu)
+            ##############################################################################

@@ -35,13 +35,27 @@ class SkrRok(Skrawek):
         SkrRok:
         '''
         Skrawek.__init__(self)
-        self.moje_pole = ei_kw.NazwaRok
+        if ib_kw.AimToObjectFieldName:
+            ##############################################################################
+            self.moje_pole = ei_kw.NazwaRok
+            ##############################################################################
+        else:
+            ##############################################################################
+            self.moje_pole = ei_kw.NazwaRok
+            ##############################################################################
 
     def analiza_parametrow(self, tgk, dfb):
         '''
         SkrRok:
         '''
-        self.wartosc = tgk.qparam.get(self.moje_pole, None)
+        if ib_kw.AimToObjectFieldName:
+            ##############################################################################
+            self.wartosc = tgk.qparam.get(self.moje_pole, None)
+            ##############################################################################
+        else:
+            ##############################################################################
+            self.wartosc = tgk.qparam.get(self.moje_pole, None)
+            ##############################################################################
         if self.skh_widzialny(self.prm_okres.wartosc):
             if self.wartosc == None:
                 # Domyślnie pokazujemy aktualny rok

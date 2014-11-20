@@ -32,10 +32,24 @@ class SkrOkres(Skrawek):
         SkrOkres:
         '''
         Skrawek.__init__(self)
-        self.moje_pole = ei_kw.NazwaOkres
+        if ib_kw.AimToObjectFieldName:
+            ##############################################################################
+            self.moje_pole = ei_kw.NazwaOkres
+            ##############################################################################
+        else:
+            ##############################################################################
+            self.moje_pole = ei_kw.NazwaOkres
+            ##############################################################################
 
     def zbierz_html(self, tgk, dfb):
         '''
         SkrOkres:
         '''
-        return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, rq_kw.DaneOkresu)
+        if ib_kw.AimToObjectFieldName:
+            ##############################################################################
+            return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, rq_kw.DaneOkresu)
+            ##############################################################################
+        else:
+            ##############################################################################
+            return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, rq_kw.DaneOkresu)
+            ##############################################################################

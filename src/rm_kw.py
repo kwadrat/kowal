@@ -42,8 +42,16 @@ class FormularzBazowySkrawkow(object):
         FormularzBazowySkrawkow:
         '''
         for elem in self.moj_form:
-            if elem.moje_pole == klucz:
-                return elem.pobierz_wartosc(tgk)
+            if ib_kw.AimToObjectFieldName:
+                ##############################################################################
+                if elem.moje_pole == klucz:
+                    return elem.pobierz_wartosc(tgk)
+                ##############################################################################
+            else:
+                ##############################################################################
+                if elem.moje_pole == klucz:
+                    return elem.pobierz_wartosc(tgk)
+                ##############################################################################
         raise RuntimeError('Nieznany klucz: %s %s' % (repr(klucz), repr(self.moj_form)))
 
     def mamy_wspolny_komplet_pol(self, tgk, dfb):

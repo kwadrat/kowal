@@ -30,10 +30,24 @@ class SkrPobor(Skrawek):
         SkrPobor:
         '''
         Skrawek.__init__(self, fs_prefix)
-        self.moje_pole = ei_kw.NazwaPobor
+        if ib_kw.AimToObjectFieldName:
+            ##############################################################################
+            self.moje_pole = ei_kw.NazwaPobor
+            ##############################################################################
+        else:
+            ##############################################################################
+            self.moje_pole = ei_kw.NazwaPobor
+            ##############################################################################
 
     def zbierz_html(self, tgk, dfb):
         '''
         SkrPobor:
         '''
-        return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, lw_kw.DanePoboru)
+        if ib_kw.AimToObjectFieldName:
+            ##############################################################################
+            return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, lw_kw.DanePoboru)
+            ##############################################################################
+        else:
+            ##############################################################################
+            return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, lw_kw.DanePoboru)
+            ##############################################################################
