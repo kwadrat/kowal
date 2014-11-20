@@ -1,0 +1,36 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+'''
+Nazwa pola: nazwa właściwa, przedrostek
+'''
+
+import unittest
+
+NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+'''.splitlines()]
+
+for i in NazwyModulow:
+    if i == __name__.split('.')[-1]:
+        raise RuntimeError('Modul laduje sam siebie?: %s' % repr(i))
+    else:
+        if i in globals():
+            exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
+        else:
+            exec 'import %(modul)s' % dict(modul = i)
+
+class MojePole(object):
+    def __init__(self, moje_pole, fs_prefix):
+        '''
+        MojePole:
+        '''
+        self.moje_pole = moje_pole
+        self.fs_prefix = fs_prefix
+
+class TestMojegoPola(unittest.TestCase):
+    def test_mojego_pola(self):
+        '''
+        TestMojegoPola:
+        '''
+        obk = MojePole('pole', 'przed_')
+        self.assertEqual(obk.moje_pole, 'pole')
+        self.assertEqual(obk.fs_prefix, 'przed_')
