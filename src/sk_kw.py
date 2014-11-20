@@ -53,11 +53,12 @@ class Skrawek(object):
     moje_pole - nazwa interesującego nas pola
     '''
 
-    def __init__(self):
+    def __init__(self, fs_prefix=None):
         '''
         Skrawek:
         Na początku nie mamy żadnej wartości
         '''
+        self.fs_prefix = fs_prefix
         self.wartosc = None
         self.wyzeruj_nowy_skr()
 

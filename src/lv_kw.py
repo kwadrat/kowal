@@ -24,11 +24,11 @@ class SkrPobor(Skrawek):
        - mocy
     '''
 
-    def __init__(self):
+    def __init__(self, fs_prefix=None):
         '''
         SkrPobor:
         '''
-        Skrawek.__init__(self)
+        Skrawek.__init__(self, fs_prefix)
         self.moje_pole = ei_kw.NazwaPobor
 
     def zbierz_html(self, tgk, dfb):

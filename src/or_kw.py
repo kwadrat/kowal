@@ -25,11 +25,11 @@ class SkrPoborowegoCzasu(Skrawek):
     - tydzień
     - miesiąc
     '''
-    def __init__(self):
+    def __init__(self, fs_prefix=None):
         '''
         SkrPoborowegoCzasu:
         '''
-        Skrawek.__init__(self)
+        Skrawek.__init__(self, fs_prefix)
         self.moje_pole = ei_kw.NazwaPobCzas
 
     def zbierz_html(self, tgk, dfb):
