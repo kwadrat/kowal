@@ -8,6 +8,7 @@ import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import uz_kw
+import ib_kw
 import ze_kw
 import uy_kw
 import od_kw
