@@ -267,8 +267,7 @@ class CommonWriter(CommonRdWr):
             my_start_date=my_start_date,
             my_end_date=my_end_date,
             )
-        object_names = unique_sorted(dane_bazy, lc_kw.fq_account_qv)
-        xwg = la_kw.workbook_a_create()
-        for nr, name in enumerate(object_names):
-            self.generate_for_object(xwg, dane_bazy, name, uu_maper)
-        xwg.workbook_save(output_file)
+        if dane_bazy:
+            self.write_real_data(output_file, uu_maper, dane_bazy)
+        else:
+            info_brak_danych(output_file, id_obiekt, my_start_date, my_end_date)
