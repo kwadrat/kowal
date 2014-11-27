@@ -23,6 +23,7 @@ def make_alias(name):
     return name
 
 def locate_object_key(dfb, under_name):
+    under_name = make_alias(under_name)
     key_object = le_kw.dq_object_key(dfb, under_name)
     if not key_object:
         key_object = le_kw.dq_add_new_object_key(dfb, under_name)
