@@ -16,6 +16,12 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+def make_alias(name):
+    print 'make_alias:', repr(name)
+    if name == 'SZKOLA_PODSTAWOWA_NR35_RYBNIK':
+        name = 'SZKOLA_PODSTAWOWA_NR_35_RYBNIK_SLASKA'
+    return name
+
 def locate_object_key(dfb, under_name):
     key_object = le_kw.dq_object_key(dfb, under_name)
     if not key_object:
