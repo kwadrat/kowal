@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+import os
+
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import ng_kw
 import nf_kw
@@ -32,7 +34,7 @@ napis_max = 'MAXIMUM'
 def info_brak_danych(output_file, id_obiekt, my_start_date, my_end_date):
     dane = []
     dane.append('Brak danych dla parametrów:\r\n')
-    dane.append('output_file: %s\r\n' % repr(output_file))
+    dane.append('basename: %s\r\n' % repr(os.path.basename(output_file)))
     dane.append('id_obiekt: %s\r\n' % repr(id_obiekt))
     dane.append('my_start_date: %s\r\n' % repr(my_start_date))
     dane.append('my_end_date: %s\r\n' % repr(my_end_date))
