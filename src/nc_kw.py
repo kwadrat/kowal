@@ -228,6 +228,16 @@ class CommonWriter(CommonRdWr):
         for col in xrange(self.first_weekday_column, self.second_weekday_column + 1):
             xwg.sheet.col(col).best_fit = 1
 
+    def write_real_data(self, output_file, uu_maper, dane_bazy):
+        '''
+        CommonWriter:
+        '''
+        object_names = unique_sorted(dane_bazy, lc_kw.fq_account_qv)
+        xwg = la_kw.workbook_a_create()
+        for nr, name in enumerate(object_names):
+            self.generate_for_object(xwg, dane_bazy, name, uu_maper)
+        xwg.workbook_save(output_file)
+
     def generate_one_file(self, dfb, output_file, uu_maper, id_obiekt=None):
         '''
         CommonWriter:
