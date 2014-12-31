@@ -59,8 +59,10 @@ class DanePodnajemcow(object):
         '''
         DanePodnajemcow:
         '''
-        if numer_nadlicznika == '00003-001':
-            result = 1
+        for jeden_podnajemca in self.wykaz_podnajemcow.values():
+            if jeden_podnajemca.counter_person_matches(numer_nadlicznika, dane_osoby):
+                result = 1
+                break
         else:
             result = 0
         return result
@@ -83,3 +85,4 @@ class TestPodnajemcy(unittest.TestCase):
         self.assertEqual(dane_podnajemcow.pozostaw_klucze_podnajemcow(lista_spinek), [])
         self.assertEqual(dane_podnajemcow.invoice_for_other('19191-919', 'OTHER PERSON'), 0)
         self.assertEqual(dane_podnajemcow.invoice_for_other('00003-001', 'NOWAK ADAM'), 1)
+        self.assertEqual(dane_podnajemcow.invoice_for_other('00003-001', 'THE BUILDING'), 0)
