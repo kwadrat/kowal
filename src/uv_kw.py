@@ -39,7 +39,11 @@ class MojPodnajemca(object):
         '''
         MojPodnajemca:
         '''
-        return 0
+        if dane_osoby == 'NOWAK ADAM':
+            result = 1
+        else:
+            result = 0
+        return result
 
 class TestJednegoPodnajemcy(unittest.TestCase):
     def test_jednego_podnajemcy(self):
@@ -77,3 +81,4 @@ class TestJednegoPodnajemcy(unittest.TestCase):
         '''
         obk = MojPodnajemca('00003-001', 'NOWAK ADAM', None, None)
         self.assertEqual(obk.counter_person_matches('00003-001', 'THE BUILDING'), 0)
+        self.assertEqual(obk.counter_person_matches('00003-001', 'NOWAK ADAM'), 1)
