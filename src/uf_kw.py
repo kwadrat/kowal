@@ -20,7 +20,7 @@ for i in NazwyModulow:
 def przygotuj_podnajemcow(lista_podnajemcow):
     wykaz_podnajemcow = {}
     for numer_nadlicznika, moj_punkt_poboru, data_pocz, data_kon, dane_osoby in lista_podnajemcow:
-        wykaz_podnajemcow[moj_punkt_poboru] = uv_kw.MojPodnajemca(dane_osoby, data_pocz, data_kon, numer_nadlicznika)
+        wykaz_podnajemcow[moj_punkt_poboru] = uv_kw.MojPodnajemca(numer_nadlicznika, dane_osoby, data_pocz, data_kon)
     return wykaz_podnajemcow
 
 class DanePodnajemcow(object):
