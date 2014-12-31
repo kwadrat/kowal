@@ -55,6 +55,12 @@ class DanePodnajemcow(object):
             lista_spinek)
         return lista_spinek
 
+    def invoice_for_other(self, numer_nadlicznika, dane_osoby):
+        '''
+        DanePodnajemcow:
+        '''
+        return 0
+
 lista_testowa_podnajemcow = [
     ('00002-001', '22222-001', '2014-01-01', None, 'BRZĘCZYSZCZYKIEWICZ GRZEGORZ'),
     ('00003-001', '33333-001', '2014-01-01', None, 'NOWAK ADAM'),
@@ -71,3 +77,4 @@ class TestPodnajemcy(unittest.TestCase):
         self.assertEqual(dane_podnajemcow.dla_podnajemcy('NOWAK ADAM'), 1)
         lista_spinek = [sn_kw.KonstrukcjaSpinki(('11111-001', '2014-04-11'))]
         self.assertEqual(dane_podnajemcow.pozostaw_klucze_podnajemcow(lista_spinek), [])
+        self.assertEqual(dane_podnajemcow.invoice_for_other('19191-919', 'OTHER PERSON'), 0)
