@@ -16,13 +16,14 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 class MojPodnajemca(object):
-    def __init__(self, dane_osoby, data_pocz, data_kon):
+    def __init__(self, dane_osoby, data_pocz, data_kon, numer_nadlicznika=None):
         '''
         MojPodnajemca:
         '''
         self.dane_osoby = dane_osoby
         self.data_pocz = data_pocz
         self.data_kon = data_kon
+        self.numer_nadlicznika = numer_nadlicznika
 
     def date_in_range(self, akt_data):
         '''
