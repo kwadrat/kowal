@@ -39,7 +39,7 @@ class MojPodnajemca(object):
         '''
         MojPodnajemca:
         '''
-        if self.numer_nadlicznika == numer_nadlicznika and dane_osoby == 'NOWAK ADAM':
+        if self.numer_nadlicznika == numer_nadlicznika and self.dane_osoby == dane_osoby:
             result = 1
         else:
             result = 0
