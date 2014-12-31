@@ -19,8 +19,8 @@ for i in NazwyModulow:
 
 def przygotuj_podnajemcow(lista_podnajemcow):
     wykaz_podnajemcow = {}
-    for moj_punkt_poboru, data_pocz, data_kon, dane_osoby in lista_podnajemcow:
-        wykaz_podnajemcow[moj_punkt_poboru] = uv_kw.MojPodnajemca(dane_osoby, data_pocz, data_kon)
+    for numer_nadlicznika, moj_punkt_poboru, data_pocz, data_kon, dane_osoby in lista_podnajemcow:
+        wykaz_podnajemcow[moj_punkt_poboru] = uv_kw.MojPodnajemca(dane_osoby, data_pocz, data_kon, numer_nadlicznika)
     return wykaz_podnajemcow
 
 class DanePodnajemcow(object):
@@ -56,8 +56,8 @@ class DanePodnajemcow(object):
         return lista_spinek
 
 lista_testowa_podnajemcow = [
-    ('22222-001', '2014-01-01', None, 'BRZĘCZYSZCZYKIEWICZ GRZEGORZ'),
-    ('33333-001', '2014-01-01', None, 'NOWAK ADAM'),
+    ('00002-001', '22222-001', '2014-01-01', None, 'BRZĘCZYSZCZYKIEWICZ GRZEGORZ'),
+    ('00003-001', '33333-001', '2014-01-01', None, 'NOWAK ADAM'),
     ]
 
 class TestPodnajemcy(unittest.TestCase):
