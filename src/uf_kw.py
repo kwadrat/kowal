@@ -59,7 +59,11 @@ class DanePodnajemcow(object):
         '''
         DanePodnajemcow:
         '''
-        return 0
+        if numer_nadlicznika == '00003-001':
+            result = 1
+        else:
+            result = 0
+        return result
 
 lista_testowa_podnajemcow = [
     ('00002-001', '22222-001', '2014-01-01', None, 'BRZĘCZYSZCZYKIEWICZ GRZEGORZ'),
@@ -78,3 +82,4 @@ class TestPodnajemcy(unittest.TestCase):
         lista_spinek = [sn_kw.KonstrukcjaSpinki(('11111-001', '2014-04-11'))]
         self.assertEqual(dane_podnajemcow.pozostaw_klucze_podnajemcow(lista_spinek), [])
         self.assertEqual(dane_podnajemcow.invoice_for_other('19191-919', 'OTHER PERSON'), 0)
+        self.assertEqual(dane_podnajemcow.invoice_for_other('00003-001', 'NOWAK ADAM'), 1)
