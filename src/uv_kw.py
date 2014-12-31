@@ -16,7 +16,7 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 class MojPodnajemca(object):
-    def __init__(self, dane_osoby, data_pocz, data_kon, numer_nadlicznika=None):
+    def __init__(self, dane_osoby, data_pocz, data_kon, numer_nadlicznika):
         '''
         MojPodnajemca:
         '''
@@ -40,20 +40,20 @@ class TestJednegoPodnajemcy(unittest.TestCase):
         '''
         TestJednegoPodnajemcy:
         '''
-        obk = MojPodnajemca('KOWALSKI JAN', '2014-02-25', None)
+        obk = MojPodnajemca('KOWALSKI JAN', '2014-02-25', None, None)
 
     def test_no_time_limits(self):
         '''
         TestJednegoPodnajemcy:
         '''
-        obk = MojPodnajemca('KOWALSKI JAN', None, None)
+        obk = MojPodnajemca('KOWALSKI JAN', None, None, None)
         self.assertEqual(obk.date_in_range('2014-02-25'), 1)
 
     def test_only_begin(self):
         '''
         TestJednegoPodnajemcy:
         '''
-        obk = MojPodnajemca('KOWALSKI JAN', '2014-02-25', None)
+        obk = MojPodnajemca('KOWALSKI JAN', '2014-02-25', None, None)
         self.assertEqual(obk.date_in_range('2014-02-24'), 0)
         self.assertEqual(obk.date_in_range('2014-02-25'), 1)
 
@@ -61,6 +61,6 @@ class TestJednegoPodnajemcy(unittest.TestCase):
         '''
         TestJednegoPodnajemcy:
         '''
-        obk = MojPodnajemca('KOWALSKI JAN', None, '2014-02-27')
+        obk = MojPodnajemca('KOWALSKI JAN', None, '2014-02-27', None)
         self.assertEqual(obk.date_in_range('2014-02-27'), 1)
         self.assertEqual(obk.date_in_range('2014-02-28'), 0)
