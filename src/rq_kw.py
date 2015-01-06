@@ -148,7 +148,7 @@ DG_BrakGrupowania = 'Pojedynczy obiekt'
 PR_ChcemyObiektu = (PR_Brak, DG_BrakGrupowania)
 DG_Obiekty = (DG_BrakGrupowania, DG_BrakGrupowania)
 
-niekonkretny_obiekt = (None, )
+niekonkretny_obiekt = frozenset([None])
 
 Dla_Dwoch_Raportow = (Dt_RapPierwszy, Dt_RapDrugi, )
 
