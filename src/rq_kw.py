@@ -199,3 +199,4 @@ TymczasowoPokazWzory = 0
 TymczasowoTylkoWybranyArkusz = 1
 ProdukcyjnieDodajNaglowekMenu = 1
 DocelowoDualnyKanal = 0
+AimToNewEngine = 0
