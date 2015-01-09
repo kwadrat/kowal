@@ -106,7 +106,7 @@ class TypowaLista(ListaLubSlownikOgolnie):
         '''
         TypowaLista:
         '''
-        return self.podaj_dlugosc();
+        return self.podaj_dlugosc()
 
     def wskazany_element(self, indeks):
         '''
