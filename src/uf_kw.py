@@ -81,6 +81,7 @@ class TestPodnajemcy(unittest.TestCase):
         self.assertEqual(dane_podnajemcow.oddzielny_podnajemca('22222-001'), 1)
         self.assertEqual(dane_podnajemcow.oddzielny_podnajemca('10101-909'), 0)
         self.assertEqual(dane_podnajemcow.dla_podnajemcy('NOWAK ADAM'), 1)
+        self.assertEqual(dane_podnajemcow.dla_podnajemcy('OTHER PERSON'), 0)
         lista_spinek = [sn_kw.KonstrukcjaSpinki(('11111-001', '2014-04-11'))]
         self.assertEqual(dane_podnajemcow.pozostaw_klucze_podnajemcow(lista_spinek), [])
         self.assertEqual(dane_podnajemcow.invoice_for_other('19191-919', 'OTHER PERSON'), 0)
