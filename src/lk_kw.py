@@ -81,8 +81,10 @@ def ladny_rozmiar(ile):
         return "%d B" % ile
     elif ile < 2 * 1024 * 1024:
         return "%d KB" % (ile // 1024)
-    else:
+    elif ile < 2 * 1024 * 1024 * 1024:
         return "%d MB" % (ile // 1024 // 1024)
+    else:
+        return "%d GB" % (ile // 1024 // 1024 // 1024)
 
 class TestSomeConstants(unittest.TestCase):
     def test_opisow_akcji(self):
@@ -113,3 +115,5 @@ class TestSomeConstants(unittest.TestCase):
         self.assertEqual(LTR_GLR_X_STAMP, 150)
         self.assertEqual(ladny_rozmiar(2047), '2047 B')
         self.assertEqual(ladny_rozmiar(2097151), '2047 KB')
+        self.assertEqual(ladny_rozmiar(2147483647), '2047 MB')
+        self.assertEqual(ladny_rozmiar(2147483648), '2 GB')
