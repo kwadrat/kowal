@@ -128,7 +128,6 @@ class PozycjeOgolne(ListaLubSlownikOgolnie):
         '''
         self.sprawdz_zmienianie()
         self.ustaw_element(klucz, wartosc)
-        self.poz_slownik[klucz] = wartosc
         return self.pobierz_element(klucz)
 
     def dla_iteracji(self):
