@@ -56,6 +56,7 @@ zestaw_t22 = (set(xrange(9413, 10093 + 1)))
 zestaw_t23 = (set(xrange(10094, 10647 + 1)))
 zestaw_t24 = (set(xrange(10648, 10765 + 1)))
 zestaw_t25 = set(xrange(10766, 11187 + 1))
+zestaw_t26 = set(xrange(11188, 11639 + 1))
 
 skasowane_nakladki_z_t7 = set([
     4564, 4565, 4566, 4568, 4569, 4570, 4571, 4572, 4573, 4574, 4575, 4576,
@@ -110,6 +111,7 @@ odblokowane_sp2_filia = (set(xrange(5330, 5345 + 1)))
 faza_kwiecien_2011 = (zestaw_t11)
 
 fk_atmt_zolte = (
+    zestaw_t26 |
     zestaw_pusty
     )
 
@@ -133,11 +135,11 @@ fk_atmt_purpurowe = (
     zestaw_t21 |
     zestaw_t23 |
     zestaw_t24 |
+    zestaw_t25 |
     zestaw_pusty
     )
 
 fk_atmt_turkusowe = (
-    zestaw_t25 |
     zestaw_pusty
     )
 
