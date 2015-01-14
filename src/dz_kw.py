@@ -108,6 +108,20 @@ wzor_day_full = re.compile(r'''
 $
 ''', re.VERBOSE)
 
+changed_coding_date_pattern = re.compile(r'''
+^
+(?P<month>\d{1,2})
+-
+(?P<day>\d{1,2})
+-
+(?P<year>\d{4})
+\s
+00:00:00
+$
+''', re.VERBOSE)
+
+changed_coding_date_format = '%(year)s-%(month)s-%(day)s'
+
 def wyciagnij_date_z_formatu_dmr(napis):
     res = wzor_data_dzien_miesiac_rok.search(napis)
     if res:
@@ -139,6 +153,14 @@ def extract_csv_full(napis):
     else:
         wynik = None
     return wynik
+
+def convert_date_pwik(changed_coding_txt):
+    res = changed_coding_date_pattern.search(changed_coding_txt)
+    if res:
+        result = changed_coding_date_format % res.groupdict()
+    else:
+        result = None
+    return result
 
 def rozpoznaj_wedlug_wyr_regul(wzorzec_reg, napis):
     wynik = None
@@ -217,3 +239,9 @@ class TestRozpoznawania(unittest.TestCase):
         self.assertEqual(extract_csv_hour('1:00'), [1, 0])
         self.assertEqual(extract_csv_day('2006-04-24'), [2006, 4, 24])
         self.assertEqual(extract_csv_full('7/31/2013 22:16'), [2013, 7, 31, 22, 16])
+
+    def test_pwik_csv(self):
+        '''
+        TestRozpoznawania:
+        '''
+        self.assertEqual(convert_date_pwik('12-30-2014 00:00:00'), '2014-12-30')
