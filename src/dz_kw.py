@@ -165,6 +165,12 @@ def convert_date_pwik(changed_coding_txt):
 def convert_float_pwik(changed_coding_txt):
     return changed_coding_txt.replace(' ', '')
 
+def convert_integer_pwik(changed_coding_txt):
+    result = changed_coding_txt.replace(' ', '')
+    if result[-3:] == ',00':
+        result = result[:-3]
+    return result
+
 def rozpoznaj_wedlug_wyr_regul(wzorzec_reg, napis):
     wynik = None
     res = wzorzec_reg.search(napis)
@@ -249,3 +255,4 @@ class TestRozpoznawania(unittest.TestCase):
         '''
         self.assertEqual(convert_date_pwik('12-30-2014 00:00:00'), '2014-12-30')
         self.assertEqual(convert_float_pwik('2 692,38'), '2692,38')
+        self.assertEqual(convert_integer_pwik('9 432 334,00'), '9432334')
