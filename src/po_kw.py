@@ -181,6 +181,8 @@ class PozycjeOgolne(ListaLubSlownikOgolnie):
         '''
         PozycjeOgolne:
         '''
+        if us_kw.TymczasowoWizualizacjaNadlicznikow:
+            print 'Anihilacja:', repr(self.poz_slownik[klucz])
         del self.poz_slownik[klucz]
 
     def __eq__(self, other):
