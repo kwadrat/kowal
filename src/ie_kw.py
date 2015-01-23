@@ -19,8 +19,8 @@ class WaterCanalCorrection(object):
     def __init__(self,
             id_oryg,
             id_nowy,
-            ile_wody,
-            ile_sciekow,
+            ile_wody=None,
+            ile_sciekow=None,
             ):
         '''
         WaterCanalCorrection:
@@ -43,6 +43,8 @@ class WaterCanalCorrection(object):
         WaterCanalCorrection:
         '''
         exception_exists = (
+            self.ile_wody is not None and
+            self.ile_sciekow is not None and
             ilosc_tutejszej_wody == self.ile_wody and
             ilosc_tutejszych_sciekow == self.ile_sciekow
             )
@@ -65,8 +67,6 @@ qy_to_2_moj = WaterCanalCorrection(
 qy_to_3_moj = WaterCanalCorrection(
         ('2014-08-26', '2014-08-31'),
         ('2014-08-23', '2014-08-31'),
-        '14.600000',
-        '14.60',
     )
 
 class TestWatCanCor(unittest.TestCase):
@@ -78,3 +78,5 @@ class TestWatCanCor(unittest.TestCase):
         self.assertEqual(qy_to_2_moj.dokonaj_a_konwersji_pozycji(('2012-06-29', '2012-06-29')), ('2012-06-15', '2012-06-29'))
         self.assertEqual(qy_to_1_moj.water_canal_amount('2', '3'), 0)
         self.assertEqual(qy_to_1_moj.water_canal_amount('20.860000', '3.42'), 1)
+        self.assertEqual(qy_to_3_moj.water_canal_amount('14.600000', '14.60'), 0)
+
