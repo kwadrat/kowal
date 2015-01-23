@@ -19,6 +19,9 @@ TymczasowoWizualizacjaLicznikowanych = 0 and TymczasowoSzczegolowaWizualizacja
 # Włącz wizualizację dopasowywania faktur zwykłych i korygujących
 TymczasowoWizualizacjaZestawuFaktur = 1 and TymczasowoSzczegolowaWizualizacja
 
+# Włącz wizualizację znalezienia wody dla podanych ścieków
+TemporarilyWaterCanMatch = 0 and TymczasowoSzczegolowaWizualizacja
+
 # Pokaz wynikowych słowników
 WyswietlWynikoweSlowniki = 0
 
