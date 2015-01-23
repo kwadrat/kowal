@@ -62,6 +62,13 @@ qy_to_2_moj = WaterCanalCorrection(
     '1.64',
     )
 
+qy_to_3_moj = WaterCanalCorrection(
+        ('2014-08-26', '2014-08-31'),
+        ('2014-08-23', '2014-08-31'),
+        '14.600000',
+        '14.60',
+    )
+
 class TestWatCanCor(unittest.TestCase):
     def test_water_canalization_correction(self):
         '''
