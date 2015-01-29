@@ -200,3 +200,4 @@ TymczasowoTylkoWybranyArkusz = 1
 ProdukcyjnieDodajNaglowekMenu = 1
 DocelowoDualnyKanal = 0
 AimToSelectedEnergy = 0
+AimToStrictWaterCanal = 1
