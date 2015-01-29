@@ -2,6 +2,8 @@
 # -*- coding: UTF-8 -*-
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import if_kw
+import rq_kw
 import lm_kw
 '''.splitlines()]
 
@@ -37,7 +39,7 @@ class ZuzycieLicznika(object):
         elif self.slownik_zuzycia[wskazowka_kiedy] != jakie_zuzycie:
             tmp_format = 'self.slownik_zuzycia[wskazowka_kiedy]'; print 'Eval:', tmp_format, eval(tmp_format)
             tmp_format = 'jakie_zuzycie'; print 'Eval:', tmp_format, eval(tmp_format)
-            raise RuntimeError('Rozne zuzycia')
+            if_kw.warn_halt(rq_kw.AimToStrictWaterCanal, 'Rozne zuzycia')
 
     def wyczytaj_jednego(self, wskazowka_kiedy, opcjonalnie=0):
         '''
