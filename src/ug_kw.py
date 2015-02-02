@@ -15,10 +15,10 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-ZnakSeparatoraPol = ';'
+delimiter = ';'
 ZnakSeparatoraTekstu = '"'
 PodwZnkSepTekstu = ZnakSeparatoraTekstu + ZnakSeparatoraTekstu
-znaki_konczace_pole_tekstowe = set([ZnakSeparatoraPol, chr(13), chr(10)])
+znaki_konczace_pole_tekstowe = set([delimiter, chr(13), chr(10)])
 
 class FieldSplitter(object):
     def __init__(self):
@@ -30,7 +30,7 @@ class FieldSplitter(object):
         '''
         FieldSplitter:
         '''
-        return [line]
+        return line.split(delimiter)
 
 def rozbij_na_pola(line, quoting=0):
     t = []
@@ -60,7 +60,7 @@ def rozbij_na_pola(line, quoting=0):
                     t.append(line[pocz:wsk].replace(PodwZnkSepTekstu, ZnakSeparatoraTekstu))
                     wsk += 1
                     # Tu czekamy na przecinek
-                    if wsk < DlLinii and line[wsk] == ZnakSeparatoraPol:
+                    if wsk < DlLinii and line[wsk] == delimiter:
                         wsk += 1
                         pierwszy = 1 # Znowu zaczynamy analizę od pierwszego znaku pola
                     else:
@@ -71,7 +71,7 @@ def rozbij_na_pola(line, quoting=0):
         else: # Nie mamy cudzysłowu - szukamy do następnego przecinka lub końca
             if wsk >= DlLinii or line[wsk] in znaki_konczace_pole_tekstowe:
                 t.append(line[pocz:wsk])
-                if wsk < DlLinii and line[wsk] == ZnakSeparatoraPol:
+                if wsk < DlLinii and line[wsk] == delimiter:
                     wsk += 1 # Będzie kolejne pole
                     pierwszy = 1
                 else:
@@ -97,3 +97,4 @@ class TestRozbijaniaCSV(unittest.TestCase):
         obk = FieldSplitter()
         self.assertEqual(obk.split_fields(''), [''])
         self.assertEqual(obk.split_fields('a'), ['a'])
+        self.assertEqual(obk.split_fields('a;b'), ['a', 'b'])
