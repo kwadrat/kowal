@@ -36,13 +36,13 @@ def rozbij_na_pola(line, quoting=0):
     t = []
     inside_quote = 0
     wsk = 0 # Wskaźnik na aktualny analizowany znak linii
-    DlLinii = len(line) # Długość linii
+    ln_len = len(line) # Długość linii
     first_char = 1 # Znacznik - analizujemy pierwszy znak pola wiersza
     pracuj = 1
     while pracuj:
         if first_char:
             first_char = 0
-            if quoting and wsk < DlLinii and line[wsk] == quotechar:
+            if quoting and wsk < ln_len and line[wsk] == quotechar:
                 inside_quote = 1
                 wsk += 1 # Pomiń cudzysłów
             else:
@@ -50,17 +50,17 @@ def rozbij_na_pola(line, quoting=0):
             pocz = wsk # To jest pierwszy znak pola do zapamiętania
         if inside_quote:
             # Szukamy zamykającego cudzysłowu
-            if wsk >= DlLinii:
+            if wsk >= ln_len:
                 raise RuntimeError, "Wychodzimy poza linię o treści:\n" + line
             elif quoting and line[wsk] == quotechar:
-                if wsk + 1 < DlLinii and line[wsk + 1] == quotechar: # Pominiemy, jeśli cudzysłów jest podwójny
+                if wsk + 1 < ln_len and line[wsk + 1] == quotechar: # Pominiemy, jeśli cudzysłów jest podwójny
                     wsk += 2
                 else:
                     # Pojedynczy cudzysłów - koniec napisu
                     t.append(line[pocz:wsk].replace(PodwZnkSepTekstu, quotechar))
                     wsk += 1
                     # Tu czekamy na przecinek
-                    if wsk < DlLinii and line[wsk] == delimiter:
+                    if wsk < ln_len and line[wsk] == delimiter:
                         wsk += 1
                         first_char = 1 # Znowu zaczynamy analizę od pierwszego znaku pola
                     else:
@@ -69,9 +69,9 @@ def rozbij_na_pola(line, quoting=0):
             else:
                 wsk += 1 # Szukamy następnego znaku
         else: # Nie mamy cudzysłowu - szukamy do następnego przecinka lub końca
-            if wsk >= DlLinii or line[wsk] in znaki_konczace_pole_tekstowe:
+            if wsk >= ln_len or line[wsk] in znaki_konczace_pole_tekstowe:
                 t.append(line[pocz:wsk])
-                if wsk < DlLinii and line[wsk] == delimiter:
+                if wsk < ln_len and line[wsk] == delimiter:
                     wsk += 1 # Będzie kolejne pole
                     first_char = 1
                 else:
