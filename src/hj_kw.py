@@ -19,6 +19,7 @@ for i in NazwyModulow:
 
 zerowe_pole = '0 AS '
 suffix_comma_separated = '.csv'
+suffix_semicolon_separated = '.txt'
 
 def zeruj_dla_tabeli(tabela_wzorcowa, tabela_aktualna, nazwa_pola):
     if tabela_wzorcowa == tabela_aktualna:
@@ -310,6 +311,7 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(hlp_assume_one(1, [{'e': 'value'}], 'e'), 'value')
         self.assertEqual(zrob_wersje_posrednia('a'), 'gen_a.txt')
         self.assertEqual(suffix_comma_separated, '.csv')
+        self.assertEqual(suffix_semicolon_separated, '.txt')
         self.assertEqual(nazwa_filtrowanego(4), 'gen_filtered_4.csv')
         self.assertEqual(space_two('a', 'b'), 'a b')
         self.assertEqual(list(enum_one('a\nb')), [(1, 'a'), (2, 'b')])
