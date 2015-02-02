@@ -35,49 +35,49 @@ class FieldSplitter(object):
 def rozbij_na_pola(line, quoting=0):
     t = []
     inside_quote = 0
-    wsk = 0 # Wskaźnik na aktualny analizowany znak linii
+    cur_ptr = 0 # Wskaźnik na aktualny analizowany znak linii
     ln_len = len(line) # Długość linii
     first_char = 1 # Znacznik - analizujemy pierwszy znak pola wiersza
     pracuj = 1
     while pracuj:
         if first_char:
             first_char = 0
-            if quoting and wsk < ln_len and line[wsk] == quotechar:
+            if quoting and cur_ptr < ln_len and line[cur_ptr] == quotechar:
                 inside_quote = 1
-                wsk += 1 # Pomiń cudzysłów
+                cur_ptr += 1 # Pomiń cudzysłów
             else:
                 inside_quote = 0
-            pocz = wsk # To jest pierwszy znak pola do zapamiętania
+            pocz = cur_ptr # To jest pierwszy znak pola do zapamiętania
         if inside_quote:
             # Szukamy zamykającego cudzysłowu
-            if wsk >= ln_len:
+            if cur_ptr >= ln_len:
                 raise RuntimeError, "Wychodzimy poza linię o treści:\n" + line
-            elif quoting and line[wsk] == quotechar:
-                if wsk + 1 < ln_len and line[wsk + 1] == quotechar: # Pominiemy, jeśli cudzysłów jest podwójny
-                    wsk += 2
+            elif quoting and line[cur_ptr] == quotechar:
+                if cur_ptr + 1 < ln_len and line[cur_ptr + 1] == quotechar: # Pominiemy, jeśli cudzysłów jest podwójny
+                    cur_ptr += 2
                 else:
                     # Pojedynczy cudzysłów - koniec napisu
-                    t.append(line[pocz:wsk].replace(PodwZnkSepTekstu, quotechar))
-                    wsk += 1
+                    t.append(line[pocz:cur_ptr].replace(PodwZnkSepTekstu, quotechar))
+                    cur_ptr += 1
                     # Tu czekamy na przecinek
-                    if wsk < ln_len and line[wsk] == delimiter:
-                        wsk += 1
+                    if cur_ptr < ln_len and line[cur_ptr] == delimiter:
+                        cur_ptr += 1
                         first_char = 1 # Znowu zaczynamy analizę od pierwszego znaku pola
                     else:
                         # Nie było przecinka - koniec analizy
                         pracuj = 0
             else:
-                wsk += 1 # Szukamy następnego znaku
+                cur_ptr += 1 # Szukamy następnego znaku
         else: # Nie mamy cudzysłowu - szukamy do następnego przecinka lub końca
-            if wsk >= ln_len or line[wsk] in znaki_konczace_pole_tekstowe:
-                t.append(line[pocz:wsk])
-                if wsk < ln_len and line[wsk] == delimiter:
-                    wsk += 1 # Będzie kolejne pole
+            if cur_ptr >= ln_len or line[cur_ptr] in znaki_konczace_pole_tekstowe:
+                t.append(line[pocz:cur_ptr])
+                if cur_ptr < ln_len and line[cur_ptr] == delimiter:
+                    cur_ptr += 1 # Będzie kolejne pole
                     first_char = 1
                 else:
                     pracuj = 0 # Koniec analizy - był Enter
             else: # Zwykły znak - przesuwamy się dalej
-                wsk += 1
+                cur_ptr += 1
     return t
 
 class TestRozbijaniaCSV(unittest.TestCase):
