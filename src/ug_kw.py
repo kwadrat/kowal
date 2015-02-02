@@ -47,7 +47,7 @@ def rozbij_na_pola(line, quoting=0):
                 cur_ptr += 1 # Pomiń cudzysłów
             else:
                 inside_quote = 0
-            pocz = cur_ptr # To jest pierwszy znak pola do zapamiętania
+            strt_pos = cur_ptr # To jest pierwszy znak pola do zapamiętania
         if inside_quote:
             # Szukamy zamykającego cudzysłowu
             if cur_ptr >= ln_len:
@@ -57,7 +57,7 @@ def rozbij_na_pola(line, quoting=0):
                     cur_ptr += 2
                 else:
                     # Pojedynczy cudzysłów - koniec napisu
-                    t.append(line[pocz:cur_ptr].replace(PodwZnkSepTekstu, quotechar))
+                    t.append(line[strt_pos:cur_ptr].replace(PodwZnkSepTekstu, quotechar))
                     cur_ptr += 1
                     # Tu czekamy na przecinek
                     if cur_ptr < ln_len and line[cur_ptr] == delimiter:
@@ -70,7 +70,7 @@ def rozbij_na_pola(line, quoting=0):
                 cur_ptr += 1 # Szukamy następnego znaku
         else: # Nie mamy cudzysłowu - szukamy do następnego przecinka lub końca
             if cur_ptr >= ln_len or line[cur_ptr] in znaki_konczace_pole_tekstowe:
-                t.append(line[pocz:cur_ptr])
+                t.append(line[strt_pos:cur_ptr])
                 if cur_ptr < ln_len and line[cur_ptr] == delimiter:
                     cur_ptr += 1 # Będzie kolejne pole
                     first_char = 1
