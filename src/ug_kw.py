@@ -15,13 +15,12 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-PrzetwarzajCudzyslow = 0
 ZnakSeparatoraPol = ';'
 ZnakSeparatoraTekstu = '"'
 PodwZnkSepTekstu = ZnakSeparatoraTekstu + ZnakSeparatoraTekstu
 znaki_konczace_pole_tekstowe = set([ZnakSeparatoraPol, chr(13), chr(10)])
 
-def rozbij_na_pola(linia):
+def rozbij_na_pola(linia, quoting=0):
     t = []
     w_cudzyslowie = 0
     wsk = 0 # Wskaźnik na aktualny analizowany znak linii
@@ -31,7 +30,7 @@ def rozbij_na_pola(linia):
     while pracuj:
         if pierwszy:
             pierwszy = 0
-            if PrzetwarzajCudzyslow and wsk < DlLinii and linia[wsk] == ZnakSeparatoraTekstu:
+            if quoting and wsk < DlLinii and linia[wsk] == ZnakSeparatoraTekstu:
                 w_cudzyslowie = 1
                 wsk += 1 # Pomiń cudzysłów
             else:
@@ -41,7 +40,7 @@ def rozbij_na_pola(linia):
             # Szukamy zamykającego cudzysłowu
             if wsk >= DlLinii:
                 raise RuntimeError, "Wychodzimy poza linię o treści:\n" + linia
-            elif PrzetwarzajCudzyslow and linia[wsk] == ZnakSeparatoraTekstu:
+            elif quoting and linia[wsk] == ZnakSeparatoraTekstu:
                 if wsk + 1 < DlLinii and linia[wsk + 1] == ZnakSeparatoraTekstu: # Pominiemy, jeśli cudzysłów jest podwójny
                     wsk += 2
                 else:
