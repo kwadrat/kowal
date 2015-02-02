@@ -38,8 +38,8 @@ def rozbij_na_pola(line, quoting=0):
     cur_ptr = 0 # Wskaźnik na aktualny analizowany znak linii
     ln_len = len(line) # Długość linii
     first_char = 1 # Znacznik - analizujemy pierwszy znak pola wiersza
-    pracuj = 1
-    while pracuj:
+    work_flag = 1
+    while work_flag:
         if first_char:
             first_char = 0
             if quoting and cur_ptr < ln_len and line[cur_ptr] == quotechar:
@@ -65,7 +65,7 @@ def rozbij_na_pola(line, quoting=0):
                         first_char = 1 # Znowu zaczynamy analizę od pierwszego znaku pola
                     else:
                         # Nie było przecinka - koniec analizy
-                        pracuj = 0
+                        work_flag = 0
             else:
                 cur_ptr += 1 # Szukamy następnego znaku
         else: # Nie mamy cudzysłowu - szukamy do następnego przecinka lub końca
@@ -75,7 +75,7 @@ def rozbij_na_pola(line, quoting=0):
                     cur_ptr += 1 # Będzie kolejne pole
                     first_char = 1
                 else:
-                    pracuj = 0 # Koniec analizy - był Enter
+                    work_flag = 0 # Koniec analizy - był Enter
             else: # Zwykły znak - przesuwamy się dalej
                 cur_ptr += 1
     return t
