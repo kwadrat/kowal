@@ -16,8 +16,8 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 delimiter = ';'
-ZnakSeparatoraTekstu = '"'
-PodwZnkSepTekstu = ZnakSeparatoraTekstu + ZnakSeparatoraTekstu
+quotechar = '"'
+PodwZnkSepTekstu = quotechar + quotechar
 znaki_konczace_pole_tekstowe = set([delimiter, chr(13), chr(10)])
 
 class FieldSplitter(object):
@@ -42,7 +42,7 @@ def rozbij_na_pola(line, quoting=0):
     while pracuj:
         if pierwszy:
             pierwszy = 0
-            if quoting and wsk < DlLinii and line[wsk] == ZnakSeparatoraTekstu:
+            if quoting and wsk < DlLinii and line[wsk] == quotechar:
                 w_cudzyslowie = 1
                 wsk += 1 # Pomiń cudzysłów
             else:
@@ -52,12 +52,12 @@ def rozbij_na_pola(line, quoting=0):
             # Szukamy zamykającego cudzysłowu
             if wsk >= DlLinii:
                 raise RuntimeError, "Wychodzimy poza linię o treści:\n" + line
-            elif quoting and line[wsk] == ZnakSeparatoraTekstu:
-                if wsk + 1 < DlLinii and line[wsk + 1] == ZnakSeparatoraTekstu: # Pominiemy, jeśli cudzysłów jest podwójny
+            elif quoting and line[wsk] == quotechar:
+                if wsk + 1 < DlLinii and line[wsk + 1] == quotechar: # Pominiemy, jeśli cudzysłów jest podwójny
                     wsk += 2
                 else:
                     # Pojedynczy cudzysłów - koniec napisu
-                    t.append(line[pocz:wsk].replace(PodwZnkSepTekstu, ZnakSeparatoraTekstu))
+                    t.append(line[pocz:wsk].replace(PodwZnkSepTekstu, quotechar))
                     wsk += 1
                     # Tu czekamy na przecinek
                     if wsk < DlLinii and line[wsk] == delimiter:
