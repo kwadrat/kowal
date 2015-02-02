@@ -26,6 +26,12 @@ class FieldSplitter(object):
         FieldSplitter:
         '''
 
+    def split_fields(self, line):
+        '''
+        FieldSplitter:
+        '''
+        return ['']
+
 def rozbij_na_pola(linia, quoting=0):
     t = []
     w_cudzyslowie = 0
@@ -89,3 +95,4 @@ class TestRozbijaniaCSV(unittest.TestCase):
         TestRozbijaniaCSV:
         '''
         obk = FieldSplitter()
+        self.assertEqual(obk.split_fields(''), [''])
