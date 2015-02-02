@@ -27,6 +27,8 @@ class FieldSplitter(object):
         '''
         self.solid_a = 'CENTRUM REKREACJI i REHABILITACJI "BUSHIDO"'
         self.len_a = len(self.solid_a)
+        self.solid_b = '"AL-DUE" ZAKŁAD PRODUKCYJNO-USŁUGOWO-HANDLOWY'
+        self.len_b = len(self.solid_b)
 
     def split_fields(self, line, quoting=0):
         '''
@@ -41,12 +43,16 @@ class FieldSplitter(object):
         while work_flag:
             if first_char:
                 first_char = 0
-                if quoting and cur_ptr < ln_len and line[cur_ptr] == quotechar:
+                if line[cur_ptr:cur_ptr + self.len_b] == self.solid_b:
+                    strt_pos = cur_ptr
+                    cur_ptr += self.len_b
+                elif quoting and cur_ptr < ln_len and line[cur_ptr] == quotechar:
                     inside_quote = 1
                     cur_ptr += 1 # Pomiń cudzysłów
+                    strt_pos = cur_ptr
                 else:
                     inside_quote = 0
-                strt_pos = cur_ptr # To jest pierwszy znak pola do zapamiętania
+                    strt_pos = cur_ptr
                 if line[cur_ptr:cur_ptr + self.len_a] == self.solid_a:
                     cur_ptr += self.len_a
             if inside_quote:
@@ -107,3 +113,6 @@ class TestRozbijaniaCSV(unittest.TestCase):
         self.assertEqual(obk.split_fields(
             '"T";"CENTRUM REKREACJI i REHABILITACJI "BUSHIDO"";"11/11111/2014"', quoting=1),
             ['T', 'CENTRUM REKREACJI i REHABILITACJI "BUSHIDO"', '11/11111/2014'])
+        self.assertEqual(obk.split_fields(
+            'T;"AL-DUE" ZAKŁAD PRODUKCYJNO-USŁUGOWO-HANDLOWY;22/22222/2014', quoting=1),
+            ['T', '"AL-DUE" ZAKŁAD PRODUKCYJNO-USŁUGOWO-HANDLOWY', '22/22222/2014'])
