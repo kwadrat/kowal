@@ -25,6 +25,8 @@ class FieldSplitter(object):
         '''
         FieldSplitter:
         '''
+        self.solid_a = 'CENTRUM REKREACJI i REHABILITACJI "BUSHIDO"'
+        self.len_a = len(self.solid_a)
 
     def split_fields(self, line, quoting=0):
         '''
@@ -45,6 +47,8 @@ class FieldSplitter(object):
                 else:
                     inside_quote = 0
                 strt_pos = cur_ptr # To jest pierwszy znak pola do zapamiętania
+                if line[cur_ptr:cur_ptr + self.len_a] == self.solid_a:
+                    cur_ptr += self.len_a
             if inside_quote:
                 # Szukamy zamykającego cudzysłowu
                 if cur_ptr >= ln_len:
@@ -100,3 +104,6 @@ class TestRozbijaniaCSV(unittest.TestCase):
         self.assertEqual(obk.split_fields(''), [''])
         self.assertEqual(obk.split_fields('a'), ['a'])
         self.assertEqual(obk.split_fields('a;b'), ['a', 'b'])
+        self.assertEqual(obk.split_fields(
+            '"T";"CENTRUM REKREACJI i REHABILITACJI "BUSHIDO"";"11/11111/2014"', quoting=1),
+            ['T', 'CENTRUM REKREACJI i REHABILITACJI "BUSHIDO"', '11/11111/2014'])
