@@ -20,6 +20,12 @@ ZnakSeparatoraTekstu = '"'
 PodwZnkSepTekstu = ZnakSeparatoraTekstu + ZnakSeparatoraTekstu
 znaki_konczace_pole_tekstowe = set([ZnakSeparatoraPol, chr(13), chr(10)])
 
+class FieldSplitter(object):
+    def __init__(self):
+        '''
+        FieldSplitter:
+        '''
+
 def rozbij_na_pola(linia, quoting=0):
     t = []
     w_cudzyslowie = 0
@@ -77,3 +83,9 @@ class TestRozbijaniaCSV(unittest.TestCase):
         self.assertEqual(rozbij_na_pola('a'), ['a'])
         self.assertEqual(rozbij_na_pola('a;b'), ['a', 'b'])
         self.assertEqual(rozbij_na_pola('"a"'), ['"a"'])
+
+    def test_object_csv(self):
+        '''
+        TestRozbijaniaCSV:
+        '''
+        obk = FieldSplitter()
