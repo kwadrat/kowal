@@ -78,6 +78,9 @@ def generate_scale(max_value):
 def roznica_dokladna(a, b):
     return d2a(a2d(b) - a2d(a))
 
+def roznica_liczbowa(a, b):
+    return a2d(b) - a2d(a)
+
 def decimal_suma_wybranych_wpisow_slownika(slownik, klucze):
     decimal_suma_wartosci = wartosc_zero_globalna
     for klucz in klucze:
@@ -182,3 +185,5 @@ class TestPointNumbers(unittest.TestCase):
         '''
         self.assertEqual(adjust_for_csv('1.2'), 1.2)
         self.assertEqual(adjust_for_csv(''), None)
+        self.assertEqual(roznica_dokladna('2', '2'), '0.000000')
+        self.assertEqual(not roznica_liczbowa('2', '2'), 1)
