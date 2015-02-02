@@ -30,7 +30,7 @@ class FieldSplitter(object):
         '''
         FieldSplitter:
         '''
-        return ['']
+        return [line]
 
 def rozbij_na_pola(linia, quoting=0):
     t = []
@@ -96,3 +96,4 @@ class TestRozbijaniaCSV(unittest.TestCase):
         '''
         obk = FieldSplitter()
         self.assertEqual(obk.split_fields(''), [''])
+        self.assertEqual(obk.split_fields('a'), ['a'])
