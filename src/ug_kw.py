@@ -21,7 +21,7 @@ ZnakSeparatoraTekstu = '"'
 PodwZnkSepTekstu = ZnakSeparatoraTekstu + ZnakSeparatoraTekstu
 znaki_konczace_pole_tekstowe = set([ZnakSeparatoraPol, chr(13), chr(10)])
 
-def linia_csv(linia):
+def rozbij_na_pola(linia):
     t = []
     w_cudzyslowie = 0
     wsk = 0 # Wskaźnik na aktualny analizowany znak linii
@@ -68,9 +68,6 @@ def linia_csv(linia):
             else: # Zwykły znak - przesuwamy się dalej
                 wsk += 1
     return t
-
-def rozbij_na_pola(linia):
-    return linia_csv(linia)
 
 class TestRozbijaniaCSV(unittest.TestCase):
     def test_rozbijania_csv(self):
