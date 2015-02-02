@@ -34,7 +34,7 @@ class FieldSplitter(object):
 
 def rozbij_na_pola(line, quoting=0):
     t = []
-    w_cudzyslowie = 0
+    inside_quote = 0
     wsk = 0 # Wskaźnik na aktualny analizowany znak linii
     DlLinii = len(line) # Długość linii
     first_char = 1 # Znacznik - analizujemy pierwszy znak pola wiersza
@@ -43,12 +43,12 @@ def rozbij_na_pola(line, quoting=0):
         if first_char:
             first_char = 0
             if quoting and wsk < DlLinii and line[wsk] == quotechar:
-                w_cudzyslowie = 1
+                inside_quote = 1
                 wsk += 1 # Pomiń cudzysłów
             else:
-                w_cudzyslowie = 0
+                inside_quote = 0
             pocz = wsk # To jest pierwszy znak pola do zapamiętania
-        if w_cudzyslowie:
+        if inside_quote:
             # Szukamy zamykającego cudzysłowu
             if wsk >= DlLinii:
                 raise RuntimeError, "Wychodzimy poza linię o treści:\n" + line
