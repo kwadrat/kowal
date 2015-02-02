@@ -32,17 +32,17 @@ class FieldSplitter(object):
         '''
         return [line]
 
-def rozbij_na_pola(linia, quoting=0):
+def rozbij_na_pola(line, quoting=0):
     t = []
     w_cudzyslowie = 0
     wsk = 0 # Wskaźnik na aktualny analizowany znak linii
-    DlLinii = len(linia) # Długość linii
+    DlLinii = len(line) # Długość linii
     pierwszy = 1 # Znacznik - analizujemy pierwszy znak pola wiersza
     pracuj = 1
     while pracuj:
         if pierwszy:
             pierwszy = 0
-            if quoting and wsk < DlLinii and linia[wsk] == ZnakSeparatoraTekstu:
+            if quoting and wsk < DlLinii and line[wsk] == ZnakSeparatoraTekstu:
                 w_cudzyslowie = 1
                 wsk += 1 # Pomiń cudzysłów
             else:
@@ -51,16 +51,16 @@ def rozbij_na_pola(linia, quoting=0):
         if w_cudzyslowie:
             # Szukamy zamykającego cudzysłowu
             if wsk >= DlLinii:
-                raise RuntimeError, "Wychodzimy poza linię o treści:\n" + linia
-            elif quoting and linia[wsk] == ZnakSeparatoraTekstu:
-                if wsk + 1 < DlLinii and linia[wsk + 1] == ZnakSeparatoraTekstu: # Pominiemy, jeśli cudzysłów jest podwójny
+                raise RuntimeError, "Wychodzimy poza linię o treści:\n" + line
+            elif quoting and line[wsk] == ZnakSeparatoraTekstu:
+                if wsk + 1 < DlLinii and line[wsk + 1] == ZnakSeparatoraTekstu: # Pominiemy, jeśli cudzysłów jest podwójny
                     wsk += 2
                 else:
                     # Pojedynczy cudzysłów - koniec napisu
-                    t.append(linia[pocz:wsk].replace(PodwZnkSepTekstu, ZnakSeparatoraTekstu))
+                    t.append(line[pocz:wsk].replace(PodwZnkSepTekstu, ZnakSeparatoraTekstu))
                     wsk += 1
                     # Tu czekamy na przecinek
-                    if wsk < DlLinii and linia[wsk] == ZnakSeparatoraPol:
+                    if wsk < DlLinii and line[wsk] == ZnakSeparatoraPol:
                         wsk += 1
                         pierwszy = 1 # Znowu zaczynamy analizę od pierwszego znaku pola
                     else:
@@ -69,9 +69,9 @@ def rozbij_na_pola(linia, quoting=0):
             else:
                 wsk += 1 # Szukamy następnego znaku
         else: # Nie mamy cudzysłowu - szukamy do następnego przecinka lub końca
-            if wsk >= DlLinii or linia[wsk] in znaki_konczace_pole_tekstowe:
-                t.append(linia[pocz:wsk])
-                if wsk < DlLinii and linia[wsk] == ZnakSeparatoraPol:
+            if wsk >= DlLinii or line[wsk] in znaki_konczace_pole_tekstowe:
+                t.append(line[pocz:wsk])
+                if wsk < DlLinii and line[wsk] == ZnakSeparatoraPol:
                     wsk += 1 # Będzie kolejne pole
                     pierwszy = 1
                 else:
