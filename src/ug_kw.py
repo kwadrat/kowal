@@ -37,11 +37,11 @@ def rozbij_na_pola(line, quoting=0):
     w_cudzyslowie = 0
     wsk = 0 # Wskaźnik na aktualny analizowany znak linii
     DlLinii = len(line) # Długość linii
-    pierwszy = 1 # Znacznik - analizujemy pierwszy znak pola wiersza
+    first_char = 1 # Znacznik - analizujemy pierwszy znak pola wiersza
     pracuj = 1
     while pracuj:
-        if pierwszy:
-            pierwszy = 0
+        if first_char:
+            first_char = 0
             if quoting and wsk < DlLinii and line[wsk] == quotechar:
                 w_cudzyslowie = 1
                 wsk += 1 # Pomiń cudzysłów
@@ -62,7 +62,7 @@ def rozbij_na_pola(line, quoting=0):
                     # Tu czekamy na przecinek
                     if wsk < DlLinii and line[wsk] == delimiter:
                         wsk += 1
-                        pierwszy = 1 # Znowu zaczynamy analizę od pierwszego znaku pola
+                        first_char = 1 # Znowu zaczynamy analizę od pierwszego znaku pola
                     else:
                         # Nie było przecinka - koniec analizy
                         pracuj = 0
@@ -73,7 +73,7 @@ def rozbij_na_pola(line, quoting=0):
                 t.append(line[pocz:wsk])
                 if wsk < DlLinii and line[wsk] == delimiter:
                     wsk += 1 # Będzie kolejne pole
-                    pierwszy = 1
+                    first_char = 1
                 else:
                     pracuj = 0 # Koniec analizy - był Enter
             else: # Zwykły znak - przesuwamy się dalej
