@@ -304,7 +304,7 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(wybierz_powyzej_progu(None, 0), None)
         self.assertEqual(wybierz_powyzej_progu(1, 0), 1)
         self.assertEqual(fx_jn('a', 'b', 'cd'), 'abcd')
-        self.assertEqual(tekstowe_indeksy([(1, 'a', 'b')]), [('1', 'a')])
+        self.assertEqual(tekstowe_indeksy([(1, 'a', 'ignored_go')]), [('1', 'a')])
         self.assertEqual(make_hl('http://www.example.com', 'Text'), 'HYPERLINK("http://www.example.com";"Text")')
         self.assertRaises(AssertionError, hlp_assume_one, None, [], None)
         self.assertRaises(AssertionError, hlp_assume_one, None, [1, 2], None)
