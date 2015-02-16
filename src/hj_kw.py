@@ -224,6 +224,9 @@ def nazwa_filtrowanego(indeks_testu):
 def space_two(first, second):
     return '%s %s' % (first, second)
 
+def chop_go(elements):
+    return elements[:2]
+
 if sys.version.split()[0] == '2.5.1':
     def enum_one(text):
         all_lines = text.splitlines()
@@ -316,3 +319,5 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(space_two('a', 'b'), 'a b')
         self.assertEqual(list(enum_one('a\nb')), [(1, 'a'), (2, 'b')])
         self.assertEqual(list(enum_one('a\nb\nc')), [(1, 'a'), (2, 'b'), (3, 'c')])
+        self.assertEqual(chop_go(['id', 'name', 'go']), ['id', 'name'])
+
