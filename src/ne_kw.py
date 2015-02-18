@@ -47,15 +47,14 @@ class EnergyWriter(CommonWriter):
         '''
         EnergyWriter:
         '''
-        if nc_kw.month_enabled(nr_month):
-            all_dates = nc_kw.unique_sorted(dane_bazy, lc_kw.fq_m_date_qv)
-            all_hours = self.period_server.time_for_header
-            first_line = dost_wiersz.zabierz_wiersze(len(all_dates) + 2)
-            base_data_line = first_line + 1
-            self.generate_dates_vertically(xwg, all_dates, base_data_line)
-            self.generate_hours_horizontally(xwg, all_hours, first_line)
-            for day_nr, my_data in enumerate(dane_bazy):
-                self.generate_for_a_day(xwg, my_data, base_data_line, day_nr)
+        all_dates = nc_kw.unique_sorted(dane_bazy, lc_kw.fq_m_date_qv)
+        all_hours = self.period_server.time_for_header
+        first_line = dost_wiersz.zabierz_wiersze(len(all_dates) + 2)
+        base_data_line = first_line + 1
+        self.generate_dates_vertically(xwg, all_dates, base_data_line)
+        self.generate_hours_horizontally(xwg, all_hours, first_line)
+        for day_nr, my_data in enumerate(dane_bazy):
+            self.generate_for_a_day(xwg, my_data, base_data_line, day_nr)
 
     def generate_for_object(self, xwg, dane_bazy, name, uu_maper):
         '''

@@ -40,9 +40,6 @@ def info_brak_danych(output_file, id_obiekt, my_start_date, my_end_date):
     full_text = ''.join(dane)
     sf_kw.zapisz_plik(output_file, full_text)
 
-def month_enabled(nr_month):
-    return 1
-
 def unique_sorted(dane_bazy, field):
     object_names = list(set(map(lambda x: x[field], dane_bazy)))
     object_names.sort()

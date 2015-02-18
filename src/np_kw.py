@@ -54,53 +54,52 @@ class PowerWriter(CommonWriter):
         '''
         PowerWriter:
         '''
-        if nc_kw.month_enabled(nr_month):
-            all_dates = nc_kw.unique_sorted(dane_bazy, lc_kw.fq_m_date_qv)
-            all_hours = self.period_server.time_for_header
-            first_line = dost_wiersz.zabierz_wiersze(len(all_dates) + 11)
-            base_data_line = first_line + 1
-            last_data_line = base_data_line + len(all_dates) - 1
-            bottom_max_line = last_data_line + 1
-            summary_label_line = bottom_max_line + 1
-            summary_unit_line = summary_label_line + 1
-            nmax_line = summary_unit_line + 1
-            diff_label_line = nmax_line + 1
-            diff_unit_line = diff_label_line + 1
-            ndiff_line = diff_unit_line + 1
-            klm_ads = gu_kw.KolumnowyAdresator(
-                wiersz_bazowy_miesiecy=base_data_line,
-                kl_assigned_col=self.first_sample_column,
-                col_cnt=len(all_hours),
-                row_cnt=len(all_dates),
-                )
-            self.generate_max_row(xwg, bottom_max_line, klm_ads)
-            self.generate_dates_vertically(xwg, all_dates, base_data_line)
-            self.generate_hours_horizontally(xwg, all_hours, first_line)
-            self.wpisz_wartosc_mocy_umownej(xwg, first_line, moc_umowna)
-            if moc_umowna is None:
-                moc_um_dec = lm_kw.wartosc_zero_globalna
-            else:
-                moc_um_dec = lm_kw.a2d(lm_kw.rzeczywista_na_napis(moc_umowna))
-            month_aggr = ja_kw.MonthSummary()
-            for day_nr, my_data in enumerate(dane_bazy):
-                self.generate_for_a_day(xwg, my_data, base_data_line, day_nr, moc_um_dec)
-                month_aggr.add_day_samples(my_data)
-            month_aggr.prepare_top_values(self.liczba_max)
-            self.generate_summary(xwg, nmax_line, ndiff_line, first_line, month_aggr)
-            xwg.zapisz_niezawijana_ramka(summary_label_line, self.nmax_start_col, '%d największych poborów mocy w m-cu' % self.liczba_max, liczba_kolumn=self.liczba_max)
-            xwg.zapisz_niezawijana_ramka(summary_unit_line, self.nmax_start_col, gb_kw.tytul_kilowatow_przekroczenia, liczba_kolumn=self.liczba_max)
-            xwg.zapisz_niezawijana_ramka(diff_label_line, self.nmax_start_col, 'przekroczenia mocy (jeśli liczba ujemna to 0,00)', liczba_kolumn=self.liczba_max)
-            xwg.zapisz_zawijana_ramka(diff_label_line, self.col_for_moc_max, 'Suma przekr')
-            xwg.zapisz_zawijana_ramka(diff_unit_line, self.col_for_moc_max, gb_kw.tytul_kilowatow_przekroczenia)
-            xwg.zapisz_niezawijana_ramka(diff_unit_line, self.nmax_start_col, gb_kw.tytul_kilowatow_przekroczenia, liczba_kolumn=self.liczba_max)
-            xwg.zapisz_zawijana_ramka(summary_label_line, self.col_for_moc_max, 'Moc max')
-            xwg.zapisz_zawijana_ramka(summary_label_line, self.col_for_moc_max + 1, 'Moc śred')
-            xwg.zapisz_zawijana_ramka(summary_label_line, self.col_for_moc_max + 2, 'Moc min')
-            xwg.zapisz_zawijana_ramka(summary_unit_line, self.col_for_moc_max, gb_kw.tytul_kilowatow_przekroczenia)
-            xwg.zapisz_zawijana_ramka(summary_unit_line, self.col_for_moc_max + 1, gb_kw.tytul_kilowatow_przekroczenia)
-            xwg.zapisz_zawijana_ramka(summary_unit_line, self.col_for_moc_max + 2, gb_kw.tytul_kilowatow_przekroczenia)
-            self.generate_max_column(xwg, first_line, klm_ads)
-            self.generate_week_max_column(xwg, first_line, klm_ads, all_dates)
+        all_dates = nc_kw.unique_sorted(dane_bazy, lc_kw.fq_m_date_qv)
+        all_hours = self.period_server.time_for_header
+        first_line = dost_wiersz.zabierz_wiersze(len(all_dates) + 11)
+        base_data_line = first_line + 1
+        last_data_line = base_data_line + len(all_dates) - 1
+        bottom_max_line = last_data_line + 1
+        summary_label_line = bottom_max_line + 1
+        summary_unit_line = summary_label_line + 1
+        nmax_line = summary_unit_line + 1
+        diff_label_line = nmax_line + 1
+        diff_unit_line = diff_label_line + 1
+        ndiff_line = diff_unit_line + 1
+        klm_ads = gu_kw.KolumnowyAdresator(
+            wiersz_bazowy_miesiecy=base_data_line,
+            kl_assigned_col=self.first_sample_column,
+            col_cnt=len(all_hours),
+            row_cnt=len(all_dates),
+            )
+        self.generate_max_row(xwg, bottom_max_line, klm_ads)
+        self.generate_dates_vertically(xwg, all_dates, base_data_line)
+        self.generate_hours_horizontally(xwg, all_hours, first_line)
+        self.wpisz_wartosc_mocy_umownej(xwg, first_line, moc_umowna)
+        if moc_umowna is None:
+            moc_um_dec = lm_kw.wartosc_zero_globalna
+        else:
+            moc_um_dec = lm_kw.a2d(lm_kw.rzeczywista_na_napis(moc_umowna))
+        month_aggr = ja_kw.MonthSummary()
+        for day_nr, my_data in enumerate(dane_bazy):
+            self.generate_for_a_day(xwg, my_data, base_data_line, day_nr, moc_um_dec)
+            month_aggr.add_day_samples(my_data)
+        month_aggr.prepare_top_values(self.liczba_max)
+        self.generate_summary(xwg, nmax_line, ndiff_line, first_line, month_aggr)
+        xwg.zapisz_niezawijana_ramka(summary_label_line, self.nmax_start_col, '%d największych poborów mocy w m-cu' % self.liczba_max, liczba_kolumn=self.liczba_max)
+        xwg.zapisz_niezawijana_ramka(summary_unit_line, self.nmax_start_col, gb_kw.tytul_kilowatow_przekroczenia, liczba_kolumn=self.liczba_max)
+        xwg.zapisz_niezawijana_ramka(diff_label_line, self.nmax_start_col, 'przekroczenia mocy (jeśli liczba ujemna to 0,00)', liczba_kolumn=self.liczba_max)
+        xwg.zapisz_zawijana_ramka(diff_label_line, self.col_for_moc_max, 'Suma przekr')
+        xwg.zapisz_zawijana_ramka(diff_unit_line, self.col_for_moc_max, gb_kw.tytul_kilowatow_przekroczenia)
+        xwg.zapisz_niezawijana_ramka(diff_unit_line, self.nmax_start_col, gb_kw.tytul_kilowatow_przekroczenia, liczba_kolumn=self.liczba_max)
+        xwg.zapisz_zawijana_ramka(summary_label_line, self.col_for_moc_max, 'Moc max')
+        xwg.zapisz_zawijana_ramka(summary_label_line, self.col_for_moc_max + 1, 'Moc śred')
+        xwg.zapisz_zawijana_ramka(summary_label_line, self.col_for_moc_max + 2, 'Moc min')
+        xwg.zapisz_zawijana_ramka(summary_unit_line, self.col_for_moc_max, gb_kw.tytul_kilowatow_przekroczenia)
+        xwg.zapisz_zawijana_ramka(summary_unit_line, self.col_for_moc_max + 1, gb_kw.tytul_kilowatow_przekroczenia)
+        xwg.zapisz_zawijana_ramka(summary_unit_line, self.col_for_moc_max + 2, gb_kw.tytul_kilowatow_przekroczenia)
+        self.generate_max_column(xwg, first_line, klm_ads)
+        self.generate_week_max_column(xwg, first_line, klm_ads, all_dates)
 
     def generate_for_object(self, xwg, dane_bazy, name, uu_maper):
         '''
