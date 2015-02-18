@@ -7,6 +7,7 @@ Wspólne elementy klas dla eksportu faktur energii elektrycznej oraz gazu W-5
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import jt_kw
+import ir_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -21,11 +22,14 @@ for i in NazwyModulow:
 def wylicz_kl_pocz(qj_ta_kolumna, qj_liczba_lat):
     return 2 + qj_ta_kolumna * (qj_liczba_lat + 1)
 
-class DaneWspolneObiektu(object):
+CObjectNaming = ir_kw.CObjectNaming
+
+class DaneWspolneObiektu(CObjectNaming):
     def __init__(self):
         '''
         DaneWspolneObiektu:
         '''
+        CObjectNaming.__init__(self)
         self.dane_dla_roku = {}
 
     def wartosc_z_obiektu(self, fvk_rok, fvk_miesiac, qj_ta_kolumna):
