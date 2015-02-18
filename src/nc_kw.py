@@ -10,7 +10,6 @@ import lc_kw
 import sf_kw
 import gv_kw
 import hj_kw
-import rq_kw
 import gu_kw
 import dn_kw
 import le_kw
@@ -42,7 +41,7 @@ def info_brak_danych(output_file, id_obiekt, my_start_date, my_end_date):
     sf_kw.zapisz_plik(output_file, full_text)
 
 def month_enabled(nr_month):
-    return not rq_kw.TymczasowoTylkoJeden or nr_month < 1
+    return 1
 
 def unique_sorted(dane_bazy, field):
     object_names = list(set(map(lambda x: x[field], dane_bazy)))
@@ -255,13 +254,7 @@ class CommonWriter(CommonRdWr):
         '''
         CommonWriter:
         '''
-        if rq_kw.TymczasowoTylkoJeden:
-            id_obiekt = 11 # eo_kw.BT_SP3, ale w tabeli uu_
-            my_year = 2013
-            my_month = 6
-            my_start_date, my_end_date = dn_kw.daty_skrajne_miesiaca(my_year, my_month, liczba_mies=2)
-        else:
-            my_start_date, my_end_date = None, None
+        my_start_date, my_end_date = None, None
         dane_bazy = le_kw.dq_load_from_db(
             dfb,
             self.table_of_samples,
