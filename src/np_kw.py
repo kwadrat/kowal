@@ -50,7 +50,7 @@ class PowerWriter(CommonWriter):
             dc_b_style = jc_kw.obtain_cell_color(moc_um_dec, ten_treshold, jestem_weekend, my_sample)
             xwg.zapisz_flt(row, col, my_sample, kl_miejsc=2, **dc_b_style)
 
-    def generate_for_month(self, xwg, dane_bazy, nr_month, dost_wiersz, moc_umowna):
+    def generate_for_month(self, xwg, dane_bazy, dost_wiersz, moc_umowna):
         '''
         PowerWriter:
         '''
@@ -111,13 +111,13 @@ class PowerWriter(CommonWriter):
         self.setup_col_widths(xwg)
         selected_data = nc_kw.dla_podanej_nazwy(dane_bazy, name)
         month_dict, all_months = nc_kw.wyznacz_slownik_miesiaca(selected_data)
-        for nr_month, moj_rm in enumerate(all_months):
+        for moj_rm in all_months:
             my_data = month_dict[moj_rm]
             if uu_maper:
                 moc_umowna = uu_maper.pobierz_umowna_moc(nr_uu, moj_rm)
             else:
                 moc_umowna = 0
-            self.generate_for_month(xwg, my_data, nr_month, dost_wiersz, moc_umowna)
+            self.generate_for_month(xwg, my_data, dost_wiersz, moc_umowna)
 
 class TestWritingPower(unittest.TestCase):
     def test_writing_power(self):

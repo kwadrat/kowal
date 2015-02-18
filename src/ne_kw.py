@@ -43,7 +43,7 @@ class EnergyWriter(CommonWriter):
             col = self.first_sample_column + sample_index
             xwg.zapisz_flt(row, col, my_sample, kl_miejsc=2, **dc_b_style)
 
-    def generate_for_month(self, xwg, dane_bazy, nr_month, dost_wiersz):
+    def generate_for_month(self, xwg, dane_bazy, dost_wiersz):
         '''
         EnergyWriter:
         '''
@@ -65,9 +65,9 @@ class EnergyWriter(CommonWriter):
         selected_data = nc_kw.dla_podanej_nazwy(dane_bazy, name)
         self.setup_col_widths(xwg)
         month_dict, all_months = nc_kw.wyznacz_slownik_miesiaca(selected_data)
-        for nr_month, moj_rm in enumerate(all_months):
+        for moj_rm in all_months:
             my_data = month_dict[moj_rm]
-            self.generate_for_month(xwg, my_data, nr_month, dost_wiersz)
+            self.generate_for_month(xwg, my_data, dost_wiersz)
 
 class TestEnergyParts(unittest.TestCase):
     def test_energy_parts(self):
