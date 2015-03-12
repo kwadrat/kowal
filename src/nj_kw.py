@@ -65,7 +65,7 @@ class DaneWspolneObiektu(CObjectNaming):
         '''
         DaneWspolneObiektu:
         '''
-        for przes, etykieta in enumerate(wszystkie_lata):
+        for przes, etykieta in wszystkie_lata.enum_pairs():
             xwg.zapisz_flt(wiersz_pocz, kol_pocz + przes, etykieta, kl_miejsc=2)
 
     def przygotuj_moce_w_obiekcie(self, xwg, wiersz_pocz, qj_ta_kolumna, qj_liczba_lat, wszystkie_lata):
@@ -97,7 +97,7 @@ class DaneWspolneObiektu(CObjectNaming):
         '''
         DaneWspolneObiektu:
         '''
-        for nr_kol_roku, fvk_rok in enumerate(wszystkie_lata):
+        for nr_kol_roku, fvk_rok in wszystkie_lata.enum_pairs():
             for fvk_miesiac in jt_kw.numery_miesiecy:
                 wartosc_do_wpisania = self.wartosc_z_obiektu(fvk_rok, fvk_miesiac, qj_ta_kolumna)
                 xwg.zapisz_flt(wiersz_pocz + fvk_miesiac, kol_pocz + nr_kol_roku, wartosc_do_wpisania, kl_miejsc=2)
