@@ -89,6 +89,13 @@ class SpecifiedYears(object):
         '''
         return enumerate(self.collected_years)
 
+    def add_if_lacking(self, the_year):
+        '''
+        SpecifiedYears:
+        '''
+        if not self.year_exists(the_year):
+            self.add_one_year(the_year)
+
 class TestYearCollection(unittest.TestCase):
     def test_construction_sql(self):
         '''
@@ -122,3 +129,13 @@ class TestYearCollection(unittest.TestCase):
         self.assertEqual(list(obk.enum_pairs()), [(0, 2013), (1, 2014)])
         obk.add_one_year(2012)
         self.assertEqual(obk.get_elements(), [2012, 2013, 2014])
+
+    def test_add_lacking_year(self):
+        '''
+        TestYearCollection:
+        '''
+        obk = SpecifiedYears()
+        obk.add_if_lacking(2012)
+        self.assertEqual(obk.get_elements(), [2012])
+        obk.add_if_lacking(2012)
+        self.assertEqual(obk.get_elements(), [2012])
