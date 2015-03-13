@@ -118,8 +118,7 @@ def workbook_for_verbose_reading(filename):
     return wbk
 
 def generate_unit_2_cost_data(dfb, filename):
-    xlrd = la_kw.new_module_for_reading_spreadsheet()
-    wbk = xlrd.open_workbook(filename)
+    wbk = workbook_for_verbose_reading(filename)
     energy_unit_costs = EnergyMonthUnitCosts(wbk)
 
 class TestSkomplikowanegoRoku(unittest.TestCase):
