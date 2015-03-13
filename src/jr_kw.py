@@ -117,10 +117,6 @@ def workbook_for_verbose_reading(filename):
     wbk = xlrd.open_workbook(filename, formatting_info=True)
     return wbk
 
-def generate_unit_2_cost_data(dfb, filename):
-    wbk = workbook_for_verbose_reading(filename)
-    energy_unit_costs = EnergyMonthUnitCosts(wbk)
-
 class TestSkomplikowanegoRoku(unittest.TestCase):
     def test_skomplikowanego_roku(self):
         '''
