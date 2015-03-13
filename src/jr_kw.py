@@ -112,6 +112,11 @@ class EnergyMonthUnitCosts(ManipulateSheet):
             en_tb.end_object()
         en_tb.show_summary()
 
+def workbook_for_verbose_reading(filename):
+    xlrd = la_kw.new_module_for_reading_spreadsheet()
+    wbk = xlrd.open_workbook(filename, formatting_info=True)
+    return wbk
+
 def generate_unit_2_cost_data(dfb, filename):
     xlrd = la_kw.new_module_for_reading_spreadsheet()
     wbk = xlrd.open_workbook(filename)
