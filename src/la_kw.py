@@ -265,8 +265,11 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        self.wbk.save(nazwa_docelowa)
+        sheet_count = self.wbk._Workbook__worksheets
+        if sheet_count:
+            self.wbk.save(nazwa_docelowa)
         self.wbk = None
+        return sheet_count
 
     def write_unicode(self, m_coor, the_content, style=None):
         '''
