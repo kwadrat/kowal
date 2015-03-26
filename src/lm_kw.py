@@ -60,14 +60,21 @@ def readjust_number(places, value):
     rounding = calculate_rounding(places)
     return a2d(napis).quantize(rounding)
 
-def rzeczywista_na_napis(liczba):
+def rzeczywista_na_napis(liczba, rn_after=2):
     '''Przerabia liczbę złotych (być może ułamkową, z groszami)
     na kwotę do pokazania użytkownikowi - bez części ułamkowej,
     jeśli ona jest zerowa.
     '''
-    napis = '%.3f' % liczba
-    if napis[-4:] == '.000': # Mamy pełną kwotę, bez ułamka
-        return napis[:-4] # Zwróć tylko całkowitą wartość
+    if rn_after == 3:
+        napis = '%.3f' % liczba
+        last_cnt = -4
+        pattern = '.000'
+    if rn_after == 2:
+        napis = '%.2f' % liczba
+        last_cnt = -3
+        pattern = '.00'
+    if napis[last_cnt:] == pattern: # Mamy pełną kwotę, bez ułamka
+        return napis[:last_cnt] # Zwróć tylko całkowitą wartość
     else:
         return napis # Zwróć pełną kwotę, łącznie z groszami
 
@@ -130,7 +137,9 @@ class TestPointNumbers(unittest.TestCase):
         self.assertEqual(calculate_rounding(3), decimal.Decimal('0.001'))
         self.assertEqual(readjust_number(3, 1.5555), decimal.Decimal('1.556'))
         self.assertEqual(rzeczywista_na_napis(589.56 * 100), '58956')
-        self.assertEqual(rzeczywista_na_napis(589.56), '589.560')
+        self.assertEqual(rzeczywista_na_napis(589.56), '589.56')
+        self.assertEqual(rzeczywista_na_napis(589.56 * 100, rn_after=3), '58956')
+        self.assertEqual(rzeczywista_na_napis(589.56, rn_after=3), '589.560')
         self.assertEqual(hj_kw.remove_nones(
             [
             wartosc_zero_globalna,
