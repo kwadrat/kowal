@@ -65,9 +65,9 @@ def rzeczywista_na_napis(liczba):
     na kwotę do pokazania użytkownikowi - bez części ułamkowej,
     jeśli ona jest zerowa.
     '''
-    napis = '%.2f' % liczba
-    if napis[-3:] == '.00': # Mamy pełną kwotę, bez ułamka
-        return napis[:-3] # Zwróć tylko całkowitą wartość
+    napis = '%.3f' % liczba
+    if napis[-4:] == '.000': # Mamy pełną kwotę, bez ułamka
+        return napis[:-4] # Zwróć tylko całkowitą wartość
     else:
         return napis # Zwróć pełną kwotę, łącznie z groszami
 
@@ -130,7 +130,7 @@ class TestPointNumbers(unittest.TestCase):
         self.assertEqual(calculate_rounding(3), decimal.Decimal('0.001'))
         self.assertEqual(readjust_number(3, 1.5555), decimal.Decimal('1.556'))
         self.assertEqual(rzeczywista_na_napis(589.56 * 100), '58956')
-        self.assertEqual(rzeczywista_na_napis(589.56), '589.56')
+        self.assertEqual(rzeczywista_na_napis(589.56), '589.560')
         self.assertEqual(hj_kw.remove_nones(
             [
             wartosc_zero_globalna,
