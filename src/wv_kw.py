@@ -30,7 +30,7 @@ class DomenowaKlasaMocy(object):
         '''
         DomenowaKlasaMocy:
         '''
-        return jedn_mocy, lc_kw.fq_moc_qv
+        return jedn_mocy, lc_kw.fq_moc_qv, 2
 
     def przedstaw_pole_sumy(self, bfs):
         '''

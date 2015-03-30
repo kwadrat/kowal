@@ -30,7 +30,7 @@ class DomenowaKlasaEnergii(object):
         '''
         DomenowaKlasaEnergii:
         '''
-        return gb_kw.Jedn_kWh, 'energia'
+        return gb_kw.Jedn_kWh, 'energia', 2
 
     def przedstaw_pole_sumy(self, bfs):
         '''
