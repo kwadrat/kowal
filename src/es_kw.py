@@ -81,8 +81,9 @@ class MojeSlupki(KlasaObrazu):
         '''
         SlWspX, DolSlupka, GoraSlupka, Etykieta, yh_value, jeden_odc_bzw = jeden_slupek.zwroc_pelna_krotke()
         Wartosc = yh_value
-        x0 = SlWspX - self.szerokosc_slupka / 2
-        x1 = SlWspX + self.szerokosc_slupka / 2
+        half_pillar_width = self.szerokosc_slupka / 2
+        x0 = SlWspX - half_pillar_width
+        x1 = SlWspX + half_pillar_width
         tmp_punkt = hr_kw.ProstokatDoRysowania(x0, DolSlupka, x1, GoraSlupka)
         dodatkowy_tekst = ''
         if jeden_odc_bzw is not None:
