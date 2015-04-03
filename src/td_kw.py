@@ -68,14 +68,9 @@ class KlasaStalowejWiedzy(object):
         elif self.cx_chce_kalendarz(stalowe_cx):
             return 'date'
         elif stalowe_cx in (cx_stawka_podatku_vat, cx_kwota_podatku_vat, cx_nic_float, cx_req_liczba):
-            if ekstra_cx == cx_ext_trojcyfrowe:
-                return 'numeric(1000,3)'
-            elif ekstra_cx == cx_ext_czterocyfrowe:
-                return 'numeric(1000,4)'
-            elif ekstra_cx == cx_ext_pieciocyfrowe:
-                return 'numeric(1000,5)'
-            else:
-                return 'numeric(1000,2)'
+            return 'numeric(1000,%(scaling_factor)d)' % dict(
+                scaling_factor=cx_scale(ekstra_cx),
+                )
         elif stalowe_cx in (cx_req_int, cx_nic_int):
             return 'integer'
         else:
