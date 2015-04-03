@@ -31,6 +31,9 @@ import unittest
     cx_ext_pieciocyfrowe,
     ) = range(3)
 
+def cx_scale(ekstra_cx):
+    return 2
+
 class KlasaStalowejWiedzy(object):
     def __init__(self):
         '''
@@ -95,6 +98,7 @@ class TestStalowych(unittest.TestCase):
         self.assertEqual(cx_ext_trojcyfrowe, 0)
         self.assertEqual(cx_ext_czterocyfrowe, 1)
         self.assertEqual(cx_ext_pieciocyfrowe, 2)
+        self.assertEqual(cx_scale(None), 2)
         self.assertEqual(obk.cx_jaki_typ(cx_req_liczba, cx_ext_trojcyfrowe), 'numeric(1000,3)')
         self.assertEqual(obk.cx_jaki_typ(cx_req_liczba, cx_ext_pieciocyfrowe), 'numeric(1000,5)')
         self.assertEqual(obk.cx_jaki_typ(cx_req_liczba, cx_ext_czterocyfrowe), 'numeric(1000,4)')
