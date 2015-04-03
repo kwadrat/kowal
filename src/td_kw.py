@@ -27,8 +27,9 @@ import unittest
 
 (
     cx_ext_trojcyfrowe,
+    cx_ext_czterocyfrowe,
     cx_ext_pieciocyfrowe,
-    ) = range(2)
+    ) = range(3)
 
 class KlasaStalowejWiedzy(object):
     def __init__(self):
@@ -56,6 +57,8 @@ class KlasaStalowejWiedzy(object):
         elif stalowe_cx in (cx_stawka_podatku_vat, cx_kwota_podatku_vat, cx_nic_float, cx_req_liczba):
             if ekstra_cx == cx_ext_trojcyfrowe:
                 return 'numeric(1000,3)'
+            elif ekstra_cx == cx_ext_czterocyfrowe:
+                return 'numeric(1000,4)'
             elif ekstra_cx == cx_ext_pieciocyfrowe:
                 return 'numeric(1000,5)'
             else:
@@ -90,7 +93,9 @@ class TestStalowych(unittest.TestCase):
         self.assertEqual(obk.cx_jaki_typ(cx_nic_data), 'date')
         self.assertEqual(obk.cx_jaki_typ(cx_licznikowy_numer), 'text')
         self.assertEqual(cx_ext_trojcyfrowe, 0)
-        self.assertEqual(cx_ext_pieciocyfrowe, 1)
+        self.assertEqual(cx_ext_czterocyfrowe, 1)
+        self.assertEqual(cx_ext_pieciocyfrowe, 2)
         self.assertEqual(obk.cx_jaki_typ(cx_req_liczba, cx_ext_trojcyfrowe), 'numeric(1000,3)')
         self.assertEqual(obk.cx_jaki_typ(cx_req_liczba, cx_ext_pieciocyfrowe), 'numeric(1000,5)')
+        self.assertEqual(obk.cx_jaki_typ(cx_req_liczba, cx_ext_czterocyfrowe), 'numeric(1000,4)')
         self.assertEqual(obk.cx_jaki_typ(cx_ogolne_tekstowe), 'text')
