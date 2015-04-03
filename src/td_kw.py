@@ -31,6 +31,11 @@ import unittest
     cx_ext_pieciocyfrowe,
     ) = range(3)
 
+scaling_map = {
+    None: 2,
+    cx_ext_trojcyfrowe: 3,
+    }
+
 def cx_scale(ekstra_cx):
     return 2
 
