@@ -34,6 +34,8 @@ import unittest
 scaling_map = {
     None: 2,
     cx_ext_trojcyfrowe: 3,
+    cx_ext_czterocyfrowe: 4,
+    cx_ext_pieciocyfrowe: 5,
     }
 
 def cx_scale(ekstra_cx):
@@ -108,6 +110,8 @@ class TestStalowych(unittest.TestCase):
         self.assertEqual(cx_ext_pieciocyfrowe, 2)
         self.assertEqual(cx_scale(None), 2)
         self.assertEqual(cx_scale(cx_ext_trojcyfrowe), 3)
+        self.assertEqual(cx_scale(cx_ext_czterocyfrowe), 4)
+        self.assertEqual(cx_scale(cx_ext_pieciocyfrowe), 5)
         self.assertEqual(obk.cx_jaki_typ(cx_req_liczba, cx_ext_trojcyfrowe), 'numeric(1000,3)')
         self.assertEqual(obk.cx_jaki_typ(cx_req_liczba, cx_ext_pieciocyfrowe), 'numeric(1000,5)')
         self.assertEqual(obk.cx_jaki_typ(cx_req_liczba, cx_ext_czterocyfrowe), 'numeric(1000,4)')
