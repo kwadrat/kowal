@@ -200,3 +200,4 @@ DocelowoDualnyKanal = 0
 AimToSelectedEnergy = 0
 AimToStrictWaterCanal = 1
 IsolateWaterCanalInvoices = 0
+TwoPlacesMoneyVariablePlacesAmount = 0

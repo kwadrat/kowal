@@ -7,6 +7,7 @@ Słownik przedziałów czasowych
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import rq_kw
 import lm_kw
 '''.splitlines()]
 
@@ -141,7 +142,14 @@ class KlasaSlownika(object):
         '''
         KlasaSlownika:
         '''
-        return self.vz_kwota
+        if rq_kw.TwoPlacesMoneyVariablePlacesAmount:
+            ##############################################################################
+            return self.vz_kwota, miejsc
+            ##############################################################################
+        else:
+            ##############################################################################
+            return self.vz_kwota
+            ##############################################################################
 
     def ustaw_umw(self):
         '''
