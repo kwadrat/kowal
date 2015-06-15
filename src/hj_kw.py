@@ -119,6 +119,13 @@ def rcp_dziel(first, second):
 def rcp_mnoz(first, second):
     return ''.join([first, '*', second])
 
+def rcp_vertical_sum(first_row, row_cnt, kl_letter_of_col):
+    return 'SUM(%(kl_letter_of_col)s%(label_first)d:%(kl_letter_of_col)s%(label_last)d)' % dict(
+        label_first=first_row,
+        label_last=first_row + row_cnt - 1,
+        kl_letter_of_col=kl_letter_of_col,
+        )
+
 def rcp_pion(wiersz_bazowy_miesiecy, kl_letter_of_col):
     return 'SUM(%(kl_letter_of_col)s%(mon_january)d:%(kl_letter_of_col)s%(mon_december)d)' % dict(
         mon_january=wiersz_bazowy_miesiecy + 2,
@@ -276,6 +283,7 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(significant_values_for_months({1:gv_kw.RichNumber(0)}), 0)
         self.assertEqual(significant_values_for_months({13:gv_kw.RichNumber(3)}), 0)
         self.assertEqual(rcp_plus(['A1', 'B2', 'C3']), 'A1+B2+C3')
+        self.assertEqual(rcp_vertical_sum(2, 12, 'A'), 'SUM(A2:A13)')
         self.assertEqual(rcp_pion(0, 'A'), 'SUM(A2:A13)')
         self.assertEqual(rcp_pion(1, 'A'), 'SUM(A3:A14)')
         self.assertEqual(rcp_pion(0, 'B'), 'SUM(B2:B13)')
