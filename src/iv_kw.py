@@ -5,8 +5,8 @@ import unittest
 
 def map_document_ident(input_tuple):
     (value,) = input_tuple
-    if value == 14061083:
-        value = 14025187
+    if value == '14061083':
+        value = '14025187'
     output_tuple = (value,)
     return output_tuple
 
@@ -15,5 +15,5 @@ class TestDocumentIdentMapping(unittest.TestCase):
         '''
         TestDocumentIdentMapping:
         '''
-        self.assertEqual(map_document_ident((1,)), (1,))
-        self.assertEqual(map_document_ident((14061083,)), (14025187,))
+        self.assertEqual(map_document_ident(('1',)), ('1',))
+        self.assertEqual(map_document_ident(('14061083',)), ('14025187',))
