@@ -127,11 +127,7 @@ def rcp_vertical_sum(first_row, row_cnt, kl_letter_of_col):
         )
 
 def rcp_pion(wiersz_bazowy_miesiecy, kl_letter_of_col):
-    return 'SUM(%(kl_letter_of_col)s%(mon_january)d:%(kl_letter_of_col)s%(mon_december)d)' % dict(
-        mon_january=wiersz_bazowy_miesiecy + 2,
-        mon_december=wiersz_bazowy_miesiecy + 13,
-        kl_letter_of_col=kl_letter_of_col,
-        )
+    return rcp_vertical_sum(wiersz_bazowy_miesiecy + 2, 12, kl_letter_of_col)
 
 def rcp_wspolne(command, etk_a, etk_b, trzeci=''):
     return '%(command)s(%(etk_a)s:%(etk_b)s%(trzeci)s)' % dict(
