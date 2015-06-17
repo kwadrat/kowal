@@ -87,7 +87,7 @@ def build_date(rok, miesiac, dzien):
 
 def heating_period(my_point):
     year = my_point.year
-    if my_point.month <= 7:
+    if my_point.month <= 8:
         year -= 1
     return year
 
@@ -139,8 +139,8 @@ class TestDateQuarters(unittest.TestCase):
         self.assertEqual(has_date_from_dt(datetime.date(2013, 3, 1)), 1)
         self.assertEqual(has_date_from_dt('2013-03-01'), 0)
         self.assertEqual(build_date(2012, 1, 2), datetime.date(2012, 1, 2))
-        self.assertEqual(heating_period(build_date(2012, 7, 2)), 2011)
-        self.assertEqual(heating_period(build_date(2012, 8, 2)), 2012)
+        self.assertEqual(heating_period(build_date(2012, 8, 2)), 2011)
+        self.assertEqual(heating_period(build_date(2012, 9, 2)), 2012)
         self.assertEqual(heating_label(2011), '2011/2012')
         self.assertEqual(heating_label(2012), '2012/2013')
 
