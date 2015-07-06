@@ -87,8 +87,9 @@ class SampleRow(object):
         elif ignored_zero(value):
             pass
         else:
-            statement = ('row_date: %s, old_value: %s value: %s' % (
+            statement = ('row_date: %s, sample_index: %d old_value: %s value: %s' % (
                 repr(row_date),
+                sample_index,
                 repr(old_value),
                 repr(value),
                 ))
