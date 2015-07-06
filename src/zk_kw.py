@@ -60,6 +60,7 @@ zestaw_t26 = set(xrange(11188, 11639 + 1))
 zestaw_t27_t28 = set(xrange(11640, 12467 + 1))
 zestaw_t29 = set(xrange(12468, 12632 + 1))
 zestaw_t30_t31 = frozenset(xrange(12633, 13353 + 1))
+zestaw_t32_t33 = frozenset(xrange(13354, 13736 + 1))
 
 
 skasowane_nakladki_z_t7 = set([
@@ -142,11 +143,12 @@ fk_atmt_purpurowe = (
     zestaw_t26 |
     zestaw_t27_t28 |
     zestaw_t29 |
+    zestaw_t30_t31 |
     zestaw_pusty
     )
 
 fk_atmt_turkusowe = (
-    zestaw_t30_t31 |
+    zestaw_t32_t33 |
     zestaw_pusty
     )
 
