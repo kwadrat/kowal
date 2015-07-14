@@ -190,7 +190,6 @@ Niebezpieczne_testowa_aplikacja_produkcyjna_baza = 0
 
 DocelowoOdwrotnieOproczOstatniego = 1
 TymczasowoPozwolNaUzupelnienieBorki = 0
-DocelowoObiektoweSezonyGrzewcze = 1
 
 DocelowoPosrednikDokladnejLiczby = 0
 TymczasowoPokazWzory = 0
