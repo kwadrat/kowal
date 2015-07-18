@@ -94,6 +94,9 @@ def heating_period(my_point):
 def heating_label(year):
     return '%d/%d' % (year, year + 1)
 
+def watering_label(year):
+    return '%d' % (year,)
+
 class HourMiniServer(object):
     def __init__(self, column_index):
         '''
@@ -143,6 +146,8 @@ class TestDateQuarters(unittest.TestCase):
         self.assertEqual(heating_period(build_date(2012, 9, 2)), 2012)
         self.assertEqual(heating_label(2011), '2011/2012')
         self.assertEqual(heating_label(2012), '2012/2013')
+        self.assertEqual(watering_label(2011), '2011')
+        self.assertEqual(watering_label(2012), '2012')
 
     def test_time_headers(self):
         '''
