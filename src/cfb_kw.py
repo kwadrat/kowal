@@ -70,7 +70,8 @@ class DetectAmountFieldPrecision(object):
         '''
         DetectAmountFieldPrecision:
         '''
-        self.set_new_comma(2)
+        after_comma = extract_precision(one_line, self.field_name)
+        self.set_new_comma(after_comma)
 
 class TestDetectingAmountFieldPrecision(unittest.TestCase):
     def test_detecting_amount_field_precision(self):
@@ -82,6 +83,14 @@ class TestDetectingAmountFieldPrecision(unittest.TestCase):
         self.assertEqual(ojt.after_comma, None)
         ojt.analyze_line('    core numeric(1000,2),')
         self.assertEqual(ojt.after_comma, 2)
+
+    def test_2_detecting_amount_field_precision(self):
+        '''
+        TestDetectingAmountFieldPrecision:
+        '''
+        ojt = DetectAmountFieldPrecision('core2')
+        ojt.analyze_line('    core2 numeric(1000,4),')
+        self.assertEqual(ojt.after_comma, 4)
 
     def test_3_detecting_amount_field_precision(self):
         '''
