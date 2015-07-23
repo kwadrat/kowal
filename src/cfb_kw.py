@@ -16,6 +16,18 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 class DetectAmountFieldPrecision(object):
+    def set_new_comma(self, after_comma):
+        '''
+        DetectAmountFieldPrecision:
+        '''
+        if self.after_comma is None:
+            self.after_comma = after_comma
+        else:
+            raise RuntimeError(
+                'Overwrite old value %s with new value %s ?' % (
+                repr(self.after_comma),
+                repr(after_comma)))
+
     def __init__(self, field_name):
         '''
         DetectAmountFieldPrecision:
@@ -39,3 +51,12 @@ class TestDetectingAmountFieldPrecision(unittest.TestCase):
         self.assertEqual(ojt.after_comma, None)
         ojt.analyze_line('    weg_ilosc numeric(1000,2),')
         self.assertEqual(ojt.after_comma, 2)
+
+    def test_3_detecting_amount_field_precision(self):
+        '''
+        TestDetectingAmountFieldPrecision:
+        '''
+        ojt = DetectAmountFieldPrecision('core3')
+        ojt.set_new_comma(1)
+        self.assertEqual(ojt.after_comma, 1)
+        self.assertRaises(RuntimeError, ojt.set_new_comma, 2)
