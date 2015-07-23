@@ -2,6 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 import unittest
+import re
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 '''.splitlines()]
@@ -14,6 +15,36 @@ for i in NazwyModulow:
             exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
         else:
             exec 'import %(modul)s' % dict(modul = i)
+
+frag_a = r'''
+\s*
+'''
+frag_b = '''
+\s+
+numeric
+\(
+1000,
+(?P<decimal_precision>
+\d+
+)
+\)
+
+'''
+
+def extract_precision(one_line, label):
+    result = None
+    if one_line:
+        srch_text = ''.join([
+            frag_a,
+            label,
+            frag_b,
+            ])
+        reg_res = re.search(srch_text, one_line, re.VERBOSE)
+        if reg_res:
+            result = reg_res.group('decimal_precision')
+            result = int(result)
+    return result
+
 
 class DetectAmountFieldPrecision(object):
     def set_new_comma(self, after_comma):
@@ -60,3 +91,11 @@ class TestDetectingAmountFieldPrecision(unittest.TestCase):
         ojt.set_new_comma(1)
         self.assertEqual(ojt.after_comma, 1)
         self.assertRaises(RuntimeError, ojt.set_new_comma, 2)
+
+    def test_4_detecting_amount_field_precision(self):
+        '''
+        TestDetectingAmountFieldPrecision:
+        '''
+        self.assertEqual(extract_precision('', ''), None)
+        self.assertEqual(extract_precision('core4 numeric(1000,4),', 'core4'), 4)
+        self.assertEqual(extract_precision('core5 numeric(1000,2),', 'core5'), 2)
