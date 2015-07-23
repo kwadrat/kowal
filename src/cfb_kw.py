@@ -74,6 +74,13 @@ class DetectAmountFieldPrecision(object):
         if after_comma is not None:
             self.set_new_comma(after_comma)
 
+    def analyze_multiline(self, multi_line):
+        '''
+        DetectAmountFieldPrecision:
+        '''
+        for one_line in multi_line.splitlines():
+            self.analyze_line(one_line)
+
 class TestDetectingAmountFieldPrecision(unittest.TestCase):
     def test_detecting_amount_field_precision(self):
         '''
