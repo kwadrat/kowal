@@ -38,8 +38,6 @@ scaling_map = {
     cx_ext_pieciocyfrowe: 5,
     }
 
-def cx_scale(ekstra_cx):
-    return 2
 
 def cx_scale(ekstra_cx):
     return scaling_map[ekstra_cx]
