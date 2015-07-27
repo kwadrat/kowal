@@ -2,7 +2,6 @@
 # -*- coding: UTF-8 -*-
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
-import gb_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -25,12 +24,6 @@ class DomenowaKlasaKwoty(object):
         '''
         DomenowaKlasaKwoty:
         '''
-
-    def teksty_domeny(self, tmp_wkrs, jedn_mocy):
-        '''
-        DomenowaKlasaKwoty:
-        '''
-        return gb_kw.Jedn_zlotowki, 'koszty', 2
 
     def przedstaw_pole_sumy(self, bfs):
         '''

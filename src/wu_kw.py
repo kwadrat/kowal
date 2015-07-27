@@ -14,12 +14,6 @@ class DomenowaKlasaIlosci(object):
         '''
         bnh.ustaw_ilosc()
 
-    def teksty_domeny(self, tmp_wkrs, jedn_mocy):
-        '''
-        DomenowaKlasaIlosci:
-        '''
-        return tmp_wkrs.pole_jedn, 'ilość', 3
-
     def przedstaw_pole_sumy(self, bfs):
         '''
         DomenowaKlasaIlosci:

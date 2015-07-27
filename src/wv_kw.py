@@ -2,7 +2,6 @@
 # -*- coding: UTF-8 -*-
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
-import lc_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -25,12 +24,6 @@ class DomenowaKlasaMocy(object):
         '''
         DomenowaKlasaMocy:
         '''
-
-    def teksty_domeny(self, tmp_wkrs, jedn_mocy):
-        '''
-        DomenowaKlasaMocy:
-        '''
-        return jedn_mocy, lc_kw.fq_moc_qv, 2
 
     def przedstaw_pole_sumy(self, bfs):
         '''

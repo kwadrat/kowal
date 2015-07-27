@@ -200,4 +200,3 @@ AimToSelectedEnergy = 0
 AimToStrictWaterCanal = 1
 IsolateWaterCanalInvoices = 0
 TwoPlacesMoneyVariablePlacesAmount = 0
-AimToExtractedUnit = 1
