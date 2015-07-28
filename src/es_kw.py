@@ -7,6 +7,7 @@ NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lk_kw
 import rq_kw
 import lm_kw
+import hd_kw
 import sj_kw
 import jb_kw
 import hr_kw
@@ -94,6 +95,7 @@ class MojeSlupki(KlasaObrazu):
             pozycja_wart_y = self.wsp_y_na_dole_slupka
         pozycja_wart_y -= oa_kw.wysokosc_napisu
         dotted_txt = lm_kw.rzeczywista_na_napis(Wartosc, rn_after=self.rn_after)
+        dotted_txt = hd_kw.comma_and_zero(dotted_txt)
         self.CenterNapis(SlWspX, pozycja_wart_y, dotted_txt, jeden_odc_bzw)
         if Etykieta:
             slownik_qm = wn_kw.KlasaSlownika()
