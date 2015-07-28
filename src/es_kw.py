@@ -93,14 +93,7 @@ class MojeSlupki(KlasaObrazu):
         if pozycja_wart_y > self.wsp_y_na_dole_slupka:
             pozycja_wart_y = self.wsp_y_na_dole_slupka
         pozycja_wart_y -= oa_kw.wysokosc_napisu
-        if rq_kw.TwoPlacesMoneyVariablePlacesAmount:
-            ##############################################################################
-            self.CenterNapis(SlWspX, pozycja_wart_y, lm_kw.rzeczywista_na_napis(Wartosc, rn_after=3), jeden_odc_bzw)
-            ##############################################################################
-        else:
-            ##############################################################################
-            self.CenterNapis(SlWspX, pozycja_wart_y, lm_kw.rzeczywista_na_napis(Wartosc), jeden_odc_bzw)
-            ##############################################################################
+        self.CenterNapis(SlWspX, pozycja_wart_y, lm_kw.rzeczywista_na_napis(Wartosc, rn_after=self.rn_after), jeden_odc_bzw)
         if Etykieta:
             slownik_qm = wn_kw.KlasaSlownika()
             self.CenterNapis(SlWspX, DolSlupka + 5, Etykieta, jb_kw.JedenOdcinekBazowy(None, None, slownik_qm))
