@@ -23,7 +23,7 @@ for i in NazwyModulow:
 MojeSlupki = es_kw.MojeSlupki
 
 class FakturoweRoczneSlupki(MojeSlupki):
-    def __init__(self, tgk, aqr, dnw):
+    def __init__(self, tgk, aqr, dnw, rn_after):
         '''
         FakturoweRoczneSlupki:
         '''
@@ -55,7 +55,8 @@ class TestFakturowychRocznychSlupkow(unittest.TestCase):
         aqr.przypisz_szkielet(szkielet_lat)
         lp_wykresu = 0
         dnw = oh_kw.SimpleDNW(lp_wykresu)
-        obk = FakturoweRoczneSlupki(tgk, aqr, dnw)
+        rn_after = 2
+        obk = FakturoweRoczneSlupki(tgk, aqr, dnw, rn_after)
         self.assertEqual(obk.szerokosc_dx_skali, 0)
         self.assertEqual(obk.szerokosc_slupka, 30)
         self.assertEqual(obk.wysokosc_obrazu, 150)

@@ -24,4 +24,4 @@ class LisSzerRocznychFaktur(object):
         '''
         LisSzerRocznychFaktur:
         '''
-        return em_kw.FakturoweRoczneSlupki(tgk, self.aqr, self.dnw)
+        return em_kw.FakturoweRoczneSlupki(tgk, self.aqr, self.dnw, rn_after)
