@@ -65,6 +65,10 @@ def rzeczywista_na_napis(liczba, rn_after=2):
     na kwotę do pokazania użytkownikowi - bez części ułamkowej,
     jeśli ona jest zerowa.
     '''
+    if rn_after == 4:
+        napis = '%.4f' % liczba
+        last_cnt = -5
+        pattern = '.0000'
     if rn_after == 3:
         napis = '%.3f' % liczba
         last_cnt = -4
@@ -139,6 +143,7 @@ class TestPointNumbers(unittest.TestCase):
         self.assertEqual(rzeczywista_na_napis(589.56 * 100), '58956')
         self.assertEqual(rzeczywista_na_napis(589.56), '589.56')
         self.assertEqual(rzeczywista_na_napis(589.56 * 100, rn_after=3), '58956')
+        self.assertEqual(rzeczywista_na_napis(589.56, rn_after=4), '589.5600')
         self.assertEqual(rzeczywista_na_napis(589.56, rn_after=3), '589.560')
         self.assertEqual(hj_kw.remove_nones(
             [
