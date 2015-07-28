@@ -20,7 +20,7 @@ class LisSzerMiesiecznychFaktur(object):
         LisSzerMiesiecznychFaktur:
         '''
 
-    def slupek_dla_faktur(self, tgk):
+    def slupek_dla_faktur(self, tgk, rn_after):
         '''
         LisSzerMiesiecznychFaktur:
         '''
