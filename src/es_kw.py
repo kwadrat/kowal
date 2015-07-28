@@ -300,6 +300,7 @@ class MojeSlupki(KlasaObrazu):
         '''
         MojeSlupki:
         '''
+        self.rn_after = rn_after
         KlasaObrazu.__init__(self, tgk, aqr, dnw, lk_kw.LITERA_SLUPEK)
         self.pusta_lista_wszystkiego()
         self.margines_dy_powyzej_slupka = 20
