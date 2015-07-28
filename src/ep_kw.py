@@ -26,7 +26,8 @@ class PomiaroweSlupki(MojeSlupki):
         '''
         PomiaroweSlupki:
         '''
-        MojeSlupki.__init__(self, tgk, aqr, dnw)
+        rn_after = 2
+        MojeSlupki.__init__(self, tgk, aqr, dnw, rn_after)
         self.chce_bez_tresci = 1
 
     def ustaw_skalowanie_obrazu(self):

@@ -34,7 +34,8 @@ class PoboroweOgolneSlupki(MojeSlupki):
         '''
         PoboroweOgolneSlupki:
         '''
-        MojeSlupki.__init__(self, tgk, aqr, dnw)
+        rn_after = 2
+        MojeSlupki.__init__(self, tgk, aqr, dnw, rn_after)
         self.chce_bez_tresci = 1
         self.chce_po_lewej_miejsca_na_skale(self.pikseli_po_lewej)
         self.dolny_podpis = dolny_podpis
