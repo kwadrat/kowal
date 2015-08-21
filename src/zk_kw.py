@@ -61,6 +61,7 @@ zestaw_t27_t28 = set(xrange(11640, 12467 + 1))
 zestaw_t29 = set(xrange(12468, 12632 + 1))
 zestaw_t30_t31 = frozenset(xrange(12633, 13353 + 1))
 zestaw_t32_t33 = frozenset(xrange(13354, 13736 + 1))
+zestaw_t34_t35 = frozenset(xrange(13737, 14130 + 1))
 
 
 skasowane_nakladki_z_t7 = set([
@@ -116,6 +117,7 @@ odblokowane_sp2_filia = (set(xrange(5330, 5345 + 1)))
 faza_kwiecien_2011 = (zestaw_t11)
 
 fk_atmt_zolte = (
+    zestaw_t34_t35 |
     zestaw_pusty
     )
 
@@ -144,11 +146,11 @@ fk_atmt_purpurowe = (
     zestaw_t27_t28 |
     zestaw_t29 |
     zestaw_t30_t31 |
+    zestaw_t32_t33 |
     zestaw_pusty
     )
 
 fk_atmt_turkusowe = (
-    zestaw_t32_t33 |
     zestaw_pusty
     )
 
