@@ -42,6 +42,7 @@ BT_ZSEU = 81 # Zespół Szkół Ekonomiczno-Usługowych
 BT_ZS_1_Powst = 77 # Zespół Szkół nr 1 im. Powstańców Śląskich
 BT_ZSS_x = 87 # Zespół Szkół Specjalnych
 BT_MOSIR_x = 148
+BT_UM_Zamkowa_x = 119
 
 DGN_PrzedNr7 = (str(Przedszkole7), 'Przedszkole nr 7')
 
