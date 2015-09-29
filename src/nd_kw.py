@@ -59,7 +59,8 @@ class OgOpOgolnaKolumna(object):
         '''
         OgOpOgolnaKolumna:
         '''
-        self.qj_set_wide1_label(row_offset_invoice_mark, opis_pod_kolumna)
+        if opis_pod_kolumna is not None:
+            self.qj_set_wide1_label(row_offset_invoice_mark, opis_pod_kolumna)
 
     def ustaw_zawijany_tytul(self, sam_tekst, fvk_miesiac=row_offset_column_name, liczba_wierszy=1):
         '''
