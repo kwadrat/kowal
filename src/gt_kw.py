@@ -62,6 +62,14 @@ class OgOpDaneDlaMiesiaca(object):
                 moja_suma += moja_wartosc
         return moja_suma
 
+    def oblicz_pierwsze_z_brzegu(self, tmp_key):
+        '''
+        OgOpDaneDlaMiesiaca:
+        '''
+        jedna_faktura = self.faktury_w_miesiacu[0]
+        moja_wartosc = jedna_faktura.get(tmp_key)
+        return moja_wartosc
+
     def wyznacz_pracowicie_sume_faktur(self, tmp_key):
         '''
         OgOpDaneDlaMiesiaca:
