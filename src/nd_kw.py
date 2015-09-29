@@ -160,6 +160,14 @@ class OgOpOgolnaKolumna(object):
             moja_suma = dane_jednego_miesiaca.wyznacz_rn_sume_faktur(self.kl_db_label)
             self.qj_set_a_flt(fvk_miesiac, moja_suma)
 
+    def wprowadz_jako_pierwsza_wartosc(self, dane_dla_miesiaca):
+        '''
+        OgOpOgolnaKolumna:
+        '''
+        for fvk_miesiac, dane_jednego_miesiaca in dane_dla_miesiaca.iteritems():
+            moja_wartosc = dane_jednego_miesiaca.wyznacz_pierwsza_z_brzegu(self.kl_db_label)
+            self.qj_set_direct(fvk_miesiac, moja_wartosc)
+
     def wprowadz_do_kolumny(self, fvk_miesiac, dane_faktury):
         '''
         OgOpOgolnaKolumna:
