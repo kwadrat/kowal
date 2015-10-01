@@ -464,6 +464,17 @@ class WriterGateway(object):
             ]) # Rozmiary podawane przez MS Excel
         self.wymus_szerokosci(lista_rozmiarow)
 
+    def szerokosc_a_kolumn_kosztow_energii(self):
+        '''
+        WriterGateway:
+        '''
+        lista_rozmiarow = (
+            [2740 # 10
+            ] + 3 * [2902 # 10,57
+            ] + 11 * [3255 # 12
+            ]) # Rozmiary podawane przez MS Excel
+        self.wymus_szerokosci(lista_rozmiarow)
+
     def szerokosc_kolumn_ciepla_sieciowego(self):
         '''
         WriterGateway:
