@@ -470,7 +470,8 @@ class WriterGateway(object):
         '''
         lista_rozmiarow = (
             [2740 # 10
-            ] + 3 * [2902 # 10,57
+            ] + 2 * [2902 # 10,57
+            ] + 1 * [5379 # 20,29
             ] + 11 * [3255 # 12
             ]) # Rozmiary podawane przez MS Excel
         self.wymus_szerokosci(lista_rozmiarow)
