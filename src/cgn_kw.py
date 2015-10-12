@@ -28,6 +28,12 @@ class XlrdMerged(object):
         '''
         return 'D6'
 
+    def number_of_rows(self):
+        '''
+        TestDecodeMergedDetails:
+        '''
+        return 1
+
 class TestDecodeMergedDetails(unittest.TestCase):
     def test_detecting_amount_field_precision(self):
         '''
@@ -35,3 +41,4 @@ class TestDecodeMergedDetails(unittest.TestCase):
         '''
         obj = XlrdMerged(5, 6, 3, 7)
         self.assertEqual(obj.get_anchor_label(), 'D6')
+        self.assertEqual(obj.number_of_rows(), 1)
