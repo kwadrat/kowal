@@ -21,6 +21,8 @@ class XlrdMerged(object):
         '''
         XlrdMerged:
         '''
+        self.col_first = col_first
+        self.col_after_last = col_after_last
 
     def get_anchor_label(self):
         '''
@@ -38,7 +40,7 @@ class XlrdMerged(object):
         '''
         XlrdMerged:
         '''
-        return 4
+        return self.col_after_last - self.col_first
 
 class TestDecodeMergedDetails(unittest.TestCase):
     def test_merged_cells_shape(self):
@@ -49,3 +51,12 @@ class TestDecodeMergedDetails(unittest.TestCase):
         self.assertEqual(obj.get_anchor_label(), 'D6')
         self.assertEqual(obj.number_of_rows(), 1)
         self.assertEqual(obj.number_of_cols(), 4)
+
+    def test_2_merged_cells_shape(self):
+        '''
+        TestDecodeMergedDetails:
+        '''
+        obj = XlrdMerged(3, 10, 1, 3)
+        self.assertEqual(obj.get_anchor_label(), 'D6')
+        self.assertEqual(obj.number_of_rows(), 1)
+        self.assertEqual(obj.number_of_cols(), 2)
