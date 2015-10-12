@@ -19,24 +19,24 @@ for i in NazwyModulow:
 class XlrdMerged(object):
     def __init__(self, row_first, row_after_last, col_first, col_after_last):
         '''
-        TestDecodeMergedDetails:
+        XlrdMerged:
         '''
 
     def get_anchor_label(self):
         '''
-        TestDecodeMergedDetails:
+        XlrdMerged:
         '''
         return 'D6'
 
     def number_of_rows(self):
         '''
-        TestDecodeMergedDetails:
+        XlrdMerged:
         '''
         return 1
 
     def number_of_cols(self):
         '''
-        TestDecodeMergedDetails:
+        XlrdMerged:
         '''
         return 4
 
