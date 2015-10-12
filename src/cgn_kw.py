@@ -41,7 +41,7 @@ class XlrdMerged(object):
         return 4
 
 class TestDecodeMergedDetails(unittest.TestCase):
-    def test_detecting_amount_field_precision(self):
+    def test_merged_cells_shape(self):
         '''
         TestDecodeMergedDetails:
         '''
