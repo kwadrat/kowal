@@ -333,7 +333,7 @@ class Test_Reader_of_Energy(unittest.TestCase):
         obk.set_dst_column()
         self.assertEqual(obk.extra_dst_column, 1)
 
-    def test_energy_4_reader(self):
+    def test_energy_5_reader(self):
         '''
         Test_Reader_of_Energy:
         '''
