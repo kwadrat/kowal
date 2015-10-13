@@ -5,6 +5,7 @@ import unittest
 import re
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import gu_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -21,28 +22,29 @@ class XlrdMerged(object):
         '''
         XlrdMerged:
         '''
-        self.row_first = row_first
-        self.row_after_last = row_after_last
-        self.col_first = col_first
-        self.col_after_last = col_after_last
+        row_cnt = row_after_last - row_first
+        col_cnt = col_after_last - col_first
+        self.klm_a_ads = gu_kw.KolumnowyAdresator(col_cnt=col_cnt, row_cnt=row_cnt)
+        self.klm_a_ads.ustaw_ka_wiersz(row_first)
+        self.klm_a_ads.ustaw_ka_kolumne(col_first)
 
     def get_anchor_label(self):
         '''
         XlrdMerged:
         '''
-        return 'D6'
+        return self.klm_a_ads.get_ka_official_address()
 
     def number_of_rows(self):
         '''
         XlrdMerged:
         '''
-        return self.row_after_last - self.row_first
+        return self.klm_a_ads.row_cnt
 
     def number_of_cols(self):
         '''
         XlrdMerged:
         '''
-        return self.col_after_last - self.col_first
+        return self.klm_a_ads.col_cnt
 
 class TestDecodeMergedDetails(unittest.TestCase):
     def test_merged_cells_shape(self):
@@ -59,6 +61,6 @@ class TestDecodeMergedDetails(unittest.TestCase):
         TestDecodeMergedDetails:
         '''
         obj = XlrdMerged(3, 10, 1, 3)
-        self.assertEqual(obj.get_anchor_label(), 'D6')
+        self.assertEqual(obj.get_anchor_label(), 'B4')
         self.assertEqual(obj.number_of_rows(), 7)
         self.assertEqual(obj.number_of_cols(), 2)
