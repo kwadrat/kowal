@@ -119,7 +119,7 @@ class RomanPeriod(object):
             self.the_day_second,
             )
 
-    def ordinal_way(self):
+    def rough_month(self):
         '''
         RomanPeriod:
         '''
@@ -168,7 +168,7 @@ def roman_range(krotka):
 
 def miesiace_i_rok(zakres_miesiecy):
     obk = RomanPeriod(zakres_miesiecy)
-    return obk.ordinal_way()
+    return obk.rough_month()
 
 def restore_day_ranges(five_pack):
     obk = RomanPeriod(five_pack=five_pack)
@@ -359,7 +359,7 @@ class TestDaysRanges(unittest.TestCase):
         '''
         obk = RomanPeriod(five_pack=(2010, 2, None, 12, None))
         self.assertEqual(obk.text_way(), 'II-XII-2010')
-        self.assertEqual(obk.ordinal_way(), (2, 12, 2010))
+        self.assertEqual(obk.rough_month(), (2, 12, 2010))
         obk.set_pack((2011, 2, None, 12, None))
         self.assertEqual(obk.text_way(), 'II-XII-2011')
 
