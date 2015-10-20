@@ -266,6 +266,16 @@ def round_month_begin(the_year, the_month, the_day):
         the_year, the_month = one_month_later(the_year, the_month)
     return the_year, the_month
 
+def next_day_after_end(the_year, the_month, the_day):
+    if the_day is None:
+        the_year, the_month = one_month_later(the_year, the_month)
+        the_day = 1
+    else:
+        nkd = NumerDnia(the_year, the_month, the_day)
+        nkd += 1
+        the_year, the_month, the_day = DataDnia(nkd)
+    return the_year, the_month, the_day
+
 def ZakresMiesiaca(rok, miesiac, liczba_mies=1):
     '''Zwraca początek i koniec danego miesiąca w postaci
     skrajnych numerów dnia - pierwszego danego i następnego miesiąca,
@@ -586,3 +596,5 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(round_month_begin(2011, 12, None), (2011, 12))
         self.assertEqual(round_month_begin(2011, 12, 16), (2012, 1))
         self.assertEqual(round_month_begin(2011, 12, 15), (2011, 12))
+        self.assertEqual(next_day_after_end(2011, 12, None), (2012, 1, 1))
+        self.assertEqual(next_day_after_end(2011, 12, 15), (2011, 12, 16))
