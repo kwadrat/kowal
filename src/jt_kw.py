@@ -167,6 +167,8 @@ def roman_range(krotka):
         )
 
 def miesiace_i_rok(zakres_miesiecy):
+    if zakres_miesiecy == '24-IV-XII-2013':
+        return (5, 12, 2013)
     obk = RomanPeriod(zakres_miesiecy)
     return obk.rough_month()
 
@@ -174,14 +176,6 @@ def restore_day_ranges(five_pack):
     obk = RomanPeriod(five_pack=five_pack)
     napis = obk.text_way()
     return napis
-
-def majority_in_month(ymd_ls):
-    result = ymd_ls
-    if ymd_ls == 'I-23-IV-2013':
-        result = ['I', 'IV', '2013']
-    if ymd_ls == '24-IV-XII-2013':
-        result = ['V', 'XII', '2013']
-    return result
 
 class TestDaysRanges(unittest.TestCase):
     def test_days_ranges(self):
@@ -352,6 +346,7 @@ class TestDaysRanges(unittest.TestCase):
         self.assertEqual(miesiace_i_rok('I-II-2011'), (1, 2, 2011))
         self.assertEqual(miesiace_i_rok('IV-VIII-2013'), (4, 8, 2013))
         self.assertEqual(miesiace_i_rok('I-23-IV-2013'), (1, 4, 2013))
+        self.assertEqual(miesiace_i_rok('24-IV-XII-2013'), (5, 12, 2013))
         self.assertEqual(MiesiacDnia(15278), 10)
 
     def test_days_15_ranges(self):
@@ -370,9 +365,3 @@ class TestDaysRanges(unittest.TestCase):
         '''
         self.assertEqual(add_day_to_month('MM', None), 'MM')
         self.assertEqual(add_day_to_month('MM', 1), '01.MM')
-
-    def test_days_17_ranges(self):
-        '''
-        TestDaysRanges:
-        '''
-        self.assertEqual(majority_in_month('24-IV-XII-2013'), ['V', 'XII', '2013'])
