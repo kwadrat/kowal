@@ -167,10 +167,8 @@ def roman_range(krotka):
         )
 
 def miesiace_i_rok(zakres_miesiecy):
-    zakres_miesiecy = zakres_miesiecy.split('-')
-    mies_pocz = roman_map[zakres_miesiecy[0]]
-    mies_kon = roman_map[zakres_miesiecy[1]]
-    rok_zakresu = int(zakres_miesiecy[2])
+    obk = RomanPeriod(zakres_miesiecy)
+    mies_pocz, mies_kon, rok_zakresu = obk.ordinal_way()
     result = (mies_pocz, mies_kon, rok_zakresu)
     return result
 
