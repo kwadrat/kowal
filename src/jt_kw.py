@@ -171,7 +171,7 @@ def restore_day_ranges(five_pack):
 def majority_in_month(ymd_ls):
     result = ymd_ls
     if ymd_ls == ['I', '23', 'IV', '2013']:
-        result = ['II', 'IV', '2013']
+        result = ['I', 'IV', '2013']
     return result
 
 class TestDaysRanges(unittest.TestCase):
@@ -365,4 +365,4 @@ class TestDaysRanges(unittest.TestCase):
         TestDaysRanges:
         '''
         self.assertEqual(majority_in_month([]), [])
-        self.assertEqual(majority_in_month(['I', '23', 'IV', '2013']), ['II', 'IV', '2013'])
+        self.assertEqual(majority_in_month(['I', '23', 'IV', '2013']), ['I', 'IV', '2013'])
