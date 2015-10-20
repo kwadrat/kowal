@@ -245,14 +245,6 @@ def ZakresRoku(rok):
     kon = dzien_nowego_roku(rok + 1)
     return pocz, kon
 
-def nast_rok_mies(rok, miesiac):
-    if miesiac < 12:
-        miesiac += 1
-    else:
-        miesiac = 1
-        rok += 1
-    return rok, miesiac
-
 def one_month_earlier(the_year, the_month):
     if the_month > 1:
         the_month -= 1
@@ -281,7 +273,7 @@ def ZakresMiesiaca(rok, miesiac, liczba_mies=1):
     pocz = dzien_nowego_miesiaca(rok, miesiac)
     # Przejdź na początek następnego miesiąca
     for i in xrange(liczba_mies):
-        rok, miesiac = nast_rok_mies(rok, miesiac)
+        rok, miesiac = one_month_later(rok, miesiac)
     kon = dzien_nowego_miesiaca(rok, miesiac)
     return pocz, kon
 
@@ -541,7 +533,7 @@ class TestDaysDates(unittest.TestCase):
         daty_roczne = daty_lat(13149, 13879)
         self.assertEqual(daty_roczne, [13149, 13514, 13879])
         self.assertEqual(map(DataDnia, daty_roczne), [(2006, 1, 1), (2007, 1, 1), (2008, 1, 1)])
-        self.assertEqual(nast_rok_mies(2011, 12), (2012, 1))
+        self.assertEqual(one_month_later(2011, 12), (2012, 1))
         self.assertEqual(ZakresMiesiaca(2008, 2), (13910, 13939))
         self.assertEqual(ZakresMiesiaca(2008, 2, 4), (13910, 14031))
         self.assertEqual(daty_skrajne_miesiaca(2008, 2), ['2008-02-01', '2008-03-01'])

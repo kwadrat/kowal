@@ -103,7 +103,7 @@ def uzupelnij_brakujace(slownik_wpisow):
             if one_key not in slownik_wpisow:
                 slownik_wpisow[one_key] = {}
             one_krotka = dn_kw.dwojka_z_napisu(one_key)
-            one_krotka = dn_kw.nast_rok_mies(*one_krotka)
+            one_krotka = dn_kw.one_month_later(*one_krotka)
             one_key = dn_kw.napis_z_rok_mies(*one_krotka)
 
 def zrob_tabele_poborow(lst_h, result):
