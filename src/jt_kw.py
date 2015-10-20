@@ -168,9 +168,7 @@ def roman_range(krotka):
 
 def miesiace_i_rok(zakres_miesiecy):
     obk = RomanPeriod(zakres_miesiecy)
-    mies_pocz, mies_kon, rok_zakresu = obk.ordinal_way()
-    result = (mies_pocz, mies_kon, rok_zakresu)
-    return result
+    return obk.ordinal_way()
 
 def restore_day_ranges(five_pack):
     obk = RomanPeriod(five_pack=five_pack)
