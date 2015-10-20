@@ -119,6 +119,16 @@ class RomanPeriod(object):
             self.the_day_second,
             )
 
+    def ordinal_way(self):
+        '''
+        RomanPeriod:
+        '''
+        return (
+            self.the_first,
+            self.the_second,
+            self.the_year,
+            )
+
     def text_way(self):
         '''
         RomanPeriod:
@@ -353,6 +363,7 @@ class TestDaysRanges(unittest.TestCase):
         '''
         obk = RomanPeriod(five_pack=(2010, 2, None, 12, None))
         self.assertEqual(obk.text_way(), 'II-XII-2010')
+        self.assertEqual(obk.ordinal_way(), (2, 12, 2010))
         obk.set_pack((2011, 2, None, 12, None))
         self.assertEqual(obk.text_way(), 'II-XII-2011')
 
