@@ -33,22 +33,6 @@ def add_day_to_month(month, day):
         month = '%02d.%s' % (day, month)
     return month
 
-def one_month_earlier(the_year, the_month):
-    if the_month > 1:
-        the_month -= 1
-    else:
-        the_year -= 1
-        the_month = 12
-    return the_year, the_month
-
-def one_month_later(the_year, the_month):
-    if the_month < 12:
-        the_month += 1
-    else:
-        the_year += 1
-        the_month = 1
-    return the_year, the_month
-
 class RomanPeriod(object):
     def take_year(self, elem_ls):
         '''
@@ -381,17 +365,3 @@ class TestDaysRanges(unittest.TestCase):
         '''
         self.assertEqual(add_day_to_month('MM', None), 'MM')
         self.assertEqual(add_day_to_month('MM', 1), '01.MM')
-
-    def test_days_17_ranges(self):
-        '''
-        TestDaysRanges:
-        '''
-        self.assertEqual(one_month_earlier(2010, 2), (2010, 1))
-        self.assertEqual(one_month_earlier(2010, 1), (2009, 12))
-
-    def test_days_18_ranges(self):
-        '''
-        TestDaysRanges:
-        '''
-        self.assertEqual(one_month_later(2010, 1), (2010, 2))
-        self.assertEqual(one_month_later(2009, 12), (2010, 1))

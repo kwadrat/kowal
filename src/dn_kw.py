@@ -253,6 +253,22 @@ def nast_rok_mies(rok, miesiac):
         rok += 1
     return rok, miesiac
 
+def one_month_earlier(the_year, the_month):
+    if the_month > 1:
+        the_month -= 1
+    else:
+        the_year -= 1
+        the_month = 12
+    return the_year, the_month
+
+def one_month_later(the_year, the_month):
+    if the_month < 12:
+        the_month += 1
+    else:
+        the_year += 1
+        the_month = 1
+    return the_year, the_month
+
 def ZakresMiesiaca(rok, miesiac, liczba_mies=1):
     '''Zwraca początek i koniec danego miesiąca w postaci
     skrajnych numerów dnia - pierwszego danego i następnego miesiąca,
@@ -566,3 +582,7 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(day_in_last_week_of_long_month(26), 1)
         self.assertEqual(is_ymd_sunday(2010, 1, 26), 0)
         self.assertEqual(is_ymd_sunday(2010, 1, 24), 1)
+        self.assertEqual(one_month_earlier(2010, 2), (2010, 1))
+        self.assertEqual(one_month_earlier(2010, 1), (2009, 12))
+        self.assertEqual(one_month_later(2010, 1), (2010, 2))
+        self.assertEqual(one_month_later(2009, 12), (2010, 1))
