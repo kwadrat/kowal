@@ -123,10 +123,14 @@ class RomanPeriod(object):
         '''
         RomanPeriod:
         '''
+        begin_year, begin_month = dn_kw.round_month_begin(self.the_year, self.the_first, self.the_day_first)
+        end_year, end_month = dn_kw.rounded_closing_date(self.the_year, self.the_second, self.the_day_second)
+        if begin_year != end_year:
+            raise RuntimeError('Year changed: %d %d' % (begin_year, end_year))
         return (
-            self.the_first,
-            self.the_second,
-            self.the_year,
+            begin_month,
+            end_month,
+            begin_year,
             )
 
     def text_way(self):
@@ -167,8 +171,6 @@ def roman_range(krotka):
         )
 
 def miesiace_i_rok(zakres_miesiecy):
-    if zakres_miesiecy == '24-IV-XII-2013':
-        return (5, 12, 2013)
     obk = RomanPeriod(zakres_miesiecy)
     return obk.rough_month()
 
@@ -347,6 +349,7 @@ class TestDaysRanges(unittest.TestCase):
         self.assertEqual(miesiace_i_rok('IV-VIII-2013'), (4, 8, 2013))
         self.assertEqual(miesiace_i_rok('I-23-IV-2013'), (1, 4, 2013))
         self.assertEqual(miesiace_i_rok('24-IV-XII-2013'), (5, 12, 2013))
+        self.assertRaises(RuntimeError, miesiace_i_rok, '24-XII-XII-2013')
         self.assertEqual(MiesiacDnia(15278), 10)
 
     def test_days_15_ranges(self):
