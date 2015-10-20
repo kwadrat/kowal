@@ -96,6 +96,12 @@ class SpecifiedYears(object):
         if not self.year_exists(the_year):
             self.add_one_year(the_year)
 
+    def get_cont_elements(self):
+        '''
+        SpecifiedYears:
+        '''
+        return range(self.first_year(), self.last_year() + 1)
+
 class TestYearCollection(unittest.TestCase):
     def test_construction_sql(self):
         '''
@@ -139,3 +145,12 @@ class TestYearCollection(unittest.TestCase):
         self.assertEqual(obk.get_elements(), [2012])
         obk.add_if_lacking(2012)
         self.assertEqual(obk.get_elements(), [2012])
+
+    def test_continuous_fill(self):
+        '''
+        TestYearCollection:
+        '''
+        obk = SpecifiedYears()
+        obk.add_one_year(2010)
+        obk.add_one_year(2012)
+        self.assertEqual(obk.get_cont_elements(), [2010, 2011, 2012])
