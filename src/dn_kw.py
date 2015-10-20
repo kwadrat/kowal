@@ -533,7 +533,6 @@ class TestDaysDates(unittest.TestCase):
         daty_roczne = daty_lat(13149, 13879)
         self.assertEqual(daty_roczne, [13149, 13514, 13879])
         self.assertEqual(map(DataDnia, daty_roczne), [(2006, 1, 1), (2007, 1, 1), (2008, 1, 1)])
-        self.assertEqual(one_month_later(2011, 12), (2012, 1))
         self.assertEqual(ZakresMiesiaca(2008, 2), (13910, 13939))
         self.assertEqual(ZakresMiesiaca(2008, 2, 4), (13910, 14031))
         self.assertEqual(daty_skrajne_miesiaca(2008, 2), ['2008-02-01', '2008-03-01'])
@@ -578,3 +577,4 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(one_month_earlier(2010, 1), (2009, 12))
         self.assertEqual(one_month_later(2010, 1), (2010, 2))
         self.assertEqual(one_month_later(2009, 12), (2010, 1))
+        self.assertEqual(one_month_later(2011, 12), (2012, 1))
