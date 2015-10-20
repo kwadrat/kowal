@@ -49,11 +49,6 @@ def one_month_later(the_year, the_month):
         the_month = 1
     return the_year, the_month
 
-def round_to_begin(the_year, the_month, the_day):
-    if the_day is not None and the_day > 15:
-        the_year, the_month = one_month_later(the_year, the_month)
-    return the_year, the_month
-
 class RomanPeriod(object):
     def take_year(self, elem_ls):
         '''
@@ -400,10 +395,3 @@ class TestDaysRanges(unittest.TestCase):
         '''
         self.assertEqual(one_month_later(2010, 1), (2010, 2))
         self.assertEqual(one_month_later(2009, 12), (2010, 1))
-
-    def test_days_19_ranges(self):
-        '''
-        TestDaysRanges:
-        '''
-        self.assertEqual(round_to_begin(2010, 2, None), (2010, 2))
-        self.assertEqual(round_to_begin(2010, 2, 20), (2010, 3))
