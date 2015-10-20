@@ -351,6 +351,7 @@ class TestDaysRanges(unittest.TestCase):
         self.assertEqual(nazwa_rzymskiego(4), 'IV')
         self.assertEqual(miesiace_i_rok('I-II-2011'), (1, 2, 2011))
         self.assertEqual(miesiace_i_rok('IV-VIII-2013'), (4, 8, 2013))
+        self.assertEqual(miesiace_i_rok('I-23-IV-2013'), (1, 4, 2013))
         self.assertEqual(MiesiacDnia(15278), 10)
 
     def test_days_15_ranges(self):
@@ -374,5 +375,4 @@ class TestDaysRanges(unittest.TestCase):
         '''
         TestDaysRanges:
         '''
-        self.assertEqual(majority_in_month('I-23-IV-2013'), ['I', 'IV', '2013'])
         self.assertEqual(majority_in_month('24-IV-XII-2013'), ['V', 'XII', '2013'])
