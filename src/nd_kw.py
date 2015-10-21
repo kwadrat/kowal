@@ -68,7 +68,7 @@ class OgOpOgolnaKolumna(object):
         '''
         self.qj_set_wide1_label(fvk_miesiac, sam_tekst, liczba_wierszy=liczba_wierszy)
 
-    def ustaw_wzor(self, fvk_miesiac, tekst_wzoru, kl_miejsc=None, liczba_kolumn=1, size=None, bold=None):
+    def ustaw_wzor(self, fvk_miesiac, tekst_wzoru, kl_miejsc=None, liczba_kolumn=1, size=None, bold=None, fore_colour=None):
         '''
         OgOpOgolnaKolumna:
         '''
@@ -76,7 +76,7 @@ class OgOpOgolnaKolumna(object):
             moich_miejsc = self.kl_miejsc
         else:
             moich_miejsc = kl_miejsc
-        self.qj_wzory[fvk_miesiac] = (tekst_wzoru, moich_miejsc, liczba_kolumn, size, bold)
+        self.qj_wzory[fvk_miesiac] = (tekst_wzoru, moich_miejsc, liczba_kolumn, size, bold, fore_colour)
 
     def ustaw_bold_12pt_wzor(self, fvk_miesiac, tekst_wzoru):
         '''
@@ -235,7 +235,7 @@ class OgOpOgolnaKolumna(object):
                 nr_kol,
                 tresc_napisu,
                 )
-        for wiersz_przesuniecie, (tekst_wzoru, kl_miejsc, liczba_kolumn, size, bold) in self.qj_wzory.iteritems():
+        for wiersz_przesuniecie, (tekst_wzoru, kl_miejsc, liczba_kolumn, size, bold, fore_colour) in self.qj_wzory.iteritems():
             xwg.zapisz_wzor(
                 wiersz_bazowy_miesiecy + wiersz_przesuniecie,
                 nr_kol,
@@ -244,6 +244,7 @@ class OgOpOgolnaKolumna(object):
                 bold=bold,
                 size=size,
                 liczba_kolumn=liczba_kolumn,
+                fore_colour=fore_colour,
                 )
         for wiersz_przesuniecie, (the_content, liczba_kolumn) in self.qj_centrowane_num_tytuly.iteritems():
             xwg.zapisz_lu_polaczone_komorki(
