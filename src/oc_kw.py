@@ -65,7 +65,7 @@ if rq_kw.WersjaUbuntuRun:
     ##############################################################################
 else:
     ##############################################################################
-    core_resolver = CoreResolver('havn.ciri.pl', 'havn.ciri.pl', 'havn.ciri.pl')
+    core_resolver = CoreResolver('media.ciri.pl', 'media.ciri.pl', 'media.ciri.pl')
     ##############################################################################
 rjb_fg_tld_d_apl = 'inne'
 rjb_fg_tld_e_apl = '2'
