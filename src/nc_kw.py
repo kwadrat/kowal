@@ -14,7 +14,6 @@ import gu_kw
 import dn_kw
 import le_kw
 import la_kw
-import eo_kw
 import tq_kw
 import jc_kw
 '''.splitlines()]

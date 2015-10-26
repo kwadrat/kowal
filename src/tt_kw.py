@@ -9,7 +9,6 @@ import fv_kw
 import le_kw
 import lp_kw
 import lq_kw
-import eo_kw
 import tq_kw
 import ur_kw
 '''.splitlines()]
@@ -225,13 +224,12 @@ class CommonReader(CommonRdWr):
             my_sample_row.make_stats_of_samples(
                 dfb, self.krt_pobor, self.table_of_samples, sample_key)
 
-    def report_missing_days(self, dfb):
+    def report_missing_days(self, dfb, id_obiekt):
         '''
         CommonReader:
         '''
         print 'Missing days'
         table_name = self.krt_pobor.krt_table
-        id_obiekt = eo_kw.Przedszkole14
         result = le_kw.dq_dane_jednego_obiektu(dfb, table_name, id_obiekt)
         tmp_format = 'len(result)'; print 'Eval:', tmp_format, eval(tmp_format)
         ls_objects = le_kw.dq_get_ordered_objects(dfb)
