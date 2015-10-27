@@ -16,6 +16,11 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+altered_names = {
+    'SZKOLA_PODSTAWOWA_NR35_RYBNIK': 'SZKOLA_PODSTAWOWA_NR_35_RYBNIK_SLASKA',
+    'ZESPOL_SZKOLNO_PRZEDSZK_RYBNIK_GLIWICKA': 'ZESPOL_SZKOLNO_PRZEDSZK_WIELOPOLE',
+    }
+
 def make_alias(name):
     if name == 'SZKOLA_PODSTAWOWA_NR35_RYBNIK':
         name = 'SZKOLA_PODSTAWOWA_NR_35_RYBNIK_SLASKA'
