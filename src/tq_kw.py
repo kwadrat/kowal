@@ -22,8 +22,7 @@ altered_names = {
     }
 
 def make_alias(name):
-    if name == 'SZKOLA_PODSTAWOWA_NR35_RYBNIK':
-        name = 'SZKOLA_PODSTAWOWA_NR_35_RYBNIK_SLASKA'
+    name = altered_names.get(name, name)
     return name
 
 def locate_object_key(dfb, under_name):
