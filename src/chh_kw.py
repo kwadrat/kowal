@@ -18,7 +18,8 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-MozliweLataZuzyc = map(str, dn_kw.ListaLatZuzyc)
+ListaLatZuzyc = range(dn_kw.RokObecnyStaly, rq_kw.RokPocz2 - 1, -1)
+MozliweLataZuzyc = map(str, ListaLatZuzyc)
 MozliweLataFaktur = map(str, range(dn_kw.RokObecnyStaly + 1, rq_kw.RokPocz2 - 1, -1))
 MozliweLataDlaARok = [rq_kw.PoleWszystko] + MozliweLataZuzyc
 MozliweLataDlaBRok = MozliweLataZuzyc
