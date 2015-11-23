@@ -37,6 +37,9 @@ MozliweLataDlaARok = [rq_kw.PoleWszystko] + MozliweLataZuzyc
 MozliweLataDlaBRok = MozliweLataZuzyc
 MozliweLataDlaWybranyRok = MozliweLataZuzyc + [rq_kw.PoleWszystko]
 
+def tupled_year(year):
+    return (year, str(year))
+
 def DataBledna(napis):
     '''
     Wartość zwracana:
@@ -82,3 +85,10 @@ class TestMisspelledDate(unittest.TestCase):
             'Miesiąc poza obsługiwanym zakresem: "13"')
         self.assertEqual(DataBledna('2014-03-32'),
             'Dzień poza obsługiwanym zakresem: "32"')
+
+    def test_converting_year(self):
+        '''
+        TestMisspelledDate:
+        '''
+        self.assertEqual(tupled_year(2014), (2014, '2014'))
+        self.assertEqual(tupled_year(2013), (2013, '2013'))
