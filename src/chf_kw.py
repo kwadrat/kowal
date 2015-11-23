@@ -43,10 +43,10 @@ class SkrWybranyRok(Skrawek):
         '''
         if ib_kw.AimToObjectFieldName:
             ##############################################################################
-            result = sk_kw.ListWyboruOgolna(tgk, self.moje_pole, dn_kw.MozliweLataDlaARok)
+            result = sk_kw.ListWyboruOgolna(tgk, self.moje_pole, dn_kw.MozliweLataDlaWybranyRok)
             ##############################################################################
         else:
             ##############################################################################
-            result = sk_kw.ListWyboruOgolna(tgk, self.moje_pole, dn_kw.MozliweLataDlaARok)
+            result = sk_kw.ListWyboruOgolna(tgk, self.moje_pole, dn_kw.MozliweLataDlaWybranyRok)
             ##############################################################################
             return result

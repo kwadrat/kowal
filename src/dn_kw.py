@@ -153,6 +153,7 @@ MozliweLataZuzyc = map(str, range(RokObecnyStaly, rq_kw.RokPocz2 - 1, -1))
 MozliweLataFaktur = map(str, range(RokObecnyStaly + 1, rq_kw.RokPocz2 - 1, -1))
 MozliweLataDlaARok = [rq_kw.PoleWszystko] + MozliweLataZuzyc
 MozliweLataDlaBRok = MozliweLataZuzyc
+MozliweLataDlaWybranyRok = MozliweLataZuzyc + [rq_kw.PoleWszystko]
 
 def NumerDzisiaj(czas=None):
     '''Zwraca numer dzisiejszego dnia
