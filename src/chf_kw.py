@@ -37,22 +37,11 @@ class SkrWybranyRok(Skrawek):
             self.moje_pole = ei_kw.NazwaARok
             ##############################################################################
 
-    def skh_widzialny(self, skp_okres):
-        '''
-        SkrWybranyRok:
-        '''
-        if skp_okres in rq_kw.PR_PotrzebujeARok:
-            return True
-        elif skp_okres in rq_kw.PR_NiePotrzebujeARok:
-            return False
-        else:
-            raise RuntimeError('Nieznana wartosc: %s' % repr(skp_okres))
-
     def zbierz_html(self, tgk, dfb):
         '''
         SkrWybranyRok:
         '''
-        if self.skh_widzialny(self.prm_okres.wartosc):
+        if 1:
             if ib_kw.AimToObjectFieldName:
                 ##############################################################################
                 result = sk_kw.ListWyboruOgolna(tgk, self.moje_pole, dn_kw.MozliweLataDlaARok)
@@ -62,5 +51,3 @@ class SkrWybranyRok(Skrawek):
                 result = sk_kw.ListWyboruOgolna(tgk, self.moje_pole, dn_kw.MozliweLataDlaARok)
                 ##############################################################################
                 return result
-        else:
-            return self.wartosc_ukryta()
