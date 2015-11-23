@@ -41,13 +41,12 @@ class SkrWybranyRok(Skrawek):
         '''
         SkrWybranyRok:
         '''
-        if 1:
-            if ib_kw.AimToObjectFieldName:
-                ##############################################################################
-                result = sk_kw.ListWyboruOgolna(tgk, self.moje_pole, dn_kw.MozliweLataDlaARok)
-                ##############################################################################
-            else:
-                ##############################################################################
-                result = sk_kw.ListWyboruOgolna(tgk, self.moje_pole, dn_kw.MozliweLataDlaARok)
-                ##############################################################################
-                return result
+        if ib_kw.AimToObjectFieldName:
+            ##############################################################################
+            result = sk_kw.ListWyboruOgolna(tgk, self.moje_pole, dn_kw.MozliweLataDlaARok)
+            ##############################################################################
+        else:
+            ##############################################################################
+            result = sk_kw.ListWyboruOgolna(tgk, self.moje_pole, dn_kw.MozliweLataDlaARok)
+            ##############################################################################
+            return result
