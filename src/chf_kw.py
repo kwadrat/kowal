@@ -5,6 +5,7 @@ NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import ib_kw
 import rq_kw
 import dn_kw
+import chh_kw
 import chg_kw
 import sk_kw
 import ei_kw
@@ -42,7 +43,7 @@ class SkrWybranyRok(Skrawek):
         '''
         SkrWybranyRok:
         '''
-        initial_year_values = dn_kw.MozliweLataDlaWybranyRok
+        initial_year_values = chh_kw.MozliweLataDlaWybranyRok
         if ib_kw.AimToObjectFieldName:
             ##############################################################################
             result = sk_kw.ListWyboruOgolna(tgk, self.moje_pole, initial_year_values)
