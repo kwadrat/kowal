@@ -15,5 +15,6 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+MozliweLataDlaARok = [rq_kw.PoleWszystko] + dn_kw.MozliweLataZuzyc
 MozliweLataDlaBRok = dn_kw.MozliweLataZuzyc
 MozliweLataDlaWybranyRok = dn_kw.MozliweLataZuzyc + [rq_kw.PoleWszystko]
