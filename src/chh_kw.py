@@ -19,6 +19,7 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 MozliweLataZuzyc = map(str, dn_kw.ListaLatZuzyc)
+MozliweLataFaktur = map(str, range(dn_kw.RokObecnyStaly + 1, rq_kw.RokPocz2 - 1, -1))
 MozliweLataDlaARok = [rq_kw.PoleWszystko] + MozliweLataZuzyc
 MozliweLataDlaBRok = MozliweLataZuzyc
 MozliweLataDlaWybranyRok = MozliweLataZuzyc + [rq_kw.PoleWszystko]
@@ -34,7 +35,7 @@ def DataBledna(napis):
     ile_kawalkow = len(kawalki)
     if ile_kawalkow == 3:
         rok, miesiac, dzien = kawalki
-        if rok in dn_kw.MozliweLataFaktur:
+        if rok in MozliweLataFaktur:
             if miesiac in dn_kw.LegalneMiesiace:
                 rok = int(rok)
                 miesiac = int(miesiac)

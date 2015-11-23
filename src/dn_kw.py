@@ -151,7 +151,6 @@ def RokTeraz():
 
 RokObecnyStaly = RokDzisiaj()
 ListaLatZuzyc = range(RokObecnyStaly, rq_kw.RokPocz2 - 1, -1)
-MozliweLataFaktur = map(str, range(RokObecnyStaly + 1, rq_kw.RokPocz2 - 1, -1))
 
 def NumerDzisiaj(czas=None):
     '''Zwraca numer dzisiejszego dnia
