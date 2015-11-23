@@ -310,37 +310,6 @@ LegalneDni = (
 '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24',
 '25', '26', '27', '28', '29', '30', '31',)
 
-def DataBledna(napis):
-    '''
-    Wartość zwracana:
-    pusty napis - data nie była błędna (czyli była poprawna)
-    napis o niezerowej długości - wystąpił jakiś błąd
-    '''
-    bledna = '' # Załóż, że data nie jest poprawna
-    kawalki = napis.split('-')
-    ile_kawalkow = len(kawalki)
-    if ile_kawalkow == 3:
-        rok, miesiac, dzien = kawalki
-        if rok in MozliweLataFaktur:
-            if miesiac in LegalneMiesiace:
-                rok = int(rok)
-                miesiac = int(miesiac)
-                liczba_legalnych_dni = DniWMiesiacu[miesiac - 1]
-                # W lutym dodamy jeden dzień, jeśli rok jest przestępny
-                if miesiac == 2:
-                    liczba_legalnych_dni += chi_kw.rok_przestepny(rok)
-                if dzien in LegalneDni[:liczba_legalnych_dni]:
-                    pass # Mamy datę bez zastrzeżeń
-                else:
-                    bledna = 'Dzień poza obsługiwanym zakresem: "%s"' % dzien
-            else:
-                bledna = 'Miesiąc poza obsługiwanym zakresem: "%s"' % miesiac
-        else:
-            bledna = 'Rok poza obsługiwanym zakresem: "%s"' % rok
-    else:
-        bledna = 'Liczba kawałków oddzielanych myślnikiem: %d' % ile_kawalkow
-    return bledna
-
 def daty_lat(dzien_pocz, dzien_kon):
     '''
     Parametry:
