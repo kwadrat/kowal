@@ -149,8 +149,6 @@ def RokTeraz():
     '''
     return str(RokDzisiaj())
 
-RokObecnyStaly = RokDzisiaj()
-
 def NumerDzisiaj(czas=None):
     '''Zwraca numer dzisiejszego dnia
     '''
