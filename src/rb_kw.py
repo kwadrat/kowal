@@ -6,7 +6,7 @@ import unittest
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import ib_kw
 import rq_kw
-import dn_kw
+import chh_kw
 import chg_kw
 import sk_kw
 import ei_kw
@@ -71,11 +71,11 @@ class SkrBRok(Skrawek):
         if self.skh_widzialny(mam_arok, chce_brok):
             if ib_kw.AimToObjectFieldName:
                 ##############################################################################
-                return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, dn_kw.MozliweLataDlaBRok)
+                return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, chh_kw.MozliweLataDlaBRok)
                 ##############################################################################
             else:
                 ##############################################################################
-                return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, dn_kw.MozliweLataDlaBRok)
+                return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, chh_kw.MozliweLataDlaBRok)
                 ##############################################################################
         else:
             return self.wartosc_ukryta()
