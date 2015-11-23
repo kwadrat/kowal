@@ -7,6 +7,7 @@ NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import ib_kw
 import rq_kw
 import dn_kw
+import chg_kw
 import sk_kw
 import ei_kw
 '''.splitlines()]
@@ -20,7 +21,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-Skrawek = sk_kw.Skrawek
+Skrawek = chg_kw.Skrawek
 
 class SkrBRok(Skrawek):
     '''Wybór końcowego roku
