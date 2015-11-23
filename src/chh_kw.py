@@ -19,6 +19,9 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+LegalneMiesiace = ('01', '02', '03', '04', '05', '06',
+'07', '08', '09', '10', '11', '12',)
+
 RokObecnyStaly = dn_kw.RokDzisiaj()
 ListaLatZuzyc = range(RokObecnyStaly, rq_kw.RokPocz2 - 1, -1)
 MozliweLataZuzyc = map(str, ListaLatZuzyc)
@@ -39,7 +42,7 @@ def DataBledna(napis):
     if ile_kawalkow == 3:
         rok, miesiac, dzien = kawalki
         if rok in MozliweLataFaktur:
-            if miesiac in dn_kw.LegalneMiesiace:
+            if miesiac in LegalneMiesiace:
                 rok = int(rok)
                 miesiac = int(miesiac)
                 liczba_legalnych_dni = dn_kw.DniWMiesiacu[miesiac - 1]
