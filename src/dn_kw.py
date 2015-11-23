@@ -12,6 +12,7 @@ import unittest
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import rq_kw
 import du_kw
+import chi_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -299,21 +300,6 @@ def ZakresMiesiaca(rok, miesiac, liczba_mies=1):
 def daty_skrajne_miesiaca(rok, miesiac, liczba_mies=1):
     return map(NapisDnia, ZakresMiesiaca(rok, miesiac, liczba_mies=liczba_mies))
 
-def rok_przestepny(rok):
-    '''
-    Wartość zwracana:
-    1 - rok jest przestępny, 0 - rok nie jest przestępny
-    '''
-    if rok % 4 != 0:
-        przestepny = 0
-    elif rok % 100 != 0:
-        przestepny = 1
-    elif rok % 400 != 0:
-        przestepny = 0
-    else:
-        przestepny = 1
-    return przestepny
-
 LegalneMiesiace = ('01', '02', '03', '04', '05', '06',
 '07', '08', '09', '10', '11', '12',)
 
@@ -342,7 +328,7 @@ def DataBledna(napis):
                 liczba_legalnych_dni = DniWMiesiacu[miesiac - 1]
                 # W lutym dodamy jeden dzień, jeśli rok jest przestępny
                 if miesiac == 2:
-                    liczba_legalnych_dni += rok_przestepny(rok)
+                    liczba_legalnych_dni += chi_kw.rok_przestepny(rok)
                 if dzien in LegalneDni[:liczba_legalnych_dni]:
                     pass # Mamy datę bez zastrzeżeń
                 else:
@@ -401,7 +387,7 @@ def sprawdz_numery_dnia():
     rok_pocz = rok = 1970
     pocz = NumerDnia(rok, 1, 1)
     for nast in range(rok + 1, 2038 + 1):
-        spodziewana_dlugosc = 365 + rok_przestepny(rok)
+        spodziewana_dlugosc = 365 + chi_kw.rok_przestepny(rok)
         kon = NumerDnia(nast, 1, 1)
         wg_kalendarza = kon - pocz
         if spodziewana_dlugosc == wg_kalendarza:
