@@ -57,12 +57,13 @@ class SkrARok(Skrawek):
         if self.skh_widzialny(self.prm_okres.wartosc):
             if ib_kw.AimToObjectFieldName:
                 ##############################################################################
-                return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, dn_kw.MozliweLataDlaARok)
+                result = sk_kw.ListWyboruOgolna(tgk, self.moje_pole, dn_kw.MozliweLataDlaARok)
                 ##############################################################################
             else:
                 ##############################################################################
-                return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, dn_kw.MozliweLataDlaARok)
+                result = sk_kw.ListWyboruOgolna(tgk, self.moje_pole, dn_kw.MozliweLataDlaARok)
                 ##############################################################################
+                return result
         else:
             return self.wartosc_ukryta()
 
