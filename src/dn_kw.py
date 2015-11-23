@@ -296,11 +296,6 @@ def ZakresMiesiaca(rok, miesiac, liczba_mies=1):
 def daty_skrajne_miesiaca(rok, miesiac, liczba_mies=1):
     return map(NapisDnia, ZakresMiesiaca(rok, miesiac, liczba_mies=liczba_mies))
 
-LegalneDni = (
-'01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12',
-'13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24',
-'25', '26', '27', '28', '29', '30', '31',)
-
 def daty_lat(dzien_pocz, dzien_kon):
     '''
     Parametry:

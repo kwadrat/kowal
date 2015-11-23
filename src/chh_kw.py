@@ -24,6 +24,11 @@ LegalneMiesiace = ('01', '02', '03', '04', '05', '06',
 
 DniWMiesiacu = (31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31,)
 
+LegalneDni = (
+'01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12',
+'13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24',
+'25', '26', '27', '28', '29', '30', '31',)
+
 RokObecnyStaly = dn_kw.RokDzisiaj()
 ListaLatZuzyc = range(RokObecnyStaly, rq_kw.RokPocz2 - 1, -1)
 MozliweLataZuzyc = map(str, ListaLatZuzyc)
@@ -51,7 +56,7 @@ def DataBledna(napis):
                 # W lutym dodamy jeden dzień, jeśli rok jest przestępny
                 if miesiac == 2:
                     liczba_legalnych_dni += chi_kw.rok_przestepny(rok)
-                if dzien in dn_kw.LegalneDni[:liczba_legalnych_dni]:
+                if dzien in LegalneDni[:liczba_legalnych_dni]:
                     pass # Mamy datę bez zastrzeżeń
                 else:
                     bledna = 'Dzień poza obsługiwanym zakresem: "%s"' % dzien
