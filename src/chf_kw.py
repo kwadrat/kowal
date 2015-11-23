@@ -42,12 +42,13 @@ class SkrWybranyRok(Skrawek):
         '''
         SkrWybranyRok:
         '''
+        initial_year_values = dn_kw.MozliweLataDlaWybranyRok
         if ib_kw.AimToObjectFieldName:
             ##############################################################################
-            result = sk_kw.ListWyboruOgolna(tgk, self.moje_pole, dn_kw.MozliweLataDlaWybranyRok)
+            result = sk_kw.ListWyboruOgolna(tgk, self.moje_pole, initial_year_values)
             ##############################################################################
         else:
             ##############################################################################
-            result = sk_kw.ListWyboruOgolna(tgk, self.moje_pole, dn_kw.MozliweLataDlaWybranyRok)
+            result = sk_kw.ListWyboruOgolna(tgk, self.moje_pole, initial_year_values)
             ##############################################################################
             return result
