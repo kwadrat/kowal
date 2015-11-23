@@ -22,6 +22,8 @@ for i in NazwyModulow:
 LegalneMiesiace = ('01', '02', '03', '04', '05', '06',
 '07', '08', '09', '10', '11', '12',)
 
+DniWMiesiacu = (31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31,)
+
 RokObecnyStaly = dn_kw.RokDzisiaj()
 ListaLatZuzyc = range(RokObecnyStaly, rq_kw.RokPocz2 - 1, -1)
 MozliweLataZuzyc = map(str, ListaLatZuzyc)
@@ -45,7 +47,7 @@ def DataBledna(napis):
             if miesiac in LegalneMiesiace:
                 rok = int(rok)
                 miesiac = int(miesiac)
-                liczba_legalnych_dni = dn_kw.DniWMiesiacu[miesiac - 1]
+                liczba_legalnych_dni = DniWMiesiacu[miesiac - 1]
                 # W lutym dodamy jeden dzień, jeśli rok jest przestępny
                 if miesiac == 2:
                     liczba_legalnych_dni += chi_kw.rok_przestepny(rok)
