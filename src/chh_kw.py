@@ -40,6 +40,8 @@ MozliweLataDlaWybranyRok = MozliweLataZuzyc + [rq_kw.PoleWszystko]
 def tupled_year(year):
     return (year, str(year))
 
+ParowaneLataDanych = map(tupled_year, ListaLatZuzyc)
+
 def DataBledna(napis):
     '''
     Wartość zwracana:
