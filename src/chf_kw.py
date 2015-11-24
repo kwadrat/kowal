@@ -9,6 +9,7 @@ import chh_kw
 import chg_kw
 import sk_kw
 import ei_kw
+import oy_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -43,7 +44,10 @@ class SkrWybranyRok(Skrawek):
         '''
         SkrWybranyRok:
         '''
-        initial_year_values = chh_kw.MozliweLataDlaWybranyRok
+        initial_year_values = chh_kw.ParowaneLataDanych
+        czy_wszystkie = 1
+        initial_year_values = oy_kw.rj_wstaw_surowa_kreske_jako_pierwsze(initial_year_values, czy_wszystkie)
+        initial_year_values = oy_kw.rj_adjoin_all_in_one(initial_year_values)
         if ib_kw.AimToObjectFieldName:
             ##############################################################################
             result = sk_kw.ListWyboruOgolna(tgk, self.moje_pole, initial_year_values)
