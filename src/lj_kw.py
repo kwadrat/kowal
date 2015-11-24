@@ -65,5 +65,5 @@ class LogujWiadomosci(object):
 
 lqg_ob = LogujWiadomosci()
 
-def diag(napis, enter=1):
+def diagx(napis, enter=1):
     lqg_ob.lqg_razem(napis, enter)
