@@ -3,6 +3,7 @@
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import ib_kw
+import hj_kw
 import rq_kw
 import dn_kw
 import chh_kw
@@ -48,6 +49,7 @@ class SkrWybranyRok(Skrawek):
         czy_wszystkie = 1
         initial_year_values = oy_kw.rj_wstaw_surowa_kreske_jako_pierwsze(initial_year_values, czy_wszystkie)
         initial_year_values = oy_kw.rj_adjoin_all_in_one(initial_year_values)
+        initial_year_values = hj_kw.tekstowe_indeksy(initial_year_values)
         if ib_kw.AimToObjectFieldName:
             ##############################################################################
             result = sk_kw.ListWyboruOgolna(tgk, self.moje_pole, initial_year_values)
