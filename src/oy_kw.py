@@ -19,6 +19,7 @@ for i in NazwyModulow:
 index_zero_number = 0
 index_zero_text = str(index_zero_number)
 index_minus_one_number = -1
+index_minus_one_text = str(index_minus_one_number)
 WBR_WSZYSTKIE = '-' # Wybór wszystkich (np. obiektów)
 element_wszystkich = [{ub_kw.EYK_klcz: index_zero_number, ub_kw.EYK_wrtsc: WBR_WSZYSTKIE}]
 element_surowy_wszystkich = [(index_zero_number, WBR_WSZYSTKIE)]
