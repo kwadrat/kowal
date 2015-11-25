@@ -72,6 +72,9 @@ def ptn_entry_already_inserted(table_name, id_obiekt, tvk_data):
 
 def ptn_load_from_db(table_name, id_obiekt=None, my_start_date=None, my_end_date=None):
     warunki_pytania = []
+    e_object = lc_kw.fq_f_object_qv
+    uu_object = lc_kw.fq_uu_object_qv
+    k_object = lc_kw.fq_k_object_qv
     if id_obiekt is None:
         wstawka_obkt = ''
     else:
