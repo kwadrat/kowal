@@ -78,15 +78,15 @@ def ptn_load_from_db(table_name, id_obiekt=None, my_start_date=None, my_end_date
     if id_obiekt is None:
         wstawka_obkt = ''
     else:
-        wstawka_obkt = ' AND %(uu_object)s.%(k_object)s=%(id_obiekt)d' % dict(
-            uu_object=lc_kw.fq_uu_object_qv,
-            k_object=lc_kw.fq_k_object_qv,
+        wstawka_obkt = '%(uu_object)s.%(k_object)s=%(id_obiekt)d' % dict(
+            uu_object=uu_object,
+            k_object=k_object,
             id_obiekt=id_obiekt,
             )
     if my_start_date is None:
         wstawka_start = ''
     else:
-        wstawka_start = " AND %(table_name)s.%(e_date)s >= '%(my_start_date)s'" % dict(
+        wstawka_start = "%(table_name)s.%(e_date)s >= '%(my_start_date)s'" % dict(
             table_name=table_name,
             e_date=lc_kw.fq_m_date_qv,
             my_start_date=my_start_date,
@@ -94,22 +94,33 @@ def ptn_load_from_db(table_name, id_obiekt=None, my_start_date=None, my_end_date
     if my_end_date is None:
         wstawka_end = ''
     else:
-        wstawka_end = " AND %(table_name)s.%(e_date)s < '%(my_end_date)s'" % dict(
+        wstawka_end = "%(table_name)s.%(e_date)s < '%(my_end_date)s'" % dict(
             table_name=table_name,
             e_date=lc_kw.fq_m_date_qv,
             my_end_date=my_end_date,
             )
+    wstawka_zlaczenia = "%(table_name)s.%(e_object)s=%(uu_object)s.%(k_object)s" % dict(
+        table_name=table_name,
+        e_object=e_object,
+        uu_object=uu_object,
+        k_object=k_object,
+        )
+    warunki_pytania.append(wstawka_zlaczenia)
+    if wstawka_obkt:
+        warunki_pytania.append(wstawka_obkt)
+    if wstawka_start:
+        warunki_pytania.append(wstawka_start)
+    if wstawka_end:
+        warunki_pytania.append(wstawka_end)
+    polaczony_warunek = hj_kw.make_conjunction(warunki_pytania)
     return fy_kw.lxa_14_inst % dict(
         table_name=table_name,
         uu_object=lc_kw.fq_uu_object_qv,
         account=lc_kw.fq_account_qv,
         e_date=lc_kw.fq_m_date_qv,
         e_samples=lc_kw.fq_m_samples_qv,
-        e_object=lc_kw.fq_f_object_qv,
-        k_object=lc_kw.fq_k_object_qv,
-        wstawka_obkt=wstawka_obkt,
-        wstawka_start=wstawka_start,
-        wstawka_end=wstawka_end,
+        e_object=e_object,
+        polaczony_warunek=polaczony_warunek,
         )
 
 def ptn_add_new_object_key(under_name):
