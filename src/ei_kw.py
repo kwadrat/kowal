@@ -22,6 +22,7 @@ NazwaDomena = 'domena' # Pracujemy w złotówkach czy w jednostkach ilości towa
 NazwaPrezentacja = 'prezentacja' # Sposób prezentacji danych: tabela i/lub wykres
 NazwaARok = 'prwrk'
 NazwaBRok = 'drgrk'
+NazwaCRok = 'opcrk'
 NazwaRazem = 'razem'
 NazwaAktWsz = 'aktwnwsz'
 NazwaZuzycie = 'zuzycie'
