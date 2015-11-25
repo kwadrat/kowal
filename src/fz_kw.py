@@ -7,6 +7,7 @@ NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import fy_kw
 import lc_kw
 import dv_kw
+import hj_kw
 import ln_kw
 import dn_kw
 import lr_kw
@@ -70,6 +71,7 @@ def ptn_entry_already_inserted(table_name, id_obiekt, tvk_data):
     return obk.prepare_shape(returned_fields)
 
 def ptn_load_from_db(table_name, id_obiekt=None, my_start_date=None, my_end_date=None):
+    warunki_pytania = []
     if id_obiekt is None:
         wstawka_obkt = ''
     else:
