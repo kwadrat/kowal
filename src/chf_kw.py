@@ -34,11 +34,11 @@ class SkrWybranyRok(Skrawek):
         Skrawek.__init__(self)
         if ib_kw.AimToObjectFieldName:
             ##############################################################################
-            self.moje_pole = ei_kw.NazwaARok
+            self.moje_pole = ei_kw.NazwaCRok
             ##############################################################################
         else:
             ##############################################################################
-            self.moje_pole = ei_kw.NazwaARok
+            self.moje_pole = ei_kw.NazwaCRok
             ##############################################################################
 
     def zbierz_html(self, tgk, dfb):
