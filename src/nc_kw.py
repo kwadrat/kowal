@@ -256,7 +256,7 @@ class CommonWriter(CommonRdWr):
             my_end_date = None
         else:
             my_start_date = chj_kw.tq_poczatek_roku(rok_konc)
-            my_end_date = chj_kw.tq_koniec_roku(rok_konc)
+            my_end_date = chj_kw.tq_poczatek_roku(rok_konc + 1)
         dane_bazy = le_kw.dq_load_from_db(
             dfb,
             self.table_of_samples,
