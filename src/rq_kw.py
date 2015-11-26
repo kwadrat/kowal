@@ -32,8 +32,6 @@ RokZwykly = 12
 # Dla faktur ciągłych pozwalamy na dodatkowe miesiące na ekranie
 RokDluzszy = DodatkoweMiesiacePrzed + RokZwykly + DodatkoweMiesiacePo
 
-ZEZWOLENIE_NSK = 1 # Ogranicz tylko dla poszczególnych lat
-
 ECHO_NIE = 0 # Pracuj po cichu
 ECHO_TAK = 1 # Generuj HTML
 
