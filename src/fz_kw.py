@@ -86,7 +86,7 @@ def ptn_load_from_db(table_name, id_obiekt=None, my_start_date=None, my_end_date
     if my_start_date is None:
         wstawka_start = ''
     else:
-        wstawka_start = "%(table_name)s.%(e_date)s >= '%(my_start_date)s'" % dict(
+        wstawka_start = "%(table_name)s.%(e_date)s >= %(my_start_date)s" % dict(
             table_name=table_name,
             e_date=lc_kw.fq_m_date_qv,
             my_start_date=my_start_date,
@@ -94,7 +94,7 @@ def ptn_load_from_db(table_name, id_obiekt=None, my_start_date=None, my_end_date
     if my_end_date is None:
         wstawka_end = ''
     else:
-        wstawka_end = "%(table_name)s.%(e_date)s < '%(my_end_date)s'" % dict(
+        wstawka_end = "%(table_name)s.%(e_date)s < %(my_end_date)s" % dict(
             table_name=table_name,
             e_date=lc_kw.fq_m_date_qv,
             my_end_date=my_end_date,
@@ -236,8 +236,8 @@ class TestVariousPatterns(unittest.TestCase):
             ptn_load_from_db(
                 lc_kw.fq_uu_power_qv,
                 id_obiekt=123,
-                my_start_date='2013-01-01',
-                my_end_date='2013-02-01',
+                my_start_date="'2013-01-01'",
+                my_end_date="'2013-02-01'",
                 ),
             fy_kw.lxa_62_inst
             )
