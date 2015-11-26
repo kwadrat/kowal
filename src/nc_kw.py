@@ -4,6 +4,7 @@
 import os
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import chj_kw
 import ng_kw
 import nf_kw
 import lc_kw
@@ -246,11 +247,16 @@ class CommonWriter(CommonRdWr):
             self.generate_for_object(xwg, dane_bazy, name, uu_maper)
         xwg.workbook_save(output_file)
 
-    def generate_one_file(self, dfb, output_file, uu_maper, id_obiekt=None):
+    def generate_one_file(self, dfb, output_file, uu_maper, rok_konc, id_obiekt=None):
         '''
         CommonWriter:
         '''
-        my_start_date, my_end_date = None, None
+        if rok_konc is None:
+            my_start_date = None
+            my_end_date = None
+        else:
+            my_start_date = chj_kw.tq_poczatek_roku(rok_konc)
+            my_end_date = chj_kw.tq_koniec_roku(rok_konc)
         dane_bazy = le_kw.dq_load_from_db(
             dfb,
             self.table_of_samples,
