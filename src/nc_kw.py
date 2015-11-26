@@ -247,16 +247,16 @@ class CommonWriter(CommonRdWr):
             self.generate_for_object(xwg, dane_bazy, name, uu_maper)
         xwg.workbook_save(output_file)
 
-    def generate_one_file(self, dfb, output_file, uu_maper, rok_konc, id_obiekt=None):
+    def generate_one_file(self, dfb, output_file, uu_maper, choosen_year, id_obiekt=None):
         '''
         CommonWriter:
         '''
-        if rok_konc is None:
+        if choosen_year is None:
             my_start_date = None
             my_end_date = None
         else:
-            my_start_date = chj_kw.tq_poczatek_roku(rok_konc)
-            my_end_date = chj_kw.tq_poczatek_roku(rok_konc + 1)
+            my_start_date = chj_kw.tq_poczatek_roku(choosen_year)
+            my_end_date = chj_kw.tq_poczatek_roku(choosen_year + 1)
         dane_bazy = le_kw.dq_load_from_db(
             dfb,
             self.table_of_samples,
