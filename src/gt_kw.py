@@ -33,7 +33,7 @@ class OgOpDaneDlaMiesiaca(object):
         '''
         self.sztywna_wartosc[tmp_key] = sztywna_wartosc
 
-    def wstaw_informacje_o_fakturze(self, dane_faktury):
+    def wstaw_a_informacje_o_fakturze(self, dane_faktury):
         '''
         OgOpDaneDlaMiesiaca:
         '''
@@ -143,7 +143,7 @@ class TestMiesiacaGazu(unittest.TestCase):
         '''
         obk = OgOpDaneDlaMiesiaca()
         self.assertEqual(obk.faktur_w_miesiacu(), 0)
-        obk.wstaw_informacje_o_fakturze({'a': 1})
+        obk.wstaw_a_informacje_o_fakturze({'a': 1})
         self.assertEqual(obk.faktur_w_miesiacu(), 1)
         self.assertEqual(obk.wybierz_ze_slownikow('a'), [1])
         self.assertEqual(obk.wyznacz_sume_faktur('a'), 1)
@@ -156,5 +156,5 @@ class TestMiesiacaGazu(unittest.TestCase):
         TestMiesiacaGazu:
         '''
         obk = OgOpDaneDlaMiesiaca()
-        obk.wstaw_informacje_o_fakturze({'a': 1, 'b': 2})
+        obk.wstaw_a_informacje_o_fakturze({'a': 1, 'b': 2})
         self.assertEqual(obk.wybierz_ze_slownikow('b'), [2])
