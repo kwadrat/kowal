@@ -19,7 +19,7 @@ for i in NazwyModulow:
 
 zerowa_fraza = ' AS '
 db_zero_value = '0'
-zerowe_pole = '0' + zerowa_fraza
+zerowe_pole = db_zero_value + zerowa_fraza
 suffix_comma_separated = '.csv'
 suffix_semicolon_separated = '.txt'
 
