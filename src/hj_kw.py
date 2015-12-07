@@ -17,6 +17,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
+zerowa_fraza = ' AS '
 zerowe_pole = '0 AS '
 suffix_comma_separated = '.csv'
 suffix_semicolon_separated = '.txt'
@@ -247,6 +248,7 @@ class TestProcessingSQL(unittest.TestCase):
         '''
         TestProcessingSQL:
         '''
+        self.assertEqual(zerowa_fraza, ' AS ')
         self.assertEqual(zerowe_pole, '0 AS ')
         self.assertEqual(zeruj_dla_tabeli('a', 'b', 'pole'), 'pole')
         self.assertEqual(zeruj_dla_tabeli('a', 'a', 'pole'), '0 AS pole')
