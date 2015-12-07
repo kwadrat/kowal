@@ -18,7 +18,7 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 zerowa_fraza = ' AS '
-zerowe_pole = '0 AS '
+zerowe_pole = '0' + zerowa_fraza
 suffix_comma_separated = '.csv'
 suffix_semicolon_separated = '.txt'
 
