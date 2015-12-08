@@ -161,7 +161,7 @@ class OgOpDaneDlaMiesiaca(object):
         '''
         OgOpDaneDlaMiesiaca:
         '''
-        moja_suma = self.wyznacz_sume_faktur(tmp_key)
+        moja_suma = self.wyznacz_moc_faktur(tmp_key)
         rn_liczba = gv_kw.RichNumber(moja_suma)
         if self.podano_sztywna_wartosc(tmp_key):
             rn_liczba.update_colour(gv_kw.ECR_indigo)
