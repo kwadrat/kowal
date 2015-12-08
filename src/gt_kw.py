@@ -80,6 +80,16 @@ class OgOpDaneDlaMiesiaca(object):
             self.jednorazowe_wartosci[tmp_key] = moja_suma
         return moja_suma
 
+    def wyznacz_pracowicie_moc_faktur(self, tmp_key):
+        '''
+        OgOpDaneDlaMiesiaca:
+        '''
+        moja_suma = self.jednorazowe_wartosci.get(tmp_key)
+        if moja_suma is None:
+            moja_suma = self.oblicz_jednorazowo(tmp_key)
+            self.jednorazowe_wartosci[tmp_key] = moja_suma
+        return moja_suma
+
     def wyznacz_pracowicie_pierwsza_z_brzegu(self, tmp_key):
         '''
         OgOpDaneDlaMiesiaca:
