@@ -126,6 +126,16 @@ class OgOpDaneDlaMiesiaca(object):
             rn_liczba.update_colour(gv_kw.ECR_indigo)
         return rn_liczba
 
+    def wyznacz_rn_moc_faktur(self, tmp_key):
+        '''
+        OgOpDaneDlaMiesiaca:
+        '''
+        moja_suma = self.wyznacz_sume_faktur(tmp_key)
+        rn_liczba = gv_kw.RichNumber(moja_suma)
+        if self.podano_sztywna_wartosc(tmp_key):
+            rn_liczba.update_colour(gv_kw.ECR_indigo)
+        return rn_liczba
+
     def wyznacz_rn_sume_z_przekroczeniem(self, tmp_key):
         '''
         OgOpDaneDlaMiesiaca:
