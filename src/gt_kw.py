@@ -181,8 +181,8 @@ class OgOpDaneDlaMiesiaca(object):
         '''
         OgOpDaneDlaMiesiaca:
         '''
-        rn_liczba = self.wyznacz_rn_sume_faktur(tmp_key)
-        umowna_suma = self.wyznacz_sume_faktur(lc_kw.fq_moc_umowna_qv)
+        rn_liczba = self.wyznacz_rn_moc_faktur(tmp_key)
+        umowna_suma = self.wyznacz_moc_faktur(lc_kw.fq_moc_umowna_qv)
         if rn_liczba.rn_value > umowna_suma:
             rn_liczba.update_colour(gv_kw.ECR_red)
         return rn_liczba
