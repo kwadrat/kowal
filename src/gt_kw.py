@@ -97,7 +97,7 @@ class OgOpDaneDlaMiesiaca(object):
         '''
         moja_suma = self.jednorazowe_wartosci.get(tmp_key)
         if moja_suma is None:
-            moja_suma = self.oblicz_jednorazowo(tmp_key)
+            moja_suma = self.oblicz_moc_jednorazowo(tmp_key)
             self.jednorazowe_wartosci[tmp_key] = moja_suma
         return moja_suma
 
