@@ -134,7 +134,7 @@ class OgOpDaneDlaMiesiaca(object):
         if self.podano_sztywna_wartosc(tmp_key):
             moja_suma = self.sztywna_wartosc[tmp_key]
         else:
-            moja_suma = self.wyznacz_pracowicie_sume_faktur(tmp_key)
+            moja_suma = self.wyznacz_pracowicie_moc_faktur(tmp_key)
         return moja_suma
 
     def wyznacz_pierwsza_z_brzegu(self, tmp_key):
