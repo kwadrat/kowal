@@ -66,12 +66,12 @@ class OgOpDaneDlaMiesiaca(object):
         '''
         OgOpDaneDlaMiesiaca:
         '''
-        moja_suma = lm_kw.wartosc_zero_z_bazy
+        result_power = lm_kw.wartosc_zero_z_bazy
         for jedna_faktura in self.faktury_w_miesiacu:
-            moja_wartosc = jedna_faktura.get(tmp_key)
-            if moja_wartosc is not None:
-                moja_suma += moja_wartosc
-        return moja_suma
+            tmp_power = jedna_faktura.get(tmp_key)
+            if tmp_power is not None:
+                result_power = max(tmp_power, result_power)
+        return result_power
 
     def oblicz_pierwsze_z_brzegu(self, tmp_key):
         '''
