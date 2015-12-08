@@ -62,6 +62,17 @@ class OgOpDaneDlaMiesiaca(object):
                 moja_suma += moja_wartosc
         return moja_suma
 
+    def oblicz_moc_jednorazowo(self, tmp_key):
+        '''
+        OgOpDaneDlaMiesiaca:
+        '''
+        moja_suma = lm_kw.wartosc_zero_z_bazy
+        for jedna_faktura in self.faktury_w_miesiacu:
+            moja_wartosc = jedna_faktura.get(tmp_key)
+            if moja_wartosc is not None:
+                moja_suma += moja_wartosc
+        return moja_suma
+
     def oblicz_pierwsze_z_brzegu(self, tmp_key):
         '''
         OgOpDaneDlaMiesiaca:
