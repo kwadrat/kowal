@@ -46,6 +46,7 @@ Jedn_a_Met3_n = JednM3 + '<sub>n</sub>'
 # Megawatów
 JednMW = 'MW'
 Jedn_MWh = JednMW + JednHour
+tytul_kilowatow_MWh_przekroczenia = nawiasy_kwadratowe(hj_kw.rcp_dziel(Jedn_kWtow, Jedn_MWh))
 # Kilowatogodzin/Megawatogodzin? Ludzie różnie wpisują, na razie nie
 # szukałem sposobu na rozróżnienie, którą jednostkę podają.
 Jedn_kW_MWh = hj_kw.rcp_dziel(Jedn_kWh, Jedn_MWh)
@@ -78,6 +79,7 @@ class TestUnitNames(unittest.TestCase):
         self.assertEqual(Jedn_k_procenty, '[%]')
         self.assertEqual(Jedn_k_zl_na_kWh, '[zł/kWh]')
         self.assertEqual(tytul_kilowatow_przekroczenia, '[kW]')
+        self.assertEqual(tytul_kilowatow_MWh_przekroczenia, '[kW/MWh]')
         self.assertEqual(JednHour, 'h')
         self.assertEqual(JednM3, 'm<sup>3</sup>')
         self.assertEqual(JednMet3h, 'm<sup>3</sup>/h')
