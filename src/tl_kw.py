@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+import unittest
+
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import hj_kw
 import ek_kw
@@ -149,3 +151,17 @@ class TypowaLista(ListaLubSlownikOgolnie):
 def znajdz_lub_przygotuj_nowa_liste(klucz, slownik):
     return po_kw.znajdz_lub_przygotuj_nowy_element(klucz, slownik,
       lambda: TypowaLista(hj_kw.space_two(ek_kw.ETK_lista_znajdz_lub_przygotuj, klucz)))
+
+class TestTypicalList(unittest.TestCase):
+    def test_typical_list(self):
+        '''
+        TestTypicalList:
+        '''
+        obj = TypowaLista('e')
+        self.assertRaises(IndexError, obj.wskazany_element, 0)
+        obj.dolacz_koncowy(7)
+        self.assertEqual(obj.wskazany_element(0), 7)
+        obj.dolacz_koncowy(8)
+        self.assertEqual(obj.wskazany_element(1), 8)
+        obj.ustaw_ograniczona_wersje([1])
+        self.assertEqual(obj.wskazany_element(0), 8)
