@@ -40,6 +40,12 @@ class KonstrukcjaSpinki(object):
             tmp_format = 'wynik'; print tmp_format, eval(tmp_format)
         return wynik
 
+    def __ne__(self, other):
+        '''
+        KonstrukcjaSpinki:
+        '''
+        return not (self == other)
+
     def odspinkuj(self):
         '''
         KonstrukcjaSpinki:
@@ -63,7 +69,14 @@ class TestSpinki(unittest.TestCase):
         '''
         TestSpinki:
         '''
-        krotka = ('62437-001', '2014-04-28')
-        obk = KonstrukcjaSpinki(krotka)
-        self.assertEqual(obk.spinkowe_gdzie(), '62437-001')
-        self.assertEqual(obk.spinkowe_kiedy(), '2014-04-28')
+        krotka_a = ('62437-001', '2014-04-28')
+        obk_a = KonstrukcjaSpinki(krotka_a)
+        self.assertEqual(obk_a.spinkowe_gdzie(), '62437-001')
+        self.assertEqual(obk_a.spinkowe_kiedy(), '2014-04-28')
+        krotka_b = ('62437-001', '2016-01-09')
+        obk_b = KonstrukcjaSpinki(krotka_b)
+        obk_c = KonstrukcjaSpinki(krotka_a)
+        self.assertEqual(obk_a == obk_b, 0)
+        self.assertEqual(obk_a != obk_b, 1)
+        self.assertEqual(obk_a == obk_c, 1)
+        self.assertEqual(obk_a != obk_c, 0)
