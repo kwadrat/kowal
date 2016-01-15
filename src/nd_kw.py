@@ -42,6 +42,7 @@ class OgOpOgolnaKolumna(object):
         self.kl_pion = kl_pion
         self.kl_db_label = kl_db_label
         self.kl_miejsc = kl_miejsc
+        self.vz_transfer_flag = 0
 
     def assign_target_column(self, kl_assigned_col):
         '''
