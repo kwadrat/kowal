@@ -90,6 +90,9 @@ def conditions_separately(klucze, slownik, ignorowane_pola=None):
 def otocz_cudzyslowem(napis):
     return '"%s"' % napis
 
+def otocz_nawiasami(napis):
+    return '(%s)' % napis
+
 def ls_przec(*args):
     return ladnie_przecinkami(args)
 
@@ -339,4 +342,5 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(list(enum_one('a\nb')), [(1, 'a'), (2, 'b')])
         self.assertEqual(list(enum_one('a\nb\nc')), [(1, 'a'), (2, 'b'), (3, 'c')])
         self.assertEqual(chop_go(['id', 'name', 'go']), ['id', 'name'])
-
+        self.assertEqual(otocz_nawiasami('a'), '(a)')
+        self.assertEqual(otocz_nawiasami('bc'), '(bc)')
