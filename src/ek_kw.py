@@ -25,7 +25,7 @@ zbr_realny_wyplyw = 'rwp' # Ile wypłynęło z nadlicznika po odjęciu zużycia 
 zbr_moj_klucz = 'mkl' # Jaki jest mój klucz dla odczytu
 zbr_to_nadrzedny = 'ndr' # Czy jestem nadrzędnym licznikiem
 
-pola_dodatkowe_slownikow = set([
+pola_dodatkowe_slownikow = frozenset([
     zbr_licznik_linii,
     zbr_podlaczeni_klienci,
     zbr_realny_wyplyw,
