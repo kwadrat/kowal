@@ -44,6 +44,8 @@ tylko_koncowa_data_jest_dobra = zrob_same_daty('''\
 2010-08-31 2010-09-30 Gimnazjum nr 4
 2012-06-30 2012-07-31 Gimnazjum nr 4
 2011-11-29 2011-12-31 Zespół Szkół nr 2
+2013-05-29 2013-06-30 Urząd Miasta-Rzeczna
+2015-06-29 2015-07-31 Zespół Szkolno-Przedszkolny nr 7
 ''')
 
 faktura_jest_za_dwa_miesiace = zrob_same_daty('''\
@@ -55,6 +57,7 @@ faktura_jest_za_dwa_miesiace = zrob_same_daty('''\
 faktura_jest_za_trzy_miesiace = zrob_same_daty('''\
 2011-08-30 2011-11-28 Zespół Szkół nr 2
 2011-08-30 2011-10-31 Zespół Szkół nr 2
+2015-10-01 2015-12-31 Zespół Szkół nr 2
 ''')
 
 faktura_jest_niezrozumiala = zrob_same_daty('''\
