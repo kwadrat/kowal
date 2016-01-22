@@ -57,7 +57,7 @@ faktura_jest_za_dwa_miesiace = zrob_same_daty('''\
 faktura_jest_za_trzy_miesiace = zrob_same_daty('''\
 2011-08-30 2011-11-28 Zespół Szkół nr 2
 2011-08-30 2011-10-31 Zespół Szkół nr 2
-2015-10-01 2015-12-31 Zespół Szkół nr 2
+2015-10-01 2015-12-31 Szkoła Podstawowa nr 28
 ''')
 
 faktura_jest_niezrozumiala = zrob_same_daty('''\
