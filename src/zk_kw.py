@@ -63,6 +63,7 @@ zestaw_t30_t31 = frozenset(xrange(12633, 13353 + 1))
 zestaw_t32_t33 = frozenset(xrange(13354, 13736 + 1))
 zestaw_t34_t35 = frozenset(xrange(13737, 14130 + 1))
 zestaw_t36_t37 = frozenset(xrange(14131, 14721 + 1))
+zestaw_t38 = frozenset(xrange(14722, 15199 + 1))
 
 skasowane_nakladki_z_t7 = set([
     4564, 4565, 4566, 4568, 4569, 4570, 4571, 4572, 4573, 4574, 4575, 4576,
@@ -152,6 +153,7 @@ fk_atmt_purpurowe = (
 
 fk_atmt_turkusowe = (
     zestaw_t36_t37 |
+    zestaw_t38 |
     zestaw_pusty
     )
 
