@@ -6,6 +6,7 @@ import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import en_kw
+import ciy_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -101,6 +102,18 @@ def heating_label(year):
 def watering_label(year):
     return '%d' % (year,)
 
+def detect_invariant_time(times_of_counters):
+    mono_cnt = {}
+    for dttm, one_cnt in times_of_counters:
+        times_for_cnt = mono_cnt.get(one_cnt)
+        if not times_for_cnt:
+            times_for_cnt = mono_cnt[one_cnt] = []
+        time_value = rj_na_godzine(dttm)
+        times_for_cnt.append(time_value)
+    for one_cnt in mono_cnt:
+        mono_cnt[one_cnt] = ciy_kw.invariable_time(mono_cnt[one_cnt])
+    return mono_cnt
+
 class TestDateQuarters(unittest.TestCase):
     def test_date_quarters(self):
         '''
@@ -149,3 +162,26 @@ class TestDateQuarters(unittest.TestCase):
         self.assertEqual(describe_quarter_column(0), '00:15')
         self.assertEqual(describe_quarter_column(94), '23:45')
         self.assertEqual(describe_quarter_column(95), '00:00')
+
+    def test_time_from_db(self):
+        '''
+        TestDateQuarters:
+        '''
+        self.assertEqual(detect_invariant_time([
+            [datetime.time(7, 30), 959],
+            [datetime.time(7, 30), 959],
+            ]), {
+            959: '07:30',
+            })
+        self.assertEqual(detect_invariant_time([
+            [datetime.time(7, 30), 959],
+            [datetime.time(7, 30), 959],
+            [datetime.time(8, 0), 381],
+            [datetime.time(8, 0), 381],
+            [datetime.time(7, 30), 386],
+            [datetime.time(8, 0), 386],
+            ]), {
+            959: '07:30',
+            381: '08:00',
+            386: None,
+            })
