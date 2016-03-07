@@ -114,6 +114,13 @@ def detect_invariant_time(times_of_counters, default_value):
         mono_cnt[one_cnt] = ciy_kw.invariable_time(mono_cnt[one_cnt], default_value)
     return mono_cnt
 
+def convert_keys(integer_keys):
+    string_keys = {}
+    for one_key, one_value in integer_keys.iteritems():
+        string_keys[str(one_key)] = one_value
+    result = str(string_keys)
+    return result
+
 class TestDateQuarters(unittest.TestCase):
     def test_date_quarters(self):
         '''
@@ -185,3 +192,10 @@ class TestDateQuarters(unittest.TestCase):
             381: '08:00',
             386: None,
             })
+
+    def test_freezing_keys(self):
+        '''
+        TestDateQuarters:
+        '''
+        self.assertEqual(convert_keys({}), '{}')
+        self.assertEqual(convert_keys({959: '07:30', 381: '08:00'}), "{'959': '07:30', '381': '08:00'}")
