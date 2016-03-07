@@ -4,6 +4,7 @@
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import du_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -15,11 +16,11 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-def invariable_time(time_ls):
+def invariable_time(time_ls, default_value):
     if len(time_ls) > 1 and len(set(time_ls)) == 1:
         result = time_ls[0]
     else:
-        result = None
+        result = default_value
     return result
 
 class TestTimeVariability(unittest.TestCase):
@@ -27,9 +28,10 @@ class TestTimeVariability(unittest.TestCase):
         '''
         TestTimeVariability:
         '''
-        self.assertEqual(invariable_time([]), None)
-        self.assertEqual(invariable_time(['07:30', '07:30']), '07:30')
-        self.assertEqual(invariable_time(['08:00', '08:00']), '08:00')
-        self.assertEqual(invariable_time(['07:30', '08:00']), None)
-        self.assertEqual(invariable_time(['07:30']), None)
-        self.assertEqual(invariable_time(['07:30', '07:30', '08:00']), None)
+        self.assertEqual(invariable_time([], None), None)
+        self.assertEqual(invariable_time(['07:30', '07:30'], None), '07:30')
+        self.assertEqual(invariable_time(['08:00', '08:00'], None), '08:00')
+        self.assertEqual(invariable_time(['07:30', '08:00'], None), None)
+        self.assertEqual(invariable_time(['07:30'], None), None)
+        self.assertEqual(invariable_time(['07:30', '07:30', '08:00'], None), None)
+        self.assertEqual(invariable_time(['07:30', '08:00'], du_kw.rjb_minuta_przkl), du_kw.rjb_minuta_przkl)

@@ -102,7 +102,7 @@ def heating_label(year):
 def watering_label(year):
     return '%d' % (year,)
 
-def detect_invariant_time(times_of_counters):
+def detect_invariant_time(times_of_counters, default_value):
     mono_cnt = {}
     for dttm, one_cnt in times_of_counters:
         times_for_cnt = mono_cnt.get(one_cnt)
@@ -111,7 +111,7 @@ def detect_invariant_time(times_of_counters):
         time_value = rj_na_godzine(dttm)
         times_for_cnt.append(time_value)
     for one_cnt in mono_cnt:
-        mono_cnt[one_cnt] = ciy_kw.invariable_time(mono_cnt[one_cnt])
+        mono_cnt[one_cnt] = ciy_kw.invariable_time(mono_cnt[one_cnt], default_value)
     return mono_cnt
 
 class TestDateQuarters(unittest.TestCase):
@@ -170,7 +170,7 @@ class TestDateQuarters(unittest.TestCase):
         self.assertEqual(detect_invariant_time([
             [datetime.time(7, 30), 959],
             [datetime.time(7, 30), 959],
-            ]), {
+            ], None), {
             959: '07:30',
             })
         self.assertEqual(detect_invariant_time([
@@ -180,7 +180,7 @@ class TestDateQuarters(unittest.TestCase):
             [datetime.time(8, 0), 381],
             [datetime.time(7, 30), 386],
             [datetime.time(8, 0), 386],
-            ]), {
+            ], None), {
             959: '07:30',
             381: '08:00',
             386: None,
