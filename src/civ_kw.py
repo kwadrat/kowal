@@ -16,6 +16,8 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 xs_1_ql = ' ORDER BY '
+xs_2_ql = 'UNION\n'
+xs_3_ql = '\n' + xs_2_ql
 
 class TestPartsSQL(unittest.TestCase):
     def test_parts_sql(self):
@@ -23,3 +25,5 @@ class TestPartsSQL(unittest.TestCase):
         TestPartsSQL:
         '''
         self.assertEqual(xs_1_ql, ' ORDER BY ')
+        self.assertEqual(xs_2_ql, 'UNION\n')
+        self.assertEqual(xs_3_ql, '\nUNION\n')
