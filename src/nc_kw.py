@@ -4,6 +4,7 @@
 import os
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import ciw_kw
 import chj_kw
 import ng_kw
 import nf_kw
@@ -41,7 +42,7 @@ def info_brak_danych(output_file, id_obiekt, my_start_date, my_end_date):
     sf_kw.zapisz_plik(output_file, full_text)
 
 def unique_sorted(dane_bazy, field):
-    object_names = list(set(map(lambda x: x[field], dane_bazy)))
+    object_names = list(set(ciw_kw.dict_ls_key_mapper(field, dane_bazy)))
     object_names.sort()
     return object_names
 

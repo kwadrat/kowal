@@ -4,6 +4,7 @@
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import ciw_kw
 import lc_kw
 import gv_kw
 import lm_kw
@@ -49,7 +50,7 @@ class OgOpDaneDlaMiesiaca(object):
         '''
         OgOpDaneDlaMiesiaca:
         '''
-        return map(lambda the_dict: the_dict[tmp_key], self.faktury_w_miesiacu)
+        return ciw_kw.dict_ls_key_mapper(tmp_key, self.faktury_w_miesiacu)
 
     def oblicz_jednorazowo(self, tmp_key):
         '''
