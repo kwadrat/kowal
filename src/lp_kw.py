@@ -101,19 +101,6 @@ def heating_label(year):
 def watering_label(year):
     return '%d' % (year,)
 
-class HourMiniServer(object):
-    def __init__(self, column_index):
-        '''
-        HourMiniServer:
-        '''
-        self.header_for_hour_column = describe_hour_column(column_index)
-
-    def __repr__(self):
-        '''
-        HourMiniServer:
-        '''
-        return 'HS(%s)' % self.header_for_hour_column
-
 class TestDateQuarters(unittest.TestCase):
     def test_date_quarters(self):
         '''

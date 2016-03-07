@@ -4,7 +4,7 @@
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
-import lp_kw
+import ciz_kw
 import jn_kw
 '''.splitlines()]
 
@@ -27,7 +27,7 @@ class HourServer(HoQuServer):
         self.all_time_columns = []
         self.time_for_header = []
         for column_index in xrange(24):
-            elem = lp_kw.HourMiniServer(column_index)
+            elem = ciz_kw.HourMiniServer(column_index)
             self.all_time_columns.append(elem)
             self.time_for_header.append(elem.header_for_hour_column)
         HoQuServer.__init__(self, 1)
