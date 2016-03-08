@@ -22,6 +22,14 @@ day_zero = (0, 0, 0)
 midnight_hour_wrap = {24: 0}
 midnight_quarter_wrap = {96: 0}
 
+example_data_from_db = [
+    [datetime.time(7, 30), 959],
+    [datetime.time(7, 30), 959],
+    [datetime.time(8, 0), 381],
+    [datetime.time(8, 0), 381],
+    [datetime.time(7, 30), 386],
+    [datetime.time(8, 0), 386],
+    ]
 def verify_for_equal(tmp_value, expected):
     if tmp_value != expected:
         raise RuntimeError('tmp_value = %s expected = %s' % (repr(tmp_value), repr(expected)))
