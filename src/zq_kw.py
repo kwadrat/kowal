@@ -41,9 +41,23 @@ class WartoscOpcjonalna(object):
             lokalny_warunek = not nr_enum
         return lokalny_warunek
 
+    def get_opt_value(self):
+        '''
+        WartoscOpcjonalna:
+        '''
+        return self.wartosc
+
 class TestWartosciOpcjonalnej(unittest.TestCase):
     def test_wartosci_opcjonalnej(self):
         '''
         TestWartosciOpcjonalnej:
         '''
         obk = WartoscOpcjonalna(0, None)
+        self.assertEqual(obk.get_opt_value(), None)
+
+    def test_a_wartosci_opcjonalnej(self):
+        '''
+        TestWartosciOpcjonalnej:
+        '''
+        obk = WartoscOpcjonalna(0, 7)
+        self.assertEqual(obk.get_opt_value(), 7)
