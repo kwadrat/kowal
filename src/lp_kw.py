@@ -188,14 +188,7 @@ class TestDateQuarters(unittest.TestCase):
             ], None), {
             959: '07:30',
             })
-        self.assertEqual(detect_invariant_time([
-            [datetime.time(7, 30), 959],
-            [datetime.time(7, 30), 959],
-            [datetime.time(8, 0), 381],
-            [datetime.time(8, 0), 381],
-            [datetime.time(7, 30), 386],
-            [datetime.time(8, 0), 386],
-            ], None), {
+        self.assertEqual(detect_invariant_time(example_data_from_db, None), {
             959: '07:30',
             381: '08:00',
             386: None,
