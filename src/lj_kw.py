@@ -53,7 +53,7 @@ class LogujWiadomosci(object):
         '''
         self.fd.close()
         if not self.byl_plik:
-            os.chmod(self.nazwa_pliku, 0606)
+            os.chmod(self.nazwa_pliku, 0660)
 
     def lqg_razem(self, napis, enter):
         '''
