@@ -2,7 +2,6 @@
 # -*- coding: UTF-8 -*-
 
 import unittest
-import re
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import gu_kw
