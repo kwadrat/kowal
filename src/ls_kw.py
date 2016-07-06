@@ -22,9 +22,9 @@ def prepare_new_image(size, color):
     return im, draw
 
 def copy_existing_image(im):
-        im2 = im.copy()
-        draw2 = ImageDraw.Draw(im2)
-        return im2, draw2
+    im2 = im.copy()
+    draw2 = ImageDraw.Draw(im2)
+    return im2, draw2
 
 def to_jest_poprawny_plik_obrazu(fd):
     '''
