@@ -52,6 +52,7 @@ faktura_jest_za_dwa_miesiace = zrob_same_daty('''\
 2011-02-01 2011-03-31 Szkoła Podstawowa nr 3 im. Św. Stanisława Kostki
 2011-01-01 2011-02-28 Zespół Szkolno-Przedszkolny nr 3
 2013-01-01 2013-02-28 Szkoła Podstawowa nr 34
+2016-08-01 2016-09-30 Szkoła Podstawowa nr 28
 ''')
 
 faktura_jest_za_trzy_miesiace = zrob_same_daty('''\
