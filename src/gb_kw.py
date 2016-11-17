@@ -27,6 +27,7 @@ Jedn_kWh = Jedn_kWtow + JednHour
 Jedn_a_kWh_h = hj_kw.rcp_dziel(Jedn_kWh, JednHour)
 Jedn_b_kWh_h_za_h = ''.join([Jedn_a_kWh_h, ' za ', JednHour])
 Jedn_zlotowki = 'zł'
+Jedn_miesiac = 'mc'
 Jedn_procent = '%'
 
 def nawiasy_kwadratowe(jednostka):
@@ -77,6 +78,7 @@ class TestUnitNames(unittest.TestCase):
         self.assertEqual(Jedn_k_a_kWh_h, '[kWh/h]')
         self.assertEqual(Jedn_kWtow, 'kW')
         self.assertEqual(Jedn_zlotowki, 'zł')
+        self.assertEqual(Jedn_miesiac, 'mc')
         self.assertEqual(Jedn_k_zlotowki, '[zł]')
         self.assertEqual(Jedn_k_procenty, '[%]')
         self.assertEqual(Jedn_k_zl_na_kWh, '[zł/kWh]')
