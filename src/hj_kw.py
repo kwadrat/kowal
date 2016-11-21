@@ -344,3 +344,4 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(chop_go(['id', 'name', 'go']), ['id', 'name'])
         self.assertEqual(otocz_nawiasami('a'), '(a)')
         self.assertEqual(otocz_nawiasami('bc'), '(bc)')
+        self.assertEqual(otocz_cudzyslowem('bc'), '"bc"')
