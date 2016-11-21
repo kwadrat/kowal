@@ -90,6 +90,9 @@ def conditions_separately(klucze, slownik, ignorowane_pola=None):
 def otocz_cudzyslowem(napis):
     return '"%s"' % napis
 
+def otocz_apostrofem(napis):
+    return "'%s'" % napis
+
 def otocz_nawiasami(napis):
     return '(%s)' % napis
 
@@ -345,3 +348,4 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(otocz_nawiasami('a'), '(a)')
         self.assertEqual(otocz_nawiasami('bc'), '(bc)')
         self.assertEqual(otocz_cudzyslowem('bc'), '"bc"')
+        self.assertEqual(otocz_apostrofem('bc'), "'bc'")
