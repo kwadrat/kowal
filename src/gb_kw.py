@@ -64,6 +64,7 @@ Jedn_wsp_kWh_M3 = hj_kw.rcp_dziel(Jedn_kWh, JednM3)
 Jedn_n_wsp_kWh_M3 = nawiasy_kwadratowe(Jedn_wsp_kWh_M3)
 Jedn_k_bezwymiarowa = nawiasy_kwadratowe('1')
 Jedn_k_Mvarh = nawiasy_kwadratowe('Mvarh')
+Jedn_kvarh = 'kvarh'
 
 class TestUnitNames(unittest.TestCase):
     def test_unit_names(self):
@@ -103,3 +104,4 @@ class TestUnitNames(unittest.TestCase):
         self.assertEqual(Jedn_n_wsp_kWh_M3, '[kWh/m<sup>3</sup>]')
         self.assertEqual(Jedn_k_bezwymiarowa, '[1]')
         self.assertEqual(Jedn_k_Mvarh, '[Mvarh]')
+        self.assertEqual(Jedn_kvarh, 'kvarh')
