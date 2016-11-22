@@ -15,6 +15,7 @@ import unittest
     cx_licznikowy_numer,
     cx_nazwa_taryfy,
     cx_stawka_podatku_vat,
+    cx_nic_stawka_podatku_vat,
     cx_kwota_podatku_vat,
     cx_nic_float,
     cx_req_liczba,
@@ -23,7 +24,7 @@ import unittest
     cx_req_data,
     cx_nic_data,
     cx_ogolne_tekstowe,
-    ) = range(15)
+    ) = range(16)
 
 (
     cx_ext_trojcyfrowe,
@@ -65,7 +66,7 @@ class KlasaStalowejWiedzy(object):
             return 'text'
         elif self.cx_chce_kalendarz(stalowe_cx):
             return 'date'
-        elif stalowe_cx in (cx_stawka_podatku_vat, cx_kwota_podatku_vat, cx_nic_float, cx_req_liczba):
+        elif stalowe_cx in (cx_stawka_podatku_vat, cx_nic_stawka_podatku_vat, cx_kwota_podatku_vat, cx_nic_float, cx_req_liczba):
             return 'numeric(1000,%(scaling_factor)d)' % dict(
                 scaling_factor=cx_scale(ekstra_cx),
                 )
@@ -90,6 +91,7 @@ class TestStalowych(unittest.TestCase):
         self.assertEqual(obk.cx_jaki_typ(cx_poczatek_okresu), 'date')
         self.assertEqual(obk.cx_jaki_typ(cx_nazwa_taryfy), 'text')
         self.assertEqual(obk.cx_jaki_typ(cx_stawka_podatku_vat), 'numeric(1000,2)')
+        self.assertEqual(obk.cx_jaki_typ(cx_nic_stawka_podatku_vat), 'numeric(1000,2)')
         self.assertEqual(obk.cx_jaki_typ(cx_kwota_podatku_vat), 'numeric(1000,2)')
         self.assertEqual(obk.cx_jaki_typ(cx_nic_float), 'numeric(1000,2)')
         self.assertEqual(obk.cx_jaki_typ(cx_req_liczba), 'numeric(1000,2)')
