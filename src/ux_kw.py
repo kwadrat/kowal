@@ -91,8 +91,11 @@ class LancOgolOgniw(object):
         '''
         LancOgolOgniw:
         '''
-        self.pocz_kom(ten_styl = ten_styl, ten_col_span = ten_col_span,
-          ten_row_span = ten_row_span)
+        self.pocz_kom(
+            ten_styl=ten_styl,
+            ten_col_span=ten_col_span,
+            ten_row_span=ten_row_span,
+            )
         self.dolcz(kropelka)
         self.zak_komorki()
 
