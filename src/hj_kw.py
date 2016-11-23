@@ -19,6 +19,7 @@ for i in NazwyModulow:
 
 mapping_as = ' AS '
 db_zero_value = '0'
+db_strange_value = '44200'
 zerowe_pole = db_zero_value + mapping_as
 suffix_comma_separated = '.csv'
 suffix_semicolon_separated = '.txt'
@@ -265,6 +266,7 @@ class TestProcessingSQL(unittest.TestCase):
         '''
         self.assertEqual(mapping_as, ' AS ')
         self.assertEqual(db_zero_value, '0')
+        self.assertEqual(db_strange_value, '44200')
         self.assertEqual(zerowe_pole, '0 AS ')
         self.assertEqual(zeruj_dla_tabeli('a', 'b', 'pole'), 'pole')
         self.assertEqual(zeruj_dla_tabeli('a', 'a', 'pole'), '0 AS pole')
