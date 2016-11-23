@@ -17,9 +17,9 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-zerowa_fraza = ' AS '
+mapping_as = ' AS '
 db_zero_value = '0'
-zerowe_pole = db_zero_value + zerowa_fraza
+zerowe_pole = db_zero_value + mapping_as
 suffix_comma_separated = '.csv'
 suffix_semicolon_separated = '.txt'
 
@@ -40,7 +40,7 @@ def zeruj_dla_kilku(lista_wzorcowych, tabela_aktualna, nazwa_pola):
 def zeruj_z_podmiana(dc_changes, tabela_aktualna, nazwa_pola):
     oryg_nazwa = dc_changes.get(tabela_aktualna)
     if oryg_nazwa:
-        result = ''.join([oryg_nazwa, zerowa_fraza, nazwa_pola])
+        result = ''.join([oryg_nazwa, mapping_as, nazwa_pola])
     else:
         result = nazwa_pola
     return result
@@ -263,7 +263,7 @@ class TestProcessingSQL(unittest.TestCase):
         '''
         TestProcessingSQL:
         '''
-        self.assertEqual(zerowa_fraza, ' AS ')
+        self.assertEqual(mapping_as, ' AS ')
         self.assertEqual(db_zero_value, '0')
         self.assertEqual(zerowe_pole, '0 AS ')
         self.assertEqual(zeruj_dla_tabeli('a', 'b', 'pole'), 'pole')
