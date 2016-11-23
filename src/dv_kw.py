@@ -29,6 +29,13 @@ def zapisz_ladnie_diagnostyke(odp, wzor):
     sf_kw.zapisz_ladnie('a', odp)
     sf_kw.zapisz_ladnie('b', wzor)
 
+def wassertEqual(self, odp, wzor):
+    if odp != wzor:
+        print
+        print '|%s|' % odp
+        print '|%s|' % wzor
+    self.assertEqual(odp, wzor)
+
 def vassertEqual(self, odp, wzor):
     if odp != wzor:
         print
