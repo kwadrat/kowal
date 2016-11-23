@@ -87,7 +87,7 @@ class LancOgolOgniw(object):
         self.dolcz(ze_kw.formularz_67c_kon_wiersza)
         self.dolcz(ze_kw.op_tr())
 
-    def kobalt(self, kropelka, ten_styl='', ten_col_span=None, ten_row_span=None):
+    def kobalt(self, kropelka, ten_styl='', ten_col_span=None, ten_row_span=None, title=None):
         '''
         LancOgolOgniw:
         '''
@@ -95,6 +95,7 @@ class LancOgolOgniw(object):
             ten_styl=ten_styl,
             ten_col_span=ten_col_span,
             ten_row_span=ten_row_span,
+            title=title,
             )
         self.dolcz(kropelka)
         self.zak_komorki()
