@@ -53,6 +53,9 @@ def make_alternatives(lista):
 def make_conjunction(lista):
     return ' AND '.join(lista)
 
+def make_where(lista):
+    return ' WHERE ' + make_conjunction(lista)
+
 def fx_jn(*elements):
     return ''.join(elements)
 
@@ -263,6 +266,7 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(condition_kv('c', None), "c is null")
         self.assertEqual(make_alternatives(['a', 'b', 'c']), "a OR b OR c")
         self.assertEqual(make_conjunction(['a', 'b', 'c']), "a AND b AND c")
+        self.assertEqual(make_where(['a', 'b']), " WHERE a AND b")
         self.assertEqual(ladnie_przecinkami(['a', 'b', 'c']), "a, b, c")
         self.assertEqual(ls_przec('a', 'b', 'c'), 'a, b, c')
         self.assertEqual(with_spaces('a', 'b', 'c'), 'a b c')
