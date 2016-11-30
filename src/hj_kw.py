@@ -56,6 +56,13 @@ def make_conjunction(lista):
 def make_where(lista):
     return ' WHERE ' + make_conjunction(lista)
 
+def sql_in(one_field, value_ls):
+    return ''.join([
+        one_field,
+        ' IN ',
+        value_ls,
+        ])
+
 def fx_jn(*elements):
     return ''.join(elements)
 
@@ -268,6 +275,7 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(make_conjunction(['a', 'b', 'c']), "a AND b AND c")
         self.assertEqual(make_where(['a', 'b']), " WHERE a AND b")
         self.assertEqual(ladnie_przecinkami(['a', 'b', 'c']), "a, b, c")
+        self.assertEqual(sql_in('a', 'b'), "a IN b")
         self.assertEqual(ls_przec('a', 'b', 'c'), 'a, b, c')
         self.assertEqual(with_spaces('a', 'b', 'c'), 'a b c')
         self.assertEqual(zamien_na_logiczne('abc'), 1)
