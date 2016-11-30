@@ -242,6 +242,13 @@ def space_two(first, second):
 def chop_go(elements):
     return elements[:2]
 
+def op_hd(title):
+    if 1:
+        result = title
+    else:
+        result = None
+    return result
+
 if sys.version.split()[0] == '2.5.1':
     def enum_one(text):
         all_lines = text.splitlines()
@@ -343,3 +350,4 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(otocz_nawiasami('bc'), '(bc)')
         self.assertEqual(otocz_cudzyslowem('bc'), '"bc"')
         self.assertEqual(otocz_apostrofem('bc'), "'bc'")
+        self.assertEqual(op_hd('bc'), 'bc')
