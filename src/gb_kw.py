@@ -65,6 +65,7 @@ Jedn_n_wsp_kWh_M3 = nawiasy_kwadratowe(Jedn_wsp_kWh_M3)
 Jedn_k_bezwymiarowa = nawiasy_kwadratowe('1')
 Jedn_k_Mvarh = nawiasy_kwadratowe('Mvarh')
 Jedn_kvarh = 'kvarh'
+Jedn_Mvarh = 'Mvarh'
 
 class TestUnitNames(unittest.TestCase):
     def test_unit_names(self):
@@ -105,3 +106,4 @@ class TestUnitNames(unittest.TestCase):
         self.assertEqual(Jedn_k_bezwymiarowa, '[1]')
         self.assertEqual(Jedn_k_Mvarh, '[Mvarh]')
         self.assertEqual(Jedn_kvarh, 'kvarh')
+        self.assertEqual(Jedn_Mvarh, 'Mvarh')
