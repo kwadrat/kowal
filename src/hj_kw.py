@@ -23,7 +23,7 @@ db_strange_value = '44200'
 suffix_comma_separated = '.csv'
 suffix_semicolon_separated = '.txt'
 
-def zeruj_z_podmiana(dc_changes, tabela_aktualna, nazwa_pola):
+def substitute_if_needed(dc_changes, tabela_aktualna, nazwa_pola):
     oryg_nazwa = dc_changes.get(tabela_aktualna)
     if oryg_nazwa:
         result = ''.join([oryg_nazwa, mapping_as, nazwa_pola])
@@ -269,9 +269,9 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(mapping_as, ' AS ')
         self.assertEqual(db_zero_value, '0')
         self.assertEqual(db_strange_value, '44200')
-        self.assertEqual(zeruj_z_podmiana({}, 't1', 'pole'), 'pole')
-        self.assertEqual(zeruj_z_podmiana({'t1': 'a'}, 't1', 'pole'), 'a AS pole')
-        self.assertEqual(zeruj_z_podmiana({'t2': '0'}, 't2', 'field'), '0 AS field')
+        self.assertEqual(substitute_if_needed({}, 't1', 'pole'), 'pole')
+        self.assertEqual(substitute_if_needed({'t1': 'a'}, 't1', 'pole'), 'a AS pole')
+        self.assertEqual(substitute_if_needed({'t2': '0'}, 't2', 'field'), '0 AS field')
         self.assertEqual(Poprzecinkuj(['a', 'b', 'c']), 'a,b,c')
         self.assertEqual(semicolon_join(['a', 'b', 'c']), 'a;b;c')
         self.assertEqual(conditions_separately(['a'], {'a': None}), ["a is null"])
