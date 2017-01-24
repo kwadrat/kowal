@@ -23,6 +23,8 @@ SELECT k_sample, f_object, m_date, m_samples FROM uu_power WHERE f_object=123 AN
 lxa_10_inst = """\
     %s integer NOT NULL,
 """
+lxa_11_inst = """\
+SELECT """
 lxa_13_inst = """\
 SELECT uu_object.account,m_date,m_samples FROM uu_power,uu_object WHERE uu_power.f_object=uu_object.k_object ORDER BY uu_power.f_object, uu_power.m_date;"""
 lxa_14_inst = """\
