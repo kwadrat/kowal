@@ -23,6 +23,9 @@ db_strange_value = '44200'
 suffix_comma_separated = '.csv'
 suffix_semicolon_separated = '.txt'
 
+def make_mapping(oryg_nazwa, nazwa_pola):
+    return ''.join([oryg_nazwa, mapping_as, nazwa_pola])
+
 def substitute_if_needed(dc_changes, tabela_aktualna, nazwa_pola):
     oryg_nazwa = dc_changes.get(tabela_aktualna)
     if oryg_nazwa:
@@ -267,6 +270,7 @@ class TestProcessingSQL(unittest.TestCase):
         TestProcessingSQL:
         '''
         self.assertEqual(mapping_as, ' AS ')
+        self.assertEqual(make_mapping('a', 'pole'), 'a AS pole')
         self.assertEqual(db_zero_value, '0')
         self.assertEqual(db_strange_value, '44200')
         self.assertEqual(substitute_if_needed({}, 't1', 'pole'), 'pole')
