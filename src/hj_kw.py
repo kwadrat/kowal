@@ -29,7 +29,7 @@ def make_mapping(oryg_nazwa, nazwa_pola):
 def substitute_if_needed(dc_changes, tabela_aktualna, nazwa_pola):
     oryg_nazwa = dc_changes.get(tabela_aktualna)
     if oryg_nazwa:
-        result = ''.join([oryg_nazwa, mapping_as, nazwa_pola])
+        result = make_mapping(oryg_nazwa, nazwa_pola)
     else:
         result = nazwa_pola
     return result
