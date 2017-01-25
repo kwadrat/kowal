@@ -5,6 +5,7 @@ import sys
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import fy_kw
 import gv_kw
 '''.splitlines()]
 
@@ -57,7 +58,7 @@ def make_conjunction(lista):
     return ' AND '.join(lista)
 
 def make_where(lista):
-    return ' WHERE ' + make_conjunction(lista)
+    return fy_kw.lxa_23_inst + make_conjunction(lista)
 
 def sql_in(one_field, value_ls):
     return ''.join([
