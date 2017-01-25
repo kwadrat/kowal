@@ -242,6 +242,13 @@ def nazwa_filtrowanego(indeks_testu):
 def space_two(first, second):
     return '%s %s' % (first, second)
 
+def full_field(first, second):
+    return ''.join([
+        first,
+        '.',
+        second,
+        ])
+
 def chop_go(elements):
     return elements[:2]
 
@@ -355,3 +362,4 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(otocz_cudzyslowem('bc'), '"bc"')
         self.assertEqual(otocz_apostrofem('bc'), "'bc'")
         self.assertEqual(op_hd('bc'), 'bc')
+        self.assertEqual(full_field('table', 'field'), 'table.field')
