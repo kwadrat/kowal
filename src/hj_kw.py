@@ -267,6 +267,13 @@ def date_greater_or_equal(date_label, date_value):
         date_value,
         ])
 
+def fields_equal(label, another):
+    return ''.join([
+        label,
+        " = ",
+        another,
+        ])
+
 if sys.version.split()[0] == '2.5.1':
     def enum_one(text):
         all_lines = text.splitlines()
@@ -372,3 +379,4 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(op_hd('bc'), 'bc')
         self.assertEqual(full_field('table', 'field'), 'table.field')
         self.assertEqual(date_greater_or_equal('label', "'2017-01-25'"), "label >= '2017-01-25'")
+        self.assertEqual(fields_equal('label', 'another'), "label = another")
