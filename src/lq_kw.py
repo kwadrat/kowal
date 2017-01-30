@@ -4,6 +4,7 @@
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import if_kw
 import hj_kw
 import lm_kw
 import le_kw
@@ -32,12 +33,6 @@ def obtain_stats(krt_vl_fnctn, list_of_samples):
     v_zero = cnt_zero(list_of_samples)
     v_sum = sum_of_not_nones(krt_vl_fnctn, list_of_samples)
     return v_none, v_zero, v_sum
-
-def update_mismatch(statement):
-    if 1:
-        raise RuntimeError(statement)
-    else:
-        print statement
 
 def ignored_zero(value):
     return value == 0.0
@@ -93,7 +88,7 @@ class SampleRow(object):
                 repr(old_value),
                 repr(value),
                 ))
-            update_mismatch(statement)
+            if_kw.warn_halt(1, statement)
 
     def fill_from_data(self, sample_key, sample_data):
         '''
