@@ -274,6 +274,15 @@ def fields_equal(label, another):
         another,
         ])
 
+def netto_from_brutto(brutto, vat_rate):
+    return ''.join([
+        "(",
+        brutto,
+        " * 100.0 / (100.0 + ",
+        vat_rate,
+        "))",
+        ])
+
 if sys.version.split()[0] == '2.5.1':
     def enum_one(text):
         all_lines = text.splitlines()
@@ -380,3 +389,4 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(full_field('table', 'field'), 'table.field')
         self.assertEqual(date_greater_or_equal('label', "'2017-01-25'"), "label >= '2017-01-25'")
         self.assertEqual(fields_equal('label', 'another'), "label = another")
+        self.assertEqual(netto_from_brutto('brutto', 'vat_rate'), "(brutto * 100.0 / (100.0 + vat_rate))")
