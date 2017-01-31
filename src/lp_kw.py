@@ -130,6 +130,9 @@ def convert_keys(integer_keys):
     result = str(string_keys)
     return result
 
+def year_month(dtdt):
+    return dtdt.year, dtdt.month
+
 class TestDateQuarters(unittest.TestCase):
     def test_date_quarters(self):
         '''
@@ -201,3 +204,11 @@ class TestDateQuarters(unittest.TestCase):
         '''
         self.assertEqual(convert_keys({}), '{}')
         self.assertEqual(convert_keys({959: '07:30', 381: '08:00'}), "{'959': '07:30', '381': '08:00'}")
+
+    def test_extracting_ym(self):
+        '''
+        TestDateQuarters:
+        '''
+        tvk_rok, fvk_miesiac, fvk_dzien = 2017, 1, 31
+        one_date = build_date(tvk_rok, fvk_miesiac, fvk_dzien)
+        self.assertEqual(year_month(one_date), (2017, 1))
