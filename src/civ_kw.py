@@ -20,6 +20,7 @@ xs_2_ql = 'UNION\n'
 xs_3_ql = '\n' + xs_2_ql
 xs_4_ql = 'UNION ALL\n'
 xs_5_ql = ';'
+xs_6_ql = ' DESC'
 
 class TestPartsSQL(unittest.TestCase):
     def test_parts_sql(self):
@@ -31,3 +32,4 @@ class TestPartsSQL(unittest.TestCase):
         self.assertEqual(xs_3_ql, '\nUNION\n')
         self.assertEqual(xs_4_ql, 'UNION ALL\n')
         self.assertEqual(xs_5_ql, ';')
+        self.assertEqual(xs_6_ql, ' DESC')
