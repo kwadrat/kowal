@@ -183,6 +183,7 @@ TymczasowoSumowanieInd = 0
 
 Tymczasowo_pokaz_klucz_faktury_zamiast_licz_porz = 0
 Tymczasowo_pokaz_etykiety_pol_faktury = 0
+Tymczasowo_pokaz_identyfikatory_list = 0
 
 Niebezpieczne_testowa_aplikacja_produkcyjna_baza = 0
 
