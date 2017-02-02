@@ -59,6 +59,17 @@ def comma_and_zero(txt_value):
         raise RuntimeError('Failed to convert: %s' % repr(copy_value))
     return txt_value
 
+def comma_and_some_zero(txt_value, rn_after):
+    before_cnt = txt_value.find('.')
+    comma_zeros = ',' + rn_after * '0'
+    if before_cnt >= 0:
+        before_txt = txt_value[:before_cnt]
+        after_txt = txt_value[before_cnt + 1:]
+        comma_zeros = ',' + after_txt + (rn_after - len(after_txt)) * '0'
+    else:
+        before_txt = txt_value
+    return before_txt + comma_zeros
+
 class TestNapisow(unittest.TestCase):
     def test_operacji_na_napisach(self):
         '''
@@ -82,3 +93,18 @@ class TestNapisow(unittest.TestCase):
         self.assertEqual(comma_and_zero('1.00'), '1,0')
         self.assertEqual(comma_and_zero('1.000'), '1,0')
         self.assertEqual(comma_and_zero('.'), ',0')
+
+    def test_pretty_txt_precision_number(self):
+        '''
+        TestNapisow:
+        '''
+        self.assertEqual(comma_and_some_zero('1.', 2), '1,00')
+        self.assertEqual(comma_and_some_zero('2.', 2), '2,00')
+        self.assertEqual(comma_and_some_zero('12.', 2), '12,00')
+        self.assertEqual(comma_and_some_zero('1', 2), '1,00')
+        self.assertEqual(comma_and_some_zero('1.2', 2), '1,20')
+        self.assertEqual(comma_and_some_zero('1.3', 2), '1,30')
+        self.assertEqual(comma_and_some_zero('1.34', 2), '1,34')
+        self.assertEqual(comma_and_some_zero('1.', 3), '1,000')
+        self.assertEqual(comma_and_some_zero('1.2', 3), '1,200')
+        self.assertEqual(comma_and_some_zero('1.234', 2), '1,234')
