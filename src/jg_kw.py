@@ -22,12 +22,12 @@ class JedenWiersz(object):
         '''
         self.barwa_wiersza = barwa_wiersza
 
-    def __init__(self, nazwa, wiersz):
+    def __init__(self, nazwa, table_row):
         '''
         JedenWiersz:
         '''
         self.nazwa = nazwa
-        self.wiersz = wiersz
+        self.table_row = table_row
         self.set_color(None)
 
     def get_line_name(self):
@@ -40,19 +40,19 @@ class JedenWiersz(object):
         '''
         JedenWiersz:
         '''
-        return self.wiersz
+        return self.table_row
 
     def to_comma(self):
         '''
         JedenWiersz:
         '''
-        self.wiersz = map(hd_kw.przecinkowane_pole, self.wiersz)
+        self.table_row = map(hd_kw.przecinkowane_pole, self.table_row)
 
     def use_color(self):
         '''
         JedenWiersz:
         '''
         if self.barwa_wiersza:
-            self.wiersz = map(
+            self.table_row = map(
                 lambda x: ze_kw.pokoloruj(x, self.barwa_wiersza),
-                self.wiersz)
+                self.table_row)
