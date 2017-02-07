@@ -17,13 +17,16 @@ for i in NazwyModulow:
 
 def rect_text(one_text):
     all_lines = one_text.splitlines()
-    size_x = max(map(len, all_lines))
-    lines_ls = []
-    for one_line in all_lines:
-        new_line = [' '] * size_x
-        for nr, the_char in enumerate(one_line):
-            new_line[nr] = the_char
-        lines_ls.append(new_line)
+    if all_lines:
+        size_x = max(map(len, all_lines))
+        lines_ls = []
+        for one_line in all_lines:
+            new_line = [' '] * size_x
+            for nr, the_char in enumerate(one_line):
+                new_line[nr] = the_char
+            lines_ls.append(new_line)
+    else:
+        lines_ls = None
     return lines_ls
 
 class TestRectangledText(unittest.TestCase):
@@ -43,3 +46,4 @@ class TestRectangledText(unittest.TestCase):
             ['a', ' '],
             ['c', 'd'],
             ])
+        self.assertEqual(rect_text(''), None)
