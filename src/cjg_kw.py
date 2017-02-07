@@ -29,6 +29,11 @@ def rect_text(one_text):
         lines_ls = None
     return lines_ls
 
+def transpose_text(one_text):
+    result = zip(*one_text)
+    result = map(list, result)
+    return result
+
 class TestRectangledText(unittest.TestCase):
     def test_rectangled_text(self):
         '''
@@ -47,3 +52,23 @@ class TestRectangledText(unittest.TestCase):
             ['c', 'd'],
             ])
         self.assertEqual(rect_text(''), None)
+
+    def test_transposed_text(self):
+        '''
+        TestRectangledText:
+        '''
+        self.assertEqual(transpose_text([
+            ['a', 'c', 'e'],
+            ['b', 'd', 'f'],
+            ]), [
+            ['a', 'b'],
+            ['c', 'd'],
+            ['e', 'f'],
+            ])
+        self.assertEqual(transpose_text([
+            ['a', 'c', 'e'],
+            ]), [
+            ['a'],
+            ['c'],
+            ['e'],
+            ])
