@@ -42,6 +42,13 @@ def matrix_to_text(one_matrix):
 def reverse_text(one_matrix):
     return map(lambda x: list(reversed(x)), one_matrix)
 
+def massive_processing(file_txt):
+    file_txt = rect_text(file_txt)
+    file_txt = transpose_text(file_txt)
+    file_txt = reverse_text(file_txt)
+    file_txt = matrix_to_text(file_txt) + '\n'
+    return file_txt
+
 class TestRectangledText(unittest.TestCase):
     def test_rectangled_text(self):
         '''
