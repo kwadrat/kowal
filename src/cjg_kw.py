@@ -39,6 +39,9 @@ def matrix_to_text(one_matrix):
     result_txt = '\n'.join(all_lines)
     return result_txt
 
+def reverse_text(one_matrix):
+    return map(lambda x: list(reversed(x)), one_matrix)
+
 class TestRectangledText(unittest.TestCase):
     def test_rectangled_text(self):
         '''
@@ -90,3 +93,15 @@ class TestRectangledText(unittest.TestCase):
             ['a', ' '],
             ['c', 'd'],
             ]), 'a\ncd')
+
+    def test_reversed_text(self):
+        '''
+        TestRectangledText:
+        '''
+        self.assertEqual(reverse_text([
+            ['a', 'c', 'e'],
+            ['b', 'd', 'f'],
+            ]), [
+            ['e', 'c', 'a'],
+            ['f', 'd', 'b'],
+            ])
