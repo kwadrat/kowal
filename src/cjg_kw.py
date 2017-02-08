@@ -34,6 +34,11 @@ def transpose_text(one_text):
     result = map(list, result)
     return result
 
+def matrix_to_text(one_matrix):
+    all_lines = map(lambda x: (''.join(x)).rstrip(), one_matrix)
+    result_txt = '\n'.join(all_lines)
+    return result_txt
+
 class TestRectangledText(unittest.TestCase):
     def test_rectangled_text(self):
         '''
@@ -72,3 +77,16 @@ class TestRectangledText(unittest.TestCase):
             ['c'],
             ['e'],
             ])
+
+    def test_text_from_matrix(self):
+        '''
+        TestRectangledText:
+        '''
+        self.assertEqual(matrix_to_text([
+            ['a', 'b'],
+            ['c', 'd'],
+            ]), 'ab\ncd')
+        self.assertEqual(matrix_to_text([
+            ['a', ' '],
+            ['c', 'd'],
+            ]), 'a\ncd')
