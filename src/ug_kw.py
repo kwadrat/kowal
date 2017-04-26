@@ -92,10 +92,10 @@ local_splitter = FieldSplitter()
 def rozbij_na_pola(line, quoting=0):
    return local_splitter.split_fields(line, quoting=quoting)
 
-class TestRozbijaniaCSV(unittest.TestCase):
+class TestRozbijaniaCommaSV(unittest.TestCase):
     def test_rozbijania_csv(self):
         '''
-        TestRozbijaniaCSV:
+        TestRozbijaniaCommaSV:
         '''
         self.assertEqual(rozbij_na_pola(''), [''])
         self.assertEqual(rozbij_na_pola('a'), ['a'])
@@ -104,7 +104,7 @@ class TestRozbijaniaCSV(unittest.TestCase):
 
     def test_object_csv(self):
         '''
-        TestRozbijaniaCSV:
+        TestRozbijaniaCommaSV:
         '''
         obk = FieldSplitter()
         self.assertEqual(obk.split_fields(''), [''])
