@@ -237,8 +237,14 @@ def hlp_assume_one(id_obkt, wynik, etykieta):
 def zrob_wersje_posrednia(nazwa):
     return 'gen_%s.txt' % nazwa
 
-def nazwa_filtrowanego(indeks_testu):
-    return 'gen_filtered_%d%s' % (indeks_testu, suffix_comma_separated)
+def nazwa_filtrowanego(indeks_testu, diff_letter=None):
+    if diff_letter is None:
+        diff_letter = ''
+    return 'gen_filtered_%d%s%s' % (
+        indeks_testu,
+        diff_letter,
+        suffix_comma_separated,
+        )
 
 def space_two(first, second):
     return '%s %s' % (first, second)
@@ -377,6 +383,7 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(suffix_comma_separated, '.csv')
         self.assertEqual(suffix_semicolon_separated, '.txt')
         self.assertEqual(nazwa_filtrowanego(4), 'gen_filtered_4.csv')
+        self.assertEqual(nazwa_filtrowanego(5, 'a'), 'gen_filtered_5a.csv')
         self.assertEqual(space_two('a', 'b'), 'a b')
         self.assertEqual(list(enum_one('a\nb')), [(1, 'a'), (2, 'b')])
         self.assertEqual(list(enum_one('a\nb\nc')), [(1, 'a'), (2, 'b'), (3, 'c')])
