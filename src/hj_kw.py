@@ -301,6 +301,9 @@ else:
         all_lines = text.splitlines()
         return enumerate(all_lines, start=1)
 
+def labels_to_indexes(some_labels, all_labels):
+    return map(lambda x: all_labels.index(x), some_labels)
+
 class TestProcessingSQL(unittest.TestCase):
     def test_processing_sql(self):
         '''
@@ -397,3 +400,5 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(date_greater_or_equal('label', "'2017-01-25'"), "label >= '2017-01-25'")
         self.assertEqual(fields_equal('label', 'another'), "label = another")
         self.assertEqual(netto_from_brutto('brutto', 'vat_rate'), "(brutto * 100.0 / (100.0 + vat_rate))")
+        self.assertEqual(labels_to_indexes('a c'.split(), 'a b c d'.split()), [0, 2])
+        self.assertEqual(labels_to_indexes('a c'.split(), 'e a b c d'.split()), [1, 3])
