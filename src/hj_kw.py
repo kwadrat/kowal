@@ -304,6 +304,9 @@ else:
 def labels_to_indexes(some_labels, all_labels):
     return map(lambda x: all_labels.index(x), some_labels)
 
+def remove_duplicates(one_ls):
+    return sorted(set(one_ls))
+
 class TestProcessingSQL(unittest.TestCase):
     def test_processing_sql(self):
         '''
@@ -402,3 +405,5 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(netto_from_brutto('brutto', 'vat_rate'), "(brutto * 100.0 / (100.0 + vat_rate))")
         self.assertEqual(labels_to_indexes('a c'.split(), 'a b c d'.split()), [0, 2])
         self.assertEqual(labels_to_indexes('a c'.split(), 'e a b c d'.split()), [1, 3])
+        self.assertEqual(remove_duplicates('b a a'.split()), 'a b'.split())
+        self.assertEqual(remove_duplicates('d a b c a b a'.split()), 'a b c d'.split())
