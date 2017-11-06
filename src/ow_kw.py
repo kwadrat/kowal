@@ -123,4 +123,3 @@ class TestLinkuMapy(unittest.TestCase):
         self.assertEqual(poszerz_pozycje(0, (10, 20, 30, 40)), (10, 20, 30, 40))
         self.assertEqual(set_src('abc', 'def'), "abc.src='def'")
         self.assertEqual(set_bg_color('abc', 'def'), "abc.bgColor='def'")
-

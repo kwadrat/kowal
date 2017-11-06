@@ -79,4 +79,3 @@ class TestWatCanCor(unittest.TestCase):
         self.assertEqual(qy_to_1_moj.water_canal_amount('2', '3'), 0)
         self.assertEqual(qy_to_1_moj.water_canal_amount('20.860000', '3.42'), 1)
         self.assertEqual(qy_to_3_moj.water_canal_amount('14.600000', '14.60'), 0)
-
