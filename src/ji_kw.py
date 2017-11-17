@@ -143,7 +143,7 @@ class EnergyReader(CommonReader):
                 value = self.simple_energy_read(single_row, sample_index)
                 value += self.simple_energy_read(single_row, sample_index + 1)
             else:
-                if sample_index == 1:
+                if not spring_dst_date and sample_index == 1:
                     empty_value = self.simple_energy_read(single_row, sample_index + 1)
                     lp_kw.verify_for_2_equal(empty_value, ['', None])
                 if sample_index > 1:
