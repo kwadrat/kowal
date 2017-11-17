@@ -134,7 +134,7 @@ class EnergyReader(CommonReader):
             value = lm_kw.adjust_for_csv(value)
         return value
 
-    def energy_using_dst(self, key_object, single_row, sample_index, autumn_dst_date):
+    def energy_using_dst(self, key_object, single_row, sample_index, spring_dst_date, autumn_dst_date):
         '''
         EnergyReader:
         '''
@@ -159,7 +159,7 @@ class EnergyReader(CommonReader):
         '''
         EnergyReader:
         '''
-        value = self.energy_using_dst(key_object, single_row, sample_index, autumn_dst_date)
+        value = self.energy_using_dst(key_object, single_row, sample_index, spring_dst_date, autumn_dst_date)
         self.store_hour_value_in_row(key_object, row_date, sample_index, value)
 
     def date_from_row(self, single_row):
