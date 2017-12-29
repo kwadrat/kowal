@@ -1,6 +1,10 @@
 #!/usr/bin/env python2
 # -*- coding: UTF-8 -*-
 
+'''
+Dla sprawdzania czasów wykonania poszczególnych etapów obliczeń
+'''
+
 import sys
 import time
 
