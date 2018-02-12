@@ -4,6 +4,7 @@
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import civ_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -15,10 +16,9 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-delimiter = ';'
 quotechar = '"'
 PodwZnkSepTekstu = quotechar + quotechar
-znaki_konczace_pole_tekstowe = set([delimiter, chr(13), chr(10)])
+znaki_konczace_pole_tekstowe = set([civ_kw.xs_semicolon_ql, chr(13), chr(10)])
 
 class FieldSplitter(object):
     def __init__(self):
@@ -67,7 +67,7 @@ class FieldSplitter(object):
                         t.append(line[strt_pos:cur_ptr].replace(PodwZnkSepTekstu, quotechar))
                         cur_ptr += 1
                         # Tu czekamy na przecinek
-                        if cur_ptr < ln_len and line[cur_ptr] == delimiter:
+                        if cur_ptr < ln_len and line[cur_ptr] == civ_kw.xs_semicolon_ql:
                             cur_ptr += 1
                             first_char = 1 # Znowu zaczynamy analizę od pierwszego znaku pola
                         else:
@@ -78,7 +78,7 @@ class FieldSplitter(object):
             else: # Nie mamy cudzysłowu - szukamy do następnego przecinka lub końca
                 if cur_ptr >= ln_len or line[cur_ptr] in znaki_konczace_pole_tekstowe:
                     t.append(line[strt_pos:cur_ptr])
-                    if cur_ptr < ln_len and line[cur_ptr] == delimiter:
+                    if cur_ptr < ln_len and line[cur_ptr] == civ_kw.xs_semicolon_ql:
                         cur_ptr += 1 # Będzie kolejne pole
                         first_char = 1
                     else:
