@@ -259,6 +259,7 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
+        sheet_name = en_kw.utf_to_unicode(sheet_name)
         self.sheet = self.wbk.add_sheet(sheet_name)
 
     def workbook_save(self, nazwa_docelowa):
