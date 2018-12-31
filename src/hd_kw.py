@@ -46,19 +46,6 @@ def przecinkowane_pole(kolumna):
             value_as_text = kropka_przecinek(value_as_text)
     return value_as_text
 
-def comma_and_zero(txt_value):
-    copy_value = txt_value
-    try:
-        if '.' in txt_value:
-            if txt_value[-1] == '.':
-                txt_value = txt_value + '0'
-            while len(txt_value) >= 2 and txt_value[-1] == '0' and txt_value[-2] != '.':
-                txt_value = txt_value[:-1]
-            txt_value = kropka_przecinek(txt_value)
-    except:
-        raise RuntimeError('Failed to convert: %s' % repr(copy_value))
-    return txt_value
-
 def comma_and_some_zero(txt_value, rn_after):
     before_cnt = txt_value.find('.')
     comma_zeros = ',' + rn_after * '0'
@@ -82,17 +69,6 @@ class TestNapisow(unittest.TestCase):
         self.assertEqual(kropka_przecinek('0.5'), '0,5')
         self.assertEqual(odwrotny_zwykly('\\'), '/')
         self.assertEqual(odwrotny_zwykly('1\\2'), '1/2')
-
-    def test_pretty_txt_number(self):
-        '''
-        TestNapisow:
-        '''
-        self.assertEqual(comma_and_zero('1'), '1')
-        self.assertEqual(comma_and_zero('1.'), '1,0')
-        self.assertEqual(comma_and_zero('1.0'), '1,0')
-        self.assertEqual(comma_and_zero('1.00'), '1,0')
-        self.assertEqual(comma_and_zero('1.000'), '1,0')
-        self.assertEqual(comma_and_zero('.'), ',0')
 
     def test_pretty_txt_precision_number(self):
         '''
