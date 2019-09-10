@@ -66,8 +66,7 @@ def sprawdz_lub_utworz_katalog_logu(pelna_nazwa_klt_lgu):
     sprawdz_lub_utworz_jeden_katalog(pelna_nazwa_klt_lgu)
 
 def create_dir_if_nonexistent(nazwa_katalogu):
-    if not os.path.isdir(nazwa_katalogu):
-        os.mkdir(nazwa_katalogu)
+    if sprawdz_lub_utworz_jeden_katalog(nazwa_katalogu):
         zrob_odpowiednie_prawa(nazwa_katalogu)
 
 def wczytaj_plik(nazwa):
