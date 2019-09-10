@@ -57,6 +57,10 @@ def zrob_odpowiednie_prawa(nazwa):
 def sprawdz_lub_utworz_jeden_katalog(one_dir):
     if not os.path.isdir(one_dir):
         os.mkdir(one_dir)
+        dir_created = 1
+    else:
+        dir_created = 0
+    return dir_created
 
 def sprawdz_lub_utworz_katalog_logu(pelna_nazwa_klt_lgu):
     sprawdz_lub_utworz_jeden_katalog(pelna_nazwa_klt_lgu)
