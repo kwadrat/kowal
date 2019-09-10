@@ -54,6 +54,10 @@ def zrob_odpowiednie_prawa(nazwa):
         status = 0
     return status
 
+def sprawdz_lub_utworz_jeden_katalog(one_dir):
+    if not os.path.isdir(one_dir):
+        os.mkdir(one_dir)
+
 def sprawdz_lub_utworz_katalog_logu(pelna_nazwa_klt_lgu):
     if not os.path.isdir(pelna_nazwa_klt_lgu):
         os.mkdir(pelna_nazwa_klt_lgu)
