@@ -59,8 +59,7 @@ def sprawdz_lub_utworz_jeden_katalog(one_dir):
         os.mkdir(one_dir)
 
 def sprawdz_lub_utworz_katalog_logu(pelna_nazwa_klt_lgu):
-    if not os.path.isdir(pelna_nazwa_klt_lgu):
-        os.mkdir(pelna_nazwa_klt_lgu)
+    sprawdz_lub_utworz_jeden_katalog(pelna_nazwa_klt_lgu)
 
 def create_dir_if_nonexistent(nazwa_katalogu):
     if not os.path.isdir(nazwa_katalogu):
