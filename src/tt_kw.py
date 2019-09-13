@@ -136,7 +136,8 @@ class CommonReader(CommonRdWr):
         CommonReader:
         '''
         header_col = self.vx_letter_num(lb_col) + col_delta
-        return self.vx_num_peek(header_col, my_row)
+        result = self.vx_num_peek(header_col, my_row)
+        return result
 
     def vx_date(self, lb_col, my_row, col_delta=0):
         '''
