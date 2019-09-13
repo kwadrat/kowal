@@ -68,7 +68,7 @@ class PowerReader(CommonReader):
         '''
         nrows = self.sheet.nrows
         self.check_for_constant_string('B', 10, u'Data')
-        self.check_for_constant_string('B', 12, u'rrrr-mm-dd hh:mm')
+        self.check_for_constant_string('B', 12, u'rrrr-mm-dd hh:mm', exp_second=u'dd.mm.rrrr hh:mm')
         self.check_for_constant_string('B', nrows - 2, u'Energy')
         self.check_for_constant_string('B', nrows - 1, u'Max')
         self.check_for_constant_string('B', nrows, u'Time Max')

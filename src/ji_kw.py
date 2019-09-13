@@ -103,7 +103,11 @@ class EnergyReader(CommonReader):
         '''
         self.check_for_constant_string('B', 1 + self.tel_delta, u'Raport energii godzinowej dla ')
         self.verify_hours_headers()
-        self.check_for_delta_string('M', 1 + self.tel_delta, u'kWh')
+        got_val = self.vx_peek('L', 1 + self.tel_delta)
+        if got_val == u'w kWh':
+            pass
+        else:
+            self.check_for_delta_string('M', 1 + self.tel_delta, u'kWh')
         self.check_for_constant_string('B', 2 + self.tel_delta, u'Za okres')
         self.check_for_delta_string('D', 2 + self.tel_delta, u'od')
         self.check_for_delta_string('G', 2 + self.tel_delta, u'do ')
