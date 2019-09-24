@@ -4,7 +4,6 @@
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
-import tq_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -22,8 +21,6 @@ def normalize_value(before):
     else:
         result = before
     return result
-
-CommonRdWr = tq_kw.CommonRdWr
 
 class TxtSheet(object):
     def __init__(self, single_file=None):
