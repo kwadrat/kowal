@@ -30,6 +30,9 @@ class InvariantPackage(object):
         self.cnt_ls = cnt_ls
         self.counter_snapshot_moment = counter_snapshot_moment
         self.mono_cnt = lp_kw.detect_invariant_time(times_of_counters, self.counter_snapshot_moment)
+        for one_x in cnt_ls:
+            if one_x not in self.mono_cnt:
+                self.mono_cnt[one_x] = counter_snapshot_moment
         self.stamp_times = lp_kw.convert_keys(self.mono_cnt)
 
     def get_initial_hour(self, selected_counter_id):
@@ -71,4 +74,4 @@ class TestInvariantPack(unittest.TestCase):
         self.assertEqual(obj.get_initial_hour(386), du_kw.rjb_minuta_przkl)
         self.assertEqual(obj.get_initial_hour(121212), du_kw.rjb_minuta_przkl)
         self.assertEqual(obj.get_initial_hour(None), du_kw.rjb_minuta_przkl)
-        self.assertEqual(obj.get_text_times(), "{'381': '08:00', '386': '10:41', '959': '07:30'}")
+        self.assertEqual(obj.get_text_times(), "{'381': '08:00', '386': '10:41', '959': '07:30', '1310': '10:41'}")
