@@ -18,6 +18,11 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 class InvariantPackage(object):
+    '''
+    Dla ułatwienia wpisywania liczników - wykryj i zaproponuj typową godzinę
+    odczytu licznika, np. jeśli codziennie licznik był odczytywany
+    o godz. 07:00, to zaproponuj 07:00 jako następną godzinę odczytu.
+    '''
     def __init__(self, cnt_ls, times_of_counters, counter_snapshot_moment):
         '''
         InvariantPackage:
