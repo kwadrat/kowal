@@ -266,6 +266,7 @@ class AugmentedEnReader(EnergyReader):
         self.vx_poke('B', 2, u'Raport energii godzinowej dla ')
         self.vx_poke('L', 2, u'zmieniony_b')
         self.vx_poke('N', 2, u'kWh')
+        self.vx_poke('M', 2, u'')
         self.vx_poke('B', 3, u'Za okres')
         self.vx_poke('E', 3, u'od')
         self.vx_poke('H', 3, u'do ')
