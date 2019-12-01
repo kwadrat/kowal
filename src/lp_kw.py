@@ -124,10 +124,20 @@ def detect_invariant_time(times_of_counters, default_value):
     return mono_cnt
 
 def convert_keys(integer_keys):
-    string_keys = {}
-    for one_key, one_value in integer_keys.iteritems():
-        string_keys[str(one_key)] = one_value
-    result = str(string_keys)
+    out_ls = []
+    out_ls.append('{')
+    part_ls = []
+    for one_key in sorted(integer_keys, reverse=0):
+        one_value = integer_keys[one_key]
+        one_part = "'%(one_key)d': '%(one_value)s'" % dict(
+            one_key=one_key,
+            one_value=one_value,
+        )
+        part_ls.append(one_part)
+    content_text = ', '.join(part_ls)
+    out_ls.append(content_text)
+    out_ls.append('}')
+    result = ''.join(out_ls)
     return result
 
 def year_month(dtdt):
@@ -203,7 +213,7 @@ class TestDateQuarters(unittest.TestCase):
         TestDateQuarters:
         '''
         self.assertEqual(convert_keys({}), '{}')
-        self.assertEqual(convert_keys({959: '07:30', 381: '08:00'}), "{'959': '07:30', '381': '08:00'}")
+        self.assertEqual(convert_keys({959: '07:30', 381: '08:00'}), "{'381': '08:00', '959': '07:30'}")
 
     def test_extracting_ym(self):
         '''
