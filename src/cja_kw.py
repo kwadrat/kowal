@@ -37,10 +37,7 @@ class InvariantPackage(object):
         InvariantPackage:
         '''
         if selected_counter_id not in self.mono_cnt:
-            if self.cnt_ls:
-                selected_counter_id = self.cnt_ls[0]
-            else:
-                selected_counter_id = None
+            selected_counter_id = None
         if selected_counter_id is None:
             result = self.counter_snapshot_moment
         else:
@@ -67,11 +64,11 @@ class TestInvariantPack(unittest.TestCase):
         '''
         TestInvariantPack:
         '''
-        cnt_ls = [959, 386, 381]
+        cnt_ls = [1310, 959, 386, 381]
         obj = InvariantPackage(cnt_ls, lp_kw.example_data_from_db, du_kw.rjb_minuta_przkl)
         self.assertEqual(obj.get_initial_hour(959), '07:30')
         self.assertEqual(obj.get_initial_hour(381), '08:00')
         self.assertEqual(obj.get_initial_hour(386), du_kw.rjb_minuta_przkl)
-        self.assertEqual(obj.get_initial_hour(121212), '07:30')
-        self.assertEqual(obj.get_initial_hour(None), '07:30')
+        self.assertEqual(obj.get_initial_hour(121212), du_kw.rjb_minuta_przkl)
+        self.assertEqual(obj.get_initial_hour(None), du_kw.rjb_minuta_przkl)
         self.assertEqual(obj.get_text_times(), "{'381': '08:00', '386': '10:41', '959': '07:30'}")
