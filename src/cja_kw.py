@@ -74,4 +74,4 @@ class TestInvariantPack(unittest.TestCase):
         self.assertEqual(obj.get_initial_hour(386), du_kw.rjb_minuta_przkl)
         self.assertEqual(obj.get_initial_hour(121212), '07:30')
         self.assertEqual(obj.get_initial_hour(None), '07:30')
-        self.assertEqual(obj.get_text_times(), "{'959': '07:30', '381': '08:00', '386': '10:41'}")
+        self.assertEqual(obj.get_text_times(), "{'381': '08:00', '386': '10:41', '959': '07:30'}")
