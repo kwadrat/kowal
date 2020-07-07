@@ -1,8 +1,17 @@
-#!/usr/bin/python
+#!/usr/bin/env python2
 # -*- coding: UTF-8 -*-
 
-import Image
-import ImageDraw
+old_pil_is_present = 0
+try:
+    import Image
+    old_pil_is_present = 1
+except ImportError:
+    from PIL import Image
+
+if old_pil_is_present:
+    import ImageDraw
+else:
+    from PIL import ImageDraw
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 '''.splitlines()]
