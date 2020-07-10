@@ -54,7 +54,7 @@ class SrednieZuzycie(object):
             '''
             SrednieZuzycie:
             '''
-            return float(self.kwota) / self.zuzycie
+            return float(self.kwota) / float(self.zuzycie)
         ##############################################################################
 
     def klucz_dla_kolejnosci(self):

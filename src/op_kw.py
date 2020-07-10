@@ -39,7 +39,7 @@ class AxisY(object):
             '''
             AxisY:
             '''
-            gora_slupka = float(Wartosc - self.MinY) / (self.MaxY - self.MinY)
+            gora_slupka = float(Wartosc - self.MinY) / float(self.MaxY - self.MinY)
             return gora_slupka
         ##############################################################################
 
