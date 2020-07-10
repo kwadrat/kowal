@@ -135,7 +135,7 @@ class KlasaSlownika(object):
         for klucz in klucze:
             tmp_slownik = self.jh_na_poczatek_puste(klucz)
             tmp_slownik.extend(slownik_qm.jh__getitem__(klucz))
-            self.vz_kwota += slownik_qm.vz_kwota
+            self.vz_kwota += float(slownik_qm.vz_kwota)
 
     def jh_kwota(self):
         '''
