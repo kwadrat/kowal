@@ -20,11 +20,18 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 class LancOgolOgniw(object):
+    def jump_immediately(self, napis):
+        '''
+        LancOgolOgniw:
+        '''
+        self.jump_txt = napis
+
     def __init__(self):
         '''
         LancOgolOgniw:
         '''
         self.lista = []
+        self.jump_immediately(None)
 
     def dolcz(self, napis):
         '''
@@ -36,7 +43,10 @@ class LancOgolOgniw(object):
         '''
         LancOgolOgniw:
         '''
-        return ''.join(self.lista)
+        if self.jump_txt is None:
+            return ''.join(self.lista)
+        else:
+            return self.jump_txt
 
     def rozp_wiersza(self):
         '''
@@ -169,3 +179,12 @@ class TestOgolnegoLancucha(unittest.TestCase):
         obk = LancOgolOgniw()
         obk.rozp_komorki()
         self.assertEqual(obk.polaczona_tresc(), '<td>')
+
+    def test_jump(self):
+        '''
+        TestOgolnegoLancucha:
+        '''
+        obk = LancOgolOgniw()
+        obk.rozp_komorki()
+        obk.jump_immediately('abc')
+        self.assertEqual(obk.polaczona_tresc(), 'abc')
