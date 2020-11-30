@@ -18,7 +18,11 @@ for i in NazwyModulow:
 
 quotechar = '"'
 PodwZnkSepTekstu = quotechar + quotechar
-znaki_konczace_pole_tekstowe = set([civ_kw.xs_semicolon_ql, chr(13), chr(10)])
+znaki_konczace_pole_tekstowe = set([
+    civ_kw.xs_semicolon_ql,
+    chr(13),
+    chr(10),
+    ])
 
 class FieldSplitter(object):
     def __init__(self):
