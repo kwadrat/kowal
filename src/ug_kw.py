@@ -24,6 +24,13 @@ znaki_konczace_pole_tekstowe = set([
     chr(10),
     ])
 
+
+def inter_col(one_char):
+    return (
+        one_char == civ_kw.xs_semicolon_ql
+        or one_char == civ_kw.xs_comma_ql
+        )
+
 class FieldSplitter(object):
     def __init__(self):
         '''
