@@ -18,21 +18,15 @@ for i in NazwyModulow:
 
 quotechar = '"'
 PodwZnkSepTekstu = quotechar + quotechar
-znaki_konczace_pole_tekstowe = set([
-    civ_kw.xs_semicolon_ql,
-    civ_kw.xs_comma_ql,
-    chr(13),
-    chr(10),
-    ])
 
-
-def inter_col(one_char):
-    return (
-        one_char == civ_kw.xs_semicolon_ql
-        or one_char == civ_kw.xs_comma_ql
-        )
 
 class FieldSplitter(object):
+    def inter_col(self, one_char):
+        '''
+        FieldSplitter:
+        '''
+        return one_char == self.internal_sep
+
     def __init__(self):
         '''
         FieldSplitter:
@@ -46,6 +40,15 @@ class FieldSplitter(object):
         '''
         FieldSplitter:
         '''
+        if line.count(civ_kw.xs_semicolon_ql) >= 30:
+            self.internal_sep = civ_kw.xs_semicolon_ql
+        else:
+            self.internal_sep = civ_kw.xs_comma_ql
+        self.znaki_konczace_pole_tekstowe = set([
+            self.internal_sep,
+            chr(13),
+            chr(10),
+            ])
         t = []
         inside_quote = 0
         cur_ptr = 0 # Wskaźnik na aktualny analizowany znak linii
@@ -79,7 +82,7 @@ class FieldSplitter(object):
                         t.append(line[strt_pos:cur_ptr].replace(PodwZnkSepTekstu, quotechar))
                         cur_ptr += 1
                         # Tu czekamy na przecinek
-                        if cur_ptr < ln_len and inter_col(line[cur_ptr]):
+                        if cur_ptr < ln_len and self.inter_col(line[cur_ptr]):
                             cur_ptr += 1
                             first_char = 1 # Znowu zaczynamy analizę od pierwszego znaku pola
                         else:
@@ -88,9 +91,9 @@ class FieldSplitter(object):
                 else:
                     cur_ptr += 1 # Szukamy następnego znaku
             else: # Nie mamy cudzysłowu - szukamy do następnego przecinka lub końca
-                if cur_ptr >= ln_len or line[cur_ptr] in znaki_konczace_pole_tekstowe:
+                if cur_ptr >= ln_len or line[cur_ptr] in self.znaki_konczace_pole_tekstowe:
                     t.append(line[strt_pos:cur_ptr])
-                    if cur_ptr < ln_len and inter_col(line[cur_ptr]):
+                    if cur_ptr < ln_len and self.inter_col(line[cur_ptr]):
                         cur_ptr += 1 # Będzie kolejne pole
                         first_char = 1
                     else:
@@ -111,7 +114,7 @@ class TestRozbijaniaCommaSV(unittest.TestCase):
         '''
         self.assertEqual(rozbij_na_pola(''), [''])
         self.assertEqual(rozbij_na_pola('a'), ['a'])
-        self.assertEqual(rozbij_na_pola('a;b'), ['a', 'b'])
+        self.assertEqual(rozbij_na_pola('a,b'), ['a', 'b'])
         self.assertEqual(rozbij_na_pola('"a"'), ['"a"'])
 
     def test_object_csv(self):
@@ -121,10 +124,10 @@ class TestRozbijaniaCommaSV(unittest.TestCase):
         obk = FieldSplitter()
         self.assertEqual(obk.split_fields(''), [''])
         self.assertEqual(obk.split_fields('a'), ['a'])
-        self.assertEqual(obk.split_fields('a;b'), ['a', 'b'])
+        self.assertEqual(obk.split_fields('a,b'), ['a', 'b'])
         self.assertEqual(obk.split_fields(
-            '"T";"CENTRUM REKREACJI i REHABILITACJI "BUSHIDO"";"11/11111/2014"', quoting=1),
+            '"T","CENTRUM REKREACJI i REHABILITACJI "BUSHIDO"","11/11111/2014"', quoting=1),
             ['T', 'CENTRUM REKREACJI i REHABILITACJI "BUSHIDO"', '11/11111/2014'])
         self.assertEqual(obk.split_fields(
-            'T;"AL-DUE" ZAKŁAD PRODUKCYJNO-USŁUGOWO-HANDLOWY;22/22222/2014', quoting=1),
+            'T,"AL-DUE" ZAKŁAD PRODUKCYJNO-USŁUGOWO-HANDLOWY,22/22222/2014', quoting=1),
             ['T', '"AL-DUE" ZAKŁAD PRODUKCYJNO-USŁUGOWO-HANDLOWY', '22/22222/2014'])
