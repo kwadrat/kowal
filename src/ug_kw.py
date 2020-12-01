@@ -20,6 +20,7 @@ quotechar = '"'
 PodwZnkSepTekstu = quotechar + quotechar
 znaki_konczace_pole_tekstowe = set([
     civ_kw.xs_semicolon_ql,
+    civ_kw.xs_comma_ql,
     chr(13),
     chr(10),
     ])
@@ -78,7 +79,7 @@ class FieldSplitter(object):
                         t.append(line[strt_pos:cur_ptr].replace(PodwZnkSepTekstu, quotechar))
                         cur_ptr += 1
                         # Tu czekamy na przecinek
-                        if cur_ptr < ln_len and line[cur_ptr] == civ_kw.xs_semicolon_ql:
+                        if cur_ptr < ln_len and inter_col(line[cur_ptr]):
                             cur_ptr += 1
                             first_char = 1 # Znowu zaczynamy analizę od pierwszego znaku pola
                         else:
@@ -89,7 +90,7 @@ class FieldSplitter(object):
             else: # Nie mamy cudzysłowu - szukamy do następnego przecinka lub końca
                 if cur_ptr >= ln_len or line[cur_ptr] in znaki_konczace_pole_tekstowe:
                     t.append(line[strt_pos:cur_ptr])
-                    if cur_ptr < ln_len and line[cur_ptr] == civ_kw.xs_semicolon_ql:
+                    if cur_ptr < ln_len and inter_col(line[cur_ptr]):
                         cur_ptr += 1 # Będzie kolejne pole
                         first_char = 1
                     else:
