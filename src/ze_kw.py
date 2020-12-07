@@ -171,10 +171,10 @@ def op_select(nzw_sel, brak_idnt=0, class_=None, onchange=None, style=None, to_i
 def op_30_sbf(nzw_sel):
     return op_select(nzw_sel=nzw_sel, brak_idnt=1, onchange=fy_kw.lxa_45_inst, class_=fy_kw.lxa_44_inst)
 
-def op_dh(detect_missing_keyword=None, id=None, class_=None):
+def op_dh(detect_missing_keyword=None, id_=None, class_=None):
     if detect_missing_keyword is not None:
         raise RuntimeError('Value without keyword detected: %s' % repr(detect_missing_keyword))
-    wstawka_id = wyznacz_wstawke('id', id)
+    wstawka_id = wyznacz_wstawke('id', id_)
     wstawka_cls = wyznacz_wstawke('class', class_)
     return '<div%(wstawka_id)s%(wstawka_cls)s>\n' % dict(
         wstawka_id=wstawka_id,
@@ -329,7 +329,7 @@ class TestTytuluHtml(unittest.TestCase):
             '<select id="abc" name="abc" class="klasa_css" style="ghi" onchange="def">\n')
         self.assertEqual(op_30_sbf('abc'), '<select name="abc" class="selwyborca" onchange="this.form.submit();">\n')
         self.assertEqual(op_dh(), '<div>\n')
-        self.assertEqual(op_dh(id='abc'), '<div id="abc">\n')
+        self.assertEqual(op_dh(id_='abc'), '<div id="abc">\n')
         self.assertEqual(op_dh(class_='klasa_css'), '<div class="klasa_css">\n')
         self.assertRaises(RuntimeError, op_dh, 'abc')
         self.assertEqual(op_sel_lgc(False), '')
