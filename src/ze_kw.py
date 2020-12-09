@@ -79,12 +79,12 @@ def wyznacz_wstawke(nazwa, wartosc):
 def wyznacz_klasawa_wstawke(class_):
     return wyznacz_wstawke('class', class_)
 
-def op_option(napis, wartosc=None, zaznaczenie=0, id=None):
+def op_option(napis, wartosc=None, zaznaczenie=0, id_=None):
     if wartosc is None:
         kod_wart = ''
     else:
         kod_wart = ' value="%s"' % wartosc
-    kod_idntf = wyznacz_wstawke('id', id)
+    kod_idntf = wyznacz_wstawke('id', id_)
     kod_zazn = op_sel_lgc(zaznaczenie)
     return '<option%s%s%s>%s</option>\n' % (kod_wart, kod_zazn, kod_idntf, napis)
 
@@ -103,8 +103,8 @@ def op_td(class_=None, colspan=None, rowspan=None, title=None):
         wstawka_tytulu=wstawka_tytulu,
         )
 
-def op_tr(id=None, nzw_wrsz=None, rest=None):
-    wstawka_id = wyznacz_wstawke('id', id)
+def op_tr(id_=None, nzw_wrsz=None, rest=None):
+    wstawka_id = wyznacz_wstawke('id', id_)
     wstawka_nzw = wyznacz_wstawke('name', nzw_wrsz)
     wstawka_rst = wyznacz_tekst(rest)
     return '<tr%(wstawka_id)s%(wstawka_nzw)s%(wstawka_rst)s>\n' % dict(
@@ -240,9 +240,9 @@ def pokoloruj(napis, kolor):
     polaczony = sp_a_stl(middle_a, napis)
     return polaczony
 
-def op_fmd(enctype=None, id=None, name=None, method=frm_mt_pst, adres=None):
+def op_fmd(enctype=None, id_=None, name=None, method=frm_mt_pst, adres=None):
     wstawka_enc = wyznacz_wstawke('enctype', enctype)
-    wstawka_idntf = wyznacz_wstawke('id', id)
+    wstawka_idntf = wyznacz_wstawke('id', id_)
     wstawka_nazwy = wyznacz_wstawke('name', name)
     return (
         '<form%(wstawka_enc)s action="%(pelny_adr)s"'
@@ -281,7 +281,7 @@ class TestTytuluHtml(unittest.TestCase):
         '''
         self.assertEqual(frm_mt_gt, 'get')
         self.assertEqual(frm_mt_pst, 'post')
-        self.assertEqual(op_fmd(id='id_form', name='nazwa_form', adres='https://maszyna/strona.py'), '<form action="https://maszyna/strona.py" id="id_form" name="nazwa_form" method="post">\n')
+        self.assertEqual(op_fmd(id_='id_form', name='nazwa_form', adres='https://maszyna/strona.py'), '<form action="https://maszyna/strona.py" id="id_form" name="nazwa_form" method="post">\n')
         self.assertEqual(qh_ttl('abc'), ' title="abc"')
         self.assertEqual(qh_ttl(None), '')
         self.assertEqual(wstawka_liczba('abc', 7), ' abc="7"')
@@ -296,9 +296,9 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(wyznacz_tekst('a'), 'a')
         self.assertEqual(wyznacz_klasawa_wstawke(None), '')
         self.assertEqual(wyznacz_klasawa_wstawke('abc'), ' class="abc"')
-        self.assertEqual(op_tr(id='abc'), '<tr id="abc">\n')
-        self.assertEqual(op_tr(id='abc', nzw_wrsz='def'), '<tr id="abc" name="def">\n')
-        self.assertEqual(op_tr(id='abc', nzw_wrsz='def', rest='ghi'), '<tr id="abc" name="def"ghi>\n')
+        self.assertEqual(op_tr(id_='abc'), '<tr id="abc">\n')
+        self.assertEqual(op_tr(id_='abc', nzw_wrsz='def'), '<tr id="abc" name="def">\n')
+        self.assertEqual(op_tr(id_='abc', nzw_wrsz='def', rest='ghi'), '<tr id="abc" name="def"ghi>\n')
         self.assertEqual(op_tbl(), '<table>\n')
         self.assertEqual(op_tbl(cellspacing=1, cellpadding=0), '<table cellspacing="1" cellpadding="0">\n')
         self.assertEqual(op_tbl(cellspacing=1, cellpadding=2), '<table cellspacing="1" cellpadding="2">\n')
@@ -320,7 +320,7 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(op_option('abc', 'a'), '<option value="a">abc</option>\n')
         self.assertEqual(op_option('abc', 'a', 1), '<option value="a" selected="selected">abc</option>\n')
         self.assertEqual(op_option('abc', 'a', 0), '<option value="a">abc</option>\n')
-        self.assertEqual(op_option('abc', 'b', id='identyf'), '<option value="b" id="identyf">abc</option>\n')
+        self.assertEqual(op_option('abc', 'b', id_='identyf'), '<option value="b" id="identyf">abc</option>\n')
         self.assertEqual(op_select('abc', brak_idnt=1), '<select name="abc">\n')
         self.assertEqual(op_select('abc'), '<select id="abc" name="abc">\n')
         self.assertEqual(op_select('abc', class_='klasa_css'), '<select id="abc" name="abc" class="klasa_css">\n')
