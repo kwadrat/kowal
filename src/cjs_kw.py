@@ -18,6 +18,7 @@ for i in NazwyModulow:
 yq_1_yq = '%Y.%m.%d_%H.%M.%S'
 yq_2_yq = '%Y-%m-%d'
 yq_3_yq = '%Y-%m'
+yq_4_yq = '%Y-%m-%d %H:%M:%S'
 
 
 class TestTimeFormats(unittest.TestCase):
@@ -28,3 +29,4 @@ class TestTimeFormats(unittest.TestCase):
         self.assertEqual(yq_1_yq, '%Y.%m.%d_%H.%M.%S')
         self.assertEqual(yq_2_yq, '%Y-%m-%d')
         self.assertEqual(yq_3_yq, '%Y-%m')
+        self.assertEqual(yq_4_yq, '%Y-%m-%d %H:%M:%S')
