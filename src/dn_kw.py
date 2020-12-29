@@ -99,7 +99,7 @@ def dzien_nowego_roku(rok):
     return NumerDnia(rok, 1, 1)
 
 def data_z_napisu(napis):
-    return time.strptime(napis, '%Y-%m-%d')[:3]
+    return time.strptime(napis, cjs_kw.yq_2_yq)[:3]
 
 def dwojka_z_napisu(napis):
     return time.strptime(napis, '%Y-%m')[:2]
@@ -184,7 +184,7 @@ def DzienTeraz():
     Wyznacza dzień w postaci do wstawiania do bazy danych: RRRR-MM-DD
     - rok, miesiąc, dzień
     '''
-    return time.strftime('%Y-%m-%d')
+    return time.strftime(cjs_kw.yq_2_yq)
 
 def szczegolowa_krotka(nkd):
     '''Zwraca datę na podstawie numeru dnia
@@ -376,7 +376,7 @@ def wyznacz_date_logu(czas=None):
     return wyznacz_moment_wg_wzorca('%Y-%m-%d %H:%M:%S', czas)
 
 def wyznacz_dzien_logu(czas=None):
-    return wyznacz_moment_wg_wzorca('%Y-%m-%d', czas)
+    return wyznacz_moment_wg_wzorca(cjs_kw.yq_2_yq, czas)
 
 def wyznacz_sekunde_logu(czas=None):
     return wyznacz_moment_wg_wzorca('%H:%M:%S', czas)
