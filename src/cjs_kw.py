@@ -16,12 +16,12 @@ for i in NazwyModulow:
             exec 'import %(modul)s' % dict(modul = i)
 
 yq_1_yq = '%Y.%m.%d_%H.%M.%S'
-yq_2_yq = '%Y-%m-%d'
 yq_3_yq = '%Y-%m'
-yq_4_yq = '%Y-%m-%d %H:%M:%S'
+yq_2_yq = yq_3_yq + '-%d'
 yq_5_yq = '%Y%m%d%H%M%S'
 yq_6_yq = '%H:%M'
-yq_7_yq = '%H:%M:%S'
+yq_7_yq = yq_6_yq + ':%S'
+yq_4_yq = '%Y-%m-%d ' + yq_7_yq
 
 
 class TestTimeFormats(unittest.TestCase):
@@ -30,9 +30,9 @@ class TestTimeFormats(unittest.TestCase):
         TestTimeFormats:
         '''
         self.assertEqual(yq_1_yq, '%Y.%m.%d_%H.%M.%S')
-        self.assertEqual(yq_2_yq, '%Y-%m-%d')
         self.assertEqual(yq_3_yq, '%Y-%m')
-        self.assertEqual(yq_4_yq, '%Y-%m-%d %H:%M:%S')
+        self.assertEqual(yq_2_yq, '%Y-%m-%d')
         self.assertEqual(yq_5_yq, '%Y%m%d%H%M%S')
         self.assertEqual(yq_6_yq, '%H:%M')
         self.assertEqual(yq_7_yq, '%H:%M:%S')
+        self.assertEqual(yq_4_yq, '%Y-%m-%d %H:%M:%S')
