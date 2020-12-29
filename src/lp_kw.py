@@ -5,6 +5,7 @@ import datetime
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import cjs_kw
 import en_kw
 import ciy_kw
 '''.splitlines()]
@@ -57,7 +58,7 @@ def determine_hour(hour_number):
     return '%02d:00' % hour_number
 
 def rj_na_date(dttm):
-    return dttm.strftime('%Y-%m-%d')
+    return dttm.strftime(cjs_kw.yq_2_yq)
 
 def part_of_day_hs(par_h, par_m, par_s):
     return rj_na_godzine(datetime.time(par_h, par_m, par_s))

@@ -10,6 +10,7 @@ import time
 import unittest
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import cjs_kw
 import rq_kw
 import du_kw
 import chi_kw
@@ -176,7 +177,7 @@ def SekTeraz():
     - rok, miesiąc, dzień
     - godzina, minuta, sekunda
     '''
-    return time.strftime('%Y.%m.%d_%H.%M.%S')
+    return time.strftime(cjs_kw.yq_1_yq)
 
 def DzienTeraz():
     '''

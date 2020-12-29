@@ -9,6 +9,7 @@ import sys
 import time
 
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import cjs_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -22,7 +23,7 @@ for i in NazwyModulow:
 
 def date_as_string(one_time):
     time_tuple = time.localtime(one_time)
-    return time.strftime('%Y.%m.%d_%H.%M.%S', time_tuple)
+    return time.strftime(cjs_kw.yq_1_yq, time_tuple)
 
 class BaildonTime(object):
     def __init__(self):
