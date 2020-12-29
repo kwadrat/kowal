@@ -385,7 +385,7 @@ def wyznacz_minute_logu(czas=None):
     return wyznacz_moment_wg_wzorca('%H:%M', czas)
 
 def gesty_moment(czas=None):
-    return wyznacz_moment_wg_wzorca('%Y%m%d%H%M%S', czas)
+    return wyznacz_moment_wg_wzorca(cjs_kw.yq_5_yq, czas)
 
 def RokMscDnia(nkd):
     return szczegolowa_krotka(nkd)[:2]
