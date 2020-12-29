@@ -379,7 +379,7 @@ def wyznacz_dzien_logu(czas=None):
     return wyznacz_moment_wg_wzorca(cjs_kw.yq_2_yq, czas)
 
 def wyznacz_sekunde_logu(czas=None):
-    return wyznacz_moment_wg_wzorca('%H:%M:%S', czas)
+    return wyznacz_moment_wg_wzorca(cjs_kw.yq_7_yq, czas)
 
 def wyznacz_minute_logu(czas=None):
     return wyznacz_moment_wg_wzorca(cjs_kw.yq_6_yq, czas)
