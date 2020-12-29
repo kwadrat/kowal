@@ -20,6 +20,7 @@ yq_2_yq = '%Y-%m-%d'
 yq_3_yq = '%Y-%m'
 yq_4_yq = '%Y-%m-%d %H:%M:%S'
 yq_5_yq = '%Y%m%d%H%M%S'
+yq_6_yq = '%H:%M'
 
 
 class TestTimeFormats(unittest.TestCase):
@@ -32,3 +33,4 @@ class TestTimeFormats(unittest.TestCase):
         self.assertEqual(yq_3_yq, '%Y-%m')
         self.assertEqual(yq_4_yq, '%Y-%m-%d %H:%M:%S')
         self.assertEqual(yq_5_yq, '%Y%m%d%H%M%S')
+        self.assertEqual(yq_6_yq, '%H:%M')

@@ -382,7 +382,7 @@ def wyznacz_sekunde_logu(czas=None):
     return wyznacz_moment_wg_wzorca('%H:%M:%S', czas)
 
 def wyznacz_minute_logu(czas=None):
-    return wyznacz_moment_wg_wzorca('%H:%M', czas)
+    return wyznacz_moment_wg_wzorca(cjs_kw.yq_6_yq, czas)
 
 def gesty_moment(czas=None):
     return wyznacz_moment_wg_wzorca(cjs_kw.yq_5_yq, czas)
