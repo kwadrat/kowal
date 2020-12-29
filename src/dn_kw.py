@@ -102,7 +102,7 @@ def data_z_napisu(napis):
     return time.strptime(napis, cjs_kw.yq_2_yq)[:3]
 
 def dwojka_z_napisu(napis):
-    return time.strptime(napis, '%Y-%m')[:2]
+    return time.strptime(napis, cjs_kw.yq_3_yq)[:2]
 
 def checkdate(napis):
     poprawna = True
