@@ -48,7 +48,7 @@ def prepare_s_date(year, month, day, hour, minute, second):
     return datetime.datetime(year, month, day, hour, minute, second)
 
 def rj_na_godzine(dttm):
-    return dttm.strftime('%H:%M')
+    return dttm.strftime(cjs_kw.yq_6_yq)
 
 def determine_quarter(qrt_number):
     result = (rj_na_godzine(prepare_s_date(2013, 1, 31, 0, 0, 0) + datetime.timedelta(seconds=15 * 60 * qrt_number)))
@@ -72,7 +72,7 @@ def process_hour_headers(time_tuple):
 def process_quarter_headers(value):
     my_point = prepare_s_date(*value) - datetime.timedelta(seconds=15*60)
     my_date = rj_na_date(my_point)
-    my_time = my_point.strftime('%H:%M')
+    my_time = my_point.strftime(cjs_kw.yq_6_yq)
     return my_date, my_time
 
 def describe_hour_column(column_index):
