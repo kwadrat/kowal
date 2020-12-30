@@ -75,8 +75,10 @@ def wczytaj_plik(nazwa):
     fd.close()
     return dane
 
-def otworz_do_zapisu(nazwa):
-    return open(nazwa, 'wb')
+def otworz_do_zapisu(nazwa, way=None):
+    if way is None:
+        way = 'wb'
+    return open(nazwa, way)
 
 def otworz_do_logowania(nazwa):
     return open(nazwa, 'a')
