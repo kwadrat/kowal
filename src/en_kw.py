@@ -8,6 +8,10 @@ import pickle
 import binascii
 import unittest
 
+
+en_cod_cp_win = 'cp1250'
+en_cod_cp_u_eig = 'utf-8'
+
 def text_not_unicode(value):
     return isinstance(value, str)
 
@@ -63,3 +67,5 @@ class TestEncoding(unittest.TestCase):
         self.assertEqual(text_not_unicode(u'a'), 0)
         self.assertEqual(upgrade_to_unicode('\xb9\x9c\x9f'), u'ąśź')
         self.assertEqual(upgrade_to_unicode(u'ą'), u'ą')
+        self.assertEqual(en_cod_cp_win, 'cp1250')
+        self.assertEqual(en_cod_cp_u_eig, 'utf-8')
