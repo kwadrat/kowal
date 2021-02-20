@@ -11,21 +11,23 @@ import unittest
 
 en_cod_cp_win = 'cp1250'
 en_cod_cp_u_eig = 'utf-8'
+en_cod_cp_i_two = 'iso-8859-2'
+en_cod_cp_ibm_two = 'cp852'
 
 def text_not_unicode(value):
     return isinstance(value, str)
 
 def utf_to_unicode(napis_utf):
-    return napis_utf.decode('utf-8')
+    return napis_utf.decode(en_cod_cp_u_eig)
 
 def unicode_to_utf(napis_uncd):
-    return napis_uncd.encode('utf-8')
+    return napis_uncd.encode(en_cod_cp_u_eig)
 
 def win_cp_to_unicode(napis_win):
-    return napis_win.decode('cp1250')
+    return napis_win.decode(en_cod_cp_win)
 
 def win_cp_to_utf(napis_win):
-    napis_uncd = napis_win.decode('cp1250')
+    napis_uncd = napis_win.decode(en_cod_cp_win)
     return unicode_to_utf(napis_uncd)
 
 def pobierz_z_napisu(napis):
@@ -69,3 +71,5 @@ class TestEncoding(unittest.TestCase):
         self.assertEqual(upgrade_to_unicode(u'ą'), u'ą')
         self.assertEqual(en_cod_cp_win, 'cp1250')
         self.assertEqual(en_cod_cp_u_eig, 'utf-8')
+        self.assertEqual(en_cod_cp_i_two, 'iso-8859-2')
+        self.assertEqual(en_cod_cp_ibm_two, 'cp852')

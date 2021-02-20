@@ -8,6 +8,7 @@ import bz2
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import sf_kw
 import dn_kw
+import en_kw
 import dg_kw
 '''.splitlines()]
 
@@ -20,7 +21,7 @@ for i in NazwyModulow:
         else:
             exec 'import %(modul)s' % dict(modul = i)
 
-Katalog_dokumentow = os.getcwd().decode('cp1250') + u'\\'
+Katalog_dokumentow = os.getcwd().decode(en_kw.en_cod_cp_win) + u'\\'
 faktura_bazowa_szkielet = 'Energia_szablon.xls'
 katalog_logu = Katalog_dokumentow + u'archiwum_aplikacji'
 zeszyt_pomiarow = u"ZST_zużycie_en_elektr_obiekty_obce.xls"
