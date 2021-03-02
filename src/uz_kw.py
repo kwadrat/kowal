@@ -21,3 +21,6 @@ ldp_4_inst = """\
 <option value="678" selected="selected">hi</option>
 </select>
 """
+wzor_167_inst = """\
+<input name="4dSAQztTX" type="hidden" value="g8zLn">
+"""

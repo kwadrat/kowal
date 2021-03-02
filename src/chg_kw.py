@@ -4,7 +4,10 @@
 Klasa bazowa skrawka HTML
 '''
 
+import unittest
+
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
+import uz_kw
 import ib_kw
 '''.splitlines()]
 
@@ -94,3 +97,13 @@ class Skrawek(object):
             ##############################################################################
             return napis % (self.moje_pole, self.wartosc)
             ##############################################################################
+
+class TestPrzeniesSkrawka(unittest.TestCase):
+    def test_przeniesionego_skrawka(self):
+        '''
+        TestPrzeniesSkrawka:
+        '''
+        obk = Skrawek()
+        obk.moje_pole = '4dSAQztTX'
+        obk.wartosc = 'g8zLn'
+        self.assertEqual(obk.wartosc_ukryta(), uz_kw.wzor_167_inst)
