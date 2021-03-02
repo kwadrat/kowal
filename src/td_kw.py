@@ -24,7 +24,8 @@ import unittest
     cx_req_data,
     cx_nic_data,
     cx_ogolne_tekstowe,
-    ) = range(16)
+    cx_data_pompy,
+    ) = range(17)
 
 (
     cx_ext_trojcyfrowe,
@@ -50,7 +51,7 @@ class KlasaStalowejWiedzy(object):
         '''
         self.zbior_z_kalendarzem = frozenset(
             [cx_data_faktury, cx_poczatek_okresu, cx_koniec_okresu,
-            cx_req_data, cx_nic_data])
+            cx_req_data, cx_nic_data, cx_data_pompy])
 
     def cx_chce_kalendarz(self, stalowe_cx):
         '''
