@@ -34,6 +34,7 @@ formularz_1c_kon_pozycji = '</li>\n'
 naglowek_na_prawo = 'float: right;'
 frm_mt_gt = 'get'
 frm_mt_pst = 'post'
+frm_hdn_pst = 'hidden'
 
 def op_sel_lgc(warunek):
     if warunek:
@@ -281,6 +282,7 @@ class TestTytuluHtml(unittest.TestCase):
         '''
         self.assertEqual(frm_mt_gt, 'get')
         self.assertEqual(frm_mt_pst, 'post')
+        self.assertEqual(frm_hdn_pst, 'hidden')
         self.assertEqual(op_fmd(id_='id_form', name='nazwa_form', adres='https://maszyna/strona.py'), '<form action="https://maszyna/strona.py" id="id_form" name="nazwa_form" method="post">\n')
         self.assertEqual(qh_ttl('abc'), ' title="abc"')
         self.assertEqual(qh_ttl(None), '')
