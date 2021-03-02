@@ -9,6 +9,7 @@ import unittest
 NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import uz_kw
 import ib_kw
+import ze_kw
 '''.splitlines()]
 
 for i in NazwyModulow:
@@ -88,14 +89,14 @@ class Skrawek(object):
         '''
         Skrawek:
         '''
-        napis = '''<input name="%s" type="hidden" value="%s">\n'''
+        napis = '''<input name="%s" type="%s" value="%s">\n'''
         if ib_kw.AimToObjectFieldName:
             ##############################################################################
-            return napis % (self.moje_pole, self.wartosc)
+            return napis % (self.moje_pole, ze_kw.frm_hdn_pst, self.wartosc)
             ##############################################################################
         else:
             ##############################################################################
-            return napis % (self.moje_pole, self.wartosc)
+            return napis % (self.moje_pole, ze_kw.frm_hdn_pst, self.wartosc)
             ##############################################################################
 
 class TestPrzeniesSkrawka(unittest.TestCase):
