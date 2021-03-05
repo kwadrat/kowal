@@ -21,7 +21,11 @@ yq_2_yq = yq_3_yq + '-%d'
 yq_5_yq = '%Y%m%d%H%M%S'
 yq_6_yq = '%H:%M'
 yq_7_yq = yq_6_yq + ':%S'
-yq_4_yq = '%Y-%m-%d ' + yq_7_yq
+yq_4_yq = ''.join([
+    yq_2_yq,
+    ' ',
+    yq_7_yq,
+    ])
 
 
 class TestTimeFormats(unittest.TestCase):
