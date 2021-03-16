@@ -60,7 +60,7 @@ class OgOpDaneDlaMiesiaca(object):
         for jedna_faktura in self.faktury_w_miesiacu:
             moja_wartosc = jedna_faktura.get(tmp_key)
             if moja_wartosc is not None:
-                moja_suma += moja_wartosc
+                moja_suma += float(moja_wartosc)
         return moja_suma
 
     def oblicz_moc_jednorazowo(self, tmp_key):
