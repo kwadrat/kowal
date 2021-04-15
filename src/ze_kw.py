@@ -35,6 +35,12 @@ naglowek_na_prawo = 'float: right;'
 frm_mt_gt = 'get'
 frm_mt_pst = 'post'
 frm_hdn_pst = 'hidden'
+formularz_1c_dwukropek = ':'
+formularz_1c_pogr_dwukropek = ''.join([
+    ' <b>',
+    formularz_1c_dwukropek,
+    '</b>',
+    ])
 
 def op_sel_lgc(warunek):
     if warunek:
@@ -363,3 +369,5 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(op_styl('pies'), '<link rel="stylesheet" type="text/css" href="pies" media="screen" />\n')
         self.assertEqual(op_styl('pies', media=oc_kw.rjb_dla_drukowania), '<link rel="stylesheet" type="text/css" href="pies" media="print" />\n')
         self.assertEqual(op_skrypt('kot'), '<script src="kot"></script>\n')
+        self.assertEqual(formularz_1c_dwukropek, ':')
+        self.assertEqual(formularz_1c_pogr_dwukropek, ' <b>:</b>')
