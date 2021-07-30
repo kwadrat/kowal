@@ -63,7 +63,7 @@ def readjust_number(places, value):
 def kropka_przecinek(a):
     return a.replace('.', ',')
 
-def rzeczywista_na_napis(liczba, rn_after=2):
+def rzeczywista_na_napis(liczba, rn_after=2, bt_comma=0):
     '''Przerabia liczbę złotych (być może ułamkową, z groszami)
     na kwotę do pokazania użytkownikowi - bez części ułamkowej,
     jeśli ona jest zerowa.
@@ -83,6 +83,8 @@ def rzeczywista_na_napis(liczba, rn_after=2):
     if napis[last_cnt:] == pattern: # Mamy pełną kwotę, bez ułamka
         return napis[:last_cnt] # Zwróć tylko całkowitą wartość
     else:
+        if bt_comma:
+            napis = kropka_przecinek(napis)
         return napis # Zwróć pełną kwotę, łącznie z groszami
 
 def generate_scale(max_value):
