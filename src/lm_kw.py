@@ -60,6 +60,9 @@ def readjust_number(places, value):
     rounding = calculate_rounding(places)
     return a2d(napis).quantize(rounding)
 
+def kropka_przecinek(a):
+    return a.replace('.', ',')
+
 def rzeczywista_na_napis(liczba, rn_after=2):
     '''Przerabia liczbę złotych (być może ułamkową, z groszami)
     na kwotę do pokazania użytkownikowi - bez części ułamkowej,
@@ -201,3 +204,9 @@ class TestPointNumbers(unittest.TestCase):
         self.assertEqual(adjust_for_csv(''), None)
         self.assertEqual(roznica_dokladna('2', '2'), '0.000000')
         self.assertEqual(not roznica_liczbowa('2', '2'), 1)
+
+    def test_decimal_separator(self):
+        '''
+        TestPointNumbers:
+        '''
+        self.assertEqual(kropka_przecinek('0.5'), '0,5')

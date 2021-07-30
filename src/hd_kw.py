@@ -30,20 +30,17 @@ def suma_kont(napis):
 def przecinek_kropka(a):
     return a.replace(',', '.')
 
-def kropka_przecinek(a):
-    return a.replace('.', ',')
-
 def odwrotny_zwykly(napis):
     return napis.replace('\\', '/')
 
 def przecinkowane_pole(kolumna):
     if lm_kw.have_dec_type(kolumna):
         value_as_text = lm_kw.d2a(kolumna)
-        value_as_text = kropka_przecinek(value_as_text)
+        value_as_text = lm_kw.kropka_przecinek(value_as_text)
     else:
         value_as_text = str(kolumna)
         if type(kolumna) is float:
-            value_as_text = kropka_przecinek(value_as_text)
+            value_as_text = lm_kw.kropka_przecinek(value_as_text)
     return value_as_text
 
 def comma_and_some_zero(txt_value, rn_after):
@@ -66,7 +63,6 @@ class TestNapisow(unittest.TestCase):
         self.assertEqual(pomniejsz_litery('AbC'), 'abc')
         self.assertEqual(suma_kont('abc'), '900150983cd24fb0d6963f7d28e17f72')
         self.assertEqual(przecinek_kropka('0,5'), '0.5')
-        self.assertEqual(kropka_przecinek('0.5'), '0,5')
         self.assertEqual(odwrotny_zwykly('\\'), '/')
         self.assertEqual(odwrotny_zwykly('1\\2'), '1/2')
 
