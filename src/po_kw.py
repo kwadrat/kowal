@@ -24,6 +24,8 @@ licznik_inst_slownikow = li_kw.LicznikInstancji('slownik')
 
 ListaLubSlownikOgolnie = ll_kw.ListaLubSlownikOgolnie
 
+DocelowoZatrzymaj = 1
+
 class PozycjeOgolne(ListaLubSlownikOgolnie):
     def __init__(self, etykieta, slownik_poczatkowy=None):
         '''
@@ -78,7 +80,8 @@ class PozycjeOgolne(ListaLubSlownikOgolnie):
             print 'Identyfikacja pozycji:', self.wzorzec_repr('awaryjna_ident')
             tmp_format = 'self.poz_slownik'; print tmp_format, eval(tmp_format)
             tmp_format = 'klucz'; print tmp_format, eval(tmp_format)
-            raise
+            if DocelowoZatrzymaj:
+                raise
         return wartosc
 
     def pobierz_krkt_element(self, klucz):
