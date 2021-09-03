@@ -26,6 +26,12 @@ def d2a(a):
     '''Decimal -> ASCII(kropka)'''
     return '%f' % a
 
+def fix_db_dec(a):
+    '''Sometimes PostgreSQL driver returns different Decimal - unify'''
+    a = d2a(a)
+    a = a2d(a)
+    return a
+
 wartosc_zero_globalna = a2d('0')
 value_ten_const = a2d(10)
 
