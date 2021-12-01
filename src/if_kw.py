@@ -5,4 +5,4 @@ def warn_halt(flag, text):
     if flag:
         raise RuntimeError(text)
     else:
-        print text
+        print(text)
