@@ -3,7 +3,6 @@
 
 import unittest
 
-NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import ib_kw
 import rq_kw
 import dn_kw
@@ -11,16 +10,6 @@ import chh_kw
 import chg_kw
 import sk_kw
 import ei_kw
-'''.splitlines()]
-
-for i in NazwyModulow:
-    if i == __name__.split('.')[-1]:
-        raise RuntimeError('Modul laduje sam siebie?: %s' % repr(i))
-    else:
-        if i in globals():
-            exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
-        else:
-            exec 'import %(modul)s' % dict(modul = i)
 
 def ListaWyboruRoku(tgk):
     return sk_kw.ListWyboruOgolna(tgk, ei_kw.NazwaRok, chh_kw.MozliweLataZuzyc)

@@ -3,18 +3,7 @@
 
 import unittest
 
-NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import du_kw
-'''.splitlines()]
-
-for i in NazwyModulow:
-    if i == __name__.split('.')[-1]:
-        raise RuntimeError('Modul laduje sam siebie?: %s' % repr(i))
-    else:
-        if i in globals():
-            exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
-        else:
-            exec 'import %(modul)s' % dict(modul = i)
 
 def invariable_time(time_ls, default_value):
     if len(time_ls) > 1 and len(set(time_ls)) == 1:

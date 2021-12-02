@@ -4,23 +4,12 @@
 Analiza zużycia - szereg list pomiarów, prezentacja w postacji HTML
 '''
 
-NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lm_kw
 import ze_kw
 import jb_kw
 import hq_kw
 import wn_kw
 import gc_kw
-'''.splitlines()]
-
-for i in NazwyModulow:
-    if i == __name__.split('.')[-1]:
-        raise RuntimeError('Modul laduje sam siebie?: %s' % repr(i))
-    else:
-        if i in globals():
-            exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
-        else:
-            exec 'import %(modul)s' % dict(modul = i)
 
 WykresPomiarow = hq_kw.WykresPomiarow
 

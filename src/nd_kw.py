@@ -1,22 +1,11 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
-NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import ng_kw
 import gv_kw
 import hj_kw
 import gu_kw
 import en_kw
-'''.splitlines()]
-
-for i in NazwyModulow:
-    if i == __name__.split('.')[-1]:
-        raise RuntimeError('Modul laduje sam siebie?: %s' % repr(i))
-    else:
-        if i in globals():
-            exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
-        else:
-            exec 'import %(modul)s' % dict(modul = i)
 
 row_offset_column_name = -1
 row_offset_invoice_mark = 0

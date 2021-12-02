@@ -7,7 +7,6 @@ Lewy, górny róg obrazka ma współrzędne (0, 0)
 
 import unittest
 
-NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lc_kw
 import rq_kw
 import oc_kw
@@ -20,16 +19,6 @@ import mf_kw
 import od_kw
 import on_kw
 import ow_kw
-'''.splitlines()]
-
-for i in NazwyModulow:
-    if i == __name__.split('.')[-1]:
-        raise RuntimeError('Modul laduje sam siebie?: %s' % repr(i))
-    else:
-        if i in globals():
-            exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
-        else:
-            exec 'import %(modul)s' % dict(modul = i)
 
 class KlasaObrazu(object):
     '''

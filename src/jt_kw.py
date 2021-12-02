@@ -7,19 +7,8 @@ Rozpoznawanie zakresu dni w ramach jednego roku
 
 import unittest
 
-NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import hj_kw
 import dn_kw
-'''.splitlines()]
-
-for i in NazwyModulow:
-    if i == __name__.split('.')[-1]:
-        raise RuntimeError('Modul laduje sam siebie?: %s' % repr(i))
-    else:
-        if i in globals():
-            exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
-        else:
-            exec 'import %(modul)s' % dict(modul = i)
 
 tab_rzymskich = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X',
   'XI', 'XII']

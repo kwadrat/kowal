@@ -5,21 +5,10 @@ import os
 import re
 import bz2
 
-NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import sf_kw
 import dn_kw
 import en_kw
 import dg_kw
-'''.splitlines()]
-
-for i in NazwyModulow:
-    if i == __name__.split('.')[-1]:
-        raise RuntimeError('Modul laduje sam siebie?: %s' % repr(i))
-    else:
-        if i in globals():
-            exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
-        else:
-            exec 'import %(modul)s' % dict(modul = i)
 
 Katalog_dokumentow = os.getcwd().decode(en_kw.en_cod_cp_win) + u'\\'
 faktura_bazowa_szkielet = 'Energia_szablon.xls'

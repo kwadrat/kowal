@@ -3,19 +3,8 @@
 
 import unittest
 
-NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import dn_kw
 import oa_kw
-'''.splitlines()]
-
-for i in NazwyModulow:
-    if i == __name__.split('.')[-1]:
-        raise RuntimeError('Modul laduje sam siebie?: %s' % repr(i))
-    else:
-        if i in globals():
-            exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
-        else:
-            exec 'import %(modul)s' % dict(modul = i)
 
 def generator_szkieletu(liczba_przedzialow):
     return range(0, 2 * liczba_przedzialow + 1, 2)

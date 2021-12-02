@@ -3,17 +3,6 @@
 
 import unittest
 
-NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
-'''.splitlines()]
-
-for i in NazwyModulow:
-    if i == __name__.split('.')[-1]:
-        raise RuntimeError('Modul laduje sam siebie?: %s' % repr(i))
-    else:
-        if i in globals():
-            exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
-        else:
-            exec 'import %(modul)s' % dict(modul = i)
 
 def detect_my_days(slownik_wpisow):
     all_days = list(reduce(lambda x, y: x | y, map(lambda x: frozenset(x.keys()), slownik_wpisow.values()), frozenset()))

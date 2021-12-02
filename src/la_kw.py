@@ -3,7 +3,6 @@
 
 import unittest
 
-NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import ng_kw
 import nf_kw
 import gv_kw
@@ -11,16 +10,6 @@ import rq_kw
 import to_kw
 import dn_kw
 import en_kw
-'''.splitlines()]
-
-for i in NazwyModulow:
-    if i == __name__.split('.')[-1]:
-        raise RuntimeError('Modul laduje sam siebie?: %s' % repr(i))
-    else:
-        if i in globals():
-            exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
-        else:
-            exec 'import %(modul)s' % dict(modul = i)
 
 NMF_1_above_red = -1
 NMF_2_percent = -2

@@ -4,7 +4,6 @@
 Analiza poboru - pokryciowy szereg list
 '''
 
-NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import fy_kw
 import lc_kw
 import ze_kw
@@ -15,16 +14,6 @@ import fx_kw
 import lh_kw
 import ey_kw
 import lt_kw
-'''.splitlines()]
-
-for i in NazwyModulow:
-    if i == __name__.split('.')[-1]:
-        raise RuntimeError('Modul laduje sam siebie?: %s' % repr(i))
-    else:
-        if i in globals():
-            exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
-        else:
-            exec 'import %(modul)s' % dict(modul = i)
 
 def wyznacz_daty_miesieczne(slownik_wpisow):
     wszystkie_miesiace = slownik_wpisow.keys()

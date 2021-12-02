@@ -3,7 +3,6 @@
 
 import os
 
-NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import ciw_kw
 import chj_kw
 import ng_kw
@@ -18,16 +17,6 @@ import le_kw
 import la_kw
 import tq_kw
 import jc_kw
-'''.splitlines()]
-
-for i in NazwyModulow:
-    if i == __name__.split('.')[-1]:
-        raise RuntimeError('Modul laduje sam siebie?: %s' % repr(i))
-    else:
-        if i in globals():
-            exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
-        else:
-            exec 'import %(modul)s' % dict(modul = i)
 
 napis_max = 'MAXIMUM'
 

@@ -3,7 +3,6 @@
 
 import unittest
 
-NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lm_kw
 import gb_kw
 import lw_kw
@@ -15,16 +14,6 @@ import oh_kw
 import od_kw
 import oq_kw
 import es_kw
-'''.splitlines()]
-
-for i in NazwyModulow:
-    if i == __name__.split('.')[-1]:
-        raise RuntimeError('Modul laduje sam siebie?: %s' % repr(i))
-    else:
-        if i in globals():
-            exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
-        else:
-            exec 'import %(modul)s' % dict(modul = i)
 
 MojeSlupki = es_kw.MojeSlupki
 

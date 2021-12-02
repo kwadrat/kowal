@@ -4,18 +4,7 @@
 Udawanie żądania WWW podczas wykonywania testów
 '''
 
-NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import oc_kw
-'''.splitlines()]
-
-for i in NazwyModulow:
-    if i == __name__.split('.')[-1]:
-        raise RuntimeError('Modul laduje sam siebie?: %s' % repr(i))
-    else:
-        if i in globals():
-            exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
-        else:
-            exec 'import %(modul)s' % dict(modul = i)
 
 class PseudoReq(object):
     def __init__(self, lokalny_the_building=None):

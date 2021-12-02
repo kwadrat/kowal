@@ -1,20 +1,9 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
-NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lc_kw
 import le_kw
 import dd_kw
-'''.splitlines()]
-
-for i in NazwyModulow:
-    if i == __name__.split('.')[-1]:
-        raise RuntimeError('Modul laduje sam siebie?: %s' % repr(i))
-    else:
-        if i in globals():
-            exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
-        else:
-            exec 'import %(modul)s' % dict(modul = i)
 
 altered_names = {
     'SZKOLA_PODSTAWOWA_NR35_RYBNIK': 'SZKOLA_PODSTAWOWA_NR_35_RYBNIK_SLASKA',

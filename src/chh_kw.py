@@ -3,21 +3,10 @@
 
 import unittest
 
-NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import dv_kw
 import rq_kw
 import chi_kw
 import dn_kw
-'''.splitlines()]
-
-for i in NazwyModulow:
-    if i == __name__.split('.')[-1]:
-        raise RuntimeError('Modul laduje sam siebie?: %s' % repr(i))
-    else:
-        if i in globals():
-            exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
-        else:
-            exec 'import %(modul)s' % dict(modul = i)
 
 LegalneMiesiace = ('01', '02', '03', '04', '05', '06',
 '07', '08', '09', '10', '11', '12',)

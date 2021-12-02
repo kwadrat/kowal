@@ -4,7 +4,6 @@
 Analiza poboru - pomiarowy szereg list dla miesiąca
 '''
 
-NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import lc_kw
 import lm_kw
 import dn_kw
@@ -13,16 +12,6 @@ import lw_kw
 import lh_kw
 import ge_kw
 import lt_kw
-'''.splitlines()]
-
-for i in NazwyModulow:
-    if i == __name__.split('.')[-1]:
-        raise RuntimeError('Modul laduje sam siebie?: %s' % repr(i))
-    else:
-        if i in globals():
-            exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
-        else:
-            exec 'import %(modul)s' % dict(modul = i)
 
 OgolnaListaPoborow = lt_kw.OgolnaListaPoborow
 

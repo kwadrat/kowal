@@ -3,22 +3,11 @@
 
 import unittest
 
-NazwyModulow = [wyrazy.split()[1] for wyrazy in '''\
 import ga_kw
 import lk_kw
 import dv_kw
 import oc_kw
 import ze_kw
-'''.splitlines()]
-
-for i in NazwyModulow:
-    if i == __name__.split('.')[-1]:
-        raise RuntimeError('Modul laduje sam siebie?: %s' % repr(i))
-    else:
-        if i in globals():
-            exec '%(modul)s = reload(%(modul)s)' % dict(modul = i)
-        else:
-            exec 'import %(modul)s' % dict(modul = i)
 
 link_obrazu = '''\
 <img name="%(html_tmp_name)s" src="%(nazwa)s" width="%(x)d" height="%(y)d"%(rozkaz_mapy)s> <br/>
