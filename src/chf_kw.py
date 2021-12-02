@@ -3,8 +3,6 @@
 
 import ib_kw
 import hj_kw
-import rq_kw
-import dn_kw
 import chh_kw
 import chg_kw
 import sk_kw

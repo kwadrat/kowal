@@ -7,7 +7,6 @@ o zerowej wartości
 
 import unittest
 
-import lm_kw
 import ze_kw
 
 CLL_Background_OK = 'zielone-tlo'

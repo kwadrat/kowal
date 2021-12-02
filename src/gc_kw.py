@@ -4,7 +4,6 @@
 import unittest
 
 import lm_kw
-import gb_kw
 import lw_kw
 import dd_kw
 import sj_kw

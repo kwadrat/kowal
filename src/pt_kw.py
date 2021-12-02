@@ -7,8 +7,6 @@ Lewy, górny róg obrazka ma współrzędne (0, 0)
 
 import unittest
 
-import lc_kw
-import rq_kw
 import oc_kw
 import jt_kw
 import ls_kw
