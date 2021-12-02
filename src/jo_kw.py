@@ -35,6 +35,7 @@ class JestemObca(object):
             tmp_opis = ''
         return tmp_opis
 
+
 ob_fjo = JestemObca()
 
 

@@ -49,6 +49,7 @@ class CoreResolver(object):
         '''
         return self.poczatek_gen + nazwa
 
+
 if rq_kw.WersjaUbuntuRun:
     ##############################################################################
     core_resolver = CoreResolver('media.ciri.pl', 'media.ciri.pl', 'media.ciri.pl')

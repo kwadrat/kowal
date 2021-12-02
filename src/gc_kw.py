@@ -19,6 +19,7 @@ MojeSlupki = es_kw.MojeSlupki
 
 class PoboroweOgolneSlupki(MojeSlupki):
     pikseli_po_lewej = 30
+
     def __init__(self, tgk, aqr, dnw, dolny_podpis):
         '''
         PoboroweOgolneSlupki:
@@ -87,7 +88,7 @@ class PoboroweOgolneSlupki(MojeSlupki):
         for i in range(n_total + 1):
             Wartosc = float(i * n_step)
             gora_slupka = vert_axis.wyznacz_gorna_wartosc(Wartosc)
-            GoraSlupka = int(self.wsp_y_na_dole_slupka - (self.wsp_y_na_dole_slupka - self.margines_dy_powyzej_slupka) * gora_slupka)
+            GoraSlupka = int(end_y - (end_y - self.margines_dy_powyzej_slupka) * gora_slupka)
             self.draw_line.tick_on_vertical_axis(end_x, GoraSlupka)
             napis_liczby = lm_kw.rzeczywista_na_napis(Wartosc)
             self.my_texts.append((end_x - 15, GoraSlupka, napis_liczby))
@@ -112,7 +113,7 @@ class PoboroweOgolneSlupki(MojeSlupki):
             for jeden_odc_bzw in moje_paczki_faktur:
                 pocz, kon = jeden_odc_bzw.get_pk()
                 SlWspX = self.aqr.miejsce_umieszczenia_slupka(pocz, kon, self.szerokosc_dx_skali, self.koniec_x_wykresu)
-                if SlWspX != None:
+                if SlWspX is not None:
                     yh_value = jeden_odc_bzw.slownik_qm.jh_kwota()
                     krt_pobor.cumulative_update(yh_value)
                     GoraSlupka, DolSlupka = self.wyznacz_gore_dol_slupka(vert_axis, yh_value)

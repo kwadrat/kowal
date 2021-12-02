@@ -95,8 +95,10 @@ class KolumnowyAdresator(object):
         '''
         KolumnowyAdresator:
         '''
-        return (self.get_only_row(row_delta),
-            self.kl_assigned_col + col_delta)
+        return (
+            self.get_only_row(row_delta),
+            self.kl_assigned_col + col_delta,
+            )
 
     def advance_row_by(self, row_delta=1):
         '''
@@ -170,13 +172,13 @@ class KolumnowyAdresator(object):
         '''
         KolumnowyAdresator:
         '''
-        return xrange(self.col_cnt)
+        return range(self.col_cnt)
 
     def row_iter(self, extra=0):
         '''
         KolumnowyAdresator:
         '''
-        return xrange(self.row_cnt + extra)
+        return range(self.row_cnt + extra)
 
 
 def generate_every_three(start_label, end_label):

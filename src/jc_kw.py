@@ -53,3 +53,4 @@ class TestCellFeatures(unittest.TestCase):
         ten_treshold = lm_kw.a2d('3.1104')
         jestem_weekend = True
         obk = CellDesc(moc_um_dec, ten_treshold, jestem_weekend)
+        self.assertEqual(obk.jestem_weekend, True)

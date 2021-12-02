@@ -228,6 +228,7 @@ def ptn_get_ordered_objects():
 
 class TestVariousPatterns(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual
+
     def test_various_patterns(self):
         '''
         TestVariousPatterns:

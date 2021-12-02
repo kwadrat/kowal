@@ -38,8 +38,8 @@ MDM_PRAD_CZERWONY = KOLOR_CZERWONY
 MDM_CIEPLO_ZIELONY = KOLOR_ZIELONY
 MDM_OLEJ_FIOLET = (229, 35, 247)
 MDM_WEGIEL_CIEMNO_SZARY = KOLOR_EXCEL_TLO_SZARE
-#MDM_SZAMBO_CIEMNY_CZERW = (209, 104, 118)
-#MDM_SZAMBO_CIEMNY_CZERW = (75, 0, 130) # Indygo
+# MDM_SZAMBO_CIEMNY_CZERW = (209, 104, 118)
+# MDM_SZAMBO_CIEMNY_CZERW = (75, 0, 130) # Indygo
 MDM_SZAMBO_CIEMNY_CZERW = (0, 255, 255)  # Seledynowy
 
 Kolor_Kresek = KOLOR_SZARY
@@ -63,12 +63,9 @@ wysokosc_napisu = 10  # draw.textsize('0')[1]
 def poziomo_dla_dni(min_domain, akt, max_domain, min_pixels, max_pixels):
     return int(
         min_pixels
-        +
-        (akt - min_domain)
-        *
-        (max_pixels - min_pixels)
-        /
-        (max_domain - min_domain)
+        + (akt - min_domain)
+        * (max_pixels - min_pixels)
+        / (max_domain - min_domain)
         )
 
 

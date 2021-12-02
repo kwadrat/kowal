@@ -13,12 +13,6 @@ link_obrazu = '''\
 <img name="%(html_tmp_name)s" src="%(nazwa)s" width="%(x)d" height="%(y)d"%(rozkaz_mapy)s> <br/>
 '''
 
-
-def pocz_mapy(nazwa):
-    return '''\
-  <map id="%(mapa_slupkow)s" name="%(mapa_slupkow)s">
-  ''' % dict(mapa_slupkow=nazwa)
-
 kon_mapy = '''\
 </map>
 '''
@@ -30,6 +24,12 @@ kawalki_quote = (
     ('"', '&quot;'),
     ("'", '&prime;'),
     )
+
+
+def pocz_mapy(nazwa):
+    return '''\
+  <map id="%(mapa_slupkow)s" name="%(mapa_slupkow)s">
+  ''' % dict(mapa_slupkow=nazwa)
 
 
 def quote_html(napis):
@@ -104,12 +104,13 @@ def plik_grafiki(znacznik_unik, litera_typu, nr_miejsca, wersja):
     wersja - krotka z zestawem liczb (pusta - wersja podstawowa pliku)
     '''
     return '%s%s_%s%d_%s%s' % (
-      oc_kw.PoczObrazka,
-      znacznik_unik,
-      litera_typu,
-      nr_miejsca,
-      '_'.join(map(str, wersja)),
-      oc_kw.RozszerzenieObrazka)
+        oc_kw.PoczObrazka,
+        znacznik_unik,
+        litera_typu,
+        nr_miejsca,
+        '_'.join(map(str, wersja)),
+        oc_kw.RozszerzenieObrazka,
+        )
 
 
 def nazwa_mapy(litera_typu, nr_miejsca):
@@ -124,6 +125,7 @@ def nazwa_mapy(litera_typu, nr_miejsca):
 
 class TestListyNagTabeli(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual
+
     def test_naglowka_tabeli(self):
         '''
         TestListyNagTabeli:

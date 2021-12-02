@@ -59,9 +59,9 @@ class SampleRow(object):
         elif old_value == lm_kw.wartosc_zero_globalna:
             result = 1
         elif (
-                lm_kw.have_dec_type(old_value) and
-                new_value is not None and
-                self.rough_point.rough_replacement(old_value, new_value)):
+                lm_kw.have_dec_type(old_value)
+                and new_value is not None
+                and self.rough_point.rough_replacement(old_value, new_value)):
             result = 1
         else:
             result = 0

@@ -2,16 +2,16 @@
 # -*- coding: UTF-8 -*-
 
 Moje_przypadki = (
-  Klient_mieszany,
-  Klient_nasz,
-  Klient_obcy,
-  Klient_zapomniany,
+    Klient_mieszany,
+    Klient_nasz,
+    Klient_obcy,
+    Klient_zapomniany,
 ) = (
-  'mieszany',
-  'nasz',
-  'obcy',
-  'nieznany',
-)
+    'mieszany',
+    'nasz',
+    'obcy',
+    'nieznany',
+    )
 
 Sensowne_przypadki = set([Klient_nasz, Klient_obcy])
 

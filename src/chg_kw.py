@@ -67,7 +67,7 @@ class Skrawek(object):
             ##############################################################################
             self.wartosc = tgk.qparam.get(self.moje_pole, None)
             ##############################################################################
-        return self.wartosc != None
+        return self.wartosc is not None
 
     def pobierz_wartosc(self, tgk):
         '''

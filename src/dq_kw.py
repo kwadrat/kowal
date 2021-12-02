@@ -93,5 +93,7 @@ class TestOgolnegoSzkieletuDat(unittest.TestCase):
         TestOgolnegoSzkieletuDat:
         '''
         obk = KlasaOgolnaSzkieletuDat()
+        obk.przypisz_szkielet([10, 20])
+        self.assertEqual(obk.szkielet_pocz, 10)
         self.assertEqual(generator_szkieletu(1), [0, 2])
         self.assertEqual(generator_szkieletu(3), [0, 2, 4, 6])

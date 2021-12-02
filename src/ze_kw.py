@@ -120,6 +120,7 @@ def op_tr(id_=None, nzw_wrsz=None, rest=None):
         wstawka_rst=wstawka_rst,
         )
 
+
 formularz_67c_pocz_wiersza = op_tr()
 
 
@@ -233,17 +234,15 @@ def sp_b_stl(napis):
 def sp_stl(etykieta_wartosci, liczba_tekstowo, jednostka):
     pieces = []
     pieces.append(formularz_1c_nw_wrsz)
-    middle_c = ('%(liczba_tekstowo)s %(jednostka)s' %
-        dict(
-            liczba_tekstowo=liczba_tekstowo,
-            jednostka=jednostka,
-            ))
+    middle_c = ('%(liczba_tekstowo)s %(jednostka)s' % dict(
+        liczba_tekstowo=liczba_tekstowo,
+        jednostka=jednostka,
+        ))
     middle_b = sp_b_stl(middle_c)
-    middle_a = ('(%(etykieta_wartosci)s: %(middle_b)s)' %
-        dict(
-            etykieta_wartosci=etykieta_wartosci,
-            middle_b=middle_b,
-            ))
+    middle_a = ('(%(etykieta_wartosci)s: %(middle_b)s)' % dict(
+        etykieta_wartosci=etykieta_wartosci,
+        middle_b=middle_b,
+        ))
     elem = sp_a_stl(naglowek_na_prawo, middle_a)
     pieces.append(elem)
     pieces.append(formularz_1c_zlm_wrsz)
@@ -268,12 +267,12 @@ def op_fmd(enctype=None, id_=None, name=None, method=frm_mt_pst, adres=None):
         '<form%(wstawka_enc)s action="%(pelny_adr)s"'
         '%(wstawka_idntf)s%(wstawka_nazwy)s '
         'method="%(method)s">\n' % dict(
-        pelny_adr=adres,
-        wstawka_enc=wstawka_enc,
-        wstawka_idntf=wstawka_idntf,
-        wstawka_nazwy=wstawka_nazwy,
-        method=method,
-        ))
+            pelny_adr=adres,
+            wstawka_enc=wstawka_enc,
+            wstawka_idntf=wstawka_idntf,
+            wstawka_nazwy=wstawka_nazwy,
+            method=method,
+            ))
 
 
 def op_prgph(tmp_tekst, class_=None):
@@ -299,6 +298,7 @@ def op_skrypt(adres):
 
 class TestTytuluHtml(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual
+
     def test_tytulu_html(self):
         '''
         TestTytuluHtml:
@@ -350,7 +350,8 @@ class TestTytuluHtml(unittest.TestCase):
         self.assertEqual(op_select('abc'), '<select id="abc" name="abc">\n')
         self.assertEqual(op_select('abc', class_='klasa_css'), '<select id="abc" name="abc" class="klasa_css">\n')
         self.assertEqual(op_select('abc', class_='klasa_css', onchange='def'), '<select id="abc" name="abc" class="klasa_css" onchange="def">\n')
-        self.assertEqual(op_select('abc', class_='klasa_css', onchange='def', style='ghi'),
+        self.assertEqual(op_select(
+            'abc', class_='klasa_css', onchange='def', style='ghi'),
             '<select id="abc" name="abc" class="klasa_css" style="ghi" onchange="def">\n')
         self.assertEqual(op_30_sbf('abc'), '<select name="abc" class="selwyborca" onchange="this.form.submit();">\n')
         self.assertEqual(op_dh(), '<div>\n')

@@ -53,6 +53,7 @@ class ColCalc(object):
             wynik = self.vx_litera(liczba)
         return wynik
 
+
 vx_zero = ColCalc(0)
 vx_one = ColCalc(1)
 

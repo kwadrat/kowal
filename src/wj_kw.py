@@ -57,3 +57,4 @@ class TestKlasyNakladki(unittest.TestCase):
         TestKlasyNakladki:
         '''
         obk = KlasaNakladki()
+        self.assertEqual(len(obk.vz_nakladki), 0)

@@ -20,4 +20,5 @@ class KlasaBleduBazy(object):
         '''
         return self.napis_przyczyny
 
+
 egz_bbd = KlasaBleduBazy()

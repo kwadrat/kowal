@@ -13,7 +13,7 @@ def porownaj_wielkosc_i_kilkubajtowe_roznice(dane_programu, dane_rozpakowane):
     ileb = len(dane_rozpakowane)
     if ilea == ileb:
         liczba_roznic = 0
-        for i in xrange(ilea):
+        for i in range(ilea):
             if dane_programu[i] != dane_rozpakowane[i]:
                 liczba_roznic += 1
         if TymczasowoF:

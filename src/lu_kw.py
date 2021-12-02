@@ -24,6 +24,7 @@ def wyznacz_kwote(krt_pobor, zbiornik_przedzialow, single_key):
     kwota = lm_kw.dec2flt(kwota)
     return kwota
 
+
 OgolnaListaPoborow = lt_kw.OgolnaListaPoborow
 
 
@@ -86,6 +87,6 @@ class TestCalculateAmount(unittest.TestCase):
         '''
         krt_pobor = dd_kw.CechaEnergii(lw_kw.Dm_Power)
         single_key = 'a'
-        zbiornik_przedzialow = {single_key:[]}
+        zbiornik_przedzialow = {single_key: []}
         kwota = wyznacz_kwote(krt_pobor, zbiornik_przedzialow, single_key)
         self.assertEqual(kwota, 0)

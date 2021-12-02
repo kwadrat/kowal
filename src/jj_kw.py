@@ -17,7 +17,7 @@ class QuarterServer(HoQuServer):
         '''
         self.quarter_translator = {}
         self.time_for_header = []
-        for i in xrange(96):
+        for i in range(96):
             hh_mm = lp_kw.determine_quarter(i)
             self.quarter_translator[hh_mm] = i
             self.time_for_header.append(lp_kw.describe_quarter_column(i))

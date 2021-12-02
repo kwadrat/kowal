@@ -61,11 +61,11 @@ class SkrPrezentacja(Skrawek):
             ##############################################################################
             self.wartosc = tgk.qparam.get(self.moje_pole, None)
             ##############################################################################
-        if self.wartosc == None:
+        if self.wartosc is None:
             # Domyślnie pokazujmy same tabelki
             self.wartosc = rq_kw.DP_Tabela
         if self.skh_widzialny(self.prm_okres.wartosc):
-            return self.wartosc != None
+            return self.wartosc is not None
         else:
             return True
 

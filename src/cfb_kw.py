@@ -46,8 +46,10 @@ class DetectAmountFieldPrecision(object):
         else:
             raise RuntimeError(
                 'Overwrite old value %s with new value %s ?' % (
-                repr(self.after_comma),
-                repr(after_comma)))
+                    repr(self.after_comma),
+                    repr(after_comma),
+                    )
+                )
 
     def __init__(self, field_name):
         '''

@@ -38,7 +38,7 @@ class EnergyReader(CommonReader):
         EnergyReader:
         '''
         value = self.vx_date(lb_col, my_row)
-        return dn_kw.NapisDaty( * value[:3])
+        return dn_kw.NapisDaty(* value[:3])
 
     def verify_hours_headers(self):
         '''
@@ -46,14 +46,14 @@ class EnergyReader(CommonReader):
         '''
         for sample_index, one_column in enumerate(self.period_server.all_time_columns):
             tmp_text = self.vx_num_time(
-                self.start_energy_col +
-                sample_index +
-                self.extra_dst_column, 5 + self.tel_delta)
+                self.start_energy_col
+                + sample_index
+                + self.extra_dst_column, 5 + self.tel_delta)
             expected = one_column.header_for_hour_column
             if (
-                    tmp_text == '02:00' and
-                    expected == '03:00' and
-                    sample_index == 2):
+                    tmp_text == '02:00'
+                    and expected == '03:00'
+                    and sample_index == 2):
                 self.set_dst_column()
                 continue
             lp_kw.verify_for_equal(tmp_text, expected)
@@ -107,8 +107,6 @@ class EnergyReader(CommonReader):
         self.check_for_delta_string('G', 2 + self.tel_delta, u'do ')
         self.check_for_constant_string('B', 4 + self.tel_delta, u'Godziny')
         under_name = self.vx_delta_peek('E', 1 + self.tel_delta)
-        period_start = self.vx_delta_date('E', 2 + self.tel_delta)
-        period_end = self.vx_delta_date('H', 2 + self.tel_delta)
         return under_name
 
     def detect_data_rows(self):
@@ -176,7 +174,7 @@ class EnergyReader(CommonReader):
             autumn_dst_date = dn_kw.autumn_dst_day(row_date)
             spring_dst_date = dn_kw.spring_dst_day(row_date)
             self.prepare_local_copy_of_row(dfb, key_object, row_date)
-            for sample_index in xrange(24):
+            for sample_index in range(24):
                 self.fetch_energy_field(key_object, single_row, row_date, spring_dst_date, autumn_dst_date, sample_index)
 
     def analyze_data_in_grid(self, dfb, single_file):
@@ -303,6 +301,7 @@ class Test_Reader_of_Energy(unittest.TestCase):
         obk.attach_to_file(xlrd, single_file)
         obk.fill_a_case()
         under_name = obk.detect_sheet_header()
+        self.assertEqual(under_name, None)
 
     def test_energy_2_reader(self):
         '''
@@ -327,6 +326,7 @@ class Test_Reader_of_Energy(unittest.TestCase):
         obk.attach_to_file(xlrd, single_file)
         obk.fill_b_case()
         under_name = obk.detect_sheet_header()
+        self.assertEqual(under_name, None)
 
     def test_energy_4_reader(self):
         '''

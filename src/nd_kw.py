@@ -177,7 +177,7 @@ class OgOpOgolnaKolumna(object):
         '''
         OgOpOgolnaKolumna:
         '''
-        for fvk_miesiac in xrange(mies_pocz, mies_kon + 1):
+        for fvk_miesiac in range(mies_pocz, mies_kon + 1):
             etykieta_zamowionej = klm_a_ads.get_ka_official_address(fvk_miesiac)
             wzor = hj_kw.rcp_mnoz(etykieta_zamowionej, etykieta_mnoznika)
             self.ustaw_wzor(fvk_miesiac, wzor)

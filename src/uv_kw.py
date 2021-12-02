@@ -41,6 +41,7 @@ class TestJednegoPodnajemcy(unittest.TestCase):
         TestJednegoPodnajemcy:
         '''
         obk = MojPodnajemca(None, 'KOWALSKI JAN', '2014-02-25', None)
+        self.assertEqual(obk.numer_nadlicznika, None)
 
     def test_no_time_limits(self):
         '''

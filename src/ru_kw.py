@@ -42,10 +42,10 @@ class SkrZuzRok(Skrawek):
             ##############################################################################
             self.wartosc = tgk.qparam.get(self.moje_pole, None)
             ##############################################################################
-        if self.wartosc == None:
+        if self.wartosc is None:
             # Domyślnie pokazujemy aktualny rok
             self.wartosc = dn_kw.RokTeraz()
-        return self.wartosc != None
+        return self.wartosc is not None
 
     def zbierz_html(self, tgk, dfb):
         '''
@@ -60,3 +60,4 @@ class TestZuzRok(unittest.TestCase):
         TestZuzRok:
         '''
         moj_elem = SkrZuzRok()
+        self.assertEqual(moj_elem.wartosc, None)

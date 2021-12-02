@@ -43,7 +43,7 @@ class WynikoweListy(object):
         Zwraca liczbę faktur szeregu - suma poszczególnych długości list faktur
         '''
         return sum(
-          map(
-            lambda l_l: l_l.liczba_faktur_listy(), self.listy_roznych
-          )
+            map(
+                lambda l_l: l_l.liczba_faktur_listy(), self.listy_roznych
+            )
         )

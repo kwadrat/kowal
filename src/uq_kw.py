@@ -5,7 +5,8 @@ import unittest
 
 
 class BagFieldSet(object):
-    def __init__(self,
+    def __init__(
+            self,
             pole_dla_ilosci,
             pole_dla_kwoty,
             pole_dla_mocy,

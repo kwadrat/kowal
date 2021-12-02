@@ -15,6 +15,7 @@ import ei_kw
 def ListaWyboruRoku(tgk):
     return sk_kw.ListWyboruOgolna(tgk, ei_kw.NazwaRok, chh_kw.MozliweLataZuzyc)
 
+
 Skrawek = chg_kw.Skrawek
 
 
@@ -50,12 +51,12 @@ class SkrRok(Skrawek):
             self.wartosc = tgk.qparam.get(self.moje_pole, None)
             ##############################################################################
         if self.skh_widzialny(self.prm_okres.wartosc):
-            if self.wartosc == None:
+            if self.wartosc is None:
                 # Domyślnie pokazujemy aktualny rok
                 self.wartosc = dn_kw.RokTeraz()
         else:
             return True  # Rok nie jest potrzebny, zwracamy cokolwiek różnego od None
-        return self.wartosc != None
+        return self.wartosc is not None
 
     def skh_widzialny(self, skp_okres):
         '''

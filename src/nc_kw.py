@@ -98,6 +98,7 @@ def weekend_b_style(jestem_weekend):
         dc_style = {}
     return dc_style
 
+
 CommonRdWr = tq_kw.CommonRdWr
 
 
@@ -160,7 +161,7 @@ class CommonWriter(CommonRdWr):
         row_e = row_d + 1
         row_f = row_e + 1
         etk_e = gu_kw.KolumnowyAdresator(first_line, self.first_date_column).get_ka_official_address()
-        for i in xrange(self.liczba_max):
+        for i in range(self.liczba_max):
             hour_est = month_aggr.ordered_limited[i]
             col = self.nmax_start_col + i
             my_value = hour_est.one_sample
@@ -232,7 +233,7 @@ class CommonWriter(CommonRdWr):
         '''
         CommonWriter:
         '''
-        for col in xrange(self.first_weekday_column, self.second_weekday_column + 1):
+        for col in range(self.first_weekday_column, self.second_weekday_column + 1):
             xwg.sheet.col(col).best_fit = 1
 
     def write_real_data(self, output_file, uu_maper, dane_bazy):

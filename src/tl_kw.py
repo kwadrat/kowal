@@ -61,7 +61,7 @@ class TypowaLista(ListaLubSlownikOgolnie):
             wynik = self.poz_lista
         else:
             wynik = []
-            for i in xrange(len(self.poz_lista)):
+            for i in range(len(self.poz_lista)):
                 if i in self.lista_indeksow:
                     wynik.append(self.poz_lista[i])
         return wynik
@@ -95,7 +95,7 @@ class TypowaLista(ListaLubSlownikOgolnie):
             wynik = len(self.poz_lista)
         else:
             wynik = 0
-            for i in xrange(len(self.poz_lista)):
+            for i in range(len(self.poz_lista)):
                 if i in self.lista_indeksow:
                     wynik += 1
         return wynik
@@ -146,8 +146,11 @@ class TypowaLista(ListaLubSlownikOgolnie):
 
 
 def znajdz_lub_przygotuj_nowa_liste(klucz, slownik):
-    return po_kw.znajdz_lub_przygotuj_nowy_element(klucz, slownik,
-      lambda: TypowaLista(hj_kw.space_two(ek_kw.ETK_lista_znajdz_lub_przygotuj, klucz)))
+    return po_kw.znajdz_lub_przygotuj_nowy_element(
+        klucz,
+        slownik,
+        lambda: TypowaLista(hj_kw.space_two(ek_kw.ETK_lista_znajdz_lub_przygotuj, klucz)),
+        )
 
 
 class TestTypicalList(unittest.TestCase):

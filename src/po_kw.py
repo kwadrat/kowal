@@ -23,7 +23,7 @@ class PozycjeOgolne(ListaLubSlownikOgolnie):
         self.poz_slownik = {}
         self.krkt_slownik = {}  # Słownik z poprawionymi polami faktur pochodnych (z korektami)
         self.moge_zmieniac_sie = True
-        if slownik_poczatkowy != None:
+        if slownik_poczatkowy is not None:
             self.aktualizuj_pary(slownik_poczatkowy)
 
     def sprawdz_zmienianie(self):
@@ -218,7 +218,9 @@ def znajdz_lub_przygotuj_nowy_element(klucz, slownik, wytworca):
 
 
 def znajdz_lub_przygotuj_nowy_slownik(klucz, slownik, klasa_slownika):
-    return znajdz_lub_przygotuj_nowy_element(klucz, slownik,
+    return znajdz_lub_przygotuj_nowy_element(
+        klucz,
+        slownik,
         lambda: klasa_slownika(hj_kw.space_two(ek_kw.ETK_maly_licznik_znajdz_lub_przygotuj, klucz)))
 
 
@@ -228,6 +230,7 @@ class TestPozycjiOgolnych(unittest.TestCase):
         TestPozycjiOgolnych:
         '''
         obk = PozycjeOgolne('abc')
+
         class PseudoWytworca:
             pass
         self.assertEqual(obk.posiadam_klucz('a'), 0)

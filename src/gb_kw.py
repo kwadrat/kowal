@@ -24,6 +24,7 @@ Jedn_procent = '%'
 def nawiasy_kwadratowe(jednostka):
     return '[%s]' % jednostka
 
+
 Jedn_k_kWh = nawiasy_kwadratowe(Jedn_kWh)
 Jedn_k_zlotowki = nawiasy_kwadratowe(Jedn_zlotowki)
 Jedn_jy_sztuki = nawiasy_kwadratowe(Jedn_sztuki)

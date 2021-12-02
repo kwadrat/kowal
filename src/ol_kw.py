@@ -25,7 +25,7 @@ class ObiektLiterujacy(object):
         ObiektLiterujacy:
         '''
         assert self.biezacy_indeks_litery < self.liczba_potrzebnych_liter, (
-          '%d < %d' % (self.biezacy_indeks_litery, self.liczba_potrzebnych_liter))
+            '%d < %d' % (self.biezacy_indeks_litery, self.liczba_potrzebnych_liter))
         assert self.biezacy_indeks_litery < 26  # Liczba dostępnych liter
         koncowka = '/' + hj_kw.wyznacz_litere_faktury(self.biezacy_indeks_litery)
         self.biezacy_indeks_litery += 1

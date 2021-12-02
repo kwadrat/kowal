@@ -53,6 +53,7 @@ class LogujWiadomosci(object):
         self.lqg_write(napis, enter)
         self.lqg_close()
 
+
 lqg_ob = LogujWiadomosci()
 
 

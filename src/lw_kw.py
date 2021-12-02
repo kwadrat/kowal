@@ -2,23 +2,23 @@
 # -*- coding: UTF-8 -*-
 
 DanePoboru = (
-Dm_Energy,
-Dm_Power,
+    Dm_Energy,
+    Dm_Power,
 ) = (
-'Energia',
-'Moc',
+    'Energia',
+    'Moc',
 )
 
 DanePoborowegoCzasu = (
-DPC_Dzien,
-DPC_Tydzien,
-DPC_Miesiac,
-DPC_Rok,
+    DPC_Dzien,
+    DPC_Tydzien,
+    DPC_Miesiac,
+    DPC_Rok,
 ) = (
-'Dzień',
-'Tydzień',
-'Miesiąc',
-'Rok',
+    'Dzień',
+    'Tydzień',
+    'Miesiąc',
+    'Rok',
 )
 
 PDS_Godziny = 'godziny'

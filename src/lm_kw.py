@@ -24,6 +24,7 @@ def fix_db_dec(a):
     a = a2d(a)
     return a
 
+
 wartosc_zero_globalna = a2d('0')
 value_ten_const = a2d(10)
 
@@ -164,18 +165,18 @@ class TestPointNumbers(unittest.TestCase):
         self.assertEqual(rzeczywista_na_napis(589.56, rn_after=3), '589.560')
         self.assertEqual(hj_kw.remove_nones(
             [
-            wartosc_zero_globalna,
-            None,
-            1,
-            2,
-            3,
-            ]),
+                wartosc_zero_globalna,
+                None,
+                1,
+                2,
+                3,
+                ]),
             [
-            wartosc_zero_globalna,
-            1,
-            2,
-            3,
-            ],
+                wartosc_zero_globalna,
+                1,
+                2,
+                3,
+                ],
             )
 
     def test_generate_yscale(self):

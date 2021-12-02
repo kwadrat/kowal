@@ -155,8 +155,8 @@ class WriterGateway(object):
         self.generated_string_style_cache = {}
         self.format_map = {
             0: 'General',  # Liczby całkowite bez przecinka, center
-            2: ' #,##0.00', # użyj separatora 1000, 2 miejsca po przecinku
-            3: ' #,##0.000', # użyj separatora 1000, 3 miejsca po przecinku
+            2: ' #,##0.00',  # użyj separatora 1000, 2 miejsca po przecinku
+            3: ' #,##0.000',  # użyj separatora 1000, 3 miejsca po przecinku
             NMF_1_above_red: '[Red]#,##0.00_ ;-#,##0.00 ',
             NMF_2_percent: '0.00%',
             NMF_3_date: 'yyyy/mm/dd;@',  # data RRRR-MM-DD
@@ -454,35 +454,59 @@ class WriterGateway(object):
         '''
         WriterGateway:
         '''
-        lista_rozmiarow = (
-            [2740  # 10
-            ] + 3 * [2902  # 10,57
-            ] + 11 * [3255  # 12
-            ])  # Rozmiary podawane przez MS Excel
+        lista_rozmiarow = [
+            2740,  # 10
+            2902,  # 10,57
+            2902,  # 10,57
+            2902,  # 10,57
+            3255,  # 12
+            3255,  # 12
+            3255,  # 12
+            3255,  # 12
+            3255,  # 12
+            3255,  # 12
+            3255,  # 12
+            3255,  # 12
+            3255,  # 12
+            3255,  # 12
+            3255,  # 12
+            ]  # Rozmiary podawane przez MS Excel
         self.wymus_szerokosci(lista_rozmiarow)
 
     def szerokosc_a_kolumn_kosztow_energii(self):
         '''
         WriterGateway:
         '''
-        lista_rozmiarow = (
-            [2740  # 10
-            ] + 2 * [2902  # 10,57
-            ] + 1 * [5379  # 20,29
-            ] + 11 * [3255  # 12
-            ])  # Rozmiary podawane przez MS Excel
+        lista_rozmiarow = [
+            2740,  # 10
+            2902,  # 10,57
+            2902,  # 10,57
+            5379,  # 20,29
+            3255,  # 12
+            3255,  # 12
+            3255,  # 12
+            3255,  # 12
+            3255,  # 12
+            3255,  # 12
+            3255,  # 12
+            3255,  # 12
+            3255,  # 12
+            3255,  # 12
+            3255,  # 12
+            ]  # Rozmiary podawane przez MS Excel
         self.wymus_szerokosci(lista_rozmiarow)
 
     def szerokosc_kolumn_ciepla_sieciowego(self):
         '''
         WriterGateway:
         '''
-        lista_rozmiarow = ([
-            ] + 1 * [2333  # 8,43
-            ] + 2 * [3122  # 11,43
-            ] + 1 * [5379  # 20,29
-            ] + 1 * [3620  # 13,43
-            ])  # Rozmiary podawane przez MS Excel
+        lista_rozmiarow = [
+            2333,  # 8,43
+            3122,  # 11,43
+            3122,  # 11,43
+            5379,  # 20,29
+            3620,  # 13,43
+            ]  # Rozmiary podawane przez MS Excel
         self.wymus_szerokosci(lista_rozmiarow)
 
     def tytul_miesiac(self, akt_wiersz, liczba_wierszy):
@@ -513,10 +537,11 @@ class TestArkuszowy(unittest.TestCase):
         TestArkuszowy:
         '''
         self.assertEqual(calculate_style(None), {})
-        self.assertEqual(calculate_style(1), {'style':1})
+        self.assertEqual(calculate_style(1), {'style': 1})
 
     def test_gateway(self):
         '''
         TestArkuszowy:
         '''
         xwg = WriterGateway()
+        self.assertEqual(xwg.style_map[None], None)

@@ -10,8 +10,20 @@ import unittest
 import hj_kw
 import dn_kw
 
-tab_rzymskich = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X',
-  'XI', 'XII']
+tab_rzymskich = [
+    'I',
+    'II',
+    'III',
+    'IV',
+    'V',
+    'VI',
+    'VII',
+    'VIII',
+    'IX',
+    'X',
+    'XI',
+    'XII',
+    ]
 
 numery_miesiecy = range(1, 12 + 1)
 

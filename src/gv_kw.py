@@ -122,6 +122,7 @@ class TestTheNumber(unittest.TestCase):
         TestTheNumber:
         '''
         obk = RichString()
+        self.assertEqual(obk.rn_size, None)
 
     def test_5_the_number(self):
         '''
@@ -144,6 +145,7 @@ class TestTheNumber(unittest.TestCase):
         TestTheNumber:
         '''
         obk = RichFormula()
+        self.assertEqual(obk.rn_size, None)
 
     def test_8_the_number(self):
         '''

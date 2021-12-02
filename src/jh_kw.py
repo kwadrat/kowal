@@ -62,7 +62,7 @@ class PowerReader(CommonReader):
         self.check_for_constant_string('B', nrows - 2, u'Energy')
         self.check_for_constant_string('B', nrows - 1, u'Max')
         self.check_for_constant_string('B', nrows, u'Time Max')
-        return xrange(13, nrows - 2)
+        return range(13, nrows - 2)
 
     def store_quarter_value_in_row(self, key_object, row_date, sample_index, value):
         '''

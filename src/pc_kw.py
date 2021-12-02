@@ -15,7 +15,7 @@ class LiczbaPrecyzyjna(object):
         LiczbaPrecyzyjna:
         '''
         self.miejsc_po_przecinku = precyzja
-        if self.miejsc_po_przecinku == None:
+        if self.miejsc_po_przecinku is None:
             if lm_kw.have_dec_type(wartosc):
                 self.moja_wartosc = wartosc
             else:

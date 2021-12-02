@@ -5,7 +5,8 @@ import unittest
 
 
 class WaterCanalCorrection(object):
-    def __init__(self,
+    def __init__(
+            self,
             id_oryg,
             id_nowy,
             ile_wody=None,
@@ -32,12 +33,13 @@ class WaterCanalCorrection(object):
         WaterCanalCorrection:
         '''
         exception_exists = (
-            self.ile_wody is not None and
-            self.ile_sciekow is not None and
-            ilosc_tutejszej_wody == self.ile_wody and
-            ilosc_tutejszych_sciekow == self.ile_sciekow
+            self.ile_wody is not None
+            and self.ile_sciekow is not None
+            and ilosc_tutejszej_wody == self.ile_wody
+            and ilosc_tutejszych_sciekow == self.ile_sciekow
             )
         return exception_exists
+
 
 qy_to_1_moj = WaterCanalCorrection(
     ('2012-07-25', '2012-08-01'),
@@ -54,8 +56,8 @@ qy_to_2_moj = WaterCanalCorrection(
     )
 
 qy_to_3_moj = WaterCanalCorrection(
-        ('2014-08-26', '2014-08-31'),
-        ('2014-08-23', '2014-08-31'),
+    ('2014-08-26', '2014-08-31'),
+    ('2014-08-23', '2014-08-31'),
     )
 
 

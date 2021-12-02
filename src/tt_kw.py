@@ -19,6 +19,7 @@ def normalize_value(before):
         result = before
     return result
 
+
 CommonRdWr = tq_kw.CommonRdWr
 
 
@@ -224,12 +225,10 @@ class CommonReader(CommonRdWr):
         table_name = self.krt_pobor.krt_table
         result = le_kw.dq_dane_jednego_obiektu(dfb, table_name, id_obiekt)
         if 1:
-            tmp_format = 'len(result)'
-            print('Eval: %s %s' % (tmp_format, eval(tmp_format)))
+            print('Eval: length of result %d' % len(result))
         ls_objects = le_kw.dq_get_ordered_objects(dfb)
         if 1:
-            tmp_format = 'len(ls_objects)'
-            print('Eval: %s %s' % (tmp_format, eval(tmp_format)))
+            print('Eval: length of object list %s' % len(ls_objects))
 
 
 class Test_Common_Reader(unittest.TestCase):

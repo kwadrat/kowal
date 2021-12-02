@@ -50,9 +50,14 @@ class KlasaStalowejWiedzy(object):
         '''
         KlasaStalowejWiedzy:
         '''
-        self.zbior_z_kalendarzem = frozenset(
-            [cx_data_faktury, cx_poczatek_okresu, cx_koniec_okresu,
-            cx_req_data, cx_nic_data, cx_data_pompy])
+        self.zbior_z_kalendarzem = frozenset([
+            cx_data_faktury,
+            cx_poczatek_okresu,
+            cx_koniec_okresu,
+            cx_req_data,
+            cx_nic_data,
+            cx_data_pompy,
+            ])
 
     def cx_chce_kalendarz(self, stalowe_cx):
         '''
@@ -76,6 +81,7 @@ class KlasaStalowejWiedzy(object):
             return 'integer'
         else:
             raise RuntimeError('Nieznane stalowe_cx: %s' % repr(stalowe_cx))
+
 
 cx_obkt = KlasaStalowejWiedzy()
 

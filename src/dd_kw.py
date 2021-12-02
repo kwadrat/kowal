@@ -19,6 +19,7 @@ def protected_max(values):
         result = 0
     return result
 
+
 energy_chooser = {
     lw_kw.Dm_Energy: [
         24,

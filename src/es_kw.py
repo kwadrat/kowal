@@ -39,6 +39,7 @@ def prawdziwe_rysowanie(draw, lista_prostokatow, slownik_rect, slownik_przekrocz
             slownik_efektywny = slownik_rect
         draw.rectangle((x1, y1, x2, y2), ** slownik_efektywny)
 
+
 KlasaObrazu = pt_kw.KlasaObrazu
 
 
@@ -77,7 +78,6 @@ class MojeSlupki(KlasaObrazu):
         x0 = SlWspX - half_pillar_width
         x1 = SlWspX + half_pillar_width
         tmp_punkt = hr_kw.ProstokatDoRysowania(x0, DolSlupka, x1, GoraSlupka)
-        dodatkowy_tekst = ''
         if jeden_odc_bzw is not None:
             tmp_punkt.zaznacz_przekroczenie(jeden_odc_bzw.slownik_qm.przekroczenie_b_umw)
         self.lista_rectangle.append(tmp_punkt)
@@ -154,10 +154,11 @@ class MojeSlupki(KlasaObrazu):
         przyrost_ramki = 0
         wykaz_zaznaczen.sort()
         for jedno_zaznaczenie in wykaz_zaznaczen:
-            draw.rectangle((px - przyrost_ramki, py - przyrost_ramki, kx + przyrost_ramki, ky + przyrost_ramki),
+            draw.rectangle(
+                (px - przyrost_ramki, py - przyrost_ramki, kx + przyrost_ramki, ky + przyrost_ramki),
                 outline=jedno_zaznaczenie,
                 fill=None,
-            )
+                )
             przyrost_ramki -= 1
 
     def wypisz_liczby_otoczone_ramkami(self, draw, on_mouse):
@@ -318,7 +319,7 @@ class MojeSlupki(KlasaObrazu):
             for jeden_odc_bzw in moje_paczki_faktur:
                 pocz, kon = jeden_odc_bzw.get_pk()
                 SlWspX = self.aqr.miejsce_umieszczenia_slupka(pocz, kon, self.szerokosc_dx_skali, self.szerokosc_obrazu)
-                if SlWspX != None:
+                if SlWspX is not None:
                     Wartosc = jeden_odc_bzw.slownik_qm.jh_kwota()
                     GoraSlupka, DolSlupka = self.wyznacz_gore_dol_slupka(vert_axis, Wartosc)
                     Etykieta = self.wyznacz_etykiete(pocz)

@@ -50,3 +50,4 @@ class TestAktWsz(unittest.TestCase):
         TestAktWsz:
         '''
         moj_elem = SkrAktWsz()
+        self.assertEqual(moj_elem.wartosc, None)

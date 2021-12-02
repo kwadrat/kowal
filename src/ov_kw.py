@@ -110,6 +110,7 @@ def zrob_tabele_poborow(lst_h, result):
     uzupelnij_brakujace(slownik_wpisow)
     wygeneruj_tabelke_poborow(lst_h, slownik_wpisow)
 
+
 OgolnaListaPoborow = lt_kw.OgolnaListaPoborow
 
 

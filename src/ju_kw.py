@@ -41,7 +41,7 @@ def sprawdz_ogolnie_zgodnosc(elem, zbior, dodatkowy=None):
 def doszlifuj_date(rh_dt):
     if dn_kw.mozliwy_py_time(rh_dt):
         krotka = (rh_dt.year, rh_dt.month, rh_dt.day)
-        rh_dt = dn_kw.NapisDaty( * krotka)
+        rh_dt = dn_kw.NapisDaty(* krotka)
     elif dz_kw.rozpoznaj_dzisiejszy_dzien(rh_dt) == 10:
         pass  # Data już w dobrym formacie
     else:
@@ -50,7 +50,7 @@ def doszlifuj_date(rh_dt):
         elif rh_dt == u'31-11-2006':
             rh_dt = u'30-11-2006'
         krotka = dz_kw.wyciagnij_date_z_formatu_dmr(rh_dt)
-        rh_dt = dn_kw.NapisDaty( * krotka)
+        rh_dt = dn_kw.NapisDaty(* krotka)
     return rh_dt
 
 

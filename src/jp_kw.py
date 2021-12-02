@@ -16,6 +16,7 @@ class KalejdoskopStron(object):
         self.rj_sam_rdzen = 'l%d' % numer_strony
         self.rj_py_wersja = oc_kw.dodaj_py(self.rj_sam_rdzen)
 
+
 rjb_strona_pierwsza = KalejdoskopStron(1)
 rjb_strona_druga = KalejdoskopStron(2)
 rjb_strona_trzecia = KalejdoskopStron(3)

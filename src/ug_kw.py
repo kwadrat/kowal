@@ -91,6 +91,7 @@ class FieldSplitter(object):
                     cur_ptr += 1
         return t
 
+
 local_splitter = FieldSplitter()
 
 

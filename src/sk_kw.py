@@ -32,15 +32,17 @@ def ListWyboruOgolna(tgk, nazwa, lista):
                 etykieta = opcja
 
             w.append(ze_kw.op_option(
-              etykieta,
-              opcja,
-              opcja == Wybrana))
+                etykieta,
+                opcja,
+                opcja == Wybrana,
+                ))
         w.append(ze_kw.formularz_1c_kon_slct)
     return ''.join(w)
 
 
 class TestPodstSkrawka(unittest.TestCase):
     tassertEqual = uy_kw.tassertEqual
+
     def test_podstawowego_skrawka(self):
         '''
         TestPodstSkrawka:

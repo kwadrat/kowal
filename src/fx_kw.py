@@ -55,7 +55,8 @@ class DayCellsStats(object):
         DayCellsStats:
         '''
         if self.cell_problems():
-            return ('brakujących pomiarów: %d, zerowych wartości: %d' %
+            return (
+                'brakujących pomiarów: %d, zerowych wartości: %d' %
                 (self.empty_cells, self.zero_cells))
         return None
 

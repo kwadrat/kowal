@@ -8,15 +8,18 @@ import rq_kw
 import chi_kw
 import dn_kw
 
-LegalneMiesiace = ('01', '02', '03', '04', '05', '06',
-'07', '08', '09', '10', '11', '12',)
+LegalneMiesiace = (
+    '01', '02', '03', '04', '05', '06',
+    '07', '08', '09', '10', '11', '12',
+    )
 
 DniWMiesiacu = (31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31,)
 
 LegalneDni = (
-'01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12',
-'13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24',
-'25', '26', '27', '28', '29', '30', '31',)
+    '01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12',
+    '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24',
+    '25', '26', '27', '28', '29', '30', '31',
+    )
 
 RokObecnyStaly = dn_kw.RokDzisiaj()
 ListaLatZuzyc = range(RokObecnyStaly, rq_kw.RokPocz2 - 1, -1)
@@ -28,6 +31,7 @@ MozliweLataDlaBRok = MozliweLataZuzyc
 
 def tupled_year(year):
     return (year, str(year))
+
 
 ParowaneLataDanych = map(tupled_year, ListaLatZuzyc)
 
@@ -66,17 +70,22 @@ def DataBledna(napis):
 
 class TestMisspelledDate(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual
+
     def test_misspelled_date(self):
         '''
         TestMisspelledDate:
         '''
-        self.assertEqual(DataBledna('1'),
+        self.assertEqual(
+            DataBledna('1'),
             'Liczba kawałków oddzielanych myślnikiem: 1')
-        self.assertEqual(DataBledna('1800-01-01'),
+        self.assertEqual(
+            DataBledna('1800-01-01'),
             'Rok poza obsługiwanym zakresem: "1800"')
-        self.assertEqual(DataBledna('2014-13-01'),
+        self.assertEqual(
+            DataBledna('2014-13-01'),
             'Miesiąc poza obsługiwanym zakresem: "13"')
-        self.assertEqual(DataBledna('2014-03-32'),
+        self.assertEqual(
+            DataBledna('2014-03-32'),
             'Dzień poza obsługiwanym zakresem: "32"')
 
     def test_converting_year(self):

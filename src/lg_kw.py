@@ -101,5 +101,6 @@ class TestStyku(unittest.TestCase):
         wynik = obk.sprawdz_import_interpr()
         self.assertTrue(wynik)
 
+
 sa_kw.UstawienieLocale()
 gdzie_podlaczony = OkreslMiejsce()

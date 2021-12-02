@@ -31,6 +31,7 @@ class NaglowekKolumny(object):
             lista.append(gb_kw.nawiasy_kwadratowe(self.jednostka))
         return ''.join(lista)
 
+
 ux_1_a = NaglowekKolumny('Moc wykonana', jednostka=gb_kw.JednMet3h).nx_pelny()
 ux_2_a = NaglowekKolumny('Moc umowna', jednostka=gb_kw.JednMet3h).nx_pelny()
 ux_3_a = NaglowekKolumny('Zużycie', jednostka=gb_kw.JednM3, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
@@ -52,6 +53,7 @@ ux_17_a = NaglowekKolumny('Moc zamówiona', jednostka=gb_kw.Jedn_a_kWh_h, separa
 
 class TestNagKol(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual
+
     def test_naglowka_kolumny(self):
         '''
         TestNagKol:

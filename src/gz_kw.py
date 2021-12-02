@@ -23,9 +23,9 @@ class GlebiaZagniezdzenia(object):
             napis = eval('self.%s.__doc__' % napis)
             napis = napis.lstrip()  # Dla sklejenia w jednej linii
             lista_napisu = [
-            'GlZagnFn',
-            ': ',
-            napis,
+                'GlZagnFn',
+                ': ',
+                napis,
             ]
             if dodatek is not None:
                 lista_napisu.append(dodatek)

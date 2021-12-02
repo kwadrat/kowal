@@ -336,6 +336,7 @@ def netto_from_brutto(brutto, vat_rate):
         "))",
         ])
 
+
 if sys.version.split()[0] == '2.5.1':
     def enum_one(text):
         all_lines = text.splitlines()
@@ -399,9 +400,9 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(letter_to_number('Z'), 25)
         self.assertEqual(podpis_faktury('a'), 'fakt. a')
         self.assertEqual(significant_values_for_months({}), 0)
-        self.assertEqual(significant_values_for_months({1:gv_kw.RichNumber(3)}), 1)
-        self.assertEqual(significant_values_for_months({1:gv_kw.RichNumber(0)}), 0)
-        self.assertEqual(significant_values_for_months({13:gv_kw.RichNumber(3)}), 0)
+        self.assertEqual(significant_values_for_months({1: gv_kw.RichNumber(3)}), 1)
+        self.assertEqual(significant_values_for_months({1: gv_kw.RichNumber(0)}), 0)
+        self.assertEqual(significant_values_for_months({13: gv_kw.RichNumber(3)}), 0)
         self.assertEqual(rcp_plus(['A1', 'B2', 'C3']), 'A1+B2+C3')
         self.assertEqual(rcp_vertical_sum(2, 12, 'A'), 'SUM(A2:A13)')
         self.assertEqual(rcp_pion(0, 'A'), 'SUM(A2:A13)')
@@ -414,7 +415,8 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(rcp_maxk('C2', 'CT31', 0), 'LARGE(C2:CT31,1)')
         self.assertEqual(rcp_maxk('C2', 'CT31', 1), 'LARGE(C2:CT31,2)')
         self.assertEqual(rcp_diff_max('E23', 'G23'), 'MAX(0,E23-G23)')
-        a = [1, 4, 2, 3]; reverse_but_last(a)
+        a = [1, 4, 2, 3]
+        reverse_but_last(a)
         self.assertEqual(a, [3, 2, 1, 4])
         self.assertEqual(ogranicz_wartosci_umowne([0.0, 0.0, 36.0]), [36.0])
         self.assertEqual(ogranicz_wartosci_umowne([40.0, 40.0, 0.0]), [40.0])

@@ -45,7 +45,7 @@ class MojPasek(KlasaObrazu):
                     kolor = Kolor_Bledny
             x_pocz = self.aqr.poziomo_tego_dnia(i, self.szerokosc_dx_skali, self.szerokosc_obrazu)
             x_kon = self.aqr.poziomo_tego_dnia(i + 1, self.szerokosc_dx_skali, self.szerokosc_obrazu)
-            for f in xrange(x_pocz, x_kon):
+            for f in range(x_pocz, x_kon):
                 self.draw_line.append(((f, self.pocz_y_paska, f, koniec_paska), kolor))
 
     def kreski_dla_faktur(self):
@@ -57,7 +57,7 @@ class MojPasek(KlasaObrazu):
         kon_kres_okr = pocz_kres_okr + DlugoscKresekFaktur
         if self.aqr.mam_dat_na_dluzszy_rok():
             for akt in self.dnw.odcinki_bazowe.lista_pocz():
-                if akt != None:
+                if akt is not None:
                     tmp_x = self.aqr.poziomo_tego_dnia(akt, self.szerokosc_dx_skali, self.szerokosc_obrazu)
                     self.draw_line.line_with_default_color((tmp_x, pocz_kres_okr, tmp_x, kon_kres_okr))
 

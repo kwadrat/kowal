@@ -21,9 +21,9 @@ class KlasaZbitki(object):
         # Zaczynamy od słownika z punktem początkowym, bez faktur
         # i punktem końcowym, bez faktur
         self.vz_zbitki = {
-          self.punkt_pocz: [],
-          self.punkt_kon: [],
-        }
+            self.punkt_pocz: [],
+            self.punkt_kon: [],
+            }
 
     def pokaz_zbitki(self):
         '''
@@ -86,7 +86,7 @@ class KlasaZbitki(object):
             for klucz in klucze:
                 self.vz_zbitki[klucz].append(faktura.lp_faktury)
         else:
-            #raise RuntimeError('Faktura?: %s' % repr((fp, fk)))
+            # raise RuntimeError('Faktura?: %s' % repr((fp, fk)))
             pass
 
 
@@ -96,3 +96,4 @@ class TestKlasyZbitki(unittest.TestCase):
         TestKlasyZbitki:
         '''
         obk = KlasaZbitki(15309, 15765)
+        self.assertEqual(obk.punkt_pocz, 15309)

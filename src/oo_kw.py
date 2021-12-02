@@ -5,7 +5,7 @@
 Settings
 '''
 verbose_flags = frozenset([
-    #'nazwy_obiektow',
-    #'nazwa_komorki',
-    #'szczegoly_obiektu',
+    # 'nazwy_obiektow',
+    # 'nazwa_komorki',
+    # 'szczegoly_obiektu',
     ])

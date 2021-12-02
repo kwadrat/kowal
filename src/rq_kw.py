@@ -25,28 +25,28 @@ ECHO_NIE = 0  # Pracuj po cichu
 ECHO_TAK = 1  # Generuj HTML
 
 PoprawneLiczbyPaskowDlaOkresuMiesiecznego = (
-  RokZwykly,  # faktury miesięczne punktowe
-  RokDluzszy,  # faktury miesięczne ciągłe
-  )
+    RokZwykly,  # faktury miesięczne punktowe
+    RokDluzszy,  # faktury miesięczne ciągłe
+    )
 
 DaneOkresu = (
-Dt_Miesiac,
-Dt_Rok,
-Dt_RapPierwszy,
-Dt_RapDrugi,
+    Dt_Miesiac,
+    Dt_Rok,
+    Dt_RapPierwszy,
+    Dt_RapDrugi,
 ) = (
-'W danym roku',
-'W latach',
-'Raport 1',
-'Raport 2',
+    'W danym roku',
+    'W latach',
+    'Raport 1',
+    'Raport 2',
 )
 
 DanePrezentacji = (
-DP_Wykres,
-DP_Tabela,
+    DP_Wykres,
+    DP_Tabela,
 ) = (
-'Wykres',
-'Tabela',
+    'Wykres',
+    'Tabela',
 )
 
 # Domyślnie chcemy wszystkie lata w zestawieniu
@@ -70,26 +70,26 @@ DP_PotrzebujeDomene = (DP_Wykres, PoleNN)
 DP_NiePotrzebujeDomeny = (DP_Tabela, )
 
 DaneAktWsz = (
-DA_Aktywne,
-DA_Wszystkie,
+    DA_Aktywne,
+    DA_Wszystkie,
 ) = (
-'Aktywne',
-'Wszystkie',
+    'Aktywne',
+    'Wszystkie',
 )
 
 DaneRazem = (
-DR_Polaczone,
-DR_Oddzielnie,
+    DR_Polaczone,
+    DR_Oddzielnie,
 ) = (
-'Razem',
-'Oddzielnie',
-)
+    'Razem',
+    'Oddzielnie',
+    )
 
 DodatkoweObiekty = (
-ObiektGwiazdka,
+    ObiektGwiazdka,
 ) = (
-'Wszystkie obiekty',
-)
+    'Wszystkie obiekty',
+    )
 
 WyborOgolnegoObiektu = [(ObiektGwiazdka, ObiektGwiazdka)]
 

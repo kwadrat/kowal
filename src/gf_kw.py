@@ -47,3 +47,4 @@ class TestOgolnegoSkladaniaSciezki(unittest.TestCase):
         TestOgolnegoSkladaniaSciezki:
         '''
         obk = GenericPathAssembler()
+        self.assertEqual(hasattr(obk, 'ustaw_poczatek_sciezki'), True)

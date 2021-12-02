@@ -16,10 +16,14 @@ import chi_kw
 
 SEC_PER_DAY = 24 * 60 * 60
 
-tab_miesiecy = ['styczeń', 'luty', 'marzec', 'kwiecień', 'maj', 'czerwiec',
-'lipiec', 'sierpień', 'wrzesień', 'październik', 'listopad', 'grudzień',]
+tab_miesiecy = [
+    'styczeń', 'luty', 'marzec', 'kwiecień', 'maj', 'czerwiec',
+    'lipiec', 'sierpień', 'wrzesień', 'październik', 'listopad', 'grudzień',
+    ]
 
-dni_tygodnia = ['poniedziałek', 'wtorek', 'środa', 'czwartek', 'piątek', 'sobota', 'niedziela',]
+dni_tygodnia = [
+    'poniedziałek', 'wtorek', 'środa', 'czwartek', 'piątek', 'sobota', 'niedziela',
+    ]
 
 dm_rk_baz = 2005  # Domyślny rok bazowy
 dm_rk_hst = 2006  # Domyślny rok początkowy dla historii logowań
@@ -77,8 +81,8 @@ def NumerDnia(rok, miesiac, dzien):
     try:
         try:
             nkd = int(
-              time.mktime((rok, miesiac, dzien, 12, 0, 0, 0, 0, 0)) /
-              SEC_PER_DAY)
+                time.mktime((rok, miesiac, dzien, 12, 0, 0, 0, 0, 0))
+                / SEC_PER_DAY)
         except OverflowError:
             raise OverflowError('Problem z: "%s"' % repr((rok, miesiac, dzien)))
     except TypeError:
@@ -161,7 +165,7 @@ def RokTeraz():
 def NumerDzisiaj(czas=None):
     '''Zwraca numer dzisiejszego dnia
     '''
-    return NumerDnia( * DataDzisiaj(czas))
+    return NumerDnia(* DataDzisiaj(czas))
 
 
 def NapisDaty(rok, miesiac, dzien):
@@ -180,7 +184,7 @@ def NapisDzisiaj():
     Wyznacza dzień w postaci napisu: RRRR-MM-DD
     '''
     # Za pomocą "*" rozwijamy krotkę: "rok, miesiąc, dzień" na 3 parametry
-    return NapisDaty( * DataDzisiaj())
+    return NapisDaty(* DataDzisiaj())
 
 
 def SekTeraz():
@@ -256,7 +260,7 @@ def NapisDnia(nkd):
     Wartość zwracana:
     napis - data w postaci RRRR-MM-DD
     '''
-    return NapisDaty( * DataDnia(nkd))
+    return NapisDaty(* DataDnia(nkd))
 
 
 def ZakresRoku(rok):
@@ -319,7 +323,7 @@ def ZakresMiesiaca(rok, miesiac, liczba_mies=1):
     '''
     pocz = dzien_nowego_miesiaca(rok, miesiac)
     # Przejdź na początek następnego miesiąca
-    for i in xrange(liczba_mies):
+    for i in range(liczba_mies):
         rok, miesiac = one_month_later(rok, miesiac)
     kon = dzien_nowego_miesiaca(rok, miesiac)
     return pocz, kon

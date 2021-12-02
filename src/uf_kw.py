@@ -67,6 +67,7 @@ class DanePodnajemcow(object):
             result = 0
         return result
 
+
 lista_testowa_podnajemcow = [
     ('00002-001', '22222-001', '2014-01-01', None, 'BRZĘCZYSZCZYKIEWICZ GRZEGORZ'),
     ('00003-001', '33333-001', '2014-01-01', None, 'NOWAK ADAM'),

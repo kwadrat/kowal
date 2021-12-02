@@ -153,7 +153,7 @@ def generate_gnuplot_drawing(dfb):
             lc_kw.fq_uu_energy_qv: 4,
             lc_kw.fq_uu_power_qv: 1,
             }[my_domain]
-        for my_object in xrange(1, 20 + 1):
+        for my_object in range(1, 20 + 1):
             for week_day in range(7):
                 obk = GeneratorUU(my_domain)
                 obk.set_object(my_object)
@@ -165,6 +165,7 @@ def generate_gnuplot_drawing(dfb):
 
 class TestUUQueries(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual
+
     def test_uu_0_queries(self):
         '''
         TestUUQueries:

@@ -49,6 +49,7 @@ class BuilderBash(object):
 
 class TestBashBuilder(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual
+
     def test_bash_builder(self):
         '''
         TestBashBuilder:

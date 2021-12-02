@@ -11,6 +11,6 @@ def pokaz_na_czerwono(napis, czy_na_stderr):
         plik = sys.stdout
     if plik.isatty():
         ZnakEscape = chr(27)
-        return '%(escape)s[31m%(napis)s%(escape)s[0m' % { 'escape': ZnakEscape, 'napis': napis }
+        return '%(escape)s[31m%(napis)s%(escape)s[0m' % {'escape': ZnakEscape, 'napis': napis}
     else:
         return napis

@@ -19,6 +19,7 @@ def zrob_same_daty(napis):
         zebrane.append((data_pocz, data_kon))
     return frozenset(zebrane)
 
+
 # C-21
 faktura_c_21_jest_niezrozumiala = zrob_same_daty('''\
 2010-10-01 2010-12-31 Szkoła Podstawowa nr 20
@@ -85,9 +86,9 @@ def oba_konce_miesiecy(data_pocz, data_kon):
     rm_dla_b = dn_kw.RokMscDnia(numer_b)
     rm_dla_c = dn_kw.RokMscDnia(numer_c)
     rm_dla_d = dn_kw.RokMscDnia(numer_d)
-    if (rm_dla_a != rm_dla_b and  # Koniec miesiąca
-            rm_dla_c != rm_dla_d and  # Koniec miesiąca
-            rm_dla_b == rm_dla_c):  # Między końcami jest dokładnie jeden miesiąc
+    if (rm_dla_a != rm_dla_b  # Koniec miesiąca
+            and rm_dla_c != rm_dla_d  # Koniec miesiąca
+            and rm_dla_b == rm_dla_c):  # Między końcami jest dokładnie jeden miesiąc
         spcf_wyznaczona = rm_dla_c
     else:
         spcf_wyznaczona = None
