@@ -5,56 +5,56 @@
 zestaw_pusty = set()
 
 trudniejsze_2009 = (
-    set(xrange(3963, 4090 + 1)) |
-    set(xrange(4099, 4114 + 1)) |
-    set(xrange(4120, 4153 + 1)) |
-    set(xrange(4154, 4169 + 1)) |
-    set(xrange(1, 1 + 1))
+    set(range(3963, 4090 + 1))
+    | set(range(4099, 4114 + 1))
+    | set(range(4120, 4153 + 1))
+    | set(range(4154, 4169 + 1))
+    | set(range(1, 1 + 1))
     )
 
 druga_lista = [1607, ]
 faktury_usuniete_styczen_2010 = set([
-    2553,2581,2722,2865,2947,2977,3063,3083,3207,3274,3448,3503,3534,3535,3799,
-    2962,3033,3222,3989,3999,4000,4060,4034,3996,4008,3987,3991,4031,3965
+    2553, 2581, 2722, 2865, 2947, 2977, 3063, 3083, 3207, 3274, 3448, 3503, 3534, 3535, 3799,
+    2962, 3033, 3222, 3989, 3999, 4000, 4060, 4034, 3996, 4008, 3987, 3991, 4031, 3965
     ])
 faktury_usuniete_kwiecien_2010 = set([
-    4302,4424,4447,4514,4448,4265,4193]
+    4302, 4424, 4447, 4514, 4448, 4265, 4193]
     )
 
 kwiecien_2010_i_wyjatek_g4 = (
-    set(druga_lista) |
-    set(xrange(4170, 4526 + 1)) |
-    set(xrange(6687, 6689 + 1)) -
-    faktury_usuniete_kwiecien_2010
+    set(druga_lista)
+    | set(range(4170, 4526 + 1))
+    | set(range(6687, 6689 + 1))
+    - faktury_usuniete_kwiecien_2010
     )
 
-rdzen_2009 = (set(xrange(2467, 3930 + 1)) - faktury_usuniete_styczen_2010)
-zestaw_t7 = (set(xrange(4559, 5284 + 1)))
-zestaw_t8 = (set(xrange(5346, 5533 + 1)))
-zestaw_t9 = (set(xrange(5838, 6114 + 1)))
-zestaw_t10 = (set(xrange(6119, 6375 + 1)))
-zestaw_t11 = (set(xrange(6376, 6686 + 1)))
-zestaw_t13 = (set(xrange(6690, 7045 + 1)))
-zestaw_t14 = (set(xrange(7046, 7296 + 1)))
-zestaw_t15 = (set(xrange(7297, 7717 + 1)))
-zestaw_t16 = (set(xrange(7721, 8256 + 1)))
-zestaw_t17 = (set(xrange(8257, 8691 + 1)))
-zestaw_t18 = (set(xrange(8692, 8815 + 1)))
-zestaw_t21 = (set(xrange(8816, 9412 + 1)))
-zestaw_t22 = (set(xrange(9413, 10093 + 1)))
-zestaw_t23 = (set(xrange(10094, 10647 + 1)))
-zestaw_t24 = (set(xrange(10648, 10765 + 1)))
-zestaw_t25 = set(xrange(10766, 11187 + 1))
-zestaw_t26 = set(xrange(11188, 11639 + 1))
-zestaw_t27_t28 = set(xrange(11640, 12467 + 1))
-zestaw_t29 = set(xrange(12468, 12632 + 1))
-zestaw_t30_t31 = frozenset(xrange(12633, 13353 + 1))
-zestaw_t32_t33 = frozenset(xrange(13354, 13736 + 1))
-zestaw_t34_t35 = frozenset(xrange(13737, 14130 + 1))
-zestaw_t36_t37 = frozenset(xrange(14131, 14721 + 1))
-zestaw_t38 = frozenset(xrange(14722, 15199 + 1))
-zestaw_t39 = frozenset(xrange(15200, 15376 + 1))
-zestaw_t40 = frozenset(xrange(15377, 16861 + 1))
+rdzen_2009 = (set(range(2467, 3930 + 1)) - faktury_usuniete_styczen_2010)
+zestaw_t7 = (set(range(4559, 5284 + 1)))
+zestaw_t8 = (set(range(5346, 5533 + 1)))
+zestaw_t9 = (set(range(5838, 6114 + 1)))
+zestaw_t10 = (set(range(6119, 6375 + 1)))
+zestaw_t11 = (set(range(6376, 6686 + 1)))
+zestaw_t13 = (set(range(6690, 7045 + 1)))
+zestaw_t14 = (set(range(7046, 7296 + 1)))
+zestaw_t15 = (set(range(7297, 7717 + 1)))
+zestaw_t16 = (set(range(7721, 8256 + 1)))
+zestaw_t17 = (set(range(8257, 8691 + 1)))
+zestaw_t18 = (set(range(8692, 8815 + 1)))
+zestaw_t21 = (set(range(8816, 9412 + 1)))
+zestaw_t22 = (set(range(9413, 10093 + 1)))
+zestaw_t23 = (set(range(10094, 10647 + 1)))
+zestaw_t24 = (set(range(10648, 10765 + 1)))
+zestaw_t25 = set(range(10766, 11187 + 1))
+zestaw_t26 = set(range(11188, 11639 + 1))
+zestaw_t27_t28 = set(range(11640, 12467 + 1))
+zestaw_t29 = set(range(12468, 12632 + 1))
+zestaw_t30_t31 = frozenset(range(12633, 13353 + 1))
+zestaw_t32_t33 = frozenset(range(13354, 13736 + 1))
+zestaw_t34_t35 = frozenset(range(13737, 14130 + 1))
+zestaw_t36_t37 = frozenset(range(14131, 14721 + 1))
+zestaw_t38 = frozenset(range(14722, 15199 + 1))
+zestaw_t39 = frozenset(range(15200, 15376 + 1))
+zestaw_t40 = frozenset(range(15377, 16861 + 1))
 
 
 skasowane_nakladki_z_t7 = set([
@@ -90,69 +90,69 @@ skasowane_nakladki_z_t7 = set([
     ])
 
 dodatki_t6_sosw_sp35 = (
-    set(xrange(5285, 5327 + 1)) |
-    set(xrange(5328, 5329 + 1))
+    set(range(5285, 5327 + 1))
+    | set(range(5328, 5329 + 1))
     )
 
 faza_kwiecien_2010 = (
-    rdzen_2009 |
-    trudniejsze_2009 |
-    kwiecien_2010_i_wyjatek_g4
+    rdzen_2009
+    | trudniejsze_2009
+    | kwiecien_2010_i_wyjatek_g4
     )
 
 faza_lipiec_2010 = (
-    zestaw_t7 -
-    skasowane_nakladki_z_t7
+    zestaw_t7
+    - skasowane_nakladki_z_t7
     )
 
 faza_wrzesien_2010 = (zestaw_t8)
-odblokowane_sp2_filia = (set(xrange(5330, 5345 + 1)))
+odblokowane_sp2_filia = (set(range(5330, 5345 + 1)))
 faza_kwiecien_2011 = (zestaw_t11)
 
 fk_atmt_zolte = (
-    zestaw_t39 |
-    zestaw_pusty
+    zestaw_t39
+    | zestaw_pusty
     )
 
 fk_atmt_purpurowe = (
-    zestaw_t22 |
-    faza_kwiecien_2010 |
-    faza_lipiec_2010 |
-    dodatki_t6_sosw_sp35 |
-    odblokowane_sp2_filia |
-    faza_wrzesien_2010 |
-    set(xrange(6116, 6118 + 1)) |
-    zestaw_t9 |
-    zestaw_t10 |
-    zestaw_t11 |
-    zestaw_t13 |
-    zestaw_t14 |
-    zestaw_t15 |
-    zestaw_t16 |
-    zestaw_t17 |
-    zestaw_t18 |
-    zestaw_t21 |
-    zestaw_t23 |
-    zestaw_t24 |
-    zestaw_t25 |
-    zestaw_t26 |
-    zestaw_t27_t28 |
-    zestaw_t29 |
-    zestaw_t30_t31 |
-    zestaw_t32_t33 |
-    zestaw_t34_t35 |
-    zestaw_t38 |
-    zestaw_t36_t37 |
-    zestaw_pusty
+    zestaw_t22
+    | faza_kwiecien_2010
+    | faza_lipiec_2010
+    | dodatki_t6_sosw_sp35
+    | odblokowane_sp2_filia
+    | faza_wrzesien_2010
+    | set(range(6116, 6118 + 1))
+    | zestaw_t9
+    | zestaw_t10
+    | zestaw_t11
+    | zestaw_t13
+    | zestaw_t14
+    | zestaw_t15
+    | zestaw_t16
+    | zestaw_t17
+    | zestaw_t18
+    | zestaw_t21
+    | zestaw_t23
+    | zestaw_t24
+    | zestaw_t25
+    | zestaw_t26
+    | zestaw_t27_t28
+    | zestaw_t29
+    | zestaw_t30_t31
+    | zestaw_t32_t33
+    | zestaw_t34_t35
+    | zestaw_t38
+    | zestaw_t36_t37
+    | zestaw_pusty
     )
 
 fk_atmt_turkusowe = (
-    zestaw_t40 |
-    zestaw_pusty
+    zestaw_t40
+    | zestaw_pusty
     )
 
 wszystkie_dotychczasowe_automatyczne = (
-    fk_atmt_zolte |
-    fk_atmt_turkusowe |
-    fk_atmt_purpurowe
+    fk_atmt_zolte
+    | fk_atmt_turkusowe
+    | fk_atmt_purpurowe
     )
