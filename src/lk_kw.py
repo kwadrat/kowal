@@ -5,7 +5,7 @@ import unittest
 
 import lc_kw
 
-PrawaDostepuPliku = 0777
+PrawaDostepuPliku = 0o777
 CHC_NO = 0
 CHC_YES = 1
 LITERA_SLUPEK = 's'

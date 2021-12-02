@@ -26,7 +26,7 @@ class ListaOdcBazowych(object):
             if not rq_kw.TymczasowoPkzBaz:
                 return
         for i in self.wykaz_odcinkow_bazowych:
-            print i.formatted_pkks()
+            print(i.formatted_pkks())
 
     def len_odcinkow_bazowych(self):
         '''

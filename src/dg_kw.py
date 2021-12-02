@@ -17,7 +17,9 @@ def porownaj_wielkosc_i_kilkubajtowe_roznice(dane_programu, dane_rozpakowane):
             if dane_programu[i] != dane_rozpakowane[i]:
                 liczba_roznic += 1
         if TymczasowoF:
-            tmp_format = "liczba_roznic"; print 'Eval:', tmp_format, repr(eval(tmp_format))
+            if 1:
+                tmp_format = 'liczba_roznic'
+                print('Eval: %s %s' % (tmp_format, eval(tmp_format)))
         if liczba_roznic > 10:  # Zdarzały się 5-bajtowe różnice
             return 1
         else:

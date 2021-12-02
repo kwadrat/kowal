@@ -26,9 +26,9 @@ def wyznacz_potrzebne_miejsce(same_napisy):
 
 def wydrukuj_tabelke(same_napisy, wektor_rozmiarow):
     for nr_kol, jeden_wiersz in enumerate(same_napisy):
-        print '|'.join(map(lambda para: para[0].ljust(para[1]), zip(jeden_wiersz, wektor_rozmiarow)))
+        print('|'.join(map(lambda para: para[0].ljust(para[1]), zip(jeden_wiersz, wektor_rozmiarow))))
         if not nr_kol:
-            print '+'.join(map(lambda jeden_rozmiar: '-' * jeden_rozmiar, wektor_rozmiarow))
+            print('+'.join(map(lambda jeden_rozmiar: '-' * jeden_rozmiar, wektor_rozmiarow)))
 
 
 def sztuka_tekstowa(lista_slownikow):

@@ -32,11 +32,11 @@ class KlasaZbitki(object):
         if rq_kw.TymczasowoOgrWysw:
             if not rq_kw.TymczasowoPkzZbt:
                 return
-        print 'Zbitka:'
+        print('Zbitka:')
         klucze = self.vz_zbitki.keys()
         klucze.sort()
         for klucz in klucze:
-            print dn_kw.NapisDnia(klucz), klucz, self.vz_zbitki[klucz]
+            print(dn_kw.NapisDnia(klucz), klucz, self.vz_zbitki[klucz])
 
     def keys(self):
         '''

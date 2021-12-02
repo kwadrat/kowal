@@ -26,9 +26,9 @@ NVB_18_STYLE
 NVB_19_STYLE
 '''
 for single_name in code_strings.split():
-    exec '%(single_name)s = "%(single_name)s"' % dict(
+    exec('%(single_name)s = "%(single_name)s"' % dict(
         single_name=single_name,
-        )
+        ))
 
 
 class TestZnacznikowStylu(unittest.TestCase):

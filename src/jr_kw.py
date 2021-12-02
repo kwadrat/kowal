@@ -64,7 +64,7 @@ class EnergyTable(object):
         common_frmt = constant_width(max_len)
         self.ls_lines = map(lambda x: common_frmt % x, self.ls_lines)
         self.ls_lines.append(non_wrapped_lines())
-        print '\n'.join(self.ls_lines)
+        print('\n'.join(self.ls_lines))
 
 
 def workbook_for_verbose_reading(filename):

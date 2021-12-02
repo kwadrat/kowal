@@ -65,9 +65,13 @@ class PozycjeOgolne(ListaLubSlownikOgolnie):
         try:
             wartosc = self.poz_slownik[klucz]
         except KeyError:
-            print 'Identyfikacja pozycji:', self.wzorzec_repr('awaryjna_ident')
-            tmp_format = 'self.poz_slownik'; print tmp_format, eval(tmp_format)
-            tmp_format = 'klucz'; print tmp_format, eval(tmp_format)
+            print('Identyfikacja pozycji: %s' % self.wzorzec_repr('awaryjna_ident'))
+            if 1:
+                tmp_format = 'self.poz_slownik'
+                print('Eval: %s %s' % (tmp_format, eval(tmp_format)))
+            if 1:
+                tmp_format = 'klucz'
+                print('Eval: %s %s' % (tmp_format, eval(tmp_format)))
             raise
         return wartosc
 
@@ -172,7 +176,7 @@ class PozycjeOgolne(ListaLubSlownikOgolnie):
         PozycjeOgolne:
         '''
         if us_kw.TymczasowoWizualizacjaNadlicznikow:
-            print 'Anihilacja:', repr(self.poz_slownik[klucz])
+            print('Anihilacja: %s' % repr(self.poz_slownik[klucz]))
         del self.poz_slownik[klucz]
 
     def __eq__(self, other):
@@ -181,9 +185,15 @@ class PozycjeOgolne(ListaLubSlownikOgolnie):
         '''
         wynik = self.poz_slownik == other.poz_slownik
         if us_kw.TymczasowoWizualizacjaZestawuFaktur:
-            tmp_format = 'self.poz_slownik'; print tmp_format, eval(tmp_format)
-            tmp_format = 'other.poz_slownik'; print tmp_format, eval(tmp_format)
-            tmp_format = 'wynik'; print tmp_format, eval(tmp_format)
+            if 1:
+                tmp_format = 'self.poz_slownik'
+                print('Eval: %s %s' % (tmp_format, eval(tmp_format)))
+            if 1:
+                tmp_format = 'other.poz_slownik'
+                print('Eval: %s %s' % (tmp_format, eval(tmp_format)))
+            if 1:
+                tmp_format = 'wynik'
+                print('Eval: %s %s' % (tmp_format, eval(tmp_format)))
         return wynik
 
     def przetwarzaj_pozycje(self, poprz_pozycje, wrnt_typowy):

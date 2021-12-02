@@ -48,7 +48,7 @@ class KlasaNakladki(object):
         przedzialy.sort()
         for pk_przedzial in przedzialy:
             slownik_qm = self.vz_nakladki[pk_przedzial]
-            print pk_przedzial, slownik_qm
+            print('%s %s' % (pk_przedzial, slownik_qm))
 
 
 class TestKlasyNakladki(unittest.TestCase):

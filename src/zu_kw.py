@@ -16,19 +16,23 @@ class ZuzycieLicznika(object):
         self.slownik_zuzycia = {}
         self.moj_napis = napis
         if WlaczDiagnostykeZuzycia:
-            print '%s: rozpoczecie' % self.moj_napis
+            print('%s: rozpoczecie' % self.moj_napis)
 
     def licz_przypisz_zuzycie(self, wskazowka_kiedy, jakie_zuzycie):
         '''
         ZuzycieLicznika:
         '''
         if WlaczDiagnostykeZuzycia:
-            print '%s: przypisanie, %s, %s' % (self.moj_napis, wskazowka_kiedy, jakie_zuzycie)
+            print('%s: przypisanie, %s, %s' % (self.moj_napis, wskazowka_kiedy, jakie_zuzycie))
         if wskazowka_kiedy not in self.slownik_zuzycia:
             self.slownik_zuzycia[wskazowka_kiedy] = jakie_zuzycie
         elif self.slownik_zuzycia[wskazowka_kiedy] != jakie_zuzycie:
-            tmp_format = 'self.slownik_zuzycia[wskazowka_kiedy]'; print 'Eval:', tmp_format, eval(tmp_format)
-            tmp_format = 'jakie_zuzycie'; print 'Eval:', tmp_format, eval(tmp_format)
+            if 1:
+                tmp_format = 'self.slownik_zuzycia[wskazowka_kiedy]'
+                print('Eval: %s %s' % (tmp_format, eval(tmp_format)))
+            if 1:
+                tmp_format = 'jakie_zuzycie'
+                print('Eval: %s %s' % (tmp_format, eval(tmp_format)))
             if_kw.warn_halt(rq_kw.AimToStrictWaterCanal, 'Rozne zuzycia')
 
     def wyczytaj_jednego(self, wskazowka_kiedy, opcjonalnie=0):
@@ -36,7 +40,7 @@ class ZuzycieLicznika(object):
         ZuzycieLicznika:
         '''
         if WlaczDiagnostykeZuzycia:
-            print '%s: wyczyt, %s' % (self.moj_napis, wskazowka_kiedy)
+            print('%s: wyczyt, %s' % (self.moj_napis, wskazowka_kiedy))
         if not opcjonalnie or wskazowka_kiedy in self.slownik_zuzycia:
             return self.slownik_zuzycia[wskazowka_kiedy]
         else:
@@ -47,5 +51,5 @@ class ZuzycieLicznika(object):
         ZuzycieLicznika:
         '''
         if WlaczDiagnostykeZuzycia:
-            print '%s: jakie_mam_klucze' % (self.moj_napis)
+            print('%s: jakie_mam_klucze' % (self.moj_napis))
         return self.slownik_zuzycia.keys()

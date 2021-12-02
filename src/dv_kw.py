@@ -23,17 +23,17 @@ def zapisz_ladnie_diagnostyke(odp, wzor):
 
 def wassertEqual(self, odp, wzor):
     if odp != wzor:
-        print
-        print '|%s|' % odp
-        print '|%s|' % wzor
+        print('')
+        print('|%s|' % odp)
+        print('|%s|' % wzor)
     self.assertEqual(odp, wzor)
 
 
 def vassertEqual(self, odp, wzor):
     if odp != wzor:
-        print
-        print '|%s|' % odp
-        print '|%s|' % wzor
+        print('')
+        print('|%s|' % odp)
+        print('|%s|' % wzor)
         if 1:
             zapisz_dla_diagnostyki(odp, wzor)
     self.assertEqual(odp, wzor)

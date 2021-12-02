@@ -23,7 +23,7 @@ class LogujWiadomosci(object):
         try:
             self.fd = open(self.nazwa_pliku, 'ab')
         except IOError:
-            print 'Nie udało się otworzyć oryginalnego pliku, będę używać:', self.nazwa_usr_pliku
+            print('Nie udało się otworzyć oryginalnego pliku, będę używać: %s' % self.nazwa_usr_pliku)
             self.fd = open(self.nazwa_usr_pliku, 'ab')
         return self.fd
 
@@ -43,7 +43,7 @@ class LogujWiadomosci(object):
         '''
         self.fd.close()
         if not self.byl_plik:
-            os.chmod(self.nazwa_pliku, 0660)
+            os.chmod(self.nazwa_pliku, 0o660)
 
     def lqg_razem(self, napis, enter):
         '''

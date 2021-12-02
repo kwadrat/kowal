@@ -42,9 +42,15 @@ class TypowaLista(ListaLubSlownikOgolnie):
         '''
         wynik = self.poz_lista == other.poz_lista
         if us_kw.TymczasowoWizualizacjaZestawuFaktur:
-            tmp_format = 'self.poz_lista'; print tmp_format, eval(tmp_format)
-            tmp_format = 'other.poz_lista'; print tmp_format, eval(tmp_format)
-            tmp_format = 'wynik'; print tmp_format, eval(tmp_format)
+            if 1:
+                tmp_format = 'self.poz_lista'
+                print('Eval: %s %s' % (tmp_format, eval(tmp_format)))
+            if 1:
+                tmp_format = 'other.poz_lista'
+                print('Eval: %s %s' % (tmp_format, eval(tmp_format)))
+            if 1:
+                tmp_format = 'wynik'
+                print('Eval: %s %s' % (tmp_format, eval(tmp_format)))
         return wynik
 
     def dla_iteracji(self):
@@ -77,7 +83,7 @@ class TypowaLista(ListaLubSlownikOgolnie):
         TypowaLista:
         '''
         if us_kw.LokalnaDiagnostykaKlas:
-            print 'Do %s:\n%s\ndołączamy element\n%s' % (self.moja_etykieta_instancji, repr(self.poz_lista), repr(element))
+            print('Do %s:\n%s\ndołączamy element\n%s' % (self.moja_etykieta_instancji, repr(self.poz_lista), repr(element)))
         assert self.lista_indeksow is None, 'Zakładamy, że jeszcze nie ustawiano listy indeksów, bo nie wiemy, co z tym zrobić.'
         self.poz_lista.append(element)
 

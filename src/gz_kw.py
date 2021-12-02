@@ -30,4 +30,4 @@ class GlebiaZagniezdzenia(object):
             if dodatek is not None:
                 lista_napisu.append(dodatek)
             polaczony_napis = ''.join(lista_napisu)
-            print polaczony_napis
+            print(polaczony_napis)

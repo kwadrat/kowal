@@ -41,7 +41,7 @@ def process_indices(table, field_names, create_flag):
                 result = index_create(compound_name, table, single_field)
             else:
                 result = index_drop(compound_name)
-            print result
+            print(result)
 
 
 def ptn_object_key(under_name):

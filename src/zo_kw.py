@@ -14,8 +14,12 @@ def rozbieznosc_zbiorow(zbior_a, zbior_b, verbose=1):
     mam_rozbieznosc = zbior_a != zbior_b
     if mam_rozbieznosc:
         if verbose:
-            tmp_format = 'roznica_zbiorow(zbior_a, zbior_b)'; print 'Eval:', tmp_format, eval(tmp_format)
-            tmp_format = 'roznica_zbiorow(zbior_b, zbior_a)'; print 'Eval:', tmp_format, eval(tmp_format)
+            if 1:
+                tmp_format = 'roznica_zbiorow(zbior_a, zbior_b)'
+                print('Eval: %s %s' % (tmp_format, eval(tmp_format)))
+            if 1:
+                tmp_format = 'roznica_zbiorow(zbior_b, zbior_a)'
+                print('Eval: %s %s' % (tmp_format, eval(tmp_format)))
     return mam_rozbieznosc
 
 

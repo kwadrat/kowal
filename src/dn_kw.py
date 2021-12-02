@@ -384,12 +384,12 @@ def sprawdz_numery_dnia():
             pass  # Wszystko w porządku - nic nie drukujemy
         else:
             # Jest jakaś niezgodność - wyświetl informację na ekranie
-            print rok, nast, spodziewana_dlugosc, wg_kalendarza
+            print('%s %s %s %s' % (rok, nast, spodziewana_dlugosc, wg_kalendarza))
             break
         rok = nast
         pocz = kon
     else:
-        print 'Daty sprawdzone: %d <= rok < %d' % (rok_pocz, rok)
+        print('Daty sprawdzone: %d <= rok < %d' % (rok_pocz, rok))
 
 
 def zn_unik(frozen=0):

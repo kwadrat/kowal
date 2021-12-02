@@ -186,7 +186,7 @@ class CommonReader(CommonRdWr):
         '''
         date_first = self.date_from_row(my_rows[0])
         date_last = self.date_from_row(my_rows[-1])
-        print under_name, date_first, date_last, single_file
+        print(under_name, date_first, date_last, single_file)
 
     def info_this_file(self, single_file):
         '''
@@ -220,12 +220,16 @@ class CommonReader(CommonRdWr):
         '''
         CommonReader:
         '''
-        print 'Missing days'
+        print('Missing days')
         table_name = self.krt_pobor.krt_table
         result = le_kw.dq_dane_jednego_obiektu(dfb, table_name, id_obiekt)
-        tmp_format = 'len(result)'; print 'Eval:', tmp_format, eval(tmp_format)
+        if 1:
+            tmp_format = 'len(result)'
+            print('Eval: %s %s' % (tmp_format, eval(tmp_format)))
         ls_objects = le_kw.dq_get_ordered_objects(dfb)
-        tmp_format = 'len(ls_objects)'; print 'Eval:', tmp_format, eval(tmp_format)
+        if 1:
+            tmp_format = 'len(ls_objects)'
+            print('Eval: %s %s' % (tmp_format, eval(tmp_format)))
 
 
 class Test_Common_Reader(unittest.TestCase):

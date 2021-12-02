@@ -25,9 +25,15 @@ class KonstrukcjaSpinki(object):
         '''
         wynik = self.odspinkuj() == other.odspinkuj()
         if us_kw.TymczasowoWizualizacjaZestawuFaktur:
-            tmp_format = 'self.odspinkuj()'; print tmp_format, eval(tmp_format)
-            tmp_format = 'other.odspinkuj()'; print tmp_format, eval(tmp_format)
-            tmp_format = 'wynik'; print tmp_format, eval(tmp_format)
+            if 1:
+                tmp_format = 'self.odspinkuj()'
+                print('Eval: %s %s' % (tmp_format, eval(tmp_format)))
+            if 1:
+                tmp_format = 'other.odspinkuj()'
+                print('Eval: %s %s' % (tmp_format, eval(tmp_format)))
+            if 1:
+                tmp_format = 'wynik'
+                print('Eval: %s %s' % (tmp_format, eval(tmp_format)))
         return wynik
 
     def __ne__(self, other):

@@ -62,7 +62,7 @@ class FieldSplitter(object):
             if inside_quote:
                 # Szukamy zamykającego cudzysłowu
                 if cur_ptr >= ln_len:
-                    raise RuntimeError, "Wychodzimy poza linię o treści:\n" + line
+                    raise RuntimeError("Wychodzimy poza linię o treści:\n" + line)
                 elif quoting and line[cur_ptr] == quotechar:
                     if cur_ptr + 1 < ln_len and line[cur_ptr + 1] == quotechar:  # Pominiemy, jeśli cudzysłów jest podwójny
                         cur_ptr += 2

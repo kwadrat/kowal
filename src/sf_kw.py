@@ -111,7 +111,7 @@ def domknij_zapisany_plik(nazwa, fd, verbose, mode):
     if mode is not None:
         os.chmod(nazwa, mode)
     if verbose:
-        print "Zapisano do pliku '%s'." % nazwa
+        print("Zapisano do pliku '%s'." % nazwa)
 
 
 def zapisz_plik(nazwa, dane, verbose=0, mode=None, way=None):

@@ -156,14 +156,14 @@ def Wykonaj():
         tytul_zadania = lista_zadania[0]
         kroki_zadania = lista_zadania[1]
         ostatni_punkt = len(kroki_zadania) - 1
-        print 'Operacja %d - %s:' % (nr_zad + 1, tytul_zadania)
+        print('Operacja %d - %s:' % (nr_zad + 1, tytul_zadania))
         for nr, tekst in enumerate(kroki_zadania):
             if nr == ostatni_punkt:
                 znak_koncowy = '.'
             else:
                 znak_koncowy = ';'
-            print '  %d. %s%s' % (nr + 1, tekst, znak_koncowy)
-        print
+            print('  %d. %s%s' % (nr + 1, tekst, znak_koncowy))
+        print('')
 
 if __name__ == '__main__':
     Wykonaj()

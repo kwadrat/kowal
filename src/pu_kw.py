@@ -16,12 +16,12 @@ def ramkowy_komunikat(napis):
     wypelnienie = ' '
     belka = znak * (ile_napisu + 6)
     wolne = znak + wypelnienie * (ile_napisu + 4) + znak
-    print belka
-    print wolne
-    print ''.join([
-      znak, wypelnienie, wypelnienie, napis, wypelnienie, wypelnienie, znak])
-    print wolne
-    print belka
+    print(belka)
+    print(wolne)
+    print(''.join([
+        znak, wypelnienie, wypelnienie, napis, wypelnienie, wypelnienie, znak]))
+    print(wolne)
+    print(belka)
 
 
 def informuj_o_wysylaniu_do_testowego():

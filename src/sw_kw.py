@@ -266,9 +266,9 @@ def sprawdzanie_tlumaczenia(wsl):
             liczba = int(liczba)
             automatyczny = wsl.wypowiedz_utf(liczba)
             if reczny != automatyczny:
-                print liczba
-                print "'%s'" % reczny
-                print "'%s'" % automatyczny
+                print(liczba)
+                print("'%s'" % reczny)
+                print("'%s'" % automatyczny)
                 raise RuntimeError("Wczesny koniec")
 
 
