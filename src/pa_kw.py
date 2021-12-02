@@ -74,9 +74,9 @@ class MojPasek(KlasaObrazu):
         '''
         KlasaObrazu.__init__(self, tgk, aqr, dnw, lk_kw.LITERA_PASEK)
         self.szerokosc_obrazu = oa_kw.sk_pelny_obraz
-        self.pocz_y_okr_rozlicz = 0 # Początek dla "Okresy rozliczeniowe"
-        self.pocz_y_paska = self.pocz_y_okr_rozlicz + oa_kw.wysokosc_napisu # Od tego piksela zaczyna się pasek
-        self.wys_dy_paska = 20 # Wysokość rysowanego paska
+        self.pocz_y_okr_rozlicz = 0  # Początek dla "Okresy rozliczeniowe"
+        self.pocz_y_paska = self.pocz_y_okr_rozlicz + oa_kw.wysokosc_napisu  # Od tego piksela zaczyna się pasek
+        self.wys_dy_paska = 20  # Wysokość rysowanego paska
         # Koniec paska w osi Y (niżej niż początek, bo ma większą wartość)
         koniec_paska = self.pocz_y_paska + self.wys_dy_paska
         self.gorna_mniejsza = koniec_paska
@@ -108,7 +108,7 @@ class MojPasek(KlasaObrazu):
             oc_kw.fq_kx_qv: pd_x,
             oc_kw.fq_ky_qv: pd_y,
             oc_kw.fq_nowy_this_qv: tmp_nazwa2,
-            oc_kw.EYK_lporz_fktr: wersja[0], # wersja to jednoelementowa lista l.p. faktur
+            oc_kw.EYK_lporz_fktr: wersja[0],  # wersja to jednoelementowa lista l.p. faktur
             }
         self.moja_mapa.append(self.link_mapy(on_real_mouse, slownik))
 

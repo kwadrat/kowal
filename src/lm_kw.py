@@ -85,12 +85,12 @@ def rzeczywista_na_napis(liczba, rn_after=2, bt_comma=0):
         napis = '%.2f' % liczba
         last_cnt = -3
         pattern = '.00'
-    if napis[last_cnt:] == pattern: # Mamy pełną kwotę, bez ułamka
-        return napis[:last_cnt] # Zwróć tylko całkowitą wartość
+    if napis[last_cnt:] == pattern:  # Mamy pełną kwotę, bez ułamka
+        return napis[:last_cnt]  # Zwróć tylko całkowitą wartość
     else:
         if bt_comma:
             napis = kropka_przecinek(napis)
-        return napis # Zwróć pełną kwotę, łącznie z groszami
+        return napis  # Zwróć pełną kwotę, łącznie z groszami
 
 
 def generate_scale(max_value):

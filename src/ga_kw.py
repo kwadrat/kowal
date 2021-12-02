@@ -9,8 +9,8 @@ AMP_JS = 0
 AMP_HTML = 1
 AMP_NONE = 2
 
-MHG_LAMP = '&amp;' # Łączący ampersand, zakodowany
-MHG_SAMP = '&' # Łączący ampersand, jako pojedynczy znak
+MHG_LAMP = '&amp;'  # Łączący ampersand, zakodowany
+MHG_SAMP = '&'  # Łączący ampersand, jako pojedynczy znak
 ZOT_ZNAK_ZAPYTANIA = '?'
 
 slownik_wyznacz_spinacz = {

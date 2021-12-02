@@ -19,9 +19,9 @@ KOLOR_EXCEL_NIEBIESKI = (153, 153, 255)
 KOLOR_EXCEL_TLO_SZARE = (192, 192, 192)
 KOLOR_TLO_SELEDYN = (20, 212, 212)
 # Kolor testowy dla tła automatycznie wprowadzonej faktury dla wodociągów
-KOLOR_TLO_ATMT_ZOLTE = (255, 255, 0) # Yellow
-KOLOR_TLO_ATMT_PURPUROWE = (255, 0, 255) # Magenta
-KOLOR_TLO_ATMT_TURKUSOWE = (0, 255, 255) # Cyan
+KOLOR_TLO_ATMT_ZOLTE = (255, 255, 0)  # Yellow
+KOLOR_TLO_ATMT_PURPUROWE = (255, 0, 255)  # Magenta
+KOLOR_TLO_ATMT_TURKUSOWE = (0, 255, 255)  # Cyan
 KOLOR_TLO_SELEDYNOWY_ROK = (204, 255, 255)
 Format_Koloru = '#%02X%02X%02X'
 HEX_BIALY = Format_Koloru % KOLOR_BIALY
@@ -40,7 +40,7 @@ MDM_OLEJ_FIOLET = (229, 35, 247)
 MDM_WEGIEL_CIEMNO_SZARY = KOLOR_EXCEL_TLO_SZARE
 #MDM_SZAMBO_CIEMNY_CZERW = (209, 104, 118)
 #MDM_SZAMBO_CIEMNY_CZERW = (75, 0, 130) # Indygo
-MDM_SZAMBO_CIEMNY_CZERW = (0, 255, 255) # Seledynowy
+MDM_SZAMBO_CIEMNY_CZERW = (0, 255, 255)  # Seledynowy
 
 Kolor_Kresek = KOLOR_SZARY
 
@@ -57,7 +57,7 @@ sk_pelny_obraz = 1250
 DlugoscKresekMiesiecy = 3
 
 # Wysokość linii z napisem
-wysokosc_napisu = 10 # draw.textsize('0')[1]
+wysokosc_napisu = 10  # draw.textsize('0')[1]
 
 
 def poziomo_dla_dni(min_domain, akt, max_domain, min_pixels, max_pixels):

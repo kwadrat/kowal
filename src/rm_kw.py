@@ -50,12 +50,12 @@ class FormularzBazowySkrawkow(object):
         Wartość zwrotna (logiczna) mówi, czy mamy komplet wszystkich
         potrzebnych danych z formularza
         '''
-        nasz_zbior = set() # Zbiór nazw wypełnionych pól
+        nasz_zbior = set()  # Zbiór nazw wypełnionych pól
         for elem in self.moj_form:
             wynik = elem.analiza_parametrow(tgk, dfb)
             # Dopiero po analizie pole wartości będzie wypełnione
             # i dopiero teraz można pobrać wartość pola
-            if wynik: # Sprawdź, czy mieliśmy to pole w formularzu
-                nasz_zbior.add(elem.moje_pole) # Dostaliśmy wartość tego pola
+            if wynik:  # Sprawdź, czy mieliśmy to pole w formularzu
+                nasz_zbior.add(elem.moje_pole)  # Dostaliśmy wartość tego pola
         brakujace_pola = self.potrzebne_mi_pola - nasz_zbior
         return not brakujace_pola

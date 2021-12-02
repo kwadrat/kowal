@@ -91,7 +91,7 @@ class WriterGateway(object):
         if needed_size or needed_bold or needed_colour or needed_italic or needed_underline:
             the_font = self.xlwt.Font()
             if needed_size:
-                the_font.height = size * 20 # Arial "size" pt
+                the_font.height = size * 20  # Arial "size" pt
             if needed_bold:
                 the_font.bold = bold
             if needed_italic:
@@ -154,12 +154,12 @@ class WriterGateway(object):
         '''
         self.generated_string_style_cache = {}
         self.format_map = {
-            0: 'General', # Liczby całkowite bez przecinka, center
-            2: '#,##0.00', # użyj separatora 1000, 2 miejsca po przecinku
-            3: '#,##0.000', # użyj separatora 1000, 3 miejsca po przecinku
+            0: 'General',  # Liczby całkowite bez przecinka, center
+            2: ' #,##0.00', # użyj separatora 1000, 2 miejsca po przecinku
+            3: ' #,##0.000', # użyj separatora 1000, 3 miejsca po przecinku
             NMF_1_above_red: '[Red]#,##0.00_ ;-#,##0.00 ',
             NMF_2_percent: '0.00%',
-            NMF_3_date: 'yyyy/mm/dd;@', # data RRRR-MM-DD
+            NMF_3_date: 'yyyy/mm/dd;@',  # data RRRR-MM-DD
             }
         self.xlwt = new_module_for_writing_spreadsheet()
         self.style_map = {
@@ -173,18 +173,18 @@ class WriterGateway(object):
                 vert=self.xlwt.Alignment.VERT_CENTER,
                 horz=self.xlwt.Alignment.HORZ_CENTER,
                 wrap=1,
-                ), # Zawijaj tekst, wycentruj
-            ng_kw.NVB_5_STYLE: self.prepare_cell(14), # Arial 14 pt
-            ng_kw.NVB_6_STYLE: self.prepare_cell(12, bold=1), # Arial 12 pt, bold
+                ),  # Zawijaj tekst, wycentruj
+            ng_kw.NVB_5_STYLE: self.prepare_cell(14),  # Arial 14 pt
+            ng_kw.NVB_6_STYLE: self.prepare_cell(12, bold=1),  # Arial 12 pt, bold
             ng_kw.NVB_7_STYLE: self.prepare_cell(
                 vert=self.xlwt.Alignment.VERT_CENTER,
                 horz=self.xlwt.Alignment.HORZ_CENTER,
-                ), # Center vertically, center horizontally
+                ),  # Center vertically, center horizontally
             ng_kw.NVB_8_STYLE: self.prepare_cell(
                 vert=self.xlwt.Alignment.VERT_CENTER,
                 horz=self.xlwt.Alignment.HORZ_CENTER,
                 borders=nf_kw.brd_1_obk,
-                ), # Center vertically, center horizontally, simple borders
+                ),  # Center vertically, center horizontally, simple borders
             ng_kw.NVB_10_STYLE: self.prepare_cell(
                 16,
                 vert=self.xlwt.Alignment.VERT_CENTER,
@@ -455,10 +455,10 @@ class WriterGateway(object):
         WriterGateway:
         '''
         lista_rozmiarow = (
-            [2740 # 10
-            ] + 3 * [2902 # 10,57
-            ] + 11 * [3255 # 12
-            ]) # Rozmiary podawane przez MS Excel
+            [2740  # 10
+            ] + 3 * [2902  # 10,57
+            ] + 11 * [3255  # 12
+            ])  # Rozmiary podawane przez MS Excel
         self.wymus_szerokosci(lista_rozmiarow)
 
     def szerokosc_a_kolumn_kosztow_energii(self):
@@ -466,11 +466,11 @@ class WriterGateway(object):
         WriterGateway:
         '''
         lista_rozmiarow = (
-            [2740 # 10
-            ] + 2 * [2902 # 10,57
-            ] + 1 * [5379 # 20,29
-            ] + 11 * [3255 # 12
-            ]) # Rozmiary podawane przez MS Excel
+            [2740  # 10
+            ] + 2 * [2902  # 10,57
+            ] + 1 * [5379  # 20,29
+            ] + 11 * [3255  # 12
+            ])  # Rozmiary podawane przez MS Excel
         self.wymus_szerokosci(lista_rozmiarow)
 
     def szerokosc_kolumn_ciepla_sieciowego(self):
@@ -478,11 +478,11 @@ class WriterGateway(object):
         WriterGateway:
         '''
         lista_rozmiarow = ([
-            ] + 1 * [2333 # 8,43
-            ] + 2 * [3122 # 11,43
-            ] + 1 * [5379 # 20,29
-            ] + 1 * [3620 # 13,43
-            ]) # Rozmiary podawane przez MS Excel
+            ] + 1 * [2333  # 8,43
+            ] + 2 * [3122  # 11,43
+            ] + 1 * [5379  # 20,29
+            ] + 1 * [3620  # 13,43
+            ])  # Rozmiary podawane przez MS Excel
         self.wymus_szerokosci(lista_rozmiarow)
 
     def tytul_miesiac(self, akt_wiersz, liczba_wierszy):

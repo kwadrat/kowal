@@ -35,7 +35,7 @@ def doszlifuj_date(rh_dt):
         krotka = (rh_dt.year, rh_dt.month, rh_dt.day)
         rh_dt = dn_kw.NapisDaty( * krotka)
     elif dz_kw.rozpoznaj_dzisiejszy_dzien(rh_dt) == 10:
-        pass # Data już w dobrym formacie
+        pass  # Data już w dobrym formacie
     else:
         if rh_dt == u'16-06-200':
             rh_dt = rh_dt + '5'

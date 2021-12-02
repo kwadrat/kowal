@@ -25,17 +25,17 @@ class NaszaAnkieta(object):
         '''
         NaszaAnkieta:
         '''
-        self.jestem_bialy = 0 # Liczba linii informujących o poprawnym, naszym kliencie
-        self.jestem_czarny = 0 # Liczba linii o obcym kliencie
+        self.jestem_bialy = 0  # Liczba linii informujących o poprawnym, naszym kliencie
+        self.jestem_czarny = 0  # Liczba linii o obcym kliencie
 
     def zaznacz_kolor(self, nasz_klient):
         '''
         NaszaAnkieta:
         '''
         if nasz_klient:
-            self.jestem_bialy += 1 # Dostaliśmy informację o naszym kliencie
+            self.jestem_bialy += 1  # Dostaliśmy informację o naszym kliencie
         else:
-            self.jestem_czarny += 1 # Dostaliśmy informację o obcym kliencie
+            self.jestem_czarny += 1  # Dostaliśmy informację o obcym kliencie
 
     def sprawdz_poprawnosc_ankiety(self):
         '''

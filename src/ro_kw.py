@@ -54,7 +54,7 @@ class SkrRok(Skrawek):
                 # Domyślnie pokazujemy aktualny rok
                 self.wartosc = dn_kw.RokTeraz()
         else:
-            return True # Rok nie jest potrzebny, zwracamy cokolwiek różnego od None
+            return True  # Rok nie jest potrzebny, zwracamy cokolwiek różnego od None
         return self.wartosc != None
 
     def skh_widzialny(self, skp_okres):

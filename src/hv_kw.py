@@ -54,7 +54,7 @@ class SrednieZuzycie(object):
         SrednieZuzycie:
         '''
         if self.spodziewam_sie_dzielenia_przez_zero():
-            return -1 # Gdy nie da się podzielić przez zerowe zużycie
+            return -1  # Gdy nie da się podzielić przez zerowe zużycie
         else:
             return self.moj_iloraz()
 

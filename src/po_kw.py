@@ -21,7 +21,7 @@ class PozycjeOgolne(ListaLubSlownikOgolnie):
         '''
         ListaLubSlownikOgolnie.__init__(self, licznik_inst_slownikow, etykieta)
         self.poz_slownik = {}
-        self.krkt_slownik = {} # Słownik z poprawionymi polami faktur pochodnych (z korektami)
+        self.krkt_slownik = {}  # Słownik z poprawionymi polami faktur pochodnych (z korektami)
         self.moge_zmieniac_sie = True
         if slownik_poczatkowy != None:
             self.aktualizuj_pary(slownik_poczatkowy)

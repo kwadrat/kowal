@@ -21,12 +21,12 @@ tab_miesiecy = ['styczeń', 'luty', 'marzec', 'kwiecień', 'maj', 'czerwiec',
 
 dni_tygodnia = ['poniedziałek', 'wtorek', 'środa', 'czwartek', 'piątek', 'sobota', 'niedziela',]
 
-dm_rk_baz = 2005 # Domyślny rok bazowy
-dm_rk_hst = 2006 # Domyślny rok początkowy dla historii logowań
+dm_rk_baz = 2005  # Domyślny rok bazowy
+dm_rk_hst = 2006  # Domyślny rok początkowy dla historii logowań
 
-data_testowa_a = 1314612000 # 2011.08.29_12.00.00
-data_testowa_b = 1288346400 # 2010.10.29_12.00.00
-data_testowa_c = 1323769292 # 2011.12.13_10.41.32
+data_testowa_a = 1314612000  # 2011.08.29_12.00.00
+data_testowa_b = 1288346400  # 2010.10.29_12.00.00
+data_testowa_c = 1323769292  # 2011.12.13_10.41.32
 
 
 def rok_liczba(czas=None):
@@ -380,7 +380,7 @@ def sprawdz_numery_dnia():
         kon = NumerDnia(nast, 1, 1)
         wg_kalendarza = kon - pocz
         if spodziewana_dlugosc == wg_kalendarza:
-            pass # Wszystko w porządku - nic nie drukujemy
+            pass  # Wszystko w porządku - nic nie drukujemy
         else:
             # Jest jakaś niezgodność - wyświetl informację na ekranie
             print rok, nast, spodziewana_dlugosc, wg_kalendarza
@@ -511,10 +511,10 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(napis_na_numer_dnia((1970, 1, 1)), 0)
         self.assertEqual(napis_na_numer_dnia('1970-01-01'), 0)
         self.assertEqual(napis_na_numer_dnia('2011-03-27'), 15060)
-        self.assertEqual(napis_na_numer_dnia('2011-03-28'), 15060 + 1) # DST
+        self.assertEqual(napis_na_numer_dnia('2011-03-28'), 15060 + 1)  # DST
         self.assertEqual(napis_na_numer_dnia('2011-03-29'), 15060 + 2)
         self.assertEqual(napis_na_numer_dnia('2011-10-30'), 15277)
-        self.assertEqual(napis_na_numer_dnia('2011-10-31'), 15277 + 1) # DST
+        self.assertEqual(napis_na_numer_dnia('2011-10-31'), 15277 + 1)  # DST
         self.assertEqual(napis_na_numer_dnia('2011-11-01'), 15277 + 2)
         self.assertEqual(napis_na_numer_dnia(du_kw.rjb_dzien_przkl), 15321)
         self.assertEqual(NapisDnia(0), '1970-01-01')
@@ -522,17 +522,17 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(DataDnia(0), (1970, 1, 1))
         self.assertEqual(DataDnia(15278), (2011, 10, 31))
         self.assertEqual(RokDnia(15278), 2011)
-        self.assertEqual(DzienTygodnia(16003), 4) # 2013-10-25, piątek
-        self.assertEqual(nazwa_dnia_tygodnia(16003), 'piątek') # 2013-10-25, piątek
-        self.assertEqual(RoboczyDnia(0), 1) # Czwartek
+        self.assertEqual(DzienTygodnia(16003), 4)  # 2013-10-25, piątek
+        self.assertEqual(nazwa_dnia_tygodnia(16003), 'piątek')  # 2013-10-25, piątek
+        self.assertEqual(RoboczyDnia(0), 1)  # Czwartek
         self.assertEqual(RoboczyDnia(1), 1)
-        self.assertEqual(RoboczyDnia(2), 0) # Sobota
-        self.assertEqual(RoboczyDnia(3), 0) # Niedziela
+        self.assertEqual(RoboczyDnia(2), 0)  # Sobota
+        self.assertEqual(RoboczyDnia(3), 0)  # Niedziela
         self.assertEqual(RoboczyDnia(4), 1)
         self.assertEqual(RoboczyDnia(5), 1)
-        self.assertEqual(RoboczyDnia(6), 1) # Środa
-        self.assertEqual(is_friday(0), 0) # Czwartek
-        self.assertEqual(is_friday(1), 1) # Piątek
+        self.assertEqual(RoboczyDnia(6), 1)  # Środa
+        self.assertEqual(is_friday(0), 0)  # Czwartek
+        self.assertEqual(is_friday(1), 1)  # Piątek
         self.assertEqual(get_monday(4), 4)
         self.assertEqual(get_monday(5), 4)
         self.assertEqual(get_monday(6), 4)

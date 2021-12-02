@@ -53,7 +53,7 @@ class TestWykresuRaportu(unittest.TestCase):
         aqr = ew_kw.SzkieletDatDlaFakturMiesLat()
         lp_wykresu = 0
         dnw = oh_kw.SimpleDNW(lp_wykresu)
-        ile_linii = 3 # Liczba linii tekstu na wykresie
+        ile_linii = 3  # Liczba linii tekstu na wykresie
         obk = WykresRaportu(tgk, aqr, dnw, ile_linii)
         self.assertEqual(obk.szerokosc_obrazu, 1250)
         self.assertEqual(obk.szerokosc_wykresu, 1240)

@@ -27,8 +27,8 @@ class CommonReader(CommonRdWr):
         '''
         CommonReader:
         '''
-        self.is_csv = 0 # Dla pliku XLS
-        self.tel_delta = 1 # Jest jedna pusta linia na początku XLS dla energii
+        self.is_csv = 0  # Dla pliku XLS
+        self.tel_delta = 1  # Jest jedna pusta linia na początku XLS dla energii
         CommonRdWr.__init__(self, tvk_pobor, period_server)
         self.vx_zero = fv_kw.vx_zero
         self.internal_rows = {}
@@ -38,8 +38,8 @@ class CommonReader(CommonRdWr):
         '''
         CommonReader:
         '''
-        self.is_csv = 1 # Dla pliku CSV/TXT
-        self.tel_delta = 0 # Nie ma pustych linii na początku
+        self.is_csv = 1  # Dla pliku CSV/TXT
+        self.tel_delta = 0  # Nie ma pustych linii na początku
 
     def locate_this_row(self, key_object, row_date):
         '''

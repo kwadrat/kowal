@@ -22,7 +22,7 @@ def ListWyboruOgolna(tgk, nazwa, lista):
         if mam_pojedyn_wartosci(lista):
             Podwojne = 0
         else:
-            Podwojne = 1 # Lista zawiera etykietę oraz tekstowy opis
+            Podwojne = 1  # Lista zawiera etykietę oraz tekstowy opis
         for opcja in lista:
             if Podwojne:
                 opcja, etykieta = opcja

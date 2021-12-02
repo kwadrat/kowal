@@ -38,7 +38,7 @@ def DataBledna(napis):
     pusty napis - data nie była błędna (czyli była poprawna)
     napis o niezerowej długości - wystąpił jakiś błąd
     '''
-    bledna = '' # Załóż, że data nie jest poprawna
+    bledna = ''  # Załóż, że data nie jest poprawna
     kawalki = napis.split('-')
     ile_kawalkow = len(kawalki)
     if ile_kawalkow == 3:
@@ -52,7 +52,7 @@ def DataBledna(napis):
                 if miesiac == 2:
                     liczba_legalnych_dni += chi_kw.rok_przestepny(rok)
                 if dzien in LegalneDni[:liczba_legalnych_dni]:
-                    pass # Mamy datę bez zastrzeżeń
+                    pass  # Mamy datę bez zastrzeżeń
                 else:
                     bledna = 'Dzień poza obsługiwanym zakresem: "%s"' % dzien
             else:

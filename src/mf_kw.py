@@ -71,13 +71,13 @@ def zrob_tab_html(on_mouse, ls_wr_tab):
     wynik.append(ze_kw.op_32_sbf())
     for jn_wr_tab in ls_wr_tab:
         nazwa = jn_wr_tab.get_line_name()
-        if nazwa: # Nazwa określa numer faktury
+        if nazwa:  # Nazwa określa numer faktury
             on_tmp_mouse = ''
             tmp_liczba = numer_wiersza(nazwa)
             if tmp_liczba in on_mouse:
                 on_tmp_mouse = on_mouse[tmp_liczba]
             wynik.append(ze_kw.op_tr(id_=nazwa, nzw_wrsz=nazwa, rest=on_tmp_mouse))
-        else: # Tylko dla pierwszego wiersza z nagłówkami opisującymi zawartość kolumn
+        else:  # Tylko dla pierwszego wiersza z nagłówkami opisującymi zawartość kolumn
             wynik.append(ze_kw.formularz_67c_pocz_wiersza)
         jn_wr_tab.to_comma()
         jn_wr_tab.use_color()

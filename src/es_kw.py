@@ -23,7 +23,7 @@ Kolor_umw_Srodka = oa_kw.KOLOR_ZIELONY
 CzescSlupka = 3
 
 SzerPaska = 90
-SzerSlupka = int(float(SzerPaska) / CzescSlupka) # Szerokość samego słupka
+SzerSlupka = int(float(SzerPaska) / CzescSlupka)  # Szerokość samego słupka
 
 slownik_normalnego_slupka = dict(outline=oa_kw.Kolor_Kresek, fill=Kolor_Srodka)
 slownik_przekroczonego_slupka = dict(outline=oa_kw.KOLOR_CZERWONE_RAMKA, fill=oa_kw.KOLOR_CZERWONE_TLO)
@@ -168,7 +168,7 @@ class MojeSlupki(KlasaObrazu):
         juz_zuzyte = []
         for x, y, napis, jeden_odc_bzw in self.lista_napisow_wartosci:
             szer, wys = draw.textsize(napis)
-            szukaj_kolizji = 1 # Jeszcze nie znalazłem dobrego miejsca dla napisu
+            szukaj_kolizji = 1  # Jeszcze nie znalazłem dobrego miejsca dla napisu
             # -------------------------------------------------------------------------
             px = x - szer / 2
             # Napisy wychodzące z lewej strony obrazka wepchnij na obszar widoczny
@@ -229,7 +229,7 @@ class MojeSlupki(KlasaObrazu):
         '''
         MojeSlupki:
         '''
-        if IleSlupkow <= 0: # Omijamy wykresy z małą liczbą wartości
+        if IleSlupkow <= 0:  # Omijamy wykresy z małą liczbą wartości
             napis = ('Brak danych, kolumn = %(IleSlupkow)s' %
               dict(
                 IleSlupkow = str(IleSlupkow),
@@ -296,7 +296,7 @@ class MojeSlupki(KlasaObrazu):
         self.wysokosc_obrazu = self.gorna_mniejsza + self.linii_na_dole() * oa_kw.wysokosc_napisu
         self.szerokosc_slupka = SzerSlupka
         self.chce_bez_tresci = 0
-        self.IleSlupkow = self.dnw.odcinki_bazowe.len_odcinkow_bazowych() # Tyle rysowanych słupków
+        self.IleSlupkow = self.dnw.odcinki_bazowe.len_odcinkow_bazowych()  # Tyle rysowanych słupków
         self.ustaw_skalowanie_obrazu()
 
     def wyznacz_gore_dol_slupka(self, vert_axis, Wartosc):

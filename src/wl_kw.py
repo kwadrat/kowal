@@ -22,7 +22,7 @@ class WynikoweListy(object):
         '''
         WynikoweListy:
         '''
-        if DolaczPusteListy or element.liczba_faktur_listy(): # Doklej tylko niepuste listy
+        if DolaczPusteListy or element.liczba_faktur_listy():  # Doklej tylko niepuste listy
             self.listy_roznych.append(element)
 
     def daj_iter(self):

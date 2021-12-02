@@ -67,7 +67,7 @@ class SkrDomena(Skrawek):
         SkrDomena:
         '''
         wynik = self.skh_widzialny(self.prm_okres.wartosc)
-        if wynik is None: # Jeszcze nierozstrzygnięte, czy pokazać domenę, dla raportu 1
+        if wynik is None:  # Jeszcze nierozstrzygnięte, czy pokazać domenę, dla raportu 1
             if self.elem_prez:
                 wynik = self.skh_pr_widzialny(self.elem_prez.wartosc)
             else:

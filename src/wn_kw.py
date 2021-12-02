@@ -22,12 +22,12 @@ def bledne_duplikaty(lista):
     duplikatów, bo to oznacza błąd w algorytmie - funkcja wywróci
     program, jeśli znajdą się duplikaty
     '''
-    if len(lista) > 1: # Tylko wtedy duplikaty mogą istnieć
+    if len(lista) > 1:  # Tylko wtedy duplikaty mogą istnieć
         akt = lista[0]
         for nast in lista[1:]:
             if akt == nast:
                 raise RuntimeError('Duplikat: %s %s' % (repr(akt), repr(lista)))
-            akt = nast # Przejście na następny element
+            akt = nast  # Przejście na następny element
 
 
 class KlasaSlownika(object):

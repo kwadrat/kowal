@@ -21,12 +21,12 @@ RokZwykly = 12
 # Dla faktur ciągłych pozwalamy na dodatkowe miesiące na ekranie
 RokDluzszy = DodatkoweMiesiacePrzed + RokZwykly + DodatkoweMiesiacePo
 
-ECHO_NIE = 0 # Pracuj po cichu
-ECHO_TAK = 1 # Generuj HTML
+ECHO_NIE = 0  # Pracuj po cichu
+ECHO_TAK = 1  # Generuj HTML
 
 PoprawneLiczbyPaskowDlaOkresuMiesiecznego = (
-  RokZwykly, # faktury miesięczne punktowe
-  RokDluzszy, # faktury miesięczne ciągłe
+  RokZwykly,  # faktury miesięczne punktowe
+  RokDluzszy,  # faktury miesięczne ciągłe
   )
 
 DaneOkresu = (

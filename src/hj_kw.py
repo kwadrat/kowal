@@ -83,7 +83,7 @@ def conditions_separately(klucze, slownik, ignorowane_pola=None):
     lista = []
     for klucz in klucze:
         if ignorowane_pola is not None and klucz in ignorowane_pola:
-            pass # Na żądanie użytkownika pomijamy ten klucz
+            pass  # Na żądanie użytkownika pomijamy ten klucz
         else:
             wartosc = slownik[klucz]
             lista.append(condition_kv(klucz, wartosc))

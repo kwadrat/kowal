@@ -9,7 +9,7 @@ class ListaLubSlownikOgolnie(object):
         '''
         ListaLubSlownikOgolnie:
         '''
-        assert etykieta_miejsca is not None # Potrzeba mi etykiety
+        assert etykieta_miejsca is not None  # Potrzeba mi etykiety
         self.moja_etykieta_instancji = wytworca_unikalnych_etykiet.nowy_licznik()
         if us_kw.LokalnaDiagnostykaKlas:
             print 'Wytworzono_%s %s w miejscu %s' % (

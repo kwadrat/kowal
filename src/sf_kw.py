@@ -27,17 +27,17 @@ def list_dir(nazwa_katalogu):
 
 def rename(src, dst):
     os.rename(src, dst)
-    return 1 # Sukces
+    return 1  # Sukces
 
 
 def rmdir(src):
     os.rmdir(src)
-    return 1 # Sukces
+    return 1  # Sukces
 
 
 def unlink(src):
     os.unlink(src)
-    return 1 # Sukces
+    return 1  # Sukces
 
 
 def nazwa_katalogu_jest_poprawna(nazwa_katalogu):
@@ -89,7 +89,7 @@ def otworz_do_logowania(nazwa):
 
 
 def zapisz_z_uchwytu(nazwa, src_fd):
-    status = 1 # Poprawne wykonanie zapisu
+    status = 1  # Poprawne wykonanie zapisu
     try:
         dst_fd = otworz_do_zapisu(nazwa)
         rozmiar = 16 * 1024

@@ -17,9 +17,9 @@ CzasPocztk = 'czas_poczatku'
 # Nazwy pól formularza
 NazwaOkres = 'okres'
 NazwaRok = 'rok'
-NazwaPoziom = 'poziom' # Poziom uprawnień użytkownika
-NazwaDomena = 'domena' # Pracujemy w złotówkach czy w jednostkach ilości towaru
-NazwaPrezentacja = 'prezentacja' # Sposób prezentacji danych: tabela i/lub wykres
+NazwaPoziom = 'poziom'  # Poziom uprawnień użytkownika
+NazwaDomena = 'domena'  # Pracujemy w złotówkach czy w jednostkach ilości towaru
+NazwaPrezentacja = 'prezentacja'  # Sposób prezentacji danych: tabela i/lub wykres
 NazwaARok = 'prwrk'
 NazwaBRok = 'drgrk'
 NazwaCRok = 'opcrk'
