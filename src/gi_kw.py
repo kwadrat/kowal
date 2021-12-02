@@ -150,6 +150,7 @@ zadania = [
   ],
 ]
 
+
 def Wykonaj():
     for nr_zad, lista_zadania in enumerate(zadania):
         tytul_zadania = lista_zadania[0]

@@ -6,6 +6,7 @@ import unittest
 import du_kw
 import lp_kw
 
+
 class InvariantPackage(object):
     '''
     Dla ułatwienia wpisywania liczników - wykryj i zaproponuj typową godzinę
@@ -41,6 +42,7 @@ class InvariantPackage(object):
         InvariantPackage:
         '''
         return self.stamp_times
+
 
 class TestInvariantPack(unittest.TestCase):
     def test_a_invariant_pack(self):

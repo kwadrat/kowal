@@ -15,17 +15,21 @@ NMF_1_above_red = -1
 NMF_2_percent = -2
 NMF_3_date = -3
 
+
 def new_module_for_reading_spreadsheet():
     import xlrd
     return xlrd
+
 
 def new_module_for_writing_spreadsheet():
     import xlwt
     return xlwt
 
+
 def check_module_dependencies_linux():
     new_module_for_reading_spreadsheet()
     new_module_for_writing_spreadsheet()
+
 
 def analyze_excel_files(dfb, worker_class, filenames):
     xlrd = new_module_for_reading_spreadsheet()
@@ -34,6 +38,7 @@ def analyze_excel_files(dfb, worker_class, filenames):
         obk.attach_to_file(xlrd, single_file)
         obk.analyze_data_in_grid(dfb, single_file)
 
+
 def info_excel_files(dfb, worker_class, filenames):
     xlrd = new_module_for_reading_spreadsheet()
     for single_file in filenames:
@@ -41,11 +46,13 @@ def info_excel_files(dfb, worker_class, filenames):
         obk.attach_to_file(xlrd, single_file)
         obk.info_this_file(single_file)
 
+
 def calculate_style(style):
     dc_style = {}
     if style is not None:
         dc_style['style'] = style
     return dc_style
+
 
 class WriterGateway(object):
     '''
@@ -493,10 +500,12 @@ class WriterGateway(object):
             liczba_wierszy=liczba_wierszy,
             )
 
+
 def workbook_a_create():
     xwg = WriterGateway()
     xwg.workbook_create()
     return xwg
+
 
 class TestArkuszowy(unittest.TestCase):
     def test_arkuszowy(self):

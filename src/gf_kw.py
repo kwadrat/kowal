@@ -5,6 +5,7 @@ import unittest
 
 import lk_kw
 
+
 class GenericPathAssembler(object):
     def __init__(self):
         '''
@@ -38,6 +39,7 @@ class GenericPathAssembler(object):
         skad_typ = lk_kw.CHC_FL
         jaki_obr = lk_kw.CHC_PIC_NON
         return self.skladanie_u_sciezki(skad_typ, jaki_obr)
+
 
 class TestOgolnegoSkladaniaSciezki(unittest.TestCase):
     def test_ogolnego_skladania_sciezki(self):

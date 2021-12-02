@@ -3,6 +3,7 @@
 
 import us_kw
 
+
 class ListaLubSlownikOgolnie(object):
     def __init__(self, wytworca_unikalnych_etykiet, etykieta_miejsca):
         '''

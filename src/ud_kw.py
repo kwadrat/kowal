@@ -21,6 +21,7 @@ class LpFakturyRoku(object):
         self.counter += 1
         return self.counter
 
+
 class TestLpFaktury(unittest.TestCase):
     def test_inserting_all(self):
         '''

@@ -20,6 +20,7 @@ import od_kw
 import on_kw
 import ow_kw
 
+
 class KlasaObrazu(object):
     '''
     Klasa bazowa dla poszczególnych graficznych przedstawień w postaci PNG
@@ -142,6 +143,7 @@ class KlasaObrazu(object):
             napis_szer = draw.textsize(NapisMiesiaca)[0]
             x = x - napis_szer // 2
             oa_kw.rj_text(draw, (x, y), NapisMiesiaca)
+
 
 class TestGenerowaniaObrazu(unittest.TestCase):
     def test_generowania_obrazu(self):

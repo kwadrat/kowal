@@ -62,8 +62,10 @@ wyznacz_opis_akcji = {
     LTR_ZAZN_USUN: 'Usuń',
     }
 
+
 def formatuj_pelne_in(adresat):
     return '%(imie)s %(nazwisko)s' % adresat
+
 
 def ladny_rozmiar(ile, exp=3):
     if ile < 2 * 1024 or exp <= 0:
@@ -74,6 +76,7 @@ def ladny_rozmiar(ile, exp=3):
         return "%d MB" % (ile // 1024 // 1024)
     else:
         return "%d GB" % (ile // 1024 // 1024 // 1024)
+
 
 class TestSomeConstants(unittest.TestCase):
     def test_opisow_akcji(self):

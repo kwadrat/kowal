@@ -34,6 +34,7 @@ class MojPodnajemca(object):
             result = 0
         return result
 
+
 class TestJednegoPodnajemcy(unittest.TestCase):
     def test_jednego_podnajemcy(self):
         '''

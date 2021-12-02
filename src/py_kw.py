@@ -3,6 +3,7 @@
 
 import pj_kw
 
+
 class ZeszytOgolny(object):
     def podlacz_arkusz_tego_pliku(self, pae, nazwa_pliku, nazwa_arkusza):
         '''

@@ -10,8 +10,10 @@ import unittest
 import hj_kw
 import fv_kw
 
+
 def combine_rc(col_label, row_number):
     return '%s%d' % (col_label, row_number)
+
 
 class KolumnowyAdresator(object):
     def ustaw_ka_wiersz(self, wiersz_bazowy_miesiecy):
@@ -176,6 +178,7 @@ class KolumnowyAdresator(object):
         '''
         return xrange(self.row_cnt + extra)
 
+
 def generate_every_three(start_label, end_label):
     labels = []
     klm_ads = KolumnowyAdresator()
@@ -187,6 +190,7 @@ def generate_every_three(start_label, end_label):
         labels.append(the_label)
         klm_ads.advance_row_by(3)
     return labels
+
 
 class TestKolumnowegoAdresatora(unittest.TestCase):
     def test_1_kolumnowy_adresator(self):

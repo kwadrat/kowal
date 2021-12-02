@@ -10,9 +10,11 @@ import time
 
 import cjs_kw
 
+
 def date_as_string(one_time):
     time_tuple = time.localtime(one_time)
     return time.strftime(cjs_kw.yq_1_yq, time_tuple)
+
 
 class BaildonTime(object):
     def __init__(self):
@@ -56,8 +58,10 @@ class BaildonTime(object):
 
 baildon_time = BaildonTime()
 
+
 def hms_start():
     baildon_time.start_timing()
+
 
 def hms_period(one_label):
     baildon_time.till_now(one_label)

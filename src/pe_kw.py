@@ -6,6 +6,7 @@ Udawanie żądania WWW podczas wykonywania testów
 
 import oc_kw
 
+
 class PseudoReq(object):
     def __init__(self, lokalny_the_building=None):
         '''

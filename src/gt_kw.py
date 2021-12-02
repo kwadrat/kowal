@@ -8,6 +8,7 @@ import lc_kw
 import gv_kw
 import lm_kw
 
+
 class OgOpDaneDlaMiesiaca(object):
     def __init__(self):
         '''
@@ -176,6 +177,7 @@ class OgOpDaneDlaMiesiaca(object):
         if rn_liczba.rn_value > umowna_suma:
             rn_liczba.update_colour(gv_kw.ECR_red)
         return rn_liczba
+
 
 class TestMiesiacaGazu(unittest.TestCase):
     def test_miesiaca_gazu(self):

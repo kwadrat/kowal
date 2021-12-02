@@ -15,6 +15,7 @@ import lt_kw
 
 OgolnaListaPoborow = lt_kw.OgolnaListaPoborow
 
+
 class PomiaryPoborowSasiadujacychDni(OgolnaListaPoborow):
     def __init__(self, tgk, dfb, krt_pobor):
         '''

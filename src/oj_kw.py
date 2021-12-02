@@ -3,6 +3,7 @@
 
 import dn_kw
 
+
 class CommonTGK(object):
     def __init__(self):
         '''

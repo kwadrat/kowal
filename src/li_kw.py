@@ -3,6 +3,7 @@
 
 DocelowoZwiekszLicznikObiektow = 1
 
+
 class LicznikInstancji(object):
     def __init__(self, rodzaj):
         '''

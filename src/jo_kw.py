@@ -3,6 +3,7 @@
 
 import unittest
 
+
 class JestemObca(object):
     '''Informuje, że faktura jest obca'''
 
@@ -35,6 +36,7 @@ class JestemObca(object):
         return tmp_opis
 
 ob_fjo = JestemObca()
+
 
 class TestObcejFaktury(unittest.TestCase):
 

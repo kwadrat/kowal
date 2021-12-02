@@ -12,6 +12,7 @@ import ei_kw
 
 Skrawek = chg_kw.Skrawek
 
+
 class SkrARok(Skrawek):
     '''Wybór początkowego roku
     '''
@@ -56,6 +57,7 @@ class SkrARok(Skrawek):
                 return result
         else:
             return self.wartosc_ukryta()
+
 
 class TestARok(unittest.TestCase):
     def test_1_a(self):

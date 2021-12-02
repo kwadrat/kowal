@@ -14,10 +14,12 @@ link_area_alt_title = ''' alt="%(tekst)s" title="%(tekst)s"'''
 link_area_kon = ''' />\n'''
 link_area_alter_this = ''' onMouseOver="%(over)s"\n onMouseOut="%(out)s"\n'''
 
+
 def zmniejsz_obszar_aktywny_dla_firefox(jestem_msie, slownik):
     if not jestem_msie:
         slownik[oc_kw.fq_kx_qv] -= 1
         slownik[oc_kw.fq_ky_qv] -= 1
+
 
 def poszerz_pozycje(jestem_msie, pozycja):
     (px, py, kx, ky) = pozycja
@@ -30,11 +32,14 @@ def poszerz_pozycje(jestem_msie, pozycja):
         pass
     return (px, py, kx, ky)
 
+
 def set_src(name, value):
     return "%s.src='%s'" % (name, value)
 
+
 def set_bg_color(name, value):
     return "%s.bgColor='%s'" % (name, value)
+
 
 def link_a_mapy(on_real_mouse, slownik, jestem_msie, html_name, moja_nazwa):
     wynik = []
@@ -69,6 +74,7 @@ def link_a_mapy(on_real_mouse, slownik, jestem_msie, html_name, moja_nazwa):
     # Zakończenie adresu
     wynik.append(link_area_kon)
     return ''.join(wynik)
+
 
 class TestLinkuMapy(unittest.TestCase):
     def test_linku_mapy(self):

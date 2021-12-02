@@ -22,6 +22,7 @@ class JednoKrotny(object):
                 raise RuntimeError('Zostałem wywołany kolejny raz')
         return self.licznik == 1
 
+
 class TestCallAtMostOnce(unittest.TestCase):
     def test_call_at_most_once(self):
         '''

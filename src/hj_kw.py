@@ -13,8 +13,10 @@ db_strange_value = '44200'
 suffix_comma_separated = '.csv'
 suffix_semicolon_separated = '.txt'
 
+
 def make_mapping(oryg_nazwa, nazwa_pola):
     return ''.join([oryg_nazwa, mapping_as, nazwa_pola])
+
 
 def substitute_if_needed(dc_changes, tabela_aktualna, nazwa_pola):
     oryg_nazwa = dc_changes.get(tabela_aktualna)
@@ -24,30 +26,38 @@ def substitute_if_needed(dc_changes, tabela_aktualna, nazwa_pola):
         result = nazwa_pola
     return result
 
+
 def Poprzecinkuj(lista):
     '''Zwraca napisy połączone przecinkami
     '''
     return ','.join(lista)
 
+
 def semicolon_join(lista):
     return ';'.join(lista)
 
+
 def ladnie_przecinkami(lista):
     return ', '.join(lista)
+
 
 def Pokoniuguj(lista):
     '''Zwraca napisy w koniunkcji logicznej
     '''
     return ' and\n'.join(lista)
 
+
 def make_alternatives(lista):
     return ' OR '.join(lista)
+
 
 def make_conjunction(lista):
     return ' AND '.join(lista)
 
+
 def make_where(lista):
     return fy_kw.lxa_23_inst + make_conjunction(lista)
+
 
 def sql_in(one_field, value_ls):
     return ''.join([
@@ -56,8 +66,10 @@ def sql_in(one_field, value_ls):
         value_ls,
         ])
 
+
 def fx_jn(*elements):
     return ''.join(elements)
+
 
 def condition_kv(key, value):
     if value is None:
@@ -65,6 +77,7 @@ def condition_kv(key, value):
     else:
         status = "%(key)s = '%(value)s'" % dict(key=key, value=value)
     return status
+
 
 def conditions_separately(klucze, slownik, ignorowane_pola=None):
     lista = []
@@ -76,53 +89,70 @@ def conditions_separately(klucze, slownik, ignorowane_pola=None):
             lista.append(condition_kv(klucz, wartosc))
     return lista
 
+
 def otocz_cudzyslowem(napis):
     return '"%s"' % napis
+
 
 def otocz_apostrofem(napis):
     return "'%s'" % napis
 
+
 def otocz_nawiasami(napis):
     return '(%s)' % napis
+
 
 def ls_przec(*args):
     return ladnie_przecinkami(args)
 
+
 def with_spaces(*args):
     return ' '.join(args)
+
 
 def zamien_na_logiczne(wartosc):
     return not not wartosc
 
+
 def przytnij_nazwe(nazwa_katalogu):
     return nazwa_katalogu.replace('/', '')
+
 
 def wyznacz_litere_faktury(nr_faktury):
     return chr(ord('A') + nr_faktury)
 
+
 def zakres_liter_faktury(liczba_faktur):
     return '(%s)' % '+'.join(map(wyznacz_litere_faktury, range(liczba_faktur)))
+
 
 def letter_to_number(single_letter):
     return ord(single_letter.upper()) - ord('A')
 
+
 def podpis_faktury(rest_of_txt):
     return 'fakt. ' + rest_of_txt
+
 
 def significant_values_for_months(my_dict):
     return any(v.rn_value for month, v in my_dict.iteritems() if 1 <= month <= 12)
 
+
 def rcp_plus(list_of_terms):
     return '+'.join(list_of_terms)
+
 
 def rcp_minus(first, second):
     return ''.join([first, '-', second])
 
+
 def rcp_dziel(first, second):
     return ''.join([first, '/', second])
 
+
 def rcp_mnoz(first, second):
     return ''.join([first, '*', second])
+
 
 def rcp_vertical_sum(first_row, row_cnt, kl_letter_of_col):
     return 'SUM(%(kl_letter_of_col)s%(label_first)d:%(kl_letter_of_col)s%(label_last)d)' % dict(
@@ -131,8 +161,10 @@ def rcp_vertical_sum(first_row, row_cnt, kl_letter_of_col):
         kl_letter_of_col=kl_letter_of_col,
         )
 
+
 def rcp_pion(wiersz_bazowy_miesiecy, kl_letter_of_col):
     return rcp_vertical_sum(wiersz_bazowy_miesiecy + 2, 12, kl_letter_of_col)
+
 
 def rcp_wspolne(command, etk_a, etk_b, trzeci=''):
     return '%(command)s(%(etk_a)s:%(etk_b)s%(trzeci)s)' % dict(
@@ -142,24 +174,31 @@ def rcp_wspolne(command, etk_a, etk_b, trzeci=''):
         trzeci=trzeci,
         )
 
+
 def rcp_poziom(etk_a, etk_b):
     return rcp_wspolne('SUM', etk_a, etk_b)
+
 
 def rcp_sred(etk_a, etk_b):
     return rcp_wspolne('AVERAGE', etk_a, etk_b)
 
+
 def rcp_emax(etk_a, etk_b):
     return rcp_wspolne('MAX', etk_a, etk_b)
+
 
 def rcp_diff_max(etk_a, etk_b):
     return 'MAX(0,%s-%s)' % (etk_a, etk_b)
 
+
 def rcp_emin(etk_a, etk_b):
     return rcp_wspolne('MIN', etk_a, etk_b)
+
 
 def rcp_maxk(etk_a, etk_b, the_order):
     trzeci = ',%d' % (the_order + 1)
     return rcp_wspolne('LARGE', etk_a, etk_b, trzeci)
+
 
 def reverse_but_last(tmp_list):
     tmp_list.sort()
@@ -170,10 +209,12 @@ def reverse_but_last(tmp_list):
         start_ptr += 1
         end_ptr -= 1
 
+
 def ogranicz_wartosci_umowne(tmp_list):
     without_zero = filter(None, tmp_list)
     without_duplicates = list(set(without_zero))
     return without_duplicates
+
 
 def rc_rozszczep(the_label):
     the_index = None
@@ -186,8 +227,10 @@ def rc_rozszczep(the_label):
     the_number = int(the_label[the_index:])
     return the_letters, the_number
 
+
 def md_fn(modul, funkcja):
     return '%s.%s' % (modul, funkcja)
+
 
 def md_vt(value, year):
     if year > 2010:
@@ -197,8 +240,10 @@ def md_vt(value, year):
     result = fx_jn(value, '*', multiplier)
     return result
 
+
 def remove_nones(elements):
     return filter(lambda x: x is not None, elements)
+
 
 def wybierz_najwiekszy(elems):
     value = None
@@ -207,11 +252,14 @@ def wybierz_najwiekszy(elems):
         value = max(selected_elements)
     return value
 
+
 def wybierz_powyzej_progu(local_maximum, local_treshold):
     return local_maximum
 
+
 def tekstowe_indeksy(lista):
     return map(lambda x: (str(x[0]), x[1]), lista)
+
 
 def make_hl(url, label):
     return 'HYPERLINK("%(url)s";"%(label)s")' % dict(
@@ -219,12 +267,15 @@ def make_hl(url, label):
         label=label,
         )
 
+
 def hlp_assume_one(id_obkt, wynik, etykieta):
     assert len(wynik) == 1, id_obkt
     return wynik[0][etykieta]
 
+
 def zrob_wersje_posrednia(nazwa):
     return 'gen_%s.txt' % nazwa
+
 
 def nazwa_filtrowanego(indeks_testu, diff_letter=None):
     if diff_letter is None:
@@ -235,8 +286,10 @@ def nazwa_filtrowanego(indeks_testu, diff_letter=None):
         suffix_comma_separated,
         )
 
+
 def space_two(first, second):
     return '%s %s' % (first, second)
+
 
 def full_field(first, second):
     return ''.join([
@@ -245,8 +298,10 @@ def full_field(first, second):
         second,
         ])
 
+
 def chop_go(elements):
     return elements[:2]
+
 
 def op_hd(title):
     if 1:
@@ -255,6 +310,7 @@ def op_hd(title):
         result = None
     return result
 
+
 def date_greater_or_equal(date_label, date_value):
     return ''.join([
         date_label,
@@ -262,12 +318,14 @@ def date_greater_or_equal(date_label, date_value):
         date_value,
         ])
 
+
 def fields_equal(label, another):
     return ''.join([
         label,
         " = ",
         another,
         ])
+
 
 def netto_from_brutto(brutto, vat_rate):
     return ''.join([
@@ -290,15 +348,19 @@ else:
         all_lines = text.splitlines()
         return enumerate(all_lines, start=1)
 
+
 def labels_to_indexes(some_labels, all_labels):
     return map(lambda x: all_labels.index(x), some_labels)
+
 
 def remove_duplicates(one_ls):
     return sorted(set(one_ls))
 
+
 def make_cast(one_value, one_type):
     inside = make_mapping(one_value, one_type)
     return 'CAST' + otocz_nawiasami(inside)
+
 
 class TestProcessingSQL(unittest.TestCase):
     def test_processing_sql(self):

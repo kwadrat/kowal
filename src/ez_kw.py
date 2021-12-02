@@ -6,6 +6,7 @@ import dq_kw
 
 KlasaOgolnaSzkieletuDat = dq_kw.KlasaOgolnaSzkieletuDat
 
+
 class KlasaSzkieletuDat(KlasaOgolnaSzkieletuDat):
     def __init__(self):
         '''

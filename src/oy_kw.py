@@ -13,18 +13,22 @@ WBR_WSZYSTKIE = '-' # Wybór wszystkich (np. obiektów)
 element_wszystkich = [{ub_kw.EYK_klcz: index_zero_number, ub_kw.EYK_wrtsc: WBR_WSZYSTKIE}]
 element_surowy_wszystkich = [(index_zero_number, WBR_WSZYSTKIE)]
 
+
 def rj_wstaw_kreske_jako_pierwsze(lista_i_n, czy_wszystkie):
     if czy_wszystkie:
         lista_i_n = element_wszystkich + lista_i_n
     return lista_i_n
+
 
 def rj_wstaw_surowa_kreske_jako_pierwsze(lista_i_n, czy_wszystkie):
     if czy_wszystkie:
         lista_i_n = element_surowy_wszystkich + lista_i_n
     return lista_i_n
 
+
 def rj_adjoin_all_in_one(lista_i_n):
     return lista_i_n + [(index_minus_one_number, 'wszystkie')]
+
 
 class TestInsertingAll(unittest.TestCase):
     def test_inserting_all(self):

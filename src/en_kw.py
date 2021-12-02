@@ -14,42 +14,53 @@ en_cod_cp_u_eig = 'utf-8'
 en_cod_cp_i_two = 'iso-8859-2'
 en_cod_cp_ibm_two = 'cp852'
 
+
 def text_not_unicode(value):
     return isinstance(value, str)
+
 
 def utf_to_unicode(napis_utf):
     return napis_utf.decode(en_cod_cp_u_eig)
 
+
 def unicode_to_utf(napis_uncd):
     return napis_uncd.encode(en_cod_cp_u_eig)
 
+
 def win_cp_to_unicode(napis_win):
     return napis_win.decode(en_cod_cp_win)
+
 
 def win_cp_to_utf(napis_win):
     napis_uncd = napis_win.decode(en_cod_cp_win)
     return unicode_to_utf(napis_uncd)
 
+
 def pobierz_z_napisu(napis):
     return pickle.loads(napis)
 
+
 def zamien_na_napis(przedmiot):
     return pickle.dumps(przedmiot)
+
 
 def zakoduj_jako_napis(slownik):
     a = zamien_na_napis(slownik)
     a = binascii.b2a_hex(a)
     return a
 
+
 def odkoduj_z_napisu(napis):
     a = binascii.a2b_hex(napis)
     slownik = pobierz_z_napisu(a)
     return slownik
 
+
 def upgrade_to_unicode(value):
     if text_not_unicode(value):
         value = win_cp_to_unicode(value)
     return value
+
 
 class TestEncoding(unittest.TestCase):
     '''

@@ -5,6 +5,7 @@ import unittest
 
 import hj_kw
 
+
 class ObiektLiterujacy(object):
     def __init__(self, liczba_potrzebnych_liter):
         '''
@@ -29,6 +30,7 @@ class ObiektLiterujacy(object):
         koncowka = '/' + hj_kw.wyznacz_litere_faktury(self.biezacy_indeks_litery)
         self.biezacy_indeks_litery += 1
         return koncowka
+
 
 class TestObiektuLiterujacego(unittest.TestCase):
     def test_obiektu_literujacego(self):

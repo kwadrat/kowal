@@ -10,6 +10,7 @@ import dv_kw
 import hj_kw
 import dn_kw
 
+
 class GeneratorUU(object):
     def __init__(self, my_table_name):
         '''
@@ -134,6 +135,7 @@ class GeneratorUU(object):
             ]
         return self.prepare_shape(returned_fields)
 
+
 def generate_specific_drawing(dfb, pytanie, multiplier):
     result = dfb.query_dct(pytanie)
     tmp_frags = []
@@ -143,6 +145,7 @@ def generate_specific_drawing(dfb, pytanie, multiplier):
                 tmp_frags.append('%d %d %f\n' % (col_nr * multiplier, row_nr, value))
         tmp_frags.append('\n')
     return ''.join(tmp_frags)
+
 
 def generate_gnuplot_drawing(dfb):
     for my_domain in (lc_kw.fq_uu_energy_qv, lc_kw.fq_uu_power_qv):
@@ -158,6 +161,7 @@ def generate_gnuplot_drawing(dfb):
                 pytanie = obk.final_shape()
                 together = generate_specific_drawing(dfb, pytanie, multiplier)
                 sf_kw.zapisz_jawnie('%s_%d_%d.gen' % (my_domain[3], my_object, week_day), together)
+
 
 class TestUUQueries(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual

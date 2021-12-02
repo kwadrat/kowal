@@ -8,6 +8,7 @@ import jn_kw
 
 HoQuServer = jn_kw.HoQuServer
 
+
 class HourServer(HoQuServer):
     def __init__(self):
         '''
@@ -20,6 +21,7 @@ class HourServer(HoQuServer):
             self.all_time_columns.append(elem)
             self.time_for_header.append(elem.header_for_hour_column)
         HoQuServer.__init__(self, 1)
+
 
 class TestHour_t_Server(unittest.TestCase):
     pass

@@ -5,6 +5,7 @@ import fv_kw
 
 KSZ_Zmiennoprzecinkowa = 'zmiennoprzecinkowa z przecinkiem'
 
+
 class ArkuszExcel(object):
     def __init__(self, sh):
         '''

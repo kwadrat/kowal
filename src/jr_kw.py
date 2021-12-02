@@ -11,11 +11,14 @@ import unittest
 
 import la_kw
 
+
 def non_wrapped_lines():
     return '# ' 'v' 'i' 'm' ': nowrap'
 
+
 def constant_width(max_len):
     return '%-' + str(max_len) + 's'
+
 
 class EnergyTable(object):
     def init_dict(self):
@@ -63,10 +66,12 @@ class EnergyTable(object):
         self.ls_lines.append(non_wrapped_lines())
         print '\n'.join(self.ls_lines)
 
+
 def workbook_for_verbose_reading(filename):
     xlrd = la_kw.new_module_for_reading_spreadsheet()
     wbk = xlrd.open_workbook(filename, formatting_info=True)
     return wbk
+
 
 class TestSkomplikowanegoRoku(unittest.TestCase):
     def test_skomplikowanego_roku(self):

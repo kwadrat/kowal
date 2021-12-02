@@ -20,6 +20,7 @@ numeric
 
 '''
 
+
 def extract_precision(one_line, label):
     result = None
     if one_line:
@@ -69,6 +70,7 @@ class DetectAmountFieldPrecision(object):
         '''
         for one_line in multi_line.splitlines():
             self.analyze_line(one_line)
+
 
 class TestDetectingAmountFieldPrecision(unittest.TestCase):
     def test_detecting_amount_field_precision(self):

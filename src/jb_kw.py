@@ -3,6 +3,7 @@
 
 dymek_bez_tresci = ''
 
+
 class JedenOdcinekBazowy(object):
     '''Jeden odcinek bazowy, zawierający:
     - numer dnia początku okresu

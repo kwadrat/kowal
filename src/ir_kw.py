@@ -5,6 +5,7 @@ import unittest
 
 import lc_kw
 
+
 class CObjectNaming(object):
     def __init__(self):
         '''

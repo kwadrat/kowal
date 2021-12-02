@@ -9,6 +9,7 @@ import unittest
 
 AimToObjectFieldName = 0
 
+
 class FieldDesc(object):
     def __init__(self, fs_core, fs_prefix):
         '''
@@ -20,6 +21,7 @@ class FieldDesc(object):
             self.official_name = self.fs_core
         else:
             self.official_name = self.fs_prefix + self.fs_core
+
 
 class TestMojegoPola(unittest.TestCase):
     def test_mojego_pola(self):

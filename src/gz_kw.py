@@ -6,6 +6,7 @@ import inspect
 # Do ilu poziomów pokazujemy zagnieżdżenie przy diagnozowaniu klas
 TymczasowoGlebokosc = 0
 
+
 class GlebiaZagniezdzenia(object):
     def __init__(self, poziom):
         '''

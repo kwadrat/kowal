@@ -54,6 +54,7 @@ class MergedCoords(object):
         c1 = self.akt_kolumna
         return r1, c1
 
+
 class TestMergedCoords(unittest.TestCase):
     def test_merged_coords(self):
         '''

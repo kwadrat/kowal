@@ -7,13 +7,16 @@ import decimal
 import hj_kw
 import rq_kw
 
+
 def a2d(a):
     '''ASCII(kropka) -> Decimal'''
     return decimal.Decimal(a)
 
+
 def d2a(a):
     '''Decimal -> ASCII(kropka)'''
     return '%f' % a
+
 
 def fix_db_dec(a):
     '''Sometimes PostgreSQL driver returns different Decimal - unify'''
@@ -29,14 +32,17 @@ if rq_kw.Docelowo_psyco_nie_pygresql:
 else:
     wartosc_zero_z_bazy = 0.0
 
+
 def have_dec_type(value):
     return isinstance(value, decimal.Decimal)
+
 
 def dec2flt(value):
     '''Decimal -> float'''
     if have_dec_type(value):
         value = float(d2a(value))
     return value
+
 
 def for_storing(value):
     if have_dec_type(value):
@@ -47,16 +53,20 @@ def for_storing(value):
         result = 'NULL'
     return result
 
+
 def calculate_rounding(places):
     return value_ten_const ** (- places)
+
 
 def readjust_number(places, value):
     napis = '%.*f' % (places, value)
     rounding = calculate_rounding(places)
     return a2d(napis).quantize(rounding)
 
+
 def kropka_przecinek(a):
     return a.replace('.', ',')
+
 
 def rzeczywista_na_napis(liczba, rn_after=2, bt_comma=0):
     '''Przerabia liczbę złotych (być może ułamkową, z groszami)
@@ -82,15 +92,19 @@ def rzeczywista_na_napis(liczba, rn_after=2, bt_comma=0):
             napis = kropka_przecinek(napis)
         return napis # Zwróć pełną kwotę, łącznie z groszami
 
+
 def generate_scale(max_value):
     the_last = int(max_value)
     return map(a2d, range(the_last + 1))
 
+
 def roznica_dokladna(a, b):
     return d2a(a2d(b) - a2d(a))
 
+
 def roznica_liczbowa(a, b):
     return a2d(b) - a2d(a)
+
 
 def decimal_suma_wybranych_wpisow_slownika(slownik, klucze):
     decimal_suma_wartosci = wartosc_zero_globalna
@@ -100,12 +114,14 @@ def decimal_suma_wybranych_wpisow_slownika(slownik, klucze):
         decimal_suma_wartosci += moja_wartosc
     return decimal_suma_wartosci
 
+
 def adjust_for_csv(value):
     if value == '':
         result = None
     else:
         result = float(value)
     return result
+
 
 class CloseToValue(object):
     def __init__(self, places):
@@ -121,6 +137,7 @@ class CloseToValue(object):
         if isinstance(new_value, float):
             new_value = str(new_value)
         return abs(old_value - a2d(new_value)) <= self.epsilon
+
 
 class TestPointNumbers(unittest.TestCase):
     def test_point_numbers(self):

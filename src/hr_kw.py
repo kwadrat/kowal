@@ -6,6 +6,7 @@ Prostokąt do narysowania na wykresie słupkowym, z możliwością zaznaczenia
 przekroczenia mocy (moc pobrana jest większa niż moc zamówiona)
 '''
 
+
 class ProstokatDoRysowania(object):
     def __init__(self, x1, y1, x2, y2):
         '''

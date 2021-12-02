@@ -6,6 +6,7 @@ import jr_kw
 wykaz_pytan = '''\
 '''
 
+
 def wykonaj_zapytanie(dfb):
     pytanie_reczne = wykaz_pytan.splitlines()[-1]
     print repr(pytanie_reczne)

@@ -13,6 +13,7 @@ import gc_kw
 
 WykresPomiarow = hq_kw.WykresPomiarow
 
+
 class OgolnaListaPoborow(WykresPomiarow):
     def __init__(self, tgk, aqr, dfb, krt_pobor):
         '''

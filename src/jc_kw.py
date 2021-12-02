@@ -11,13 +11,16 @@ dc_d_style = dict(fore_colour=gv_kw.ECR_red)
 dc_e_style = dict(fore_colour=gv_kw.ECR_yellow)
 dc_f_style = dict(fore_colour=gv_kw.ECR_light_turquoise)
 
+
 def wyznacz_weekend(nkd):
     jestem_weekend = not dn_kw.RoboczyDnia(nkd)
     return jestem_weekend
 
+
 def nr_of_day(one_date):
     nkd = dn_kw.napis_na_numer_dnia(str(one_date))
     return nkd
+
 
 def obtain_cell_color(moc_um_dec, ten_treshold, jestem_weekend, my_sample):
     if my_sample > moc_um_dec:
@@ -30,6 +33,7 @@ def obtain_cell_color(moc_um_dec, ten_treshold, jestem_weekend, my_sample):
         dc_b_style = {}
     return dc_b_style
 
+
 class CellDesc(object):
     def __init__(self, moc_um_dec, ten_treshold, jestem_weekend):
         '''
@@ -38,6 +42,7 @@ class CellDesc(object):
         self.moc_um_dec = moc_um_dec
         self.ten_treshold = ten_treshold
         self.jestem_weekend = jestem_weekend
+
 
 class TestCellFeatures(unittest.TestCase):
     def test_dec_type(self):

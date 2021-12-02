@@ -13,6 +13,7 @@ import pt_kw
 
 KlasaObrazu = pt_kw.KlasaObrazu
 
+
 class WykresRaportu(KlasaObrazu):
     def __init__(self, tgk, aqr, dnw, linii):
         '''
@@ -40,6 +41,7 @@ class WykresRaportu(KlasaObrazu):
             '''
             return float(self.szerokosc_wykresu * slupek) / kwota
         ##############################################################################
+
 
 class TestWykresuRaportu(unittest.TestCase):
     def test_wykresu_raportu(self):

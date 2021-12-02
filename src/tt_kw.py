@@ -11,6 +11,7 @@ import lq_kw
 import tq_kw
 import ur_kw
 
+
 def normalize_value(before):
     if before == '':
         result = None
@@ -19,6 +20,7 @@ def normalize_value(before):
     return result
 
 CommonRdWr = tq_kw.CommonRdWr
+
 
 class CommonReader(CommonRdWr):
     def __init__(self, tvk_pobor, period_server, rough_point):
@@ -224,6 +226,7 @@ class CommonReader(CommonRdWr):
         tmp_format = 'len(result)'; print 'Eval:', tmp_format, eval(tmp_format)
         ls_objects = le_kw.dq_get_ordered_objects(dfb)
         tmp_format = 'len(ls_objects)'; print 'Eval:', tmp_format, eval(tmp_format)
+
 
 class Test_Common_Reader(unittest.TestCase):
     def test_common_reader(self):

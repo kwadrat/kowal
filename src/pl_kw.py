@@ -5,6 +5,7 @@ import po_kw
 
 PozycjeOgolne = po_kw.PozycjeOgolne
 
+
 class PozycjeLicznikowe(PozycjeOgolne):
     def __init__(self, etykieta, slownik_poczatkowy=None):
         '''

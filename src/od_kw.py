@@ -5,6 +5,7 @@ import oj_kw
 
 CommonTGK = oj_kw.CommonTGK
 
+
 class PseudoTGK(CommonTGK):
     def __init__(self):
         '''

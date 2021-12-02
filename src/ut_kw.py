@@ -5,6 +5,7 @@ import unittest
 
 import um_kw
 
+
 class TxtBook(object):
     def __init__(self, single_file):
         '''
@@ -19,6 +20,7 @@ class TxtBook(object):
         '''
         sheet = um_kw.TxtSheet(self.single_file)
         return sheet
+
 
 class TestTextBook(unittest.TestCase):
     def test_text_book(self):

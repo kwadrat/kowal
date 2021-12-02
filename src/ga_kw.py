@@ -19,8 +19,10 @@ slownik_wyznacz_spinacz = {
     AMP_NONE: '',
     }
 
+
 def rj_wyznacz_spinacz(dla_js):
     return slownik_wyznacz_spinacz[dla_js]
+
 
 class TestSeparators(unittest.TestCase):
     def test_separators(self):

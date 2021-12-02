@@ -7,6 +7,7 @@ import dv_kw
 import gb_kw
 import ze_kw
 
+
 class NaglowekKolumny(object):
     '''Nagłówek kolumny, opcjonalnie z jednostką, być może
     ze złamanym wierszem dla jednostki
@@ -47,6 +48,7 @@ ux_14_a = NaglowekKolumny('Moc wykonana', jednostka=gb_kw.Jedn_a_kWh_h).nx_pelny
 ux_15_a = NaglowekKolumny('Moc zamówiona', jednostka=gb_kw.Jedn_a_kWh_h).nx_pelny()
 ux_16_a = NaglowekKolumny('Moc wykonana', jednostka=gb_kw.Jedn_a_kWh_h, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
 ux_17_a = NaglowekKolumny('Moc zamówiona', jednostka=gb_kw.Jedn_a_kWh_h, separator=ze_kw.formularz_1c_zlm_wrsz).nx_pelny()
+
 
 class TestNagKol(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual

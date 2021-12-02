@@ -5,6 +5,7 @@ import ib_kw
 import fy_kw
 import ze_kw
 
+
 class FormularzBazowySkrawkow(object):
     def __init__(self, strona_bazowa):
         '''

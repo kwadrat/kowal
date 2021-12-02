@@ -8,6 +8,7 @@ import unittest
 
 import lk_kw
 
+
 class JednaKolumnaTabelkiFaktury(object):
     def __init__(self, etykieta, tvk_nagl=None):
         '''
@@ -31,6 +32,7 @@ class JednaKolumnaTabelkiFaktury(object):
         else:
             wynik = self.tvk_nagl
         return wynik
+
 
 class TestKolumnyFaktur(unittest.TestCase):
     def test_kolumny_faktur(self):

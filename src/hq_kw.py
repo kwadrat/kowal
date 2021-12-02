@@ -5,6 +5,7 @@ import ho_kw
 
 WykresDlaFakturPomiarow = ho_kw.WykresDlaFakturPomiarow
 
+
 class WykresPomiarow(WykresDlaFakturPomiarow):
     def __init__(self, tgk, aqr):
         '''

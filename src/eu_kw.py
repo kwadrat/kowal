@@ -9,6 +9,7 @@ def detect_my_days(slownik_wpisow):
     all_days.sort()
     return all_days
 
+
 class TestPrzetwarzaniaDni(unittest.TestCase):
     def test_przetwarzania_dni(self):
         '''

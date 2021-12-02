@@ -15,11 +15,14 @@ faktura_bazowa_szkielet = 'Energia_szablon.xls'
 katalog_logu = Katalog_dokumentow + u'archiwum_aplikacji'
 zeszyt_pomiarow = u"ZST_zużycie_en_elektr_obiekty_obce.xls"
 
+
 def nazwa_pliku_faktury_bazowej():
     return Katalog_dokumentow + faktura_bazowa_szkielet
 
+
 def dolacz_katalog(plik_dokumentu):
     return Katalog_dokumentow + plik_dokumentu
+
 
 def zrob_kopie_pliku(nazwa_programu, przedrostek, prawie_rowne=0):
     if dg_kw.TymczasowoF:
@@ -54,6 +57,7 @@ def zrob_kopie_pliku(nazwa_programu, przedrostek, prawie_rowne=0):
         elementy_nazwy = [u'\\', przedrostek, dn_kw.SekTeraz(), u'.', koncowka_pliku]
         nazwa_pliku = u''.join(elementy_nazwy)
         sf_kw.zapisz_plik(katalog_logu + nazwa_pliku, dane_spakowane)
+
 
 def wykonaj_kopie_plikow():
     sf_kw.sprawdz_lub_utworz_katalog_logu(katalog_logu)

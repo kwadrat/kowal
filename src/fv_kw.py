@@ -5,6 +5,7 @@ import unittest
 
 import hj_kw
 
+
 class ColCalc(object):
     def __init__(self, my_offset):
         '''
@@ -54,6 +55,7 @@ class ColCalc(object):
 
 vx_zero = ColCalc(0)
 vx_one = ColCalc(1)
+
 
 class TestKolumnLiterowych(unittest.TestCase):
     def test_with_offset_zero(self):

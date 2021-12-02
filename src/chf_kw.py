@@ -13,6 +13,7 @@ import oy_kw
 
 Skrawek = chg_kw.Skrawek
 
+
 class SkrWybranyRok(Skrawek):
     '''Wybór początkowego roku
     '''

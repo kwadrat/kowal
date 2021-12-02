@@ -6,6 +6,7 @@
 # (default: 0) Pozwala na dołączanie nieistotnych (pustych) list faktur
 DolaczPusteListy = 0
 
+
 class WynikoweListy(object):
     '''
     Wynikowe listy faktur

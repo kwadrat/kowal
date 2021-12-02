@@ -185,6 +185,7 @@ dane_testowe = '''\
 993992,dziewięćset dziewięćdziesiąt trzy tysiące dziewięćset dziewięćdziesiąt dwa złote
 '''
 
+
 class WyznaczanieSlownie(object):
     def deklinacja(self, wartosc, odmiana):
         '''
@@ -257,6 +258,7 @@ class WyznaczanieSlownie(object):
         result = self.wypowiedz_utf(wartosc)
         return en_kw.utf_to_unicode(result)
 
+
 def sprawdzanie_tlumaczenia(wsl):
     for i in dane_testowe.splitlines():
         if len(i) > 0 and i[0] != '#':
@@ -268,6 +270,7 @@ def sprawdzanie_tlumaczenia(wsl):
                 print "'%s'" % reczny
                 print "'%s'" % automatyczny
                 raise RuntimeError("Wczesny koniec")
+
 
 class TestSlownie(unittest.TestCase):
     def test_slownie(self):

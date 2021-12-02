@@ -31,12 +31,14 @@ formularz_1c_pogr_dwukropek = ''.join([
     '</b>',
     ])
 
+
 def op_sel_lgc(warunek):
     if warunek:
         napis = ' selected="selected"'
     else:
         napis = ''
     return napis
+
 
 def qh_ttl(tmp_title):
     if tmp_title is None:
@@ -45,6 +47,7 @@ def qh_ttl(tmp_title):
         wynik = ' title="%(tmp_title)s"' % dict(tmp_title=tmp_title)
     return wynik
 
+
 def wstawka_common_liczba(nazwa, liczba, shape):
     if liczba is None:
         napis = ''
@@ -52,11 +55,14 @@ def wstawka_common_liczba(nazwa, liczba, shape):
         napis = shape % (nazwa, liczba)
     return napis
 
+
 def wstawka_liczba(nazwa, liczba):
     return wstawka_common_liczba(nazwa, liczba, ' %s="%d"')
 
+
 def wstawka_sql_liczba(nazwa, liczba):
     return wstawka_common_liczba(nazwa, liczba, '%s=%d')
+
 
 def wyznacz_tekst(fragment):
     if fragment is not None:
@@ -65,6 +71,7 @@ def wyznacz_tekst(fragment):
         value = ''
     return value
 
+
 def wyznacz_wstawke(nazwa, wartosc):
     if wartosc is None:
         napis = ''
@@ -72,8 +79,10 @@ def wyznacz_wstawke(nazwa, wartosc):
         napis = ' %s="%s"' % (nazwa, wartosc)
     return napis
 
+
 def wyznacz_klasawa_wstawke(class_):
     return wyznacz_wstawke('class', class_)
+
 
 def op_option(napis, wartosc=None, zaznaczenie=0, id_=None):
     if wartosc is None:
@@ -83,6 +92,7 @@ def op_option(napis, wartosc=None, zaznaczenie=0, id_=None):
     kod_idntf = wyznacz_wstawke('id', id_)
     kod_zazn = op_sel_lgc(zaznaczenie)
     return '<option%s%s%s>%s</option>\n' % (kod_wart, kod_zazn, kod_idntf, napis)
+
 
 def op_td(class_=None, colspan=None, rowspan=None, title=None):
     kawalek_klasy = wyznacz_klasawa_wstawke(class_)
@@ -99,6 +109,7 @@ def op_td(class_=None, colspan=None, rowspan=None, title=None):
         wstawka_tytulu=wstawka_tytulu,
         )
 
+
 def op_tr(id_=None, nzw_wrsz=None, rest=None):
     wstawka_id = wyznacz_wstawke('id', id_)
     wstawka_nzw = wyznacz_wstawke('name', nzw_wrsz)
@@ -110,6 +121,7 @@ def op_tr(id_=None, nzw_wrsz=None, rest=None):
         )
 
 formularz_67c_pocz_wiersza = op_tr()
+
 
 def op_tbl(cellspacing=None, cellpadding=None, class_=None, border=None):
     wstawka_spc = wstawka_liczba('cellspacing', cellspacing)
@@ -123,6 +135,7 @@ def op_tbl(cellspacing=None, cellpadding=None, class_=None, border=None):
         wstawka_bdr=wstawka_bdr,
         )
 
+
 def op_ptd(srodek, *lista, **slownik):
     return ''.join([
         op_td(*lista, **slownik),
@@ -130,8 +143,10 @@ def op_ptd(srodek, *lista, **slownik):
         formularz_1c_kon_komorki,
         ])
 
+
 def op_32_sbf():
     return op_tbl(class_=fy_kw.lxa_40_inst, border=1)
+
 
 def op_select(nzw_sel, brak_idnt=0, class_=None, onchange=None, style=None, to_id=None, multiple=0):
     if to_id is None:
@@ -164,8 +179,10 @@ def op_select(nzw_sel, brak_idnt=0, class_=None, onchange=None, style=None, to_i
         kawalek_zmiany=kawalek_zmiany,
         )
 
+
 def op_30_sbf(nzw_sel):
     return op_select(nzw_sel=nzw_sel, brak_idnt=1, onchange=fy_kw.lxa_45_inst, class_=fy_kw.lxa_44_inst)
+
 
 def op_dh(detect_missing_keyword=None, id_=None, class_=None):
     if detect_missing_keyword is not None:
@@ -177,12 +194,14 @@ def op_dh(detect_missing_keyword=None, id_=None, class_=None):
         wstawka_cls=wstawka_cls,
         )
 
+
 def op_li(srodek):
     return ''.join([
         formularz_1c_pocz_pozycji,
         srodek,
         formularz_1c_kon_pozycji,
         ])
+
 
 def qh_ahtt(wstawka_adresu, tmp_tekst, tmp_title, target=0):
     if target:
@@ -197,16 +216,19 @@ def qh_ahtt(wstawka_adresu, tmp_tekst, tmp_title, target=0):
         wstawka_tgt=wstawka_tgt,
         ))
 
+
 def sp_a_stl(style, napis):
     return '<span style="%(style)s">%(napis)s</span>' % dict(
         style=style,
         napis=napis,
         )
 
+
 def sp_b_stl(napis):
     return '<font size=+1 style="color:red;">%(napis)s</font>' % dict(
         napis=napis,
         )
+
 
 def sp_stl(etykieta_wartosci, liczba_tekstowo, jednostka):
     pieces = []
@@ -228,6 +250,7 @@ def sp_stl(etykieta_wartosci, liczba_tekstowo, jednostka):
     together = ''.join(pieces)
     return together
 
+
 def pokoloruj(napis, kolor):
     '''Podkreślenie podanego napisu'''
     middle_a = 'background-color: %(kolor)s;' % dict(
@@ -235,6 +258,7 @@ def pokoloruj(napis, kolor):
         )
     polaczony = sp_a_stl(middle_a, napis)
     return polaczony
+
 
 def op_fmd(enctype=None, id_=None, name=None, method=frm_mt_pst, adres=None):
     wstawka_enc = wyznacz_wstawke('enctype', enctype)
@@ -251,12 +275,14 @@ def op_fmd(enctype=None, id_=None, name=None, method=frm_mt_pst, adres=None):
         method=method,
         ))
 
+
 def op_prgph(tmp_tekst, class_=None):
     kawalek_klasy = wyznacz_klasawa_wstawke(class_)
     return '<p%(kawalek_klasy)s>%(tmp_tekst)s</p>\n' % dict(
         kawalek_klasy=kawalek_klasy,
         tmp_tekst=tmp_tekst,
         )
+
 
 def op_styl(adres, media=None):
     if media is None:
@@ -266,8 +292,10 @@ def op_styl(adres, media=None):
         media=media,
         )
 
+
 def op_skrypt(adres):
     return '<script src="%s"></script>\n' % adres
+
 
 class TestTytuluHtml(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual

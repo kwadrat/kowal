@@ -17,6 +17,7 @@ import es_kw
 
 MojeSlupki = es_kw.MojeSlupki
 
+
 class PoboroweOgolneSlupki(MojeSlupki):
     pikseli_po_lewej = 30
     def __init__(self, tgk, aqr, dnw, dolny_podpis):
@@ -120,6 +121,7 @@ class PoboroweOgolneSlupki(MojeSlupki):
                     jeden_slupek = sj_kw.JedenSlupek(SlWspX, DolSlupka, GoraSlupka, Etykieta, yh_value, jeden_odc_bzw)
                     self.DodajSlupek(jeden_slupek)
             self.RysujListeSlupkow()
+
 
 class TestPoborowychOgolnychSlupkow(unittest.TestCase):
     def test_poborowych_ogolnych_slupkow(self):

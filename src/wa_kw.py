@@ -11,6 +11,7 @@ import ei_kw
 
 Skrawek = chg_kw.Skrawek
 
+
 class SkrAktWsz(Skrawek):
     '''Wybór aktywnych (ważnych) obiektów lub wszystkich (łącznie z testowymi)
     '''
@@ -41,6 +42,7 @@ class SkrAktWsz(Skrawek):
             ##############################################################################
             return sk_kw.ListWyboruOgolna(tgk, self.moje_pole, rq_kw.DaneAktWsz)
             ##############################################################################
+
 
 class TestAktWsz(unittest.TestCase):
     def test_1_a(self):

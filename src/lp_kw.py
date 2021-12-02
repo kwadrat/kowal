@@ -21,36 +21,46 @@ example_data_from_db = [
     [datetime.time(8, 0), 386],
     ]
 
+
 def verify_for_equal(tmp_value, expected):
     if tmp_value != expected:
         raise RuntimeError('tmp_value = %s expected = %s' % (repr(tmp_value), repr(expected)))
+
 
 def verify_for_u8_equal(tmp_value, expected):
     tmp_value = en_kw.upgrade_to_unicode(tmp_value)
     verify_for_equal(tmp_value, expected)
 
+
 def verify_for_2_equal(tmp_value, ls_expected):
     if tmp_value not in ls_expected:
         raise RuntimeError('tmp_value = %s' % repr(tmp_value))
 
+
 def prepare_s_date(year, month, day, hour, minute, second):
     return datetime.datetime(year, month, day, hour, minute, second)
 
+
 def rj_na_godzine(dttm):
     return dttm.strftime(cjs_kw.yq_6_yq)
+
 
 def determine_quarter(qrt_number):
     result = (rj_na_godzine(prepare_s_date(2013, 1, 31, 0, 0, 0) + datetime.timedelta(seconds=15 * 60 * qrt_number)))
     return result
 
+
 def determine_hour(hour_number):
     return '%02d:00' % hour_number
+
 
 def rj_na_date(dttm):
     return dttm.strftime(cjs_kw.yq_2_yq)
 
+
 def part_of_day_hs(par_h, par_m, par_s):
     return rj_na_godzine(datetime.time(par_h, par_m, par_s))
+
 
 def process_hour_headers(time_tuple):
     day_part = time_tuple[:3]
@@ -58,32 +68,39 @@ def process_hour_headers(time_tuple):
     verify_for_equal(day_part, day_zero)
     return part_of_day_hs(*time_part)
 
+
 def process_quarter_headers(value):
     my_point = prepare_s_date(*value) - datetime.timedelta(seconds=15*60)
     my_date = rj_na_date(my_point)
     my_time = my_point.strftime(cjs_kw.yq_6_yq)
     return my_date, my_time
 
+
 def describe_hour_column(column_index):
     one_number = column_index + 1
     one_number = midnight_hour_wrap.get(one_number, one_number)
     return determine_hour(one_number)
+
 
 def describe_quarter_column(column_index):
     one_number = column_index + 1
     one_number = midnight_quarter_wrap.get(one_number, one_number)
     return determine_quarter(one_number)
 
+
 def has_date_from_dt(prm_date):
     return isinstance(prm_date, datetime.date)
+
 
 def psycopg2_convert_date_format_to_text(slownik, pole):
     data = slownik[pole]
     if has_date_from_dt(data):
         slownik[slownik._index[pole]] = rj_na_date(data)
 
+
 def build_date(rok, miesiac, dzien):
     return datetime.date(rok, miesiac, dzien)
+
 
 def heating_period(my_point):
     year = my_point.year
@@ -91,15 +108,19 @@ def heating_period(my_point):
         year -= 1
     return year
 
+
 def watering_period(my_point):
     year = my_point.year
     return year
 
+
 def heating_label(year):
     return '%d/%d' % (year, year + 1)
 
+
 def watering_label(year):
     return '%d' % (year,)
+
 
 def detect_invariant_time(times_of_counters, default_value):
     mono_cnt = {}
@@ -112,6 +133,7 @@ def detect_invariant_time(times_of_counters, default_value):
     for one_cnt in mono_cnt:
         mono_cnt[one_cnt] = ciy_kw.invariable_time(mono_cnt[one_cnt], default_value)
     return mono_cnt
+
 
 def convert_keys(integer_keys):
     out_ls = []
@@ -130,8 +152,10 @@ def convert_keys(integer_keys):
     result = ''.join(out_ls)
     return result
 
+
 def year_month(dtdt):
     return dtdt.year, dtdt.month
+
 
 class TestDateQuarters(unittest.TestCase):
     def test_date_quarters(self):

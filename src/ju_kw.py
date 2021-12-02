@@ -19,6 +19,7 @@ legalne_wzory_sumy_brutto = frozenset([
     u'Wartość brutto z faktury S/D [zł]',
     ])
 
+
 def sprawdz_ogolnie_zgodnosc(elem, zbior, dodatkowy=None):
     if elem not in zbior:
         tmp_format = 'elem'; print 'Eval:', tmp_format, eval(tmp_format)
@@ -27,6 +28,7 @@ def sprawdz_ogolnie_zgodnosc(elem, zbior, dodatkowy=None):
         if dodatkowy is not None:
             tmp_format = 'dodatkowy'; print 'Eval:', tmp_format, eval(tmp_format)
         raise RuntimeError('Nieznany')
+
 
 def doszlifuj_date(rh_dt):
     if dn_kw.mozliwy_py_time(rh_dt):
@@ -42,6 +44,7 @@ def doszlifuj_date(rh_dt):
         krotka = dz_kw.wyciagnij_date_z_formatu_dmr(rh_dt)
         rh_dt = dn_kw.NapisDaty( * krotka)
     return rh_dt
+
 
 class TestObiektuZespolu(unittest.TestCase):
     def test_szlifowania_daty(self):

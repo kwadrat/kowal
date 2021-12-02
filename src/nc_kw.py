@@ -20,6 +20,7 @@ import jc_kw
 
 napis_max = 'MAXIMUM'
 
+
 def info_brak_danych(output_file, id_obiekt, my_start_date, my_end_date):
     dane = []
     dane.append('Brak danych dla parametrów:\r\n')
@@ -30,13 +31,16 @@ def info_brak_danych(output_file, id_obiekt, my_start_date, my_end_date):
     full_text = ''.join(dane)
     sf_kw.zapisz_plik(output_file, full_text)
 
+
 def unique_sorted(dane_bazy, field):
     object_names = list(set(ciw_kw.dict_ls_key_mapper(field, dane_bazy)))
     object_names.sort()
     return object_names
 
+
 def dla_podanej_nazwy(dane_bazy, name):
     return filter(lambda x: x[lc_kw.fq_account_qv] == name, dane_bazy)
+
 
 def wyznacz_slownik_miesiaca(selected_data):
     month_dict = {}
@@ -48,6 +52,7 @@ def wyznacz_slownik_miesiaca(selected_data):
     all_months = month_dict.keys()
     all_months.sort()
     return month_dict, all_months
+
 
 def wyznacz_dni_robocze(all_dates):
     oficjalne = []
@@ -72,6 +77,7 @@ def wyznacz_dni_robocze(all_dates):
             moj_poniedzialek += 7
     return oficjalne
 
+
 def weekend_style(jestem_weekend):
     if jestem_weekend:
         dc_style = dict(
@@ -81,6 +87,7 @@ def weekend_style(jestem_weekend):
     else:
         dc_style = {}
     return dc_style
+
 
 def weekend_b_style(jestem_weekend):
     if jestem_weekend:
@@ -92,6 +99,7 @@ def weekend_b_style(jestem_weekend):
     return dc_style
 
 CommonRdWr = tq_kw.CommonRdWr
+
 
 class CommonWriter(CommonRdWr):
     def __init__(self, tvk_pobor, period_server):

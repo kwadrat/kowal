@@ -10,17 +10,22 @@ Testy operacji na napisach (zamiana liter na małe, obliczanie sumy MD5)
 
 import lm_kw
 
+
 def pomniejsz_litery(napis):
     return napis.lower()
+
 
 def suma_kont(napis):
     return md5.md5(napis).hexdigest()
 
+
 def przecinek_kropka(a):
     return a.replace(',', '.')
 
+
 def odwrotny_zwykly(napis):
     return napis.replace('\\', '/')
+
 
 def przecinkowane_pole(kolumna):
     if lm_kw.have_dec_type(kolumna):
@@ -32,6 +37,7 @@ def przecinkowane_pole(kolumna):
             value_as_text = lm_kw.kropka_przecinek(value_as_text)
     return value_as_text
 
+
 def comma_and_some_zero(txt_value, rn_after):
     before_cnt = txt_value.find('.')
     comma_zeros = ',' + rn_after * '0'
@@ -42,6 +48,7 @@ def comma_and_some_zero(txt_value, rn_after):
     else:
         before_txt = txt_value
     return before_txt + comma_zeros
+
 
 class TestNapisow(unittest.TestCase):
     def test_operacji_na_napisach(self):

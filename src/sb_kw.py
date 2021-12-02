@@ -18,6 +18,7 @@ def only_filename(maybe_full_name):
         wynik = maybe_full_name
     return wynik
 
+
 class TestFunkcjiObcinajacejSciezke(unittest.TestCase):
     def test_msie_7_gave_full_path(self):
         '''

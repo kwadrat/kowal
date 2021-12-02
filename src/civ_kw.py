@@ -12,6 +12,7 @@ xs_semicolon_ql = ';'
 xs_comma_ql = ','
 xs_6_ql = ' DESC'
 
+
 class TestPartsSQL(unittest.TestCase):
     def test_parts_sql(self):
         '''

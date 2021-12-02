@@ -9,11 +9,14 @@ import unittest
 import rq_kw
 import lm_kw
 
+
 def dwa_zera(wartosc):
     return '%.2f' % wartosc
 
+
 def trzy_zera(wartosc):
     return '%.3f' % wartosc
+
 
 class SrednieZuzycie(object):
     def __init__(self, kwota, zuzycie):
@@ -75,8 +78,10 @@ class SrednieZuzycie(object):
             ksredni = dwa_zera(self.moj_iloraz())
         return ksredni
 
+
 def rj_srednie_zuzycie(kwota, zuzycie):
     return SrednieZuzycie(kwota, zuzycie).srednia_napis()
+
 
 class TestZaokraglania(unittest.TestCase):
     def test_zaokraglania(self):

@@ -6,8 +6,10 @@ import unittest
 import dn_kw
 import oa_kw
 
+
 def generator_szkieletu(liczba_przedzialow):
     return range(0, 2 * liczba_przedzialow + 1, 2)
+
 
 class KlasaOgolnaSzkieletuDat(object):
     def __init__(self):
@@ -83,6 +85,7 @@ class KlasaOgolnaSzkieletuDat(object):
         '''
         tmp_szkielet = dn_kw.daty_roku(wybrany_rok, rok_z_rozszerzeniem)
         self.przypisz_szkielet(tmp_szkielet)
+
 
 class TestOgolnegoSzkieletuDat(unittest.TestCase):
     def test_ogolnego_szkieletu_dat(self):

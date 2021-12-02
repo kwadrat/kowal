@@ -8,6 +8,7 @@ import unittest
 
 import wn_kw
 
+
 class KlasaNakladki(object):
     def __init__(self):
         '''
@@ -48,6 +49,7 @@ class KlasaNakladki(object):
         for pk_przedzial in przedzialy:
             slownik_qm = self.vz_nakladki[pk_przedzial]
             print pk_przedzial, slownik_qm
+
 
 class TestKlasyNakladki(unittest.TestCase):
     def test_klasy_nakladki(self):

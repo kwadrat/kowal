@@ -11,6 +11,7 @@ def normalize_value(before):
         result = before
     return result
 
+
 class TxtSheet(object):
     def __init__(self, single_file=None):
         '''
@@ -33,6 +34,7 @@ class TxtSheet(object):
         TxtSheet:
         '''
         return self.full_matrix[my_row][my_col]
+
 
 class TestSheetInText(unittest.TestCase):
     def test_sheet_in_text(self):

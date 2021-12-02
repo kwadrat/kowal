@@ -11,10 +11,12 @@ import chg_kw
 import sk_kw
 import ei_kw
 
+
 def ListaWyboruRoku(tgk):
     return sk_kw.ListWyboruOgolna(tgk, ei_kw.NazwaRok, chh_kw.MozliweLataZuzyc)
 
 Skrawek = chg_kw.Skrawek
+
 
 class SkrRok(Skrawek):
     '''Wybór roku, który przetwarzamy. Tego pola może nie być, jeśli analizujemy
@@ -81,6 +83,7 @@ class SkrRok(Skrawek):
             return ListaWyboruRoku(tgk)
         else:
             return self.wartosc_ukryta()
+
 
 class TestRok(unittest.TestCase):
     def test_1_a(self):

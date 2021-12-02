@@ -12,6 +12,7 @@ import tt_kw
 
 CommonReader = tt_kw.CommonReader
 
+
 class PowerReader(CommonReader):
     def __init__(self):
         '''
@@ -108,6 +109,7 @@ class PowerReader(CommonReader):
         self.display_info_file(under_name, data_rows, single_file)
         self.enter_power_data(dfb, key_object, data_rows)
         self.store_rows_in_db(dfb)
+
 
 class Test_Reader_of_Power(unittest.TestCase):
     def test_energy_1_power(self):

@@ -19,10 +19,12 @@ def prepare_new_image(size, color):
     draw = ImageDraw.Draw(im)
     return im, draw
 
+
 def copy_existing_image(im):
     im2 = im.copy()
     draw2 = ImageDraw.Draw(im2)
     return im2, draw2
+
 
 def to_jest_poprawny_plik_obrazu(fd):
     '''
@@ -37,6 +39,7 @@ def to_jest_poprawny_plik_obrazu(fd):
     except IOError:
         im = 0
     return im
+
 
 def wykonaj_mniejsza_wersje(source_file, target_path, width):
     status = 1

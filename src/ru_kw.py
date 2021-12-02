@@ -11,6 +11,7 @@ import ro_kw
 
 Skrawek = chg_kw.Skrawek
 
+
 class SkrZuzRok(Skrawek):
     '''Wybór roku dla analizy zużyć.
     '''
@@ -51,6 +52,7 @@ class SkrZuzRok(Skrawek):
         SkrZuzRok:
         '''
         return ro_kw.ListaWyboruRoku(tgk)
+
 
 class TestZuzRok(unittest.TestCase):
     def test_1_a(self):

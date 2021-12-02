@@ -17,10 +17,12 @@ numery_miesiecy = range(1, 12 + 1)
 
 roman_map = dict((k, v) for k, v in zip(tab_rzymskich, numery_miesiecy))
 
+
 def add_day_to_month(month, day):
     if day is not None:
         month = '%02d.%s' % (day, month)
     return month
+
 
 class RomanPeriod(object):
     def take_year(self, elem_ls):
@@ -134,23 +136,29 @@ class RomanPeriod(object):
             the_year=self.the_year,
             )
 
+
 def detect_day_ranges(napis):
     obk = RomanPeriod(napis)
     result = obk.get_tuple()
     return result
 
+
 def valid_date_format(value):
     return hj_kw.zamien_na_logiczne(value)
+
 
 def nazwa_rzymskiego(numer):
     return tab_rzymskich[numer - 1]
 
+
 def MiesiacDnia(nkd):
     return dn_kw.DataDnia(nkd)[1]
+
 
 def RzymskiDnia(nkd):
     miesiac = MiesiacDnia(nkd)
     return nazwa_rzymskiego(miesiac)
+
 
 def roman_range(krotka):
     return '%s-%s-%s' % (
@@ -159,14 +167,17 @@ def roman_range(krotka):
         krotka[2],
         )
 
+
 def miesiace_i_rok(zakres_miesiecy):
     obk = RomanPeriod(zakres_miesiecy)
     return obk.rough_month()
+
 
 def restore_day_ranges(five_pack):
     obk = RomanPeriod(five_pack=five_pack)
     napis = obk.text_way()
     return napis
+
 
 class TestDaysRanges(unittest.TestCase):
     def test_days_ranges(self):

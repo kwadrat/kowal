@@ -4,6 +4,7 @@
 import rq_kw
 import op_kw
 
+
 class ListaOdcBazowych(object):
     def __init__(self):
         '''

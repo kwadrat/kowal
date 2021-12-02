@@ -6,8 +6,10 @@ import unittest
 import hj_kw
 import lm_kw
 
+
 def convert_all(my_values):
     return "'{%s}'" % hj_kw.Poprzecinkuj(map(lm_kw.for_storing, my_values))
+
 
 class TestConvertingVector(unittest.TestCase):
     def test_converting_vector(self):

@@ -20,6 +20,7 @@ def elementy_sas(lista, element):
         wynik = None
     return wynik
 
+
 class TestZnajdowaniaSasiadow(unittest.TestCase):
     def test_znajdowania_sasiadow(self):
         '''

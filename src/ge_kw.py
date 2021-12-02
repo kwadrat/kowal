@@ -8,6 +8,7 @@ import dq_kw
 
 KlasaOgolnaSzkieletuDat = dq_kw.KlasaOgolnaSzkieletuDat
 
+
 class SzkieletDziennyDlaPoborow(KlasaOgolnaSzkieletuDat):
     def __init__(self, krt_pobor, my_start_day, my_end_day):
         '''
@@ -30,6 +31,7 @@ class SzkieletDziennyDlaPoborow(KlasaOgolnaSzkieletuDat):
         SzkieletDziennyDlaPoborow:
         '''
         return dn_kw.NapisDnia(self.my_start_day + akt / 2)[-2:]
+
 
 class TestDziennegoSzkieletu(unittest.TestCase):
     def test_energii_szkieletowego_datownika(self):

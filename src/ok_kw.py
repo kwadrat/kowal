@@ -9,6 +9,7 @@ import ei_kw
 
 Skrawek = chg_kw.Skrawek
 
+
 class SkrOkres(Skrawek):
     '''Wybór okresu:
        - w latach (całe lata pokazujemy na wykresie)

@@ -5,6 +5,7 @@ import unittest
 
 import oa_kw
 
+
 class KreskiWykresu(object):
     def __init__(self):
         '''
@@ -37,6 +38,7 @@ class KreskiWykresu(object):
         '''
         for polozenie, kolor in self.collected_lines:
             draw.line(polozenie, kolor)
+
 
 class TestKresekWykresu(unittest.TestCase):
     def test_kresek_wykresu(self):

@@ -8,11 +8,13 @@ import unittest
 
 import lm_kw
 
+
 def pokaz_kwote(kwota):
     '''
     Dla równego formatowania kwot z groszami
     '''
     return '%8.2f' % kwota
+
 
 def bledne_duplikaty(lista):
     '''
@@ -26,6 +28,7 @@ def bledne_duplikaty(lista):
             if akt == nast:
                 raise RuntimeError('Duplikat: %s %s' % (repr(akt), repr(lista)))
             akt = nast # Przejście na następny element
+
 
 class KlasaSlownika(object):
     def __init__(self):
@@ -167,6 +170,7 @@ class KlasaSlownika(object):
         else:
             wynik = max(self.jh_kwota(), self.umw_wartosc_s_qm)
         return wynik
+
 
 class TestKlasySlownika(unittest.TestCase):
     def test_klasy_slownika(self):

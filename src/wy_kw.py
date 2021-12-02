@@ -9,6 +9,7 @@ import unittest
 
 import dn_kw
 
+
 def zrob_same_daty(napis):
     zebrane = []
     for linia in napis.splitlines():
@@ -55,6 +56,7 @@ faktura_jest_niezrozumiala = zrob_same_daty('''\
 2010-01-01 2010-02-06 Gimnazjum nr 11
 ''')
 
+
 def okresl_spcf_dla_blednych(data_pocz, data_kon):
     krotka_dat = (data_pocz, data_kon)
     if krotka_dat in tylko_koncowa_data_jest_dobra:
@@ -73,6 +75,7 @@ def okresl_spcf_dla_blednych(data_pocz, data_kon):
         spcf_wyznaczona = None
     return spcf_wyznaczona
 
+
 def oba_konce_miesiecy(data_pocz, data_kon):
     numer_a = dn_kw.napis_na_numer_dnia(data_pocz)
     numer_b = numer_a + 1
@@ -90,6 +93,7 @@ def oba_konce_miesiecy(data_pocz, data_kon):
         spcf_wyznaczona = None
     return spcf_wyznaczona
 
+
 def dates_of_energy_as_month_and_year(data_pocz, data_kon):
     spcf_pocz = okresl_spcf_dla_blednych(data_pocz, data_kon)
     if spcf_pocz is None:
@@ -97,6 +101,7 @@ def dates_of_energy_as_month_and_year(data_pocz, data_kon):
     if spcf_pocz is None:
         spcf_pocz = dn_kw.one_common_date_of_energy_as_month_and_year(data_pocz, data_kon)
     return spcf_pocz
+
 
 class TestNiejasnychDatEnElektr(unittest.TestCase):
     def test_energy_date(self):

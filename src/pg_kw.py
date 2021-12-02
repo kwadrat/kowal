@@ -6,6 +6,7 @@ import sw_kw
 import we_kw
 import fq_kw
 
+
 class PosrednikAplikacjiExcela(object):
 
     def podlacz_app_excel(self):

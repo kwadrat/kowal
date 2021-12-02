@@ -5,6 +5,7 @@ import unittest
 
 import gu_kw
 
+
 class XlrdMerged(object):
     def __init__(self, row_first, row_after_last, col_first, col_after_last):
         '''
@@ -33,6 +34,7 @@ class XlrdMerged(object):
         XlrdMerged:
         '''
         return self.klm_a_ads.col_cnt
+
 
 class TestDecodeMergedDetails(unittest.TestCase):
     def test_merged_cells_shape(self):

@@ -15,10 +15,12 @@ import lh_kw
 import ey_kw
 import lt_kw
 
+
 def wyznacz_daty_miesieczne(slownik_wpisow):
     wszystkie_miesiace = slownik_wpisow.keys()
     wszystkie_miesiace.sort()
     return wszystkie_miesiace
+
 
 def wygeneruj_wiersz_miesiaca(lst_h, slownik_wpisow, wszystkie_dni, jeden_miesiac):
     lst_h.ddj(ze_kw.op_tr())
@@ -41,12 +43,14 @@ def wygeneruj_wiersz_miesiaca(lst_h, slownik_wpisow, wszystkie_dni, jeden_miesia
             ))
     lst_h.ddj(ze_kw.formularz_67c_kon_wiersza)
 
+
 def wygeneruj_wiersz_naglowka(lst_h, wszystkie_dni):
     lst_h.ddj(ze_kw.op_tr())
     lst_h.ddj(ze_kw.op_ptd('Miesiąc'))
     for jeden_dzien in wszystkie_dni:
         lst_h.ddj(ze_kw.op_ptd(str(jeden_dzien)))
     lst_h.ddj(ze_kw.formularz_67c_kon_wiersza)
+
 
 def wygeneruj_tabelke_poborow(lst_h, slownik_wpisow):
     wszystkie_miesiace = wyznacz_daty_miesieczne(slownik_wpisow)
@@ -57,12 +61,14 @@ def wygeneruj_tabelke_poborow(lst_h, slownik_wpisow):
         wygeneruj_wiersz_miesiaca(lst_h, slownik_wpisow, wszystkie_dni, jeden_miesiac)
     lst_h.ddj(ze_kw.formularz_1c_kon_tabeli)
 
+
 def zapamietaj_pomiar(slownik_wpisow, year, month, day, day_cell):
     etykieta_miesiaca = dn_kw.napis_z_rok_mies(year, month)
     if etykieta_miesiaca not in slownik_wpisow:
         slownik_wpisow[etykieta_miesiaca] = {}
     slownik_miesiaca = slownik_wpisow[etykieta_miesiaca]
     slownik_miesiaca[day] = day_cell
+
 
 def przemysl_wiersz_poborow(slownik_wpisow, single_row):
     day_cell = fx_kw.DayCellsStats()
@@ -76,11 +82,13 @@ def przemysl_wiersz_poborow(slownik_wpisow, single_row):
         day_cell,
         )
 
+
 def wykonaj_analize_danych(result):
     slownik_wpisow = {}
     for single_row in result:
         przemysl_wiersz_poborow(slownik_wpisow, single_row)
     return slownik_wpisow
+
 
 def uzupelnij_brakujace(slownik_wpisow):
     all_keys = slownik_wpisow.keys()
@@ -95,6 +103,7 @@ def uzupelnij_brakujace(slownik_wpisow):
             one_krotka = dn_kw.one_month_later(*one_krotka)
             one_key = dn_kw.napis_z_rok_mies(*one_krotka)
 
+
 def zrob_tabele_poborow(lst_h, result):
     lst_h.ddj(ze_kw.formularz_1c_zlm_wrsz)
     slownik_wpisow = wykonaj_analize_danych(result)
@@ -102,6 +111,7 @@ def zrob_tabele_poborow(lst_h, result):
     wygeneruj_tabelke_poborow(lst_h, slownik_wpisow)
 
 OgolnaListaPoborow = lt_kw.OgolnaListaPoborow
+
 
 class PokryciowaListaPoborow(OgolnaListaPoborow):
     def __init__(self, tgk, dfb, krt_pobor):

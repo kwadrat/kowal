@@ -5,12 +5,14 @@ import unittest
 
 import du_kw
 
+
 def invariable_time(time_ls, default_value):
     if len(time_ls) > 1 and len(set(time_ls)) == 1:
         result = time_ls[0]
     else:
         result = default_value
     return result
+
 
 class TestTimeVariability(unittest.TestCase):
     def test_time_variability(self):

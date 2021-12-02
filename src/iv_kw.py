@@ -3,12 +3,14 @@
 
 import unittest
 
+
 def map_document_ident(input_tuple):
     (value,) = input_tuple
     if value == '14061083':
         value = '14025187'
     output_tuple = (value,)
     return output_tuple
+
 
 class TestDocumentIdentMapping(unittest.TestCase):
     def test_document_ident_mapping(self):

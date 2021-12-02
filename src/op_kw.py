@@ -5,6 +5,7 @@ import unittest
 
 import rq_kw
 
+
 class AxisY(object):
     def __init__(self, MinY, MaxY):
         '''
@@ -46,6 +47,7 @@ class AxisY(object):
         else:
             napis = None
         return napis
+
 
 class TestAxisVertical(unittest.TestCase):
     def test_axis_vertical(self):

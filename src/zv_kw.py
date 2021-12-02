@@ -67,6 +67,7 @@ class ParametrySrodowiska(object):
             raise RuntimeError('Nieznany okres w historii?: %s' % repr(okres_hist))
         return wynik
 
+
 class TestParametrowSrodowiska(unittest.TestCase):
     def test_parametrow_srodowiska(self):
         '''

@@ -15,6 +15,7 @@ import unittest
     iy_bdk,
     ) = range(6)
 
+
 class TestEtykietRodzajowFaktur(unittest.TestCase):
     def test_etykiet_rodzajow_faktur(self):
         '''

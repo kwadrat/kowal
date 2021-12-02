@@ -3,6 +3,7 @@
 
 import oh_kw
 
+
 class WykresDlaFakturPomiarow(object):
     def __init__(self, tgk, aqr):
         '''

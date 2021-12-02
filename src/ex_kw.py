@@ -7,6 +7,7 @@ import ez_kw
 
 KlasaSzkieletuDat = ez_kw.KlasaSzkieletuDat
 
+
 class SzkieletDatDlaZuzycia(KlasaSzkieletuDat):
     def __init__(self):
         '''
@@ -19,6 +20,7 @@ class SzkieletDatDlaZuzycia(KlasaSzkieletuDat):
         SzkieletDatDlaZuzycia:
         '''
         return self.szkielet_dat
+
 
 class TestSzkieletuDatDlaZuzycia(unittest.TestCase):
     def test_szkieletu_dat_dla_zuzycia(self):

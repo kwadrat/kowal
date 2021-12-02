@@ -8,6 +8,7 @@ import lm_kw
 Miejsc_dla_ilosci = 3
 Miejsc_dla_kwoty = 2
 
+
 class LiczbaPrecyzyjna(object):
     def __init__(self, wartosc, precyzja=None):
         '''
@@ -88,6 +89,7 @@ class LiczbaPrecyzyjna(object):
         odjemnik = odejmowane.pob_d()
         self.moja_wartosc -= odjemnik
 
+
 class TestLczPrec(unittest.TestCase):
     def testZwiekszania(self):
         '''
@@ -98,6 +100,7 @@ class TestLczPrec(unittest.TestCase):
         tmp_zm.zwieksz(zwiekszenie)
         assert tmp_zm.pob_d() == lm_kw.a2d('3.5')
 
+
 class LiczbaIlosci(LiczbaPrecyzyjna):
     def __init__(self, wartosc):
         '''
@@ -105,12 +108,14 @@ class LiczbaIlosci(LiczbaPrecyzyjna):
         '''
         LiczbaPrecyzyjna.__init__(self, wartosc, Miejsc_dla_ilosci)
 
+
 class LiczbaKwoty(LiczbaPrecyzyjna):
     def __init__(self, wartosc):
         '''
         LiczbaKwoty:
         '''
         LiczbaPrecyzyjna.__init__(self, wartosc, Miejsc_dla_kwoty)
+
 
 def czy_mam_licz_prec(element):
     return isinstance(element, LiczbaPrecyzyjna)

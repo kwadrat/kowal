@@ -13,11 +13,13 @@ nazwa_dev = 'kopia'
 if rq_kw.Niebezpieczne_testowa_aplikacja_produkcyjna_baza:
     nazwa_dev = 'media'
 
+
 def jaka_nazwa_bazy(system_prod_dev):
     if system_prod_dev:
         return nazwa_prod
     else:
         return nazwa_dev
+
 
 class TestWyboruBazy(unittest.TestCase):
     def test_wyboru_bazy(self):

@@ -7,6 +7,7 @@ import lk_kw
 import hj_kw
 import oc_kw
 
+
 class KalejdoskopStron(object):
     def __init__(self, numer_strony):
         '''
@@ -31,6 +32,7 @@ rjb_strona_trzynasta = KalejdoskopStron(13)
 rjb_strona_czternasta = KalejdoskopStron(14)
 rjb_strona_pietnasta = KalejdoskopStron(15)
 
+
 def fn_adres_post(wersja_produkcyjna):
     return hj_kw.fx_jn(
         lk_kw.rjb_sam_slsh,
@@ -38,6 +40,7 @@ def fn_adres_post(wersja_produkcyjna):
         lk_kw.rjb_sam_slsh,
         oc_kw.dodaj_py(rjb_strona_druga.rj_sam_rdzen),
         )
+
 
 class TestCaleidPages(unittest.TestCase):
     def test_caleid_pages(self):

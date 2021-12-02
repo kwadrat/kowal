@@ -6,6 +6,7 @@ import unittest
 import ut_kw
 import dz_kw
 
+
 class TxtXlrd(object):
     def __init__(self):
         '''
@@ -35,6 +36,7 @@ class TxtXlrd(object):
         TxtXlrd:
         '''
         return ut_kw.TxtBook(single_file)
+
 
 class TestXlrdInText(unittest.TestCase):
     def test_xlrd_in_text(self):

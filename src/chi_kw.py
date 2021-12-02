@@ -3,6 +3,7 @@
 
 import unittest
 
+
 def rok_przestepny(rok):
     '''
     Wartość zwracana:
@@ -17,6 +18,7 @@ def rok_przestepny(rok):
     else:
         przestepny = 1
     return przestepny
+
 
 class TestLeapYearDetection(unittest.TestCase):
     def test_leap_year_detection(self):

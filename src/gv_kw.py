@@ -15,6 +15,7 @@ ECR_sea_green = 'sea_green'
 ECR_light_turquoise = 'light_turquoise'
 ECR_blue = 'blue'
 
+
 class RichCommon(object):
     def update_value(self, rn_value):
         '''
@@ -62,12 +63,14 @@ class RichCommon(object):
         self.update_centered(rn_centered)
         self.update_cols(liczba_kolumn)
 
+
 class RichString(RichCommon):
     def __init__(self, rn_value=None, rn_size=None, rn_centered=0, liczba_kolumn=1):
         '''
         RichString:
         '''
         RichCommon.__init__(self, rn_value, rn_size=rn_size, rn_centered=rn_centered, liczba_kolumn=liczba_kolumn)
+
 
 class RichNumber(RichCommon):
     def __init__(self, rn_value, rn_after=2, rn_colour=None, rn_size=None):
@@ -77,6 +80,7 @@ class RichNumber(RichCommon):
         RichCommon.__init__(self, rn_value, rn_colour=rn_colour, rn_size=rn_size)
         self.update_after(rn_after)
 
+
 class RichFormula(RichCommon):
     def __init__(self, liczba_kolumn=1, rn_after=2):
         '''
@@ -84,6 +88,7 @@ class RichFormula(RichCommon):
         '''
         RichCommon.__init__(self, liczba_kolumn=liczba_kolumn)
         self.update_after(rn_after)
+
 
 class TestTheNumber(unittest.TestCase):
     def test_the_number(self):

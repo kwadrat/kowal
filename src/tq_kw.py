@@ -10,9 +10,11 @@ altered_names = {
     'ZESPOL_SZKOLNO_PRZEDSZK_RYBNIK_GLIWICKA': 'ZESPOL_SZKOLNO_PRZEDSZK_WIELOPOLE',
     }
 
+
 def make_alias(name):
     name = altered_names.get(name, name)
     return name
+
 
 def locate_object_key(dfb, under_name):
     under_name = make_alias(under_name)
@@ -25,6 +27,7 @@ def locate_object_key(dfb, under_name):
     else:
         raise RuntimeError('ret_size = %d' % ret_size)
     return key_object
+
 
 class CommonRdWr(object):
     def __init__(self, tvk_pobor, period_server):

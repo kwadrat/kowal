@@ -5,6 +5,7 @@ import unittest
 
 import hj_kw
 
+
 class ZwracanePola(object):
     def __init__(self):
         '''
@@ -29,6 +30,7 @@ class ZwracanePola(object):
         ZwracanePola:
         '''
         return hj_kw.Poprzecinkuj(self.qs_kolejka)
+
 
 class TestZwracanychPol(unittest.TestCase):
     def test_zwracanych_pol(self):

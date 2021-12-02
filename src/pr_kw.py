@@ -11,6 +11,7 @@ import ei_kw
 
 Skrawek = chg_kw.Skrawek
 
+
 class SkrPrezentacja(Skrawek):
     '''Wybór sposobu prezentacji wyników: tabela, tabela/wykres, wykres
     To pole jest wyświetlane tylko dla R1 i R2, dla lat i roku
@@ -83,6 +84,7 @@ class SkrPrezentacja(Skrawek):
                 ##############################################################################
         else:
             return self.wartosc_ukryta()
+
 
 class TestPrezentacja(unittest.TestCase):
     def test_1_a(self):

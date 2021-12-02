@@ -11,6 +11,7 @@ row_offset_column_name = -1
 row_offset_invoice_mark = 0
 row_offset_vertical_sum = 13
 
+
 class OgOpOgolnaKolumna(object):
     def __init__(self, wiersz_bazowy_miesiecy=None, kl_pion=0, kl_db_label=None, kl_miejsc=2):
         '''

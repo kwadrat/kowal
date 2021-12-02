@@ -8,6 +8,7 @@ import unittest
 import hv_kw
 import ze_kw
 
+
 class LancOgolOgniw(object):
     def jump_immediately(self, napis):
         '''
@@ -131,6 +132,7 @@ class LancOgolOgniw(object):
         LancOgolOgniw:
         '''
         self.dolcz('%s' % elem)
+
 
 class TestOgolnegoLancucha(unittest.TestCase):
     def test_calego_lancucha(self):

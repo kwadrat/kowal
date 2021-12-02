@@ -9,6 +9,7 @@ import dq_kw
 
 KlasaOgolnaSzkieletuDat = dq_kw.KlasaOgolnaSzkieletuDat
 
+
 class SzkieletDatDlaPoborow(KlasaOgolnaSzkieletuDat):
     def __init__(self, krt_pobor):
         '''
@@ -34,6 +35,7 @@ class SzkieletDatDlaPoborow(KlasaOgolnaSzkieletuDat):
         else:
             result = akt / 4
         return str(result / 2)
+
 
 class TestSzkieletowegoDatownika(unittest.TestCase):
     def test_energii_szkieletowego_datownika(self):

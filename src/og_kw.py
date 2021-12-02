@@ -3,6 +3,7 @@
 
 import ej_kw
 
+
 class LisSzerMiesiecznychFaktur(object):
     def __init__(self):
         '''

@@ -14,6 +14,7 @@ licznik_inst_list = li_kw.LicznikInstancji('lista')
 
 ListaLubSlownikOgolnie = ll_kw.ListaLubSlownikOgolnie
 
+
 class TypowaLista(ListaLubSlownikOgolnie):
     def __init__(self, etykieta):
         '''
@@ -137,9 +138,11 @@ class TypowaLista(ListaLubSlownikOgolnie):
         akt_slownik = self.wskazany_element(0)
         akt_slownik.wrnt_wsp(poprz_slownik, wrnt_typowy)
 
+
 def znajdz_lub_przygotuj_nowa_liste(klucz, slownik):
     return po_kw.znajdz_lub_przygotuj_nowy_element(klucz, slownik,
       lambda: TypowaLista(hj_kw.space_two(ek_kw.ETK_lista_znajdz_lub_przygotuj, klucz)))
+
 
 class TestTypicalList(unittest.TestCase):
     def test_typical_list(self):

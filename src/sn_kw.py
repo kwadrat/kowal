@@ -5,6 +5,7 @@ import unittest
 
 import us_kw
 
+
 class KonstrukcjaSpinki(object):
     def __init__(self, moj_klucz):
         '''
@@ -52,6 +53,7 @@ class KonstrukcjaSpinki(object):
         KonstrukcjaSpinki:
         '''
         return self.spinkowe_miejsce
+
 
 class TestSpinki(unittest.TestCase):
     def test_spinki(self):

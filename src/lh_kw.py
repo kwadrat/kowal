@@ -6,8 +6,10 @@ import unittest
 import ze_kw
 
 # Sprawdza, że w liście napisów jest co najmniej jeden znak
+
 def mam_znak(lista):
     return filter(None, lista)
+
 
 class ListaHTML(object):
     '''
@@ -78,6 +80,7 @@ class ListaHTML(object):
         ListaHTML:
         '''
         self.ddj('Brak zróżnicowania danych w pionie, MaxY=%s' % repr(MaxY))
+
 
 class TestLsH(unittest.TestCase):
     def test_wykonania(self):

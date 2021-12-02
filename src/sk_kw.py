@@ -9,8 +9,10 @@ import ze_kw
 import uy_kw
 import od_kw
 
+
 def mam_pojedyn_wartosci(lista):
     return type(lista[0]) is str
+
 
 def ListWyboruOgolna(tgk, nazwa, lista):
     w = []
@@ -35,6 +37,7 @@ def ListWyboruOgolna(tgk, nazwa, lista):
               opcja == Wybrana))
         w.append(ze_kw.formularz_1c_kon_slct)
     return ''.join(w)
+
 
 class TestPodstSkrawka(unittest.TestCase):
     tassertEqual = uy_kw.tassertEqual

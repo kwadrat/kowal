@@ -3,6 +3,7 @@
 
 import sys
 
+
 def pokaz_na_czerwono(napis, czy_na_stderr):
     if czy_na_stderr:
         plik = sys.stderr

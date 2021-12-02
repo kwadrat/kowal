@@ -8,6 +8,7 @@ def husk_object(fvk_ob_ct):
     (id_obkt, tvk_junction) = fvk_ob_ct
     return id_obkt
 
+
 class TestHuskingIdentifier(unittest.TestCase):
     def test_husking_identifier(self):
         '''

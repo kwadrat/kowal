@@ -10,6 +10,7 @@ class PartCartesian(object):
         PartCartesian:
         '''
 
+
 class TestCartesian(unittest.TestCase):
     def test_cartesian(self):
         '''

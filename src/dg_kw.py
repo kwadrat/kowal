@@ -7,6 +7,7 @@ TymczasowoF = 0
 nazwa_aplikacji = 'Excel'
 sciezka_sterow_xcl = nazwa_aplikacji + '.Application'
 
+
 def porownaj_wielkosc_i_kilkubajtowe_roznice(dane_programu, dane_rozpakowane):
     ilea = len(dane_programu)
     ileb = len(dane_rozpakowane)
@@ -24,6 +25,7 @@ def porownaj_wielkosc_i_kilkubajtowe_roznice(dane_programu, dane_rozpakowane):
     else:
         return 1
 
+
 def zwroc_pywin32():
     '''
     http://sourceforge.net/projects/pywin32/files/pywin32/Build%20218/
@@ -32,9 +34,11 @@ def zwroc_pywin32():
     import win32com.client as win32
     return win32
 
+
 def NowyXL():
     win32 = zwroc_pywin32()
     return win32.gencache.EnsureDispatch(sciezka_sterow_xcl)
+
 
 class TestDG(unittest.TestCase):
     def test_napisow(self):

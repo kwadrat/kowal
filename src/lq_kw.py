@@ -8,14 +8,18 @@ import hj_kw
 import lm_kw
 import le_kw
 
+
 def cnt_none(elements):
     return len(filter(lambda x: x is None, elements))
+
 
 def cnt_zero(elements):
     return len(filter(lambda x: x in (0.0, lm_kw.wartosc_zero_globalna), elements))
 
+
 def sum_of_not_nones(krt_vl_fnctn, elements):
     return krt_vl_fnctn(hj_kw.remove_nones(elements))
+
 
 def obtain_stats(krt_vl_fnctn, list_of_samples):
     v_none = cnt_none(list_of_samples)
@@ -23,8 +27,10 @@ def obtain_stats(krt_vl_fnctn, list_of_samples):
     v_sum = sum_of_not_nones(krt_vl_fnctn, list_of_samples)
     return v_none, v_zero, v_sum
 
+
 def ignored_zero(value):
     return value == 0.0
+
 
 class SampleRow(object):
     def __init__(self, rough_point):
@@ -103,6 +109,7 @@ class SampleRow(object):
         '''
         v_none, v_zero, v_sum = obtain_stats(krt_pobor.krt_vl_fnctn, self.list_of_samples)
         le_kw.dq_update_stats_of_samples(dfb, table_of_samples, v_none, v_zero, v_sum, self.sample_key)
+
 
 class TestRowChanges(unittest.TestCase):
     def test_row_changes(self):

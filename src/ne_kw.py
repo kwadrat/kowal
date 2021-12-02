@@ -12,6 +12,7 @@ import nc_kw
 
 CommonWriter = nc_kw.CommonWriter
 
+
 class EnergyWriter(CommonWriter):
     def __init__(self):
         '''
@@ -57,6 +58,7 @@ class EnergyWriter(CommonWriter):
         for moj_rm in all_months:
             my_data = month_dict[moj_rm]
             self.generate_for_month(xwg, my_data, dost_wiersz)
+
 
 class TestEnergyParts(unittest.TestCase):
     def test_energy_parts(self):

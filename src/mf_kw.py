@@ -13,6 +13,7 @@ link_obrazu = '''\
 <img name="%(html_tmp_name)s" src="%(nazwa)s" width="%(x)d" height="%(y)d"%(rozkaz_mapy)s> <br/>
 '''
 
+
 def pocz_mapy(nazwa):
     return '''\
   <map id="%(mapa_slupkow)s" name="%(mapa_slupkow)s">
@@ -30,10 +31,12 @@ kawalki_quote = (
     ("'", '&prime;'),
     )
 
+
 def quote_html(napis):
     for a, b in kawalki_quote:
         napis = napis.replace(a, b)
     return napis
+
 
 def UsunDuplikaty(lista):
     '''
@@ -53,6 +56,7 @@ def UsunDuplikaty(lista):
             Poprz = elem
     return wynik
 
+
 def numer_wiersza(etyk):
     '''
     Odcinamy dodatkową literkę, aby uzyskać czysty numer faktury.
@@ -60,6 +64,7 @@ def numer_wiersza(etyk):
     samym numerem.
     '''
     return int(etyk[1:])
+
 
 def zrob_tab_html(on_mouse, ls_wr_tab):
     wynik = []
@@ -83,11 +88,13 @@ def zrob_tab_html(on_mouse, ls_wr_tab):
     wynik.append(ze_kw.formularz_1c_kon_tabeli)
     return ''.join(wynik)
 
+
 def nazwa_wiersza(lp_faktury):
     '''
     Zwraca nazwę wiersza tabeli
     '''
     return 'w%d' % lp_faktury
+
 
 def plik_grafiki(znacznik_unik, litera_typu, nr_miejsca, wersja):
     '''
@@ -104,6 +111,7 @@ def plik_grafiki(znacznik_unik, litera_typu, nr_miejsca, wersja):
       '_'.join(map(str, wersja)),
       oc_kw.RozszerzenieObrazka)
 
+
 def nazwa_mapy(litera_typu, nr_miejsca):
     '''
     Zwraca nazwę pliku graficznego PNG
@@ -112,6 +120,7 @@ def nazwa_mapy(litera_typu, nr_miejsca):
     wersja - krotka z zestawem liczb (pusta - wersja podstawowa pliku)
     '''
     return 'mapa_%s%d' % (litera_typu, nr_miejsca)
+
 
 class TestListyNagTabeli(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual

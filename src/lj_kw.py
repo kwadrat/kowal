@@ -6,6 +6,7 @@ import os
 import rq_kw
 import oc_kw
 
+
 class LogujWiadomosci(object):
     def __init__(self):
         '''
@@ -53,6 +54,7 @@ class LogujWiadomosci(object):
         self.lqg_close()
 
 lqg_ob = LogujWiadomosci()
+
 
 def diagx(napis, enter=1):
     lqg_ob.lqg_razem(napis, enter)

@@ -13,6 +13,7 @@ import ze_kw
 CLL_Background_OK = 'zielone-tlo'
 CLL_Background_Problems = 'czerwone-tlo'
 
+
 class DayCellsStats(object):
     def __init__(self):
         '''

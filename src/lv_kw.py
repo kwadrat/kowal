@@ -9,6 +9,7 @@ import ei_kw
 
 Skrawek = chg_kw.Skrawek
 
+
 class SkrPobor(Skrawek):
     '''Wybór poboru:
        - energii

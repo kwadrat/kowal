@@ -13,6 +13,7 @@ class PredefinedEnergyCoefficient(object):
         self.moc_przylaczeniowa = moc_przylaczeniowa
         self.taryfa = taryfa
 
+
 class TestEnergyCoefficients(unittest.TestCase):
     def test_energy_coefficients(self):
         '''

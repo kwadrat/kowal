@@ -6,11 +6,13 @@ import unittest
 import sn_kw
 import uv_kw
 
+
 def przygotuj_podnajemcow(lista_podnajemcow):
     wykaz_podnajemcow = {}
     for numer_nadlicznika, moj_punkt_poboru, data_pocz, data_kon, dane_osoby in lista_podnajemcow:
         wykaz_podnajemcow[moj_punkt_poboru] = uv_kw.MojPodnajemca(numer_nadlicznika, dane_osoby, data_pocz, data_kon)
     return wykaz_podnajemcow
+
 
 class DanePodnajemcow(object):
     def __init__(self, lista_podnajemcow):
@@ -69,6 +71,7 @@ lista_testowa_podnajemcow = [
     ('00002-001', '22222-001', '2014-01-01', None, 'BRZĘCZYSZCZYKIEWICZ GRZEGORZ'),
     ('00003-001', '33333-001', '2014-01-01', None, 'NOWAK ADAM'),
     ]
+
 
 class TestPodnajemcy(unittest.TestCase):
     def test_klasy_podnajemcy(self):

@@ -29,6 +29,7 @@ slownik_normalnego_slupka = dict(outline=oa_kw.Kolor_Kresek, fill=Kolor_Srodka)
 slownik_przekroczonego_slupka = dict(outline=oa_kw.KOLOR_CZERWONE_RAMKA, fill=oa_kw.KOLOR_CZERWONE_TLO)
 slownik_mocy_umownej = dict(fill=Kolor_umw_Srodka)
 
+
 def prawdziwe_rysowanie(draw, lista_prostokatow, slownik_rect, slownik_przekroczenia=None):
     for tmp_punkt in lista_prostokatow:
         x1, y1, x2, y2 = tmp_punkt.zwroc_cztery_wsp()
@@ -39,6 +40,7 @@ def prawdziwe_rysowanie(draw, lista_prostokatow, slownik_rect, slownik_przekrocz
         draw.rectangle((x1, y1, x2, y2), ** slownik_efektywny)
 
 KlasaObrazu = pt_kw.KlasaObrazu
+
 
 class MojeSlupki(KlasaObrazu):
     def linii_na_dole(self):
@@ -341,6 +343,7 @@ class MojeSlupki(KlasaObrazu):
                     GoraSlupka, DolSlupka = self.wyznacz_gore_dol_slupka(vert_axis, Wartosc)
                     tmp_punkt = hr_kw.ProstokatDoRysowania(SlWspX1, GoraSlupka, SlWspX2, DolSlupka)
                     self.lista_rect_umw.append(tmp_punkt)
+
 
 class TestMoichSlupkow(unittest.TestCase):
     def test_moich_slupkow(self):

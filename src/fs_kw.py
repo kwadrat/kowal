@@ -9,6 +9,7 @@ def uporzadkuj_etykiety(kolejnosc_etykiet):
     indeks_etykieta.sort()
     return map(lambda para: para[1], indeks_etykieta)
 
+
 def psycopg2_zamien_na_napisy(lista_slownikow):
     wersja_napisowa = []
     kolejnosc_etykiet = lista_slownikow[0]._index
@@ -18,14 +19,17 @@ def psycopg2_zamien_na_napisy(lista_slownikow):
         wersja_napisowa.append(map(str, jeden_wiersz))
     return wersja_napisowa
 
+
 def wyznacz_potrzebne_miejsce(same_napisy):
     return map(max, map(lambda w_kolumnie: map(len, w_kolumnie), zip(*same_napisy)))
+
 
 def wydrukuj_tabelke(same_napisy, wektor_rozmiarow):
     for nr_kol, jeden_wiersz in enumerate(same_napisy):
         print '|'.join(map(lambda para: para[0].ljust(para[1]), zip(jeden_wiersz, wektor_rozmiarow)))
         if not nr_kol:
             print '+'.join(map(lambda jeden_rozmiar: '-' * jeden_rozmiar, wektor_rozmiarow))
+
 
 def sztuka_tekstowa(lista_slownikow):
     lista = []
@@ -40,6 +44,7 @@ def sztuka_tekstowa(lista_slownikow):
         wydrukuj_tabelke(same_napisy, wektor_rozmiarow)
     lista.append('(%s)\n' % napis_podsumowania)
     return ''.join(lista)
+
 
 class TestBudowyTabelki(unittest.TestCase):
     def test_budowy_tabelki(self):

@@ -7,6 +7,7 @@ import unittest
 def vx_wiersze(pocz, kon, krok=1):
     return list(xrange(pocz, kon + 1, krok))
 
+
 class TestZakresuOdDo(unittest.TestCase):
     def test_zakresu_od_do(self):
         '''

@@ -25,10 +25,12 @@ MozliweLataFaktur = map(str, range(RokObecnyStaly + 1, rq_kw.RokPocz2 - 1, -1))
 MozliweLataDlaARok = [rq_kw.PoleWszystko] + MozliweLataZuzyc
 MozliweLataDlaBRok = MozliweLataZuzyc
 
+
 def tupled_year(year):
     return (year, str(year))
 
 ParowaneLataDanych = map(tupled_year, ListaLatZuzyc)
+
 
 def DataBledna(napis):
     '''
@@ -60,6 +62,7 @@ def DataBledna(napis):
     else:
         bledna = 'Liczba kawałków oddzielanych myślnikiem: %d' % ile_kawalkow
     return bledna
+
 
 class TestMisspelledDate(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual

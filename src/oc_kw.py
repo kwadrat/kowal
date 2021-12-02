@@ -26,6 +26,7 @@ konto_uzytkownika = 'kwadrat'
 rjb_fg_tld_a_apl = rjb_sama_tylda + konto_uzytkownika
 GenPicDir = 'gen_kowal/'
 
+
 class CoreResolver(object):
     def __init__(self, adres_maszyny, adres_przystani, adres_auth):
         '''
@@ -76,8 +77,10 @@ fq_py_qv = 'py'
 fq_nowy_this_qv = 'nowy_this'
 rjb_dla_drukowania = 'print'
 
+
 def dodaj_py(nazwa):
     return nazwa + rjb_fg_tld_g_apl
+
 
 def fn_a_in_dwa(wersja_produkcyjna):
     if wersja_produkcyjna:
@@ -86,8 +89,10 @@ def fn_a_in_dwa(wersja_produkcyjna):
         wynik = rjb_fg_tld_f_apl
     return wynik
 
+
 def core_for_testing():
     return CoreResolver('work.ciri.pl', 'middle.ciri.pl', 'auth.ciri.pl')
+
 
 class TestConstantStrings(unittest.TestCase):
     def test_constant_strings(self):

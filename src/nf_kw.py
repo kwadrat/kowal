@@ -9,6 +9,7 @@ import unittest
     BRD_DOUBLE,
     ) = range(2)
 
+
 class PseudoBorders(object):
     def __init__(self):
         '''
@@ -16,12 +17,14 @@ class PseudoBorders(object):
         '''
         self.THIN = None
 
+
 class PseudoStyle(object):
     def __init__(self):
         '''
         PseudoStyle:
         '''
         self.borders = PseudoBorders()
+
 
 class FenceMaker(object):
     def __init__(self):
@@ -37,6 +40,7 @@ class FenceMaker(object):
         the_borders.left = the_borders.right = the_borders.top = the_borders.bottom = the_borders.THIN
 
 brd_1_obk = FenceMaker()
+
 
 class TestFenceShape(unittest.TestCase):
     def test_fence_shape(self):

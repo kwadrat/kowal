@@ -5,6 +5,7 @@ import unittest
 
 import lm_kw
 
+
 class DecProxy(object):
     def __init__(self, dec_value):
         '''
@@ -14,6 +15,7 @@ class DecProxy(object):
         self.int_multiplier = 4
         self.int_scaler = 10 ** self.int_multiplier
         self.int_value = int(self.int_scaler * self.dec_value)
+
 
 class TestDecType(unittest.TestCase):
     def test_dec_type(self):

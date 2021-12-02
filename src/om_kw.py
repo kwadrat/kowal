@@ -3,6 +3,7 @@
 
 import em_kw
 
+
 class LisSzerRocznychFaktur(object):
     def __init__(self):
         '''

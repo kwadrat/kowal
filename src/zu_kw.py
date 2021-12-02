@@ -7,6 +7,7 @@ import lm_kw
 
 WlaczDiagnostykeZuzycia = 0
 
+
 class ZuzycieLicznika(object):
     def __init__(self, napis):
         '''

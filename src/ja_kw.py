@@ -7,6 +7,7 @@ import heapq
 import lc_kw
 import lp_kw
 
+
 class HourEstimate(object):
     def store_value(self, quarter_index, one_sample):
         '''
@@ -45,6 +46,7 @@ class HourEstimate(object):
         '''
         return lp_kw.part_of_day_hs(self.full_hour, 15 * self.quarter_index, 0)
 
+
 class MonthSummary(object):
     def __init__(self):
         '''
@@ -77,6 +79,7 @@ class MonthSummary(object):
             self.interesting_hours,
             lambda obk: obk.one_sample,
             )
+
 
 class TestMonthStatistics(unittest.TestCase):
     def test_hour_estimate(self):

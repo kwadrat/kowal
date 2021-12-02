@@ -11,6 +11,7 @@ import lc_kw
 import gb_kw
 import lw_kw
 
+
 def protected_max(values):
     if values:
         result = max(values)
@@ -36,6 +37,7 @@ energy_chooser = {
         'p',
         ],
     }
+
 
 class CechaEnergii(object):
     def __init__(self, tvk_pobor):
@@ -66,6 +68,7 @@ class CechaEnergii(object):
             self.cumulative_value += new_value
         else:
             self.cumulative_value = max(self.cumulative_value, new_value)
+
 
 class TestEnergyFeatures(unittest.TestCase):
     def test_energy_features(self):

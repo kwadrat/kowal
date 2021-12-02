@@ -3,6 +3,7 @@
 
 'Jeden słupek do narysowania - współrzędne'
 
+
 class JedenSlupek(object):
     def __init__(self, SlWspX, DolSlupka, GoraSlupka, Etykieta, yh_value, jeden_odc_bzw):
         '''

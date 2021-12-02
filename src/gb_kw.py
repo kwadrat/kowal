@@ -20,6 +20,7 @@ Jedn_miesiac = 'mc'
 Jedn_zl_na_miesiac = hj_kw.rcp_dziel(Jedn_zlotowki, Jedn_miesiac)
 Jedn_procent = '%'
 
+
 def nawiasy_kwadratowe(jednostka):
     return '[%s]' % jednostka
 
@@ -55,6 +56,7 @@ Jedn_k_bezwymiarowa = nawiasy_kwadratowe('1')
 Jedn_k_Mvarh = nawiasy_kwadratowe('Mvarh')
 Jedn_kvarh = 'kvarh'
 Jedn_Mvarh = 'Mvarh'
+
 
 class TestUnitNames(unittest.TestCase):
     def test_unit_names(self):

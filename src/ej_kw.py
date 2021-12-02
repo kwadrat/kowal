@@ -10,6 +10,7 @@ import es_kw
 
 MojeSlupki = es_kw.MojeSlupki
 
+
 class FakturoweMiesieczneSlupki(MojeSlupki):
     def __init__(self, tgk, aqr, dnw, rn_after):
         '''
@@ -28,6 +29,7 @@ class FakturoweMiesieczneSlupki(MojeSlupki):
         FakturoweMiesieczneSlupki:
         '''
         return ''
+
 
 class TestFakturowychMiesiecznychSlupkow(unittest.TestCase):
     def test_fakturowych_miesiecznych_slupkow(self):

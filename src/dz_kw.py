@@ -111,6 +111,7 @@ $
 
 changed_coding_date_format = '%(year)s-%(month)s-%(day)s'
 
+
 def wyciagnij_date_z_formatu_dmr(napis):
     res = wzor_data_dzien_miesiac_rok.search(napis)
     if res:
@@ -118,6 +119,7 @@ def wyciagnij_date_z_formatu_dmr(napis):
     else:
         raise RuntimeError('Nierozpoznana data?: %s' % repr(napis))
     return wynik
+
 
 def extract_csv_hour(napis):
     res = wzor_hour_csv.search(napis)
@@ -127,6 +129,7 @@ def extract_csv_hour(napis):
         wynik = None
     return wynik
 
+
 def extract_csv_day(napis):
     res = wzor_day_csv.search(napis)
     if res:
@@ -134,6 +137,7 @@ def extract_csv_day(napis):
     else:
         wynik = None
     return wynik
+
 
 def extract_csv_full(napis):
     res = wzor_day_full.search(napis)
@@ -143,6 +147,7 @@ def extract_csv_full(napis):
         wynik = None
     return wynik
 
+
 def convert_date_pwik(changed_coding_txt):
     res = changed_coding_date_pattern.search(changed_coding_txt)
     if res:
@@ -151,14 +156,17 @@ def convert_date_pwik(changed_coding_txt):
         result = None
     return result
 
+
 def convert_float_pwik(changed_coding_txt):
     return changed_coding_txt.replace(' ', '')
+
 
 def convert_integer_pwik(changed_coding_txt):
     result = changed_coding_txt.replace(' ', '')
     if result[-3:] == ',00':
         result = result[:-3]
     return result
+
 
 def rozpoznaj_wedlug_wyr_regul(wzorzec_reg, napis):
     wynik = None
@@ -168,20 +176,26 @@ def rozpoznaj_wedlug_wyr_regul(wzorzec_reg, napis):
         wynik = len(podciag)
     return wynik
 
+
 def rozpoznaj_dzisiejszy_dzien(napis):
     return rozpoznaj_wedlug_wyr_regul(wzor_dzisiejszy_dzien, napis)
+
 
 def rozpoznaj_sesje_trns_plikow(napis):
     return rozpoznaj_wedlug_wyr_regul(wzor_sesji_trns_plikow, napis)
 
+
 def rozpoznaj_sume_polaczona(napis):
     return rozpoznaj_wedlug_wyr_regul(wzor_sumy_polaczonej, napis)
+
 
 def rozpoznaj_plik_dwg(napis):
     return rozpoznaj_wedlug_wyr_regul(wzor_plik_dwg, napis)
 
+
 def sprawdz_adres_poczty(napis):
     return wzor_adresu_poczty.search(napis)
+
 
 class TestRozpoznawania(unittest.TestCase):
     def test_sprawdzania_co_do_dnia(self):

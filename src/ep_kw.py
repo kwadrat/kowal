@@ -10,6 +10,7 @@ import es_kw
 
 MojeSlupki = es_kw.MojeSlupki
 
+
 class PomiaroweSlupki(MojeSlupki):
     def __init__(self, tgk, aqr, dnw):
         '''
@@ -30,6 +31,7 @@ class PomiaroweSlupki(MojeSlupki):
         PomiaroweSlupki:
         '''
         return ''
+
 
 class TestPomiarowychSlupkow(unittest.TestCase):
     def test_pomiarowych_slupkow(self):

@@ -23,6 +23,7 @@ class Wierszownik(object):
         self.wiersz_do_dyspozycji += ile_do_wziecia
         return current_value
 
+
 class TestPrzydzialuWierszy(unittest.TestCase):
     def test_przydzialu_wierszy(self):
         '''

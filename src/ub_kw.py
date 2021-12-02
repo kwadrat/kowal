@@ -12,6 +12,7 @@ WDM_wszystkie_pola = '*'
 OBK_aktywny = 'aktywny'
 FLG_aktywny = 't'
 
+
 class TestStalychNapisow(unittest.TestCase):
     def test_stalych_napisow(self):
         '''

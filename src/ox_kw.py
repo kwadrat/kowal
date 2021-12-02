@@ -10,6 +10,7 @@ import dq_kw
 
 KlasaOgolnaSzkieletuDat = dq_kw.KlasaOgolnaSzkieletuDat
 
+
 class SzkieletMiesiecznyDlaPoborow(KlasaOgolnaSzkieletuDat):
     def __init__(self, krt_pobor):
         '''
@@ -29,6 +30,7 @@ class SzkieletMiesiecznyDlaPoborow(KlasaOgolnaSzkieletuDat):
         SzkieletMiesiecznyDlaPoborow:
         '''
         return jt_kw.nazwa_rzymskiego(1 + akt / 2)
+
 
 class TestMiesiecznegoSzkieletu(unittest.TestCase):
     def test_energii_szkieletowego_miesiecznie_datownika(self):

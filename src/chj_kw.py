@@ -7,8 +7,10 @@ import unittest
 def tq_poczatek_roku(ih_rok):
     return "'%d-01-01'" % ih_rok
 
+
 def tq_koniec_roku(ih_rok):
     return "'%d-12-31'" % ih_rok
+
 
 class TestYearBorders(unittest.TestCase):
     def test_year_borders(self):

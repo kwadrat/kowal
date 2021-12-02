@@ -59,6 +59,7 @@ DlugoscKresekMiesiecy = 3
 # Wysokość linii z napisem
 wysokosc_napisu = 10 # draw.textsize('0')[1]
 
+
 def poziomo_dla_dni(min_domain, akt, max_domain, min_pixels, max_pixels):
     return int(
         min_pixels
@@ -70,11 +71,14 @@ def poziomo_dla_dni(min_domain, akt, max_domain, min_pixels, max_pixels):
         (max_domain - min_domain)
         )
 
+
 def zaokraglij_mi(all_points, small_part):
     return all_points - (all_points % small_part)
 
+
 def rj_text(draw, place, message):
     draw.text(place, message, fill=Kolor_Napisow)
+
 
 class TestRozmiaruObrazu(unittest.TestCase):
     def test_rozmiaru_obrazu(self):

@@ -19,6 +19,7 @@ class BagFieldSet(object):
         self.pole_dla_mocy = pole_dla_mocy
         self.pole_dla_energii = pole_dla_energii
 
+
 class TestBagFieldData(unittest.TestCase):
     def test_bag_field_data(self):
         '''

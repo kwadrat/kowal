@@ -9,6 +9,7 @@ import unittest
 import rq_kw
 import dn_kw
 
+
 class KlasaZbitki(object):
     def __init__(self, punkt_pocz, punkt_kon):
         '''
@@ -87,6 +88,7 @@ class KlasaZbitki(object):
         else:
             #raise RuntimeError('Faktura?: %s' % repr((fp, fk)))
             pass
+
 
 class TestKlasyZbitki(unittest.TestCase):
     def test_klasy_zbitki(self):

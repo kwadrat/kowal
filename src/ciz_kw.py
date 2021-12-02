@@ -3,6 +3,7 @@
 
 import lp_kw
 
+
 class HourMiniServer(object):
     def __init__(self, column_index):
         '''

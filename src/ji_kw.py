@@ -15,6 +15,7 @@ import jq_kw
 
 CommonReader = tt_kw.CommonReader
 
+
 class EnergyReader(CommonReader):
     def __init__(self):
         '''
@@ -189,6 +190,7 @@ class EnergyReader(CommonReader):
         self.enter_energy_data(dfb, key_object, data_rows)
         self.store_rows_in_db(dfb)
 
+
 class AugmentedEnReader(EnergyReader):
     def vx_num_poke(self, my_col, my_row, my_value):
         '''
@@ -288,6 +290,7 @@ class AugmentedEnReader(EnergyReader):
         self.vx_poke('X', 6, (22, 0))
         self.vx_poke('Y', 6, (23, 0))
         self.vx_poke('Z', 6, (0, 0))
+
 
 class Test_Reader_of_Energy(unittest.TestCase):
     def test_energy_1_reader(self):

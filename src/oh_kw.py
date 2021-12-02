@@ -7,6 +7,7 @@ import lb_kw
 import oa_kw
 import wb_kw
 
+
 class SimpleDNW(object):
     def __init__(self, lp_miejsca):
         '''
@@ -41,6 +42,7 @@ class SimpleDNW(object):
         SimpleDNW:
         '''
         self.zbitki_qm = wb_kw.KlasaZbitki(punkt_pocz, punkt_kon)
+
 
 class TestProstychDanych(unittest.TestCase):
     def test_prostych_danych(self):

@@ -10,6 +10,7 @@ import uz_kw
 import ib_kw
 import ze_kw
 
+
 class Skrawek(object):
     '''Klasa opisująca skrawek formularza
     '''
@@ -87,6 +88,7 @@ class Skrawek(object):
             ##############################################################################
             return napis % (self.moje_pole, ze_kw.frm_hdn_pst, self.wartosc)
             ##############################################################################
+
 
 class TestPrzeniesSkrawka(unittest.TestCase):
     def test_przeniesionego_skrawka(self):

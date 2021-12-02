@@ -30,6 +30,7 @@ for single_name in code_strings.split():
         single_name=single_name,
         )
 
+
 class TestZnacznikowStylu(unittest.TestCase):
     def test_znacznikow_stylu(self):
         '''

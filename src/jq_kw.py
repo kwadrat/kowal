@@ -18,6 +18,7 @@ class Pseudo_Book(object):
         '''
         return Pseudo_Sheet()
 
+
 class Pseudo_XLRD(object):
     def __init__(self):
         '''
@@ -40,6 +41,7 @@ class Pseudo_XLRD(object):
             result = (0, 0, 0) + value + (0,)
         return result
 
+
 class Pseudo_Sheet(object):
     def __init__(self):
         '''
@@ -58,6 +60,7 @@ class Pseudo_Sheet(object):
         Pseudo_Sheet:
         '''
         self.grid[(row, col)] = value
+
 
 class Test_XLRD(unittest.TestCase):
     def test_1_xlrd(self):

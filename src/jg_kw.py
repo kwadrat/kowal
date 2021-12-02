@@ -4,6 +4,7 @@
 import ze_kw
 import hd_kw
 
+
 class JedenWiersz(object):
     def set_color(self, barwa_wiersza):
         '''

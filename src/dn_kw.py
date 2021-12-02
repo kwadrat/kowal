@@ -28,18 +28,23 @@ data_testowa_a = 1314612000 # 2011.08.29_12.00.00
 data_testowa_b = 1288346400 # 2010.10.29_12.00.00
 data_testowa_c = 1323769292 # 2011.12.13_10.41.32
 
+
 def rok_liczba(czas=None):
     return time.localtime(czas).tm_year
+
 
 def miesiac_liczba(czas=None):
     return time.localtime(czas).tm_mon
 
+
 def dzien_liczba(czas=None):
     return time.localtime(czas).tm_mday
+
 
 def rok_sekundy(czas=None):
     rok = rok_liczba(czas)
     return str(rok)
+
 
 def data_rmd(czas=None):
     krotka_daty = time.localtime(czas)
@@ -47,6 +52,7 @@ def data_rmd(czas=None):
     miesiac = krotka_daty.tm_mon
     dzien = krotka_daty.tm_mday
     return (rok, miesiac, dzien)
+
 
 def wyznacz_dzisiejsza_date(czas=None):
     krotka_daty = time.localtime(czas)
@@ -60,6 +66,7 @@ def wyznacz_dzisiejsza_date(czas=None):
         miesiac = tab_miesiecy[miesiac - 1],
         dzien = dzien)
     return napis_daty
+
 
 def NumerDnia(rok, miesiac, dzien):
     '''Zwraca numer dnia począwszy od 1 stycznia 1970
@@ -77,21 +84,26 @@ def NumerDnia(rok, miesiac, dzien):
         raise TypeError('Problem z: "%s"' % repr((rok, miesiac, dzien)))
     return nkd
 
+
 def dzien_nowego_miesiaca(rok, miesiac):
     '''Zwraca numer pierwszego dnia podanego roku
     '''
     return NumerDnia(rok, miesiac, 1)
+
 
 def dzien_nowego_roku(rok):
     '''Zwraca numer pierwszego dnia podanego roku
     '''
     return NumerDnia(rok, 1, 1)
 
+
 def data_z_napisu(napis):
     return time.strptime(napis, cjs_kw.yq_2_yq)[:3]
 
+
 def dwojka_z_napisu(napis):
     return time.strptime(napis, cjs_kw.yq_3_yq)[:2]
+
 
 def checkdate(napis):
     poprawna = True
@@ -100,6 +112,7 @@ def checkdate(napis):
     except ValueError:
         poprawna = False
     return poprawna
+
 
 def napis_na_numer_dnia(data):
     '''Zwraca numer dnia począwszy od 1 stycznia 1970
@@ -112,6 +125,7 @@ def napis_na_numer_dnia(data):
         rok, miesiac, dzien = data_z_napisu(data)
     return NumerDnia(rok, miesiac, dzien)
 
+
 def CzasDzisiaj(czas=None):
     '''
     Wyznacza dzień i moment w dniu:
@@ -120,6 +134,7 @@ def CzasDzisiaj(czas=None):
     '''
     return time.localtime(czas)[:6]
 
+
 def DataDzisiaj(czas=None):
     '''
     Wyznacza dzień:
@@ -127,11 +142,13 @@ def DataDzisiaj(czas=None):
     '''
     return CzasDzisiaj(czas)[:3]
 
+
 def RokDzisiaj():
     '''
     Zwraca liczbę - aktualny rok
     '''
     return CzasDzisiaj()[0]
+
 
 def RokTeraz():
     '''
@@ -139,10 +156,12 @@ def RokTeraz():
     '''
     return str(RokDzisiaj())
 
+
 def NumerDzisiaj(czas=None):
     '''Zwraca numer dzisiejszego dnia
     '''
     return NumerDnia( * DataDzisiaj(czas))
+
 
 def NapisDaty(rok, miesiac, dzien):
     '''Zwraca napis w postaci "RRRR-MM-DD"
@@ -150,8 +169,10 @@ def NapisDaty(rok, miesiac, dzien):
     '''
     return '%04d-%02d-%02d' % (rok, miesiac, dzien)
 
+
 def napis_z_rok_mies(rok, miesiac):
     return '%04d-%02d' % (rok, miesiac)
+
 
 def NapisDzisiaj():
     '''
@@ -159,6 +180,7 @@ def NapisDzisiaj():
     '''
     # Za pomocą "*" rozwijamy krotkę: "rok, miesiąc, dzień" na 3 parametry
     return NapisDaty( * DataDzisiaj())
+
 
 def SekTeraz():
     '''
@@ -168,12 +190,14 @@ def SekTeraz():
     '''
     return time.strftime(cjs_kw.yq_1_yq)
 
+
 def DzienTeraz():
     '''
     Wyznacza dzień w postaci do wstawiania do bazy danych: RRRR-MM-DD
     - rok, miesiąc, dzień
     '''
     return time.strftime(cjs_kw.yq_2_yq)
+
 
 def szczegolowa_krotka(nkd):
     '''Zwraca datę na podstawie numeru dnia
@@ -182,6 +206,7 @@ def szczegolowa_krotka(nkd):
     '''
     return time.localtime(nkd * SEC_PER_DAY + SEC_PER_DAY / 2)
 
+
 def DataDnia(nkd):
     '''Zwraca datę na podstawie numeru dnia
     Wartość zwracana:
@@ -189,14 +214,18 @@ def DataDnia(nkd):
     '''
     return szczegolowa_krotka(nkd)[:3]
 
+
 def RokDnia(nkd):
     return DataDnia(nkd)[0]
+
 
 def DzienTygodnia(nkd):
     return szczegolowa_krotka(nkd).tm_wday
 
+
 def nazwa_dnia_tygodnia(nkd):
     return dni_tygodnia[DzienTygodnia(nkd)]
+
 
 def RoboczyDnia(nkd):
     '''Informuje, czy podany dzień jest roboczy.
@@ -206,16 +235,20 @@ def RoboczyDnia(nkd):
     '''
     return DzienTygodnia(nkd) < 5
 
+
 def is_friday(nkd):
     return DzienTygodnia(nkd) == 4
 
+
 def is_sunday(nkd):
     return DzienTygodnia(nkd) == 6
+
 
 def get_monday(nkd):
     '''Na podstawie dowolnego dnia tygodnia wyznacz
     początkowy poniedziałek'''
     return 4 + divmod(nkd - 4, 7)[0] * 7
+
 
 def NapisDnia(nkd):
     '''Zwraca napis z datą na podstawie podanego numeru dnia
@@ -224,11 +257,13 @@ def NapisDnia(nkd):
     '''
     return NapisDaty( * DataDnia(nkd))
 
+
 def ZakresRoku(rok):
     '''Pierwszy dzień aktualnego i następnego roku dla podanego roku'''
     pocz = dzien_nowego_roku(rok)
     kon = dzien_nowego_roku(rok + 1)
     return pocz, kon
+
 
 def one_month_earlier(the_year, the_month):
     if the_month > 1:
@@ -238,6 +273,7 @@ def one_month_earlier(the_year, the_month):
         the_month = 12
     return the_year, the_month
 
+
 def one_month_later(the_year, the_month):
     if the_month < 12:
         the_month += 1
@@ -246,10 +282,12 @@ def one_month_later(the_year, the_month):
         the_month = 1
     return the_year, the_month
 
+
 def round_month_begin(the_year, the_month, the_day):
     if the_day is not None and the_day > 15:
         the_year, the_month = one_month_later(the_year, the_month)
     return the_year, the_month
+
 
 def next_day_after_end(the_year, the_month, the_day):
     if the_day is None:
@@ -261,11 +299,13 @@ def next_day_after_end(the_year, the_month, the_day):
         the_year, the_month, the_day = DataDnia(nkd)
     return the_year, the_month, the_day
 
+
 def rounded_closing_date(end_year, end_month, end_day):
     after_year, after_month, after_day = next_day_after_end(end_year, end_month, end_day)
     after_year, after_month = round_month_begin(after_year, after_month, after_day)
     end_year, end_month = one_month_earlier(after_year, after_month)
     return end_year, end_month
+
 
 def ZakresMiesiaca(rok, miesiac, liczba_mies=1):
     '''Zwraca początek i koniec danego miesiąca w postaci
@@ -283,8 +323,10 @@ def ZakresMiesiaca(rok, miesiac, liczba_mies=1):
     kon = dzien_nowego_miesiaca(rok, miesiac)
     return pocz, kon
 
+
 def daty_skrajne_miesiaca(rok, miesiac, liczba_mies=1):
     return map(NapisDnia, ZakresMiesiaca(rok, miesiac, liczba_mies=liczba_mies))
+
 
 def daty_lat(dzien_pocz, dzien_kon):
     '''
@@ -302,6 +344,7 @@ def daty_lat(dzien_pocz, dzien_kon):
         dzien = NumerDnia(teraz, 1, 1)
         wynik.append(dzien)
     return wynik
+
 
 def daty_roku(rok, rok_z_rozszerzeniem):
     '''
@@ -325,6 +368,7 @@ def daty_roku(rok, rok_z_rozszerzeniem):
             wynik.append(NumerDnia(rok + 1, mies + 1, 1))
     return wynik
 
+
 def sprawdz_numery_dnia():
     '''Funkcja testowa do sprawdzenia, czy dzielenie przez
     liczbę dni poprawnie daje liczbę dni w roku
@@ -346,6 +390,7 @@ def sprawdz_numery_dnia():
     else:
         print 'Daty sprawdzone: %d <= rok < %d' % (rok_pocz, rok)
 
+
 def zn_unik(frozen=0):
     '''Zwraca unikalny identyfikator (proces, sekunda), aby
     dało się rozróżnić pliki z jednej sesji danego klienta
@@ -357,30 +402,39 @@ def zn_unik(frozen=0):
         zn_pid = os.getpid()
     return 't%sp%s' % (zn_time, zn_pid)
 
+
 def wyznacz_moment_wg_wzorca(wzorzec, czas):
     krotka = time.localtime(czas)
     return time.strftime(wzorzec, krotka)
 
+
 def wyznacz_date_logu(czas=None):
     return wyznacz_moment_wg_wzorca(cjs_kw.yq_4_yq, czas)
+
 
 def wyznacz_dzien_logu(czas=None):
     return wyznacz_moment_wg_wzorca(cjs_kw.yq_2_yq, czas)
 
+
 def wyznacz_sekunde_logu(czas=None):
     return wyznacz_moment_wg_wzorca(cjs_kw.yq_7_yq, czas)
+
 
 def wyznacz_minute_logu(czas=None):
     return wyznacz_moment_wg_wzorca(cjs_kw.yq_6_yq, czas)
 
+
 def gesty_moment(czas=None):
     return wyznacz_moment_wg_wzorca(cjs_kw.yq_5_yq, czas)
+
 
 def RokMscDnia(nkd):
     return szczegolowa_krotka(nkd)[:2]
 
+
 def rok_mies_z_napisu(nkd):
     return RokMscDnia(napis_na_numer_dnia(nkd))
+
 
 def one_common_date_of_energy_as_month_and_year(data_pocz, data_kon):
     spcf_pocz = rok_mies_z_napisu(data_pocz)
@@ -389,18 +443,22 @@ def one_common_date_of_energy_as_month_and_year(data_pocz, data_kon):
         raise RuntimeError('Specyfikacje?: %s %s - %s, %s' % (data_pocz, data_kon, spcf_pocz, spcf_kon))
     return spcf_pocz
 
+
 def surowy_czas(czas=None):
     if czas is None:
         return time.time()
     else:
         return czas
 
+
 def is_ymd_sunday(year, month, day):
     nkd = NumerDnia(year, month, day)
     return is_sunday(nkd)
 
+
 def day_in_last_week_of_long_month(dzien):
     return dzien > 31 - 7
+
 
 def month_dst_day(napis, dst_month):
     result = 0
@@ -409,14 +467,18 @@ def month_dst_day(napis, dst_month):
         result = is_ymd_sunday(rok, miesiac, dzien)
     return result
 
+
 def autumn_dst_day(napis):
     return month_dst_day(napis, 10)
+
 
 def spring_dst_day(napis):
     return month_dst_day(napis, 3)
 
+
 def mozliwy_py_time(rh_dt):
     return hasattr(rh_dt, 'year')
+
 
 class TestDaysDates(unittest.TestCase):
     def test_stalych_datownika(self):

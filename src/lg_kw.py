@@ -5,6 +5,7 @@ import unittest
 
 import sa_kw
 
+
 class OkreslMiejsce(object):
     '''
     Możliwe sposoby uruchomienia:
@@ -70,6 +71,7 @@ class OkreslMiejsce(object):
         OkreslMiejsce:
         '''
         return self.to_przz_imprt_intrpr
+
 
 class TestStyku(unittest.TestCase):
     '''Sprawdza, czy poprawnie działa funkcja

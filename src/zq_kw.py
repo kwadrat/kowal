@@ -36,6 +36,7 @@ class WartoscOpcjonalna(object):
         '''
         return self.wartosc
 
+
 class TestWartosciOpcjonalnej(unittest.TestCase):
     def test_wartosci_opcjonalnej(self):
         '''

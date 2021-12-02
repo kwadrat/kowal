@@ -44,6 +44,7 @@ scaling_map = {
 def cx_scale(ekstra_cx):
     return scaling_map[ekstra_cx]
 
+
 class KlasaStalowejWiedzy(object):
     def __init__(self):
         '''
@@ -77,6 +78,7 @@ class KlasaStalowejWiedzy(object):
             raise RuntimeError('Nieznane stalowe_cx: %s' % repr(stalowe_cx))
 
 cx_obkt = KlasaStalowejWiedzy()
+
 
 class TestStalowych(unittest.TestCase):
     def test_stalowych_rodzajow(self):

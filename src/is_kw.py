@@ -5,6 +5,7 @@ import unittest
 
 import hj_kw
 
+
 class SpecifiedYears(object):
     def __init__(self, collected_years=None):
         '''
@@ -90,6 +91,7 @@ class SpecifiedYears(object):
         SpecifiedYears:
         '''
         return range(self.first_year(), self.last_year() + 1)
+
 
 class TestYearCollection(unittest.TestCase):
     def test_construction_sql(self):

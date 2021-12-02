@@ -17,6 +17,7 @@ import lh_kw
 import ox_kw
 import lt_kw
 
+
 def wyznacz_kwote(krt_pobor, zbiornik_przedzialow, single_key):
     list_of_values = zbiornik_przedzialow[single_key]
     kwota = lq_kw.sum_of_not_nones(krt_pobor.krt_vl_fnctn, list_of_values)
@@ -24,6 +25,7 @@ def wyznacz_kwote(krt_pobor, zbiornik_przedzialow, single_key):
     return kwota
 
 OgolnaListaPoborow = lt_kw.OgolnaListaPoborow
+
 
 class PomiaryPoborowMiesiecznie(OgolnaListaPoborow):
     def __init__(self, tgk, dfb, krt_pobor):
@@ -75,6 +77,7 @@ class PomiaryPoborowMiesiecznie(OgolnaListaPoborow):
             self.html_poboru_dla_miesiaca(krt_pobor, zbiornik_przedzialow, single_key)
         self.rdzen_rysowania(lst_h, krt_pobor, lw_kw.PDS_Miesiace)
         return lst_h.polacz_html()
+
 
 class TestCalculateAmount(unittest.TestCase):
     def test_calculate_amount(self):

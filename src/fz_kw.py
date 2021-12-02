@@ -11,11 +11,13 @@ import ln_kw
 import dn_kw
 import lr_kw
 
+
 def concatenate_index_name(table, field):
     return '%(table)s_%(field)s_index' % dict(
         table=table,
         field=field,
         )
+
 
 def index_create(name, table, field):
     return fy_kw.lxa_4_inst % dict(
@@ -24,10 +26,12 @@ def index_create(name, table, field):
         field=field,
         )
 
+
 def index_drop(name):
     return fy_kw.lxa_6_inst % dict(
         name=name,
         )
+
 
 def process_indices(table, field_names, create_flag):
     if field_names:
@@ -39,6 +43,7 @@ def process_indices(table, field_names, create_flag):
                 result = index_drop(compound_name)
             print result
 
+
 def ptn_object_key(under_name):
     return fy_kw.lxa_8_inst % dict(
         under_name=under_name,
@@ -46,6 +51,7 @@ def ptn_object_key(under_name):
         uu_object=lc_kw.fq_uu_object_qv,
         account=lc_kw.fq_account_qv,
         )
+
 
 def ptn_entry_already_inserted(table_name, id_obiekt, tvk_data):
     obk = lr_kw.GeneratorUU(table_name)
@@ -58,6 +64,7 @@ def ptn_entry_already_inserted(table_name, id_obiekt, tvk_data):
         lc_kw.fq_m_samples_qv,
         ]
     return obk.prepare_shape(returned_fields)
+
 
 def ptn_load_from_db(table_name, id_obiekt=None, my_start_date=None, my_end_date=None):
     warunki_pytania = []
@@ -112,6 +119,7 @@ def ptn_load_from_db(table_name, id_obiekt=None, my_start_date=None, my_end_date
         polaczony_warunek=polaczony_warunek,
         )
 
+
 def ptn_add_new_object_key(under_name):
     return fy_kw.lxa_16_inst % dict(
         under_name=under_name,
@@ -119,6 +127,7 @@ def ptn_add_new_object_key(under_name):
         account=lc_kw.fq_account_qv,
         k_object=lc_kw.fq_k_object_qv,
         )
+
 
 def ptn_insert_vector_of_samples(n_table, key_object, row_date, all_samples, v_none, v_zero, v_sum):
     return fy_kw.lxa_18_inst % dict(
@@ -136,6 +145,7 @@ def ptn_insert_vector_of_samples(n_table, key_object, row_date, all_samples, v_n
         e_sum=lc_kw.fq_m_sum_qv,
         v_sum=v_sum,
         )
+
 
 def ptn_update_vector_of_samples(n_table, key_object, row_date, all_samples, v_none, v_zero, v_sum, sample_key):
     return fy_kw.lxa_22_inst % dict(
@@ -156,6 +166,7 @@ def ptn_update_vector_of_samples(n_table, key_object, row_date, all_samples, v_n
         k_sample=sample_key,
         )
 
+
 def ptn_update_stats_of_samples(n_table, v_none, v_zero, v_sum, sample_key):
     return fy_kw.lxa_51_inst % dict(
         n_table=n_table,
@@ -169,11 +180,13 @@ def ptn_update_stats_of_samples(n_table, v_none, v_zero, v_sum, sample_key):
         k_sample=sample_key,
         )
 
+
 def ptn_liczniki_poboru_w_dniu(table_name, id_obiekt, tvk_data):
     obk = lr_kw.GeneratorUU(table_name)
     obk.set_object(id_obiekt)
     obk.set_exact_date(tvk_data)
     return obk.final_shape()
+
 
 def ptn_liczniki_poboru_w_miesiacu(table_name, id_obiekt, my_start_date, my_end_date):
     obk = lr_kw.GeneratorUU(table_name)
@@ -181,6 +194,7 @@ def ptn_liczniki_poboru_w_miesiacu(table_name, id_obiekt, my_start_date, my_end_
     obk.set_start_date(my_start_date)
     obk.set_end_date(my_end_date)
     return obk.cons_couple()
+
 
 def ptn_liczniki_poboru_w_roku(table_name, id_obiekt, my_start_year):
     obk = lr_kw.GeneratorUU(table_name)
@@ -192,14 +206,17 @@ def ptn_liczniki_poboru_w_roku(table_name, id_obiekt, my_start_year):
     obk.set_end_date(my_end_date)
     return obk.cons_couple()
 
+
 def ptn_dane_jednego_obiektu(table_name, key_object):
     obk = lr_kw.GeneratorUU(table_name)
     obk.set_object(key_object)
     return obk.cons_question()
 
+
 def ptn_for_statistics(table_name):
     obk = lr_kw.GeneratorUU(table_name)
     return obk.samples_for_recalculating()
+
 
 def ptn_get_ordered_objects():
     return fy_kw.lxa_65_inst % dict(
@@ -207,6 +224,7 @@ def ptn_get_ordered_objects():
         account=lc_kw.fq_account_qv,
         uu_object=lc_kw.fq_uu_object_qv,
         )
+
 
 class TestVariousPatterns(unittest.TestCase):
     vassertEqual = dv_kw.vassertEqual

@@ -22,6 +22,7 @@ DlugoscKresekFaktur = 6
 
 KlasaObrazu = pt_kw.KlasaObrazu
 
+
 class MojPasek(KlasaObrazu):
     '''Rysowanie paska wypełnienia poszczególnych miesięcy fakturami
     '''
@@ -171,6 +172,7 @@ class MojPasek(KlasaObrazu):
         self.wersje_kolejno_zaznaczonych_faktur(im, on_mouse)
         del im
         return self.link_do_obrazu()
+
 
 class TestPaska(unittest.TestCase):
     def test_paska(self):

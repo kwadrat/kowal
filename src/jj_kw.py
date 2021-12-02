@@ -9,6 +9,7 @@ import jn_kw
 
 HoQuServer = jn_kw.HoQuServer
 
+
 class QuarterServer(HoQuServer):
     def __init__(self):
         '''
@@ -36,6 +37,7 @@ class QuarterServer(HoQuServer):
         if dn_kw.autumn_dst_day(row_date):
             result = 7 <= sample_index <= 10
         return result
+
 
 class TestPeriodQuarters(unittest.TestCase):
     def test_period_quarters(self):

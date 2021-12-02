@@ -13,6 +13,7 @@ licznik_inst_slownikow = li_kw.LicznikInstancji('slownik')
 
 ListaLubSlownikOgolnie = ll_kw.ListaLubSlownikOgolnie
 
+
 class PozycjeOgolne(ListaLubSlownikOgolnie):
     def __init__(self, etykieta, slownik_poczatkowy=None):
         '''
@@ -197,6 +198,7 @@ class PozycjeOgolne(ListaLubSlownikOgolnie):
             sl_akt = self.pobierz_element(klucz)
             sl_akt.przetwarzaj_slownik(sl_poprz, wrnt_typowy)
 
+
 def znajdz_lub_przygotuj_nowy_element(klucz, slownik, wytworca):
     if slownik.posiadam_klucz(klucz):
         element = slownik.pobierz_element(klucz)
@@ -204,9 +206,11 @@ def znajdz_lub_przygotuj_nowy_element(klucz, slownik, wytworca):
         element = slownik.ustaw_i_zwroc_element(klucz, wytworca())
     return element
 
+
 def znajdz_lub_przygotuj_nowy_slownik(klucz, slownik, klasa_slownika):
     return znajdz_lub_przygotuj_nowy_element(klucz, slownik,
         lambda: klasa_slownika(hj_kw.space_two(ek_kw.ETK_maly_licznik_znajdz_lub_przygotuj, klucz)))
+
 
 class TestPozycjiOgolnych(unittest.TestCase):
     def test_pozycji_ogolnych(self):

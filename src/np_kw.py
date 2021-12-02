@@ -16,6 +16,7 @@ import nc_kw
 
 CommonWriter = nc_kw.CommonWriter
 
+
 class PowerWriter(CommonWriter):
     def __init__(self):
         '''
@@ -107,6 +108,7 @@ class PowerWriter(CommonWriter):
             else:
                 moc_umowna = 0
             self.generate_for_month(xwg, my_data, dost_wiersz, moc_umowna)
+
 
 class TestWritingPower(unittest.TestCase):
     def test_writing_power(self):

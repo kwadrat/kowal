@@ -15,6 +15,7 @@ Moje_przypadki = (
 
 Sensowne_przypadki = set([Klient_nasz, Klient_obcy])
 
+
 class NaszaAnkieta(object):
     '''
     Określenie, czy nadlicznik przechowuje dane nasze, czy inne

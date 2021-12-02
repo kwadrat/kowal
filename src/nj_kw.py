@@ -8,10 +8,12 @@ Wspólne elementy klas dla eksportu faktur energii elektrycznej oraz gazu W-5
 import jt_kw
 import ir_kw
 
+
 def wylicz_kl_pocz(qj_ta_kolumna, qj_liczba_lat):
     return 2 + qj_ta_kolumna * (qj_liczba_lat + 1)
 
 CObjectNaming = ir_kw.CObjectNaming
+
 
 class DaneWspolneObiektu(CObjectNaming):
     def __init__(self):
