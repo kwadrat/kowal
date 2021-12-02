@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+import ckb_kw
+
 
 class PorcjowanieLinii(object):
     def __init__(self, liczba):
@@ -23,4 +25,4 @@ class PorcjowanieLinii(object):
         self.rh_licznik += 1
         if self.rh_licznik >= self.rh_liczba:
             self.zeruj()
-            raw_input('Press Enter: ')
+            ckb_kw.both_input('Press Enter: ')

@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+import ckb_kw
 import fv_kw
 
 KSZ_Zmiennoprzecinkowa = 'zmiennoprzecinkowa z przecinkiem'
@@ -39,7 +40,7 @@ class ArkuszExcel(object):
                         if 1:
                             tmp_format = 'wynik'
                             print('Eval: %s %s' % (tmp_format, eval(tmp_format)))
-                    raw_input('Nacisnij Enter')
+                    ckb_kw.both_input('Nacisnij Enter')
             else:
                 raise RuntimeError("Nieznany ksztalt: %s" % repr(ksztalt))
         return wynik
