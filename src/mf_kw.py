@@ -17,7 +17,7 @@ link_obrazu = '''\
 def pocz_mapy(nazwa):
     return '''\
   <map id="%(mapa_slupkow)s" name="%(mapa_slupkow)s">
-  ''' % dict(mapa_slupkow = nazwa)
+  ''' % dict(mapa_slupkow=nazwa)
 
 kon_mapy = '''\
 </map>

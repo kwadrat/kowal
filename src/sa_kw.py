@@ -12,4 +12,4 @@ def UstawienieLocale():
 
 
 def poukladaj_wedlug_drugiego(przedzialy):
-    przedzialy.sort(key=operator.itemgetter(1), reverse = False)
+    przedzialy.sort(key=operator.itemgetter(1), reverse=False)

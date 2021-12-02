@@ -241,7 +241,7 @@ class WyznaczanieSlownie(object):
 
         jestem_opcjonalny_jeden = 0
         if ile_jednostek:
-            kawalek = self.jako_nps(ile_jednostek, jestem_opcjonalny_jeden, odmiana_zloty, ile_tysiecy = ile_tysiecy)
+            kawalek = self.jako_nps(ile_jednostek, jestem_opcjonalny_jeden, odmiana_zloty, ile_tysiecy=ile_tysiecy)
             wynik.extend(kawalek)
         else:
             if not ile_tysiecy:

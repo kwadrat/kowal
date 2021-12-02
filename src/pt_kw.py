@@ -84,13 +84,16 @@ class KlasaObrazu(object):
             lista.append(mf_kw.pocz_mapy(nazwa_tej_mapy))
             lista.extend(self.moja_mapa)
             lista.append(mf_kw.kon_mapy)
-            self.rozkaz_mapy = ' usemap="#%(mapa_slupkow)s"' % dict(mapa_slupkow = nazwa_tej_mapy)
+            self.rozkaz_mapy = ' usemap="#%(mapa_slupkow)s"' % dict(
+                mapa_slupkow=nazwa_tej_mapy,
+                )
         zasadniczy_odsylacz = mf_kw.link_obrazu % dict(
-            x = self.szerokosc_obrazu,
-            y = self.wysokosc_obrazu,
-            nazwa = oc_kw.core_resolver.pelna_generowana_nazwa(self.moja_nazwa),
-            rozkaz_mapy = self.rozkaz_mapy,
-            html_tmp_name = self.html_name)
+            x=self.szerokosc_obrazu,
+            y=self.wysokosc_obrazu,
+            nazwa=oc_kw.core_resolver.pelna_generowana_nazwa(self.moja_nazwa),
+            rozkaz_mapy=self.rozkaz_mapy,
+            html_tmp_name=self.html_name,
+            )
         lista.append(zasadniczy_odsylacz)
         return ''.join(lista)
 

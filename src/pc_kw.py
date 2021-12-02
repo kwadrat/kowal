@@ -95,8 +95,8 @@ class TestLczPrec(unittest.TestCase):
         '''
         TestLczPrec:
         '''
-        tmp_zm = LiczbaPrecyzyjna(2.5, precyzja = 1)
-        zwiekszenie = LiczbaPrecyzyjna(1, precyzja = 0)
+        tmp_zm = LiczbaPrecyzyjna(2.5, precyzja=1)
+        zwiekszenie = LiczbaPrecyzyjna(1, precyzja=0)
         tmp_zm.zwieksz(zwiekszenie)
         assert tmp_zm.pob_d() == lm_kw.a2d('3.5')
 

@@ -61,5 +61,5 @@ def zrob_kopie_pliku(nazwa_programu, przedrostek, prawie_rowne=0):
 
 def wykonaj_kopie_plikow():
     sf_kw.sprawdz_lub_utworz_katalog_logu(katalog_logu)
-    zrob_kopie_pliku(nazwa_pliku_faktury_bazowej(), 'kopia_szablon_', prawie_rowne = 1)
-    zrob_kopie_pliku(dolacz_katalog(zeszyt_pomiarow), 'kopia_pomiary_', prawie_rowne = 1)
+    zrob_kopie_pliku(nazwa_pliku_faktury_bazowej(), 'kopia_szablon_', prawie_rowne=1)
+    zrob_kopie_pliku(dolacz_katalog(zeszyt_pomiarow), 'kopia_pomiary_', prawie_rowne=1)

@@ -40,8 +40,8 @@ class AxisY(object):
         if self.MinY >= self.MaxY:  # Omijamy wykresy bez zróżnicowanych danych
             napis = ('Za malo roznicy w skali y, MinY = %(MinY)s, MaxY = %(MaxY)s' %
               dict(
-                MinY = str(self.MinY),
-                MaxY = str(self.MaxY),
+                MinY=str(self.MinY),
+                MaxY=str(self.MaxY),
               )
             )
         else:

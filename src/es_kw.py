@@ -93,7 +93,7 @@ class MojeSlupki(KlasaObrazu):
             self.CenterNapis(SlWspX, DolSlupka + 5, Etykieta, jb_kw.JedenOdcinekBazowy(None, None, slownik_qm))
 
     def RysujListeSlupkow(self):
-        self.mam_slupki.sort(key = lambda jeden_slupek: jeden_slupek.klucz_porzadku(), reverse = False)
+        self.mam_slupki.sort(key=lambda jeden_slupek: jeden_slupek.klucz_porzadku(), reverse=False)
         for jeden_slupek in self.mam_slupki:
             self.RysujSlupek(jeden_slupek)
 
@@ -155,7 +155,8 @@ class MojeSlupki(KlasaObrazu):
         wykaz_zaznaczen.sort()
         for jedno_zaznaczenie in wykaz_zaznaczen:
             draw.rectangle((px - przyrost_ramki, py - przyrost_ramki, kx + przyrost_ramki, ky + przyrost_ramki),
-              outline = jedno_zaznaczenie, fill = None
+                outline=jedno_zaznaczenie,
+                fill=None,
             )
             przyrost_ramki -= 1
 
@@ -230,10 +231,9 @@ class MojeSlupki(KlasaObrazu):
         MojeSlupki:
         '''
         if IleSlupkow <= 0:  # Omijamy wykresy z małą liczbą wartości
-            napis = ('Brak danych, kolumn = %(IleSlupkow)s' %
-              dict(
-                IleSlupkow = str(IleSlupkow),
-              )
+            napis = ('Brak danych, kolumn = %(IleSlupkow)s' % dict(
+                IleSlupkow=str(IleSlupkow),
+                )
             )
         else:
             napis = None

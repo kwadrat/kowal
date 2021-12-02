@@ -58,7 +58,7 @@ class PosrednikAplikacjiExcela(object):
         PosrednikAplikacjiExcela:
         '''
         self.xl.ActiveWindow.View = we_kw.WartosciExcel.xlPageBreakPreview
-        self.xl.ActiveSheet.VPageBreaks(1).DragOff(Direction = we_kw.WartosciExcel.xlToRight, RegionIndex = 1)
+        self.xl.ActiveSheet.VPageBreaks(1).DragOff(Direction=we_kw.WartosciExcel.xlToRight, RegionIndex=1)
         self.xl.ActiveWindow.View = we_kw.WartosciExcel.xlNormalView
 
     def zakoncz_excela(self):
