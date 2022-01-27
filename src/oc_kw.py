@@ -12,6 +12,7 @@ rjb_havn_ip = '78.31.136.60'
 
 mthd_get = 'GET'
 mthd_post = 'POST'
+mthd_head = 'HEAD'
 
 rjb_pocz_hm_dir = '/home/'
 rjb_do_pbl_ht = lk_kw.rjb_sam_slsh + 'public_html'
@@ -103,6 +104,7 @@ class TestConstantStrings(unittest.TestCase):
         obk = core_for_testing()
         self.assertEqual(mthd_get, 'GET')
         self.assertEqual(mthd_post, 'POST')
+        self.assertEqual(mthd_head, 'HEAD')
         self.assertEqual(rjb_dla_drukowania, 'print')
         self.assertEqual(rjb_pocz_hm_dir, '/home/')
         self.assertEqual(rjb_do_pbl_ht, '/public_html')
