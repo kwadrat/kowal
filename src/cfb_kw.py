@@ -8,7 +8,7 @@ import re
 frag_a = r'''
 \s*
 '''
-frag_b = '''
+frag_b = r'''
 \s+
 numeric
 \(

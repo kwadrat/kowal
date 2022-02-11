@@ -96,7 +96,7 @@ local_splitter = FieldSplitter()
 
 
 def rozbij_na_pola(line, quoting=0):
-   return local_splitter.split_fields(line, quoting=quoting)
+    return local_splitter.split_fields(line, quoting=quoting)
 
 
 class TestRozbijaniaCommaSV(unittest.TestCase):

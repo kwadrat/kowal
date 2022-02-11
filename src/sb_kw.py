@@ -10,7 +10,6 @@ import ntpath
 import unittest
 
 
-
 def only_filename(maybe_full_name):
     if '\\' in maybe_full_name:
         wynik = ntpath.basename(maybe_full_name)

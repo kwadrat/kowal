@@ -17,4 +17,4 @@ class TestCartesian(unittest.TestCase):
         TestCartesian:
         '''
         obj = PartCartesian('a;b')
-        self.assertEqual(1, 1)
+        self.assertEqual(not obj, 0)

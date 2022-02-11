@@ -70,7 +70,7 @@ def process_hour_headers(time_tuple):
 
 
 def process_quarter_headers(value):
-    my_point = prepare_s_date(*value) - datetime.timedelta(seconds=15*60)
+    my_point = prepare_s_date(*value) - datetime.timedelta(seconds=15 * 60)
     my_date = rj_na_date(my_point)
     my_time = my_point.strftime(cjs_kw.yq_6_yq)
     return my_date, my_time

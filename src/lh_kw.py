@@ -7,6 +7,7 @@ import ze_kw
 
 # Sprawdza, że w liście napisów jest co najmniej jeden znak
 
+
 def mam_znak(lista):
     return filter(None, lista)
 
