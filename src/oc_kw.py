@@ -19,7 +19,7 @@ rjb_do_pbl_ht = lk_kw.rjb_sam_slsh + 'public_html'
 rjb_sama_tylda = '~'
 PoczObrazka = 'plik_'
 RozszerzenieObrazka = '.png'
-url_ameryka_http = 'http://'
+url_ameryka_http = 'https://'
 rjb_hs_pocz = 'https://'
 kj_beaker_dot_session = 'beaker.session'
 kj_wsgi_dot_input = 'wsgi.input'
@@ -111,28 +111,28 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(rjb_sama_tylda, '~')
         self.assertEqual(PoczObrazka, 'plik_')
         self.assertEqual(RozszerzenieObrazka, '.png')
-        self.assertEqual(url_ameryka_http, 'http://')
+        self.assertEqual(url_ameryka_http, 'https://')
         self.assertEqual(rjb_hs_pocz, 'https://')
         self.assertEqual(obk.adres_maszyny, 'work.ciri.pl')
         self.assertEqual(obk.adres_auth, 'auth.ciri.pl')
         self.assertEqual(obk.adres_przystani, 'middle.ciri.pl')
-        self.assertEqual(obk.url_kotw_a_ica, 'http://work.ciri.pl')
+        self.assertEqual(obk.url_kotw_a_ica, 'https://work.ciri.pl')
         self.assertEqual(obk.rjb_hs_pcztk_sam, 'https://auth.ciri.pl')
         self.assertEqual(obk.rjb_hs_pcztk_slsh, 'https://auth.ciri.pl/')
-        self.assertEqual(obk.url_kotw_b_ica, 'http://work.ciri.pl/')
+        self.assertEqual(obk.url_kotw_b_ica, 'https://work.ciri.pl/')
         self.assertEqual(konto_uzytkownika, 'kwadrat')
         self.assertEqual(rjb_fg_tld_a_apl, '~kwadrat')
         self.assertEqual(rjb_fg_tld_b_apl, '/~kwadrat')
         self.assertEqual(rjb_kt_dom_uzt, '/home/kwadrat')
         self.assertEqual(rjb_wsp_cr_md, '/home/kwadrat/ciri/media/')
         self.assertEqual(rjb_ph_uztk, '/home/kwadrat/public_html/')
-        self.assertEqual(obk.rjb_sciezka_kw, 'http://work.ciri.pl/~kwadrat')
-        self.assertEqual(obk.rjb_sciezka_a_kw, 'http://work.ciri.pl/~kwadrat/')
+        self.assertEqual(obk.rjb_sciezka_kw, 'https://work.ciri.pl/~kwadrat')
+        self.assertEqual(obk.rjb_sciezka_a_kw, 'https://work.ciri.pl/~kwadrat/')
         self.assertEqual(GenPicDir, 'gen_kowal/')
-        self.assertEqual(obk.poczatek_gen, 'http://work.ciri.pl/~kwadrat/gen_kowal/')
+        self.assertEqual(obk.poczatek_gen, 'https://work.ciri.pl/~kwadrat/gen_kowal/')
         self.assertEqual(SciezkaPlikow, '/home/kwadrat/public_html/gen_kowal/')
-        self.assertEqual(obk.pelna_generowana_nazwa('tmp.png'), 'http://work.ciri.pl/~kwadrat/gen_kowal/tmp.png')
-        self.assertEqual(obk.pelna_generowana_nazwa('inny.jpg'), 'http://work.ciri.pl/~kwadrat/gen_kowal/inny.jpg')
+        self.assertEqual(obk.pelna_generowana_nazwa('tmp.png'), 'https://work.ciri.pl/~kwadrat/gen_kowal/tmp.png')
+        self.assertEqual(obk.pelna_generowana_nazwa('inny.jpg'), 'https://work.ciri.pl/~kwadrat/gen_kowal/inny.jpg')
         self.assertEqual(rjb_klnt_ip, '87.101.66.154')
         self.assertEqual(rjb_kwl_sam, 'kowal')
         self.assertEqual(rjb_sczk_do_kwl, '/home/kwadrat/kowal')
