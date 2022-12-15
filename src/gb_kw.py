@@ -10,6 +10,7 @@ import hj_kw
 
 JednHour = 'h'
 Jedn_sztuki = 'szt'
+Jedn_usluga = 'usł.'
 # Kilowatogodzin
 Jedn_kWtow = 'kW'
 Jedn_kWh = Jedn_kWtow + JednHour
@@ -65,6 +66,7 @@ class TestUnitNames(unittest.TestCase):
         TestUnitNames:
         '''
         self.assertEqual(Jedn_sztuki, 'szt')
+        self.assertEqual(Jedn_usluga, 'usł.')
         self.assertEqual(Jedn_jy_sztuki, '[szt]')
         self.assertEqual(Jedn_kWh, 'kWh')
         self.assertEqual(Jedn_k_kWh, '[kWh]')
