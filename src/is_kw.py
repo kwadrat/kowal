@@ -79,7 +79,7 @@ class SpecifiedYears(object):
         '''
         return enumerate(self.collected_years)
 
-    def add_if_lacking(self, the_year):
+    def add_year_if_missing(self, the_year):
         '''
         SpecifiedYears:
         '''
@@ -132,9 +132,9 @@ class TestYearCollection(unittest.TestCase):
         TestYearCollection:
         '''
         obk = SpecifiedYears()
-        obk.add_if_lacking(2012)
+        obk.add_year_if_missing(2012)
         self.assertEqual(obk.get_elements(), [2012])
-        obk.add_if_lacking(2012)
+        obk.add_year_if_missing(2012)
         self.assertEqual(obk.get_elements(), [2012])
 
     def test_continuous_fill(self):
