@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
-import md5
+import hashlib
 import unittest
 
 '''
@@ -16,7 +16,7 @@ def pomniejsz_litery(napis):
 
 
 def suma_kont(napis):
-    return md5.md5(napis).hexdigest()
+    return hashlib.md5(napis).hexdigest()
 
 
 def przecinek_kropka(a):
