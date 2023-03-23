@@ -54,7 +54,9 @@ class BaildonTime(object):
             ' ',
             one_label,
             ])
-        print >> sys.stderr, all_text
+        # Powinno być na stderr - dokończyć w wolnym czasie
+        # print >> sys.stderr, all_text
+        print(all_text)
 
 
 baildon_time = BaildonTime()
