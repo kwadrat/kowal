@@ -3,9 +3,10 @@
 
 import unittest
 
+import ckc_kw
 
 def uporzadkuj_etykiety(kolejnosc_etykiet):
-    indeks_etykieta = [(v, k) for k, v in kolejnosc_etykiet.iteritems()]
+    indeks_etykieta = [(v, k) for k, v in ckc_kw.iteritems(kolejnosc_etykiet)]
     indeks_etykieta.sort()
     return map(lambda para: para[1], indeks_etykieta)
 

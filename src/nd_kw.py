@@ -3,6 +3,7 @@
 
 import ng_kw
 import gv_kw
+import ckc_kw
 import hj_kw
 import gu_kw
 import en_kw
@@ -147,7 +148,7 @@ class OgOpOgolnaKolumna(object):
         '''
         OgOpOgolnaKolumna:
         '''
-        for fvk_miesiac, dane_jednego_miesiaca in dane_dla_miesiaca.iteritems():
+        for fvk_miesiac, dane_jednego_miesiaca in ckc_kw.iteritems(dane_dla_miesiaca):
             moja_suma = dane_jednego_miesiaca.wyznacz_rn_sume_faktur(self.kl_db_label)
             self.qj_set_a_flt(fvk_miesiac, moja_suma)
 
@@ -194,7 +195,7 @@ class OgOpOgolnaKolumna(object):
         OgOpOgolnaKolumna:
         '''
         nr_kol = self.kl_assigned_col
-        for wiersz_przesuniecie, (tresc_napisu, liczba_kolumn) in self.qj_napisy.iteritems():
+        for wiersz_przesuniecie, (tresc_napisu, liczba_kolumn) in ckc_kw.iteritems(self.qj_napisy):
             xwg.zapisz_l_polaczone_komorki(
                 wiersz_bazowy_miesiecy + wiersz_przesuniecie,
                 nr_kol,
@@ -202,7 +203,7 @@ class OgOpOgolnaKolumna(object):
                 style_sel=None,
                 liczba_kolumn=liczba_kolumn,
                 )
-        for wiersz_przesuniecie, (tresc_napisu, liczba_kolumn, liczba_wierszy) in self.qj_szerokie1_napisy.iteritems():
+        for wiersz_przesuniecie, (tresc_napisu, liczba_kolumn, liczba_wierszy) in ckc_kw.iteritems(self.qj_szerokie1_napisy):
             xwg.zapisz_zawijany_center(
                 wiersz_bazowy_miesiecy + wiersz_przesuniecie,
                 nr_kol,
@@ -210,7 +211,7 @@ class OgOpOgolnaKolumna(object):
                 liczba_kolumn=liczba_kolumn,
                 liczba_wierszy=liczba_wierszy,
                 )
-        for wiersz_przesuniecie, (tresc_napisu, liczba_kolumn) in self.qj_szerokie3_napisy.iteritems():
+        for wiersz_przesuniecie, (tresc_napisu, liczba_kolumn) in ckc_kw.iteritems(self.qj_szerokie3_napisy):
             xwg.zapisz_l_polaczone_komorki(
                 wiersz_bazowy_miesiecy + wiersz_przesuniecie,
                 nr_kol,
@@ -218,15 +219,15 @@ class OgOpOgolnaKolumna(object):
                 style_sel=ng_kw.NVB_19_STYLE,
                 liczba_kolumn=liczba_kolumn,
                 )
-        for wiersz_przesuniecie, rn_liczba in self.qj_liczby.iteritems():
+        for wiersz_przesuniecie, rn_liczba in ckc_kw.iteritems(self.qj_liczby):
             xwg.zapisz_rn_flt(wiersz_bazowy_miesiecy + wiersz_przesuniecie, nr_kol, rn_liczba)
-        for wiersz_przesuniecie, tresc_napisu in self.qj_napisy_12_bold.iteritems():
+        for wiersz_przesuniecie, tresc_napisu in ckc_kw.iteritems(self.qj_napisy_12_bold):
             xwg.zapisz_bold_rozmiar_12_komorki(
                 wiersz_bazowy_miesiecy + wiersz_przesuniecie,
                 nr_kol,
                 tresc_napisu,
                 )
-        for wiersz_przesuniecie, (tekst_wzoru, kl_miejsc, liczba_kolumn, size, bold, fore_colour) in self.qj_wzory.iteritems():
+        for wiersz_przesuniecie, (tekst_wzoru, kl_miejsc, liczba_kolumn, size, bold, fore_colour) in ckc_kw.iteritems(self.qj_wzory):
             xwg.zapisz_wzor(
                 wiersz_bazowy_miesiecy + wiersz_przesuniecie,
                 nr_kol,
@@ -237,7 +238,7 @@ class OgOpOgolnaKolumna(object):
                 liczba_kolumn=liczba_kolumn,
                 fore_colour=fore_colour,
                 )
-        for wiersz_przesuniecie, (the_content, liczba_kolumn) in self.qj_centrowane_num_tytuly.iteritems():
+        for wiersz_przesuniecie, (the_content, liczba_kolumn) in ckc_kw.iteritems(self.qj_centrowane_num_tytuly):
             xwg.zapisz_lu_polaczone_komorki(
                 wiersz_bazowy_miesiecy + wiersz_przesuniecie,
                 nr_kol,

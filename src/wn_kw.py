@@ -6,6 +6,7 @@ Słownik przedziałów czasowych
 
 import unittest
 
+import ckc_kw
 import lm_kw
 
 
@@ -80,7 +81,7 @@ class KlasaSlownika(object):
         '''
         KlasaSlownika:
         '''
-        return self.vz_slownik.iteritems()
+        return ckc_kw.iteritems(self.vz_slownik)
 
     def jh_na_poczatek_puste(self, key):
         '''

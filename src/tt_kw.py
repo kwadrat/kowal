@@ -4,6 +4,7 @@
 import unittest
 
 import lc_kw
+import ckc_kw
 import fv_kw
 import le_kw
 import lp_kw
@@ -201,7 +202,7 @@ class CommonReader(CommonRdWr):
         '''
         CommonReader:
         '''
-        for local_key, my_sample_row in self.internal_rows.iteritems():
+        for local_key, my_sample_row in ckc_kw.iteritems(self.internal_rows):
             my_sample_row.put_in_database(dfb, self.krt_pobor, self.table_of_samples, local_key)
 
     def recalculate_statistics(self, dfb):

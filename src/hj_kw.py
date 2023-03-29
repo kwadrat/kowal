@@ -5,6 +5,7 @@ import unittest
 
 import fy_kw
 import gv_kw
+import ckc_kw
 
 mapping_as = ' AS '
 db_zero_value = '0'
@@ -134,7 +135,7 @@ def podpis_faktury(rest_of_txt):
 
 
 def significant_values_for_months(my_dict):
-    return any(v.rn_value for month, v in my_dict.iteritems() if 1 <= month <= 12)
+    return any(v.rn_value for month, v in ckc_kw.iteritems(my_dict) if 1 <= month <= 12)
 
 
 def rcp_plus(list_of_terms):

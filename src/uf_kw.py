@@ -3,6 +3,7 @@
 
 import unittest
 
+import ckc_kw
 import sn_kw
 import uv_kw
 
@@ -21,7 +22,7 @@ class DanePodnajemcow(object):
         '''
         self.wykaz_podnajemcow = przygotuj_podnajemcow(lista_podnajemcow)
         self.wykaz_nazw_podnajemcow = []
-        for klucz, jeden_podnajemca in self.wykaz_podnajemcow.iteritems():
+        for klucz, jeden_podnajemca in ckc_kw.iteritems(self.wykaz_podnajemcow):
             self.wykaz_nazw_podnajemcow.append(jeden_podnajemca.dane_osoby)
         self.wykaz_nazw_podnajemcow = frozenset(self.wykaz_nazw_podnajemcow)
 
