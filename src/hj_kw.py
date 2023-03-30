@@ -337,6 +337,11 @@ def netto_from_brutto(brutto, vat_rate):
         ])
 
 
+def enum_one(text):
+    all_lines = text.splitlines()
+    return enumerate(all_lines, start=1)
+
+
 def labels_to_indexes(some_labels, all_labels):
     return map(lambda x: all_labels.index(x), some_labels)
 
@@ -435,6 +440,8 @@ class TestProcessingSQL(unittest.TestCase):
         self.assertEqual(nazwa_filtrowanego(4), 'gen_filtered_4.csv')
         self.assertEqual(nazwa_filtrowanego(5, 'a'), 'gen_filtered_5a.csv')
         self.assertEqual(space_two('a', 'b'), 'a b')
+        self.assertEqual(list(enum_one('a\nb')), [(1, 'a'), (2, 'b')])
+        self.assertEqual(list(enum_one('a\nb\nc')), [(1, 'a'), (2, 'b'), (3, 'c')])
         self.assertEqual(chop_go(['id', 'name', 'go']), ['id', 'name'])
         self.assertEqual(otocz_nawiasami('a'), '(a)')
         self.assertEqual(otocz_nawiasami('bc'), '(bc)')
