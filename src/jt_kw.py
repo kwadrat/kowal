@@ -25,7 +25,7 @@ tab_rzymskich = [
     'XII',
     ]
 
-numery_miesiecy = range(1, 12 + 1)
+numery_miesiecy = list(range(1, 12 + 1))
 
 roman_map = dict((k, v) for k, v in zip(tab_rzymskich, numery_miesiecy))
 
