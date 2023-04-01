@@ -42,18 +42,18 @@ class DanePodnajemcow(object):
         '''
         DanePodnajemcow:
         '''
-        lista_spinek = filter(
+        lista_spinek = list(filter(
             lambda x: x.spinkowe_miejsce in self.wykaz_podnajemcow,
-            lista_spinek)
+            lista_spinek))
         return lista_spinek
 
     def usun_klucze_podnajemcow(self, lista_spinek):
         '''
         DanePodnajemcow:
         '''
-        lista_spinek = filter(
+        lista_spinek = list(filter(
             lambda x: x.spinkowe_miejsce not in self.wykaz_podnajemcow,
-            lista_spinek)
+            lista_spinek))
         return lista_spinek
 
     def invoice_for_other(self, numer_nadlicznika, dane_osoby):
