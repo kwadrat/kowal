@@ -4,6 +4,8 @@
 Moduł do konwersji kodowania (Unicode, UTF-8, CP-852)
 '''
 
+import ckd_kw
+
 import pickle
 import binascii
 import unittest
@@ -21,6 +23,14 @@ def text_not_unicode(value):
 
 def utf_to_unicode(napis_utf):
     return napis_utf.decode(en_cod_cp_u_eig)
+
+
+def pwd_to_unicode(napis_utf):
+    if ckd_kw.three_or_more:
+        result = napis_utf
+    else:
+        result = napis_utf.decode(en_cod_cp_u_eig)
+    return result
 
 
 def unicode_to_utf(napis_uncd):

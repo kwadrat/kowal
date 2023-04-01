@@ -10,7 +10,7 @@ import dn_kw
 import en_kw
 import dg_kw
 
-Katalog_dokumentow = os.getcwd().decode(en_kw.en_cod_cp_win) + u'\\'
+Katalog_dokumentow = en_kw.pwd_to_unicode(os.getcwd()) + u'\\'
 faktura_bazowa_szkielet = 'Energia_szablon.xls'
 katalog_logu = Katalog_dokumentow + u'archiwum_aplikacji'
 zeszyt_pomiarow = u"ZST_zużycie_en_elektr_obiekty_obce.xls"
