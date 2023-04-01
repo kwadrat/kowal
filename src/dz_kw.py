@@ -115,7 +115,7 @@ changed_coding_date_format = '%(year)s-%(month)s-%(day)s'
 def wyciagnij_date_z_formatu_dmr(napis):
     res = wzor_data_dzien_miesiac_rok.search(napis)
     if res:
-        wynik = map(int, (res.group('year', 'month', 'day')))
+        wynik = list(map(int, (res.group('year', 'month', 'day'))))
     else:
         raise RuntimeError('Nierozpoznana data?: %s' % repr(napis))
     return wynik
@@ -124,7 +124,7 @@ def wyciagnij_date_z_formatu_dmr(napis):
 def extract_csv_hour(napis):
     res = wzor_hour_csv.search(napis)
     if res:
-        wynik = map(int, (res.group('hour', 'minute')))
+        wynik = list(map(int, (res.group('hour', 'minute'))))
     else:
         wynik = None
     return wynik
@@ -133,7 +133,7 @@ def extract_csv_hour(napis):
 def extract_csv_day(napis):
     res = wzor_day_csv.search(napis)
     if res:
-        wynik = map(int, (res.group('year', 'month', 'day')))
+        wynik = list(map(int, (res.group('year', 'month', 'day'))))
     else:
         wynik = None
     return wynik
@@ -142,7 +142,7 @@ def extract_csv_day(napis):
 def extract_csv_full(napis):
     res = wzor_day_full.search(napis)
     if res:
-        wynik = map(int, (res.group('year', 'month', 'day', 'hour', 'minute')))
+        wynik = list(map(int, (res.group('year', 'month', 'day', 'hour', 'minute'))))
     else:
         wynik = None
     return wynik
