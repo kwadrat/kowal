@@ -8,7 +8,7 @@ import ckc_kw
 def uporzadkuj_etykiety(kolejnosc_etykiet):
     indeks_etykieta = [(v, k) for k, v in ckc_kw.iteritems(kolejnosc_etykiet)]
     indeks_etykieta.sort()
-    return map(lambda para: para[1], indeks_etykieta)
+    return list(map(lambda para: para[1], indeks_etykieta))
 
 
 def psycopg2_zamien_na_napisy(lista_slownikow):
@@ -17,12 +17,12 @@ def psycopg2_zamien_na_napisy(lista_slownikow):
     uporzadkowane_etykiety = uporzadkuj_etykiety(kolejnosc_etykiet)
     wersja_napisowa.append(uporzadkowane_etykiety)
     for jeden_wiersz in lista_slownikow:
-        wersja_napisowa.append(map(str, jeden_wiersz))
+        wersja_napisowa.append(list(map(str, jeden_wiersz)))
     return wersja_napisowa
 
 
 def wyznacz_potrzebne_miejsce(same_napisy):
-    return map(max, map(lambda w_kolumnie: map(len, w_kolumnie), zip(*same_napisy)))
+    return list(map(max, list(map(lambda w_kolumnie: list(map(len, w_kolumnie)), zip(*same_napisy)))))
 
 
 def wydrukuj_tabelke(same_napisy, wektor_rozmiarow):

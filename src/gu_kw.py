@@ -294,6 +294,6 @@ class TestKolumnowegoAdresatora(unittest.TestCase):
         TestKolumnowegoAdresatora:
         '''
         obk = KolumnowyAdresator(col_cnt=3, row_cnt=4)
-        self.assertEqual(map(None, obk.col_iter()), [0, 1, 2])
-        self.assertEqual(map(None, obk.row_iter()), [0, 1, 2, 3])
-        self.assertEqual(map(None, obk.row_iter(1)), [0, 1, 2, 3, 4])
+        self.assertEqual(list(map(None, obk.col_iter())), [0, 1, 2])
+        self.assertEqual(list(map(None, obk.row_iter())), [0, 1, 2, 3])
+        self.assertEqual(list(map(None, obk.row_iter(1))), [0, 1, 2, 3, 4])

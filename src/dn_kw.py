@@ -330,7 +330,7 @@ def ZakresMiesiaca(rok, miesiac, liczba_mies=1):
 
 
 def daty_skrajne_miesiaca(rok, miesiac, liczba_mies=1):
-    return map(NapisDnia, ZakresMiesiaca(rok, miesiac, liczba_mies=liczba_mies))
+    return list(map(NapisDnia, ZakresMiesiaca(rok, miesiac, liczba_mies=liczba_mies)))
 
 
 def daty_lat(dzien_pocz, dzien_kon):
@@ -549,7 +549,7 @@ class TestDaysDates(unittest.TestCase):
         self.assertEqual(data_rmd(data_testowa_a), (2011, 8, 29))
         daty_roczne = daty_lat(13149, 13879)
         self.assertEqual(daty_roczne, [13149, 13514, 13879])
-        self.assertEqual(map(DataDnia, daty_roczne), [(2006, 1, 1), (2007, 1, 1), (2008, 1, 1)])
+        self.assertEqual(list(map(DataDnia, daty_roczne)), [(2006, 1, 1), (2007, 1, 1), (2008, 1, 1)])
         self.assertEqual(ZakresMiesiaca(2008, 2), (13910, 13939))
         self.assertEqual(ZakresMiesiaca(2008, 2, 4), (13910, 14031))
         self.assertEqual(daty_skrajne_miesiaca(2008, 2), ['2008-02-01', '2008-03-01'])

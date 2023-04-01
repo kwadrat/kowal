@@ -21,18 +21,18 @@ def rect_text(one_text):
 
 def transpose_text(one_text):
     result = zip(*one_text)
-    result = map(list, result)
+    result = list(map(list, result))
     return result
 
 
 def matrix_to_text(one_matrix):
-    all_lines = map(lambda x: (''.join(x)).rstrip(), one_matrix)
+    all_lines = list(map(lambda x: (''.join(x)).rstrip(), one_matrix))
     result_txt = '\n'.join(all_lines)
     return result_txt
 
 
 def reverse_text(one_matrix):
-    return map(lambda x: list(reversed(x)), one_matrix)
+    return list(map(lambda x: list(reversed(x)), one_matrix))
 
 
 def massive_processing(file_txt):

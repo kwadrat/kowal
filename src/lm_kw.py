@@ -96,7 +96,7 @@ def rzeczywista_na_napis(liczba, rn_after=2, bt_comma=0):
 
 def generate_scale(max_value):
     the_last = int(max_value)
-    return map(a2d, range(the_last + 1))
+    return list(map(a2d, range(the_last + 1)))
 
 
 def roznica_dokladna(a, b):
@@ -183,8 +183,8 @@ class TestPointNumbers(unittest.TestCase):
         '''
         TestPointNumbers:
         '''
-        self.assertEqual(generate_scale(a2d('10.5')), map(a2d, range(11)))
-        self.assertEqual(generate_scale(2.5), map(a2d, range(3)))
+        self.assertEqual(generate_scale(a2d('10.5')), list(map(a2d, range(11))))
+        self.assertEqual(generate_scale(2.5), list(map(a2d, range(3))))
 
     def test_zero_from_db(self):
         '''

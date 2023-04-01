@@ -9,7 +9,7 @@ import ze_kw
 
 
 def mam_znak(lista):
-    return filter(None, lista)
+    return list(filter(None, lista))
 
 
 class ListaHTML(object):

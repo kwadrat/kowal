@@ -10,11 +10,11 @@ import le_kw
 
 
 def cnt_none(elements):
-    return len(filter(lambda x: x is None, elements))
+    return len(list(filter(lambda x: x is None, elements)))
 
 
 def cnt_zero(elements):
-    return len(filter(lambda x: x in (0.0, lm_kw.wartosc_zero_globalna), elements))
+    return len(list(filter(lambda x: x in (0.0, lm_kw.wartosc_zero_globalna), elements)))
 
 
 def sum_of_not_nones(krt_vl_fnctn, elements):

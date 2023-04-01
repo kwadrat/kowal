@@ -8,7 +8,7 @@ import oa_kw
 
 
 def generator_szkieletu(liczba_przedzialow):
-    return range(0, 2 * liczba_przedzialow + 1, 2)
+    return list(range(0, 2 * liczba_przedzialow + 1, 2))
 
 
 class KlasaOgolnaSzkieletuDat(object):

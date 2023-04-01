@@ -5,7 +5,7 @@ import unittest
 
 
 def dict_ls_key_mapper(the_label, entry_ls):
-    return map(lambda the_dict: the_dict[the_label], entry_ls)
+    return list(map(lambda the_dict: the_dict[the_label], entry_ls))
 
 
 class TestExtractingByKey(unittest.TestCase):

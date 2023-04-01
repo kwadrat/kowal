@@ -77,9 +77,9 @@ class ScaleAdvisor(object):
 
 
 def determine_vert_params(my_value):
-    list_of_results = map(
+    list_of_results = list(map(
         lambda tick_base: ScaleAdvisor(tick_base, my_value).get_values(),
-        [1, 2, 5])
+        [1, 2, 5]))
     list_of_results.sort()
     solution = list_of_results[0]
     return solution[0], solution[2]

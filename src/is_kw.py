@@ -64,7 +64,7 @@ class SpecifiedYears(object):
         '''
         SpecifiedYears:
         '''
-        specified_years = SpecifiedYears(range(self.first_year(), self.last_year() + 2 + 1))
+        specified_years = SpecifiedYears(list(range(self.first_year(), self.last_year() + 2 + 1)))
         return specified_years
 
     def sort_naturally(self, reverse=0):
@@ -77,7 +77,7 @@ class SpecifiedYears(object):
         '''
         SpecifiedYears:
         '''
-        return enumerate(self.collected_years)
+        return list(enumerate(self.collected_years))
 
     def add_year_if_missing(self, the_year):
         '''
@@ -90,7 +90,7 @@ class SpecifiedYears(object):
         '''
         SpecifiedYears:
         '''
-        return range(self.first_year(), self.last_year() + 1)
+        return list(range(self.first_year(), self.last_year() + 1))
 
 
 class TestYearCollection(unittest.TestCase):

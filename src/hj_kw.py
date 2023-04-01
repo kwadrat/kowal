@@ -211,7 +211,7 @@ def reverse_but_last(tmp_list):
 
 
 def ogranicz_wartosci_umowne(tmp_list):
-    without_zero = filter(None, tmp_list)
+    without_zero = list(filter(None, tmp_list))
     without_duplicates = list(set(without_zero))
     return without_duplicates
 
@@ -242,7 +242,7 @@ def md_vt(value, year):
 
 
 def remove_nones(elements):
-    return filter(lambda x: x is not None, elements)
+    return list(filter(lambda x: x is not None, elements))
 
 
 def wybierz_najwiekszy(elems):
@@ -258,7 +258,7 @@ def wybierz_powyzej_progu(local_maximum, local_treshold):
 
 
 def tekstowe_indeksy(lista):
-    return map(lambda x: (str(x[0]), x[1]), lista)
+    return list(map(lambda x: (str(x[0]), x[1]), lista))
 
 
 def make_hl(url, label):
@@ -343,7 +343,7 @@ def enum_one(text):
 
 
 def labels_to_indexes(some_labels, all_labels):
-    return map(lambda x: all_labels.index(x), some_labels)
+    return list(map(lambda x: all_labels.index(x), some_labels))
 
 
 def remove_duplicates(one_ls):
