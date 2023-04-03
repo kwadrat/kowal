@@ -3,6 +3,11 @@
 
 import unittest
 
+import ckd_kw
+
+if ckd_kw.three_or_more:
+    from functools import reduce
+
 
 def detect_my_days(slownik_wpisow):
     all_days = list(reduce(lambda x, y: x | y, map(lambda x: frozenset(x.keys()), slownik_wpisow.values()), frozenset()))
