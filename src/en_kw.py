@@ -29,7 +29,7 @@ def pwd_to_unicode(napis_utf):
     if ckd_kw.three_or_more:
         result = napis_utf
     else:
-        result = napis_utf.decode(en_cod_cp_u_eig)
+        result = utf_to_unicode(napis_utf)
     return result
 
 
