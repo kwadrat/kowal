@@ -41,7 +41,7 @@ def win_cp_to_unicode(napis_win):
     return napis_win.decode(en_cod_cp_win)
 
 
-def win_cp_to_utf(napis_win):
+def win_cp_to_string(napis_win):
     napis_uncd = napis_win.decode(en_cod_cp_win)
     return unicode_to_utf(napis_uncd)
 
@@ -84,7 +84,7 @@ class TestEncoding(unittest.TestCase):
         self.assertEqual(utf_to_unicode('ąćęłńóśżźĄĆĘŁŃÓŚŻŹ'), u'ąćęłńóśżźĄĆĘŁŃÓŚŻŹ')
         self.assertEqual(unicode_to_utf(u'ąćęłńóśżźĄĆĘŁŃÓŚŻŹ'), 'ąćęłńóśżźĄĆĘŁŃÓŚŻŹ')
         self.assertEqual(win_cp_to_unicode(b'\xb9\x9c\x9f'), u'ąśź')
-        self.assertEqual(win_cp_to_utf(b'\xb9\x9c\x9f'), 'ąśź')
+        self.assertEqual(win_cp_to_string(b'\xb9\x9c\x9f'), 'ąśź')
         self.assertEqual(upgrade_bytes_to_unicode(b'\xb9\x9c\x9f'), u'ąśź')
         self.assertEqual(upgrade_bytes_to_unicode(u'ą'), u'ą')
         self.assertEqual(en_cod_cp_win, 'cp1250')
