@@ -66,7 +66,7 @@ def odkoduj_z_napisu(napis):
     return slownik
 
 
-def upgrade_to_unicode(value):
+def upgrade_bytes_to_unicode(value):
     if (type(value) is str) != ckd_kw.three_or_more:
         value = win_cp_to_unicode(value)
     return value
@@ -85,8 +85,8 @@ class TestEncoding(unittest.TestCase):
         self.assertEqual(unicode_to_utf(u'ąćęłńóśżźĄĆĘŁŃÓŚŻŹ'), 'ąćęłńóśżźĄĆĘŁŃÓŚŻŹ')
         self.assertEqual(win_cp_to_unicode(b'\xb9\x9c\x9f'), u'ąśź')
         self.assertEqual(win_cp_to_utf(b'\xb9\x9c\x9f'), 'ąśź')
-        self.assertEqual(upgrade_to_unicode(b'\xb9\x9c\x9f'), u'ąśź')
-        self.assertEqual(upgrade_to_unicode(u'ą'), u'ą')
+        self.assertEqual(upgrade_bytes_to_unicode(b'\xb9\x9c\x9f'), u'ąśź')
+        self.assertEqual(upgrade_bytes_to_unicode(u'ą'), u'ą')
         self.assertEqual(en_cod_cp_win, 'cp1250')
         self.assertEqual(en_cod_cp_u_eig, 'utf-8')
         self.assertEqual(en_cod_cp_i_two, 'iso-8859-2')

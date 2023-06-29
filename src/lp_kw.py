@@ -28,7 +28,7 @@ def verify_for_equal(tmp_value, expected):
 
 
 def verify_for_u8_equal(tmp_value, expected):
-    tmp_value = en_kw.upgrade_to_unicode(tmp_value)
+    tmp_value = en_kw.upgrade_bytes_to_unicode(tmp_value)
     verify_for_equal(tmp_value, expected)
 
 
