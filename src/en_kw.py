@@ -36,7 +36,9 @@ def pwd_to_unicode(napis_utf):
 
 
 def unicode_to_utf(napis_uncd):
-    return napis_uncd.encode(en_cod_cp_u_eig)
+    if not ckd_kw.three_or_more:
+        napis_uncd = napis_uncd.encode(en_cod_cp_u_eig)
+    return napis_uncd
 
 
 def win_cp_to_unicode(napis_win):
