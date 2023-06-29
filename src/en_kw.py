@@ -88,7 +88,7 @@ class TestEncoding(unittest.TestCase):
         self.assertEqual(utf_to_unicode('ąćęłńóśżźĄĆĘŁŃÓŚŻŹ'), u'ąćęłńóśżźĄĆĘŁŃÓŚŻŹ')
         self.assertEqual(unicode_to_utf(u'ąćęłńóśżźĄĆĘŁŃÓŚŻŹ'), 'ąćęłńóśżźĄĆĘŁŃÓŚŻŹ')
         self.assertEqual(win_cp_to_unicode(b'\xb9\x9c\x9f'), u'ąśź')
-        self.assertEqual(win_cp_to_utf('\xb9\x9c\x9f'), 'ąśź')
+        self.assertEqual(win_cp_to_utf(b'\xb9\x9c\x9f'), 'ąśź')
         self.assertEqual(text_not_unicode(1), 0)
         self.assertEqual(text_not_unicode('a'), 1)
         self.assertEqual(text_not_unicode(u'a'), 0)
