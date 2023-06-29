@@ -22,7 +22,9 @@ def text_not_unicode(value):
 
 
 def utf_to_unicode(napis_utf):
-    return napis_utf.decode(en_cod_cp_u_eig)
+    if not ckd_kw.three_or_more:
+        napis_utf = napis_utf.decode(en_cod_cp_u_eig)
+    return napis_utf
 
 
 def pwd_to_unicode(napis_utf):
