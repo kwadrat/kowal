@@ -17,10 +17,6 @@ en_cod_cp_i_two = 'iso-8859-2'
 en_cod_cp_ibm_two = 'cp852'
 
 
-def text_not_unicode(value):
-    return isinstance(value, str)
-
-
 def utf_to_unicode(napis_utf):
     if not ckd_kw.three_or_more:
         napis_utf = napis_utf.decode(en_cod_cp_u_eig)
