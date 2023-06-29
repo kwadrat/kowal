@@ -31,7 +31,7 @@ def pwd_to_unicode(napis_utf):
     return result
 
 
-def unicode_to_utf(napis_uncd):
+def unicode_to_string(napis_uncd):
     if not ckd_kw.three_or_more:
         napis_uncd = napis_uncd.encode(en_cod_cp_u_eig)
     return napis_uncd
@@ -43,7 +43,7 @@ def win_cp_to_unicode(napis_win):
 
 def win_cp_to_string(napis_win):
     napis_uncd = napis_win.decode(en_cod_cp_win)
-    return unicode_to_utf(napis_uncd)
+    return unicode_to_string(napis_uncd)
 
 
 def pobierz_z_napisu(napis):
@@ -82,7 +82,7 @@ class TestEncoding(unittest.TestCase):
         TestEncoding:
         '''
         self.assertEqual(utf_to_unicode('ąćęłńóśżźĄĆĘŁŃÓŚŻŹ'), u'ąćęłńóśżźĄĆĘŁŃÓŚŻŹ')
-        self.assertEqual(unicode_to_utf(u'ąćęłńóśżźĄĆĘŁŃÓŚŻŹ'), 'ąćęłńóśżźĄĆĘŁŃÓŚŻŹ')
+        self.assertEqual(unicode_to_string(u'ąćęłńóśżźĄĆĘŁŃÓŚŻŹ'), 'ąćęłńóśżźĄĆĘŁŃÓŚŻŹ')
         self.assertEqual(win_cp_to_unicode(b'\xb9\x9c\x9f'), u'ąśź')
         self.assertEqual(win_cp_to_string(b'\xb9\x9c\x9f'), 'ąśź')
         self.assertEqual(upgrade_bytes_to_unicode(b'\xb9\x9c\x9f'), u'ąśź')
