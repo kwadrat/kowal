@@ -37,6 +37,12 @@ def unicode_to_string(napis_uncd):
     return napis_uncd
 
 
+def str_to_bt(in_str):
+    if ckd_kw.three_or_more and type(in_str) is str:
+        in_str = in_str.encode(en_cod_cp_u_eig)
+    return in_str
+
+
 def win_cp_to_unicode(napis_win):
     return napis_win.decode(en_cod_cp_win)
 
