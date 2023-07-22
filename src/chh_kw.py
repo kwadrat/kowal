@@ -22,9 +22,9 @@ LegalneDni = (
     )
 
 RokObecnyStaly = dn_kw.RokDzisiaj()
-ListaLatZuzyc = range(RokObecnyStaly, rq_kw.RokPocz2 - 1, -1)
+ListaLatZuzyc = list(range(RokObecnyStaly, rq_kw.RokPocz2 - 1, -1))
 MozliweLataZuzyc = list(map(str, ListaLatZuzyc))
-MozliweLataFaktur = map(str, range(RokObecnyStaly + 1, rq_kw.RokPocz2 - 1, -1))
+MozliweLataFaktur = list(map(str, range(RokObecnyStaly + 1, rq_kw.RokPocz2 - 1, -1)))
 MozliweLataDlaARok = [rq_kw.PoleWszystko] + MozliweLataZuzyc
 MozliweLataDlaBRok = MozliweLataZuzyc
 
@@ -33,7 +33,7 @@ def tupled_year(year):
     return (year, str(year))
 
 
-ParowaneLataDanych = map(tupled_year, ListaLatZuzyc)
+ParowaneLataDanych = list(map(tupled_year, ListaLatZuzyc))
 
 
 def DataBledna(napis):
