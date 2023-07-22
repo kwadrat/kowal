@@ -143,7 +143,7 @@ class PozycjeOgolne(ListaLubSlownikOgolnie):
         PozycjeOgolne:
         Podobne do dla_iteracji, ale ma zwracać listę, aby dało się ją posortować.
         '''
-        return self.poz_slownik.keys()
+        return list(self.poz_slownik.keys())
 
     def klucze_chronologicznie(self):
         '''

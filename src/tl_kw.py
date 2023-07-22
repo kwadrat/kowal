@@ -126,7 +126,7 @@ class TypowaLista(ListaLubSlownikOgolnie):
         TypowaLista:
         '''
         if self.lista_indeksow is None:
-            self.lista_indeksow = range(len(self.poz_lista))
+            self.lista_indeksow = list(range(len(self.poz_lista)))
         if len(self.lista_indeksow) > 0:
             del self.lista_indeksow[0]
             if not self.lista_indeksow:
