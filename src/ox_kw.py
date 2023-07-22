@@ -29,7 +29,7 @@ class SzkieletMiesiecznyDlaPoborow(KlasaOgolnaSzkieletuDat):
         '''
         SzkieletMiesiecznyDlaPoborow:
         '''
-        return jt_kw.nazwa_rzymskiego(1 + akt / 2)
+        return jt_kw.nazwa_rzymskiego(1 + akt // 2)
 
 
 class TestMiesiecznegoSzkieletu(unittest.TestCase):
@@ -40,3 +40,4 @@ class TestMiesiecznegoSzkieletu(unittest.TestCase):
         krt_pobor = dd_kw.CechaEnergii(lw_kw.Dm_Energy)
         obk = SzkieletMiesiecznyDlaPoborow(krt_pobor)
         self.assertEqual(obk.tekst_pelnej_godziny(10), 'VI')
+        self.assertEqual(obk.tekst_pelnej_godziny(7), 'IV')
