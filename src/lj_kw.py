@@ -5,6 +5,7 @@ import os
 
 import rq_kw
 import oc_kw
+import en_kw
 
 
 class LogujWiadomosci(object):
@@ -33,9 +34,9 @@ class LogujWiadomosci(object):
         Zapisuje do pliku podany napis.
         Opcjonalnie (domyślnie) dopisuje Enter na końcu tekstu.
         '''
-        self.fd.write(napis)
+        self.fd.write(en_kw.str_to_bt(napis))
         if enter:
-            self.fd.write('\n')
+            self.fd.write(en_kw.str_to_bt('\n'))
 
     def lqg_close(self):
         '''
