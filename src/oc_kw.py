@@ -29,11 +29,12 @@ GenPicDir = 'gen_kowal/'
 
 
 class CoreResolver(object):
-    def __init__(self, adres_maszyny):
+    def __init__(self, adres_maszyny, port_nr=None):
         '''
         CoreResolver:
         '''
         self.adres_maszyny = adres_maszyny
+        self.port_nr = port_nr
         self.rjb_hs_pcztk_sam = rjb_hs_pocz + self.adres_maszyny
         self.rjb_hs_pcztk_slsh = self.rjb_hs_pcztk_sam + lk_kw.rjb_sam_slsh
         self.url_kotw_a_ica = url_ameryka_http + self.adres_maszyny
@@ -90,8 +91,8 @@ def fn_a_in_dwa(wersja_produkcyjna):
     return wynik
 
 
-def core_for_testing():
-    return CoreResolver('work.ciri.pl')
+def core_for_testing(port_nr=None):
+    return CoreResolver('work.ciri.pl', port_nr)
 
 
 class TestConstantStrings(unittest.TestCase):
