@@ -29,12 +29,11 @@ GenPicDir = 'gen_kowal/'
 
 
 class CoreResolver(object):
-    def __init__(self, adres_maszyny, adres_przystani, adres_auth):
+    def __init__(self, adres_maszyny, adres_auth):
         '''
         CoreResolver:
         '''
         self.adres_maszyny = adres_maszyny
-        self.adres_przystani = adres_przystani
         self.adres_auth = adres_auth
         self.rjb_hs_pcztk_sam = rjb_hs_pocz + self.adres_auth
         self.rjb_hs_pcztk_slsh = self.rjb_hs_pcztk_sam + lk_kw.rjb_sam_slsh
@@ -53,11 +52,11 @@ class CoreResolver(object):
 
 if rq_kw.WersjaUbuntuRun:
     ##############################################################################
-    core_resolver = CoreResolver('media.ciri.pl', 'media.ciri.pl', 'media.ciri.pl')
+    core_resolver = CoreResolver('media.ciri.pl', 'media.ciri.pl')
     ##############################################################################
 else:
     ##############################################################################
-    core_resolver = CoreResolver('media.ciri.pl', 'media.ciri.pl', 'media.ciri.pl')
+    core_resolver = CoreResolver('media.ciri.pl', 'media.ciri.pl')
     ##############################################################################
 rjb_fg_tld_d_apl = 'inne'
 rjb_fg_tld_e_apl = '2'
@@ -93,7 +92,7 @@ def fn_a_in_dwa(wersja_produkcyjna):
 
 
 def core_for_testing():
-    return CoreResolver('work.ciri.pl', 'middle.ciri.pl', 'auth.ciri.pl')
+    return CoreResolver('work.ciri.pl', 'auth.ciri.pl')
 
 
 class TestConstantStrings(unittest.TestCase):
@@ -115,7 +114,6 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(rjb_hs_pocz, 'https://')
         self.assertEqual(obk.adres_maszyny, 'work.ciri.pl')
         self.assertEqual(obk.adres_auth, 'auth.ciri.pl')
-        self.assertEqual(obk.adres_przystani, 'middle.ciri.pl')
         self.assertEqual(obk.url_kotw_a_ica, 'https://work.ciri.pl')
         self.assertEqual(obk.rjb_hs_pcztk_sam, 'https://auth.ciri.pl')
         self.assertEqual(obk.rjb_hs_pcztk_slsh, 'https://auth.ciri.pl/')
