@@ -38,6 +38,10 @@ class CoreResolver(object):
         self.rjb_hs_pcztk_sam = rjb_hs_pocz + self.adres_maszyny
         self.rjb_hs_pcztk_slsh = self.rjb_hs_pcztk_sam + lk_kw.rjb_sam_slsh
         self.url_kotw_a_ica = url_ameryka_http + self.adres_maszyny
+        if self.port_nr is None or self.port_nr == 443:
+            wstawka_portu = ''
+        else:
+            wstawka_portu = ':%(port_nr)d' % dict(port_nr=self.port_nr)
         self.url_kotw_b_ica = self.url_kotw_a_ica + lk_kw.rjb_sam_slsh
         self.rjb_sciezka_kw = self.url_kotw_b_ica + rjb_fg_tld_a_apl
         self.rjb_sciezka_a_kw = self.rjb_sciezka_kw + lk_kw.rjb_sam_slsh
