@@ -42,7 +42,7 @@ class CoreResolver(object):
             wstawka_portu = ''
         else:
             wstawka_portu = ':%(port_nr)d' % dict(port_nr=self.port_nr)
-        self.url_kotw_b_ica = self.url_kotw_a_ica + lk_kw.rjb_sam_slsh
+        self.url_kotw_b_ica = self.url_kotw_a_ica + wstawka_portu + lk_kw.rjb_sam_slsh
         self.rjb_sciezka_kw = self.url_kotw_b_ica + rjb_fg_tld_a_apl
         self.rjb_sciezka_a_kw = self.rjb_sciezka_kw + lk_kw.rjb_sam_slsh
         self.poczatek_gen = self.rjb_sciezka_a_kw + GenPicDir
