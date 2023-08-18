@@ -33,6 +33,10 @@ class CoreResolver(object):
         '''
         CoreResolver:
         '''
+        if port_nr is None or port_nr == 443:
+            wstawka_portu = ''
+        else:
+            wstawka_portu = ':%(port_nr)d' % dict(port_nr=port_nr)
         self.adres_maszyny = adres_maszyny
         self.rjb_hs_pcztk_sam = rjb_hs_pocz + self.adres_maszyny
         self.rjb_hs_pcztk_slsh = self.rjb_hs_pcztk_sam + lk_kw.rjb_sam_slsh
