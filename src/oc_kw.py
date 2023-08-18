@@ -4,7 +4,6 @@
 import unittest
 
 import lk_kw
-import rq_kw
 
 # Nie ujednolicaj adresu IP z nazwą, bo na razie chcemy synchronizować różne treści
 rjb_klnt_ip = '87.101.66.154'
@@ -52,14 +51,7 @@ class CoreResolver(object):
         return self.poczatek_gen + nazwa
 
 
-if rq_kw.WersjaUbuntuRun:
-    ##############################################################################
-    core_resolver = CoreResolver('media.ciri.pl')
-    ##############################################################################
-else:
-    ##############################################################################
-    core_resolver = CoreResolver('media.ciri.pl')
-    ##############################################################################
+core_resolver = CoreResolver('media.ciri.pl')
 rjb_fg_tld_d_apl = 'inne'
 rjb_fg_tld_e_apl = '2'
 rjb_fg_tld_f_apl = rjb_fg_tld_d_apl + rjb_fg_tld_e_apl
