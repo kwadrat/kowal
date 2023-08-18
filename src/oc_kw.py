@@ -37,11 +37,10 @@ class CoreResolver(object):
             wstawka_portu = ''
         else:
             wstawka_portu = ':%(port_nr)d' % dict(port_nr=port_nr)
-        self.adres_maszyny = adres_maszyny
+        self.adres_maszyny = adres_maszyny + wstawka_portu
         self.rjb_hs_pcztk_sam = rjb_hs_pocz + self.adres_maszyny
         self.rjb_hs_pcztk_slsh = self.rjb_hs_pcztk_sam + lk_kw.rjb_sam_slsh
-        self.url_kotw_a_ica = url_ameryka_http + self.adres_maszyny
-        self.url_kotw_b_ica = self.url_kotw_a_ica + wstawka_portu + lk_kw.rjb_sam_slsh
+        self.url_kotw_b_ica = url_ameryka_http + self.adres_maszyny + lk_kw.rjb_sam_slsh
         self.rjb_sciezka_kw = self.url_kotw_b_ica + rjb_fg_tld_a_apl
         self.rjb_sciezka_a_kw = self.rjb_sciezka_kw + lk_kw.rjb_sam_slsh
         self.poczatek_gen = self.rjb_sciezka_a_kw + GenPicDir
@@ -116,7 +115,6 @@ class TestConstantStrings(unittest.TestCase):
         self.assertEqual(url_ameryka_http, 'https://')
         self.assertEqual(rjb_hs_pocz, 'https://')
         self.assertEqual(obk.adres_maszyny, 'work.ciri.pl')
-        self.assertEqual(obk.url_kotw_a_ica, 'https://work.ciri.pl')
         self.assertEqual(obk.rjb_hs_pcztk_sam, 'https://work.ciri.pl')
         self.assertEqual(obk.rjb_hs_pcztk_slsh, 'https://work.ciri.pl/')
         self.assertEqual(obk.url_kotw_b_ica, 'https://work.ciri.pl/')
