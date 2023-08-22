@@ -28,12 +28,7 @@ GenPicDir = 'gen_kowal/'
 
 
 class CoreResolver(object):
-    def __init__(self):
-        '''
-        CoreResolver:
-        '''
-
-    def mark_way(self, adres_maszyny, port_nr=None):
+    def __init__(self, adres_maszyny, port_nr=None):
         '''
         CoreResolver:
         '''
