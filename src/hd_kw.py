@@ -9,6 +9,7 @@ Testy operacji na napisach (zamiana liter na małe, obliczanie sumy MD5)
 '''
 
 import lm_kw
+import en_kw
 
 
 def pomniejsz_litery(napis):
@@ -57,7 +58,7 @@ class TestNapisow(unittest.TestCase):
         '''
         self.assertEqual(pomniejsz_litery('ABC'), 'abc')
         self.assertEqual(pomniejsz_litery('AbC'), 'abc')
-        self.assertEqual(suma_kont('abc'), '900150983cd24fb0d6963f7d28e17f72')
+        self.assertEqual(suma_kont(en_kw.str_to_bt('abc')), '900150983cd24fb0d6963f7d28e17f72')
         self.assertEqual(przecinek_kropka('0,5'), '0.5')
         self.assertEqual(odwrotny_zwykly('\\'), '/')
         self.assertEqual(odwrotny_zwykly('1\\2'), '1/2')
