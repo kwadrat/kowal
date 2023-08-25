@@ -84,6 +84,12 @@ def through_latin_two(one_strng):
     return result
 
 
+def through_cp_for_plsh_win(one_strng):
+    uncd_vrsn = utf_to_unicode(one_strng)
+    result = uncd_vrsn.encode(en_cod_cp_win)
+    return result
+
+
 class TestEncoding(unittest.TestCase):
     '''
     Testowanie funkcji zmieniających kodowanie napisów

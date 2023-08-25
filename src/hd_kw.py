@@ -61,6 +61,7 @@ class TestNapisow(unittest.TestCase):
         self.assertEqual(suma_kont(en_kw.str_to_bt('abc')), '900150983cd24fb0d6963f7d28e17f72')
         self.assertEqual(suma_kont(en_kw.str_to_bt('ą')), '5786eab716295401c073064c3ec82a44')
         self.assertEqual(suma_kont(en_kw.through_latin_two('ą')), 'c668534d220baf21ca3cc6df5b7ed1d5')
+        self.assertEqual(suma_kont(en_kw.through_cp_for_plsh_win('ą')), 'f361e25776077789e0db8ca985bf36c5')
         self.assertEqual(przecinek_kropka('0,5'), '0.5')
         self.assertEqual(odwrotny_zwykly('\\'), '/')
         self.assertEqual(odwrotny_zwykly('1\\2'), '1/2')
