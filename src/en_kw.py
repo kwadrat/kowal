@@ -78,6 +78,12 @@ def upgrade_bytes_to_unicode(value):
     return value
 
 
+def through_latin_two(one_strng):
+    uncd_vrsn = utf_to_unicode(one_strng)
+    result = uncd_vrsn.encode(en_cod_cp_i_two)
+    return result
+
+
 class TestEncoding(unittest.TestCase):
     '''
     Testowanie funkcji zmieniających kodowanie napisów
