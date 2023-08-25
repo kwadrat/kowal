@@ -62,7 +62,7 @@ class EnergyTable(object):
         '''
         max_len = max(map(len, self.ls_lines))
         common_frmt = constant_width(max_len)
-        self.ls_lines = map(lambda x: common_frmt % x, self.ls_lines)
+        self.ls_lines = list(map(lambda x: common_frmt % x, self.ls_lines))
         self.ls_lines.append(non_wrapped_lines())
         print('\n'.join(self.ls_lines))
 

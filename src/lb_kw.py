@@ -38,19 +38,19 @@ class ListaOdcBazowych(object):
         '''
         ListaOdcBazowych:
         '''
-        return map(lambda x: x.get_pocz(), self.wykaz_odcinkow_bazowych)
+        return list(map(lambda x: x.get_pocz(), self.wykaz_odcinkow_bazowych))
 
     def lista_kon(self):
         '''
         ListaOdcBazowych:
         '''
-        return map(lambda x: x.get_kon(), self.wykaz_odcinkow_bazowych)
+        return list(map(lambda x: x.get_kon(), self.wykaz_odcinkow_bazowych))
 
     def lista_max_kwot(self):
         '''
         ListaOdcBazowych:
         '''
-        return map(lambda x: x.slownik_qm.get_max_kwota(), self.wykaz_odcinkow_bazowych)
+        return list(map(lambda x: x.slownik_qm.get_max_kwota(), self.wykaz_odcinkow_bazowych))
 
     def zakres_pionowy(self):
         '''
@@ -69,7 +69,7 @@ class ListaOdcBazowych(object):
         '''
         ListaOdcBazowych:
         '''
-        return map(lambda x: x.slownik_qm, self.wykaz_odcinkow_bazowych)
+        return list(map(lambda x: x.slownik_qm, self.wykaz_odcinkow_bazowych))
 
     def pk_head(self):
         '''

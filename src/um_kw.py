@@ -26,7 +26,7 @@ class TxtSheet(object):
             the_last = all_rows[-1]
             if the_last and the_last.isspace():
                 all_rows = all_rows[:-1]
-            self.full_matrix = map(lambda x: x.split('\t'), all_rows)
+            self.full_matrix = list(map(lambda x: x.split('\t'), all_rows))
         self.nrows = len(self.full_matrix)
 
     def cell_value(self, my_row, my_col):

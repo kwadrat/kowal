@@ -36,13 +36,13 @@ class JedenWiersz(object):
         '''
         JedenWiersz:
         '''
-        self.table_row = map(hd_kw.przecinkowane_pole, self.table_row)
+        self.table_row = list(map(hd_kw.przecinkowane_pole, self.table_row))
 
     def use_color(self):
         '''
         JedenWiersz:
         '''
         if self.barwa_wiersza:
-            self.table_row = map(
+            self.table_row = list(map(
                 lambda x: ze_kw.pokoloruj(x, self.barwa_wiersza),
-                self.table_row)
+                self.table_row))
