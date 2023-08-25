@@ -129,7 +129,7 @@ class PozycjeOgolne(ListaLubSlownikOgolnie):
         PozycjeOgolne:
         Podobne do dla_listy_kluczy, ale ma zwracać coś iterowalnego, dla "for".
         '''
-        return self.poz_slownik.keys()
+        return list(self.poz_slownik.keys())
 
     def zwroc_klucz_wartosc(self):
         '''

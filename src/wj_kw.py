@@ -22,7 +22,7 @@ class KlasaNakladki(object):
         '''
         KlasaNakladki:
         '''
-        return self.vz_nakladki.keys()
+        return list(self.vz_nakladki.keys())
 
     def jh__getitem__(self, key):
         '''
@@ -44,7 +44,7 @@ class KlasaNakladki(object):
         '''
         KlasaNakladki:
         '''
-        przedzialy = self.vz_nakladki.keys()
+        przedzialy = list(self.vz_nakladki.keys())
         przedzialy.sort()
         for pk_przedzial in przedzialy:
             slownik_qm = self.vz_nakladki[pk_przedzial]

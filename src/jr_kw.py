@@ -46,11 +46,11 @@ class EnergyTable(object):
         '''
         EnergyTable:
         '''
-        rnums = self.rows.keys()
+        rnums = list(self.rows.keys())
         rnums.sort()
         for r_num in rnums:
             r_cols = self.rows[r_num]
-            c_nums = r_cols.keys()
+            c_nums = list(r_cols.keys())
             c_nums.sort()
             elem = ' '.join(map(lambda x: r_cols[x], c_nums))
             self.ls_lines.append(elem)

@@ -57,7 +57,7 @@ class KlasaSlownika(object):
         '''
         KlasaSlownika:
         '''
-        return self.vz_slownik.keys()
+        return list(self.vz_slownik.keys())
 
     def jh__getitem__(self, key):
         '''

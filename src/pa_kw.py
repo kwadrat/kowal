@@ -117,7 +117,7 @@ class MojPasek(KlasaObrazu):
         MojPasek:
         '''
         mam_jedna_wersje = (len(wersja) == 1)
-        momenty = self.dnw.zbitki_qm.keys()
+        momenty = list(self.dnw.zbitki_qm.keys())
         momenty.sort()
         # czas_t0 - początek całej skali czasowej
         czas_t0 = czas_akt = momenty[0]

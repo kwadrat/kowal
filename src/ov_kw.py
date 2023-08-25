@@ -17,7 +17,7 @@ import lt_kw
 
 
 def wyznacz_daty_miesieczne(slownik_wpisow):
-    wszystkie_miesiace = slownik_wpisow.keys()
+    wszystkie_miesiace = list(slownik_wpisow.keys())
     wszystkie_miesiace.sort()
     return wszystkie_miesiace
 
@@ -91,7 +91,7 @@ def wykonaj_analize_danych(result):
 
 
 def uzupelnij_brakujace(slownik_wpisow):
-    all_keys = slownik_wpisow.keys()
+    all_keys = list(slownik_wpisow.keys())
     if all_keys:
         all_keys.sort()
         one_key = all_keys[0]

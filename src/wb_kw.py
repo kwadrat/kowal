@@ -33,7 +33,7 @@ class KlasaZbitki(object):
             if not rq_kw.TymczasowoPkzZbt:
                 return
         print('Zbitka:')
-        klucze = self.vz_zbitki.keys()
+        klucze = list(self.vz_zbitki.keys())
         klucze.sort()
         for klucz in klucze:
             print(dn_kw.NapisDnia(klucz), klucz, self.vz_zbitki[klucz])
@@ -42,7 +42,7 @@ class KlasaZbitki(object):
         '''
         KlasaZbitki:
         '''
-        return self.vz_zbitki.keys()
+        return list(self.vz_zbitki.keys())
 
     def jh__getitem__(self, key):
         '''
@@ -65,7 +65,7 @@ class KlasaZbitki(object):
         # jeden dzień (fp < fk)
         if self.punkt_pocz <= fp < fk <= self.punkt_kon:
             # Dni już zaznaczone w słowniku poszczególnych okresów
-            klucze = self.vz_zbitki.keys()
+            klucze = list(self.vz_zbitki.keys())
             # Chcemy, aby dzień początkowy i końcowy faktury był w słowniku
             for klucz in (fp, fk):
                 if klucz not in klucze:

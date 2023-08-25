@@ -72,7 +72,7 @@ class PomiaryPoborowMiesiecznie(OgolnaListaPoborow):
         '''
         lst_h = lh_kw.ListaHTML()
         zbiornik_przedzialow = self.html_przedzialy()
-        all_keys = zbiornik_przedzialow.keys()
+        all_keys = list(zbiornik_przedzialow.keys())
         all_keys.sort()
         for single_key in all_keys:
             self.html_poboru_dla_miesiaca(krt_pobor, zbiornik_przedzialow, single_key)

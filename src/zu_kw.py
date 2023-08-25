@@ -52,4 +52,4 @@ class ZuzycieLicznika(object):
         '''
         if WlaczDiagnostykeZuzycia:
             print('%s: jakie_mam_klucze' % (self.moj_napis))
-        return self.slownik_zuzycia.keys()
+        return list(self.slownik_zuzycia.keys())

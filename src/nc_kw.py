@@ -49,7 +49,7 @@ def wyznacz_slownik_miesiaca(selected_data):
         if moj_rm not in month_dict:
             month_dict[moj_rm] = []
         month_dict[moj_rm].append(one_data)
-    all_months = month_dict.keys()
+    all_months = list(month_dict.keys())
     all_months.sort()
     return month_dict, all_months
 
