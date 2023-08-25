@@ -36,7 +36,7 @@ def zrob_kopie_pliku(nazwa_programu, przedrostek, prawie_rowne=0):
     lista_nazw = os.listdir(katalog_logu)
     zrob_kopie = 0
     dane_programu = sf_kw.wczytaj_plik(nazwa_programu)
-    lista_nazw = filter(lambda x: wzor_nazwy.search(x), lista_nazw)
+    lista_nazw = list(filter(lambda x: wzor_nazwy.search(x), lista_nazw))
     if dg_kw.TymczasowoF:
         if 1:
             tmp_format = 'lista_nazw'

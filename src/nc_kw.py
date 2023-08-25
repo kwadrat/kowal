@@ -39,7 +39,7 @@ def unique_sorted(dane_bazy, field):
 
 
 def dla_podanej_nazwy(dane_bazy, name):
-    return filter(lambda x: x[lc_kw.fq_account_qv] == name, dane_bazy)
+    return list(filter(lambda x: x[lc_kw.fq_account_qv] == name, dane_bazy))
 
 
 def wyznacz_slownik_miesiaca(selected_data):
