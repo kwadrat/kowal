@@ -43,6 +43,12 @@ def str_to_bt(in_str):
     return in_str
 
 
+def bt_to_string(in_txt):
+    if ckd_kw.three_or_more and type(in_txt) is bytes:
+        in_txt = in_txt.decode(en_cod_cp_u_eig)
+    return in_txt
+
+
 def win_cp_to_unicode(napis_win):
     return napis_win.decode(en_cod_cp_win)
 
