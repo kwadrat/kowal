@@ -6,6 +6,8 @@ import fv_kw
 
 KSZ_Zmiennoprzecinkowa = 'zmiennoprzecinkowa z przecinkiem'
 
+text_type_tpl = (unicode, str)
+
 
 class ArkuszExcel(object):
     def __init__(self, sh):
@@ -22,7 +24,7 @@ class ArkuszExcel(object):
         if ksztalt is not None:
             if ksztalt == KSZ_Zmiennoprzecinkowa:
                 if type(wynik) is not float:
-                    if type(wynik) in (unicode, str) and '.' in wynik:
+                    if type(wynik) in text_type_tpl and '.' in wynik:
                         print('W kolumnie "%s" i wierszu "%s" zamiast kropki wpisz przecinek:' % (lb_col, wiersz))
                         print('Niepoprawnie jest: "%s"' % (wynik))
                         print('Powinno byc:       "%s"' % (wynik.replace('.', ',')))
