@@ -1,12 +1,16 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
+import ckd_kw
 import ckb_kw
 import fv_kw
 
 KSZ_Zmiennoprzecinkowa = 'zmiennoprzecinkowa z przecinkiem'
 
-text_type_tpl = (unicode, str)
+if ckd_kw.three_or_more:
+    text_type_tpl = (str,)
+else:
+    text_type_tpl = (unicode, str)
 
 
 class ArkuszExcel(object):
