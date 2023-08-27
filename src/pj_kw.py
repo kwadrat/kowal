@@ -10,7 +10,7 @@ KSZ_Zmiennoprzecinkowa = 'zmiennoprzecinkowa z przecinkiem'
 if ckd_kw.three_or_more:
     text_type_tpl = (str,)
 else:
-    text_type_tpl = (unicode, str)
+    text_type_tpl = (unicode, str)  # noqa: F821
 
 
 class ArkuszExcel(object):
