@@ -10,6 +10,7 @@ Testy operacji na napisach (zamiana liter na małe, obliczanie sumy MD5)
 
 import lm_kw
 import en_kw
+import cke_kw
 
 
 def pomniejsz_litery(napis):
@@ -31,6 +32,7 @@ def odwrotny_zwykly(napis):
 def przecinkowane_pole(kolumna):
     if lm_kw.have_dec_type(kolumna):
         value_as_text = lm_kw.d2a(kolumna)
+        value_as_text = cke_kw.detach_zeros(value_as_text)
         value_as_text = lm_kw.kropka_przecinek(value_as_text)
     else:
         value_as_text = str(kolumna)
