@@ -5,9 +5,9 @@ import os
 import re
 import bz2
 
+import en_kw
 import sf_kw
 import dn_kw
-import en_kw
 import dg_kw
 
 Katalog_dokumentow = en_kw.pwd_to_unicode(os.getcwd()) + u'\\'

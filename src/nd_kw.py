@@ -2,11 +2,11 @@
 # -*- coding: UTF-8 -*-
 
 import ng_kw
+import en_kw
 import gv_kw
 import ckc_kw
 import hj_kw
 import gu_kw
-import en_kw
 
 row_offset_column_name = -1
 row_offset_invoice_mark = 0

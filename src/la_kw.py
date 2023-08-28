@@ -5,11 +5,11 @@ import unittest
 
 import ng_kw
 import nf_kw
+import en_kw
 import gv_kw
 import rq_kw
 import to_kw
 import dn_kw
-import en_kw
 
 NMF_1_above_red = -1
 NMF_2_percent = -2

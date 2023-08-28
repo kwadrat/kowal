@@ -8,8 +8,8 @@ import unittest
 Testy operacji na napisach (zamiana liter na małe, obliczanie sumy MD5)
 '''
 
-import lm_kw
 import en_kw
+import lm_kw
 import cke_kw
 
 
