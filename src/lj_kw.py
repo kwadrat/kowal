@@ -21,6 +21,7 @@ class LogujWiadomosci(object):
         LogujWiadomosci:
         '''
         self.byl_plik = os.path.isfile(self.nazwa_pliku)
+        write_mode = 'ab'
         try:
             self.fd = open(self.nazwa_pliku, 'ab')
         except IOError:
