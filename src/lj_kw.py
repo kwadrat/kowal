@@ -23,10 +23,10 @@ class LogujWiadomosci(object):
         self.byl_plik = os.path.isfile(self.nazwa_pliku)
         write_mode = 'ab'
         try:
-            self.fd = open(self.nazwa_pliku, 'ab')
+            self.fd = open(self.nazwa_pliku, write_mode)
         except IOError:
             print('Nie udało się otworzyć oryginalnego pliku, będę używać: %s' % self.nazwa_usr_pliku)
-            self.fd = open(self.nazwa_usr_pliku, 'ab')
+            self.fd = open(self.nazwa_usr_pliku, write_mode)
         return self.fd
 
     def lqg_write(self, napis, enter=1):
