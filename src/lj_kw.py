@@ -39,9 +39,9 @@ class LogujWiadomosci(object):
         Zapisuje do pliku podany napis.
         Opcjonalnie (domyślnie) dopisuje Enter na końcu tekstu.
         '''
-        self.fd.write(en_kw.str_to_bt(napis))
+        self.fd.write(napis)
         if enter:
-            self.fd.write(en_kw.str_to_bt('\n'))
+            self.fd.write('\n')
 
     def lqg_close(self):
         '''
