@@ -6,6 +6,7 @@ import os
 import en_kw
 import rq_kw
 import oc_kw
+import ckd_kw
 
 
 class LogujWiadomosci(object):
@@ -21,7 +22,10 @@ class LogujWiadomosci(object):
         LogujWiadomosci:
         '''
         self.byl_plik = os.path.isfile(self.nazwa_pliku)
-        write_mode = 'ab'
+        if ckd_kw.three_or_more:
+            write_mode = 'a'
+        else:
+            write_mode = 'ab'
         try:
             self.fd = open(self.nazwa_pliku, write_mode)
         except IOError:
