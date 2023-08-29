@@ -4,6 +4,7 @@
 import os
 import pprint
 
+import ckd_kw
 import lk_kw
 
 
@@ -121,6 +122,9 @@ def zapisz_plik(nazwa, dane, verbose=0, mode=None, way=None):
 
 
 def zapisz_ladnie(nazwa, dane, verbose=0, mode=None, way=None, prefix=None):
+    if ckd_kw.three_or_more:
+        if way is None:
+            way = 'w'
     fd = otworz_do_zapisu(nazwa, way)
     if prefix is not None:
         fd.write(prefix)
