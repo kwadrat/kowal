@@ -42,7 +42,7 @@ def to_jest_poprawny_plik_obrazu(fd):
 
 
 def wykonaj_mniejsza_wersje(source_file, target_path, width):
-    status = 1
+    status = 1  # OK
     src_im = to_jest_poprawny_plik_obrazu(source_file)
     if src_im:
         src_width, src_height = src_im.size
@@ -50,5 +50,5 @@ def wykonaj_mniejsza_wersje(source_file, target_path, width):
         src_im.thumbnail((width, height))
         src_im.save(target_path)
     else:
-        status = 0
+        status = 0  # Copy failed
     return status
