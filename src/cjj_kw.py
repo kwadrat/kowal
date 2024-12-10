@@ -5,7 +5,6 @@
 Dla sprawdzania czasów wykonania poszczególnych etapów obliczeń
 '''
 
-import sys
 import time
 
 import cjs_kw

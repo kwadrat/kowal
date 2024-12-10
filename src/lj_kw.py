@@ -4,7 +4,6 @@
 import os
 
 import ckd_kw
-import en_kw
 import rq_kw
 import oc_kw
 
