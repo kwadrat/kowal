@@ -251,7 +251,7 @@ class WyznaczanieSlownie(object):
             wynik.append(kawalek)
         return ' '.join(wynik)
 
-    def wypowiedz(self, wartosc):
+    def wypowiedz_ucd(self, wartosc):
         '''
         WyznaczanieSlownie:
         '''
