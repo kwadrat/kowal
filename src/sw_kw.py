@@ -16,6 +16,12 @@ odmiana_zloty = {
     'dopełniacz': 'złotych',
     }
 
+odmiana_grosz = {
+    'liczba pojedyncza': 'grosz',
+    'liczba mnoga': 'grosze',
+    'dopełniacz': 'groszy',
+    }
+
 odmiana_tysiac = {
     'liczba pojedyncza': 'tysiąc',
     'liczba mnoga': 'tysiące',
