@@ -270,7 +270,7 @@ class MojeSlupki(KlasaObrazu):
         '''
         MojeSlupki:
         Dla skali miesięcznej
-        Tyle będzie przedziałów miesięcznych (12 dla punktowych, 14 dla ciągłych faktur)
+        Tyle będzie przedziałów miesięcznych (12 dla punktowych, 15 dla ciągłych faktur)
         '''
         LiczbaPaskow = self.aqr.liczba_paskow()
         if LiczbaPaskow not in rq_kw.PoprawneLiczbyPaskowDlaOkresuMiesiecznego:
