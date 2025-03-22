@@ -190,6 +190,9 @@ dane_testowe = '''\
 100001;sto tysięcy jeden złotych
 999999;dziewięćset dziewięćdziesiąt dziewięć tysięcy dziewięćset dziewięćdziesiąt dziewięć złotych
 993992;dziewięćset dziewięćdziesiąt trzy tysiące dziewięćset dziewięćdziesiąt dwa złote
+0,99;zero złotych i dziewięćdziesiąt dziewięć groszy
+2,54;dwa złote i pięćdziesiąt cztery grosze
+5,01;pięć złotych i jeden grosz
 '''
 
 
@@ -307,8 +310,7 @@ def sprawdzanie_tlumaczenia(wsl):
     for i in dane_testowe.splitlines():
         if len(i) > 0 and i[0] != '#':
             liczba, reczny = i.split(';')
-            liczba = int(liczba)
-            automatyczny = wsl.wypowiedz_utf(liczba)
+            automatyczny = wsl.dual_currency(liczba)
             if reczny != automatyczny:
                 print(liczba)
                 print("'%s'" % reczny)
