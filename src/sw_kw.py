@@ -192,6 +192,27 @@ dane_testowe = '''\
 '''
 
 
+class CopperCurrency(object):
+    def __init__(self, part_major, part_minor):
+        '''
+        CopperCurrency:
+        '''
+        self.num_major = int(part_major)
+        self.num_minor = int(part_minor)
+
+
+def nice_zl_gr(full_amount):
+    part_ls = full_amount.split(',')
+    result = None
+    ile = len(part_ls)
+    if ile == 2:
+        if len(part_ls[1]) == 2:
+            result = CopperCurrency(int(part_ls[0]), int(part_ls[1]))
+    elif ile == 1:
+        result = CopperCurrency(int(part_ls[0]), 0)
+    return result
+
+
 class WyznaczanieSlownie(object):
     def deklinacja(self, wartosc, odmiana):
         '''
@@ -285,3 +306,19 @@ class TestSlownie(unittest.TestCase):
         '''
         wsl = WyznaczanieSlownie()
         sprawdzanie_tlumaczenia(wsl)
+
+    def test_major_and_minor(self):
+        '''
+        TestSlownie:
+        '''
+        obj = nice_zl_gr('1,23')
+        self.assertEqual(obj.num_major, 1)
+        self.assertEqual(obj.num_minor, 23)
+        self.assertEqual(nice_zl_gr('0,0,00'), None)
+        self.assertEqual(nice_zl_gr('0,0'), None)
+        obj = nice_zl_gr('54,00')
+        self.assertEqual(obj.num_major, 54)
+        self.assertEqual(obj.num_minor, 0)
+        obj = nice_zl_gr('65')
+        self.assertEqual(obj.num_major, 65)
+        self.assertEqual(obj.num_minor, 0)
