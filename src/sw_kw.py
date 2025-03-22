@@ -7,6 +7,7 @@ Słowne przedstawienie kwoty
 import unittest
 
 import en_kw
+import lm_kw
 
 # liczba pojedyncza, liczba mnoga, dopełniacz
 
@@ -254,7 +255,7 @@ class WyznaczanieSlownie(object):
             wynik.append(kawalek)
         return wynik
 
-    def wypowiedz_utf(self, wartosc):
+    def wypowiedz_utf(self, wartosc, as_minor=0):
         '''
         WyznaczanieSlownie:
         '''
@@ -267,8 +268,12 @@ class WyznaczanieSlownie(object):
             wynik.extend(kawalek)
 
         jestem_opcjonalny_jeden = 0
+        if as_minor:
+            jaka_odmiana = odmiana_grosz
+        else:
+            jaka_odmiana = odmiana_zloty
         if ile_jednostek:
-            kawalek = self.jako_nps(ile_jednostek, jestem_opcjonalny_jeden, odmiana_zloty, ile_tysiecy=ile_tysiecy)
+            kawalek = self.jako_nps(ile_jednostek, jestem_opcjonalny_jeden, jaka_odmiana, ile_tysiecy=ile_tysiecy)
             wynik.extend(kawalek)
         else:
             if not ile_tysiecy:
@@ -284,6 +289,18 @@ class WyznaczanieSlownie(object):
         '''
         result = self.wypowiedz_utf(wartosc)
         return en_kw.utf_to_unicode(result)
+
+    def dual_currency(self, liczba):
+        '''
+        WyznaczanieSlownie:
+        '''
+        liczba = lm_kw.kropka_przecinek(liczba)
+        copper_currency = nice_zl_gr(liczba)
+        automatyczny = self.wypowiedz_utf(copper_currency.num_major)
+        if ',' in liczba:
+            automatyczny += ' i '
+            automatyczny += self.wypowiedz_utf(copper_currency.num_minor, as_minor=1)
+        return automatyczny
 
 
 def sprawdzanie_tlumaczenia(wsl):
@@ -306,6 +323,8 @@ class TestSlownie(unittest.TestCase):
         '''
         wsl = WyznaczanieSlownie()
         sprawdzanie_tlumaczenia(wsl)
+        self.assertEqual(wsl.dual_currency('2,47'), 'dwa złote i czterdzieści siedem groszy')
+        self.assertEqual(wsl.dual_currency('1,54'), 'jeden złoty i pięćdziesiąt cztery grosze')
 
     def test_major_and_minor(self):
         '''
